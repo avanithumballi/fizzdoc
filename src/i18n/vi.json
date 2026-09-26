@@ -1,0 +1,1572 @@
+{
+  "ui": {
+    "nav.label": "Chính",
+    "nav.home": "Trang chủ Fizzdoc",
+    "nav.theme": "Đổi giao diện màu",
+    "nav.star": "★ Gắn sao",
+    "nav.starAria": "Gắn sao cho Fizzdoc trên GitHub",
+    "lang.label": "Ngôn ngữ",
+    "lang.tip": "Muốn dùng ngôn ngữ khác? Chọn tại đây.",
+    "lang.tipClose": "Đóng",
+    "footer.about": "Công cụ xử lý tài liệu riêng tư. Tệp của bạn được xử lý ngay trên thiết bị và không bao giờ được tải lên.",
+    "footer.license": "Mã nguồn mở (MIT)",
+    "footer.builtOn": "Xây dựng trên qpdf, pdf.js và pdf-lib",
+    "star.title": "Miễn phí và mã nguồn mở. Mãi mãi.",
+    "star.text": "Không quảng cáo, không cần tài khoản, không có máy chủ nào nhìn thấy tệp của bạn. Nếu Fizzdoc giúp bạn tiết kiệm thời gian, một ngôi sao trên GitHub sẽ giúp nhiều người khác tìm thấy nó hơn.",
+    "star.button": "Gắn sao cho Fizzdoc trên GitHub",
+    "star.hero": "Gắn sao trên GitHub",
+    "star.nudge": "Fizzdoc có hữu ích không? {link} — miễn phí và giúp người khác tìm thấy công cụ này.",
+    "star.nudgeLink": "★ Gắn sao trên GitHub",
+    "format.pdf": "PDF",
+    "format.word": "Word",
+    "format.excel": "Excel",
+    "format.powerpoint": "PowerPoint",
+    "format.image": "Hình ảnh",
+    "group.title": "Công cụ {format}",
+    "home.eyebrow": "0 byte được tải lên · Mã nguồn mở · Miễn phí",
+    "home.cta": "Ghép PDF",
+    "home.browse": "Xem tất cả {n} công cụ",
+    "home.formats": "Định dạng hỗ trợ",
+    "home.google": "+ Google Docs, Sheets & Slides",
+    "home.chip": "Xử lý ngay trên thiết bị này",
+    "home.toolsTitle": "Mọi công cụ đều riêng tư theo mặc định",
+    "home.toolsLede": "Chọn một công cụ. Tệp của bạn được xử lý ngay trên thiết bị này và không bao giờ chạm tới máy chủ.",
+    "home.whatTitle": "{name} là gì?",
+    "tool.eyebrow": "Chạy trên thiết bị của bạn · 0 byte được tải lên",
+    "tool.how": "Cách sử dụng {tool}",
+    "tool.more": "Thêm các công cụ riêng tư khác",
+    "crumbs.label": "Đường dẫn điều hướng",
+    "faq.title": "Câu hỏi thường gặp",
+    "proof.title": "Riêng tư ngay từ thiết kế — và bạn có thể tự kiểm chứng",
+    "proof.lede": "Tệp của bạn không bao giờ được tải lên, vì đơn giản là không có nơi nào để tải lên.",
+    "proof.noUpload": "Không hề có bước tải lên",
+    "proof.noUploadText": "Tệp được đọc và ghi ngay trong tab trình duyệt này. Không có máy chủ nào có thể nhận được chúng.",
+    "proof.csp": "Trình duyệt tự đảm bảo điều đó",
+    "proof.cspText": "Content Security Policy của trang này chỉ cho phép kết nối trở lại chính trang web này, nơi chỉ phục vụ duy nhất ứng dụng.",
+    "proof.check": "Tự mình kiểm tra",
+    "proof.checkText": "Mở công cụ dành cho nhà phát triển, theo dõi tab Network và thực hiện một thao tác: không có yêu cầu nào mang theo tài liệu của bạn.",
+    "proof.open": "Mã nguồn mở",
+    "proof.openText": "Mọi dòng mã đều có trên {github}, xây dựng trên {engines}.",
+    "ws.choosePdf": "Chọn một tệp PDF",
+    "ws.choosePdfs": "Chọn các tệp PDF",
+    "ws.chooseImage": "Chọn một hình ảnh",
+    "ws.chooseImages": "Chọn các hình ảnh",
+    "ws.chooseFile": "Chọn một tệp {ext}",
+    "ws.chooseFiles": "Chọn các tệp {ext}",
+    "ws.dropOne": "hoặc thả vào đây · không rời khỏi thiết bị này",
+    "ws.dropMany": "hoặc thả chúng vào đây · không rời khỏi thiết bị này",
+    "ws.files": "Tệp đã chọn",
+    "ws.reorder": "Kéo tệp để sắp xếp lại, hoặc dùng các mũi tên.",
+    "ws.rotation": "Xoay",
+    "ws.rot90": "90° theo chiều kim đồng hồ",
+    "ws.rot180": "180°",
+    "ws.rot270": "90° ngược chiều kim đồng hồ",
+    "ws.pagesKeep": "Trang cần giữ lại",
+    "ws.pagesDelete": "Trang cần xóa",
+    "ws.pagesRotate": "Trang cần xoay (không bắt buộc)",
+    "ws.pagesAll": "Tất cả các trang",
+    "ws.pagesExtract": "Trang cần trích xuất",
+    "ws.pagesOrder": "Thứ tự trang mới",
+    "ws.example": "ví dụ: {example}",
+    "ws.password": "Mật khẩu",
+    "ws.repeat": "Nhập lại mật khẩu",
+    "ws.unlockNote": "Chỉ mở khóa những tệp bạn có quyền chỉnh sửa.",
+    "ws.protectNote": "Mật khẩu bị quên sẽ không thể khôi phục. Hãy lưu giữ nó ở nơi an toàn.",
+    "ws.cancel": "Hủy",
+    "ws.download": "Tải xuống",
+    "ws.compression": "Mức nén",
+    "ws.balanced": "Cân bằng — chất lượng tốt nhất",
+    "ws.strong": "Nén mạnh — tệp nhỏ nhất",
+    "ws.saveAs": "Lưu dưới dạng",
+    "ws.fmtOriginal": "Giữ nguyên định dạng của từng tệp",
+    "ws.fmtJpeg": "JPG — dùng cho ảnh, mở được ở mọi nơi",
+    "ws.fmtWebp": "WebP — nhỏ nhất",
+    "ws.fmtPng": "PNG — không mất chất lượng",
+    "ws.quality": "Chất lượng",
+    "ws.width": "Chiều rộng (px)",
+    "ws.height": "Chiều cao (px)",
+    "ws.scale": "Hoặc tỷ lệ (%)",
+    "ws.auto": "Tự động",
+    "ws.keepAspect": "Giữ tỷ lệ khung hình",
+    "ws.position": "Vị trí",
+    "ws.bottomCenter": "Giữa dưới",
+    "ws.bottomRight": "Dưới bên phải",
+    "ws.topRight": "Trên bên phải",
+    "ws.style": "Kiểu",
+    "ws.pageOf": "Trang 1 / 10",
+    "ws.startAt": "Bắt đầu từ",
+    "ws.wmText": "Nội dung watermark",
+    "ws.wmDefault": "CONFIDENTIAL",
+    "ws.opacity": "Độ mờ",
+    "pw.title": "Tệp PDF này được bảo vệ bằng mật khẩu",
+    "pw.titleFile": "“{file}” được bảo vệ bằng mật khẩu",
+    "pw.hint": "Nhập mật khẩu của tệp. Mật khẩu chỉ ở lại trên thiết bị này.",
+    "pw.retry": "Mật khẩu không đúng. Thử lại ({n}/3).",
+    "pw.unlock": "Mở khóa",
+    "app.working": "Đang xử lý… tệp của bạn vẫn ở trên thiết bị này.",
+    "app.workingPct": "Đang xử lý… {pct}% — tệp của bạn vẫn ở trên thiết bị này.",
+    "app.done": "Hoàn tất — {summary}, {size}. Được tạo ngay trên thiết bị này.",
+    "app.ready": "Sẵn sàng — chọn “Save as PDF” trong cửa sổ in, rồi nhấn Save. Được tạo ngay trên thiết bị này.",
+    "app.saveAsPdf": "Lưu dưới dạng PDF",
+    "app.downloadExt": "Tải xuống {ext}",
+    "app.canceled": "Đã hủy. Không có gì thay đổi.",
+    "app.wrongType": "Loại tệp này không thể dùng với công cụ này.",
+    "app.tooBig": "Các tệp này có tổng dung lượng {size}, vượt quá mức thiết bị này có thể xử lý an toàn ({max}).",
+    "app.moveUp": "Di chuyển lên",
+    "app.moveDown": "Di chuyển xuống",
+    "app.remove": "Xóa",
+    "error.INVALID_PDF": "Không thể đọc tệp này dưới dạng PDF. Tệp có thể bị hỏng hoặc không phải là PDF.",
+    "error.BAD_PASSWORD": "Mật khẩu không đúng sau ba lần thử. Không có gì thay đổi.",
+    "error.PASSWORD_REQUIRED": "Tệp PDF này cần mật khẩu để tiếp tục. Không có gì thay đổi.",
+    "error.BAD_RANGE": "Kiểm tra lại số trang. Hãy dùng số và khoảng trang như “1-3, 8” trong phạm vi số trang của tài liệu.",
+    "error.NOT_ENCRYPTED": "Tệp PDF này không được bảo vệ bằng mật khẩu, nên không có gì để mở khóa.",
+    "error.UNSUPPORTED_XFA": "Tệp PDF này dùng biểu mẫu XFA động, không thể chỉnh sửa an toàn. Tệp của bạn không bị thay đổi.",
+    "error.NO_PAGES_LEFT": "Thao tác này sẽ xóa hết mọi trang. Hãy giữ lại ít nhất một trang.",
+    "error.WRONG_FILE_COUNT": "Hãy thêm đúng số lượng tệp mà công cụ này cần.",
+    "error.PROCESSING_FAILED": "Đã xảy ra lỗi trong quá trình xử lý. Tệp gốc của bạn không bị thay đổi.",
+    "error.NO_PASSWORD": "Nhập mật khẩu bạn muốn thêm.",
+    "error.PASSWORDS_DIFFER": "Hai mật khẩu không khớp nhau.",
+    "error.NOT_OFFICE": "Đây không phải là tệp Word, Excel hoặc PowerPoint hợp lệ.",
+    "error.NO_IMAGES": "Tài liệu này không chứa hình ảnh nào.",
+    "error.BAD_IMAGE": "Không thể đọc một trong các hình ảnh. Hãy thử dùng JPG hoặc PNG.",
+    "error.PDF_PASSWORD": "Tệp PDF này được bảo vệ bằng mật khẩu. Hãy xóa mật khẩu bằng công cụ Mở khóa PDF trước.",
+    "error.BAD_SIZE": "Chiều rộng và chiều cao đều phải nằm trong khoảng từ 1 đến 16.384 pixel.",
+    "error.NO_TEXT": "Tệp PDF này không có văn bản để trích xuất — có thể đây là bản quét dạng hình ảnh. Hãy chạy công cụ OCR PDF trước, rồi thử lại.",
+    "error.NO_WATERMARK": "Nhập nội dung watermark (chữ cái, số và ký hiệu thông dụng).",
+    "error.ENGINE_FAILED": "Công cụ xử lý PDF đã dừng đột ngột — tệp có thể quá lớn đối với thiết bị này.",
+    "warning.BOOKMARKS_DROPPED": "Bookmark từ tệp thứ hai trở đi không được giữ lại. Bookmark của tệp đầu tiên vẫn được giữ nguyên.",
+    "warning.BOOKMARKS_BROKEN": "Một số bookmark trỏ đến các trang đã bị xóa, nên chúng không còn dẫn đến đâu nữa.",
+    "warning.TAGS_NOT_UPDATED": "Tệp PDF này có các thẻ hỗ trợ tiếp cận chưa được xây dựng lại cho các trang mới, nên cấu trúc dành cho trình đọc màn hình có thể chưa đầy đủ.",
+    "warning.SIGNATURES_INVALIDATED": "Các chữ ký số trong tệp PDF này sẽ không còn hợp lệ, vì tài liệu đã bị thay đổi.",
+    "warning.PASSWORD_REMOVED": "Tệp mới không có mật khẩu.",
+    "warning.PERMISSIONS_REMOVED": "Các hạn chế chỉnh sửa và in ấn của tệp gốc không được áp dụng cho tệp mới.",
+    "sum.page": "trang",
+    "sum.pages": "trang",
+    "sum.image": "hình ảnh",
+    "sum.images": "hình ảnh",
+    "sum.word": "từ",
+    "sum.words": "từ",
+    "sum.slide": "trang trình chiếu",
+    "sum.slides": "trang trình chiếu",
+    "sum.row": "hàng",
+    "sum.rows": "hàng",
+    "sum.sheet": "trang tính",
+    "sum.sheets": "trang tính",
+    "sum.edit": "chỉnh sửa",
+    "sum.edits": "chỉnh sửa",
+    "sum.recognized": "đã nhận dạng",
+    "sum.numbered": "đã đánh số",
+    "sum.watermarked": "đã thêm watermark",
+    "sum.smaller": "nhỏ hơn",
+    "sum.Already optimized": "Đã được tối ưu",
+    "sum.Metadata removed": "Đã xóa metadata",
+    "ed.tools": "Công cụ chỉnh sửa",
+    "ed.editText": "Sửa văn bản",
+    "ed.addText": "Thêm văn bản",
+    "ed.whiteout": "Che trắng",
+    "ed.undo": "Hoàn tác",
+    "ed.undoLabel": "Hoàn tác chỉnh sửa gần nhất",
+    "ed.zoomOut": "Thu nhỏ",
+    "ed.zoomIn": "Phóng to",
+    "ed.page": "Trang {n} / {total}",
+    "ed.editRun": "Sửa văn bản: {text}",
+    "ed.move": "Kéo để di chuyển",
+    "ed.removeBox": "Xóa hộp văn bản",
+    "ed.replaced": "Một số ký tự không được các phông chữ PDF chuẩn hỗ trợ nên đã được thay thế.",
+    "ed.hint": "Văn bản bị che chỉ ẩn đi, không bị xóa khỏi tệp — với dữ liệu nhạy cảm, hãy xóa cả trang thay vì che.",
+    "ocr.copyAll": "Sao chép toàn bộ văn bản",
+    "ocr.copied": "Đã sao chép",
+    "ocr.text": "Văn bản đã nhận dạng"
+  },
+  "home": {
+    "title": "Fizzdoc — Công cụ PDF, Word, Excel & Ảnh riêng tư, không tải lên",
+    "description": "Chỉnh sửa, nén, chuyển đổi, OCR và ghép PDF; chuyển đổi Word, Excel và ảnh — ngay trong trình duyệt. Không tải lên, không đăng ký, miễn phí và mã nguồn mở.",
+    "h1": "Công cụ tài liệu không bao giờ nhìn thấy tài liệu của bạn",
+    "lede": "Chỉnh sửa, nén, chuyển đổi và OCR PDF. Chuyển đổi Word, Excel, PowerPoint và ảnh. Mọi thứ chạy ngay trong trình duyệt — tệp của bạn không bao giờ rời khỏi thiết bị.",
+    "what": "Fizzdoc là bộ công cụ xử lý tài liệu miễn phí, mã nguồn mở, chạy hoàn toàn trong trình duyệt web của bạn. Tệp PDF được xử lý bằng các engine qpdf, pdf.js và pdf-lib, nhận dạng văn bản dùng Tesseract, còn tệp Office và hình ảnh cũng được xử lý ngay tại chỗ — nên không có gì bao giờ được tải lên máy chủ.",
+    "faq": [
+      [
+        "Tệp của tôi có được tải lên đâu không?",
+        "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, bằng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, và kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+      ],
+      [
+        "Fizzdoc khác gì so với iLovePDF, Smallpdf hay các công cụ trực tuyến của Adobe?",
+        "Những dịch vụ đó tải tài liệu của bạn lên máy chủ để xử lý. Fizzdoc thì xử lý ngay trong tab trình duyệt, nên không có gì để tải lên, lưu trữ hay xóa sau đó. Fizzdoc cũng là mã nguồn mở, và luôn cảnh báo bạn khi có thứ gì đó — chẳng hạn một bookmark — không thể giữ lại được, thay vì âm thầm bỏ qua."
+      ],
+      [
+        "Có dùng được với Google Docs, Sheets và Slides không?",
+        "Có. Tải tệp từ Google về dưới dạng Word, Excel hoặc PowerPoint (File → Download) rồi dùng công cụ Fizzdoc tương ứng. Không có gì được gửi tới Google hay tới Fizzdoc."
+      ],
+      [
+        "Có dùng được trên điện thoại không?",
+        "Có. Fizzdoc hoạt động trên các phiên bản hiện tại của Chrome, Safari, Firefox và Edge, cả trên máy tính lẫn điện thoại. Các tệp rất lớn có thể vượt quá bộ nhớ của điện thoại; Fizzdoc sẽ kiểm tra điều này trước khi bắt đầu."
+      ],
+      [
+        "Fizzdoc có miễn phí không?",
+        "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+      ]
+    ]
+  },
+  "tools": {
+    "merge-pdf": {
+      "name": "Ghép PDF",
+      "summary": "Gộp nhiều tệp PDF thành một, theo thứ tự bạn chọn.",
+      "action": "Ghép PDF",
+      "title": "Ghép PDF Trực Tuyến, Riêng Tư — Không Tải Lên, Miễn Phí | Fizzdoc",
+      "description": "Gộp các tệp PDF ngay trong trình duyệt. Không gì được tải lên, trường biểu mẫu và liên kết vẫn giữ nguyên. Miễn phí, không đăng ký, mã nguồn mở.",
+      "h1": "Ghép các tệp PDF mà không cần tải lên",
+      "lede": "Gộp nhiều tệp PDF thành một tài liệu ngay trong trình duyệt. Không có gì được gửi tới máy chủ, và các trường biểu mẫu cùng liên kết nội bộ vẫn còn nguyên sau khi ghép.",
+      "steps": [
+        "Thêm từ hai tệp PDF trở lên — kéo thả vào hoặc bấm để chọn.",
+        "Sắp xếp thứ tự bằng các nút ↑ và ↓.",
+        "Bấm “Ghép PDF” và tải xuống tệp đã gộp."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Bookmark, trường biểu mẫu và liên kết có được giữ lại không?",
+          "Trường biểu mẫu và liên kết nội bộ của mọi tệp đều được giữ lại. Bookmark của tệp đầu tiên được giữ nguyên; bookmark của các tệp còn lại chưa thể gộp được, và Fizzdoc sẽ báo cho bạn biết khi điều đó xảy ra thay vì âm thầm bỏ qua."
+        ],
+        [
+          "Có thể ghép các PDF có mật khẩu không?",
+          "Có. Bạn sẽ được hỏi mật khẩu ngay trên thiết bị, và tệp sau khi ghép được lưu mà không có mật khẩu."
+        ],
+        [
+          "Có giới hạn dung lượng không?",
+          "Không có giới hạn số trang. Giới hạn dung lượng phụ thuộc vào bộ nhớ thiết bị của bạn — thường là vài trăm megabyte tổng cộng — và Fizzdoc sẽ báo trước nếu một tác vụ quá lớn so với thiết bị của bạn."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "split-pdf": {
+      "name": "Tách PDF",
+      "summary": "Trích xuất các trang bạn cần thành một tệp PDF mới.",
+      "action": "Trích xuất trang",
+      "title": "Tách PDF & Trích Xuất Trang Riêng Tư — Không Tải Lên | Fizzdoc",
+      "description": "Trích xuất trang từ PDF ngay trong trình duyệt. Chọn khoảng trang như 1-3, 8 — tệp của bạn không rời khỏi thiết bị. Miễn phí, không đăng ký, mã nguồn mở.",
+      "h1": "Tách PDF và trích xuất trang — hoàn toàn riêng tư",
+      "lede": "Lấy ra đúng những trang bạn cần thành một tệp PDF mới. Nhập khoảng trang như “1-3, 8”; thứ tự bạn nhập chính là thứ tự bạn nhận được.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Nhập các trang cần giữ, ví dụ “1-3, 8” hoặc “5-” để lấy từ trang 5 đến hết.",
+        "Bấm “Trích xuất trang” và tải xuống tệp PDF mới."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có thể sắp xếp lại trang khi trích xuất không?",
+          "Có. Các trang ra theo đúng thứ tự bạn nhập, nên “3, 1-2” sẽ đưa trang 3 lên đầu."
+        ],
+        [
+          "Bookmark và trường biểu mẫu sẽ ra sao?",
+          "Bookmark được giữ lại. Nếu một bookmark trỏ tới trang bạn không giữ, Fizzdoc sẽ cảnh báo. Trường biểu mẫu trên các trang bị loại bỏ sẽ được xóa gọn gàng."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "rotate-pdf": {
+      "name": "Xoay PDF",
+      "summary": "Xoay các trang bị lệch về đúng chiều, vĩnh viễn.",
+      "action": "Xoay trang",
+      "title": "Xoay Trang PDF Vĩnh Viễn — Không Tải Lên | Fizzdoc",
+      "description": "Xoay tất cả hoặc một số trang PDF theo góc 90°, 180° hoặc 270° và lưu kết quả. Chạy trong trình duyệt; tệp không bao giờ được tải lên.",
+      "h1": "Xoay trang PDF và lưu lại đúng chiều",
+      "lede": "Sửa các bản quét bị lệch chiều vĩnh viễn. Xoay toàn bộ hoặc chỉ những trang bạn chọn — không cần vẽ lại nội dung, nên chất lượng không đổi.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Chọn góc xoay và, nếu muốn, những trang cần xoay.",
+        "Bấm “Xoay trang” và tải xuống tệp PDF đã sửa."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Xoay trang có làm giảm chất lượng không?",
+          "Không. Fizzdoc chỉ thay đổi thông số xoay của mỗi trang; nội dung trang không bị vẽ lại hay nén lại."
+        ],
+        [
+          "Có thể chỉ xoay một số trang không?",
+          "Có. Nhập các trang như “2, 5-7”, hoặc để trống để xoay toàn bộ các trang."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "delete-pdf-pages": {
+      "name": "Xóa trang PDF",
+      "summary": "Loại bỏ những trang bạn không muốn chia sẻ.",
+      "action": "Xóa trang",
+      "title": "Xóa Trang Khỏi PDF — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Loại bỏ các trang không cần thiết khỏi PDF ngay trong trình duyệt. Nhập các trang cần xóa; tệp không bao giờ rời khỏi thiết bị. Miễn phí và mã nguồn mở.",
+      "h1": "Xóa trang khỏi PDF — hoàn toàn riêng tư",
+      "lede": "Loại bỏ các trang trắng, trùng lặp hoặc chứa nội dung nhạy cảm trước khi chia sẻ tài liệu, mà không cần đưa cho ai xử lý.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Nhập các trang cần xóa, ví dụ “2, 7-9”.",
+        "Bấm “Xóa trang” và tải xuống tệp PDF đã rút gọn."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Các trang bị xóa có thực sự biến mất không?",
+          "Có. Các trang đã xóa không được ghi vào tệp mới. Tệp gốc trên thiết bị của bạn không hề bị thay đổi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "unlock-pdf": {
+      "name": "Mở khóa PDF",
+      "summary": "Lưu một bản không còn mật khẩu bạn đang biết.",
+      "action": "Xóa mật khẩu",
+      "title": "Xóa Mật Khẩu PDF (Mở Khóa PDF) — Không Tải Lên | Fizzdoc",
+      "description": "Xóa mật khẩu khỏi một tệp PDF mà bạn có quyền mở. Quá trình giải mã diễn ra ngay trên thiết bị, không có gì được tải lên. Miễn phí, không đăng ký.",
+      "h1": "Xóa mật khẩu PDF — ngay trên thiết bị của bạn",
+      "lede": "Lưu một bản không còn khóa của tệp PDF được bảo vệ mà bạn đã có thể mở. Mật khẩu và tài liệu đều chỉ ở lại trên thiết bị của bạn.",
+      "steps": [
+        "Thêm tệp PDF được bảo vệ.",
+        "Bấm “Xóa mật khẩu” và nhập mật khẩu khi được hỏi.",
+        "Tải xuống bản đã mở khóa."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Fizzdoc có thể phá một mật khẩu tôi không biết không?",
+          "Không. Fizzdoc chỉ gỡ bảo vệ khi bạn biết mật khẩu, hoặc khi PDF mở được mà không cần mật khẩu và chỉ hạn chế chỉnh sửa hay in ấn. Chỉ mở khóa những tệp bạn có quyền chỉnh sửa."
+        ],
+        [
+          "Mật khẩu của tôi có được gửi đi đâu không?",
+          "Không. Mật khẩu được nhập ngay trên trang này và chỉ được engine chạy trong tab trình duyệt của bạn sử dụng. Nó không được lưu trữ hay ghi lại."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "protect-pdf": {
+      "name": "Đặt mật khẩu PDF",
+      "summary": "Khóa một PDF bằng mật khẩu và mã hóa AES-256.",
+      "action": "Đặt mật khẩu PDF",
+      "title": "Đặt Mật Khẩu Cho PDF Với AES-256 — Không Tải Lên | Fizzdoc",
+      "description": "Thêm mật khẩu cho PDF với mã hóa AES-256, ngay trong trình duyệt. Tệp và mật khẩu không bao giờ rời khỏi thiết bị. Miễn phí, không đăng ký.",
+      "h1": "Đặt mật khẩu cho PDF — ngay trên thiết bị của bạn",
+      "lede": "Mã hóa một PDF bằng AES-256 để chỉ mở được bằng mật khẩu của bạn. Mã hóa diễn ra ngay trong tab này; cả tệp lẫn mật khẩu đều không được gửi đi đâu.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Nhập mật khẩu hai lần.",
+        "Bấm “Đặt mật khẩu PDF” và tải xuống bản đã mã hóa."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Mức bảo vệ mạnh đến đâu?",
+          "Fizzdoc dùng AES-256, mức mã hóa mạnh nhất mà chuẩn PDF quy định, thông qua engine qpdf. Tệp mở được trên mọi trình đọc PDF hiện đại, kể cả Adobe Acrobat, Chrome, Edge, Firefox và Preview."
+        ],
+        [
+          "Nếu tôi quên mật khẩu thì sao?",
+          "Mật khẩu không thể khôi phục — không Fizzdoc, không ai khác làm được. Hãy lưu giữ mật khẩu ở nơi an toàn, chẳng hạn trình quản lý mật khẩu."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "remove-pdf-metadata": {
+      "name": "Xóa Metadata PDF",
+      "summary": "Xóa tác giả, tiêu đề, phần mềm tạo và thông tin XMP.",
+      "action": "Xóa metadata",
+      "title": "Xóa Metadata PDF (Tác Giả, Tiêu Đề, XMP) — Không Tải Lên | Fizzdoc",
+      "description": "Xóa metadata ẩn của PDF như tác giả, tiêu đề, ứng dụng tạo và dữ liệu XMP trước khi chia sẻ tệp. Chạy trong trình duyệt; không có gì được tải lên.",
+      "h1": "Xóa metadata ẩn khỏi một tệp PDF",
+      "lede": "PDF âm thầm ghi lại ai đã tạo ra nó, bằng ứng dụng nào, và khi nào. Hãy xóa tác giả, tiêu đề, chủ đề, từ khóa, phần mềm tạo và metadata XMP trước khi chia sẻ.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Xóa metadata”.",
+        "Tải xuống bản đã làm sạch."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Chính xác thì những gì bị xóa?",
+          "Document information dictionary (tác giả, tiêu đề, chủ đề, từ khóa, creator và producer) cùng luồng metadata XMP. Chỉ ngày chỉnh sửa được giữ lại, vì tệp thực sự vừa được chỉnh sửa. Nội dung trang không bị đụng đến."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "jpg-to-pdf": {
+      "name": "JPG sang PDF",
+      "summary": "Biến ảnh chụp và bản quét thành một tệp PDF.",
+      "action": "Tạo PDF",
+      "title": "Chuyển JPG sang PDF — Riêng Tư, Không Tải Lên, Miễn Phí | Fizzdoc",
+      "description": "Chuyển JPG, PNG, WebP và các ảnh khác thành một tệp PDF ngay trong trình duyệt. Ảnh không bao giờ rời khỏi thiết bị. Không watermark, không đăng ký.",
+      "h1": "Chuyển ảnh JPG và PNG sang PDF — hoàn toàn riêng tư",
+      "lede": "Gộp ảnh chụp, ảnh chụp màn hình và bản quét thành một tệp PDF, mỗi ảnh một trang, giữ nguyên độ phân giải. Ảnh của bạn luôn ở lại trên thiết bị.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh — JPG, PNG, WebP, GIF và nhiều định dạng khác.",
+        "Sắp xếp thứ tự bằng các nút ↑ và ↓.",
+        "Bấm “Tạo PDF” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Chất lượng ảnh có bị giảm không?",
+          "Không. Ảnh JPG và PNG được đưa vào PDF nguyên trạng, không nén lại. Các định dạng khác được chuyển đổi một lần với chất lượng cao."
+        ],
+        [
+          "Có thể chuyển ảnh chụp từ iPhone không?",
+          "Có, nếu trình duyệt của bạn hiển thị được ảnh đó. Safari mở trực tiếp ảnh HEIC; trên các trình duyệt khác, hãy chia sẻ ảnh dưới dạng JPG trước."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "pdf-to-jpg": {
+      "name": "PDF sang JPG",
+      "summary": "Lưu mỗi trang thành một ảnh JPG sắc nét.",
+      "action": "Chuyển sang JPG",
+      "title": "Chuyển PDF sang JPG — Riêng Tư, Không Tải Lên, Miễn Phí | Fizzdoc",
+      "description": "Chuyển mỗi trang PDF thành một ảnh JPG chất lượng cao ngay trong trình duyệt. Không có gì được tải lên. Nhiều trang tải xuống dưới dạng một tệp ZIP.",
+      "h1": "Chuyển trang PDF sang ảnh JPG — hoàn toàn riêng tư",
+      "lede": "Kết xuất mỗi trang thành ảnh JPG sắc nét 150 DPI bằng pdf.js của Mozilla, ngay trong trình duyệt này. PDF nhiều trang tải xuống dưới dạng một tệp ZIP.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Chuyển sang JPG”.",
+        "Tải xuống ảnh, hoặc một tệp ZIP chứa mỗi trang một ảnh."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Độ phân giải của ảnh là bao nhiêu?",
+          "150 DPI — sắc nét trên màn hình và đủ tốt để in ở kích thước gốc. Một trang A4 trở thành ảnh 1240 × 1754 pixel."
+        ],
+        [
+          "Có dùng được với PDF có mật khẩu không?",
+          "Hãy xóa mật khẩu trước bằng công cụ Mở khóa PDF, rồi mới chuyển đổi. Cả hai bước đều diễn ra trên thiết bị của bạn."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "compress-pdf": {
+      "name": "Nén PDF",
+      "summary": "Giảm dung lượng PDF bằng cách tối ưu hình ảnh. Văn bản vẫn sắc nét.",
+      "action": "Nén PDF",
+      "title": "Nén PDF Trực Tuyến Mà Không Cần Tải Lên — Miễn Phí | Fizzdoc",
+      "description": "Giảm dung lượng PDF ngay trong trình duyệt bằng cách nén lại các ảnh quá lớn. Văn bản vẫn chọn được và sắc nét. Không tải lên; miễn phí và mã nguồn mở.",
+      "h1": "Nén PDF — mà không cần tải lên",
+      "lede": "Làm nhỏ một PDF đủ để gửi email hoặc tải lên một cổng thông tin. Fizzdoc nén lại ảnh chụp và bản quét quá lớn, giữ nguyên văn bản và hình vector.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Chọn mức nén Cân bằng hoặc Nén mạnh.",
+        "Bấm “Nén PDF” và tải xuống tệp nhỏ hơn."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "PDF của tôi sẽ nhỏ đi bao nhiêu?",
+          "Các PDF tạo từ bản quét và ảnh chụp thường giảm 40–80% dung lượng. Các PDF chỉ có văn bản thường đã gọn nhẹ sẵn; nếu Fizzdoc không thể làm tệp nhỏ hơn, nó sẽ báo cho bạn và giữ nguyên bản gốc."
+        ],
+        [
+          "Văn bản có bị mờ không?",
+          "Không. Chỉ có ảnh được nhúng mới bị nén lại. Văn bản, phông chữ và hình vector được sao chép nguyên vẹn, nên văn bản vẫn sắc nét và chọn được."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "edit-pdf": {
+      "name": "Chỉnh sửa PDF",
+      "summary": "Sửa văn bản có sẵn, thêm văn bản mới và che trắng, ngay trên trang.",
+      "action": "Lưu PDF",
+      "title": "Chỉnh Sửa Văn Bản PDF Trực Tuyến — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Bấm vào bất kỳ đoạn văn bản nào trong PDF để sửa, thêm văn bản mới, hoặc che trắng — ngay trên trang, trong trình duyệt. Không tải lên. Miễn phí, không đăng ký.",
+      "h1": "Chỉnh sửa văn bản PDF trực tiếp trên trang",
+      "lede": "Sửa lỗi đánh máy, cập nhật ngày tháng hoặc điền vào chỗ trống mà không cần tệp gốc. Bấm vào văn bản muốn sửa rồi gõ — mọi thứ diễn ra trên thiết bị của bạn.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm vào bất kỳ văn bản nào để sửa, hoặc dùng Thêm văn bản và Che trắng trên thanh công cụ.",
+        "Bấm “Lưu PDF” và tải xuống tệp đã chỉnh sửa."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Văn bản đã sửa có khớp với phông chữ gốc không?",
+          "Fizzdoc chọn phông chữ chuẩn gần giống nhất (sans-serif, serif hoặc monospace, có in đậm và in nghiêng) ở cùng cỡ chữ và vị trí. Các phông chữ thương hiệu tùy chỉnh không thể tái tạo chính xác."
+        ],
+        [
+          "Văn bản gốc có bị xóa không?",
+          "Văn bản gốc chỉ bị che trên trang và văn bản mới được vẽ đè lên trên. Với thông tin nhạy cảm cần biến mất hoàn toàn khỏi tệp, hãy xóa cả trang hoặc tạo lại tài liệu."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "ocr-pdf": {
+      "name": "OCR PDF",
+      "summary": "Biến PDF dạng bản quét thành tài liệu có thể tìm kiếm và sao chép.",
+      "action": "Nhận dạng văn bản",
+      "title": "OCR PDF — Biến PDF Quét Thành Có Thể Tìm Kiếm, Không Tải Lên | Fizzdoc",
+      "description": "Biến PDF quét thành tài liệu có thể tìm kiếm và sao chép bằng OCR tiếng Anh chạy trong trình duyệt. Trang giữ nguyên chất lượng gốc. Không tải lên.",
+      "h1": "Biến PDF dạng bản quét thành có thể tìm kiếm bằng OCR",
+      "lede": "Nhận dạng văn bản tiếng Anh trên các trang quét và thêm nó dưới dạng một lớp vô hình, để bạn có thể tìm kiếm, chọn và sao chép. Bản thân các trang không bị thay đổi.",
+      "steps": [
+        "Thêm một PDF dạng bản quét.",
+        "Bấm “Nhận dạng văn bản” và chờ trong khi từng trang được đọc.",
+        "Tải xuống PDF có thể tìm kiếm."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Hỗ trợ những ngôn ngữ nào?",
+          "Tiếng Anh. Engine nhận dạng (Tesseract) cùng dữ liệu ngôn ngữ tiếng Anh của nó được tải về trình duyệt của bạn một lần duy nhất, vào lần đầu bạn dùng một công cụ OCR — khoảng vài megabyte."
+        ],
+        [
+          "OCR có làm thay đổi hình thức các trang không?",
+          "Không. Các trang quét được giữ nguyên như cũ; văn bản nhận dạng được thêm vào dưới dạng một lớp vô hình phía trên."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "pdf-to-word": {
+      "name": "PDF sang Word",
+      "summary": "Biến văn bản PDF thành tệp .docx có thể chỉnh sửa.",
+      "action": "Chuyển sang Word",
+      "title": "Chuyển PDF Sang Word (DOCX) — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển PDF thành tài liệu Word có thể chỉnh sửa ngay trong trình duyệt. Giữ nguyên tiêu đề, đoạn văn và ngắt trang. Không tải lên. Miễn phí, không đăng ký.",
+      "h1": "Chuyển PDF thành tài liệu Word có thể chỉnh sửa",
+      "lede": "Lấy văn bản từ PDF sang Word, với tiêu đề và đoạn văn được dựng lại, để bạn có thể chỉnh sửa. Việc chuyển đổi diễn ra ngay trên thiết bị của bạn.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Chuyển sang Word”.",
+        "Tải xuống tệp .docx và mở bằng Word, Google Docs hoặc LibreOffice."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Bố cục có giống hệt PDF không?",
+          "Fizzdoc dựng lại luồng văn bản — tiêu đề, đoạn văn, in đậm, in nghiêng và ngắt trang — để tài liệu dễ chỉnh sửa. Các bố cục phức tạp với cột, bảng và hình ảnh sẽ được đơn giản hóa."
+        ],
+        [
+          "Còn PDF dạng bản quét thì sao?",
+          "Trang quét là hình ảnh, không phải văn bản. Hãy chạy OCR PDF trước, rồi mới chuyển kết quả sang Word."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "pdf-to-powerpoint": {
+      "name": "PDF sang PowerPoint",
+      "summary": "Biến mỗi trang PDF thành một slide.",
+      "action": "Chuyển sang PowerPoint",
+      "title": "Chuyển PDF Sang PowerPoint (PPTX) — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển PDF thành bản trình chiếu PowerPoint với mỗi trang là một slide sắc nét, ngay trong trình duyệt. Không tải lên. Miễn phí và mã nguồn mở.",
+      "h1": "Chuyển PDF thành bản trình chiếu PowerPoint",
+      "lede": "Trình bày một PDF dưới dạng slide. Mỗi trang trở thành một slide toàn khổ, độ phân giải cao trong tệp .pptx bạn có thể mở bằng PowerPoint, Keynote hoặc Google Slides.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Chuyển sang PowerPoint”.",
+        "Tải xuống tệp .pptx."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có thể chỉnh sửa văn bản trên slide không?",
+          "Mỗi slide là một hình ảnh của trang, nên trông giống hệt bản PDF. Để sửa nội dung chữ, hãy dùng PDF sang Word, hoặc thêm hộp văn bản đè lên trong PowerPoint."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "pdf-to-text": {
+      "name": "PDF sang văn bản",
+      "summary": "Trích xuất toàn bộ văn bản từ PDF thành một tệp .txt.",
+      "action": "Trích xuất văn bản",
+      "title": "Chuyển PDF Sang Văn Bản (TXT) — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Trích xuất văn bản từ PDF thành một tệp .txt thuần túy ngay trong trình duyệt, đúng thứ tự đọc. Không tải lên. Miễn phí, không đăng ký, mã nguồn mở.",
+      "h1": "Trích xuất văn bản từ PDF",
+      "lede": "Lấy toàn bộ chữ trong PDF ra dưới dạng văn bản thuần túy, với các dòng và đoạn văn theo đúng thứ tự đọc. Hoàn hảo để sao chép, tìm kiếm hoặc đưa vào công cụ khác.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Trích xuất văn bản”.",
+        "Tải xuống tệp .txt."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Vì sao tệp văn bản của tôi trống?",
+          "PDF dạng bản quét chứa hình ảnh của văn bản, không phải văn bản thật. Hãy chạy OCR PDF trước, rồi mới trích xuất văn bản."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "pdf-to-markdown": {
+      "name": "PDF sang Markdown",
+      "summary": "Chuyển PDF thành Markdown gọn gàng với tiêu đề và danh sách.",
+      "action": "Chuyển sang Markdown",
+      "title": "Chuyển PDF Sang Markdown — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển PDF sang Markdown với tiêu đề và danh sách được nhận diện, sẵn sàng cho tài liệu, ghi chú hay công cụ AI. Chạy trong trình duyệt, không tải lên.",
+      "h1": "Chuyển PDF sang Markdown",
+      "lede": "Biến một PDF thành Markdown gọn gàng — tiêu đề, đoạn văn và danh sách — dùng cho Notion, Obsidian, GitHub hay bất kỳ công cụ nào đọc Markdown.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Chuyển sang Markdown”.",
+        "Tải xuống tệp .md."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tiêu đề được nhận diện thế nào?",
+          "Dựa trên cỡ chữ: những dòng có cỡ chữ lớn hơn rõ rệt so với phần nội dung sẽ trở thành tiêu đề, còn các dòng có gạch đầu dòng hoặc đánh số sẽ trở thành danh sách."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "text-to-pdf": {
+      "name": "Văn bản sang PDF",
+      "summary": "Biến một tệp .txt thành PDF gọn gàng.",
+      "action": "Tạo PDF",
+      "title": "Chuyển Văn Bản Sang PDF (TXT Sang PDF) — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển tệp văn bản thuần túy thành PDF gọn gàng, dễ đọc ngay trong trình duyệt. Hỗ trợ mọi ngôn ngữ, kể cả tiếng Hindi và các chữ viết khác. Không tải lên.",
+      "h1": "Chuyển tệp văn bản sang PDF",
+      "lede": "Biến ghi chú, nhật ký hoặc bất kỳ tệp .txt nào thành một PDF khổ A4 trình bày gọn gàng. Hỗ trợ mọi ngôn ngữ và bảng chữ cái.",
+      "steps": [
+        "Thêm một tệp .txt.",
+        "Bấm “Tạo PDF”.",
+        "Chọn “Save as PDF” trong cửa sổ mở ra và bấm Save."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Vì sao lại mở ra cửa sổ in?",
+          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Save as PDF” làm nơi lưu và bấm Save. Không có gì được in ra hay gửi đi đâu cả."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "markdown-to-pdf": {
+      "name": "Markdown sang PDF",
+      "summary": "Kết xuất một tệp .md thành PDF được định dạng đẹp mắt.",
+      "action": "Tạo PDF",
+      "title": "Chuyển Markdown Sang PDF — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển Markdown thành PDF được định dạng đẹp với tiêu đề, danh sách, bảng và khối mã, ngay trong trình duyệt. Không tải lên. Miễn phí và mã nguồn mở.",
+      "h1": "Chuyển Markdown sang PDF",
+      "lede": "Kết xuất một README, ghi chú hay tài liệu viết bằng Markdown thành PDF gọn gàng, có thể in, với tiêu đề, danh sách, bảng và khối mã.",
+      "steps": [
+        "Thêm một tệp .md.",
+        "Bấm “Tạo PDF”.",
+        "Chọn “Save as PDF” trong cửa sổ mở ra và bấm Save."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Những tính năng Markdown nào được hỗ trợ?",
+          "Tiêu đề, in đậm, in nghiêng, mã nội dòng và khối mã, danh sách có thứ tự và không thứ tự, trích dẫn, liên kết, đường kẻ ngang và bảng. HTML thô được hiển thị dưới dạng văn bản thuần vì lý do an toàn."
+        ],
+        [
+          "Vì sao lại mở ra cửa sổ in?",
+          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Save as PDF” làm nơi lưu và bấm Save. Không có gì được in ra hay gửi đi đâu cả."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "word-to-pdf": {
+      "name": "Word sang PDF",
+      "summary": "Chuyển .docx sang PDF, hỗ trợ mọi ngôn ngữ.",
+      "action": "Chuyển sang PDF",
+      "title": "Chuyển Word Sang PDF (DOCX Sang PDF) — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển tài liệu Word sang PDF ngay trong trình duyệt, giữ nguyên tiêu đề, danh sách, bảng và hình ảnh. Dùng được với tệp tải từ Google Docs. Không tải lên.",
+      "h1": "Chuyển tài liệu Word sang PDF",
+      "lede": "Biến một .docx thành PDF với tiêu đề, danh sách, bảng và hình ảnh, dùng công cụ ghi PDF sẵn có của trình duyệt. Tài liệu không bao giờ rời khỏi thiết bị của bạn.",
+      "steps": [
+        "Thêm một tệp .docx (từ Word hoặc Google Docs).",
+        "Bấm “Chuyển sang PDF”.",
+        "Chọn “Save as PDF” trong cửa sổ mở ra và bấm Save."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Kết quả có giống hệt trong Word không?",
+          "Văn bản, tiêu đề, danh sách, bảng, liên kết và hình ảnh đều được giữ lại. Header, footer và các bố cục nâng cao như hộp văn bản hay đoạn nhiều cột sẽ được đơn giản hóa."
+        ],
+        [
+          "Vì sao lại mở ra cửa sổ in?",
+          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Save as PDF” làm nơi lưu và nhấn Save. Không có gì được in ra hay gửi đi đâu cả."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "excel-to-csv": {
+      "name": "Excel sang CSV",
+      "summary": "Xuất mọi trang tính của một .xlsx ra CSV.",
+      "action": "Chuyển sang CSV",
+      "title": "Chuyển Excel Sang CSV (XLSX Sang CSV) — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển bảng tính Excel sang CSV ngay trong trình duyệt. Mọi trang tính được xuất, ngày tháng thành định dạng ISO, không tải lên. Dùng được với Google Sheets.",
+      "h1": "Chuyển Excel sang CSV",
+      "lede": "Xuất mỗi trang tính của một workbook .xlsx thành tệp CSV chuẩn UTF-8, mở đúng ở mọi nơi. Ngày tháng, số và văn bản được giữ nguyên như cũ.",
+      "steps": [
+        "Thêm một tệp .xlsx (từ Excel hoặc Google Sheets).",
+        "Bấm “Chuyển sang CSV”.",
+        "Tải xuống tệp CSV, hoặc một ZIP chứa mỗi trang tính một CSV."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Công thức sẽ ra sao?",
+          "CSV chỉ lưu giá trị, nên giá trị tính toán cuối cùng của mỗi ô sẽ được xuất ra — đúng như cách Excel làm."
+        ],
+        [
+          "Ký tự không phải tiếng Anh có được giữ lại không?",
+          "Có. Tệp CSV ở định dạng UTF-8 kèm byte-order mark, nên Excel, Google Sheets và các ứng dụng khác đọc đúng dấu và các bảng chữ cái không phải Latin."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "csv-to-excel": {
+      "name": "CSV sang Excel",
+      "summary": "Biến một .csv thành workbook .xlsx thực thụ.",
+      "action": "Chuyển sang Excel",
+      "title": "Chuyển CSV Sang Excel (CSV Sang XLSX) — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển tệp CSV thành workbook Excel .xlsx ngay trong trình duyệt. Số vẫn là số, số 0 đứng đầu được giữ nguyên, không tải lên. Miễn phí.",
+      "h1": "Chuyển CSV sang Excel",
+      "lede": "Biến một CSV thành workbook Excel thực thụ. Số trở thành số, các mã như 007 giữ nguyên số 0 đứng đầu, và ký tự phân tách được tự động nhận diện.",
+      "steps": [
+        "Thêm một tệp .csv.",
+        "Bấm “Chuyển sang Excel”.",
+        "Tải xuống tệp .xlsx."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có xử lý được dấu chấm phẩy và tab không?",
+          "Có. Dấu phẩy, chấm phẩy, tab và dấu gạch đứng đều được tự động nhận diện, cũng như các trường có dấu ngoặc kép chứa xuống dòng bên trong."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "compress-image": {
+      "name": "Nén ảnh",
+      "summary": "Giảm dung lượng ảnh JPG, PNG và WebP.",
+      "action": "Nén ảnh",
+      "title": "Nén Ảnh (JPG, PNG, WebP) — Không Tải Lên, Miễn Phí | Fizzdoc",
+      "description": "Giảm dung lượng ảnh JPG, PNG, WebP ngay trong trình duyệt, hàng loạt. Chọn mức chất lượng hoặc giữ không mất chất lượng. Ảnh không bao giờ được tải lên.",
+      "h1": "Nén ảnh mà không cần tải lên",
+      "lede": "Giảm dung lượng ảnh chụp và ảnh chụp màn hình để gửi email, đăng web hoặc điền vào biểu mẫu. Chọn mức chất lượng, hoặc giữ không mất chất lượng — tất cả trên thiết bị của bạn, hàng loạt.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh.",
+        "Chọn định dạng đầu ra và chất lượng.",
+        "Bấm “Nén ảnh” và tải xuống kết quả."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có thể nén mà không mất chất lượng không?",
+          "Có. Chọn PNG để có kết quả không mất chất lượng, sắc nét từng pixel. Với ảnh chụp, JPG hoặc WebP ở chất lượng 80% thường trông y hệt mà nhỏ hơn nhiều."
+        ],
+        [
+          "Dữ liệu vị trí có bị xóa không?",
+          "Có. Việc mã hóa lại loại bỏ metadata EXIF ẩn như vị trí GPS và thông tin máy ảnh."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "resize-image": {
+      "name": "Đổi kích thước ảnh",
+      "summary": "Phóng to hoặc thu nhỏ ảnh, theo pixel hoặc phần trăm.",
+      "action": "Đổi kích thước ảnh",
+      "title": "Đổi Kích Thước Ảnh Trực Tuyến — Không Tải Lên, Miễn Phí | Fizzdoc",
+      "description": "Đổi kích thước ảnh theo pixel hoặc phần trăm — nhỏ hơn hoặc lớn hơn — ngay trong trình duyệt, hàng loạt. Giữ tỷ lệ khung hình hoặc không. Không tải lên.",
+      "h1": "Đổi kích thước ảnh — to hơn hoặc nhỏ hơn",
+      "lede": "Đặt chiều rộng và chiều cao chính xác hoặc chỉnh tỷ lệ theo phần trăm, cho một ảnh hoặc nhiều ảnh. Tỷ lệ khung hình được giữ nguyên trừ khi bạn chỉ định khác.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh.",
+        "Nhập kích thước mới hoặc một tỷ lệ phần trăm.",
+        "Bấm “Đổi kích thước ảnh” và tải xuống kết quả."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Phóng to ảnh có thêm chi tiết không?",
+          "Phóng to làm ảnh lớn hơn với thuật toán scale mượt, chất lượng cao, nhưng không thể tạo ra chi tiết vốn không được chụp lại. Rất phù hợp để đáp ứng yêu cầu kích thước tối thiểu."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "convert-image": {
+      "name": "Chuyển đổi ảnh",
+      "summary": "Chuyển đổi qua lại giữa JPG, PNG và WebP.",
+      "action": "Chuyển đổi ảnh",
+      "title": "Chuyển Đổi Ảnh Sang JPG, PNG Hoặc WebP — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển đổi ảnh giữa JPG, PNG và WebP ngay trong trình duyệt, hàng loạt. Dùng được với GIF, BMP, AVIF và ảnh iPhone trình duyệt mở được. Không tải lên.",
+      "h1": "Chuyển đổi ảnh sang JPG, PNG hoặc WebP",
+      "lede": "Đổi định dạng của một ảnh hoặc cả loạt ảnh — ví dụ WebP sang JPG hoặc PNG sang WebP — mà không cần gửi đi đâu cả.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh.",
+        "Chọn định dạng bạn cần.",
+        "Bấm “Chuyển đổi ảnh” và tải xuống kết quả."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Nên chọn định dạng nào?",
+          "JPG cho ảnh chụp cần mở được ở mọi nơi, PNG cho ảnh chụp màn hình và đồ họa cần cạnh sắc nét hoặc trong suốt, WebP để có tệp nhỏ nhất trên web."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "image-to-text": {
+      "name": "Ảnh sang văn bản (OCR)",
+      "summary": "Chọn và sao chép văn bản từ bất kỳ ảnh chụp hay ảnh chụp màn hình nào.",
+      "action": "Nhận dạng văn bản",
+      "title": "Ảnh Sang Văn Bản (OCR) — Sao Chép Chữ Từ Ảnh, Không Tải Lên | Fizzdoc",
+      "description": "Trích xuất văn bản từ ảnh chụp, ảnh chụp màn hình bằng OCR tiếng Anh trong trình duyệt, rồi chọn và sao chép ngay trên ảnh — giống Live Text. Không tải lên.",
+      "h1": "Sao chép văn bản từ bất kỳ ảnh nào",
+      "lede": "Nhận dạng văn bản tiếng Anh trong ảnh chụp, bản quét hoặc ảnh chụp màn hình, rồi chọn trực tiếp trên ảnh — giống hệt Live Text trên iPhone. Không có gì rời khỏi thiết bị của bạn.",
+      "steps": [
+        "Thêm một ảnh.",
+        "Bấm “Nhận dạng văn bản”.",
+        "Chọn văn bản ngay trên ảnh, sao chép toàn bộ, hoặc tải xuống dưới dạng tệp .txt."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Hỗ trợ những ngôn ngữ nào?",
+          "Tiếng Anh. Engine nhận dạng cùng dữ liệu tiếng Anh của nó được tải về trình duyệt một lần duy nhất, vào lần đầu bạn dùng OCR."
+        ],
+        [
+          "Làm sao để có kết quả tốt nhất?",
+          "Hãy dùng ảnh sắc nét, đủ sáng, chụp thẳng. Chữ in cho kết quả tốt nhất; chữ viết tay được nhận dạng kém tin cậy hơn."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "png-to-jpg": {
+      "name": "PNG sang JPG",
+      "summary": "Chuyển đổi ảnh PNG sang JPG hàng loạt.",
+      "action": "Chuyển sang JPG",
+      "title": "Chuyển PNG Sang JPG — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển ảnh PNG sang JPG ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
+      "h1": "Chuyển PNG sang JPG — hoàn toàn riêng tư",
+      "lede": "Tệp JPG nhỏ hơn nhiều so với ảnh chụp và mở được ở mọi nơi, kể cả phần mềm cũ và các biểu mẫu tải lên không nhận PNG. Fizzdoc chuyển đổi tệp PNG của bạn ngay trên thiết bị.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh PNG.",
+        "Chọn chất lượng, hoặc giữ mặc định.",
+        "Bấm “Chuyển sang JPG” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Vì sao nên chuyển PNG sang JPG?",
+          "Tệp JPG nhỏ hơn nhiều so với ảnh chụp và mở được ở mọi nơi, kể cả phần mềm cũ và các biểu mẫu tải lên không nhận PNG."
+        ],
+        [
+          "Có thể chuyển đổi nhiều ảnh cùng lúc không?",
+          "Có. Thêm bao nhiêu ảnh tùy thích; nhiều ảnh sẽ được tải xuống cùng nhau trong một tệp ZIP."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "jpg-to-png": {
+      "name": "JPG sang PNG",
+      "summary": "Chuyển đổi ảnh JPG sang PNG hàng loạt.",
+      "action": "Chuyển sang PNG",
+      "title": "Chuyển JPG Sang PNG — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển ảnh JPG sang PNG ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
+      "h1": "Chuyển JPG sang PNG — hoàn toàn riêng tư",
+      "lede": "PNG không mất chất lượng, nên ảnh sẽ không bị giảm chất lượng thêm khi bạn chỉnh sửa và lưu lại. Fizzdoc chuyển đổi tệp JPG của bạn ngay trên thiết bị.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh JPG.",
+        "Không cần chỉnh gì: PNG không mất chất lượng.",
+        "Bấm “Chuyển sang PNG” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Vì sao nên chuyển JPG sang PNG?",
+          "PNG không mất chất lượng, nên ảnh sẽ không bị giảm chất lượng thêm khi bạn chỉnh sửa và lưu lại."
+        ],
+        [
+          "Có thể chuyển đổi nhiều ảnh cùng lúc không?",
+          "Có. Thêm bao nhiêu ảnh tùy thích; nhiều ảnh sẽ được tải xuống cùng nhau trong một tệp ZIP."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "webp-to-jpg": {
+      "name": "WebP sang JPG",
+      "summary": "Chuyển đổi ảnh WebP sang JPG hàng loạt.",
+      "action": "Chuyển sang JPG",
+      "title": "Chuyển WebP Sang JPG — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển ảnh WebP sang JPG ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
+      "h1": "Chuyển WebP sang JPG — hoàn toàn riêng tư",
+      "lede": "Nhiều ứng dụng, máy in và biểu mẫu tải lên vẫn không mở được ảnh WebP tải từ các trang web. JPG thì mở được ở mọi nơi. Fizzdoc chuyển đổi tệp WebP của bạn ngay trên thiết bị.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh WebP.",
+        "Chọn chất lượng, hoặc giữ mặc định.",
+        "Bấm “Chuyển sang JPG” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Vì sao nên chuyển WebP sang JPG?",
+          "Nhiều ứng dụng, máy in và biểu mẫu tải lên vẫn không mở được ảnh WebP tải từ các trang web. JPG thì mở được ở mọi nơi."
+        ],
+        [
+          "Có thể chuyển đổi nhiều ảnh cùng lúc không?",
+          "Có. Thêm bao nhiêu ảnh tùy thích; nhiều ảnh sẽ được tải xuống cùng nhau trong một tệp ZIP."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "jpg-to-webp": {
+      "name": "JPG sang WebP",
+      "summary": "Chuyển đổi ảnh JPG sang WebP hàng loạt.",
+      "action": "Chuyển sang WebP",
+      "title": "Chuyển JPG Sang WebP — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển ảnh JPG sang WebP ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
+      "h1": "Chuyển JPG sang WebP — hoàn toàn riêng tư",
+      "lede": "Ảnh WebP thường nhỏ hơn JPG từ 25–35% ở cùng chất lượng hình ảnh, giúp trang web tải nhanh hơn. Fizzdoc chuyển đổi tệp JPG của bạn ngay trên thiết bị.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh JPG.",
+        "Chọn chất lượng, hoặc giữ mặc định.",
+        "Bấm “Chuyển sang WebP” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Vì sao nên chuyển JPG sang WebP?",
+          "Ảnh WebP thường nhỏ hơn JPG từ 25–35% ở cùng chất lượng hình ảnh, giúp trang web tải nhanh hơn."
+        ],
+        [
+          "Có thể chuyển đổi nhiều ảnh cùng lúc không?",
+          "Có. Thêm bao nhiêu ảnh tùy thích; nhiều ảnh sẽ được tải xuống cùng nhau trong một tệp ZIP."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "add-page-numbers-to-pdf": {
+      "name": "Thêm số trang",
+      "summary": "Đánh số cho mọi trang của một PDF.",
+      "action": "Thêm số trang",
+      "title": "Thêm Số Trang Vào PDF — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Thêm số trang vào PDF ngay trong trình duyệt. Chọn vị trí, số bắt đầu và kiểu “Page 1 of 10”. Không tải lên. Miễn phí, không đăng ký.",
+      "h1": "Thêm số trang vào một tệp PDF",
+      "lede": "Đánh số trang cho báo cáo, luận văn hay hợp đồng chỉ trong vài giây. Chọn vị trí số trang và số bắt đầu — ngay trên thiết bị của bạn.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Chọn vị trí, kiểu hiển thị và số bắt đầu.",
+        "Bấm “Thêm số trang” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có thể bắt đầu từ số khác 1 không?",
+          "Có. Đặt “Bắt đầu từ” thành bất kỳ số nào — hữu ích khi PDF là một chương của một tài liệu dài hơn."
+        ],
+        [
+          "Có làm thay đổi nội dung của tôi không?",
+          "Không. Số trang được thêm đè lên mỗi trang; mọi thứ khác vẫn giữ nguyên như cũ."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "watermark-pdf": {
+      "name": "Watermark PDF",
+      "summary": "Đóng dấu chữ như CONFIDENTIAL lên mọi trang.",
+      "action": "Thêm watermark",
+      "title": "Watermark PDF — Thêm Watermark Chữ, Không Tải Lên | Fizzdoc",
+      "description": "Thêm watermark dạng chữ như CONFIDENTIAL hoặc DRAFT lên mọi trang của PDF, ngay trong trình duyệt. Chọn độ mờ tùy ý. Không tải lên. Miễn phí.",
+      "h1": "Thêm watermark vào một tệp PDF",
+      "lede": "Đánh dấu tài liệu là CONFIDENTIAL, DRAFT hoặc với tên của bạn trước khi chia sẻ. Watermark được vẽ chéo trên mọi trang.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Nhập nội dung watermark và chọn độ trong suốt.",
+        "Bấm “Thêm watermark” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có thể xóa watermark đi không?",
+          "Watermark dạng chữ giúp ngăn cản sao chép nhưng người có công cụ chỉnh sửa PDF và đủ quyết tâm vẫn có thể xóa được. Để bảo vệ mạnh hơn, hãy dùng thêm công cụ Đặt mật khẩu PDF."
+        ],
+        [
+          "Có thể dùng những ký tự nào?",
+          "Chữ cái, số và ký hiệu thông dụng trong bảng chữ cái Latin. Các bảng chữ cái khác không được các phông chữ PDF chuẩn hỗ trợ."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "pdf-to-png": {
+      "name": "PDF sang PNG",
+      "summary": "Lưu mỗi trang thành một ảnh PNG không mất chất lượng.",
+      "action": "Chuyển sang PNG",
+      "title": "Chuyển PDF Sang PNG — Không Mất Chất Lượng, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển mỗi trang PDF thành ảnh PNG sắc nét, không mất chất lượng ngay trong trình duyệt. Nhiều trang tải xuống dưới dạng một ZIP. Không tải lên. Miễn phí.",
+      "h1": "Chuyển trang PDF sang ảnh PNG",
+      "lede": "Kết xuất mỗi trang thành PNG sắc nét, không mất chất lượng — lý tưởng cho slide, tài liệu và ảnh chụp màn hình cần chữ sắc nét. Không có gì rời khỏi thiết bị của bạn.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Bấm “Chuyển sang PNG”.",
+        "Tải xuống ảnh, hoặc một ZIP chứa mỗi trang một PNG."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "PNG hay JPG?",
+          "PNG giữ văn bản và đường nét cực kỳ sắc nét nhưng tệp lớn hơn. Với ảnh chụp và bản quét, PDF sang JPG cho tệp nhỏ hơn nhiều."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "extract-pdf-pages": {
+      "name": "Trích xuất trang PDF",
+      "summary": "Lưu các trang đã chọn thành một tệp PDF mới.",
+      "action": "Trích xuất trang",
+      "title": "Trích Xuất Trang Từ PDF — Miễn Phí, Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Lấy các trang cụ thể ra khỏi PDF thành một tệp mới, ngay trong trình duyệt. Nhập các trang như 2, 5-7. Liên kết và trường biểu mẫu được giữ lại. Không tải lên.",
+      "h1": "Trích xuất trang từ một tệp PDF",
+      "lede": "Chỉ cần trang chữ ký hay một chương? Nhập các trang bạn muốn và nhận chúng dưới dạng một PDF mới — bản gốc vẫn giữ nguyên.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Nhập các trang cần trích xuất, ví dụ “2, 5-7”.",
+        "Bấm “Trích xuất trang” và tải xuống tệp PDF mới."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Chất lượng có bị giảm không?",
+          "Không. Các trang được sao chép nguyên trạng — không có gì bị vẽ lại hay nén lại."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "reorder-pdf-pages": {
+      "name": "Sắp xếp lại trang PDF",
+      "summary": "Đặt các trang của một PDF theo thứ tự mới.",
+      "action": "Sắp xếp lại trang",
+      "title": "Sắp Xếp Lại Trang PDF — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Sắp xếp lại các trang của PDF bằng cách nhập thứ tự bạn muốn, như 3, 1-2, 4-. Chạy trong trình duyệt; tệp không bao giờ được tải lên. Miễn phí, không đăng ký.",
+      "h1": "Sắp xếp lại các trang của một PDF",
+      "lede": "Sửa các trang bị quét sai thứ tự hoặc đưa phần phụ lục lên đầu. Nhập thứ tự mới và tải xuống PDF đã sắp xếp lại.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Nhập thứ tự trang mới, ví dụ “3, 1-2, 4-”.",
+        "Bấm “Sắp xếp lại trang” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Nhập thứ tự như thế nào?",
+          "Liệt kê các trang và khoảng trang, cách nhau bằng dấu phẩy. “4-” nghĩa là từ trang 4 đến hết. Những trang bạn bỏ qua sẽ không có trong tệp mới."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "png-to-pdf": {
+      "name": "PNG sang PDF",
+      "summary": "Biến ảnh chụp màn hình và hình ảnh PNG thành một tệp PDF.",
+      "action": "Tạo PDF",
+      "title": "Chuyển PNG Sang PDF — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "description": "Gộp ảnh chụp màn hình và hình ảnh PNG thành một tệp PDF ngay trong trình duyệt, mỗi ảnh một trang, giữ nguyên chất lượng. Không tải lên. Không watermark.",
+      "h1": "Chuyển ảnh PNG sang PDF",
+      "lede": "Đưa ảnh chụp màn hình, sơ đồ hoặc trang quét lưu dưới dạng PNG vào một PDF gọn gàng — sắc nét, không mất chất lượng và theo thứ tự bạn chọn.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh PNG.",
+        "Sắp xếp thứ tự bằng các nút ↑ và ↓.",
+        "Bấm “Tạo PDF” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Độ trong suốt có được giữ lại không?",
+          "Có. Ảnh PNG được đưa vào PDF nguyên trạng, kể cả các vùng trong suốt."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "remove-word-metadata": {
+      "name": "Xóa Metadata Word",
+      "summary": "Xóa tên tác giả, công ty và người biên tập khỏi một .docx.",
+      "action": "Xóa metadata",
+      "title": "Xóa Metadata Word — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Xóa tác giả, người biên tập, công ty, tiêu đề và ảnh thu nhỏ khỏi tệp Word ngay trong trình duyệt. Dùng được với tệp tải từ Google Docs. Không tải lên.",
+      "h1": "Xóa metadata ẩn khỏi một tài liệu Word",
+      "lede": "Mỗi tệp .docx đều ghi lại ai đã tạo ra nó, ai chỉnh sửa lần cuối và thuộc công ty nào. Hãy xóa các thông tin đó trước khi gửi đi — mà không cần tải tệp lên đâu cả.",
+      "steps": [
+        "Thêm một tệp .docx (từ Word hoặc Google Docs).",
+        "Bấm “Xóa metadata”.",
+        "Tải xuống tệp .docx đã làm sạch."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Những gì bị xóa?",
+          "Tác giả, người chỉnh sửa cuối, tiêu đề, chủ đề, mô tả, từ khóa, danh mục, trạng thái, công ty, người quản lý, hyperlink base, thuộc tính tùy chỉnh và ảnh thu nhỏ xem trước được nhúng sẵn. Ngày tạo và ngày chỉnh sửa vẫn được giữ lại vì Office cần đến chúng. Nội dung của bạn không bị đụng đến."
+        ],
+        [
+          "Có dùng được với Google Docs không?",
+          "Có. Trong Google Docs, chọn File → Download → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "extract-images-from-word": {
+      "name": "Trích xuất ảnh từ Word",
+      "summary": "Lưu mọi hình ảnh trong một .docx ở chất lượng gốc.",
+      "action": "Trích xuất ảnh",
+      "title": "Trích Xuất Ảnh Từ Word — Không Tải Lên | Fizzdoc",
+      "description": "Tải xuống mọi hình ảnh được nhúng trong tài liệu Word dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Docs. Chạy trong trình duyệt.",
+      "h1": "Trích xuất toàn bộ hình ảnh từ một tài liệu Word",
+      "lede": "Lấy ra mọi ảnh chụp, logo và biểu đồ trong một .docx ở định dạng và độ phân giải gốc — không chụp màn hình, không nén lại, không tải lên.",
+      "steps": [
+        "Thêm một tệp .docx (từ Word hoặc Google Docs).",
+        "Bấm “Trích xuất ảnh”.",
+        "Tải xuống tệp ZIP chứa các hình ảnh."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Chất lượng hình ảnh có bị giảm không?",
+          "Không. Chúng được sao chép ra y nguyên như cách được lưu trong tệp, ở định dạng gốc (PNG, JPG, GIF, SVG, EMF, v.v.)."
+        ],
+        [
+          "Có dùng được với Google Docs không?",
+          "Có. Trong Google Docs, chọn File → Download → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "compress-word": {
+      "name": "Nén Word",
+      "summary": "Giảm dung lượng một .docx bằng cách tối ưu hình ảnh trong đó.",
+      "action": "Nén Word",
+      "title": "Nén Tệp Word (.docx) — Không Tải Lên | Fizzdoc",
+      "description": "Giảm dung lượng tệp Word bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên.",
+      "h1": "Nén một tài liệu Word",
+      "lede": "Làm nhỏ một .docx đủ để gửi email bằng cách nén lại các ảnh quá lớn bên trong. Văn bản, định dạng và mọi thứ khác đều giữ nguyên như cũ.",
+      "steps": [
+        "Thêm một tệp .docx (từ Word hoặc Google Docs).",
+        "Chọn mức nén Cân bằng hoặc Nén mạnh.",
+        "Bấm “Nén Word” và tải xuống tệp nhỏ hơn."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tệp sẽ nhỏ đi bao nhiêu?",
+          "Các tệp có ảnh lớn thường giảm kích thước một nửa hoặc hơn. Các tệp chủ yếu là văn bản thì vốn đã gọn nhẹ; nếu Fizzdoc không thể làm tệp nhỏ hơn, nó sẽ báo cho bạn biết và giữ nguyên bản gốc."
+        ],
+        [
+          "Có dùng được với Google Docs không?",
+          "Có. Trong Google Docs, chọn File → Download → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "remove-excel-metadata": {
+      "name": "Xóa Metadata Excel",
+      "summary": "Xóa tên tác giả, công ty và người biên tập khỏi một .xlsx.",
+      "action": "Xóa metadata",
+      "title": "Xóa Metadata Excel — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Xóa tác giả, người biên tập, công ty, tiêu đề và ảnh thu nhỏ khỏi tệp Excel ngay trong trình duyệt. Dùng được với tệp tải từ Google Sheets. Không tải lên.",
+      "h1": "Xóa metadata ẩn khỏi một bảng tính Excel",
+      "lede": "Mỗi tệp .xlsx đều ghi lại ai đã tạo ra nó, ai chỉnh sửa lần cuối và thuộc công ty nào. Hãy xóa các thông tin đó trước khi gửi đi — mà không cần tải tệp lên đâu cả.",
+      "steps": [
+        "Thêm một tệp .xlsx (từ Excel hoặc Google Sheets).",
+        "Bấm “Xóa metadata”.",
+        "Tải xuống tệp .xlsx đã làm sạch."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Những gì bị xóa?",
+          "Tác giả, người chỉnh sửa cuối, tiêu đề, chủ đề, mô tả, từ khóa, danh mục, trạng thái, công ty, người quản lý, hyperlink base, thuộc tính tùy chỉnh và ảnh thu nhỏ xem trước được nhúng sẵn. Ngày tạo và ngày chỉnh sửa vẫn được giữ lại vì Office cần đến chúng. Nội dung của bạn không bị đụng đến."
+        ],
+        [
+          "Có dùng được với Google Sheets không?",
+          "Có. Trong Google Sheets, chọn File → Download → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "extract-images-from-excel": {
+      "name": "Trích xuất ảnh từ Excel",
+      "summary": "Lưu mọi hình ảnh trong một .xlsx ở chất lượng gốc.",
+      "action": "Trích xuất ảnh",
+      "title": "Trích Xuất Ảnh Từ Excel — Không Tải Lên | Fizzdoc",
+      "description": "Tải xuống mọi hình ảnh được nhúng trong bảng tính Excel dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Sheets. Chạy trong trình duyệt.",
+      "h1": "Trích xuất toàn bộ hình ảnh từ một bảng tính Excel",
+      "lede": "Lấy ra mọi ảnh chụp, logo và biểu đồ trong một .xlsx ở định dạng và độ phân giải gốc — không chụp màn hình, không nén lại, không tải lên.",
+      "steps": [
+        "Thêm một tệp .xlsx (từ Excel hoặc Google Sheets).",
+        "Bấm “Trích xuất ảnh”.",
+        "Tải xuống tệp ZIP chứa các hình ảnh."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Chất lượng hình ảnh có bị giảm không?",
+          "Không. Chúng được sao chép ra y nguyên như cách được lưu trong tệp, ở định dạng gốc (PNG, JPG, GIF, SVG, EMF, v.v.)."
+        ],
+        [
+          "Có dùng được với Google Sheets không?",
+          "Có. Trong Google Sheets, chọn File → Download → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "compress-excel": {
+      "name": "Nén Excel",
+      "summary": "Giảm dung lượng một .xlsx bằng cách tối ưu hình ảnh trong đó.",
+      "action": "Nén Excel",
+      "title": "Nén Tệp Excel (.xlsx) — Không Tải Lên | Fizzdoc",
+      "description": "Giảm dung lượng tệp Excel bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên.",
+      "h1": "Nén một bảng tính Excel",
+      "lede": "Làm nhỏ một .xlsx đủ để gửi email bằng cách nén lại các ảnh quá lớn bên trong. Văn bản, định dạng và mọi thứ khác đều giữ nguyên như cũ.",
+      "steps": [
+        "Thêm một tệp .xlsx (từ Excel hoặc Google Sheets).",
+        "Chọn mức nén Cân bằng hoặc Nén mạnh.",
+        "Bấm “Nén Excel” và tải xuống tệp nhỏ hơn."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tệp sẽ nhỏ đi bao nhiêu?",
+          "Các tệp có ảnh lớn thường giảm kích thước một nửa hoặc hơn. Các tệp chủ yếu là văn bản thì vốn đã gọn nhẹ; nếu Fizzdoc không thể làm tệp nhỏ hơn, nó sẽ báo cho bạn biết và giữ nguyên bản gốc."
+        ],
+        [
+          "Có dùng được với Google Sheets không?",
+          "Có. Trong Google Sheets, chọn File → Download → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "remove-powerpoint-metadata": {
+      "name": "Xóa Metadata PowerPoint",
+      "summary": "Xóa tên tác giả, công ty và người biên tập khỏi một .pptx.",
+      "action": "Xóa metadata",
+      "title": "Xóa Metadata PowerPoint — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "description": "Xóa tác giả, người biên tập, công ty, tiêu đề và ảnh thu nhỏ khỏi tệp PowerPoint ngay trong trình duyệt. Dùng được với tệp tải từ Google Slides. Không tải lên.",
+      "h1": "Xóa metadata ẩn khỏi một bản trình chiếu PowerPoint",
+      "lede": "Mỗi tệp .pptx đều ghi lại ai đã tạo ra nó, ai chỉnh sửa lần cuối và thuộc công ty nào. Hãy xóa các thông tin đó trước khi gửi đi — mà không cần tải tệp lên đâu cả.",
+      "steps": [
+        "Thêm một tệp .pptx (từ PowerPoint hoặc Google Slides).",
+        "Bấm “Xóa metadata”.",
+        "Tải xuống tệp .pptx đã làm sạch."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Những gì bị xóa?",
+          "Tác giả, người chỉnh sửa cuối, tiêu đề, chủ đề, mô tả, từ khóa, danh mục, trạng thái, công ty, người quản lý, hyperlink base, thuộc tính tùy chỉnh và ảnh thu nhỏ xem trước được nhúng sẵn. Ngày tạo và ngày chỉnh sửa vẫn được giữ lại vì Office cần đến chúng. Nội dung của bạn không bị đụng đến."
+        ],
+        [
+          "Có dùng được với Google Slides không?",
+          "Có. Trong Google Slides, chọn File → Download → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "extract-images-from-powerpoint": {
+      "name": "Trích xuất ảnh từ PowerPoint",
+      "summary": "Lưu mọi hình ảnh trong một .pptx ở chất lượng gốc.",
+      "action": "Trích xuất ảnh",
+      "title": "Trích Xuất Ảnh Từ PowerPoint — Không Tải Lên | Fizzdoc",
+      "description": "Tải xuống mọi hình ảnh nhúng trong PowerPoint dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Slides. Chạy trong trình duyệt.",
+      "h1": "Trích xuất toàn bộ hình ảnh từ một bản trình chiếu PowerPoint",
+      "lede": "Lấy ra mọi ảnh chụp, logo và biểu đồ trong một .pptx ở định dạng và độ phân giải gốc — không chụp màn hình, không nén lại, không tải lên.",
+      "steps": [
+        "Thêm một tệp .pptx (từ PowerPoint hoặc Google Slides).",
+        "Bấm “Trích xuất ảnh”.",
+        "Tải xuống tệp ZIP chứa các hình ảnh."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Chất lượng hình ảnh có bị giảm không?",
+          "Không. Chúng được sao chép ra y nguyên như cách được lưu trong tệp, ở định dạng gốc (PNG, JPG, GIF, SVG, EMF, v.v.)."
+        ],
+        [
+          "Có dùng được với Google Slides không?",
+          "Có. Trong Google Slides, chọn File → Download → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    },
+    "compress-powerpoint": {
+      "name": "Nén PowerPoint",
+      "summary": "Giảm dung lượng một .pptx bằng cách tối ưu hình ảnh trong đó.",
+      "action": "Nén PowerPoint",
+      "title": "Nén Tệp PowerPoint (.pptx) — Không Tải Lên | Fizzdoc",
+      "description": "Giảm dung lượng tệp PowerPoint bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên.",
+      "h1": "Nén một bản trình chiếu PowerPoint",
+      "lede": "Làm nhỏ một .pptx đủ để gửi email bằng cách nén lại các ảnh quá lớn bên trong. Văn bản, định dạng và mọi thứ khác đều giữ nguyên như cũ.",
+      "steps": [
+        "Thêm một tệp .pptx (từ PowerPoint hoặc Google Slides).",
+        "Chọn mức nén Cân bằng hoặc Nén mạnh.",
+        "Bấm “Nén PowerPoint” và tải xuống tệp nhỏ hơn."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tệp sẽ nhỏ đi bao nhiêu?",
+          "Các tệp có ảnh lớn thường giảm kích thước một nửa hoặc hơn. Các tệp chủ yếu là văn bản thì vốn đã gọn nhẹ; nếu Fizzdoc không thể làm tệp nhỏ hơn, nó sẽ báo cho bạn biết và giữ nguyên bản gốc."
+        ],
+        [
+          "Có dùng được với Google Slides không?",
+          "Có. Trong Google Slides, chọn File → Download → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép MIT."
+        ]
+      ]
+    }
+  }
+}
