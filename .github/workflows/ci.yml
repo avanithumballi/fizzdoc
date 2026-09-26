@@ -19,14 +19,15 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
 
-  # Publishes main to Cloudflare Pages once the tests pass. Needs two repository secrets:
-  # CLOUDFLARE_API_TOKEN (permission: Account > Cloudflare Pages > Edit) and CLOUDFLARE_ACCOUNT_ID.
+  # Publishes main to Cloudflare Pages once the tests pass. Needs a token with
+  # Account > Cloudflare Pages > Edit (CLOUDFLARE_API_TOKEN_ACCOUNT, else CLOUDFLARE_API_TOKEN)
+  # and CLOUDFLARE_ACCOUNT_ID.
   deploy:
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN_ACCOUNT || secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - name: Skip when Cloudflare is not configured
