@@ -2,6 +2,7 @@
 // against the original file in memory; save() re-renders the whole document with pdf-lib.
 import './edit-pdf.css';
 import { LocalError, type Output } from '../engine/local';
+import { t } from '../i18n';
 
 // ---------------------------------------------------------------------------
 // Pure geometry / mapping helpers (unit-tested in tests/edit-pdf.test.ts).
@@ -257,7 +258,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
   const modeGroup = document.createElement('div');
   modeGroup.className = 'edit-mode-group';
   modeGroup.setAttribute('role', 'group');
-  modeGroup.setAttribute('aria-label', 'Editing tool');
+  modeGroup.setAttribute('aria-label', t('ed.tools'));
 
   function makeButton(label: string, title: string): HTMLButtonElement {
     const button = document.createElement('button');
@@ -269,24 +270,24 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     return button;
   }
 
-  const editBtn = makeButton('Edit text', 'Edit text');
+  const editBtn = makeButton(t('ed.editText'), t('ed.editText'));
   editBtn.classList.add('mode-btn');
-  const addBtn = makeButton('Add text', 'Add text');
+  const addBtn = makeButton(t('ed.addText'), t('ed.addText'));
   addBtn.classList.add('mode-btn');
-  const whiteBtn = makeButton('White-out', 'White-out');
+  const whiteBtn = makeButton(t('ed.whiteout'), t('ed.whiteout'));
   whiteBtn.classList.add('mode-btn');
   modeGroup.append(editBtn, addBtn, whiteBtn);
 
-  const undoBtn = makeButton('Undo', 'Undo last edit');
+  const undoBtn = makeButton(t('ed.undo'), t('ed.undoLabel'));
   undoBtn.classList.add('edit-btn-icon');
 
   const zoomGroup = document.createElement('div');
   zoomGroup.className = 'edit-zoom-group';
-  const zoomOutBtn = makeButton('−', 'Zoom out');
+  const zoomOutBtn = makeButton('−', t('ed.zoomOut'));
   zoomOutBtn.classList.add('edit-btn-icon');
   const zoomLabel = document.createElement('span');
   zoomLabel.className = 'edit-zoom-label';
-  const zoomInBtn = makeButton('+', 'Zoom in');
+  const zoomInBtn = makeButton('+', t('ed.zoomIn'));
   zoomInBtn.classList.add('edit-btn-icon');
   zoomGroup.append(zoomOutBtn, zoomLabel, zoomInBtn);
 
@@ -296,7 +297,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
   const notice = document.createElement('span');
   notice.className = 'edit-notice';
   notice.hidden = true;
-  notice.textContent = "Some characters aren't supported by the standard PDF fonts and were replaced.";
+  notice.textContent = t('ed.replaced');
 
   toolbar.append(modeGroup, undoBtn, zoomGroup, pageLabel, notice);
 
@@ -304,7 +305,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
   scroller.className = 'edit-scroll';
   const hint = document.createElement('p');
   hint.className = 'edit-hint';
-  hint.textContent = 'Covered text is hidden, not deleted from the file — for sensitive data, delete the page instead.';
+  hint.textContent = t('ed.hint');
   viewer.append(toolbar, scroller, hint);
 
   // ---- state ----
@@ -355,7 +356,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     for (const state of pageStates) {
       if (state.wrapper.offsetTop <= mid) current = state.index;
     }
-    pageLabel.textContent = `Page ${current + 1} / ${doc.numPages}`;
+    pageLabel.textContent = t('ed.page', { n: current + 1, total: doc.numPages });
   }
   scroller.addEventListener('scroll', updatePageLabel, { passive: true });
 
@@ -430,7 +431,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     hit.style.height = `${box.height}px`;
     hit.tabIndex = 0;
     hit.setAttribute('role', 'button');
-    hit.setAttribute('aria-label', `Edit text: ${run.text}`);
+    hit.setAttribute('aria-label', t('ed.editRun', { text: run.text }));
     const activate = () => {
       editingKey = { page: state.index, idx };
       rebuildOverlay(state);
@@ -506,7 +507,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
       div.tabIndex = mode === 'edit-text' ? 0 : -1;
       if (mode === 'edit-text') {
         div.setAttribute('role', 'button');
-        div.setAttribute('aria-label', `Edit text: ${text}`);
+        div.setAttribute('aria-label', t('ed.editRun', { text }));
         const activate = () => {
           editingKey = { page: state.index, idx };
           rebuildOverlay(state);
@@ -561,7 +562,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     const handle = document.createElement('button');
     handle.type = 'button';
     handle.className = 'edit-box-handle';
-    handle.setAttribute('aria-label', 'Drag to move');
+    handle.setAttribute('aria-label', t('ed.move'));
     handle.textContent = '⠿';
     let dragging: { startX: number; startY: number; origin: [number, number] } | null = null;
     handle.addEventListener('pointerdown', (event) => {
@@ -585,7 +586,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     const close = document.createElement('button');
     close.type = 'button';
     close.className = 'edit-box-close';
-    close.setAttribute('aria-label', 'Delete text box');
+    close.setAttribute('aria-label', t('ed.removeBox'));
     close.textContent = '×';
     close.addEventListener('pointerdown', (event) => event.stopPropagation());
     close.addEventListener('click', () => removeAdded(state, added, true));
@@ -701,7 +702,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
   });
   setMode('edit-text');
   zoomLabel.textContent = `${Math.round(ZOOM_STEPS[zoomIndex] * 100)}%`;
-  pageLabel.textContent = `Page 1 / ${doc.numPages}`;
+  pageLabel.textContent = t('ed.page', { n: 1, total: doc.numPages });
 
   // ---- save ----
   async function save(): Promise<Output> {

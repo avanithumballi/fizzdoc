@@ -82,8 +82,32 @@ function springDrag(element: HTMLElement) {
   );
 }
 
+/** The language menu opens the same page in the chosen language. A one-time tip points to it. */
+function setUpLanguage() {
+  const select = document.getElementById('lang-select') as HTMLSelectElement | null;
+  const tip = document.getElementById('lang-tip');
+  if (!select || !tip) return;
+  select.addEventListener('change', () => location.assign(select.value));
+  try {
+    if (localStorage.getItem('langTip')) return;
+    localStorage.setItem('langTip', '1');
+  } catch {
+    return; // no storage, no way to show it only once: skip it
+  }
+  // Written in the visitor's own language when we have it, otherwise in the page's.
+  const tips = JSON.parse(select.dataset.tips ?? '{}') as Record<string, string>;
+  const own = navigator.languages.map((code) => code.slice(0, 2)).find((code) => code in tips);
+  tip.querySelector('span')!.textContent = tips[own ?? document.documentElement.lang] ?? tips.en;
+  tip.hidden = false;
+  const close = () => (tip.hidden = true);
+  tip.querySelector('button')!.addEventListener('click', close);
+  select.addEventListener('focus', close);
+  setTimeout(close, 9000);
+}
+
 export function setUpEffects() {
   setUpThemeToggle();
+  setUpLanguage();
   setUpRipple();
   document.querySelectorAll<HTMLElement>('[data-spring]').forEach(springDrag);
 }

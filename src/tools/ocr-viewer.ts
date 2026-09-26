@@ -3,6 +3,7 @@
 // fallback for anyone (or anything) that can't drag-select an image overlay.
 import './ocr-viewer.css';
 import type { OcrResult } from '../engine/ocr';
+import { t } from '../i18n';
 
 const pct = (value: number, total: number) => `${total > 0 ? (value / total) * 100 : 0}%`;
 
@@ -59,14 +60,14 @@ export function showTextOverlay(container: HTMLElement, image: Blob, result: Ocr
   const copyButton = document.createElement('button');
   copyButton.type = 'button';
   copyButton.className = 'button';
-  copyButton.textContent = 'Copy all text';
+  copyButton.textContent = t('ocr.copyAll');
   controls.append(copyButton);
 
   const textarea = document.createElement('textarea');
   textarea.className = 'ocr-text';
   textarea.readOnly = true;
   textarea.value = result.text;
-  textarea.setAttribute('aria-label', 'Recognized text');
+  textarea.setAttribute('aria-label', t('ocr.text'));
 
   copyButton.addEventListener('click', async () => {
     try {
@@ -76,7 +77,7 @@ export function showTextOverlay(container: HTMLElement, image: Blob, result: Ocr
       document.execCommand('copy');
     }
     const original = copyButton.textContent;
-    copyButton.textContent = 'Copied';
+    copyButton.textContent = t('ocr.copied');
     setTimeout(() => (copyButton.textContent = original), 1500);
   });
 

@@ -1,10 +1,11 @@
 import './style.css';
 import '@fontsource-variable/inter';
 import { setUpEffects } from './effects';
-import type { ErrorCode, Job, Op, Warning } from './engine/pdf';
+import type { ErrorCode, Job, Op } from './engine/pdf';
 import type { LocalError, Output } from './engine/local';
 import type { FromWorker, ToWorker } from './engine/worker';
 import type { ToolOp } from './site';
+import { UI, localizeSummary, t, type UiKey } from './i18n';
 
 /** A document for the browser's own PDF writer (print → Save as PDF): handles every script and font. */
 interface Printable {
@@ -16,36 +17,7 @@ type LocalJob = (files: File[], options: Options) => Promise<Output | Printable>
 
 type Failure = ErrorCode | LocalError['code'] | 'ENGINE_FAILED' | 'PASSWORDS_DIFFER';
 
-const ERRORS: Record<Failure, string> = {
-  INVALID_PDF: 'This file could not be read as a PDF. It may be damaged or not a PDF.',
-  BAD_PASSWORD: 'That password did not work after three tries. Nothing was changed.',
-  PASSWORD_REQUIRED: 'This PDF needs its password to continue. Nothing was changed.',
-  BAD_RANGE: 'Check the page numbers. Use numbers and ranges like “1-3, 8” within the document’s page count.',
-  NOT_ENCRYPTED: 'This PDF is not password-protected, so there is nothing to unlock.',
-  UNSUPPORTED_XFA: 'This PDF uses a dynamic XFA form, which cannot be edited safely. Your file was not changed.',
-  NO_PAGES_LEFT: 'That would remove every page. Keep at least one.',
-  WRONG_FILE_COUNT: 'Add the number of files this tool needs.',
-  PROCESSING_FAILED: 'Something went wrong while processing. Your original file is unchanged.',
-  NO_PASSWORD: 'Type the password you want to add.',
-  PASSWORDS_DIFFER: 'The two passwords do not match.',
-  NOT_OFFICE: 'This file is not a valid Word, Excel or PowerPoint document.',
-  NO_IMAGES: 'This document has no embedded images.',
-  BAD_IMAGE: 'One of the images could not be read. Try JPG or PNG.',
-  PDF_PASSWORD: 'This PDF is password-protected. Remove the password with Unlock PDF first.',
-  BAD_SIZE: 'The width and height must each be between 1 and 16,384 pixels.',
-  NO_TEXT: 'This PDF has no text to extract — it is probably a scanned image. Run OCR PDF first, then try again.',
-  NO_WATERMARK: 'Type the watermark text (letters, numbers and common symbols).',
-  ENGINE_FAILED: 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
-};
-
-const WARNINGS: Record<Warning, string> = {
-  BOOKMARKS_DROPPED: 'Bookmarks from the second and later files were not carried over. The first file’s bookmarks were kept.',
-  BOOKMARKS_BROKEN: 'Some bookmarks pointed to pages that were removed, so they no longer lead anywhere.',
-  TAGS_NOT_UPDATED: 'This PDF has accessibility tags that were not rebuilt for the new pages, so screen-reader structure may be incomplete.',
-  SIGNATURES_INVALIDATED: 'Digital signatures in this PDF will no longer validate, because the document changed.',
-  PASSWORD_REMOVED: 'The new file has no password.',
-  PERMISSIONS_REMOVED: 'The original’s editing and printing restrictions are not applied to the new file.',
-};
+const errorText = (code: Failure) => t(`error.${code}` as UiKey);
 
 const SUFFIX: Record<Op, string> = {
   merge: 'merged',
@@ -111,7 +83,7 @@ function setUp(op: ToolOp) {
   let printFrame: HTMLIFrameElement | undefined;
   let editor: { file: File; ready: Promise<{ save(): Promise<Output>; destroy(): void }> } | undefined;
 
-  const progressLabel = (fraction: number) => say(`Working… ${Math.round(fraction * 100)}% — your files stay on this device.`);
+  const progressLabel = (fraction: number) => say(t('app.workingPct', { pct: Math.round(fraction * 100) }));
   const baseName = (file: File) => file.name.replace(/\.[^.]+$/, '');
   const number = (value: string | undefined) => (value ? Number(value) : undefined);
 
@@ -156,7 +128,7 @@ function setUp(op: ToolOp) {
       return {
         blob: new Blob([recognized.text], { type: 'text/plain;charset=utf-8' }),
         name: `${baseName(f[0])}.txt`,
-        summary: `${words} ${words === 1 ? 'word' : 'words'} recognized`,
+        summary: `${words} ${words === 1 ? 'word' : 'words'} recognized`, // localized by show()
       };
     },
     'edit-pdf': async () => (await editor!.ready).save(),
@@ -182,7 +154,7 @@ function setUp(op: ToolOp) {
   function fail(error: unknown) {
     const code = (error as LocalError).code as Failure | undefined;
     if (!code) console.error(error); // unexpected: keep the details for bug reports
-    say(code && code in ERRORS ? ERRORS[code] : ERRORS.PROCESSING_FAILED, 'error');
+    say(errorText(code && `error.${code}` in UI ? code : 'PROCESSING_FAILED'), 'error');
   }
 
   const options = (): Options =>
@@ -223,9 +195,9 @@ function setUp(op: ToolOp) {
         item.append(name, size);
         if (multiple && !busy()) enableReorder(item, index);
         const buttons: [string, string, () => void, boolean][] = [
-          ['↑', 'Move up', () => files.splice(index - 1, 2, files[index], files[index - 1]), multiple && index > 0],
-          ['↓', 'Move down', () => files.splice(index, 2, files[index + 1], files[index]), multiple && index < files.length - 1],
-          ['×', 'Remove', () => files.splice(index, 1), true],
+          ['↑', t('app.moveUp'), () => files.splice(index - 1, 2, files[index], files[index - 1]), multiple && index > 0],
+          ['↓', t('app.moveDown'), () => files.splice(index, 2, files[index + 1], files[index]), multiple && index < files.length - 1],
+          ['×', t('app.remove'), () => files.splice(index, 1), true],
         ];
         for (const [symbol, label, action, shown] of buttons) {
           if (!shown) continue;
@@ -286,7 +258,7 @@ function setUp(op: ToolOp) {
   function addFiles(incoming: File[]) {
     if (busy()) return;
     const usable = incoming.filter(accepted);
-    if (usable.length < incoming.length) say(`Only ${workspace.dataset.kind} files can be added.`, 'error');
+    if (usable.length < incoming.length) say(t('app.wrongType'), 'error');
     else say('');
     if (!usable.length) return;
     files = multiple ? [...files, ...usable] : [usable[0]];
@@ -295,9 +267,9 @@ function setUp(op: ToolOp) {
   }
 
   function askPassword(file: number, attempt: number): Promise<string | null> {
-    passwordTitle.textContent = files.length > 1 ? `“${files[file].name}” is password-protected` : 'This PDF is password-protected';
+    passwordTitle.textContent = files.length > 1 ? t('pw.titleFile', { file: files[file].name }) : t('pw.title');
     passwordHint.textContent =
-      attempt > 1 ? `That password did not work. Try again (${attempt} of 3).` : 'Type its password. It stays on this device.';
+      attempt > 1 ? t('pw.retry', { n: attempt }) : t('pw.hint');
     password.value = '';
     dialog.returnValue = '';
     dialog.showModal();
@@ -320,7 +292,7 @@ function setUp(op: ToolOp) {
   function finish(message: FromWorker) {
     stop();
     if (message.type === 'error') {
-      say(ERRORS[message.code], 'error');
+      say(errorText(message.code), 'error');
       return;
     }
     if (message.type !== 'done') return;
@@ -329,7 +301,7 @@ function setUp(op: ToolOp) {
     warnings.replaceChildren(
       ...message.warnings.map((code) => {
         const item = document.createElement('li');
-        item.textContent = WARNINGS[code];
+        item.textContent = t(`warning.${code}`);
         return item;
       }),
     );
@@ -341,8 +313,8 @@ function setUp(op: ToolOp) {
     download.onclick = null;
     download.href = outputUrl;
     download.download = name;
-    download.textContent = `Download ${name.split('.').pop()!.toUpperCase()}`;
-    say(`Done — ${summary}, ${formatSize(blob.size)}. Created on this device.`);
+    download.textContent = t('app.downloadExt', { ext: name.split('.').pop()!.toUpperCase() });
+    say(t('app.done', { summary: localizeSummary(summary), size: formatSize(blob.size) }));
     result.hidden = false;
     download.focus();
   }
@@ -359,17 +331,17 @@ function setUp(op: ToolOp) {
     document.body.append(frame);
     download.removeAttribute('download');
     download.href = '#';
-    download.textContent = 'Save as PDF';
+    download.textContent = t('app.saveAsPdf');
     download.onclick = (event) => {
       event.preventDefault();
       frame.contentWindow?.print();
     };
-    say('Ready — choose “Save as PDF” in the print window, then Save. Created on this device.');
+    say(t('app.ready'));
     result.hidden = false;
   }
 
   async function runLocal(job: LocalJob) {
-    say('Working… your files stay on this device.');
+    say(t('app.working'));
     localBusy = true;
     render();
     try {
@@ -389,12 +361,12 @@ function setUp(op: ToolOp) {
     clearResult();
     const total = files.reduce((sum, f) => sum + f.size, 0);
     if (total > inputBudget()) {
-      say(`These files total ${formatSize(total)}, more than this device can safely process (${formatSize(inputBudget())}).`, 'error');
+      say(t('app.tooBig', { size: formatSize(total), max: formatSize(inputBudget()) }), 'error');
       return;
     }
     const local = LOCAL[op];
     if (local) return void runLocal(local);
-    if (newPassword && newPassword.value !== confirmPassword?.value) return say(ERRORS.PASSWORDS_DIFFER, 'error');
+    if (newPassword && newPassword.value !== confirmPassword?.value) return say(errorText('PASSWORDS_DIFFER'), 'error');
     const job: Job = {
       op: op as Op,
       pages: pages?.value,
@@ -409,10 +381,10 @@ function setUp(op: ToolOp) {
     };
     worker.onerror = () => {
       stop();
-      say(ERRORS.ENGINE_FAILED, 'error');
+      say(errorText('ENGINE_FAILED'), 'error');
     };
     worker.postMessage({ type: 'run', job, files } satisfies ToWorker);
-    say('Working… your files stay on this device.');
+    say(t('app.working'));
     render();
   }
 
@@ -442,7 +414,7 @@ function setUp(op: ToolOp) {
   runButton.onclick = run;
   cancelButton.onclick = () => {
     stop();
-    say('Canceled. Nothing was changed.');
+    say(t('app.canceled'));
   };
   addEventListener('pagehide', stop);
   render();

@@ -51,7 +51,7 @@ export interface Tool {
   steps: string[];
   faq: [question: string, answer: string][];
   /** File picker override; the default follows the format (one .pdf, .docx, …). */
-  input?: { accept: string; kind: string; choose: string; multiple?: boolean };
+  input?: { accept: string; multiple?: boolean };
   /** Fixed engine options for this page, e.g. { format: 'md' } for PDF to Markdown. */
   preset?: Record<string, string>;
 }
@@ -318,8 +318,8 @@ export const TOOLS: Tool[] = [
   },
 ];
 
-const PDF_IN = { accept: 'application/pdf,.pdf', kind: 'PDF', choose: 'Choose a PDF file' };
-const IMAGES_IN = { accept: 'image/*', kind: 'image', choose: 'Choose images', multiple: true };
+const PDF_IN = { accept: 'application/pdf,.pdf' };
+const IMAGES_IN = { accept: 'image/*', multiple: true };
 const SAVE_AS_PDF: [string, string] = [
   'Why does a print window open?',
   'Your browser has a built-in PDF writer that handles every language and font perfectly. Fizzdoc prepares the document and hands it to that writer: choose “Save as PDF” as the destination and click Save. Nothing is printed or sent anywhere.',
@@ -502,7 +502,7 @@ TOOLS.push(
     lede: 'Turn notes, logs or any .txt file into a neatly formatted A4 PDF. Every language and script is supported.',
     steps: ['Add one .txt file.', 'Click “Create PDF”.', 'Choose “Save as PDF” in the window that opens and click Save.'],
     faq: [PRIVACY_FAQ[0], SAVE_AS_PDF, PRIVACY_FAQ[1]],
-    input: { accept: '.txt,text/plain', kind: 'text (.txt)', choose: 'Choose a .txt file' },
+    input: { accept: '.txt,text/plain' },
   },
   {
     op: 'text-to-pdf',
@@ -523,7 +523,7 @@ TOOLS.push(
       SAVE_AS_PDF,
       PRIVACY_FAQ[1],
     ],
-    input: { accept: '.md,.markdown,text/markdown', kind: 'Markdown (.md)', choose: 'Choose a .md file' },
+    input: { accept: '.md,.markdown,text/markdown' },
   },
   {
     op: 'word-to-pdf',
@@ -586,7 +586,7 @@ TOOLS.push(
       ['Does it handle semicolons and tabs?', 'Yes. Commas, semicolons, tabs and pipes are detected automatically, as are quoted fields with line breaks inside them.'],
       PRIVACY_FAQ[1],
     ],
-    input: { accept: '.csv,.tsv,text/csv', kind: 'CSV', choose: 'Choose a .csv file' },
+    input: { accept: '.csv,.tsv,text/csv' },
   },
   {
     op: 'image-convert',
@@ -673,7 +673,7 @@ TOOLS.push(
       ['How do I get the best results?', 'Use a sharp, well-lit, straight-on photo. Printed text works best; handwriting is recognized less reliably.'],
       PRIVACY_FAQ[1],
     ],
-    input: { accept: 'image/*', kind: 'image', choose: 'Choose an image' },
+    input: { accept: 'image/*' },
   },
 );
 
@@ -704,7 +704,7 @@ for (const c of IMAGE_CONVERSIONS) {
       ['Can I convert many images at once?', 'Yes. Add as many as you like; several images download together as one ZIP file.'],
       PRIVACY_FAQ[1],
     ],
-    input: { accept: c.accept, kind: c.from, choose: `Choose ${c.from} images`, multiple: true },
+    input: { accept: c.accept, multiple: true },
     preset: { mode: 'convert', format: c.format },
   });
 }
@@ -826,7 +826,7 @@ TOOLS.push(
       ['Is transparency kept?', 'Yes. PNG images are placed in the PDF as they are, including transparent areas.'],
       PRIVACY_FAQ[1],
     ],
-    input: { accept: 'image/png,.png', kind: 'PNG', choose: 'Choose PNG images', multiple: true },
+    input: { accept: 'image/png,.png', multiple: true },
   },
 );
 

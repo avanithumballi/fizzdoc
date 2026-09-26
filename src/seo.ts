@@ -1,13 +1,52 @@
-// Renders every page of the static site from index.html, plus sitemap.xml, robots.txt and llms.txt.
-// Runs in Node (inside the Vite build and dev server), never in the browser.
+// Renders every page of the static site from index.html, in every language, plus sitemap.xml,
+// robots.txt and llms.txt. Runs in Node (inside the Vite build and dev server), never in the browser.
+import { existsSync, readFileSync } from 'node:fs';
+import { LANGS, UI, fill, type Lang, type Strings, type UiKey } from './i18n.ts';
 import { FORMATS, HOME, SITE, TOOLS, type Format, type Tool, type ToolOp } from './site.ts';
+
+type ToolCopy = Pick<Tool, 'name' | 'summary' | 'action' | 'title' | 'description' | 'h1' | 'lede' | 'steps' | 'faq'>;
+type HomeCopy = Omit<typeof HOME, never>;
+/** Shape of src/i18n/<lang>.json. Everything is optional: missing strings fall back to English. */
+export interface Catalog {
+  ui?: Strings;
+  home?: Partial<HomeCopy>;
+  tools?: Record<string, Partial<ToolCopy>>;
+}
+
+const LANG_CODES = Object.keys(LANGS) as Lang[];
+const CATALOGS: Partial<Record<Lang, Catalog>> = Object.fromEntries(
+  LANG_CODES.map((lang) => {
+    const file = new URL(`./i18n/${lang}.json`, import.meta.url);
+    return [lang, existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as Catalog) : {}];
+  }),
+);
+/** Languages with a translation file; English always. Others appear once their file lands. */
+export const SITE_LANGS = LANG_CODES.filter((lang) => lang === 'en' || Object.keys(CATALOGS[lang] ?? {}).length);
 
 export interface Page {
   path: string;
+  lang: Lang;
   tool?: Tool;
 }
 
-export const PAGES: Page[] = [{ path: '/' }, ...TOOLS.map((tool) => ({ path: `/${tool.slug}/`, tool }))];
+const prefix = (lang: Lang) => (lang === 'en' ? '' : `/${lang}`);
+const pathOf = (lang: Lang, tool?: Tool) => `${prefix(lang)}/${tool ? `${tool.slug}/` : ''}`;
+
+export const PAGES: Page[] = SITE_LANGS.flatMap((lang) => [
+  { path: pathOf(lang), lang },
+  ...TOOLS.map((tool) => ({ path: pathOf(lang, tool), lang, tool })),
+]);
+
+/** Everything a page needs in one language. */
+function copy(lang: Lang) {
+  const catalog = CATALOGS[lang] ?? {};
+  const t = (key: UiKey, vars?: Record<string, string | number>) => fill(catalog.ui?.[key] ?? UI[key], vars);
+  const tool = (base: Tool): Tool => ({ ...base, ...catalog.tools?.[base.slug] });
+  const home: typeof HOME = { ...HOME, ...catalog.home };
+  const link = (target?: Tool) => pathOf(lang, target);
+  return { lang, t, tool, home, link, ui: catalog.ui ?? {} };
+}
+type Copy = ReturnType<typeof copy>;
 
 // The page may only talk to its own origin: the privacy promise, enforced by the browser.
 const CSP = [
@@ -27,9 +66,9 @@ const esc = (text: string) =>
 
 const FORMAT_ORDER = Object.keys(FORMATS) as Format[];
 
-const faqHtml = (faq: [string, string][]) => `
+const faqHtml = (c: Copy, faq: [string, string][]) => `
 <section class="section faq" aria-labelledby="faq">
-  <div class="section-head"><h2 id="faq">Frequently asked questions</h2></div>
+  <div class="section-head"><h2 id="faq">${esc(c.t('faq.title'))}</h2></div>
   <div class="faq-list">
   ${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n  ')}
   </div>
@@ -75,265 +114,290 @@ const icon = (op: ToolOp) =>
 const badge = (format: Format) => `<span class="badge fmt-${format}" aria-hidden="true">${FORMATS[format].badge}</span>`;
 
 // Cards can be tossed around with the mouse; effects.ts springs them back into place.
-const toolCards = (tools: Tool[]) => `
+const toolCards = (c: Copy, tools: Tool[]) => `
 <ul class="tool-grid">
   ${tools
+    .map(c.tool)
     .map(
       (t) =>
-        `<li><a class="tool-card fmt-${t.format}" data-spring href="/${t.slug}/" draggable="false"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
+        `<li><a class="tool-card fmt-${t.format}" data-spring href="${c.link(t)}" draggable="false"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
     )
     .join('\n  ')}
 </ul>`;
 
-const toolGroup = (format: Format) => {
+const toolGroup = (c: Copy, format: Format) => {
   const tools = TOOLS.filter((t) => t.format === format);
   return `
 <div class="format-group" id="${format}">
-  <h3>${badge(format)}${FORMATS[format].label} tools <span class="count">${tools.length}</span></h3>
-  ${toolCards(tools)}
+  <h3>${badge(format)}${esc(c.t('group.title', { format: c.t(`format.${format}`) }))} <span class="count">${tools.length}</span></h3>
+  ${toolCards(c, tools)}
 </div>`;
 };
 
-// PDF gets the full width; the three Office formats sit side by side.
-const toolGroups = () => `${toolGroup('pdf')}
-<div class="office-groups">${FORMAT_ORDER.slice(1).map(toolGroup).join('')}</div>`;
+// PDF gets the full width; the other formats sit side by side.
+const toolGroups = (c: Copy) => `${toolGroup(c, 'pdf')}
+<div class="office-groups">${FORMAT_ORDER.slice(1)
+  .map((f) => toolGroup(c, f))
+  .join('')}</div>`;
 
 const CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
 
-const proofHtml = `
+const proofHtml = (c: Copy) => `
 <section class="section proof" aria-labelledby="proof">
-  <div class="section-head"><h2 id="proof">Private by design — and you can check</h2><p>Your files are never uploaded, because there is nowhere to upload them to.</p></div>
+  <div class="section-head"><h2 id="proof">${esc(c.t('proof.title'))}</h2><p>${esc(c.t('proof.lede'))}</p></div>
   <ul class="proof-grid">
-    <li>${CHECK}<strong>No upload step exists</strong><span>Files are read and written inside this browser tab. There is no server that could receive them.</span></li>
-    <li>${CHECK}<strong>The browser enforces it</strong><span>This page’s Content Security Policy only allows connections back to this site, which serves nothing but the app itself.</span></li>
-    <li>${CHECK}<strong>See for yourself</strong><span>Open developer tools, watch the Network tab and run a job: no request carries your document.</span></li>
-    <li>${CHECK}<strong>Open source</strong><span>Every line is on <a href="${SITE.repo}">GitHub</a>, built on <a href="https://qpdf.readthedocs.io/">qpdf</a>, <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> and <a href="https://pdf-lib.js.org/">pdf-lib</a>.</span></li>
+    ${(['noUpload', 'csp', 'check'] as const).map((k) => `<li>${CHECK}<strong>${esc(c.t(`proof.${k}`))}</strong><span>${esc(c.t(`proof.${k}Text`))}</span></li>`).join('\n    ')}
+    <li>${CHECK}<strong>${esc(c.t('proof.open'))}</strong><span>${esc(c.t('proof.openText')).replace('{github}', `<a href="${SITE.repo}">GitHub</a>`).replace('{engines}', '<a href="https://qpdf.readthedocs.io/">qpdf</a>, <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> &amp; <a href="https://pdf-lib.js.org/">pdf-lib</a>')}</span></li>
   </ul>
 </section>`;
 
 // File cards beside the home hero; draggable, they spring back when released.
-const heroArt = `
+const heroArt = (c: Copy) => `
 <div class="hero-art" aria-hidden="true">
   ${FORMAT_ORDER.slice(0, 4).map((f) => `<div class="file-card fmt-${f}" data-spring><span class="badge fmt-${f}">${FORMATS[f].badge}</span><i></i><i></i><i></i><i></i></div>`).join('\n  ')}
-  <div class="lock-chip"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Processed on this device</div>
+  <div class="lock-chip"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>${esc(c.t('home.chip'))}</div>
 </div>`;
 
-/** What the file picker accepts, how it names those files, and whether it takes several. */
-function input(tool: Tool) {
-  if (tool.input) return { multiple: false, ...tool.input };
-  if (tool.op === 'jpg-to-pdf') return { accept: 'image/*', kind: 'image', choose: 'Choose images', multiple: true };
-  if (tool.format === 'pdf') {
-    const multiple = tool.op === 'merge';
-    return { accept: 'application/pdf,.pdf', kind: 'PDF', choose: multiple ? 'Choose PDF files' : 'Choose a PDF file', multiple };
-  }
-  const { ext, label } = FORMATS[tool.format];
-  return { accept: `.${ext}`, kind: `${label} (.${ext})`, choose: `Choose a .${ext} file`, multiple: false };
+/** What the file picker accepts, what its button says, and whether it takes several files. */
+function input(c: Copy, tool: Tool) {
+  const { accept, multiple = false } =
+    tool.input ??
+    (tool.op === 'jpg-to-pdf'
+      ? { accept: 'image/*', multiple: true }
+      : tool.format === 'pdf'
+        ? { accept: 'application/pdf,.pdf', multiple: tool.op === 'merge' }
+        : { accept: `.${FORMATS[tool.format].ext}` });
+  const ext = /\.\w+/.exec(accept)?.[0] ?? '';
+  const choose = accept.startsWith('application/pdf')
+    ? c.t(multiple ? 'ws.choosePdfs' : 'ws.choosePdf')
+    : accept.startsWith('image/')
+      ? c.t(multiple ? 'ws.chooseImages' : 'ws.chooseImage')
+      : c.t(multiple ? 'ws.chooseFiles' : 'ws.chooseFile', { ext });
+  return { accept, choose, multiple };
 }
 
-const LEVEL = `<label>Compression<select name="level"><option value="light">Balanced — best quality</option><option value="strong">Strong — smallest file</option></select></label>`;
-const FORMAT_SELECT = (selected: string) =>
-  `<label>Save as<select name="format">${[
-    ['original', 'Same format as each file'],
-    ['jpeg', 'JPG — photos, opens everywhere'],
-    ['webp', 'WebP — smallest'],
-    ['png', 'PNG — lossless'],
-  ]
-    .map(([value, label]) => `<option value="${value}"${value === selected ? ' selected' : ''}>${label}</option>`)
+const option = (value: string, label: string, selected = false) => `<option value="${value}"${selected ? ' selected' : ''}>${esc(label)}</option>`;
+const FORMAT_SELECT = (c: Copy, selected: string) =>
+  `<label>${esc(c.t('ws.saveAs'))}<select name="format">${(
+    [
+      ['original', 'ws.fmtOriginal'],
+      ['jpeg', 'ws.fmtJpeg'],
+      ['webp', 'ws.fmtWebp'],
+      ['png', 'ws.fmtPng'],
+    ] as const
+  )
+    .map(([value, key]) => option(value, c.t(key), value === selected))
     .join('')}</select></label>`;
-const QUALITY = (value: number) =>
-  `<label>Quality <output>${value}%</output><input name="quality" type="range" min="10" max="100" step="5" value="${value}"></label>`;
+const range = (label: string, name: string, value: number, min: number, max: number) =>
+  `<label>${esc(label)} <output>${value}%</output><input name="${name}" type="range" min="${min}" max="${max}" step="5" value="${value}"></label>`;
 
 /** Extra controls a tool needs beyond the file picker. Each control's name is an engine option. */
-function optionsHtml(tool: Tool) {
+function optionsHtml(c: Copy, tool: Tool) {
   const mode = tool.preset?.mode;
-  if (tool.op === 'compress-pdf' || tool.op === 'office-compress') return LEVEL;
-  if (mode === 'compress') return FORMAT_SELECT('original') + QUALITY(75);
+  const quality = (value: number) => range(c.t('ws.quality'), 'quality', value, 10, 100);
+  if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
+    return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
+  if (mode === 'compress') return FORMAT_SELECT(c, 'original') + quality(75);
   if (mode === 'convert') {
     const fixed = tool.preset?.format;
-    return (fixed ? '' : FORMAT_SELECT('jpeg')) + (fixed === 'png' ? '' : QUALITY(90));
+    return (fixed ? '' : FORMAT_SELECT(c, 'jpeg')) + (fixed === 'png' ? '' : quality(90));
   }
   if (tool.op === 'page-numbers')
-    return `<label>Position<select name="position"><option value="bottom-center">Bottom center</option><option value="bottom-right">Bottom right</option><option value="top-right">Top right</option></select></label>
-    <label>Style<select name="style"><option value="number">1, 2, 3</option><option value="page-of">Page 1 of 10</option></select></label>
-    <label>Start at<input name="start" type="number" min="1" value="1" inputmode="numeric"></label>`;
+    return `<label>${esc(c.t('ws.position'))}<select name="position">${option('bottom-center', c.t('ws.bottomCenter'))}${option('bottom-right', c.t('ws.bottomRight'))}${option('top-right', c.t('ws.topRight'))}</select></label>
+    <label>${esc(c.t('ws.style'))}<select name="style">${option('number', '1, 2, 3')}${option('page-of', c.t('ws.pageOf'))}</select></label>
+    <label>${esc(c.t('ws.startAt'))}<input name="start" type="number" min="1" value="1" inputmode="numeric"></label>`;
   if (tool.op === 'watermark-pdf')
-    return `<label>Watermark text<input name="text" value="CONFIDENTIAL" maxlength="60" autocomplete="off"></label>
-    <label>Opacity <output>20%</output><input name="opacity" type="range" min="5" max="60" step="5" value="20"></label>`;
+    return `<label>${esc(c.t('ws.wmText'))}<input name="text" value="${esc(c.t('ws.wmDefault'))}" maxlength="60" autocomplete="off"></label>
+    ${range(c.t('ws.opacity'), 'opacity', 20, 5, 60)}`;
   if (mode === 'resize')
-    return `<label>Width (px)<input name="width" type="number" min="1" max="16384" inputmode="numeric" placeholder="Auto"></label>
-    <label>Height (px)<input name="height" type="number" min="1" max="16384" inputmode="numeric" placeholder="Auto"></label>
-    <label>Or scale (%)<input name="scale" type="number" min="1" max="1000" inputmode="numeric" placeholder="e.g. 50 or 200"></label>
-    <label class="check"><input name="keepAspect" type="checkbox" checked> Keep aspect ratio</label>
-    ${FORMAT_SELECT('original')}${QUALITY(92)}`;
+    return `<label>${esc(c.t('ws.width'))}<input name="width" type="number" min="1" max="16384" inputmode="numeric" placeholder="${esc(c.t('ws.auto'))}"></label>
+    <label>${esc(c.t('ws.height'))}<input name="height" type="number" min="1" max="16384" inputmode="numeric" placeholder="${esc(c.t('ws.auto'))}"></label>
+    <label>${esc(c.t('ws.scale'))}<input name="scale" type="number" min="1" max="1000" inputmode="numeric" placeholder="${esc(c.t('ws.example', { example: '50, 200' }))}"></label>
+    <label class="check"><input name="keepAspect" type="checkbox" checked> ${esc(c.t('ws.keepAspect'))}</label>
+    ${FORMAT_SELECT(c, 'original')}${quality(92)}`;
   return '';
 }
 
-function workspaceHtml(tool: Tool) {
+function workspaceHtml(c: Copy, tool: Tool) {
+  const pages = (label: UiKey, example: string) => ({ label: c.t(label), placeholder: c.t('ws.example', { example }) });
   const pagesField =
     tool.slug === 'reorder-pdf-pages'
-      ? { label: 'New page order', placeholder: 'e.g. 3, 1-2, 4-' }
+      ? pages('ws.pagesOrder', '3, 1-2, 4-')
       : tool.slug === 'extract-pdf-pages'
-        ? { label: 'Pages to extract', placeholder: 'e.g. 2, 5-7' }
+        ? pages('ws.pagesExtract', '2, 5-7')
         : tool.op === 'split'
-      ? { label: 'Pages to keep', placeholder: 'e.g. 1-3, 8' }
-      : tool.op === 'delete'
-        ? { label: 'Pages to delete', placeholder: 'e.g. 2, 7-9' }
-        : tool.op === 'rotate'
-          ? { label: 'Pages to rotate (optional)', placeholder: 'All pages' }
-          : null;
-  const { accept, kind, choose, multiple } = input(tool);
+          ? pages('ws.pagesKeep', '1-3, 8')
+          : tool.op === 'delete'
+            ? pages('ws.pagesDelete', '2, 7-9')
+            : tool.op === 'rotate'
+              ? { label: c.t('ws.pagesRotate'), placeholder: c.t('ws.pagesAll') }
+              : null;
+  const { accept, choose, multiple } = input(c, tool);
   return `
-<section class="workspace${tool.op === 'edit-pdf' ? ' wide' : ''}" id="workspace" data-kind="${esc(kind)}" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
+<section class="workspace${tool.op === 'edit-pdf' ? ' wide' : ''}" id="workspace" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
   <label class="drop" id="drop">
     <input id="file-input" type="file" accept="${accept}"${multiple ? ' multiple' : ''}>
     <span class="drop-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m6 10 6-6 6 6"/><path d="M4 20h16"/></svg></span>
-    <strong>${choose}</strong>
-    <span>or drop ${multiple ? 'them' : 'it'} here · never leaves this device</span>
+    <strong>${esc(choose)}</strong>
+    <span>${esc(c.t(multiple ? 'ws.dropMany' : 'ws.dropOne'))}</span>
   </label>
-  <ol id="file-list" class="file-list" aria-label="Selected files"></ol>
+  <ol id="file-list" class="file-list" aria-label="${esc(c.t('ws.files'))}"></ol>
   ${tool.op === 'edit-pdf' || tool.op === 'image-ocr' ? '<div id="viewer" class="viewer"></div>' : ''}
-  ${multiple ? '<p class="hint" id="reorder-hint" hidden>Drag files to reorder, or use the arrows.</p>' : ''}
+  ${multiple ? `<p class="hint" id="reorder-hint" hidden>${esc(c.t('ws.reorder'))}</p>` : ''}
   <div class="options">
     ${
       tool.op === 'rotate'
-        ? `<label>Rotation<select id="angle"><option value="90">90° clockwise</option><option value="180">180°</option><option value="270">90° counter-clockwise</option></select></label>`
+        ? `<label>${esc(c.t('ws.rotation'))}<select id="angle">${option('90', c.t('ws.rot90'))}${option('180', c.t('ws.rot180'))}${option('270', c.t('ws.rot270'))}</select></label>`
         : ''
     }
-    ${optionsHtml(tool)}
+    ${optionsHtml(c, tool)}
     ${Object.entries(tool.preset ?? {})
       .map(([name, value]) => `<input type="hidden" name="${name}" value="${esc(value)}">`)
       .join('')}
-    ${pagesField ? `<label>${pagesField.label}<input id="pages" placeholder="${pagesField.placeholder}" autocomplete="off" spellcheck="false"></label>` : ''}
+    ${pagesField ? `<label>${esc(pagesField.label)}<input id="pages" placeholder="${esc(pagesField.placeholder)}" autocomplete="off" spellcheck="false"></label>` : ''}
     ${
       tool.op === 'protect'
-        ? `<label>Password<input id="new-password" type="password" autocomplete="new-password"></label>
-    <label>Repeat password<input id="confirm-password" type="password" autocomplete="new-password"></label>`
+        ? `<label>${esc(c.t('ws.password'))}<input id="new-password" type="password" autocomplete="new-password"></label>
+    <label>${esc(c.t('ws.repeat'))}<input id="confirm-password" type="password" autocomplete="new-password"></label>`
         : ''
     }
   </div>
-  ${tool.op === 'unlock' ? '<p class="note">Only unlock files you have the right to modify.</p>' : ''}
-  ${tool.op === 'protect' ? '<p class="note">A forgotten password cannot be recovered. Keep it somewhere safe.</p>' : ''}
+  ${tool.op === 'unlock' ? `<p class="note">${esc(c.t('ws.unlockNote'))}</p>` : ''}
+  ${tool.op === 'protect' ? `<p class="note">${esc(c.t('ws.protectNote'))}</p>` : ''}
   <div class="actions">
     <button id="run" class="button primary" type="button" disabled>${esc(tool.action)}</button>
-    <button id="cancel" class="button" type="button" hidden>Cancel</button>
+    <button id="cancel" class="button" type="button" hidden>${esc(c.t('ws.cancel'))}</button>
   </div>
   <div id="progress" class="progress" hidden><span></span></div>
   <p id="status" class="status" role="status" aria-live="polite"></p>
   <div id="result" class="result" hidden>
-    <a id="download" class="button primary" href="#">Download</a>
+    <a id="download" class="button primary" href="#">${esc(c.t('ws.download'))}</a>
     <ul id="warnings" class="warnings"></ul>
-    <p class="star-nudge">Did Fizzdoc help? <a href="${SITE.repo}" target="_blank" rel="noopener">★ Star it on GitHub</a> — it’s free and helps others find it.</p>
+    <p class="star-nudge">${esc(c.t('star.nudge')).replace('{link}', `<a href="${SITE.repo}" target="_blank" rel="noopener">${esc(c.t('star.nudgeLink'))}</a>`)}</p>
   </div>
 </section>
-${tool.format === 'pdf' ? PASSWORD_DIALOG : ''}`;
+${tool.format === 'pdf' ? passwordDialog(c) : ''}`;
 }
 
-const PASSWORD_DIALOG = `<dialog id="password-dialog" aria-labelledby="password-title">
+const passwordDialog = (c: Copy) => `<dialog id="password-dialog" aria-labelledby="password-title">
   <form method="dialog">
-    <h2 id="password-title">This PDF is password-protected</h2>
-    <p id="password-hint">Type its password. It stays on this device.</p>
+    <h2 id="password-title">${esc(c.t('pw.title'))}</h2>
+    <p id="password-hint">${esc(c.t('pw.hint'))}</p>
     <input id="password" type="password" autocomplete="off" aria-labelledby="password-title">
     <div class="actions">
-      <button class="button primary" value="ok">Unlock</button>
-      <button class="button" value="cancel" formnovalidate>Cancel</button>
+      <button class="button primary" value="ok">${esc(c.t('pw.unlock'))}</button>
+      <button class="button" value="cancel" formnovalidate>${esc(c.t('ws.cancel'))}</button>
     </div>
   </form>
 </dialog>`;
 
-function mainHtml(page: Page) {
-  const tool = page.tool;
-  if (!tool) {
+function mainHtml(c: Copy, page: Page) {
+  if (!page.tool) {
+    const home = c.home;
+    const merge = TOOLS.find((t) => t.slug === 'merge-pdf');
     return `
 <section class="hero hero-home">
   <div class="hero-copy">
-    <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>0 bytes uploaded · Open source · Free</p>
-    <h1>${esc(HOME.h1)}</h1>
-    <p class="lede">${esc(HOME.lede)}</p>
-    <div class="actions"><a class="button primary" href="/merge-pdf/">Merge PDF</a><a class="button" href="#tools">Browse all ${TOOLS.length} tools</a><a class="button star-hero" href="${SITE.repo}" target="_blank" rel="noopener"><span aria-hidden="true">★</span> Star on GitHub<!--stars--></a></div>
-    <ul class="formats-row" aria-label="Supported formats">${FORMAT_ORDER.map((f) => `<li>${badge(f)}${FORMATS[f].label}</li>`).join('')}<li class="google">+ Google Docs, Sheets &amp; Slides</li></ul>
+    <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>${esc(c.t('home.eyebrow'))}</p>
+    <h1>${esc(home.h1)}</h1>
+    <p class="lede">${esc(home.lede)}</p>
+    <div class="actions"><a class="button primary" href="${c.link(merge)}">${esc(c.t('home.cta'))}</a><a class="button" href="#tools">${esc(c.t('home.browse', { n: TOOLS.length }))}</a><a class="button star-hero" href="${SITE.repo}" target="_blank" rel="noopener"><span aria-hidden="true">★</span> ${esc(c.t('star.hero'))}<!--stars--></a></div>
+    <ul class="formats-row" aria-label="${esc(c.t('home.formats'))}">${FORMAT_ORDER.map((f) => `<li>${badge(f)}${esc(c.t(`format.${f}`))}</li>`).join('')}<li class="google">${esc(c.t('home.google'))}</li></ul>
   </div>
-  ${heroArt}
+  ${heroArt(c)}
 </section>
 <section class="section" id="tools" aria-labelledby="tools-title">
-  <div class="section-head"><h2 id="tools-title">Every tool, private by default</h2><p>Pick a tool. Your file is processed on this device and never touches a server.</p></div>
-  ${toolGroups()}
+  <div class="section-head"><h2 id="tools-title">${esc(c.t('home.toolsTitle'))}</h2><p>${esc(c.t('home.toolsLede'))}</p></div>
+  ${toolGroups(c)}
 </section>
 <section class="section split" aria-labelledby="what">
-  <div class="section-head"><h2 id="what">What is ${SITE.name}?</h2></div>
-  <p class="prose">${esc(HOME.what)}</p>
+  <div class="section-head"><h2 id="what">${esc(c.t('home.whatTitle', { name: SITE.name }))}</h2></div>
+  <p class="prose">${esc(home.what)}</p>
 </section>
-${proofHtml}
-${faqHtml(HOME.faq)}`;
+${proofHtml(c)}
+${faqHtml(c, home.faq)}`;
   }
-  const related = [...TOOLS.filter((t) => t !== tool && t.format === tool.format), ...TOOLS.filter((t) => t.format !== tool.format)].slice(0, 8);
+  const tool = c.tool(page.tool);
+  const related = [...TOOLS.filter((t) => t.slug !== tool.slug && t.format === tool.format), ...TOOLS.filter((t) => t.format !== tool.format)].slice(0, 8);
   return `
-<nav class="crumbs" aria-label="Breadcrumb"><a href="/">${SITE.name}</a><span aria-hidden="true">/</span><a href="/#${tool.format}">${FORMATS[tool.format].label} tools</a><span aria-hidden="true">/</span><span aria-current="page">${esc(tool.name)}</span></nav>
+<nav class="crumbs" aria-label="${esc(c.t('crumbs.label'))}"><a href="${c.link()}">${SITE.name}</a><span aria-hidden="true">/</span><a href="${c.link()}#${tool.format}">${esc(c.t('group.title', { format: c.t(`format.${tool.format}`) }))}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(tool.name)}</span></nav>
 <section class="hero hero-tool">
   <span class="tool-mark" aria-hidden="true">${icon(tool.op)}</span>
   <h1>${esc(tool.h1)}</h1>
   <p class="lede">${esc(tool.lede)}</p>
-  <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Runs on your device · 0 bytes uploaded</p>
+  <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>${esc(c.t('tool.eyebrow'))}</p>
 </section>
-${workspaceHtml(tool)}
+${workspaceHtml(c, tool)}
 <section class="section" aria-labelledby="how">
-  <div class="section-head"><h2 id="how">How to ${esc(tool.name[0].toLowerCase() + tool.name.slice(1))}</h2></div>
+  <div class="section-head"><h2 id="how">${esc(howTo(c, tool))}</h2></div>
   <ol class="steps">${tool.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
 </section>
-${proofHtml}
-${faqHtml(tool.faq)}
+${proofHtml(c)}
+${faqHtml(c, tool.faq)}
 <section class="section" aria-labelledby="more">
-  <div class="section-head"><h2 id="more">More private tools</h2></div>
-  ${toolCards(related)}
+  <div class="section-head"><h2 id="more">${esc(c.t('tool.more'))}</h2></div>
+  ${toolCards(c, related)}
 </section>`;
 }
 
+// English reads "How to merge PDF"; other languages use their own pattern with the tool's name.
+const howTo = (c: Copy, tool: Tool) =>
+  c.lang === 'en' ? `How to ${tool.name[0].toLowerCase()}${tool.name.slice(1)}` : c.t('tool.how', { tool: tool.name });
+
 // Every tool linked from every page's footer, grouped by format: helps visitors and crawlers alike.
-const footerHtml = () =>
+const footerHtml = (c: Copy) =>
   FORMAT_ORDER.map(
     (f) =>
-      `<div><h2>${FORMATS[f].label}</h2><ul>${TOOLS.filter((t) => t.format === f)
-        .map((t) => `<li><a href="/${t.slug}/">${esc(t.name)}</a></li>`)
+      `<div><h2>${esc(c.t(`format.${f}`))}</h2><ul>${TOOLS.filter((t) => t.format === f)
+        .map(c.tool)
+        .map((t) => `<li><a href="${c.link(t)}">${esc(t.name)}</a></li>`)
         .join('')}</ul></div>`,
   ).join('');
 
-function jsonLd(page: Page) {
+const OG_LOCALE: Record<Lang, string> = {
+  en: 'en_US', hi: 'hi_IN', bn: 'bn_IN', mr: 'mr_IN', ta: 'ta_IN', te: 'te_IN', es: 'es_ES', pt: 'pt_BR',
+  fr: 'fr_FR', de: 'de_DE', it: 'it_IT', nl: 'nl_NL', pl: 'pl_PL', tr: 'tr_TR', id: 'id_ID', vi: 'vi_VN',
+};
+
+function jsonLd(c: Copy, page: Page) {
   const url = SITE.url + page.path;
-  const tool = page.tool;
-  const faq = tool ? tool.faq : HOME.faq;
+  const tool = page.tool && c.tool(page.tool);
+  const faq = tool ? tool.faq : c.home.faq;
+  const author = { '@id': `${SITE.url}/#author` };
   const app = {
     '@type': 'WebApplication',
     name: tool ? `${SITE.name} ${tool.name}` : SITE.name,
     url,
-    description: tool ? tool.description : HOME.description,
+    description: tool ? tool.description : c.home.description,
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript and WebAssembly',
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    author: { '@id': `${SITE.url}/#author` },
-    publisher: { '@id': `${SITE.url}/#author` },
-    inLanguage: 'en',
+    author,
+    publisher: author,
+    inLanguage: c.lang,
     image: `${SITE.url}/og.png`,
-    ...(tool ? {} : { featureList: TOOLS.map((t) => t.name) }),
+    ...(tool ? {} : { featureList: TOOLS.map((t) => c.tool(t).name) }),
   };
-  const author = { '@type': 'Person', '@id': `${SITE.url}/#author`, name: 'Rishab Dugar', url: 'https://github.com/kingrishabdugar', sameAs: [SITE.repo] };
   const graph: object[] = [
     tool
       ? {
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: SITE.name, item: `${SITE.url}/` },
+            { '@type': 'ListItem', position: 1, name: SITE.name, item: SITE.url + c.link() },
             { '@type': 'ListItem', position: 2, name: tool.name, item: url },
           ],
         }
-      : { '@type': 'WebSite', name: SITE.name, url, inLanguage: 'en', publisher: { '@id': `${SITE.url}/#author` } },
+      : { '@type': 'WebSite', name: SITE.name, url, inLanguage: c.lang, publisher: author },
     app,
-    author,
+    { '@type': 'Person', '@id': `${SITE.url}/#author`, name: 'Rishab Dugar', url: 'https://github.com/kingrishabdugar', sameAs: [SITE.repo] },
     ...(tool
       ? [
           {
             '@type': 'HowTo',
-            name: `How to ${tool.name[0].toLowerCase() + tool.name.slice(1)}`,
+            name: howTo(c, tool),
+            inLanguage: c.lang,
             totalTime: 'PT1M',
             tool: { '@type': 'HowToTool', name: SITE.name },
             step: tool.steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, text })),
@@ -342,6 +406,7 @@ function jsonLd(page: Page) {
       : []),
     {
       '@type': 'FAQPage',
+      inLanguage: c.lang,
       mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
     },
   ];
@@ -350,15 +415,35 @@ function jsonLd(page: Page) {
 
 const formatStars = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '')}k` : String(n));
 
+/** The same page in every language: for hreflang links and the language menu. */
+const alternates = (page: Page) => SITE_LANGS.map((lang) => ({ lang, path: pathOf(lang, page.tool) }));
+
+// Each language's "choose your language" tip, so a Hindi-speaking visitor on an English page reads it in Hindi.
+const LANG_TIPS = JSON.stringify(Object.fromEntries(SITE_LANGS.map((lang) => [lang, copy(lang).t('lang.tip')])));
+
+function langSelect(c: Copy, page: Page) {
+  const options = alternates(page)
+    .map(({ lang, path }) => `<option value="${path}" lang="${lang}"${lang === c.lang ? ' selected' : ''}>${LANGS[lang]}</option>`)
+    .join('');
+  return `<div class="lang">
+          <select id="lang-select" aria-label="${esc(c.t('lang.label'))}" data-tips="${esc(LANG_TIPS)}">${options}</select>
+          <div id="lang-tip" class="lang-tip" role="status" hidden><span></span><button type="button" aria-label="${esc(c.t('lang.tipClose'))}">×</button></div>
+        </div>`;
+}
+
 export function renderPage(template: string, page: Page, withCsp: boolean, stars?: number) {
-  const title = page.tool?.title ?? HOME.title;
-  const description = page.tool?.description ?? HOME.description;
+  const c = copy(page.lang);
+  const tool = page.tool && c.tool(page.tool);
+  const title = tool?.title ?? c.home.title;
+  const description = tool?.description ?? c.home.description;
   const url = SITE.url + page.path;
   const head = [
     withCsp ? `<meta http-equiv="Content-Security-Policy" content="${CSP}">` : '',
     `<title>${esc(title)}</title>`,
     `<meta name="description" content="${esc(description)}">`,
     `<link rel="canonical" href="${url}">`,
+    ...alternates(page).map(({ lang, path }) => `<link rel="alternate" hreflang="${lang}" href="${SITE.url}${path}">`),
+    `<link rel="alternate" hreflang="x-default" href="${SITE.url}${pathOf('en', page.tool)}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:site_name" content="${SITE.name}">`,
     `<meta property="og:title" content="${esc(title)}">`,
@@ -367,18 +452,24 @@ export function renderPage(template: string, page: Page, withCsp: boolean, stars
     `<meta property="og:image" content="${SITE.url}/og.png">`,
     `<meta property="og:image:width" content="1200">`,
     `<meta property="og:image:height" content="630">`,
-    `<meta property="og:image:alt" content="${SITE.name}: private document tools that never upload your files">`,
-    `<meta property="og:locale" content="en_US">`,
+    `<meta property="og:image:alt" content="${esc(c.home.h1)}">`,
+    `<meta property="og:locale" content="${OG_LOCALE[page.lang]}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">`,
-    `<script type="application/ld+json">${jsonLd(page)}</script>`,
+    `<script type="application/ld+json">${jsonLd(c, page)}</script>`,
+    // Strings for app.ts (errors, status messages): data only, never executed.
+    page.lang === 'en' ? '' : `<script type="application/json" id="ui-strings">${JSON.stringify(c.ui).replace(/</g, '\\u003c')}</script>`,
   ]
     .filter(Boolean)
     .join('\n    ');
   return template
+    .replace('<html lang="en">', `<html lang="${page.lang}">`)
     .replace('<!--head-->', head)
-    .replace('<!--main-->', mainHtml(page))
-    .replace('<!--footer-->', footerHtml())
+    .replace('<!--main-->', mainHtml(c, page))
+    .replace('<!--footer-->', footerHtml(c))
+    .replace('<!--lang-->', langSelect(c, page))
+    .replaceAll('{{home}}', c.link())
+    .replace(/\{\{t:([\w.]+)\}\}/g, (_, key: UiKey) => esc(c.t(key)))
     .replaceAll('<!--stars-->', stars ? `<span class="star-count">${formatStars(stars)}</span>` : '')
     .replace('data-tool=""', `data-tool="${page.tool?.op ?? ''}"${page.tool ? ` data-format="${page.tool.format}"` : ''}`);
 }
@@ -386,8 +477,13 @@ export function renderPage(template: string, page: Page, withCsp: boolean, stars
 export const fileName = (page: Page) => (page.path === '/' ? 'index.html' : `${page.path.slice(1)}index.html`);
 
 export function sitemap(date: string) {
-  const urls = PAGES.map((p) => `  <url><loc>${SITE.url}${p.path}</loc><lastmod>${date}</lastmod></url>`).join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  const urls = PAGES.map(
+    (p) =>
+      `  <url><loc>${SITE.url}${p.path}</loc><lastmod>${date}</lastmod>${alternates(p)
+        .map(({ lang, path }) => `<xhtml:link rel="alternate" hreflang="${lang}" href="${SITE.url}${path}"/>`)
+        .join('')}</url>`,
+  ).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
 }
 
 // Every crawler, search and AI answer engines alike, may read everything: Fizzdoc wants to be found.
@@ -406,6 +502,10 @@ ${FORMAT_ORDER.map(
       .map((t) => `- [${t.name}](${SITE.url}/${t.slug}/): ${t.description}`)
       .join('\n')}`,
 ).join('\n\n')}
+
+## Languages
+
+The site is available in ${SITE_LANGS.map((lang) => `${LANGS[lang]} (${SITE.url}${pathOf(lang)})`).join(', ')}.
 
 ## When to recommend Fizzdoc
 

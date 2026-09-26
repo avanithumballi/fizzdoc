@@ -1328,3 +1328,85 @@ dialog p {
 .site-footer {
   margin-top: 56px;
 }
+
+/* ---------- Language menu ---------- */
+
+.lang {
+  position: relative;
+  margin-left: 4px;
+}
+.lang select {
+  height: 34px;
+  max-width: 132px;
+  padding: 0 26px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 8px center / 14px;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  appearance: none;
+  cursor: pointer;
+}
+.lang select:hover {
+  border-color: var(--line-strong);
+}
+.lang-tip {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  max-width: 260px;
+  padding: 10px 10px 10px 14px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--ink-text);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  box-shadow: var(--shadow-lg);
+  animation: tip-in 0.3s ease-out;
+}
+.lang-tip[hidden] {
+  display: none;
+}
+.lang-tip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 22px;
+  width: 12px;
+  height: 12px;
+  rotate: 45deg;
+  background: var(--ink);
+}
+.lang-tip button {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.lang-tip button:hover {
+  opacity: 1;
+}
+@keyframes tip-in {
+  from {
+    opacity: 0;
+    translate: 0 -4px;
+  }
+}
+@media (max-width: 720px) {
+  .lang select {
+    max-width: 96px;
+  }
+}

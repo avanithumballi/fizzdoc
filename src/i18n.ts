@@ -1,0 +1,243 @@
+// Interface strings and languages. English is the source; src/i18n/<lang>.json holds translations
+// of these strings plus the tool copy from site.ts. Anything missing falls back to English.
+
+export const LANGS = {
+  en: 'English',
+  hi: 'हिन्दी',
+  bn: 'বাংলা',
+  mr: 'मराठी',
+  ta: 'தமிழ்',
+  te: 'తెలుగు',
+  es: 'Español',
+  pt: 'Português',
+  fr: 'Français',
+  de: 'Deutsch',
+  it: 'Italiano',
+  nl: 'Nederlands',
+  pl: 'Polski',
+  tr: 'Türkçe',
+  id: 'Bahasa Indonesia',
+  vi: 'Tiếng Việt',
+} as const;
+export type Lang = keyof typeof LANGS;
+
+export const UI = {
+  // Header, language switcher, footer
+  'nav.label': 'Main',
+  'nav.home': 'Fizzdoc home',
+  'nav.theme': 'Switch colour theme',
+  'nav.star': '★ Star',
+  'nav.starAria': 'Star Fizzdoc on GitHub',
+  'lang.label': 'Language',
+  'lang.tip': 'Prefer another language? Choose it here.',
+  'lang.tipClose': 'Dismiss',
+  'footer.about': 'Private document tools. Your files are processed on your device and never uploaded.',
+  'footer.license': 'Open source (MIT)',
+  'footer.builtOn': 'Built on qpdf, pdf.js and pdf-lib',
+  'star.title': 'Free and open source. Forever.',
+  'star.text': 'No ads, no accounts, no servers looking at your files. If Fizzdoc saved you time, a star on GitHub helps more people find it.',
+  'star.button': 'Star Fizzdoc on GitHub',
+  'star.hero': 'Star on GitHub',
+  'star.nudge': 'Did Fizzdoc help? {link} — it’s free and helps others find it.',
+  'star.nudgeLink': '★ Star it on GitHub',
+
+  // Formats
+  'format.pdf': 'PDF',
+  'format.word': 'Word',
+  'format.excel': 'Excel',
+  'format.powerpoint': 'PowerPoint',
+  'format.image': 'Images',
+  'group.title': '{format} tools',
+
+  // Home and shared sections
+  'home.eyebrow': '0 bytes uploaded · Open source · Free',
+  'home.cta': 'Merge PDF',
+  'home.browse': 'Browse all {n} tools',
+  'home.formats': 'Supported formats',
+  'home.google': '+ Google Docs, Sheets & Slides',
+  'home.chip': 'Processed on this device',
+  'home.toolsTitle': 'Every tool, private by default',
+  'home.toolsLede': 'Pick a tool. Your file is processed on this device and never touches a server.',
+  'home.whatTitle': 'What is {name}?',
+  'tool.eyebrow': 'Runs on your device · 0 bytes uploaded',
+  'tool.how': 'How to use {tool}',
+  'tool.more': 'More private tools',
+  'crumbs.label': 'Breadcrumb',
+  'faq.title': 'Frequently asked questions',
+  'proof.title': 'Private by design — and you can check',
+  'proof.lede': 'Your files are never uploaded, because there is nowhere to upload them to.',
+  'proof.noUpload': 'No upload step exists',
+  'proof.noUploadText': 'Files are read and written inside this browser tab. There is no server that could receive them.',
+  'proof.csp': 'The browser enforces it',
+  'proof.cspText': 'This page’s Content Security Policy only allows connections back to this site, which serves nothing but the app itself.',
+  'proof.check': 'See for yourself',
+  'proof.checkText': 'Open developer tools, watch the Network tab and run a job: no request carries your document.',
+  'proof.open': 'Open source',
+  'proof.openText': 'Every line is on {github}, built on {engines}.',
+
+  // Workspace
+  'ws.choosePdf': 'Choose a PDF file',
+  'ws.choosePdfs': 'Choose PDF files',
+  'ws.chooseImage': 'Choose an image',
+  'ws.chooseImages': 'Choose images',
+  'ws.chooseFile': 'Choose a {ext} file',
+  'ws.chooseFiles': 'Choose {ext} files',
+  'ws.dropOne': 'or drop it here · never leaves this device',
+  'ws.dropMany': 'or drop them here · never leaves this device',
+  'ws.files': 'Selected files',
+  'ws.reorder': 'Drag files to reorder, or use the arrows.',
+  'ws.rotation': 'Rotation',
+  'ws.rot90': '90° clockwise',
+  'ws.rot180': '180°',
+  'ws.rot270': '90° counter-clockwise',
+  'ws.pagesKeep': 'Pages to keep',
+  'ws.pagesDelete': 'Pages to delete',
+  'ws.pagesRotate': 'Pages to rotate (optional)',
+  'ws.pagesAll': 'All pages',
+  'ws.pagesExtract': 'Pages to extract',
+  'ws.pagesOrder': 'New page order',
+  'ws.example': 'e.g. {example}',
+  'ws.password': 'Password',
+  'ws.repeat': 'Repeat password',
+  'ws.unlockNote': 'Only unlock files you have the right to modify.',
+  'ws.protectNote': 'A forgotten password cannot be recovered. Keep it somewhere safe.',
+  'ws.cancel': 'Cancel',
+  'ws.download': 'Download',
+  'ws.compression': 'Compression',
+  'ws.balanced': 'Balanced — best quality',
+  'ws.strong': 'Strong — smallest file',
+  'ws.saveAs': 'Save as',
+  'ws.fmtOriginal': 'Same format as each file',
+  'ws.fmtJpeg': 'JPG — photos, opens everywhere',
+  'ws.fmtWebp': 'WebP — smallest',
+  'ws.fmtPng': 'PNG — lossless',
+  'ws.quality': 'Quality',
+  'ws.width': 'Width (px)',
+  'ws.height': 'Height (px)',
+  'ws.scale': 'Or scale (%)',
+  'ws.auto': 'Auto',
+  'ws.keepAspect': 'Keep aspect ratio',
+  'ws.position': 'Position',
+  'ws.bottomCenter': 'Bottom center',
+  'ws.bottomRight': 'Bottom right',
+  'ws.topRight': 'Top right',
+  'ws.style': 'Style',
+  'ws.pageOf': 'Page 1 of 10',
+  'ws.startAt': 'Start at',
+  'ws.wmText': 'Watermark text',
+  'ws.wmDefault': 'CONFIDENTIAL',
+  'ws.opacity': 'Opacity',
+  'pw.title': 'This PDF is password-protected',
+  'pw.titleFile': '“{file}” is password-protected',
+  'pw.hint': 'Type its password. It stays on this device.',
+  'pw.retry': 'That password did not work. Try again ({n} of 3).',
+  'pw.unlock': 'Unlock',
+
+  // Status messages (app.ts)
+  'app.working': 'Working… your files stay on this device.',
+  'app.workingPct': 'Working… {pct}% — your files stay on this device.',
+  'app.done': 'Done — {summary}, {size}. Created on this device.',
+  'app.ready': 'Ready — choose “Save as PDF” in the print window, then Save. Created on this device.',
+  'app.saveAsPdf': 'Save as PDF',
+  'app.downloadExt': 'Download {ext}',
+  'app.canceled': 'Canceled. Nothing was changed.',
+  'app.wrongType': 'That file type can’t be used with this tool.',
+  'app.tooBig': 'These files total {size}, more than this device can safely process ({max}).',
+  'app.moveUp': 'Move up',
+  'app.moveDown': 'Move down',
+  'app.remove': 'Remove',
+
+  'error.INVALID_PDF': 'This file could not be read as a PDF. It may be damaged or not a PDF.',
+  'error.BAD_PASSWORD': 'That password did not work after three tries. Nothing was changed.',
+  'error.PASSWORD_REQUIRED': 'This PDF needs its password to continue. Nothing was changed.',
+  'error.BAD_RANGE': 'Check the page numbers. Use numbers and ranges like “1-3, 8” within the document’s page count.',
+  'error.NOT_ENCRYPTED': 'This PDF is not password-protected, so there is nothing to unlock.',
+  'error.UNSUPPORTED_XFA': 'This PDF uses a dynamic XFA form, which cannot be edited safely. Your file was not changed.',
+  'error.NO_PAGES_LEFT': 'That would remove every page. Keep at least one.',
+  'error.WRONG_FILE_COUNT': 'Add the number of files this tool needs.',
+  'error.PROCESSING_FAILED': 'Something went wrong while processing. Your original file is unchanged.',
+  'error.NO_PASSWORD': 'Type the password you want to add.',
+  'error.PASSWORDS_DIFFER': 'The two passwords do not match.',
+  'error.NOT_OFFICE': 'This file is not a valid Word, Excel or PowerPoint document.',
+  'error.NO_IMAGES': 'This document has no embedded images.',
+  'error.BAD_IMAGE': 'One of the images could not be read. Try JPG or PNG.',
+  'error.PDF_PASSWORD': 'This PDF is password-protected. Remove the password with Unlock PDF first.',
+  'error.BAD_SIZE': 'The width and height must each be between 1 and 16,384 pixels.',
+  'error.NO_TEXT': 'This PDF has no text to extract — it is probably a scanned image. Run OCR PDF first, then try again.',
+  'error.NO_WATERMARK': 'Type the watermark text (letters, numbers and common symbols).',
+  'error.ENGINE_FAILED': 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
+  'warning.BOOKMARKS_DROPPED': 'Bookmarks from the second and later files were not carried over. The first file’s bookmarks were kept.',
+  'warning.BOOKMARKS_BROKEN': 'Some bookmarks pointed to pages that were removed, so they no longer lead anywhere.',
+  'warning.TAGS_NOT_UPDATED': 'This PDF has accessibility tags that were not rebuilt for the new pages, so screen-reader structure may be incomplete.',
+  'warning.SIGNATURES_INVALIDATED': 'Digital signatures in this PDF will no longer validate, because the document changed.',
+  'warning.PASSWORD_REMOVED': 'The new file has no password.',
+  'warning.PERMISSIONS_REMOVED': 'The original’s editing and printing restrictions are not applied to the new file.',
+
+  // Result summaries come from the engines in English; these words are swapped one for one.
+  'sum.page': 'page',
+  'sum.pages': 'pages',
+  'sum.image': 'image',
+  'sum.images': 'images',
+  'sum.word': 'word',
+  'sum.words': 'words',
+  'sum.slide': 'slide',
+  'sum.slides': 'slides',
+  'sum.row': 'row',
+  'sum.rows': 'rows',
+  'sum.sheet': 'sheet',
+  'sum.sheets': 'sheets',
+  'sum.edit': 'edit',
+  'sum.edits': 'edits',
+  'sum.recognized': 'recognized',
+  'sum.numbered': 'numbered',
+  'sum.watermarked': 'watermarked',
+  'sum.smaller': 'smaller',
+  'sum.Already optimized': 'Already optimized',
+  'sum.Metadata removed': 'Metadata removed',
+
+  // PDF editor and OCR viewer
+  'ed.tools': 'Editing tool',
+  'ed.editText': 'Edit text',
+  'ed.addText': 'Add text',
+  'ed.whiteout': 'White-out',
+  'ed.undo': 'Undo',
+  'ed.undoLabel': 'Undo last edit',
+  'ed.zoomOut': 'Zoom out',
+  'ed.zoomIn': 'Zoom in',
+  'ed.page': 'Page {n} / {total}',
+  'ed.editRun': 'Edit text: {text}',
+  'ed.move': 'Drag to move',
+  'ed.removeBox': 'Remove text box',
+  'ed.replaced': 'Some characters aren’t supported by the standard PDF fonts and were replaced.',
+  'ed.hint': 'Covered text is hidden, not deleted from the file — for sensitive data, delete the page instead.',
+  'ocr.copyAll': 'Copy all text',
+  'ocr.copied': 'Copied',
+  'ocr.text': 'Recognized text',
+};
+export type UiKey = keyof typeof UI;
+export type Strings = Partial<Record<UiKey, string>>;
+
+/** Fills {name} placeholders. */
+export const fill = (text: string, vars: Record<string, string | number> = {}) =>
+  text.replace(/\{(\w+)\}/g, (match, name) => (name in vars ? String(vars[name]) : match));
+
+// In the browser, each page carries its language's strings in <script id="ui-strings" type="application/json">.
+let pageStrings: Strings | undefined;
+export function t(key: UiKey, vars?: Record<string, string | number>) {
+  if (!pageStrings) {
+    try {
+      pageStrings = JSON.parse(document.getElementById('ui-strings')?.textContent || '{}');
+    } catch {
+      pageStrings = {};
+    }
+  }
+  return fill(pageStrings![key] ?? UI[key], vars);
+}
+
+/** Translates an engine summary such as "3 pages · 1,234 words" word by word. */
+export function localizeSummary(summary: string) {
+  return summary
+    .split(/(Already optimized|Metadata removed|[A-Za-z]+)/)
+    .map((part) => (`sum.${part}` in UI ? t(`sum.${part}` as UiKey) : part))
+    .join('');
+}

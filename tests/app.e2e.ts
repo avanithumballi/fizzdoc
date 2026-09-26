@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
-import { PAGES } from '../src/seo';
+import { PAGES, SITE_LANGS } from '../src/seo';
 import { SITE } from '../src/site';
 
 const file = (name: string) => new URL(`./fixtures/${name}`, import.meta.url).pathname;
@@ -125,7 +125,7 @@ test('cleans Office metadata and extracts Office images', async ({ page }) => {
   expect((await downloadBytes(page)).name).toBe('sheet-images.zip');
 
   await page.locator('#file-input').setInputFiles(file('report.docx'));
-  await expect(page.locator('#status')).toContainText('Only Excel (.xlsx) files can be added.');
+  await expect(page.locator('#status')).toContainText('That file type can’t be used with this tool.');
 });
 
 test('compresses a PDF and reports the saving', async ({ page }) => {
@@ -320,6 +320,24 @@ test('asks for a GitHub star at the top, the bottom and after a download', async
   }
   await page.goto('/merge-pdf/');
   await expect(page.locator('.star-nudge a')).toHaveAttribute('href', SITE.repo);
+});
+
+test('serves every language with hreflang links, a language menu and a one-time tip', async ({ page, request }) => {
+  const other = SITE_LANGS.find((lang) => lang !== 'en');
+  test.skip(!other, 'no translations yet');
+  const html = await (await request.get(`/${other}/merge-pdf/`)).text();
+  expect(html).toContain(`<html lang="${other}">`);
+  expect(html).toContain(`<link rel="alternate" hreflang="en" href="${SITE.url}/merge-pdf/">`);
+  expect(html).toContain(`<link rel="alternate" hreflang="x-default" href="${SITE.url}/merge-pdf/">`);
+  expect(html).toContain('id="ui-strings"');
+
+  await page.goto('/merge-pdf/');
+  await expect(page.locator('#lang-tip')).toBeVisible();
+  await page.locator('#lang-select').selectOption(`/${other}/merge-pdf/`);
+  await expect(page).toHaveURL(new RegExp(`/${other}/merge-pdf/$`));
+  await expect(page.locator('html')).toHaveAttribute('lang', other!);
+  await expect(page.locator('#lang-tip')).toBeHidden(); // shown once only
+  await expect(page.locator('.crumbs a').first()).toHaveAttribute('href', `/${other}/`);
 });
 
 test('remembers the chosen theme across pages', async ({ page }) => {
