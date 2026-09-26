@@ -1,5 +1,6 @@
 // Sejda-style "Edit PDF": change text in place, add new text, white-out areas. Everything runs
 // against the original file in memory; save() re-renders the whole document with pdf-lib.
+import './edit-pdf.css';
 import { LocalError, type Output } from '../engine/local';
 
 // ---------------------------------------------------------------------------

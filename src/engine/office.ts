@@ -537,7 +537,7 @@ const appXml = (words: number, pages: number) => `<?xml version="1.0" encoding="
 </Properties>`;
 
 /** Builds a minimal, valid .docx from already-extracted paragraphs. Pure and Node-testable. */
-export function buildDocxPackage(pages: DocParagraph[][], pageSize: { widthPt: number; heightPt: number }, title: string): Uint8Array {
+export function buildDocxPackage(pages: DocParagraph[][], pageSize: { widthPt: number; heightPt: number }, title: string): { zipped: Uint8Array; words: number } {
   const bodySize = (() => {
     const sizes = pages.flat().map((p) => p.fontSize);
     if (!sizes.length) return 12;
@@ -580,8 +580,7 @@ export function buildDocxPackage(pages: DocParagraph[][], pageSize: { widthPt: n
     'docProps/core.xml': strToU8(coreXmlFor(title)),
     'docProps/app.xml': strToU8(appXml(words, pageCount)),
   };
-  (buildDocxPackage as unknown as { lastWordCount: number }).lastWordCount = words;
-  return zipSync(entries, { level: 6 });
+  return { zipped: zipSync(entries, { level: 6 }), words };
 }
 
 export async function pdfToDocx(file: File): Promise<Output> {
@@ -614,8 +613,7 @@ export async function pdfToDocx(file: File): Promise<Output> {
   if (!totalText) throw new LocalError('NO_TEXT');
 
   const title = baseName(file);
-  const zipped = buildDocxPackage(pages, { widthPt, heightPt }, title);
-  const words = (buildDocxPackage as unknown as { lastWordCount: number }).lastWordCount;
+  const { zipped, words } = buildDocxPackage(pages, { widthPt, heightPt }, title);
   return {
     blob: new Blob([zipped as Uint8Array<ArrayBuffer>], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }),
     name: `${title}.docx`,

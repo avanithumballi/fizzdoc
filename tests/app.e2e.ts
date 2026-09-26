@@ -128,6 +128,108 @@ test('cleans Office metadata and extracts Office images', async ({ page }) => {
   await expect(page.locator('#status')).toContainText('Only Excel (.xlsx) files can be added.');
 });
 
+test('compresses a PDF and says so honestly when nothing can shrink', async ({ page }) => {
+  await page.goto('/compress-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('text-only'));
+  await page.getByRole('button', { name: 'Compress PDF' }).click();
+  await expect(page.locator('#status')).toContainText('Already optimized');
+  expect((await downloadBytes(page)).name).toBe('text-only-compressed.pdf');
+});
+
+test('resizes and converts images with the chosen options', async ({ page }) => {
+  await page.goto('/resize-image/');
+  await page.locator('#file-input').setInputFiles(file('photo.png'));
+  await page.locator('input[name="width"]').fill('60');
+  await page.getByRole('button', { name: 'Resize images' }).click();
+  await expect(page.locator('#status')).toContainText('60 × 40');
+  expect((await downloadBytes(page)).name).toBe('photo-60x40.png');
+
+  await page.goto('/convert-image/');
+  await page.locator('#file-input').setInputFiles([file('photo.png'), file('photo.jpg')]);
+  await page.locator('input[name="quality"]').fill('50');
+  await expect(page.locator('.options output')).toHaveText('50%');
+  await page.getByRole('button', { name: 'Convert images' }).click();
+  await expect(page.locator('#status')).toContainText('Done — 2 images');
+  expect((await downloadBytes(page)).name).toBe('images-resized.zip');
+});
+
+test('converts PDFs to text, Markdown, Word and PowerPoint', async ({ page }) => {
+  const seen = watch(page);
+  for (const [slug, button, name] of [
+    ['pdf-to-text', 'Extract text', 'rich-text.txt'],
+    ['pdf-to-markdown', 'Convert to Markdown', 'rich-text.md'],
+    ['pdf-to-word', 'Convert to Word', 'rich-text.docx'],
+    ['pdf-to-powerpoint', 'Convert to PowerPoint', 'rich-text.pptx'],
+  ]) {
+    await page.goto(`/${slug}/`);
+    await page.locator('#file-input').setInputFiles(fixture('rich-text'));
+    await page.getByRole('button', { name: button }).click();
+    await expect(page.locator('#status')).toContainText('Done');
+    expect((await downloadBytes(page)).name).toBe(name);
+  }
+  expect(seen.violations).toEqual([]);
+
+  await page.goto('/pdf-to-text/');
+  await page.locator('#file-input').setInputFiles(fixture('blank'));
+  await page.getByRole('button', { name: 'Extract text' }).click();
+  await expect(page.locator('#status')).toContainText('Run OCR PDF first');
+});
+
+test('prepares Word and Markdown documents for Save as PDF without running their scripts', async ({ page }) => {
+  const seen = watch(page);
+  await page.goto('/word-to-pdf/');
+  await page.locator('#file-input').setInputFiles(file('rich.docx'));
+  await page.getByRole('button', { name: 'Convert to PDF' }).click();
+  await expect(page.locator('#status')).toContainText('Save as PDF');
+  await expect(page.locator('#download')).toHaveText('Save as PDF');
+  expect(await page.locator('.print-frame').getAttribute('srcdoc')).toContain('<table');
+
+  await page.goto('/markdown-to-pdf/');
+  await page.locator('#file-input').setInputFiles(file('notes.md'));
+  await page.getByRole('button', { name: 'Create PDF' }).click();
+  const frame = page.frameLocator('.print-frame');
+  await expect(frame.locator('h1')).toHaveText('Notes');
+  await expect(frame.locator('strong')).toHaveText('bold');
+  await expect(frame.locator('script')).toHaveCount(0);
+  expect(seen.violations).toEqual([]);
+});
+
+test('converts between Excel and CSV', async ({ page }) => {
+  await page.goto('/csv-to-excel/');
+  await page.locator('#file-input').setInputFiles(file('data.csv'));
+  await page.getByRole('button', { name: 'Convert to Excel' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  const xlsx = await downloadBytes(page);
+  expect(xlsx.name).toBe('data.xlsx');
+
+  await page.goto('/excel-to-csv/');
+  await page.locator('#file-input').setInputFiles({ name: 'data.xlsx', mimeType: '', buffer: xlsx.bytes });
+  await page.getByRole('button', { name: 'Convert to CSV' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  const csv = await downloadBytes(page);
+  expect(csv.name).toBe('data.csv');
+  expect(csv.bytes.toString('utf8')).toContain('007,"Smith, Jane",12.5');
+});
+
+test('edits PDF text in place and saves on the device', async ({ page, baseURL }) => {
+  const seen = watch(page);
+  await page.goto('/edit-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('text-only'));
+  const viewer = page.locator('#viewer');
+  await viewer.locator('.edit-hitbox').first().click();
+  await page.keyboard.press('ControlOrMeta+A');
+  await page.keyboard.type('Replaced text');
+  await page.keyboard.press('Enter');
+  await page.getByRole('button', { name: 'Save PDF' }).click();
+  await expect(page.locator('#status')).toContainText('1 edit');
+  const { name, bytes } = await downloadBytes(page);
+  expect(name).toBe('text-only-edited.pdf');
+  expect(bytes.subarray(0, 5).toString()).toBe('%PDF-');
+  const origin = new URL(baseURL!).origin;
+  for (const request of seen.requests) if (!request.url.startsWith('blob:')) expect(new URL(request.url).origin).toBe(origin);
+  expect(seen.violations).toEqual([]);
+});
+
 test('remembers the chosen theme across pages', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto('/');

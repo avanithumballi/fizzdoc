@@ -108,7 +108,7 @@ describe('buildDocxPackage (pure)', () => {
       ],
       [{ text: 'Second page paragraph.', fontSize: 12, bold: true, italic: false, bullet: false }],
     ];
-    const zipped = buildDocxPackage(paragraphs, { widthPt: 612, heightPt: 792 }, 'Converted PDF');
+    const { zipped } = buildDocxPackage(paragraphs, { widthPt: 612, heightPt: 792 }, 'Converted PDF');
     const entries = unzip(zipped);
     expect(entries['[Content_Types].xml']).toBeDefined();
     expect(entries['_rels/.rels']).toBeDefined();
