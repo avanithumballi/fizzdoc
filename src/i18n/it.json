@@ -1,0 +1,1572 @@
+{
+  "ui": {
+    "nav.label": "Principale",
+    "nav.home": "Home di Fizzdoc",
+    "nav.theme": "Cambia tema colore",
+    "nav.star": "★ Stella",
+    "nav.starAria": "Metti una stella a Fizzdoc su GitHub",
+    "lang.label": "Lingua",
+    "lang.tip": "Preferisci un'altra lingua? Scegliela qui.",
+    "lang.tipClose": "Chiudi",
+    "footer.about": "Strumenti privati per documenti. I tuoi file vengono elaborati sul tuo dispositivo e non vengono mai caricati.",
+    "footer.license": "Open source (MIT)",
+    "footer.builtOn": "Realizzato con qpdf, pdf.js e pdf-lib",
+    "star.title": "Gratuito e open source. Per sempre.",
+    "star.text": "Niente pubblicità, niente account, nessun server che guarda i tuoi file. Se Fizzdoc ti ha fatto risparmiare tempo, una stella su GitHub aiuta altri a scoprirlo.",
+    "star.button": "Metti una stella a Fizzdoc su GitHub",
+    "star.hero": "Stella su GitHub",
+    "star.nudge": "Fizzdoc ti è stato utile? {link} — è gratis e aiuta altri a trovarlo.",
+    "star.nudgeLink": "★ Mettigli una stella su GitHub",
+    "format.pdf": "PDF",
+    "format.word": "Word",
+    "format.excel": "Excel",
+    "format.powerpoint": "PowerPoint",
+    "format.image": "Immagini",
+    "group.title": "Strumenti {format}",
+    "home.eyebrow": "0 byte caricati · Open source · Gratis",
+    "home.cta": "Unisci PDF",
+    "home.browse": "Sfoglia tutti i {n} strumenti",
+    "home.formats": "Formati supportati",
+    "home.google": "+ Google Docs, Sheets e Slides",
+    "home.chip": "Elaborato su questo dispositivo",
+    "home.toolsTitle": "Ogni strumento, privato per natura",
+    "home.toolsLede": "Scegli uno strumento. Il tuo file viene elaborato su questo dispositivo e non tocca mai un server.",
+    "home.whatTitle": "Cos'è {name}?",
+    "tool.eyebrow": "Funziona sul tuo dispositivo · 0 byte caricati",
+    "tool.how": "Come usare {tool}",
+    "tool.more": "Altri strumenti privati",
+    "crumbs.label": "Percorso di navigazione",
+    "faq.title": "Domande frequenti",
+    "proof.title": "Privato per progettazione — e puoi verificarlo",
+    "proof.lede": "I tuoi file non vengono mai caricati, perché non c'è nessun posto dove caricarli.",
+    "proof.noUpload": "Non esiste alcun caricamento",
+    "proof.noUploadText": "I file vengono letti e scritti all'interno di questa scheda del browser. Non esiste un server che potrebbe riceverli.",
+    "proof.csp": "Il browser lo impone",
+    "proof.cspText": "La Content Security Policy di questa pagina consente connessioni solo verso questo sito, che non serve altro che l'app stessa.",
+    "proof.check": "Verifica di persona",
+    "proof.checkText": "Apri gli strumenti per sviluppatori, osserva la scheda Rete ed esegui un'operazione: nessuna richiesta trasporta il tuo documento.",
+    "proof.open": "Open source",
+    "proof.openText": "Ogni riga di codice è su {github}, realizzata con {engines}.",
+    "ws.choosePdf": "Scegli un file PDF",
+    "ws.choosePdfs": "Scegli i file PDF",
+    "ws.chooseImage": "Scegli un'immagine",
+    "ws.chooseImages": "Scegli le immagini",
+    "ws.chooseFile": "Scegli un file {ext}",
+    "ws.chooseFiles": "Scegli i file {ext}",
+    "ws.dropOne": "oppure trascinalo qui · non lascia mai questo dispositivo",
+    "ws.dropMany": "oppure trascinali qui · non lasciano mai questo dispositivo",
+    "ws.files": "File selezionati",
+    "ws.reorder": "Trascina i file per riordinarli, oppure usa le frecce.",
+    "ws.rotation": "Rotazione",
+    "ws.rot90": "90° in senso orario",
+    "ws.rot180": "180°",
+    "ws.rot270": "90° in senso antiorario",
+    "ws.pagesKeep": "Pagine da mantenere",
+    "ws.pagesDelete": "Pagine da eliminare",
+    "ws.pagesRotate": "Pagine da ruotare (facoltativo)",
+    "ws.pagesAll": "Tutte le pagine",
+    "ws.pagesExtract": "Pagine da estrarre",
+    "ws.pagesOrder": "Nuovo ordine delle pagine",
+    "ws.example": "es. {example}",
+    "ws.password": "Password",
+    "ws.repeat": "Ripeti la password",
+    "ws.unlockNote": "Sblocca solo i file che hai il diritto di modificare.",
+    "ws.protectNote": "Una password dimenticata non può essere recuperata. Conservala in un posto sicuro.",
+    "ws.cancel": "Annulla",
+    "ws.download": "Scarica",
+    "ws.compression": "Compressione",
+    "ws.balanced": "Bilanciata — qualità migliore",
+    "ws.strong": "Forte — file più piccolo",
+    "ws.saveAs": "Salva come",
+    "ws.fmtOriginal": "Stesso formato di ogni file",
+    "ws.fmtJpeg": "JPG — foto, si apre ovunque",
+    "ws.fmtWebp": "WebP — il più piccolo",
+    "ws.fmtPng": "PNG — senza perdita di qualità",
+    "ws.quality": "Qualità",
+    "ws.width": "Larghezza (px)",
+    "ws.height": "Altezza (px)",
+    "ws.scale": "Oppure scala (%)",
+    "ws.auto": "Auto",
+    "ws.keepAspect": "Mantieni le proporzioni",
+    "ws.position": "Posizione",
+    "ws.bottomCenter": "In basso al centro",
+    "ws.bottomRight": "In basso a destra",
+    "ws.topRight": "In alto a destra",
+    "ws.style": "Stile",
+    "ws.pageOf": "Pagina 1 di 10",
+    "ws.startAt": "Inizia da",
+    "ws.wmText": "Testo della filigrana",
+    "ws.wmDefault": "RISERVATO",
+    "ws.opacity": "Opacità",
+    "pw.title": "Questo PDF è protetto da password",
+    "pw.titleFile": "“{file}” è protetto da password",
+    "pw.hint": "Digita la sua password. Rimane su questo dispositivo.",
+    "pw.retry": "Quella password non ha funzionato. Riprova ({n} di 3).",
+    "pw.unlock": "Sblocca",
+    "app.working": "In corso… i tuoi file restano su questo dispositivo.",
+    "app.workingPct": "In corso… {pct}% — i tuoi file restano su questo dispositivo.",
+    "app.done": "Fatto — {summary}, {size}. Creato su questo dispositivo.",
+    "app.ready": "Pronto — scegli “Salva come PDF” nella finestra di stampa, poi Salva. Creato su questo dispositivo.",
+    "app.saveAsPdf": "Salva come PDF",
+    "app.downloadExt": "Scarica {ext}",
+    "app.canceled": "Annullato. Non è stato cambiato nulla.",
+    "app.wrongType": "Questo tipo di file non può essere usato con questo strumento.",
+    "app.tooBig": "Questi file misurano in totale {size}, più di quanto questo dispositivo possa elaborare in sicurezza ({max}).",
+    "app.moveUp": "Sposta su",
+    "app.moveDown": "Sposta giù",
+    "app.remove": "Rimuovi",
+    "error.INVALID_PDF": "Questo file non può essere letto come PDF. Potrebbe essere danneggiato oppure non essere un PDF.",
+    "error.BAD_PASSWORD": "Quella password non ha funzionato dopo tre tentativi. Non è stato cambiato nulla.",
+    "error.PASSWORD_REQUIRED": "Questo PDF richiede la sua password per continuare. Non è stato cambiato nulla.",
+    "error.BAD_RANGE": "Controlla i numeri di pagina. Usa numeri e intervalli come “1-3, 8” entro il numero di pagine del documento.",
+    "error.NOT_ENCRYPTED": "Questo PDF non è protetto da password, quindi non c'è nulla da sbloccare.",
+    "error.UNSUPPORTED_XFA": "Questo PDF usa un modulo XFA dinamico, che non può essere modificato in sicurezza. Il tuo file non è stato cambiato.",
+    "error.NO_PAGES_LEFT": "Questo rimuoverebbe tutte le pagine. Mantienine almeno una.",
+    "error.WRONG_FILE_COUNT": "Aggiungi il numero di file richiesto da questo strumento.",
+    "error.PROCESSING_FAILED": "Qualcosa è andato storto durante l'elaborazione. Il tuo file originale non è stato cambiato.",
+    "error.NO_PASSWORD": "Digita la password che vuoi aggiungere.",
+    "error.PASSWORDS_DIFFER": "Le due password non coincidono.",
+    "error.NOT_OFFICE": "Questo file non è un documento Word, Excel o PowerPoint valido.",
+    "error.NO_IMAGES": "Questo documento non contiene immagini incorporate.",
+    "error.BAD_IMAGE": "Una delle immagini non può essere letta. Prova con JPG o PNG.",
+    "error.PDF_PASSWORD": "Questo PDF è protetto da password. Rimuovi prima la password con Sblocca PDF.",
+    "error.BAD_SIZE": "La larghezza e l'altezza devono essere comprese tra 1 e 16.384 pixel.",
+    "error.NO_TEXT": "Questo PDF non ha testo da estrarre — probabilmente è un'immagine scansionata. Esegui prima OCR PDF, poi riprova.",
+    "error.NO_WATERMARK": "Digita il testo della filigrana (lettere, numeri e simboli comuni).",
+    "error.ENGINE_FAILED": "Il motore PDF si è interrotto inaspettatamente — il file potrebbe essere troppo grande per questo dispositivo.",
+    "warning.BOOKMARKS_DROPPED": "I segnalibri del secondo file e di quelli successivi non sono stati mantenuti. I segnalibri del primo file sono stati conservati.",
+    "warning.BOOKMARKS_BROKEN": "Alcuni segnalibri puntavano a pagine che sono state rimosse, quindi non portano più da nessuna parte.",
+    "warning.TAGS_NOT_UPDATED": "Questo PDF ha tag di accessibilità che non sono stati ricostruiti per le nuove pagine, quindi la struttura per gli screen reader potrebbe essere incompleta.",
+    "warning.SIGNATURES_INVALIDATED": "Le firme digitali di questo PDF non saranno più valide, perché il documento è cambiato.",
+    "warning.PASSWORD_REMOVED": "Il nuovo file non ha password.",
+    "warning.PERMISSIONS_REMOVED": "Le restrizioni di modifica e stampa dell'originale non vengono applicate al nuovo file.",
+    "sum.page": "pagina",
+    "sum.pages": "pagine",
+    "sum.image": "immagine",
+    "sum.images": "immagini",
+    "sum.word": "parola",
+    "sum.words": "parole",
+    "sum.slide": "diapositiva",
+    "sum.slides": "diapositive",
+    "sum.row": "riga",
+    "sum.rows": "righe",
+    "sum.sheet": "foglio",
+    "sum.sheets": "fogli",
+    "sum.edit": "modifica",
+    "sum.edits": "modifiche",
+    "sum.recognized": "riconosciuto",
+    "sum.numbered": "numerato",
+    "sum.watermarked": "con filigrana",
+    "sum.smaller": "più piccolo",
+    "sum.Already optimized": "Già ottimizzato",
+    "sum.Metadata removed": "Metadati rimossi",
+    "ed.tools": "Strumento di modifica",
+    "ed.editText": "Modifica testo",
+    "ed.addText": "Aggiungi testo",
+    "ed.whiteout": "Copri (bianchetto)",
+    "ed.undo": "Annulla",
+    "ed.undoLabel": "Annulla l'ultima modifica",
+    "ed.zoomOut": "Riduci zoom",
+    "ed.zoomIn": "Aumenta zoom",
+    "ed.page": "Pagina {n} / {total}",
+    "ed.editRun": "Modifica testo: {text}",
+    "ed.move": "Trascina per spostare",
+    "ed.removeBox": "Rimuovi casella di testo",
+    "ed.replaced": "Alcuni caratteri non sono supportati dai font PDF standard e sono stati sostituiti.",
+    "ed.hint": "Il testo coperto viene nascosto, non eliminato dal file — per i dati sensibili, elimina invece la pagina.",
+    "ocr.copyAll": "Copia tutto il testo",
+    "ocr.copied": "Copiato",
+    "ocr.text": "Testo riconosciuto"
+  },
+  "home": {
+    "title": "Fizzdoc — PDF, Word, Excel e Immagini Senza Upload",
+    "description": "Modifica, comprimi, converti, esegui OCR e unisci PDF; converti Word, Excel e immagini — nel browser. Zero upload, senza registrazione, gratis e open source.",
+    "h1": "Strumenti per documenti che non vedono mai i tuoi documenti",
+    "lede": "Modifica, comprimi, converti ed esegui OCR sui PDF. Converti Word, Excel, PowerPoint e immagini. Tutto funziona nel tuo browser — i tuoi file non lasciano mai il tuo dispositivo.",
+    "what": "Fizzdoc è un insieme gratuito e open source di strumenti per documenti che funziona interamente nel tuo browser. I PDF vengono elaborati con i motori qpdf, pdf.js e pdf-lib, il riconoscimento del testo usa Tesseract, e anche i file Office e le immagini vengono gestiti in locale — così niente viene mai caricato su un server.",
+    "faq": [
+      [
+        "I miei file vengono caricati da qualche parte?",
+        "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+      ],
+      [
+        "In cosa Fizzdoc è diverso da iLovePDF, Smallpdf o dagli strumenti online di Adobe?",
+        "Quei servizi caricano il tuo documento sui loro server per elaborarlo. Fizzdoc svolge il lavoro nella scheda del browser, quindi non c'è nulla da caricare, conservare o eliminare in seguito. È anche open source, e ti avvisa ogni volta che qualcosa, come un segnalibro, non può essere mantenuto, invece di eliminarlo silenziosamente."
+      ],
+      [
+        "Funziona con Google Docs, Sheets e Slides?",
+        "Sì. Scarica il file da Google come documento Word, Excel o PowerPoint (File → Scarica) e usa lo strumento Fizzdoc corrispondente. Niente viene inviato a Google o a Fizzdoc."
+      ],
+      [
+        "Funziona sul mio telefono?",
+        "Sì. Fizzdoc funziona nelle versioni attuali di Chrome, Safari, Firefox ed Edge, su desktop e mobile. File molto grandi potrebbero superare la memoria di un telefono; Fizzdoc lo verifica prima di iniziare."
+      ],
+      [
+        "Fizzdoc è gratuito?",
+        "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+      ]
+    ]
+  },
+  "tools": {
+    "merge-pdf": {
+      "name": "Unisci PDF",
+      "summary": "Combina più PDF in uno solo, nell'ordine che preferisci.",
+      "action": "Unisci PDF",
+      "title": "Unisci PDF Online Senza Upload, Gratis | Fizzdoc",
+      "description": "Combina file PDF nel browser. Niente viene caricato, e campi modulo e collegamenti vengono mantenuti. Gratis, senza registrazione, open source.",
+      "h1": "Unisci file PDF senza caricarli online",
+      "lede": "Combina più PDF in un unico documento direttamente nel browser. Niente viene inviato a un server, e campi modulo e collegamenti interni sopravvivono all'unione.",
+      "steps": [
+        "Aggiungi due o più file PDF — trascinali oppure clicca per sceglierli.",
+        "Mettili in ordine con le frecce ↑ e ↓.",
+        "Clicca su “Unisci PDF” e scarica il file combinato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Segnalibri, campi modulo e collegamenti verranno mantenuti?",
+          "I campi modulo e i collegamenti interni di ogni file vengono mantenuti. I segnalibri del primo file vengono mantenuti; i segnalibri degli altri file non possono ancora essere combinati, e Fizzdoc te lo segnala invece di eliminarli silenziosamente."
+        ],
+        [
+          "Posso unire PDF protetti da password?",
+          "Sì. Ti verrà chiesta la password sul tuo dispositivo, e il file unito viene salvato senza password."
+        ],
+        [
+          "C'è un limite di dimensione?",
+          "Non c'è un limite di pagine. Il limite di dimensione dipende dalla memoria del tuo dispositivo — di solito diverse centinaia di megabyte in totale — e Fizzdoc te lo segnala prima di iniziare se un'operazione è troppo grande per il tuo dispositivo."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "split-pdf": {
+      "name": "Dividi PDF",
+      "summary": "Estrai le pagine che ti servono in un nuovo PDF.",
+      "action": "Estrai pagine",
+      "title": "Dividi PDF ed Estrai Pagine Senza Upload | Fizzdoc",
+      "description": "Estrai pagine da un PDF nel browser. Scegli intervalli come 1-3, 8 — il tuo file non lascia mai il dispositivo. Gratis, senza registrazione, open source.",
+      "h1": "Dividi un PDF ed estrai pagine — in privato",
+      "lede": "Estrai le pagine che ti servono in un nuovo PDF. Digita intervalli come “1-3, 8”; l'ordine che digiti è l'ordine che ottieni.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Digita le pagine da mantenere, per esempio “1-3, 8” oppure “5-” per la pagina 5 fino alla fine.",
+        "Clicca su “Estrai pagine” e scarica il nuovo PDF."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Posso riordinare le pagine durante l'estrazione?",
+          "Sì. Le pagine escono nell'ordine in cui le digiti, quindi “3, 1-2” mette la pagina 3 per prima."
+        ],
+        [
+          "Cosa succede ai segnalibri e ai campi modulo?",
+          "I segnalibri vengono mantenuti. Se un segnalibro punta a una pagina che non hai mantenuto, Fizzdoc te lo segnala. I campi modulo sulle pagine rimosse vengono eliminati in modo pulito."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "rotate-pdf": {
+      "name": "Ruota PDF",
+      "summary": "Raddrizza le pagine storte, in modo permanente.",
+      "action": "Ruota pagine",
+      "title": "Ruota le Pagine di un PDF in Modo Permanente | Fizzdoc",
+      "description": "Ruota tutte le pagine di un PDF o solo alcune di 90°, 180° o 270° e salva il risultato. Funziona nel browser; il file non viene mai caricato.",
+      "h1": "Ruota le pagine di un PDF e salvale così",
+      "lede": "Correggi per sempre le scansioni storte. Ruota ogni pagina o solo quelle che scegli — senza ridisegnarle, così la qualità resta intatta.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Scegli l'angolo e, facoltativamente, quali pagine ruotare.",
+        "Clicca su “Ruota pagine” e scarica il PDF corretto."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Ruotare riduce la qualità?",
+          "No. Fizzdoc cambia solo l'impostazione di rotazione di ogni pagina; il contenuto non viene ridisegnato né ricompresso."
+        ],
+        [
+          "Posso ruotare solo alcune pagine?",
+          "Sì. Inserisci pagine come “2, 5-7”, oppure lascia il campo vuoto per ruotare ogni pagina."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "delete-pdf-pages": {
+      "name": "Elimina Pagine PDF",
+      "summary": "Rimuovi le pagine che non vuoi condividere.",
+      "action": "Elimina pagine",
+      "title": "Elimina Pagine da un PDF — Privato, No Upload | Fizzdoc",
+      "description": "Rimuovi le pagine indesiderate da un PDF nel browser. Digita le pagine da eliminare; il file non lascia mai il dispositivo. Gratis e open source.",
+      "h1": "Elimina pagine da un PDF — in privato",
+      "lede": "Rimuovi pagine vuote, duplicate o riservate prima di condividere un documento, senza consegnarlo a nessuno.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Digita le pagine da eliminare, per esempio “2, 7-9”.",
+        "Clicca su “Elimina pagine” e scarica il PDF più corto."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Le pagine eliminate sono davvero sparite?",
+          "Sì. Le pagine rimosse non vengono scritte nel nuovo file. Il tuo file originale sul dispositivo non viene modificato."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "unlock-pdf": {
+      "name": "Sblocca PDF",
+      "summary": "Salva una copia senza la password che conosci.",
+      "action": "Rimuovi password",
+      "title": "Rimuovi la Password da un PDF (Sblocca PDF) | Fizzdoc",
+      "description": "Rimuovi la password da un PDF che hai il diritto di aprire. La decrittazione avviene sul tuo dispositivo e niente viene caricato. Gratis, senza registrazione.",
+      "h1": "Rimuovi una password da un PDF — sul tuo dispositivo",
+      "lede": "Salva una copia sbloccata di un PDF protetto che puoi già aprire. La password e il documento restano sul tuo dispositivo.",
+      "steps": [
+        "Aggiungi il PDF protetto.",
+        "Clicca su “Rimuovi password” e digita la password quando richiesto.",
+        "Scarica la copia sbloccata."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Fizzdoc può violare una password che non conosco?",
+          "No. Fizzdoc rimuove la protezione solo quando conosci la password, oppure quando il PDF si apre senza password e restringe solo la modifica o la stampa. Sblocca solo i file che hai il diritto di modificare."
+        ],
+        [
+          "La mia password viene inviata da qualche parte?",
+          "No. La password viene digitata in questa pagina e usata solo dal motore in esecuzione nella scheda del browser. Non viene salvata né registrata."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "protect-pdf": {
+      "name": "Proteggi PDF",
+      "summary": "Blocca un PDF con una password e crittografia AES-256.",
+      "action": "Proteggi PDF",
+      "title": "Proteggi un PDF con Password AES-256 | Fizzdoc",
+      "description": "Aggiungi una password a un PDF con crittografia AES-256, nel browser. File e password non lasciano mai il dispositivo. Gratis, senza registrazione.",
+      "h1": "Proteggi un PDF con password — sul tuo dispositivo",
+      "lede": "Cripta un PDF con AES-256 così si apre solo con la tua password. La crittografia avviene in questa scheda; né il file né la password vengono inviati altrove.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Digita una password due volte.",
+        "Clicca su “Proteggi PDF” e scarica la copia crittografata."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quanto è forte la protezione?",
+          "Fizzdoc usa AES-256, la crittografia più forte definita dallo standard PDF, tramite il motore qpdf. Si apre in ogni lettore PDF moderno, incluso Adobe Acrobat, Chrome, Edge, Firefox e Preview."
+        ],
+        [
+          "E se dimentico la password?",
+          "Non può essere recuperata — né da Fizzdoc, né da nessun altro. Conserva la password in un posto sicuro, come un gestore di password."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "remove-pdf-metadata": {
+      "name": "Rimuovi Metadati PDF",
+      "summary": "Elimina autore, titolo, software e dati XMP.",
+      "action": "Rimuovi metadati",
+      "title": "Rimuovi Metadati da un PDF (Autore, Titolo, XMP) | Fizzdoc",
+      "description": "Elimina i metadati nascosti di un PDF, come autore, titolo, app creatrice e dati XMP, prima di condividerlo. Funziona nel browser; niente viene caricato.",
+      "h1": "Rimuovi i metadati nascosti da un PDF",
+      "lede": "I PDF registrano silenziosamente chi li ha scritti, con quale app e quando. Elimina autore, titolo, oggetto, parole chiave, produttore e metadati XMP prima di condividere.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Rimuovi metadati”.",
+        "Scarica la copia pulita."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Cosa viene rimosso esattamente?",
+          "Il dizionario delle informazioni del documento (autore, titolo, oggetto, parole chiave, creatore e produttore) e il flusso di metadati XMP. Viene mantenuta solo la data di modifica, perché il file è stato appena modificato. Il contenuto delle pagine resta intatto."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "jpg-to-pdf": {
+      "name": "Da JPG a PDF",
+      "summary": "Trasforma foto e scansioni in un unico PDF.",
+      "action": "Crea PDF",
+      "title": "Convertitore da JPG a PDF — Privato, Gratis | Fizzdoc",
+      "description": "Converti JPG, PNG, WebP e altre immagini in un unico PDF nel browser. Le foto non lasciano mai il dispositivo. Nessuna filigrana, nessuna registrazione.",
+      "h1": "Converti immagini JPG e PNG in PDF — in privato",
+      "lede": "Combina foto, screenshot e scansioni in un unico PDF, una pagina per immagine, a piena risoluzione. Le tue immagini restano sul tuo dispositivo.",
+      "steps": [
+        "Aggiungi una o più immagini — JPG, PNG, WebP, GIF e altro.",
+        "Mettile in ordine con le frecce ↑ e ↓.",
+        "Clicca su “Crea PDF” e scaricalo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "La qualità dell'immagine si riduce?",
+          "No. Le immagini JPG e PNG vengono inserite nel PDF così come sono, senza ricompressione. Gli altri formati vengono convertiti una volta sola ad alta qualità."
+        ],
+        [
+          "Posso convertire foto di iPhone?",
+          "Sì, se il tuo browser riesce a visualizzarle. Safari apre le foto HEIC direttamente; sugli altri browser, condividile prima come JPG."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "pdf-to-jpg": {
+      "name": "Da PDF a JPG",
+      "summary": "Salva ogni pagina come immagine JPG nitida.",
+      "action": "Converti in JPG",
+      "title": "Convertitore da PDF a JPG — Privato, Gratis | Fizzdoc",
+      "description": "Converti ogni pagina di un PDF in un'immagine JPG di alta qualità nel browser. Niente viene caricato. Più pagine si scaricano come un unico ZIP.",
+      "h1": "Converti le pagine di un PDF in immagini JPG — in privato",
+      "lede": "Genera ogni pagina come un nitido JPG a 150 DPI usando pdf.js di Mozilla, direttamente nel tuo browser. Un PDF con più pagine si scarica come un unico ZIP.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Converti in JPG”.",
+        "Scarica l'immagine, oppure uno ZIP con un'immagine per pagina."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Che risoluzione hanno le immagini?",
+          "150 DPI — nitide sugli schermi e adatte alla stampa nella dimensione originale. Una pagina A4 diventa un'immagine da 1240 × 1754 pixel."
+        ],
+        [
+          "Funziona con i PDF protetti da password?",
+          "Rimuovi prima la password con Sblocca PDF, poi converti. Entrambi i passaggi restano sul tuo dispositivo."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "compress-pdf": {
+      "name": "Comprimi PDF",
+      "summary": "Rimpicciolisci un PDF ottimizzando le immagini. Il testo resta nitido.",
+      "action": "Comprimi PDF",
+      "title": "Comprimi PDF Online Senza Caricarlo, Gratis | Fizzdoc",
+      "description": "Riduci la dimensione di un PDF nel browser ricomprimendo le immagini troppo grandi. Il testo resta selezionabile e nitido. Niente upload, open source.",
+      "h1": "Comprimi un PDF — senza caricarlo",
+      "lede": "Rendi un PDF abbastanza piccolo da inviare via email o caricare su un portale. Fizzdoc ricomprime foto e scansioni troppo pesanti e lascia intatti testo e grafica vettoriale.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Scegli compressione Bilanciata o Forte.",
+        "Clicca su “Comprimi PDF” e scarica il file più piccolo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Di quanto si ridurrà il mio PDF?",
+          "I PDF creati da scansioni e foto spesso si riducono del 40–80%. I PDF di solo testo sono di solito già compatti; se Fizzdoc non riesce a rimpicciolire un file, te lo segnala e mantiene l'originale."
+        ],
+        [
+          "Il testo diventerà sfocato?",
+          "No. Vengono ricompresse solo le immagini incorporate. Testo, font e disegni vettoriali vengono copiati esattamente, quindi il testo resta nitido e selezionabile."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "edit-pdf": {
+      "name": "Modifica PDF",
+      "summary": "Cambia il testo esistente, aggiungi testo e copri parti, direttamente sulla pagina.",
+      "action": "Salva PDF",
+      "title": "Modifica il Testo di un PDF Online, Gratis | Fizzdoc",
+      "description": "Clicca su qualsiasi testo di un PDF per cambiarlo, aggiungine di nuovo o copri delle aree — direttamente sulla pagina, nel browser. Niente viene caricato.",
+      "h1": "Modifica il testo di un PDF direttamente sulla pagina",
+      "lede": "Correggi un refuso, aggiorna una data o riempi uno spazio vuoto senza il file originale. Clicca sul testo che vuoi cambiare e digita — avviene tutto sul tuo dispositivo.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su qualsiasi testo per cambiarlo, oppure usa Aggiungi testo e Bianchetto dalla barra degli strumenti.",
+        "Clicca su “Salva PDF” e scarica il file modificato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Il testo modificato corrisponderà al font originale?",
+          "Fizzdoc sceglie il font standard più vicino (senza grazie, con grazie o monospazio, con grassetto e corsivo) alla stessa dimensione e posizione. I font personalizzati di un marchio non possono essere riprodotti esattamente."
+        ],
+        [
+          "Il testo originale viene rimosso?",
+          "Il testo originale viene coperto sulla pagina e il nuovo testo viene disegnato sopra. Per informazioni sensibili che devono sparire dal file, elimina la pagina o ricrea il documento."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "ocr-pdf": {
+      "name": "OCR PDF",
+      "summary": "Rendi un PDF scansionato ricercabile e copiabile.",
+      "action": "Riconosci testo",
+      "title": "OCR PDF — Rendi Ricercabili i PDF Scansionati | Fizzdoc",
+      "description": "Trasforma i PDF scansionati in documenti ricercabili e copiabili con OCR in inglese che funziona nel browser. Le pagine mantengono la qualità originale.",
+      "h1": "Rendi un PDF scansionato ricercabile con l'OCR",
+      "lede": "Riconosce il testo in inglese nelle pagine scansionate e lo aggiunge come livello invisibile, così puoi cercarlo, selezionarlo e copiarlo. Le pagine stesse non cambiano.",
+      "steps": [
+        "Aggiungi un PDF scansionato.",
+        "Clicca su “Riconosci testo” e aspetta mentre ogni pagina viene letta.",
+        "Scarica il PDF ricercabile."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quali lingue sono supportate?",
+          "L'inglese. Il motore di riconoscimento (Tesseract) e i suoi dati per l'inglese vengono scaricati nel browser una sola volta, la prima volta che usi uno strumento OCR — circa qualche megabyte."
+        ],
+        [
+          "L'OCR cambia l'aspetto delle mie pagine?",
+          "No. Le pagine scansionate restano esattamente come sono; il testo riconosciuto viene aggiunto come livello invisibile sopra."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "pdf-to-word": {
+      "name": "Da PDF a Word",
+      "summary": "Trasforma il testo di un PDF in un .docx modificabile.",
+      "action": "Converti in Word",
+      "title": "Convertitore da PDF a Word (DOCX), Privato | Fizzdoc",
+      "description": "Converti un PDF in un documento Word modificabile nel browser. Titoli, paragrafi e interruzioni di pagina vengono mantenuti. Niente viene caricato.",
+      "h1": "Converti un PDF in un documento Word modificabile",
+      "lede": "Porta il testo di un PDF in Word, con titoli e paragrafi ricostruiti, così puoi modificarlo. La conversione avviene sul tuo dispositivo.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Converti in Word”.",
+        "Scarica il .docx e aprilo in Word, Google Docs o LibreOffice."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "L'impaginazione sarà identica al PDF?",
+          "Fizzdoc ricostruisce il flusso del testo — titoli, paragrafi, grassetto e corsivo, interruzioni di pagina — così il documento è facile da modificare. Impaginazioni complesse con colonne, tabelle e immagini vengono semplificate."
+        ],
+        [
+          "E i PDF scansionati?",
+          "Le pagine scansionate sono immagini, non testo. Esegui prima OCR PDF, poi converti il risultato in Word."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "pdf-to-powerpoint": {
+      "name": "Da PDF a PowerPoint",
+      "summary": "Trasforma ogni pagina PDF in una diapositiva.",
+      "action": "Converti in PowerPoint",
+      "title": "Da PDF a PowerPoint (PPTX), Privato | Fizzdoc",
+      "description": "Converti un PDF in una presentazione PowerPoint con una diapositiva nitida per pagina, nel browser. Niente viene caricato. Gratis e open source.",
+      "h1": "Converti un PDF in una presentazione PowerPoint",
+      "lede": "Presenta un PDF come diapositive. Ogni pagina diventa una diapositiva a schermo intero e alta risoluzione in un .pptx apribile in PowerPoint, Keynote o Google Slides.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Converti in PowerPoint”.",
+        "Scarica il .pptx."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Posso modificare il testo nelle diapositive?",
+          "Ogni diapositiva è un'immagine della pagina, quindi appare identica al PDF. Per modificare il testo, usa invece Da PDF a Word, oppure aggiungi caselle di testo sopra in PowerPoint."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "pdf-to-text": {
+      "name": "Da PDF a Testo",
+      "summary": "Estrai tutto il testo di un PDF in un file .txt.",
+      "action": "Estrai testo",
+      "title": "Convertitore da PDF a Testo (TXT), Privato | Fizzdoc",
+      "description": "Estrai il testo di un PDF in un semplice file .txt nel browser, nel giusto ordine di lettura. Niente viene caricato. Gratis, open source.",
+      "h1": "Estrai il testo da un PDF",
+      "lede": "Ottieni ogni parola di un PDF come testo semplice, con righe e paragrafi nell'ordine di lettura. Perfetto per copiare, cercare o usarlo in altri strumenti.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Estrai testo”.",
+        "Scarica il file .txt."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché il mio file di testo è vuoto?",
+          "I PDF scansionati contengono immagini di testo, non testo vero. Esegui prima OCR PDF, poi estrai il testo."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "pdf-to-markdown": {
+      "name": "Da PDF a Markdown",
+      "summary": "Converti un PDF in Markdown pulito con titoli ed elenchi.",
+      "action": "Converti in Markdown",
+      "title": "Convertitore da PDF a Markdown, Privato | Fizzdoc",
+      "description": "Converti un PDF in Markdown con titoli ed elenchi rilevati, pronto per documentazione, appunti o strumenti IA. Funziona nel browser; niente upload.",
+      "h1": "Converti un PDF in Markdown",
+      "lede": "Trasforma un PDF in Markdown pulito — titoli, paragrafi ed elenchi — per Notion, Obsidian, GitHub o qualsiasi strumento che legge Markdown.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Converti in Markdown”.",
+        "Scarica il file .md."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Come vengono rilevati i titoli?",
+          "Dalla dimensione del testo: le righe visibilmente più grandi del testo del corpo diventano titoli, e le righe puntate o numerate diventano elenchi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "text-to-pdf": {
+      "name": "Da Testo a PDF",
+      "summary": "Trasforma un file .txt in un PDF pulito.",
+      "action": "Crea PDF",
+      "title": "Convertitore da Testo a PDF (TXT a PDF) | Fizzdoc",
+      "description": "Converti un file di testo semplice in un PDF pulito e leggibile nel browser. Supporta ogni lingua, incluso l'hindi e altri alfabeti. Niente upload.",
+      "h1": "Converti un file di testo in PDF",
+      "lede": "Trasforma appunti, log o qualsiasi file .txt in un PDF A4 ben formattato. Ogni lingua e alfabeto è supportato.",
+      "steps": [
+        "Aggiungi un file .txt.",
+        "Clicca su “Crea PDF”.",
+        "Scegli “Salva come PDF” nella finestra che si apre e clicca Salva."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché si apre una finestra di stampa?",
+          "Il tuo browser ha uno strumento integrato per creare PDF che gestisce perfettamente ogni lingua e font. Fizzdoc prepara il documento e lo passa a quello strumento: scegli “Salva come PDF” come destinazione e clicca Salva. Niente viene stampato o inviato altrove."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "markdown-to-pdf": {
+      "name": "Da Markdown a PDF",
+      "summary": "Trasforma un file .md in un PDF formattato.",
+      "action": "Crea PDF",
+      "title": "Convertitore da Markdown a PDF, Privato | Fizzdoc",
+      "description": "Converti Markdown in un PDF formattato con titoli, elenchi, tabelle e blocchi di codice, nel browser. Niente upload. Gratis e open source.",
+      "h1": "Converti Markdown in PDF",
+      "lede": "Trasforma un README, appunti o documentazione scritta in Markdown in un PDF pulito e stampabile con titoli, elenchi, tabelle e blocchi di codice.",
+      "steps": [
+        "Aggiungi un file .md.",
+        "Clicca su “Crea PDF”.",
+        "Scegli “Salva come PDF” nella finestra che si apre e clicca Salva."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quali funzioni di Markdown sono supportate?",
+          "Titoli, grassetto, corsivo, codice in linea e blocchi di codice, elenchi puntati e numerati, citazioni, collegamenti, linee orizzontali e tabelle. L'HTML grezzo viene mostrato come testo per sicurezza."
+        ],
+        [
+          "Perché si apre una finestra di stampa?",
+          "Il tuo browser ha uno strumento integrato per creare PDF che gestisce perfettamente ogni lingua e font. Fizzdoc prepara il documento e lo passa a quello strumento: scegli “Salva come PDF” come destinazione e clicca Salva. Niente viene stampato o inviato altrove."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "word-to-pdf": {
+      "name": "Da Word a PDF",
+      "summary": "Converti un .docx in PDF, tutte le lingue supportate.",
+      "action": "Converti in PDF",
+      "title": "Da Word a PDF (DOCX a PDF), Senza Upload | Fizzdoc",
+      "description": "Converti un documento Word in PDF nel browser, mantenendo titoli, elenchi, tabelle e immagini. Funziona con file scaricati da Google Docs. Niente upload.",
+      "h1": "Converti un documento Word in PDF",
+      "lede": "Trasforma un .docx in un PDF con titoli, elenchi, tabelle e immagini, usando lo strumento PDF integrato nel tuo browser. Il documento non lascia mai il dispositivo.",
+      "steps": [
+        "Aggiungi un file .docx (da Word o Google Docs).",
+        "Clicca su “Converti in PDF”.",
+        "Scegli “Salva come PDF” nella finestra che si apre e clicca Salva."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Sarà identico a come appare in Word?",
+          "Testo, titoli, elenchi, tabelle, collegamenti e immagini vengono mantenuti. Intestazioni, piè di pagina e impaginazioni avanzate come caselle di testo e sezioni multicolonna vengono semplificate."
+        ],
+        [
+          "Perché si apre una finestra di stampa?",
+          "Il tuo browser ha uno strumento integrato per creare PDF che gestisce perfettamente ogni lingua e font. Fizzdoc prepara il documento e lo passa a quello strumento: scegli “Salva come PDF” come destinazione e clicca Salva. Niente viene stampato o inviato altrove."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "excel-to-csv": {
+      "name": "Da Excel a CSV",
+      "summary": "Esporta ogni foglio di un .xlsx in CSV.",
+      "action": "Converti in CSV",
+      "title": "Da Excel a CSV (XLSX a CSV), Senza Upload | Fizzdoc",
+      "description": "Converti fogli di calcolo Excel in CSV nel browser. Ogni foglio viene esportato, le date diventano date ISO, niente viene caricato. Funziona con Google Sheets.",
+      "h1": "Converti Excel in CSV",
+      "lede": "Esporta ogni foglio di una cartella .xlsx in un file CSV UTF-8 che si apre correttamente ovunque. Date, numeri e testo restano come sono.",
+      "steps": [
+        "Aggiungi un file .xlsx (da Excel o Google Sheets).",
+        "Clicca su “Converti in CSV”.",
+        "Scarica il CSV, oppure uno ZIP con un CSV per foglio."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Cosa succede alle formule?",
+          "Il CSV memorizza solo i valori, quindi viene esportato l'ultimo valore calcolato di ogni cella — proprio come fa Excel."
+        ],
+        [
+          "I caratteri non inglesi vengono mantenuti?",
+          "Sì. Il CSV è in UTF-8 con byte-order mark, così Excel, Google Sheets e altre app leggono correttamente accenti e alfabeti non latini."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "csv-to-excel": {
+      "name": "Da CSV a Excel",
+      "summary": "Trasforma un .csv in una vera cartella .xlsx.",
+      "action": "Converti in Excel",
+      "title": "Da CSV a Excel (CSV a XLSX), Senza Upload | Fizzdoc",
+      "description": "Converti un file CSV in una cartella Excel .xlsx nel browser. I numeri restano numeri, gli zeri iniziali vengono mantenuti, niente viene caricato.",
+      "h1": "Converti CSV in Excel",
+      "lede": "Trasforma un CSV in una vera cartella Excel. I numeri diventano numeri, codici come 007 mantengono gli zeri iniziali, e il delimitatore viene rilevato automaticamente.",
+      "steps": [
+        "Aggiungi un file .csv.",
+        "Clicca su “Converti in Excel”.",
+        "Scarica il .xlsx."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Gestisce punto e virgola e tabulazioni?",
+          "Sì. Virgole, punti e virgola, tabulazioni e barre verticali vengono rilevati automaticamente, così come i campi tra virgolette con interruzioni di riga al loro interno."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "compress-image": {
+      "name": "Comprimi Immagine",
+      "summary": "Riduci la dimensione di immagini JPG, PNG e WebP.",
+      "action": "Comprimi immagini",
+      "title": "Comprimi Immagini (JPG, PNG, WebP), Gratis | Fizzdoc",
+      "description": "Riduci la dimensione delle immagini nel browser — JPG, PNG, WebP e altro, in blocco. Scegli la qualità o mantienile senza perdita. Niente upload.",
+      "h1": "Comprimi immagini senza caricarle online",
+      "lede": "Riduci foto e screenshot per email, siti web e moduli. Scegli un livello di qualità, o mantienile senza perdita — tutto sul tuo dispositivo, in blocco.",
+      "steps": [
+        "Aggiungi una o più immagini.",
+        "Scegli il formato di output e la qualità.",
+        "Clicca su “Comprimi immagini” e scarica il risultato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Posso comprimere senza perdere qualità?",
+          "Sì. Scegli PNG per un risultato senza perdita, pixel per pixel. Per le foto, JPG o WebP all'80% di qualità di solito sembra identico ed è molto più leggero."
+        ],
+        [
+          "I dati di posizione vengono rimossi?",
+          "Sì. La ricodifica elimina i metadati EXIF nascosti, come la posizione GPS e i dettagli della fotocamera."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "resize-image": {
+      "name": "Ridimensiona Immagine",
+      "summary": "Ingrandisci o rimpicciolisci immagini, in pixel o percentuale.",
+      "action": "Ridimensiona immagini",
+      "title": "Ridimensiona Immagini Online, Senza Upload | Fizzdoc",
+      "description": "Ridimensiona immagini a pixel esatti o a una percentuale — più piccole o più grandi — nel browser, in blocco. Mantieni le proporzioni o meno. Niente upload.",
+      "h1": "Ridimensiona immagini — più grandi o più piccole",
+      "lede": "Imposta una larghezza e un'altezza esatte, oppure scala in percentuale, per una foto o per molte. Le proporzioni vengono mantenute a meno che tu non dica il contrario.",
+      "steps": [
+        "Aggiungi una o più immagini.",
+        "Inserisci una nuova dimensione o una percentuale.",
+        "Clicca su “Ridimensiona immagini” e scarica il risultato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Ingrandire un'immagine aggiunge dettagli?",
+          "Ingrandire rende l'immagine più grande con una scalatura fluida e di alta qualità, ma non può inventare dettagli che non erano stati catturati. È ideale per rispettare requisiti di dimensione minima."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "convert-image": {
+      "name": "Converti Immagine",
+      "summary": "Converti tra JPG, PNG e WebP.",
+      "action": "Converti immagini",
+      "title": "Converti Immagini in JPG, PNG o WebP | Fizzdoc",
+      "description": "Converti immagini tra JPG, PNG e WebP nel browser, in blocco. Funziona con GIF, BMP, AVIF e foto di iPhone che il tuo browser sa aprire. Niente upload.",
+      "h1": "Converti immagini in JPG, PNG o WebP",
+      "lede": "Cambia il formato di un'immagine o di un intero gruppo — per esempio da WebP a JPG o da PNG a WebP — senza inviarle da nessuna parte.",
+      "steps": [
+        "Aggiungi una o più immagini.",
+        "Scegli il formato che ti serve.",
+        "Clicca su “Converti immagini” e scarica il risultato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quale formato dovrei scegliere?",
+          "JPG per foto che devono aprirsi ovunque, PNG per screenshot e grafica che ha bisogno di bordi nitidi o trasparenza, WebP per i file più leggeri sul web."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "image-to-text": {
+      "name": "Da Immagine a Testo (OCR)",
+      "summary": "Seleziona e copia il testo da qualsiasi foto o screenshot.",
+      "action": "Riconosci testo",
+      "title": "Da Immagine a Testo (OCR) — Senza Upload | Fizzdoc",
+      "description": "Estrai testo da foto e screenshot con OCR in inglese nel browser, poi selezionalo e copialo direttamente sull'immagine — come Live Text. Niente upload.",
+      "h1": "Copia il testo da qualsiasi immagine",
+      "lede": "Riconosce il testo in inglese in una foto, scansione o screenshot, poi selezionalo direttamente sull'immagine — proprio come Live Text su iPhone. Niente lascia il tuo dispositivo.",
+      "steps": [
+        "Aggiungi un'immagine.",
+        "Clicca su “Riconosci testo”.",
+        "Seleziona il testo direttamente sull'immagine, copialo tutto, oppure scaricalo come file .txt."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quali lingue sono supportate?",
+          "L'inglese. Il motore di riconoscimento e i suoi dati per l'inglese si scaricano nel browser una sola volta, la prima volta che usi l'OCR."
+        ],
+        [
+          "Come ottengo i risultati migliori?",
+          "Usa una foto nitida, ben illuminata e frontale. Il testo stampato funziona meglio; la scrittura a mano viene riconosciuta meno bene."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "png-to-jpg": {
+      "name": "Da PNG a JPG",
+      "summary": "Converti immagini PNG in JPG in blocco.",
+      "action": "Converti in JPG",
+      "title": "Convertitore da PNG a JPG, Gratis, No Upload | Fizzdoc",
+      "description": "Converti immagini PNG in JPG nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
+      "h1": "Converti PNG in JPG — in privato",
+      "lede": "I file JPG sono molto più leggeri per le foto e si aprono ovunque, anche su software datati e moduli di caricamento che rifiutano il PNG. Fizzdoc converte i tuoi file PNG direttamente sul dispositivo.",
+      "steps": [
+        "Aggiungi una o più immagini PNG.",
+        "Scegli una qualità, oppure mantieni quella predefinita.",
+        "Clicca su “Converti in JPG” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché convertire PNG in JPG?",
+          "I file JPG sono molto più leggeri per le foto e si aprono ovunque, anche su software datati e moduli di caricamento che rifiutano il PNG."
+        ],
+        [
+          "Posso convertire più immagini insieme?",
+          "Sì. Aggiungine quante vuoi; più immagini si scaricano insieme come un unico file ZIP."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "jpg-to-png": {
+      "name": "Da JPG a PNG",
+      "summary": "Converti immagini JPG in PNG in blocco.",
+      "action": "Converti in PNG",
+      "title": "Convertitore da JPG a PNG, Gratis, No Upload | Fizzdoc",
+      "description": "Converti immagini JPG in PNG nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
+      "h1": "Converti JPG in PNG — in privato",
+      "lede": "Il PNG è senza perdita di qualità, quindi l'immagine non perderà ulteriore qualità quando la modifichi e la salvi di nuovo. Fizzdoc converte i tuoi file JPG direttamente sul dispositivo.",
+      "steps": [
+        "Aggiungi una o più immagini JPG.",
+        "Niente da impostare: il PNG è senza perdita di qualità.",
+        "Clicca su “Converti in PNG” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché convertire JPG in PNG?",
+          "Il PNG è senza perdita di qualità, quindi l'immagine non perderà ulteriore qualità quando la modifichi e la salvi di nuovo."
+        ],
+        [
+          "Posso convertire più immagini insieme?",
+          "Sì. Aggiungine quante vuoi; più immagini si scaricano insieme come un unico file ZIP."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "webp-to-jpg": {
+      "name": "Da WebP a JPG",
+      "summary": "Converti immagini WebP in JPG in blocco.",
+      "action": "Converti in JPG",
+      "title": "Convertitore da WebP a JPG, Gratis, No Upload | Fizzdoc",
+      "description": "Converti immagini WebP in JPG nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
+      "h1": "Converti WebP in JPG — in privato",
+      "lede": "Molte app, stampanti e moduli di caricamento non riescono ancora ad aprire immagini WebP salvate dai siti web. Il JPG funziona ovunque. Fizzdoc converte i tuoi file WebP direttamente sul dispositivo.",
+      "steps": [
+        "Aggiungi una o più immagini WebP.",
+        "Scegli una qualità, oppure mantieni quella predefinita.",
+        "Clicca su “Converti in JPG” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché convertire WebP in JPG?",
+          "Molte app, stampanti e moduli di caricamento non riescono ancora ad aprire immagini WebP salvate dai siti web. Il JPG funziona ovunque."
+        ],
+        [
+          "Posso convertire più immagini insieme?",
+          "Sì. Aggiungine quante vuoi; più immagini si scaricano insieme come un unico file ZIP."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "jpg-to-webp": {
+      "name": "Da JPG a WebP",
+      "summary": "Converti immagini JPG in WebP in blocco.",
+      "action": "Converti in WebP",
+      "title": "Convertitore da JPG a WebP, Gratis, No Upload | Fizzdoc",
+      "description": "Converti immagini JPG in WebP nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
+      "h1": "Converti JPG in WebP — in privato",
+      "lede": "Le immagini WebP sono di solito il 25–35% più leggere del JPG alla stessa qualità visiva, il che fa caricare i siti più in fretta. Fizzdoc converte i tuoi file JPG direttamente sul dispositivo.",
+      "steps": [
+        "Aggiungi una o più immagini JPG.",
+        "Scegli una qualità, oppure mantieni quella predefinita.",
+        "Clicca su “Converti in WebP” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché convertire JPG in WebP?",
+          "Le immagini WebP sono di solito il 25–35% più leggere del JPG alla stessa qualità visiva, il che fa caricare i siti più in fretta."
+        ],
+        [
+          "Posso convertire più immagini insieme?",
+          "Sì. Aggiungine quante vuoi; più immagini si scaricano insieme come un unico file ZIP."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "add-page-numbers-to-pdf": {
+      "name": "Aggiungi Numeri di Pagina",
+      "summary": "Numera ogni pagina di un PDF.",
+      "action": "Aggiungi numeri di pagina",
+      "title": "Aggiungi Numeri di Pagina a un PDF, Gratis | Fizzdoc",
+      "description": "Aggiungi numeri di pagina a un PDF nel browser. Scegli la posizione, il numero iniziale e lo stile “Pagina 1 di 10”. Niente upload, senza registrazione.",
+      "h1": "Aggiungi numeri di pagina a un PDF",
+      "lede": "Numera le pagine di un report, una tesi o un contratto in pochi secondi. Scegli dove vanno i numeri e da quale numero iniziare — sul tuo dispositivo.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Scegli posizione, stile e numero iniziale.",
+        "Clicca su “Aggiungi numeri di pagina” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Posso partire da un numero diverso da 1?",
+          "Sì. Imposta “Inizia da” con qualsiasi numero — utile quando il PDF è un capitolo di un documento più lungo."
+        ],
+        [
+          "Cambia il mio contenuto?",
+          "No. I numeri vengono aggiunti sopra ogni pagina; tutto il resto resta esattamente com'era."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "watermark-pdf": {
+      "name": "Filigrana PDF",
+      "summary": "Stampa un testo come RISERVATO su ogni pagina.",
+      "action": "Aggiungi filigrana",
+      "title": "Aggiungi una Filigrana di Testo a un PDF | Fizzdoc",
+      "description": "Aggiungi una filigrana di testo come RISERVATO o BOZZA su ogni pagina di un PDF, nel browser. Scegli l'opacità. Niente upload. Gratis.",
+      "h1": "Aggiungi una filigrana a un PDF",
+      "lede": "Contrassegna un documento come RISERVATO, BOZZA o con il tuo nome prima di condividerlo. La filigrana viene disegnata in diagonale su ogni pagina.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Digita il testo della filigrana e scegli quanto deve essere trasparente.",
+        "Clicca su “Aggiungi filigrana” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "La filigrana può essere rimossa?",
+          "Una filigrana di testo scoraggia la copia, ma una persona determinata con un editor PDF può rimuoverla. Per una protezione più forte, usa anche Proteggi PDF."
+        ],
+        [
+          "Quali caratteri posso usare?",
+          "Lettere, numeri e simboli comuni in alfabeto latino. Altri alfabeti non sono supportati dai font PDF standard."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "pdf-to-png": {
+      "name": "Da PDF a PNG",
+      "summary": "Salva ogni pagina come immagine PNG senza perdita di qualità.",
+      "action": "Converti in PNG",
+      "title": "Convertitore da PDF a PNG — Senza Perdita, No Upload | Fizzdoc",
+      "description": "Converti ogni pagina di un PDF in un'immagine PNG nitida e senza perdita di qualità nel browser. Più pagine si scaricano come un unico ZIP. Gratis.",
+      "h1": "Converti le pagine di un PDF in immagini PNG",
+      "lede": "Genera ogni pagina come un PNG nitido e senza perdita di qualità — ideale per diapositive, documentazione e screenshot con testo nitido. Niente lascia il tuo dispositivo.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Clicca su “Converti in PNG”.",
+        "Scarica l'immagine, oppure uno ZIP con un PNG per pagina."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "PNG o JPG?",
+          "Il PNG mantiene testo e linee perfettamente nitidi ma i file sono più pesanti. Per foto e scansioni, Da PDF a JPG dà file molto più leggeri."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "extract-pdf-pages": {
+      "name": "Estrai Pagine PDF",
+      "summary": "Salva le pagine selezionate come nuovo PDF.",
+      "action": "Estrai pagine",
+      "title": "Estrai Pagine da un PDF — Gratis, Privato | Fizzdoc",
+      "description": "Estrai pagine specifiche da un PDF in un nuovo file, nel browser. Digita pagine come 2, 5-7. Collegamenti e campi modulo vengono mantenuti. No upload.",
+      "h1": "Estrai pagine da un PDF",
+      "lede": "Ti serve solo la pagina della firma o un capitolo? Digita le pagine che vuoi e ottienile come nuovo PDF — l'originale resta intatto.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Digita le pagine da estrarre, per esempio “2, 5-7”.",
+        "Clicca su “Estrai pagine” e scarica il nuovo PDF."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "La qualità viene ridotta?",
+          "No. Le pagine vengono copiate così come sono — niente viene ridisegnato né ricompresso."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "reorder-pdf-pages": {
+      "name": "Riordina Pagine PDF",
+      "summary": "Metti le pagine di un PDF in un nuovo ordine.",
+      "action": "Riordina pagine",
+      "title": "Riordina le Pagine di un PDF — Gratis, No Upload | Fizzdoc",
+      "description": "Riordina le pagine di un PDF digitando l'ordine che vuoi, come 3, 1-2, 4-. Funziona nel browser; il file non viene mai caricato. Gratis, senza registrazione.",
+      "h1": "Riordina le pagine di un PDF",
+      "lede": "Correggi pagine scansionate nell'ordine sbagliato o sposta un'appendice all'inizio. Digita il nuovo ordine e scarica il PDF riordinato.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Digita il nuovo ordine delle pagine, per esempio “3, 1-2, 4-”.",
+        "Clicca su “Riordina pagine” e scarica."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Come scrivo l'ordine?",
+          "Elenca pagine e intervalli separati da virgole. “4-” significa dalla pagina 4 fino alla fine. Le pagine che ometti vengono escluse dal nuovo file."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "png-to-pdf": {
+      "name": "Da PNG a PDF",
+      "summary": "Trasforma screenshot e immagini PNG in un unico PDF.",
+      "action": "Crea PDF",
+      "title": "Convertitore da PNG a PDF, Gratis, No Upload | Fizzdoc",
+      "description": "Combina screenshot e immagini PNG in un unico PDF nel browser, una pagina per immagine, a piena qualità. Niente upload. Nessuna filigrana.",
+      "h1": "Converti immagini PNG in PDF",
+      "lede": "Metti screenshot, diagrammi o pagine scansionate salvate come PNG in un unico PDF ordinato — nitido, senza perdita di qualità e nell'ordine che scegli.",
+      "steps": [
+        "Aggiungi una o più immagini PNG.",
+        "Mettile in ordine con le frecce ↑ e ↓.",
+        "Clicca su “Crea PDF” e scaricalo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "La trasparenza viene mantenuta?",
+          "Sì. Le immagini PNG vengono inserite nel PDF così come sono, incluse le aree trasparenti."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "remove-word-metadata": {
+      "name": "Rimuovi Metadati Word",
+      "summary": "Cancella nomi di autore, azienda ed editor da un .docx.",
+      "action": "Rimuovi metadati",
+      "title": "Rimuovi Metadati da un File Word, No Upload | Fizzdoc",
+      "description": "Elimina autore, editor, azienda, titolo e miniatura da un file Word nel browser. Funziona con file scaricati da Google Docs. Niente viene caricato.",
+      "h1": "Rimuovi i metadati nascosti da un documento Word",
+      "lede": "Ogni .docx registra chi lo ha creato, chi lo ha modificato per ultimo e a quale azienda appartiene. Cancella questi dettagli prima di inviarlo — senza caricare il file da nessuna parte.",
+      "steps": [
+        "Aggiungi un file .docx (da Word o Google Docs).",
+        "Clicca su “Rimuovi metadati”.",
+        "Scarica il .docx pulito."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Cosa viene rimosso?",
+          "Autore, ultima modifica di, titolo, oggetto, descrizione, parole chiave, categoria, stato, azienda, responsabile, base collegamento ipertestuale, proprietà personalizzate e la miniatura di anteprima incorporata. Le date di creazione e modifica vengono mantenute perché Office ne ha bisogno. Il tuo contenuto non viene toccato."
+        ],
+        [
+          "Funziona con Google Docs?",
+          "Sì. In Google Docs, scegli File → Scarica → Microsoft Word (.docx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "extract-images-from-word": {
+      "name": "Estrai Immagini da Word",
+      "summary": "Salva ogni immagine di un .docx alla qualità originale.",
+      "action": "Estrai immagini",
+      "title": "Estrai Immagini da un File Word, No Upload | Fizzdoc",
+      "description": "Scarica come ZIP ogni immagine incorporata in un documento Word, alla risoluzione originale. Funziona con file scaricati da Google Docs. Nel browser.",
+      "h1": "Estrai tutte le immagini da un documento Word",
+      "lede": "Ottieni ogni foto, logo e grafico da un .docx nel formato e nella risoluzione originali — niente screenshot, niente ricompressione, niente upload.",
+      "steps": [
+        "Aggiungi un file .docx (da Word o Google Docs).",
+        "Clicca su “Estrai immagini”.",
+        "Scarica lo ZIP di immagini."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Le immagini perdono qualità?",
+          "No. Vengono copiate esattamente come sono memorizzate all'interno del file, nel loro formato originale (PNG, JPG, GIF, SVG, EMF e così via)."
+        ],
+        [
+          "Funziona con Google Docs?",
+          "Sì. In Google Docs, scegli File → Scarica → Microsoft Word (.docx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "compress-word": {
+      "name": "Comprimi Word",
+      "summary": "Rimpicciolisci un .docx ottimizzando le sue immagini.",
+      "action": "Comprimi Word",
+      "title": "Comprimi File Word (.docx), No Upload | Fizzdoc",
+      "description": "Riduci la dimensione di un file Word ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Niente viene caricato.",
+      "h1": "Comprimi un documento Word",
+      "lede": "Rendi un .docx abbastanza piccolo da inviare via email ricomprimendo le foto troppo pesanti al suo interno. Testo, formattazione e tutto il resto restano esattamente uguali.",
+      "steps": [
+        "Aggiungi un file .docx (da Word o Google Docs).",
+        "Scegli compressione Bilanciata o Forte.",
+        "Clicca su “Comprimi Word” e scarica il file più piccolo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Di quanto si ridurrà?",
+          "I file con foto di grandi dimensioni spesso si riducono della metà o più. I file composti principalmente da testo sono già compatti; se Fizzdoc non riesce a rimpicciolire un file, te lo segnala e mantiene l'originale."
+        ],
+        [
+          "Funziona con Google Docs?",
+          "Sì. In Google Docs, scegli File → Scarica → Microsoft Word (.docx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "remove-excel-metadata": {
+      "name": "Rimuovi Metadati Excel",
+      "summary": "Cancella nomi di autore, azienda ed editor da un .xlsx.",
+      "action": "Rimuovi metadati",
+      "title": "Rimuovi Metadati da un File Excel, No Upload | Fizzdoc",
+      "description": "Elimina autore, editor, azienda, titolo e miniatura da un file Excel nel browser. Funziona con file scaricati da Google Sheets. Niente viene caricato.",
+      "h1": "Rimuovi i metadati nascosti da un foglio Excel",
+      "lede": "Ogni .xlsx registra chi lo ha creato, chi lo ha modificato per ultimo e a quale azienda appartiene. Cancella questi dettagli prima di inviarlo — senza caricare il file da nessuna parte.",
+      "steps": [
+        "Aggiungi un file .xlsx (da Excel o Google Sheets).",
+        "Clicca su “Rimuovi metadati”.",
+        "Scarica il .xlsx pulito."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Cosa viene rimosso?",
+          "Autore, ultima modifica di, titolo, oggetto, descrizione, parole chiave, categoria, stato, azienda, responsabile, base collegamento ipertestuale, proprietà personalizzate e la miniatura di anteprima incorporata. Le date di creazione e modifica vengono mantenute perché Office ne ha bisogno. Il tuo contenuto non viene toccato."
+        ],
+        [
+          "Funziona con Google Sheets?",
+          "Sì. In Google Sheets, scegli File → Scarica → Microsoft Excel (.xlsx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "extract-images-from-excel": {
+      "name": "Estrai Immagini da Excel",
+      "summary": "Salva ogni immagine di un .xlsx alla qualità originale.",
+      "action": "Estrai immagini",
+      "title": "Estrai Immagini da un File Excel, No Upload | Fizzdoc",
+      "description": "Scarica come ZIP ogni immagine incorporata in un foglio Excel, alla risoluzione originale. Funziona con file scaricati da Google Sheets. Nel browser.",
+      "h1": "Estrai tutte le immagini da un foglio Excel",
+      "lede": "Ottieni ogni foto, logo e grafico da un .xlsx nel formato e nella risoluzione originali — niente screenshot, niente ricompressione, niente upload.",
+      "steps": [
+        "Aggiungi un file .xlsx (da Excel o Google Sheets).",
+        "Clicca su “Estrai immagini”.",
+        "Scarica lo ZIP di immagini."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Le immagini perdono qualità?",
+          "No. Vengono copiate esattamente come sono memorizzate all'interno del file, nel loro formato originale (PNG, JPG, GIF, SVG, EMF e così via)."
+        ],
+        [
+          "Funziona con Google Sheets?",
+          "Sì. In Google Sheets, scegli File → Scarica → Microsoft Excel (.xlsx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "compress-excel": {
+      "name": "Comprimi Excel",
+      "summary": "Rimpicciolisci un .xlsx ottimizzando le sue immagini.",
+      "action": "Comprimi Excel",
+      "title": "Comprimi File Excel (.xlsx), No Upload | Fizzdoc",
+      "description": "Riduci la dimensione di un file Excel ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Niente viene caricato.",
+      "h1": "Comprimi un foglio Excel",
+      "lede": "Rendi un .xlsx abbastanza piccolo da inviare via email ricomprimendo le foto troppo pesanti al suo interno. Testo, formattazione e tutto il resto restano esattamente uguali.",
+      "steps": [
+        "Aggiungi un file .xlsx (da Excel o Google Sheets).",
+        "Scegli compressione Bilanciata o Forte.",
+        "Clicca su “Comprimi Excel” e scarica il file più piccolo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Di quanto si ridurrà?",
+          "I file con foto di grandi dimensioni spesso si riducono della metà o più. I file composti principalmente da testo sono già compatti; se Fizzdoc non riesce a rimpicciolire un file, te lo segnala e mantiene l'originale."
+        ],
+        [
+          "Funziona con Google Sheets?",
+          "Sì. In Google Sheets, scegli File → Scarica → Microsoft Excel (.xlsx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "remove-powerpoint-metadata": {
+      "name": "Rimuovi Metadati PowerPoint",
+      "summary": "Cancella nomi di autore, azienda ed editor da un .pptx.",
+      "action": "Rimuovi metadati",
+      "title": "Rimuovi Metadati da un File PowerPoint, No Upload | Fizzdoc",
+      "description": "Elimina autore, editor, azienda, titolo e miniatura da un file PowerPoint nel browser. Funziona con file scaricati da Google Slides. Niente caricato.",
+      "h1": "Rimuovi i metadati nascosti da una presentazione PowerPoint",
+      "lede": "Ogni .pptx registra chi lo ha creato, chi lo ha modificato per ultimo e a quale azienda appartiene. Cancella questi dettagli prima di inviarlo — senza caricare il file da nessuna parte.",
+      "steps": [
+        "Aggiungi un file .pptx (da PowerPoint o Google Slides).",
+        "Clicca su “Rimuovi metadati”.",
+        "Scarica il .pptx pulito."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Cosa viene rimosso?",
+          "Autore, ultima modifica di, titolo, oggetto, descrizione, parole chiave, categoria, stato, azienda, responsabile, base collegamento ipertestuale, proprietà personalizzate e la miniatura di anteprima incorporata. Le date di creazione e modifica vengono mantenute perché Office ne ha bisogno. Il tuo contenuto non viene toccato."
+        ],
+        [
+          "Funziona con Google Slides?",
+          "Sì. In Google Slides, scegli File → Scarica → Microsoft PowerPoint (.pptx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "extract-images-from-powerpoint": {
+      "name": "Estrai Immagini da PowerPoint",
+      "summary": "Salva ogni immagine di un .pptx alla qualità originale.",
+      "action": "Estrai immagini",
+      "title": "Estrai Immagini da un File PowerPoint, No Upload | Fizzdoc",
+      "description": "Scarica come ZIP ogni immagine incorporata in una presentazione PowerPoint, alla risoluzione originale. Funziona con Google Slides. Nel browser.",
+      "h1": "Estrai tutte le immagini da una presentazione PowerPoint",
+      "lede": "Ottieni ogni foto, logo e grafico da un .pptx nel formato e nella risoluzione originali — niente screenshot, niente ricompressione, niente upload.",
+      "steps": [
+        "Aggiungi un file .pptx (da PowerPoint o Google Slides).",
+        "Clicca su “Estrai immagini”.",
+        "Scarica lo ZIP di immagini."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Le immagini perdono qualità?",
+          "No. Vengono copiate esattamente come sono memorizzate all'interno del file, nel loro formato originale (PNG, JPG, GIF, SVG, EMF e così via)."
+        ],
+        [
+          "Funziona con Google Slides?",
+          "Sì. In Google Slides, scegli File → Scarica → Microsoft PowerPoint (.pptx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    },
+    "compress-powerpoint": {
+      "name": "Comprimi PowerPoint",
+      "summary": "Rimpicciolisci un .pptx ottimizzando le sue immagini.",
+      "action": "Comprimi PowerPoint",
+      "title": "Comprimi File PowerPoint (.pptx), No Upload | Fizzdoc",
+      "description": "Riduci la dimensione di un file PowerPoint ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Niente caricato.",
+      "h1": "Comprimi una presentazione PowerPoint",
+      "lede": "Rendi un .pptx abbastanza piccolo da inviare via email ricomprimendo le foto troppo pesanti al suo interno. Testo, formattazione e tutto il resto restano esattamente uguali.",
+      "steps": [
+        "Aggiungi un file .pptx (da PowerPoint o Google Slides).",
+        "Scegli compressione Bilanciata o Forte.",
+        "Clicca su “Comprimi PowerPoint” e scarica il file più piccolo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Di quanto si ridurrà?",
+          "I file con foto di grandi dimensioni spesso si riducono della metà o più. I file composti principalmente da testo sono già compatti; se Fizzdoc non riesce a rimpicciolire un file, te lo segnala e mantiene l'originale."
+        ],
+        [
+          "Funziona con Google Slides?",
+          "Sì. In Google Slides, scegli File → Scarica → Microsoft PowerPoint (.pptx), poi aggiungi qui quel file. Niente viene inviato a Google o a noi."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza MIT."
+        ]
+      ]
+    }
+  }
+}

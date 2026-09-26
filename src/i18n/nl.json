@@ -1,0 +1,1572 @@
+{
+  "ui": {
+    "nav.label": "Hoofdmenu",
+    "nav.home": "Fizzdoc home",
+    "nav.theme": "Kleurthema wisselen",
+    "nav.star": "★ Star",
+    "nav.starAria": "Geef Fizzdoc een ster op GitHub",
+    "lang.label": "Taal",
+    "lang.tip": "Liever een andere taal? Kies die hier.",
+    "lang.tipClose": "Sluiten",
+    "footer.about": "Privé-documenttools. Je bestanden worden op je eigen apparaat verwerkt en nooit geüpload.",
+    "footer.license": "Open source (MIT)",
+    "footer.builtOn": "Gebouwd op qpdf, pdf.js en pdf-lib",
+    "star.title": "Gratis en open source. Voor altijd.",
+    "star.text": "Geen advertenties, geen accounts, geen servers die naar je bestanden kijken. Heeft Fizzdoc je tijd bespaard? Een ster op GitHub helpt meer mensen het te vinden.",
+    "star.button": "Geef Fizzdoc een ster op GitHub",
+    "star.hero": "Ster op GitHub",
+    "star.nudge": "Heeft Fizzdoc geholpen? {link} — het is gratis en helpt anderen het te vinden.",
+    "star.nudgeLink": "★ Geef een ster op GitHub",
+    "format.pdf": "PDF",
+    "format.word": "Word",
+    "format.excel": "Excel",
+    "format.powerpoint": "PowerPoint",
+    "format.image": "Afbeeldingen",
+    "group.title": "{format}-tools",
+    "home.eyebrow": "0 bytes geüpload · Open source · Gratis",
+    "home.cta": "PDF samenvoegen",
+    "home.browse": "Bekijk alle {n} tools",
+    "home.formats": "Ondersteunde formaten",
+    "home.google": "+ Google Docs, Sheets & Slides",
+    "home.chip": "Verwerkt op dit apparaat",
+    "home.toolsTitle": "Elke tool, standaard privé",
+    "home.toolsLede": "Kies een tool. Je bestand wordt op dit apparaat verwerkt en komt nooit bij een server terecht.",
+    "home.whatTitle": "Wat is {name}?",
+    "tool.eyebrow": "Werkt op je eigen apparaat · 0 bytes geüpload",
+    "tool.how": "Zo gebruik je {tool}",
+    "tool.more": "Meer privétools",
+    "crumbs.label": "Kruimelpad",
+    "faq.title": "Veelgestelde vragen",
+    "proof.title": "Privé door ontwerp — en je kunt het controleren",
+    "proof.lede": "Je bestanden worden nooit geüpload, want er is nergens naartoe om ze te uploaden.",
+    "proof.noUpload": "Er is geen uploadstap",
+    "proof.noUploadText": "Bestanden worden gelezen en geschreven binnen deze browsertab. Er is geen server die ze zou kunnen ontvangen.",
+    "proof.csp": "De browser dwingt het af",
+    "proof.cspText": "Het Content Security Policy van deze pagina staat alleen verbindingen terug naar deze site toe, die niets anders dan de app zelf levert.",
+    "proof.check": "Zie het zelf",
+    "proof.checkText": "Open de ontwikkelaarstools, houd het tabblad Netwerk in de gaten en voer een taak uit: geen enkel verzoek bevat je document.",
+    "proof.open": "Open source",
+    "proof.openText": "Elke regel staat op {github}, gebouwd op {engines}.",
+    "ws.choosePdf": "Kies een PDF-bestand",
+    "ws.choosePdfs": "Kies PDF-bestanden",
+    "ws.chooseImage": "Kies een afbeelding",
+    "ws.chooseImages": "Kies afbeeldingen",
+    "ws.chooseFile": "Kies een {ext}-bestand",
+    "ws.chooseFiles": "Kies {ext}-bestanden",
+    "ws.dropOne": "of sleep het hierheen · verlaat dit apparaat nooit",
+    "ws.dropMany": "of sleep ze hierheen · verlaat dit apparaat nooit",
+    "ws.files": "Geselecteerde bestanden",
+    "ws.reorder": "Sleep bestanden om de volgorde te wijzigen, of gebruik de pijltjes.",
+    "ws.rotation": "Rotatie",
+    "ws.rot90": "90° met de klok mee",
+    "ws.rot180": "180°",
+    "ws.rot270": "90° tegen de klok in",
+    "ws.pagesKeep": "Pagina's om te behouden",
+    "ws.pagesDelete": "Pagina's om te verwijderen",
+    "ws.pagesRotate": "Pagina's om te roteren (optioneel)",
+    "ws.pagesAll": "Alle pagina's",
+    "ws.pagesExtract": "Pagina's om te extraheren",
+    "ws.pagesOrder": "Nieuwe paginavolgorde",
+    "ws.example": "bijv. {example}",
+    "ws.password": "Wachtwoord",
+    "ws.repeat": "Herhaal wachtwoord",
+    "ws.unlockNote": "Ontgrendel alleen bestanden die je het recht hebt om te wijzigen.",
+    "ws.protectNote": "Een vergeten wachtwoord kan niet worden hersteld. Bewaar het op een veilige plek.",
+    "ws.cancel": "Annuleren",
+    "ws.download": "Downloaden",
+    "ws.compression": "Compressie",
+    "ws.balanced": "Gebalanceerd — beste kwaliteit",
+    "ws.strong": "Sterk — kleinste bestand",
+    "ws.saveAs": "Opslaan als",
+    "ws.fmtOriginal": "Zelfde formaat als elk bestand",
+    "ws.fmtJpeg": "JPG — foto's, overal te openen",
+    "ws.fmtWebp": "WebP — kleinste",
+    "ws.fmtPng": "PNG — zonder kwaliteitsverlies",
+    "ws.quality": "Kwaliteit",
+    "ws.width": "Breedte (px)",
+    "ws.height": "Hoogte (px)",
+    "ws.scale": "Of schaal (%)",
+    "ws.auto": "Automatisch",
+    "ws.keepAspect": "Beeldverhouding behouden",
+    "ws.position": "Positie",
+    "ws.bottomCenter": "Onderaan gecentreerd",
+    "ws.bottomRight": "Rechtsonder",
+    "ws.topRight": "Rechtsboven",
+    "ws.style": "Stijl",
+    "ws.pageOf": "Pagina 1 van 10",
+    "ws.startAt": "Begin bij",
+    "ws.wmText": "Watermerktekst",
+    "ws.wmDefault": "VERTROUWELIJK",
+    "ws.opacity": "Dekking",
+    "pw.title": "Deze PDF is met een wachtwoord beveiligd",
+    "pw.titleFile": "“{file}” is met een wachtwoord beveiligd",
+    "pw.hint": "Voer het wachtwoord in. Het blijft op dit apparaat.",
+    "pw.retry": "Dat wachtwoord werkte niet. Probeer het opnieuw ({n} van 3).",
+    "pw.unlock": "Ontgrendelen",
+    "app.working": "Bezig… je bestanden blijven op dit apparaat.",
+    "app.workingPct": "Bezig… {pct}% — je bestanden blijven op dit apparaat.",
+    "app.done": "Klaar — {summary}, {size}. Gemaakt op dit apparaat.",
+    "app.ready": "Klaar — kies “Opslaan als PDF” in het afdrukvenster en klik op Opslaan. Gemaakt op dit apparaat.",
+    "app.saveAsPdf": "Opslaan als PDF",
+    "app.downloadExt": "Download {ext}",
+    "app.canceled": "Geannuleerd. Er is niets gewijzigd.",
+    "app.wrongType": "Dat bestandstype kan niet met deze tool worden gebruikt.",
+    "app.tooBig": "Deze bestanden zijn samen {size}, meer dan dit apparaat veilig kan verwerken ({max}).",
+    "app.moveUp": "Omhoog verplaatsen",
+    "app.moveDown": "Omlaag verplaatsen",
+    "app.remove": "Verwijderen",
+    "error.INVALID_PDF": "Dit bestand kon niet als PDF worden gelezen. Het is mogelijk beschadigd of geen PDF.",
+    "error.BAD_PASSWORD": "Dat wachtwoord werkte niet, ook niet na drie pogingen. Er is niets gewijzigd.",
+    "error.PASSWORD_REQUIRED": "Deze PDF heeft zijn wachtwoord nodig om verder te gaan. Er is niets gewijzigd.",
+    "error.BAD_RANGE": "Controleer de paginanummers. Gebruik getallen en reeksen zoals “1-3, 8” binnen het aantal pagina's van het document.",
+    "error.NOT_ENCRYPTED": "Deze PDF is niet met een wachtwoord beveiligd, dus er valt niets te ontgrendelen.",
+    "error.UNSUPPORTED_XFA": "Deze PDF gebruikt een dynamisch XFA-formulier, dat niet veilig kan worden bewerkt. Je bestand is niet gewijzigd.",
+    "error.NO_PAGES_LEFT": "Dat zou alle pagina's verwijderen. Behoud er minstens één.",
+    "error.WRONG_FILE_COUNT": "Voeg het aantal bestanden toe dat deze tool nodig heeft.",
+    "error.PROCESSING_FAILED": "Er ging iets mis tijdens de verwerking. Je originele bestand is ongewijzigd.",
+    "error.NO_PASSWORD": "Voer het wachtwoord in dat je wilt toevoegen.",
+    "error.PASSWORDS_DIFFER": "De twee wachtwoorden komen niet overeen.",
+    "error.NOT_OFFICE": "Dit bestand is geen geldig Word-, Excel- of PowerPoint-document.",
+    "error.NO_IMAGES": "Dit document bevat geen ingesloten afbeeldingen.",
+    "error.BAD_IMAGE": "Een van de afbeeldingen kon niet worden gelezen. Probeer JPG of PNG.",
+    "error.PDF_PASSWORD": "Deze PDF is met een wachtwoord beveiligd. Verwijder eerst het wachtwoord met Unlock PDF.",
+    "error.BAD_SIZE": "De breedte en hoogte moeten elk tussen 1 en 16.384 pixels liggen.",
+    "error.NO_TEXT": "Deze PDF bevat geen tekst om te extraheren — het is waarschijnlijk een gescande afbeelding. Voer eerst OCR PDF uit en probeer het opnieuw.",
+    "error.NO_WATERMARK": "Voer de watermerktekst in (letters, cijfers en gangbare symbolen).",
+    "error.ENGINE_FAILED": "De PDF-engine stopte onverwacht — het bestand is mogelijk te groot voor dit apparaat.",
+    "warning.BOOKMARKS_DROPPED": "Bladwijzers uit het tweede bestand en volgende bestanden zijn niet overgenomen. De bladwijzers van het eerste bestand zijn behouden.",
+    "warning.BOOKMARKS_BROKEN": "Sommige bladwijzers verwezen naar pagina's die zijn verwijderd, waardoor ze nergens meer naartoe leiden.",
+    "warning.TAGS_NOT_UPDATED": "Deze PDF heeft toegankelijkheidstags die niet opnieuw zijn opgebouwd voor de nieuwe pagina's, waardoor de structuur voor schermlezers onvolledig kan zijn.",
+    "warning.SIGNATURES_INVALIDATED": "Digitale handtekeningen in deze PDF zijn niet langer geldig, omdat het document is gewijzigd.",
+    "warning.PASSWORD_REMOVED": "Het nieuwe bestand heeft geen wachtwoord.",
+    "warning.PERMISSIONS_REMOVED": "De bewerkings- en afdrukbeperkingen van het origineel gelden niet voor het nieuwe bestand.",
+    "sum.page": "pagina",
+    "sum.pages": "pagina's",
+    "sum.image": "afbeelding",
+    "sum.images": "afbeeldingen",
+    "sum.word": "woord",
+    "sum.words": "woorden",
+    "sum.slide": "dia",
+    "sum.slides": "dia's",
+    "sum.row": "rij",
+    "sum.rows": "rijen",
+    "sum.sheet": "blad",
+    "sum.sheets": "bladen",
+    "sum.edit": "bewerking",
+    "sum.edits": "bewerkingen",
+    "sum.recognized": "herkend",
+    "sum.numbered": "genummerd",
+    "sum.watermarked": "van watermerk voorzien",
+    "sum.smaller": "kleiner",
+    "sum.Already optimized": "Al geoptimaliseerd",
+    "sum.Metadata removed": "Metadata verwijderd",
+    "ed.tools": "Bewerkingstool",
+    "ed.editText": "Tekst bewerken",
+    "ed.addText": "Tekst toevoegen",
+    "ed.whiteout": "Overschilderen",
+    "ed.undo": "Ongedaan maken",
+    "ed.undoLabel": "Laatste bewerking ongedaan maken",
+    "ed.zoomOut": "Uitzoomen",
+    "ed.zoomIn": "Inzoomen",
+    "ed.page": "Pagina {n} / {total}",
+    "ed.editRun": "Tekst bewerken: {text}",
+    "ed.move": "Sleep om te verplaatsen",
+    "ed.removeBox": "Tekstvak verwijderen",
+    "ed.replaced": "Sommige tekens worden niet ondersteund door de standaard PDF-lettertypen en zijn vervangen.",
+    "ed.hint": "Bedekte tekst is verborgen, niet verwijderd uit het bestand — verwijder voor gevoelige gegevens in plaats daarvan de pagina.",
+    "ocr.copyAll": "Alle tekst kopiëren",
+    "ocr.copied": "Gekopieerd",
+    "ocr.text": "Herkende tekst"
+  },
+  "home": {
+    "title": "Fizzdoc — Privé PDF, Word, Excel & Afbeeldingen Tools",
+    "description": "Bewerk, comprimeer, converteer en OCR PDF's; converteer Word, Excel en afbeeldingen — direct in je browser. Geen upload, geen account, gratis en open source.",
+    "h1": "Documenttools die je documenten nooit te zien krijgen",
+    "lede": "Bewerk, comprimeer, converteer en OCR PDF's. Converteer Word, Excel, PowerPoint en afbeeldingen. Alles draait in je browser — je bestanden verlaten je apparaat nooit.",
+    "what": "Fizzdoc is een gratis, open-source verzameling documenttools die volledig in je webbrowser draait. PDF's worden verwerkt met de engines qpdf, pdf.js en pdf-lib, tekstherkenning gebruikt Tesseract, en ook Office-bestanden en afbeeldingen worden lokaal verwerkt — zodat er nooit iets naar een server wordt geüpload.",
+    "faq": [
+      [
+        "Worden mijn bestanden ergens geüpload?",
+        "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+      ],
+      [
+        "Hoe verschilt Fizzdoc van iLovePDF, Smallpdf of de online tools van Adobe?",
+        "Die diensten uploaden je document naar hun servers om het te verwerken. Fizzdoc doet het werk juist in je browsertab, dus er is niets om achteraf te uploaden, op te slaan of te verwijderen. Het is bovendien open source en waarschuwt je altijd wanneer iets, zoals een bladwijzer, niet kan worden overgenomen in plaats van het stilzwijgend te laten vallen."
+      ],
+      [
+        "Werkt het met Google Docs, Sheets en Slides?",
+        "Ja. Download het bestand vanuit Google als Word-, Excel- of PowerPoint-bestand (Bestand → Downloaden) en gebruik de bijbehorende Fizzdoc-tool. Er wordt niets naar Google of naar Fizzdoc verstuurd."
+      ],
+      [
+        "Werkt het op mijn telefoon?",
+        "Ja. Fizzdoc werkt in actuele versies van Chrome, Safari, Firefox en Edge, op desktop en mobiel. Erg grote bestanden kunnen het geheugen van een telefoon overschrijden; Fizzdoc controleert dit voordat het begint."
+      ],
+      [
+        "Is Fizzdoc gratis?",
+        "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+      ]
+    ]
+  },
+  "tools": {
+    "merge-pdf": {
+      "name": "PDF samenvoegen",
+      "summary": "Combineer meerdere PDF's tot één, in de volgorde die jij kiest.",
+      "action": "PDF's samenvoegen",
+      "title": "PDF Samenvoegen Zonder Upload, Privé en Gratis | Fizzdoc",
+      "description": "Combineer PDF-bestanden in je browser. Er wordt niets geüpload en formuliervelden en links blijven behouden. Gratis, geen account, open source.",
+      "h1": "PDF's samenvoegen zonder ze te uploaden",
+      "lede": "Combineer PDF's tot één document, rechtstreeks in je browser. Er wordt niets naar een server gestuurd en formuliervelden en interne links overleven het samenvoegen.",
+      "steps": [
+        "Voeg twee of meer PDF-bestanden toe — sleep ze erin of klik om te kiezen.",
+        "Zet ze in de juiste volgorde met de ↑ en ↓ knoppen.",
+        "Klik op “PDF's samenvoegen” en download het gecombineerde bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Blijven bladwijzers, formuliervelden en links behouden?",
+          "Formuliervelden en interne links uit elk bestand blijven behouden. Bladwijzers uit het eerste bestand blijven behouden; bladwijzers uit de andere bestanden kunnen nog niet worden gecombineerd, en Fizzdoc laat je dat weten in plaats van ze stilzwijgend te laten vallen."
+        ],
+        [
+          "Kan ik met een wachtwoord beveiligde PDF's samenvoegen?",
+          "Ja. Je wordt op je eigen apparaat om het wachtwoord gevraagd, en het samengevoegde bestand wordt zonder wachtwoord opgeslagen."
+        ],
+        [
+          "Is er een maximale grootte?",
+          "Er is geen paginalimiet. De maximale grootte hangt af van het geheugen van je apparaat — meestal enkele honderden megabytes in totaal — en Fizzdoc laat het vooraf weten als een taak te groot is voor je apparaat."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "split-pdf": {
+      "name": "PDF splitsen",
+      "summary": "Haal de pagina's die je nodig hebt uit een nieuwe PDF.",
+      "action": "Pagina's extraheren",
+      "title": "PDF Splitsen & Pagina's Extraheren, Privé, Geen Upload | Fizzdoc",
+      "description": "Haal pagina's uit een PDF in je browser. Kies reeksen zoals 1-3, 8 — je bestand verlaat je apparaat nooit. Gratis, geen account, open source.",
+      "h1": "Een PDF splitsen en pagina's extraheren — privé",
+      "lede": "Haal de pagina's die je nodig hebt uit een nieuwe PDF. Typ reeksen zoals “1-3, 8”; de volgorde die je typt is de volgorde die je krijgt.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Typ de pagina's om te behouden, bijvoorbeeld “1-3, 8” of “5-” voor pagina 5 tot het einde.",
+        "Klik op “Pagina's extraheren” en download de nieuwe PDF."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan ik pagina's herschikken tijdens het extraheren?",
+          "Ja. Pagina's komen eruit in de volgorde die je typt, dus “3, 1-2” zet pagina 3 vooraan."
+        ],
+        [
+          "Wat gebeurt er met bladwijzers en formuliervelden?",
+          "Bladwijzers blijven behouden. Als een bladwijzer naar een pagina wijst die je niet hebt behouden, waarschuwt Fizzdoc je. Formuliervelden op verwijderde pagina's worden netjes verwijderd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "rotate-pdf": {
+      "name": "PDF roteren",
+      "summary": "Zet scheve pagina's permanent recht.",
+      "action": "Pagina's roteren",
+      "title": "PDF-pagina's Permanent Roteren, Zonder Upload | Fizzdoc",
+      "description": "Roteer alle of geselecteerde PDF-pagina's met 90°, 180° of 270° en sla het resultaat op. Werkt in je browser; je bestand wordt nooit geüpload.",
+      "h1": "PDF-pagina's roteren en zo opslaan",
+      "lede": "Corrigeer scheef gescande pagina's voorgoed. Roteer elke pagina of alleen de pagina's die je kiest — zonder opnieuw te renderen, dus de kwaliteit blijft ongewijzigd.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Kies de hoek en eventueel welke pagina's je wilt roteren.",
+        "Klik op “Pagina's roteren” en download de gecorrigeerde PDF."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Vermindert roteren de kwaliteit?",
+          "Nee. Fizzdoc wijzigt alleen de rotatie-instelling van elke pagina; de paginainhoud wordt niet opnieuw gerenderd of gecomprimeerd."
+        ],
+        [
+          "Kan ik maar een paar pagina's roteren?",
+          "Ja. Voer pagina's in zoals “2, 5-7”, of laat het veld leeg om alle pagina's te roteren."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "delete-pdf-pages": {
+      "name": "PDF-pagina's verwijderen",
+      "summary": "Verwijder pagina's die je niet wilt delen.",
+      "action": "Pagina's verwijderen",
+      "title": "Pagina's uit een PDF Verwijderen, Privé, Geen Upload | Fizzdoc",
+      "description": "Verwijder ongewenste pagina's uit een PDF in je browser. Typ de pagina's om te verwijderen; je bestand verlaat je apparaat nooit. Gratis en open source.",
+      "h1": "Pagina's uit een PDF verwijderen — privé",
+      "lede": "Verwijder lege, dubbele of vertrouwelijke pagina's voordat je een document deelt, zonder het aan iemand af te geven.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Typ de pagina's om te verwijderen, bijvoorbeeld “2, 7-9”.",
+        "Klik op “Pagina's verwijderen” en download de kortere PDF."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Zijn verwijderde pagina's echt weg?",
+          "Ja. Verwijderde pagina's worden niet naar het nieuwe bestand geschreven. Je originele bestand op je apparaat blijft ongewijzigd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "unlock-pdf": {
+      "name": "PDF ontgrendelen",
+      "summary": "Sla een kopie op zonder het wachtwoord dat je kent.",
+      "action": "Wachtwoord verwijderen",
+      "title": "PDF-wachtwoord Verwijderen (PDF Ontgrendelen), Geen Upload | Fizzdoc",
+      "description": "Verwijder het wachtwoord van een PDF die je mag openen. Ontsleuteling gebeurt op je apparaat en er wordt niets geüpload. Gratis, geen account.",
+      "h1": "Een PDF-wachtwoord verwijderen — op je eigen apparaat",
+      "lede": "Sla een ontgrendelde kopie op van een beveiligde PDF die je al kunt openen. Het wachtwoord en het document blijven op je apparaat.",
+      "steps": [
+        "Voeg de beveiligde PDF toe.",
+        "Klik op “Wachtwoord verwijderen” en typ het wachtwoord wanneer daarom gevraagd wordt.",
+        "Download de ontgrendelde kopie."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan Fizzdoc een wachtwoord kraken dat ik niet ken?",
+          "Nee. Fizzdoc verwijdert beveiliging alleen als je het wachtwoord kent, of als de PDF zonder wachtwoord opent en alleen bewerken of afdrukken beperkt. Ontgrendel alleen bestanden die je het recht hebt om te wijzigen."
+        ],
+        [
+          "Wordt mijn wachtwoord ergens naartoe gestuurd?",
+          "Nee. Het wachtwoord wordt op deze pagina getypt en alleen gebruikt door de engine die in je browsertab draait. Het wordt niet opgeslagen of gelogd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "protect-pdf": {
+      "name": "PDF beveiligen",
+      "summary": "Beveilig een PDF met een wachtwoord en AES-256-versleuteling.",
+      "action": "PDF beveiligen",
+      "title": "PDF Beveiligen met Wachtwoord (AES-256), Geen Upload | Fizzdoc",
+      "description": "Voeg een wachtwoord toe aan een PDF met AES-256-versleuteling, rechtstreeks in je browser. Bestand en wachtwoord verlaten je apparaat nooit. Gratis.",
+      "h1": "Een PDF met een wachtwoord beveiligen — op je eigen apparaat",
+      "lede": "Versleutel een PDF met AES-256, zodat hij alleen opent met jouw wachtwoord. Versleuteling gebeurt in deze tab; noch het bestand, noch het wachtwoord wordt ergens naartoe gestuurd.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Typ twee keer een wachtwoord.",
+        "Klik op “PDF beveiligen” en download de versleutelde kopie."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe sterk is de beveiliging?",
+          "Fizzdoc gebruikt AES-256, de sterkste versleuteling die de PDF-standaard kent, via de qpdf-engine. Dit opent in elke moderne PDF-lezer, waaronder Adobe Acrobat, Chrome, Edge, Firefox en Preview."
+        ],
+        [
+          "Wat als ik het wachtwoord vergeet?",
+          "Het kan niet worden hersteld — niet door Fizzdoc, niet door wie dan ook. Bewaar het wachtwoord op een veilige plek, bijvoorbeeld in een wachtwoordmanager."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "remove-pdf-metadata": {
+      "name": "PDF-metadata verwijderen",
+      "summary": "Verwijder auteur, titel, software en XMP-gegevens.",
+      "action": "Metadata verwijderen",
+      "title": "PDF-metadata Verwijderen (Auteur, Titel, XMP) | Fizzdoc",
+      "description": "Verwijder verborgen PDF-metadata zoals auteur, titel, makende app en XMP-gegevens voordat je een bestand deelt. Werkt in je browser; niets wordt geüpload.",
+      "h1": "Verborgen metadata uit een PDF verwijderen",
+      "lede": "PDF's registreren stilletjes wie ze schreef, met welke app en wanneer. Verwijder auteur, titel, onderwerp, trefwoorden, producent en XMP-metadata voordat je deelt.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Metadata verwijderen”.",
+        "Download de schone kopie."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat wordt er precies verwijderd?",
+          "Het documentinformatiewoordenboek (auteur, titel, onderwerp, trefwoorden, maker en producent) en de XMP-metadatastream. Alleen de wijzigingsdatum blijft staan, omdat het bestand echt net gewijzigd is. De paginainhoud blijft ongemoeid."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "jpg-to-pdf": {
+      "name": "JPG naar PDF",
+      "summary": "Zet foto's en scans om in één PDF.",
+      "action": "PDF maken",
+      "title": "JPG naar PDF Converteren, Privé, Gratis, Geen Upload | Fizzdoc",
+      "description": "Converteer JPG, PNG, WebP en andere afbeeldingen naar één PDF in je browser. Foto's verlaten je apparaat nooit. Geen watermerk, geen account.",
+      "h1": "JPG- en PNG-afbeeldingen converteren naar PDF — privé",
+      "lede": "Combineer foto's, schermafbeeldingen en scans tot één PDF, één pagina per afbeelding, op volledige resolutie. Je foto's blijven op je apparaat.",
+      "steps": [
+        "Voeg één of meer afbeeldingen toe — JPG, PNG, WebP, GIF en meer.",
+        "Zet ze in de juiste volgorde met de ↑ en ↓ knoppen.",
+        "Klik op “PDF maken” en download het bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Vermindert dit de beeldkwaliteit?",
+          "Nee. JPG- en PNG-afbeeldingen worden zonder herncompressie in de PDF geplaatst. Andere formaten worden één keer in hoge kwaliteit geconverteerd."
+        ],
+        [
+          "Kan ik foto's van mijn iPhone converteren?",
+          "Ja, als je browser ze kan weergeven. Safari opent HEIC-foto's rechtstreeks; deel ze in andere browsers eerst als JPG."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "pdf-to-jpg": {
+      "name": "PDF naar JPG",
+      "summary": "Sla elke pagina op als een scherpe JPG-afbeelding.",
+      "action": "Naar JPG converteren",
+      "title": "PDF naar JPG Converteren, Privé, Gratis, Geen Upload | Fizzdoc",
+      "description": "Converteer elke pagina van een PDF naar een JPG-afbeelding van hoge kwaliteit, in je browser. Niets wordt geüpload. Meerdere pagina's downloaden als één ZIP.",
+      "h1": "PDF-pagina's converteren naar JPG-afbeeldingen — privé",
+      "lede": "Render elke pagina naar een scherpe JPG op 150 DPI met de pdf.js-engine van Mozilla, hier in je browser. Een PDF met meerdere pagina's download je als één ZIP.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Naar JPG converteren”.",
+        "Download de afbeelding, of een ZIP met één afbeelding per pagina."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welke resolutie hebben de afbeeldingen?",
+          "150 DPI — scherp op schermen en prima om af te drukken op het originele formaat. Een A4-pagina wordt een afbeelding van 1240 × 1754 pixels."
+        ],
+        [
+          "Werkt het met beveiligde PDF's?",
+          "Verwijder eerst het wachtwoord met PDF ontgrendelen en converteer daarna. Beide stappen blijven op je apparaat."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "compress-pdf": {
+      "name": "PDF comprimeren",
+      "summary": "Verklein een PDF door de afbeeldingen te optimaliseren. Tekst blijft scherp.",
+      "action": "PDF comprimeren",
+      "title": "PDF Comprimeren Online Zonder Upload — Gratis | Fizzdoc",
+      "description": "Verklein een PDF-bestand in je browser door te grote afbeeldingen opnieuw te comprimeren. Tekst blijft selecteerbaar en scherp. Niets wordt geüpload.",
+      "h1": "Een PDF comprimeren — zonder hem te uploaden",
+      "lede": "Maak een PDF klein genoeg om te e-mailen of naar een portaal te uploaden. Fizzdoc comprimeert te grote foto's en scans opnieuw en laat tekst en vectorafbeeldingen ongemoeid.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Kies Gebalanceerd of Sterke compressie.",
+        "Klik op “PDF comprimeren” en download het kleinere bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoeveel kleiner wordt mijn PDF?",
+          "PDF's die uit scans en foto's bestaan, krimpen vaak met 40–80%. PDF's met alleen tekst zijn meestal al compact; als Fizzdoc een bestand niet kleiner kan maken, laat het dat weten en behoudt het het origineel."
+        ],
+        [
+          "Wordt tekst wazig?",
+          "Nee. Alleen ingesloten afbeeldingen worden opnieuw gecomprimeerd. Tekst, lettertypen en vectortekeningen worden exact gekopieerd, dus tekst blijft scherp en selecteerbaar."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "edit-pdf": {
+      "name": "PDF bewerken",
+      "summary": "Wijzig bestaande tekst, voeg tekst toe en overschilder, direct op de pagina.",
+      "action": "PDF opslaan",
+      "title": "PDF-tekst Online Bewerken — Gratis, Geen Upload | Fizzdoc",
+      "description": "Klik op tekst in een PDF om die te wijzigen, voeg nieuwe tekst toe, of overschilder delen — rechtstreeks op de pagina, in je browser. Niets wordt geüpload.",
+      "h1": "PDF-tekst rechtstreeks op de pagina bewerken",
+      "lede": "Herstel een typefout, werk een datum bij of vul een leeg vak in zonder het originele bestand. Klik op de tekst die je wilt wijzigen en typ — het gebeurt allemaal op je apparaat.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op tekst om die te wijzigen, of gebruik Tekst toevoegen en Overschilderen in de werkbalk.",
+        "Klik op “PDF opslaan” en download het bewerkte bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Komt de bewerkte tekst overeen met het originele lettertype?",
+          "Fizzdoc kiest het dichtstbijzijnde standaardlettertype (schreefloos, schreef of monospace, met vet en cursief) op dezelfde grootte en positie. Aangepaste merklettertypen kunnen niet exact worden nagebootst."
+        ],
+        [
+          "Wordt de originele tekst verwijderd?",
+          "De originele tekst wordt op de pagina bedekt en je nieuwe tekst wordt eroverheen getekend. Voor gevoelige informatie die echt uit het bestand moet verdwijnen, verwijder je in plaats daarvan de pagina of maak je het document opnieuw."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "ocr-pdf": {
+      "name": "OCR PDF",
+      "summary": "Maak een gescande PDF doorzoekbaar en kopieerbaar.",
+      "action": "Tekst herkennen",
+      "title": "OCR PDF — Gescande PDF's Doorzoekbaar Maken, Geen Upload | Fizzdoc",
+      "description": "Zet gescande PDF's om in doorzoekbare, kopieerbare documenten met Engelse OCR die in je browser draait. Pagina's behouden hun originele kwaliteit.",
+      "h1": "Een gescande PDF doorzoekbaar maken met OCR",
+      "lede": "Herken de Engelse tekst op gescande pagina's en voeg die toe als onzichtbare laag, zodat je kunt zoeken, selecteren en kopiëren. De pagina's zelf worden niet gewijzigd.",
+      "steps": [
+        "Voeg één gescande PDF toe.",
+        "Klik op “Tekst herkennen” en wacht terwijl elke pagina wordt gelezen.",
+        "Download de doorzoekbare PDF."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welke talen worden ondersteund?",
+          "Engels. De herkenningsengine (Tesseract) en de Engelse taalgegevens worden eenmalig naar je browser gedownload, de eerste keer dat je een OCR-tool gebruikt — enkele megabytes."
+        ],
+        [
+          "Verandert OCR hoe mijn pagina's eruitzien?",
+          "Nee. De gescande pagina's blijven precies zoals ze zijn; de herkende tekst wordt als onzichtbare laag eroverheen toegevoegd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "pdf-to-word": {
+      "name": "PDF naar Word",
+      "summary": "Zet PDF-tekst om in een bewerkbaar .docx.",
+      "action": "Naar Word converteren",
+      "title": "PDF naar Word (DOCX) Converteren, Privé, Geen Upload | Fizzdoc",
+      "description": "Converteer een PDF naar een bewerkbaar Word-document in je browser. Koppen, alinea's en pagina-einden blijven behouden. Niets wordt geüpload.",
+      "h1": "PDF converteren naar een bewerkbaar Word-document",
+      "lede": "Haal de tekst van een PDF naar Word, met heropgebouwde koppen en alinea's, zodat je hem kunt bewerken. Conversie gebeurt op je apparaat.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Naar Word converteren”.",
+        "Download de .docx en open die in Word, Google Docs of LibreOffice."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Ziet de opmaak er exact hetzelfde uit als de PDF?",
+          "Fizzdoc bouwt de tekststroom opnieuw op — koppen, alinea's, vet en cursief, en pagina-einden — zodat het document makkelijk te bewerken is. Complexe indelingen met kolommen, tabellen en afbeeldingen worden vereenvoudigd."
+        ],
+        [
+          "En gescande PDF's?",
+          "Gescande pagina's zijn afbeeldingen, geen tekst. Voer eerst OCR PDF uit en converteer het resultaat daarna naar Word."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "pdf-to-powerpoint": {
+      "name": "PDF naar PowerPoint",
+      "summary": "Zet elke PDF-pagina om in een dia.",
+      "action": "Naar PowerPoint converteren",
+      "title": "PDF naar PowerPoint (PPTX) Converteren, Geen Upload | Fizzdoc",
+      "description": "Converteer een PDF naar een PowerPoint-presentatie met één scherpe dia per pagina, rechtstreeks in je browser. Niets wordt geüpload. Gratis en open source.",
+      "h1": "Een PDF converteren naar een PowerPoint-presentatie",
+      "lede": "Presenteer een PDF als dia's. Elke pagina wordt een dia op volledig formaat en hoge resolutie in een .pptx die je kunt openen in PowerPoint, Keynote of Google Slides.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Naar PowerPoint converteren”.",
+        "Download de .pptx."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan ik de tekst op de dia's bewerken?",
+          "Elke dia is een afbeelding van de pagina, dus die ziet er exact zo uit als de PDF. Gebruik voor het bewerken van de tekst PDF naar Word, of voeg tekstvakken toe in PowerPoint."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "pdf-to-text": {
+      "name": "PDF naar tekst",
+      "summary": "Haal alle tekst uit een PDF als een .txt-bestand.",
+      "action": "Tekst extraheren",
+      "title": "PDF naar Tekst (TXT) Converteren, Privé, Geen Upload | Fizzdoc",
+      "description": "Haal de tekst uit een PDF in een gewoon .txt-bestand, in je browser, in de juiste leesvolgorde. Niets wordt geüpload. Gratis, geen account, open source.",
+      "h1": "Tekst uit een PDF extraheren",
+      "lede": "Haal elk woord uit een PDF als platte tekst, met regels en alinea's in leesvolgorde. Perfect om te kopiëren, te doorzoeken of in andere tools te gebruiken.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Tekst extraheren”.",
+        "Download het .txt-bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom is mijn tekstbestand leeg?",
+          "Gescande PDF's bevatten afbeeldingen van tekst, geen echte tekst. Voer eerst OCR PDF uit en extraheer daarna de tekst."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "pdf-to-markdown": {
+      "name": "PDF naar Markdown",
+      "summary": "Converteer een PDF naar nette Markdown met koppen en lijsten.",
+      "action": "Naar Markdown converteren",
+      "title": "PDF naar Markdown Converteren, Privé, Geen Upload | Fizzdoc",
+      "description": "Converteer een PDF naar Markdown met herkende koppen en lijsten, klaar voor documentatie, notities of AI-tools. Werkt in je browser; niets wordt geüpload.",
+      "h1": "Een PDF converteren naar Markdown",
+      "lede": "Zet een PDF om in nette Markdown — koppen, alinea's en lijsten — voor Notion, Obsidian, GitHub of elke tool die Markdown leest.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Naar Markdown converteren”.",
+        "Download het .md-bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe worden koppen herkend?",
+          "Aan de hand van de tekstgrootte: regels die duidelijk groter zijn dan de hoofdtekst worden koppen, en genummerde of opgesomde regels worden lijsten."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "text-to-pdf": {
+      "name": "Tekst naar PDF",
+      "summary": "Zet een .txt-bestand om in een nette PDF.",
+      "action": "PDF maken",
+      "title": "Tekst naar PDF (TXT naar PDF) Converteren, Geen Upload | Fizzdoc",
+      "description": "Converteer een platte tekstbestand naar een nette, leesbare PDF in je browser. Ondersteunt elke taal, ook Hindi en andere schriften. Niets wordt geüpload.",
+      "h1": "Een tekstbestand converteren naar PDF",
+      "lede": "Zet notities, logs of elk .txt-bestand om in een netjes opgemaakte A4-PDF. Elke taal en elk schrift wordt ondersteund.",
+      "steps": [
+        "Voeg één .txt-bestand toe.",
+        "Klik op “PDF maken”.",
+        "Kies “Opslaan als PDF” in het venster dat opent en klik op Opslaan."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom opent er een afdrukvenster?",
+          "Je browser heeft een ingebouwde PDF-schrijver die elke taal en elk lettertype perfect afhandelt. Fizzdoc bereidt het document voor en geeft het door aan die schrijver: kies “Opslaan als PDF” als bestemming en klik op Opslaan. Er wordt niets afgedrukt of verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "markdown-to-pdf": {
+      "name": "Markdown naar PDF",
+      "summary": "Render een .md-bestand als een opgemaakte PDF.",
+      "action": "PDF maken",
+      "title": "Markdown naar PDF Converteren, Privé, Geen Upload | Fizzdoc",
+      "description": "Converteer Markdown naar een opgemaakte PDF met koppen, lijsten, tabellen en codeblokken, rechtstreeks in je browser. Niets wordt geüpload. Gratis.",
+      "h1": "Markdown converteren naar PDF",
+      "lede": "Render een README, notities of documentatie geschreven in Markdown naar een nette, afdrukbare PDF met koppen, lijsten, tabellen en codeblokken.",
+      "steps": [
+        "Voeg één .md-bestand toe.",
+        "Klik op “PDF maken”.",
+        "Kies “Opslaan als PDF” in het venster dat opent en klik op Opslaan."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welke Markdown-functies worden ondersteund?",
+          "Koppen, vet, cursief, inline code en codeblokken, genummerde en opgesomde lijsten, citaten, links, horizontale lijnen en tabellen. Ruwe HTML wordt voor de veiligheid als tekst getoond."
+        ],
+        [
+          "Waarom opent er een afdrukvenster?",
+          "Je browser heeft een ingebouwde PDF-schrijver die elke taal en elk lettertype perfect afhandelt. Fizzdoc bereidt het document voor en geeft het door aan die schrijver: kies “Opslaan als PDF” als bestemming en klik op Opslaan. Er wordt niets afgedrukt of verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "word-to-pdf": {
+      "name": "Word naar PDF",
+      "summary": "Converteer een .docx naar PDF, alle talen ondersteund.",
+      "action": "Naar PDF converteren",
+      "title": "Word naar PDF (DOCX naar PDF) Converteren, Geen Upload | Fizzdoc",
+      "description": "Converteer een Word-document naar PDF in je browser, met behoud van koppen, lijsten, tabellen en afbeeldingen. Werkt met downloads uit Google Docs.",
+      "h1": "Een Word-document converteren naar PDF",
+      "lede": "Zet een .docx om in een PDF met koppen, lijsten, tabellen en afbeeldingen, met de eigen PDF-schrijver van je browser. Het document verlaat je apparaat nooit.",
+      "steps": [
+        "Voeg één .docx-bestand toe (uit Word of Google Docs).",
+        "Klik op “Naar PDF converteren”.",
+        "Kies “Opslaan als PDF” in het venster dat opent en klik op Opslaan."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Ziet het er exact zo uit als in Word?",
+          "Tekst, koppen, lijsten, tabellen, links en afbeeldingen blijven behouden. Kop- en voetteksten en geavanceerde indelingen zoals tekstvakken en meerkolomssecties worden vereenvoudigd."
+        ],
+        [
+          "Waarom opent er een afdrukvenster?",
+          "Je browser heeft een ingebouwde PDF-schrijver die elke taal en elk lettertype perfect afhandelt. Fizzdoc bereidt het document voor en geeft het door aan die schrijver: kies “Opslaan als PDF” als bestemming en klik op Opslaan. Er wordt niets afgedrukt of verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "excel-to-csv": {
+      "name": "Excel naar CSV",
+      "summary": "Exporteer elk blad van een .xlsx naar CSV.",
+      "action": "Naar CSV converteren",
+      "title": "Excel naar CSV (XLSX naar CSV) Converteren, Geen Upload | Fizzdoc",
+      "description": "Converteer Excel-spreadsheets naar CSV in je browser. Elk blad wordt geëxporteerd, datums worden ISO-datums, en niets wordt geüpload. Werkt met Google Sheets.",
+      "h1": "Excel converteren naar CSV",
+      "lede": "Exporteer elk blad van een .xlsx-werkmap naar een UTF-8 CSV-bestand dat overal correct opent. Datums, getallen en tekst blijven zoals ze zijn.",
+      "steps": [
+        "Voeg één .xlsx-bestand toe (uit Excel of Google Sheets).",
+        "Klik op “Naar CSV converteren”.",
+        "Download de CSV, of een ZIP met één CSV per blad."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat gebeurt er met formules?",
+          "CSV bevat alleen waarden, dus de laatst berekende waarde van elke cel wordt geëxporteerd — hetzelfde wat Excel doet."
+        ],
+        [
+          "Blijven niet-Engelse tekens behouden?",
+          "Ja. De CSV is UTF-8 met een byte-order mark, zodat Excel, Google Sheets en andere apps accenten en niet-Latijnse schriften correct lezen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "csv-to-excel": {
+      "name": "CSV naar Excel",
+      "summary": "Zet een .csv om in een echte .xlsx-werkmap.",
+      "action": "Naar Excel converteren",
+      "title": "CSV naar Excel (CSV naar XLSX) Converteren, Geen Upload | Fizzdoc",
+      "description": "Converteer een CSV-bestand naar een Excel .xlsx-werkmap in je browser. Getallen blijven getallen, voorloopnullen blijven staan, en niets wordt geüpload.",
+      "h1": "CSV converteren naar Excel",
+      "lede": "Zet een CSV om in een echte Excel-werkmap. Getallen worden getallen, codes zoals 007 behouden hun voorloopnullen, en het scheidingsteken wordt automatisch herkend.",
+      "steps": [
+        "Voeg één .csv-bestand toe.",
+        "Klik op “Naar Excel converteren”.",
+        "Download de .xlsx."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Werkt het met puntkomma's en tabs?",
+          "Ja. Komma's, puntkomma's, tabs en verticale strepen worden automatisch herkend, net als aangehaalde velden met regeleinden erin."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "compress-image": {
+      "name": "Afbeelding comprimeren",
+      "summary": "Maak JPG-, PNG- en WebP-afbeeldingen kleiner.",
+      "action": "Afbeeldingen comprimeren",
+      "title": "Afbeeldingen Comprimeren (JPG, PNG, WebP), Gratis | Fizzdoc",
+      "description": "Verklein afbeeldingsbestanden in je browser — JPG, PNG, WebP en meer, in bulk. Kies de kwaliteit of blijf verliesvrij. Foto's worden nooit geüpload.",
+      "h1": "Afbeeldingen comprimeren zonder ze te uploaden",
+      "lede": "Verklein foto's en schermafbeeldingen voor e-mail, websites en formulieren. Kies een kwaliteitsniveau of blijf verliesvrij — allemaal op je apparaat, in bulk.",
+      "steps": [
+        "Voeg één of meer afbeeldingen toe.",
+        "Kies het uitvoerformaat en de kwaliteit.",
+        "Klik op “Afbeeldingen comprimeren” en download het resultaat."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan ik comprimeren zonder kwaliteitsverlies?",
+          "Ja. Kies PNG voor pixelperfecte, verliesvrije uitvoer. Voor foto's ziet JPG of WebP op 80% kwaliteit er meestal identiek uit en is veel kleiner."
+        ],
+        [
+          "Wordt locatiegegevens verwijderd?",
+          "Ja. Bij het opnieuw coderen verdwijnen verborgen EXIF-metagegevens zoals gps-locatie en cameragegevens."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "resize-image": {
+      "name": "Afbeelding formaat wijzigen",
+      "summary": "Maak afbeeldingen groter of kleiner, in pixels of procenten.",
+      "action": "Afbeeldingen aanpassen",
+      "title": "Afbeeldingen Formaat Wijzigen (Groter/Kleiner), Geen Upload | Fizzdoc",
+      "description": "Wijzig het formaat van afbeeldingen naar exacte pixels of een percentage — kleiner of groter — in je browser, in bulk. Behoud de beeldverhouding of niet.",
+      "h1": "Formaat van afbeeldingen wijzigen — groter of kleiner",
+      "lede": "Stel een exacte breedte en hoogte in of schaal met een percentage, voor één afbeelding of veel tegelijk. De beeldverhouding blijft behouden, tenzij je anders aangeeft.",
+      "steps": [
+        "Voeg één of meer afbeeldingen toe.",
+        "Voer een nieuw formaat of een percentage in.",
+        "Klik op “Afbeeldingen aanpassen” en download het resultaat."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Voegt vergroten detail toe?",
+          "Vergroten maakt de afbeelding groter met vloeiende schaling van hoge kwaliteit, maar kan geen detail verzinnen dat niet is vastgelegd. Ideaal om aan minimale formaatvereisten te voldoen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "convert-image": {
+      "name": "Afbeelding converteren",
+      "summary": "Converteer tussen JPG, PNG en WebP.",
+      "action": "Afbeeldingen converteren",
+      "title": "Afbeeldingen Converteren naar JPG, PNG of WebP | Fizzdoc",
+      "description": "Converteer afbeeldingen tussen JPG, PNG en WebP in je browser, in bulk. Werkt met GIF, BMP, AVIF en iPhone-foto's die je browser opent. Niets wordt geüpload.",
+      "h1": "Afbeeldingen converteren naar JPG, PNG of WebP",
+      "lede": "Wijzig het formaat van één afbeelding of een hele batch — bijvoorbeeld WebP naar JPG of PNG naar WebP — zonder ze ergens naartoe te sturen.",
+      "steps": [
+        "Voeg één of meer afbeeldingen toe.",
+        "Kies het formaat dat je nodig hebt.",
+        "Klik op “Afbeeldingen converteren” en download het resultaat."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welk formaat moet ik kiezen?",
+          "JPG voor foto's die overal moeten openen, PNG voor screenshots en afbeeldingen die scherpe randen of transparantie nodig hebben, WebP voor de kleinste bestanden op het web."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "image-to-text": {
+      "name": "Afbeelding naar tekst (OCR)",
+      "summary": "Selecteer en kopieer tekst uit elke foto of screenshot.",
+      "action": "Tekst herkennen",
+      "title": "Afbeelding naar Tekst (OCR) — Tekst uit Foto's, Geen Upload | Fizzdoc",
+      "description": "Haal tekst uit foto's en screenshots met Engelse OCR in je browser, en selecteer en kopieer die direct op de foto — net als Live Text. Niets wordt geüpload.",
+      "h1": "Tekst uit elke afbeelding kopiëren",
+      "lede": "Herken de Engelse tekst in een foto, scan of screenshot, en selecteer die direct op de afbeelding — net als Live Text op iPhone. Niets verlaat je apparaat.",
+      "steps": [
+        "Voeg één afbeelding toe.",
+        "Klik op “Tekst herkennen”.",
+        "Selecteer tekst direct op de afbeelding, kopieer alles, of download het als .txt-bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welke talen worden ondersteund?",
+          "Engels. De herkenningsengine en de Engelse gegevens worden eenmalig naar je browser gedownload, de eerste keer dat je OCR gebruikt."
+        ],
+        [
+          "Hoe krijg ik het beste resultaat?",
+          "Gebruik een scherpe, goed verlichte foto die recht van voren is genomen. Gedrukte tekst werkt het best; handschrift wordt minder betrouwbaar herkend."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "png-to-jpg": {
+      "name": "PNG naar JPG",
+      "summary": "Converteer PNG-afbeeldingen in bulk naar JPG.",
+      "action": "Naar JPG converteren",
+      "title": "PNG naar JPG Converteren — Gratis, Geen Upload | Fizzdoc",
+      "description": "Converteer PNG-afbeeldingen naar JPG in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
+      "h1": "PNG converteren naar JPG — privé",
+      "lede": "JPG-bestanden zijn voor foto's veel kleiner en openen overal, ook in oude software en uploadformulieren die PNG weigeren. Fizzdoc converteert je PNG-bestanden rechtstreeks op je apparaat.",
+      "steps": [
+        "Voeg één of meer PNG-afbeeldingen toe.",
+        "Kies een kwaliteit, of behoud de standaard.",
+        "Klik op “Naar JPG converteren” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom PNG naar JPG converteren?",
+          "JPG-bestanden zijn voor foto's veel kleiner en openen overal, ook in oude software en uploadformulieren die PNG weigeren."
+        ],
+        [
+          "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "Ja. Voeg er zoveel toe als je wilt; meerdere afbeeldingen worden samen als één ZIP-bestand gedownload."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "jpg-to-png": {
+      "name": "JPG naar PNG",
+      "summary": "Converteer JPG-afbeeldingen in bulk naar PNG.",
+      "action": "Naar PNG converteren",
+      "title": "JPG naar PNG Converteren — Gratis, Geen Upload | Fizzdoc",
+      "description": "Converteer JPG-afbeeldingen naar PNG in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
+      "h1": "JPG converteren naar PNG — privé",
+      "lede": "PNG is verliesvrij, dus de afbeelding verliest geen verdere kwaliteit als je hem opnieuw bewerkt en opslaat. Fizzdoc converteert je JPG-bestanden rechtstreeks op je apparaat.",
+      "steps": [
+        "Voeg één of meer JPG-afbeeldingen toe.",
+        "Niets in te stellen: PNG is verliesvrij.",
+        "Klik op “Naar PNG converteren” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom JPG naar PNG converteren?",
+          "PNG is verliesvrij, dus de afbeelding verliest geen verdere kwaliteit als je hem opnieuw bewerkt en opslaat."
+        ],
+        [
+          "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "Ja. Voeg er zoveel toe als je wilt; meerdere afbeeldingen worden samen als één ZIP-bestand gedownload."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "webp-to-jpg": {
+      "name": "WebP naar JPG",
+      "summary": "Converteer WebP-afbeeldingen in bulk naar JPG.",
+      "action": "Naar JPG converteren",
+      "title": "WebP naar JPG Converteren — Gratis, Geen Upload | Fizzdoc",
+      "description": "Converteer WebP-afbeeldingen naar JPG in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
+      "h1": "WebP converteren naar JPG — privé",
+      "lede": "Veel apps, printers en uploadformulieren kunnen nog steeds geen WebP-afbeeldingen openen die van websites zijn opgeslagen. JPG werkt overal. Fizzdoc converteert je WebP-bestanden rechtstreeks op je apparaat.",
+      "steps": [
+        "Voeg één of meer WebP-afbeeldingen toe.",
+        "Kies een kwaliteit, of behoud de standaard.",
+        "Klik op “Naar JPG converteren” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom WebP naar JPG converteren?",
+          "Veel apps, printers en uploadformulieren kunnen nog steeds geen WebP-afbeeldingen openen die van websites zijn opgeslagen. JPG werkt overal."
+        ],
+        [
+          "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "Ja. Voeg er zoveel toe als je wilt; meerdere afbeeldingen worden samen als één ZIP-bestand gedownload."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "jpg-to-webp": {
+      "name": "JPG naar WebP",
+      "summary": "Converteer JPG-afbeeldingen in bulk naar WebP.",
+      "action": "Naar WebP converteren",
+      "title": "JPG naar WebP Converteren — Gratis, Geen Upload | Fizzdoc",
+      "description": "Converteer JPG-afbeeldingen naar WebP in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
+      "h1": "JPG converteren naar WebP — privé",
+      "lede": "WebP-afbeeldingen zijn meestal 25–35% kleiner dan JPG bij dezelfde visuele kwaliteit, waardoor websites sneller laden. Fizzdoc converteert je JPG-bestanden rechtstreeks op je apparaat.",
+      "steps": [
+        "Voeg één of meer JPG-afbeeldingen toe.",
+        "Kies een kwaliteit, of behoud de standaard.",
+        "Klik op “Naar WebP converteren” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom JPG naar WebP converteren?",
+          "WebP-afbeeldingen zijn meestal 25–35% kleiner dan JPG bij dezelfde visuele kwaliteit, waardoor websites sneller laden."
+        ],
+        [
+          "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "Ja. Voeg er zoveel toe als je wilt; meerdere afbeeldingen worden samen als één ZIP-bestand gedownload."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "add-page-numbers-to-pdf": {
+      "name": "Paginanummers toevoegen",
+      "summary": "Nummer elke pagina van een PDF.",
+      "action": "Paginanummers toevoegen",
+      "title": "Paginanummers Toevoegen aan PDF — Gratis, Geen Upload | Fizzdoc",
+      "description": "Voeg paginanummers toe aan een PDF in je browser. Kies de positie, het beginnummer en de stijl “Pagina 1 van 10”. Niets wordt geüpload. Gratis.",
+      "h1": "Paginanummers toevoegen aan een PDF",
+      "lede": "Nummer in enkele seconden de pagina's van een rapport, scriptie of contract. Kies waar de nummers komen en bij welk nummer je begint — op je eigen apparaat.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Kies de positie, stijl en het eerste nummer.",
+        "Klik op “Paginanummers toevoegen” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan ik beginnen bij een ander nummer dan 1?",
+          "Ja. Stel “Begin bij” in op elk gewenst nummer — handig als de PDF een hoofdstuk van een langer document is."
+        ],
+        [
+          "Verandert het mijn inhoud?",
+          "Nee. De nummers worden bovenop elke pagina toegevoegd; al het andere blijft precies zoals het was."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "watermark-pdf": {
+      "name": "PDF watermerk",
+      "summary": "Stempel tekst zoals VERTROUWELIJK op elke pagina.",
+      "action": "Watermerk toevoegen",
+      "title": "PDF Watermerk Toevoegen — Tekstwatermerk, Geen Upload | Fizzdoc",
+      "description": "Voeg een tekstwatermerk zoals VERTROUWELIJK of CONCEPT toe aan elke pagina van een PDF, in je browser. Kies de dekking. Niets wordt geüpload. Gratis.",
+      "h1": "Een watermerk toevoegen aan een PDF",
+      "lede": "Markeer een document als VERTROUWELIJK, CONCEPT of met je naam voordat je het deelt. Het watermerk wordt diagonaal over elke pagina getekend.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Typ de watermerktekst en kies hoe doorzichtig die is.",
+        "Klik op “Watermerk toevoegen” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan het watermerk worden verwijderd?",
+          "Een tekstwatermerk ontmoedigt kopiëren, maar een vastberaden persoon met een PDF-editor kan het verwijderen. Gebruik voor sterkere bescherming ook PDF beveiligen."
+        ],
+        [
+          "Welke tekens kan ik gebruiken?",
+          "Letters, cijfers en gangbare symbolen in Latijns schrift. Andere schriften worden niet ondersteund door de standaard PDF-lettertypen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "pdf-to-png": {
+      "name": "PDF naar PNG",
+      "summary": "Sla elke pagina op als een verliesvrije PNG-afbeelding.",
+      "action": "Naar PNG converteren",
+      "title": "PDF naar PNG Converteren — Verliesvrij, Geen Upload | Fizzdoc",
+      "description": "Converteer elke pagina van een PDF naar een scherpe, verliesvrije PNG-afbeelding in je browser. Meerdere pagina's downloaden als één ZIP. Gratis.",
+      "h1": "PDF-pagina's converteren naar PNG-afbeeldingen",
+      "lede": "Render elke pagina naar een scherpe, verliesvrije PNG — ideaal voor dia's, documentatie en screenshots met scherpe tekst. Niets verlaat je apparaat.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Klik op “Naar PNG converteren”.",
+        "Download de afbeelding, of een ZIP met één PNG per pagina."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "PNG of JPG?",
+          "PNG houdt tekst en lijnen perfect scherp, maar de bestanden zijn groter. Voor foto's en scans levert PDF naar JPG veel kleinere bestanden."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "extract-pdf-pages": {
+      "name": "PDF-pagina's extraheren",
+      "summary": "Sla geselecteerde pagina's op als een nieuwe PDF.",
+      "action": "Pagina's extraheren",
+      "title": "Pagina's uit PDF Extraheren — Gratis, Privé, Geen Upload | Fizzdoc",
+      "description": "Haal specifieke pagina's uit een PDF in een nieuw bestand, in je browser. Typ pagina's zoals 2, 5-7. Links en formuliervelden blijven behouden.",
+      "h1": "Pagina's uit een PDF extraheren",
+      "lede": "Heb je alleen de handtekeningpagina of één hoofdstuk nodig? Typ de pagina's die je wilt en krijg ze als nieuwe PDF — het origineel blijft ongewijzigd.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Typ de pagina's om te extraheren, bijvoorbeeld “2, 5-7”.",
+        "Klik op “Pagina's extraheren” en download de nieuwe PDF."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Vermindert dit de kwaliteit?",
+          "Nee. Pagina's worden gekopieerd zoals ze zijn — niets wordt opnieuw gerenderd of gecomprimeerd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "reorder-pdf-pages": {
+      "name": "PDF-pagina's herschikken",
+      "summary": "Zet de pagina's van een PDF in een nieuwe volgorde.",
+      "action": "Pagina's herschikken",
+      "title": "PDF-pagina's Herschikken — Gratis, Geen Upload | Fizzdoc",
+      "description": "Herschik de pagina's van een PDF door de gewenste volgorde te typen, zoals 3, 1-2, 4-. Werkt in je browser; je bestand wordt nooit geüpload.",
+      "h1": "De pagina's van een PDF herschikken",
+      "lede": "Corrigeer pagina's die in de verkeerde volgorde zijn gescand of verplaats een bijlage naar voren. Typ de nieuwe volgorde en download de herschikte PDF.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Typ de nieuwe paginavolgorde, bijvoorbeeld “3, 1-2, 4-”.",
+        "Klik op “Pagina's herschikken” en download."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe schrijf ik de volgorde?",
+          "Vermeld pagina's en reeksen gescheiden door komma's. “4-” betekent pagina 4 tot het einde. Pagina's die je weglaat, ontbreken in het nieuwe bestand."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "png-to-pdf": {
+      "name": "PNG naar PDF",
+      "summary": "Zet PNG-schermafbeeldingen en -afbeeldingen om in één PDF.",
+      "action": "PDF maken",
+      "title": "PNG naar PDF Converteren — Gratis, Geen Upload | Fizzdoc",
+      "description": "Combineer PNG-schermafbeeldingen en afbeeldingen tot één PDF in je browser, één pagina per afbeelding, op volledige kwaliteit. Geen watermerk.",
+      "h1": "PNG-afbeeldingen converteren naar PDF",
+      "lede": "Zet screenshots, diagrammen of gescande pagina's die als PNG zijn opgeslagen om in één nette PDF — scherp, verliesvrij en in de volgorde die jij kiest.",
+      "steps": [
+        "Voeg één of meer PNG-afbeeldingen toe.",
+        "Zet ze in de juiste volgorde met de ↑ en ↓ knoppen.",
+        "Klik op “PDF maken” en download het bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Blijft transparantie behouden?",
+          "Ja. PNG-afbeeldingen worden zonder wijziging in de PDF geplaatst, inclusief transparante delen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "remove-word-metadata": {
+      "name": "Word-metadata verwijderen",
+      "summary": "Wis auteur, bedrijf en redacteurnamen uit een .docx.",
+      "action": "Metadata verwijderen",
+      "title": "Word-metadata Verwijderen — Privé, Geen Upload | Fizzdoc",
+      "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een Word-bestand in je browser. Werkt met downloads uit Google Docs. Niets wordt geüpload.",
+      "h1": "Verborgen metadata uit een Word-document verwijderen",
+      "lede": "Elke .docx registreert wie het maakte, wie het laatst bewerkte en van welk bedrijf het is. Wis die gegevens voordat je het verstuurt — zonder het bestand ergens naartoe te uploaden.",
+      "steps": [
+        "Voeg één .docx-bestand toe (uit Word of Google Docs).",
+        "Klik op “Metadata verwijderen”.",
+        "Download het schone .docx-bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat wordt er verwijderd?",
+          "Auteur, laatst gewijzigd door, titel, onderwerp, beschrijving, trefwoorden, categorie, status, bedrijf, beheerder, hyperlinkbasis, aangepaste eigenschappen en de ingesloten voorbeeldminiatuur. Aanmaak- en wijzigingsdatum blijven behouden omdat Office die nodig heeft. Je inhoud wordt niet aangeraakt."
+        ],
+        [
+          "Werkt het met Google Docs?",
+          "Ja. Kies in Google Docs voor Bestand → Downloaden → Microsoft Word (.docx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "extract-images-from-word": {
+      "name": "Afbeeldingen uit Word halen",
+      "summary": "Sla elke afbeelding in een .docx op in originele kwaliteit.",
+      "action": "Afbeeldingen extraheren",
+      "title": "Afbeeldingen uit Word Halen — Geen Upload | Fizzdoc",
+      "description": "Download elke afbeelding uit een Word-document als ZIP, op originele resolutie. Werkt met downloads uit Google Docs. Werkt in je browser.",
+      "h1": "Alle afbeeldingen uit een Word-document halen",
+      "lede": "Haal elke foto, elk logo en elke grafiekafbeelding uit een .docx in het originele formaat en de originele resolutie — geen screenshots, geen hercompressie, geen upload.",
+      "steps": [
+        "Voeg één .docx-bestand toe (uit Word of Google Docs).",
+        "Klik op “Afbeeldingen extraheren”.",
+        "Download de ZIP met afbeeldingen."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Verliezen de afbeeldingen kwaliteit?",
+          "Nee. Ze worden precies zo gekopieerd als ze in het bestand zijn opgeslagen, in hun oorspronkelijke formaat (PNG, JPG, GIF, SVG, EMF enzovoort)."
+        ],
+        [
+          "Werkt het met Google Docs?",
+          "Ja. Kies in Google Docs voor Bestand → Downloaden → Microsoft Word (.docx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "compress-word": {
+      "name": "Word comprimeren",
+      "summary": "Verklein een .docx door de afbeeldingen te optimaliseren.",
+      "action": "Word comprimeren",
+      "title": "Word-bestanden Comprimeren (.docx) — Geen Upload | Fizzdoc",
+      "description": "Verklein een Word-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload.",
+      "h1": "Een Word-document comprimeren",
+      "lede": "Maak een .docx klein genoeg om te e-mailen door te grote foto's erin opnieuw te comprimeren. Tekst, opmaak en al het andere blijven precies hetzelfde.",
+      "steps": [
+        "Voeg één .docx-bestand toe (uit Word of Google Docs).",
+        "Kies Gebalanceerd of Sterke compressie.",
+        "Klik op “Word comprimeren” en download het kleinere bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoeveel kleiner wordt het bestand?",
+          "Bestanden met grote foto's worden vaak met de helft of meer kleiner. Bestanden die vooral uit tekst bestaan zijn meestal al compact; als Fizzdoc een bestand niet kleiner kan maken, laat het dat weten en behoudt het het origineel."
+        ],
+        [
+          "Werkt het met Google Docs?",
+          "Ja. Kies in Google Docs voor Bestand → Downloaden → Microsoft Word (.docx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "remove-excel-metadata": {
+      "name": "Excel-metadata verwijderen",
+      "summary": "Wis auteur, bedrijf en redacteurnamen uit een .xlsx.",
+      "action": "Metadata verwijderen",
+      "title": "Excel-metadata Verwijderen — Privé, Geen Upload | Fizzdoc",
+      "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een Excel-bestand in je browser. Werkt met downloads uit Google Sheets. Niets wordt geüpload.",
+      "h1": "Verborgen metadata uit een Excel-spreadsheet verwijderen",
+      "lede": "Elke .xlsx registreert wie het maakte, wie het laatst bewerkte en van welk bedrijf het is. Wis die gegevens voordat je het verstuurt — zonder het bestand ergens naartoe te uploaden.",
+      "steps": [
+        "Voeg één .xlsx-bestand toe (uit Excel of Google Sheets).",
+        "Klik op “Metadata verwijderen”.",
+        "Download het schone .xlsx-bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat wordt er verwijderd?",
+          "Auteur, laatst gewijzigd door, titel, onderwerp, beschrijving, trefwoorden, categorie, status, bedrijf, beheerder, hyperlinkbasis, aangepaste eigenschappen en de ingesloten voorbeeldminiatuur. Aanmaak- en wijzigingsdatum blijven behouden omdat Office die nodig heeft. Je inhoud wordt niet aangeraakt."
+        ],
+        [
+          "Werkt het met Google Sheets?",
+          "Ja. Kies in Google Sheets voor Bestand → Downloaden → Microsoft Excel (.xlsx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "extract-images-from-excel": {
+      "name": "Afbeeldingen uit Excel halen",
+      "summary": "Sla elke afbeelding in een .xlsx op in originele kwaliteit.",
+      "action": "Afbeeldingen extraheren",
+      "title": "Afbeeldingen uit Excel Halen — Geen Upload | Fizzdoc",
+      "description": "Download elke afbeelding uit een Excel-spreadsheet als ZIP, op originele resolutie. Werkt met downloads uit Google Sheets. Werkt in je browser.",
+      "h1": "Alle afbeeldingen uit een Excel-spreadsheet halen",
+      "lede": "Haal elke foto, elk logo en elke grafiekafbeelding uit een .xlsx in het originele formaat en de originele resolutie — geen screenshots, geen hercompressie, geen upload.",
+      "steps": [
+        "Voeg één .xlsx-bestand toe (uit Excel of Google Sheets).",
+        "Klik op “Afbeeldingen extraheren”.",
+        "Download de ZIP met afbeeldingen."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Verliezen de afbeeldingen kwaliteit?",
+          "Nee. Ze worden precies zo gekopieerd als ze in het bestand zijn opgeslagen, in hun oorspronkelijke formaat (PNG, JPG, GIF, SVG, EMF enzovoort)."
+        ],
+        [
+          "Werkt het met Google Sheets?",
+          "Ja. Kies in Google Sheets voor Bestand → Downloaden → Microsoft Excel (.xlsx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "compress-excel": {
+      "name": "Excel comprimeren",
+      "summary": "Verklein een .xlsx door de afbeeldingen te optimaliseren.",
+      "action": "Excel comprimeren",
+      "title": "Excel-bestanden Comprimeren (.xlsx) — Geen Upload | Fizzdoc",
+      "description": "Verklein een Excel-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload.",
+      "h1": "Een Excel-spreadsheet comprimeren",
+      "lede": "Maak een .xlsx klein genoeg om te e-mailen door te grote foto's erin opnieuw te comprimeren. Tekst, opmaak en al het andere blijven precies hetzelfde.",
+      "steps": [
+        "Voeg één .xlsx-bestand toe (uit Excel of Google Sheets).",
+        "Kies Gebalanceerd of Sterke compressie.",
+        "Klik op “Excel comprimeren” en download het kleinere bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoeveel kleiner wordt het bestand?",
+          "Bestanden met grote foto's worden vaak met de helft of meer kleiner. Bestanden die vooral uit tekst bestaan zijn meestal al compact; als Fizzdoc een bestand niet kleiner kan maken, laat het dat weten en behoudt het het origineel."
+        ],
+        [
+          "Werkt het met Google Sheets?",
+          "Ja. Kies in Google Sheets voor Bestand → Downloaden → Microsoft Excel (.xlsx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "remove-powerpoint-metadata": {
+      "name": "PowerPoint-metadata verwijderen",
+      "summary": "Wis auteur, bedrijf en redacteurnamen uit een .pptx.",
+      "action": "Metadata verwijderen",
+      "title": "PowerPoint-metadata Verwijderen — Privé, Geen Upload | Fizzdoc",
+      "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een PowerPoint-bestand in je browser. Werkt met downloads uit Google Slides. Niets wordt geüpload.",
+      "h1": "Verborgen metadata uit een PowerPoint-presentatie verwijderen",
+      "lede": "Elke .pptx registreert wie het maakte, wie het laatst bewerkte en van welk bedrijf het is. Wis die gegevens voordat je het verstuurt — zonder het bestand ergens naartoe te uploaden.",
+      "steps": [
+        "Voeg één .pptx-bestand toe (uit PowerPoint of Google Slides).",
+        "Klik op “Metadata verwijderen”.",
+        "Download het schone .pptx-bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat wordt er verwijderd?",
+          "Auteur, laatst gewijzigd door, titel, onderwerp, beschrijving, trefwoorden, categorie, status, bedrijf, beheerder, hyperlinkbasis, aangepaste eigenschappen en de ingesloten voorbeeldminiatuur. Aanmaak- en wijzigingsdatum blijven behouden omdat Office die nodig heeft. Je inhoud wordt niet aangeraakt."
+        ],
+        [
+          "Werkt het met Google Slides?",
+          "Ja. Kies in Google Slides voor Bestand → Downloaden → Microsoft PowerPoint (.pptx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "extract-images-from-powerpoint": {
+      "name": "Afbeeldingen uit PowerPoint halen",
+      "summary": "Sla elke afbeelding in een .pptx op in originele kwaliteit.",
+      "action": "Afbeeldingen extraheren",
+      "title": "Afbeeldingen uit PowerPoint Halen — Geen Upload | Fizzdoc",
+      "description": "Download elke afbeelding uit een PowerPoint-presentatie als ZIP, op originele resolutie. Werkt met downloads uit Google Slides. Werkt in je browser.",
+      "h1": "Alle afbeeldingen uit een PowerPoint-presentatie halen",
+      "lede": "Haal elke foto, elk logo en elke grafiekafbeelding uit een .pptx in het originele formaat en de originele resolutie — geen screenshots, geen hercompressie, geen upload.",
+      "steps": [
+        "Voeg één .pptx-bestand toe (uit PowerPoint of Google Slides).",
+        "Klik op “Afbeeldingen extraheren”.",
+        "Download de ZIP met afbeeldingen."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Verliezen de afbeeldingen kwaliteit?",
+          "Nee. Ze worden precies zo gekopieerd als ze in het bestand zijn opgeslagen, in hun oorspronkelijke formaat (PNG, JPG, GIF, SVG, EMF enzovoort)."
+        ],
+        [
+          "Werkt het met Google Slides?",
+          "Ja. Kies in Google Slides voor Bestand → Downloaden → Microsoft PowerPoint (.pptx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    },
+    "compress-powerpoint": {
+      "name": "PowerPoint comprimeren",
+      "summary": "Verklein een .pptx door de afbeeldingen te optimaliseren.",
+      "action": "PowerPoint comprimeren",
+      "title": "PowerPoint-bestanden Comprimeren (.pptx) — Geen Upload | Fizzdoc",
+      "description": "Verklein een PowerPoint-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload.",
+      "h1": "Een PowerPoint-presentatie comprimeren",
+      "lede": "Maak een .pptx klein genoeg om te e-mailen door te grote foto's erin opnieuw te comprimeren. Tekst, opmaak en al het andere blijven precies hetzelfde.",
+      "steps": [
+        "Voeg één .pptx-bestand toe (uit PowerPoint of Google Slides).",
+        "Kies Gebalanceerd of Sterke compressie.",
+        "Klik op “PowerPoint comprimeren” en download het kleinere bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoeveel kleiner wordt het bestand?",
+          "Bestanden met grote foto's worden vaak met de helft of meer kleiner. Bestanden die vooral uit tekst bestaan zijn meestal al compact; als Fizzdoc een bestand niet kleiner kan maken, laat het dat weten en behoudt het het origineel."
+        ],
+        [
+          "Werkt het met Google Slides?",
+          "Ja. Kies in Google Slides voor Bestand → Downloaden → Microsoft PowerPoint (.pptx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de MIT-licentie."
+        ]
+      ]
+    }
+  }
+}
