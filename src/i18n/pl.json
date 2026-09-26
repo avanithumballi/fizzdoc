@@ -561,7 +561,7 @@
       "summary": "Zamień zeskanowany PDF w przeszukiwalny i kopiowalny.",
       "action": "Rozpoznaj tekst",
       "title": "OCR PDF — przeszukiwalne skany PDF, bez przesyłania | Fizzdoc",
-      "description": "Zamień zeskanowane pliki PDF w przeszukiwalne i kopiowalne dokumenty dzięki OCR działającemu w przeglądarce. Strony zachowują oryginalną jakość.",
+      "description": "Zamień zeskanowane pliki PDF w przeszukiwalne, kopiowalne dokumenty dzięki angielskiemu OCR działającemu w przeglądarce. Strony zachowują jakość.",
       "h1": "Zamień zeskanowany PDF w przeszukiwalny dzięki OCR",
       "lede": "Rozpoznaj angielski tekst na zeskanowanych stronach i dodaj go jako niewidoczną warstwę, żebyś mógł go wyszukiwać, zaznaczać i kopiować. Same strony pozostają bez zmian.",
       "steps": [
@@ -949,7 +949,7 @@
       "summary": "Zaznacz i skopiuj tekst z dowolnego zdjęcia lub zrzutu ekranu.",
       "action": "Rozpoznaj tekst",
       "title": "Obraz na tekst (OCR) — kopiuj tekst ze zdjęć | Fizzdoc",
-      "description": "Wyodrębnij tekst ze zdjęć i zrzutów ekranu dzięki OCR w przeglądarce, potem zaznacz i skopiuj go prosto na obrazie — jak Live Text. Nic nie jest przesyłane.",
+      "description": "Wyodrębnij angielski tekst ze zdjęć i zrzutów ekranu dzięki OCR w przeglądarce, potem zaznacz i skopiuj go prosto na obrazie — jak Live Text.",
       "h1": "Skopiuj tekst z dowolnego obrazu",
       "lede": "Rozpoznaj angielski tekst na zdjęciu, skanie lub zrzucie ekranu, a potem zaznacz go bezpośrednio na obrazie — tak jak Live Text na iPhone. Nic nie opuszcza Twojego urządzenia.",
       "steps": [
