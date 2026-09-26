@@ -648,7 +648,7 @@ main {
   background: var(--surface-2);
   text-align: center;
   cursor: pointer;
-  transition: border-color 0.2s, background-color 0.2s, padding 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
 }
 .drop:hover,
 .drop:focus-within {
