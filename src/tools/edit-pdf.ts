@@ -475,6 +475,8 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
           div.blur();
         }
       });
+      // Pressing Undo mid-edit blurs (commits) first, then undoes that commit.
+      div.addEventListener('input', () => { undoBtn.disabled = false; });
       div.addEventListener('blur', () => {
         editingKey = null;
         if (!canceled) {
@@ -494,6 +496,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
             });
           }
         }
+        undoBtn.disabled = undoStack.length === 0;
         rebuildOverlay(state);
       });
       state.overlay.append(div);
