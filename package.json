@@ -9,9 +9,9 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 4173 --strictPort",
-    "test": "vitest run tests",
+    "test": "vitest run",
     "test:e2e": "playwright test",
-    "check": "tsc --noEmit && vitest run tests"
+    "check": "tsc --noEmit && vitest run"
   },
   "engines": {
     "node": ">=22"

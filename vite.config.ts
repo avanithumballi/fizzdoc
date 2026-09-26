@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite';
 import { PAGES, fileName, llms, renderPage, robots, sitemap } from './src/seo.ts';
 
@@ -36,4 +37,5 @@ export default defineConfig({
   plugins: [pages()],
   worker: { format: 'es' },
   build: { target: 'es2022' },
+  test: { include: ['tests/**/*.test.ts'] },
 });
