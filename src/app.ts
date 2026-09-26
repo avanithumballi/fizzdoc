@@ -32,6 +32,7 @@ const ERRORS: Record<Failure, string> = {
   NO_IMAGES: 'This document has no embedded images.',
   BAD_IMAGE: 'One of the images could not be read. Try JPG or PNG.',
   PDF_PASSWORD: 'This PDF is password-protected. Remove the password with Unlock PDF first.',
+  BAD_SIZE: 'The width and height must each be between 1 and 16,384 pixels.',
   ENGINE_FAILED: 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
 };
 
