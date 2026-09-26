@@ -83,9 +83,11 @@ async function decodeImage(file: File): Promise<ImageBitmap> {
 /** Recognizes the English text in a photo or scan. Bboxes are in the original image's pixels. */
 export async function ocrImage(file: File, onProgress?: (fraction: number) => void): Promise<OcrResult> {
   const original = await decodeImage(file);
-  const factor = downscaleFactor(original.width, original.height);
-  const width = Math.round(original.width * factor);
-  const height = Math.round(original.height * factor);
+  // Read the size before close(): a closed ImageBitmap reports 0 × 0.
+  const size = { width: original.width, height: original.height };
+  const factor = downscaleFactor(size.width, size.height);
+  const width = Math.round(size.width * factor);
+  const height = Math.round(size.height * factor);
   const canvas = new OffscreenCanvas(width, height);
   canvas.getContext('2d')!.drawImage(original, 0, 0, width, height);
   original.close();
@@ -95,8 +97,8 @@ export async function ocrImage(file: File, onProgress?: (fraction: number) => vo
   const unscale = 1 / factor;
   return {
     text: data.text,
-    width: original.width,
-    height: original.height,
+    width: size.width,
+    height: size.height,
     words: flattenWords(data)
       .filter((w) => w.text.trim())
       .map((w) => scaleWord({ text: w.text, confidence: w.confidence, bbox: w.bbox }, unscale)),

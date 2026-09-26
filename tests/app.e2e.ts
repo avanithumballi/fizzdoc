@@ -255,6 +255,12 @@ test('recognizes text in an image and lets you select it on the picture', async 
   await page.getByRole('button', { name: 'Recognize text' }).click();
   await expect(page.locator('#status')).toContainText('recognized', { timeout: 90_000 });
   await expect(page.locator('#viewer')).toContainText('invoice');
+  // The overlay must match the picture's shape (900 × 220), and each word box must sit on its word.
+  expect(await page.locator('.ocr-frame').evaluate((el) => (el as HTMLElement).style.aspectRatio)).toBe('900 / 220');
+  const word = await page.locator('.ocr-word').first().boundingBox();
+  const frame = await page.locator('.ocr-frame').boundingBox();
+  expect(word!.x - frame!.x).toBeGreaterThan(10);
+  expect(word!.width).toBeGreaterThan(20);
   const { name, bytes } = await downloadBytes(page);
   expect(name).toBe('scan.txt');
   expect(bytes.toString()).toMatch(/Private invoice total/i);
