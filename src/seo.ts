@@ -36,7 +36,7 @@ const faqHtml = (faq: [string, string][]) => `
 // 24px stroke icons, one per operation; they inherit color from their tile.
 const CLEAN = '<path d="m7 21-4.3-4.3a1 1 0 0 1 0-1.4l9.6-9.6a1 1 0 0 1 1.4 0l5.6 5.6a1 1 0 0 1 0 1.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/>';
 const ICON_PATHS: Record<ToolOp, string> = {
-  merge: '<path d="M8 3v6a4 4 0 0 0 4 4h0a4 4 0 0 1 4 4v4"/><path d="M16 3v6a4 4 0 0 1-4 4"/><path d="m5 18 3 3 3-3"/>',
+  merge: '<rect x="8" y="3" width="13" height="13" rx="2"/><path d="M8 7H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/><path d="M14.5 7v5M12 9.5h5"/>',
   split: '<path d="M12 3v7"/><path d="m8 21 4-11 4 11"/><path d="M5 7h3M16 7h3"/>',
   rotate: '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/>',
   delete: '<path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/>',

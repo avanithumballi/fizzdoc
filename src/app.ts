@@ -96,6 +96,8 @@ function setUp(op: ToolOp) {
     );
   let files: File[] = [];
   let worker: Worker | undefined;
+  let localBusy = false;
+  const busy = () => !!worker || localBusy;
   let outputUrl: string | undefined;
   let dragIndex: number | null = null;
 
@@ -122,7 +124,7 @@ function setUp(op: ToolOp) {
         size.className = 'file-size';
         size.textContent = formatSize(file.size);
         item.append(name, size);
-        if (multiple && !worker) enableReorder(item, index);
+        if (multiple && !busy()) enableReorder(item, index);
         const buttons: [string, string, () => void, boolean][] = [
           ['↑', 'Move up', () => files.splice(index - 1, 2, files[index], files[index - 1]), multiple && index > 0],
           ['↓', 'Move down', () => files.splice(index, 2, files[index + 1], files[index]), multiple && index < files.length - 1],
@@ -135,7 +137,7 @@ function setUp(op: ToolOp) {
           button.className = 'icon-button';
           button.textContent = symbol;
           button.setAttribute('aria-label', `${label}: ${file.name}`);
-          button.disabled = !!worker;
+          button.disabled = busy();
           button.onclick = () => {
             action();
             clearResult();
@@ -146,11 +148,11 @@ function setUp(op: ToolOp) {
         return item;
       }),
     );
-    runButton.disabled = !!worker || files.length < (op === 'merge' ? 2 : 1);
+    runButton.disabled = busy() || files.length < (op === 'merge' ? 2 : 1);
     cancelButton.hidden = !worker;
-    progress.hidden = !worker;
-    if (reorderHint) reorderHint.hidden = files.length < 2 || !!worker;
-    input.disabled = !!worker;
+    progress.hidden = !busy();
+    if (reorderHint) reorderHint.hidden = files.length < 2 || busy();
+    input.disabled = busy();
     drop.classList.toggle('compact', files.length > 0);
   }
 
@@ -184,7 +186,7 @@ function setUp(op: ToolOp) {
   }
 
   function addFiles(incoming: File[]) {
-    if (worker) return;
+    if (busy()) return;
     const usable = incoming.filter(accepted);
     if (usable.length < incoming.length) say(`Only ${workspace.dataset.kind} files can be added.`, 'error');
     else say('');
@@ -247,11 +249,11 @@ function setUp(op: ToolOp) {
   }
 
   async function runLocal() {
-    const local = await import('./engine/local');
     say('Working… your files stay on this device.');
-    runButton.disabled = true;
-    progress.hidden = false;
+    localBusy = true;
+    render();
     try {
+      const local = await import('./engine/local');
       const output: Output =
         op === 'jpg-to-pdf'
           ? await local.imagesToPdf(files)
@@ -266,12 +268,13 @@ function setUp(op: ToolOp) {
       if (!code) console.error(error); // unexpected: keep the details for bug reports
       say(code && code in ERRORS ? ERRORS[code] : ERRORS.PROCESSING_FAILED, 'error');
     } finally {
+      localBusy = false;
       render();
     }
   }
 
   function run() {
-    if (worker) return;
+    if (busy()) return;
     clearResult();
     const total = files.reduce((sum, f) => sum + f.size, 0);
     if (total > inputBudget()) {

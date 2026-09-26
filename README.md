@@ -103,6 +103,10 @@ Ship each tool only once it is proven by tests on real documents:
 - Installable offline app (PWA)
 - PDF → Word (deferred until layout fidelity can be measured)
 
+## Architecture
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for diagrams, module responsibilities and design decisions.
+
 ## Contributing
 
 Issues and pull requests are welcome. Please keep new tools client-side only, add fixtures and tests for what the tool preserves, and update `THIRD_PARTY_NOTICES.md` for any new engine.

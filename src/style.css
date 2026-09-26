@@ -2,63 +2,34 @@
    PowerPoint orange). Light and dark follow the system unless the visitor picks one. */
 
 :root {
-  color-scheme: light;
-  --bg: #fafafa;
-  --surface: #ffffff;
-  --surface-2: #f4f4f5;
-  --text: #09090b;
-  --muted: #52525b;
-  --faint: #a1a1aa;
-  --line: #e4e4e7;
-  --line-strong: #d4d4d8;
-  --ink: #18181b;
-  --ink-text: #fafafa;
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
-  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(0 0 0 / 0.12);
-  --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.04), 0 24px 48px -16px rgb(0 0 0 / 0.18);
-  --danger: #dc2626;
+  /* One token list: light-dark() picks a side from color-scheme, which follows the system
+     unless the visitor chose a theme (html[data-theme], set by theme.js / effects.ts). */
+  color-scheme: light dark;
+  --bg: light-dark(#fafafa, #09090b);
+  --surface: light-dark(#ffffff, #111113);
+  --surface-2: light-dark(#f4f4f5, #18181b);
+  --text: light-dark(#09090b, #fafafa);
+  --muted: light-dark(#52525b, #a1a1aa);
+  --faint: light-dark(#a1a1aa, #71717a);
+  --line: light-dark(#e4e4e7, #27272a);
+  --line-strong: light-dark(#d4d4d8, #3f3f46);
+  --ink: light-dark(#18181b, #fafafa);
+  --ink-text: light-dark(#fafafa, #09090b);
+  --shade: light-dark(rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.5));
+  --shadow-sm: 0 1px 2px var(--shade);
+  --shadow-md: 0 1px 2px var(--shade), 0 8px 24px -8px var(--shade);
+  --shadow-lg: 0 2px 4px var(--shade), 0 24px 48px -16px var(--shade);
+  --danger: light-dark(#dc2626, #f87171);
   --radius: 14px;
   --accent: var(--ink);
   --accent-2: var(--ink);
   --font: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-    --bg: #09090b;
-    --surface: #111113;
-    --surface-2: #18181b;
-    --text: #fafafa;
-    --muted: #a1a1aa;
-    --faint: #71717a;
-    --line: #27272a;
-    --line-strong: #3f3f46;
-    --ink: #fafafa;
-    --ink-text: #09090b;
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-md: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
-    --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -16px rgb(0 0 0 / 0.7);
-    --danger: #f87171;
-  }
+:root[data-theme='light'] {
+  color-scheme: light;
 }
-
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --bg: #09090b;
-  --surface: #111113;
-  --surface-2: #18181b;
-  --text: #fafafa;
-  --muted: #a1a1aa;
-  --faint: #71717a;
-  --line: #27272a;
-  --line-strong: #3f3f46;
-  --ink: #fafafa;
-  --ink-text: #09090b;
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
-  --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -16px rgb(0 0 0 / 0.7);
-  --danger: #f87171;
 }
 
 /* Format accents. Set on a tool page's <body> and on every card and badge. */
@@ -120,11 +91,6 @@ body::before {
     linear-gradient(to bottom, var(--line) 1px, transparent 1px) 0 0 / 56px 56px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
   opacity: 0.55;
-}
-body:not([data-format])::before {
-  background:
-    linear-gradient(to right, var(--line) 1px, transparent 1px) 0 0 / 56px 56px,
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px) 0 0 / 56px 56px;
 }
 
 a {

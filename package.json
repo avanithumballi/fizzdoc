@@ -2,7 +2,7 @@
   "name": "fizzdoc",
   "version": "0.1.0",
   "private": true,
-  "description": "Private PDF tools that run entirely in your browser. No uploads.",
+  "description": "Private PDF, Word, Excel and PowerPoint tools that run entirely in your browser. No uploads.",
   "license": "MIT",
   "type": "module",
   "scripts": {

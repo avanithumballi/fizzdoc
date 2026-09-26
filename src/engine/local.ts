@@ -48,7 +48,7 @@ export async function cleanOffice(file: File): Promise<Output> {
   if (thumbnail) {
     delete entries[thumbnail];
     // The package must not point at a part that no longer exists, or Office reports the file as damaged.
-    edit('_rels/.rels', (xml) => xml.replace(new RegExp(`<Relationship[^>]*Target="/?${thumbnail}"[^>]*/>`), ''));
+    edit('_rels/.rels', (xml) => xml.replace(new RegExp(`<Relationship[^>]*Target="/?${thumbnail.replace('.', '\\.')}"[^>]*/>`), ''));
   }
   const zipped = zipSync(entries as Zippable, { level: 6 });
   const extension = file.name.split('.').pop() ?? 'docx';
@@ -119,6 +119,8 @@ export async function pdfToImages(file: File): Promise<Output> {
   } catch (error) {
     throw new LocalError((error as { name?: string }).name === 'PasswordException' ? 'PDF_PASSWORD' : 'INVALID_PDF');
   }
+  // ponytail: every page's JPEG is held in memory until the ZIP is built; stream the ZIP if
+  // 1000-page PDFs on phones become a real use case.
   const images: Zippable = {};
   const name = baseName(file);
   let last: Blob | undefined;
