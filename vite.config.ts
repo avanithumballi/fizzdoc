@@ -5,7 +5,7 @@ import { PAGES, fileName, llms, renderPage, robots, sitemap } from './src/seo.ts
 function pages(): Plugin {
   let build = false;
   return {
-    name: 'hushpdf-pages',
+    name: 'fizzdoc-pages',
     enforce: 'post',
     configResolved(config) {
       build = config.command === 'build';

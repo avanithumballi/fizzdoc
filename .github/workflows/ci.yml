@@ -44,5 +44,5 @@ jobs:
         run: |
           npm ci
           npm run build
-          npx --yes wrangler@4 pages project create localpdf --production-branch=main || true
-          npx --yes wrangler@4 pages deploy dist --project-name=localpdf --branch=main
+          npx --yes wrangler@4 pages project create fizzdoc --production-branch=main || true
+          npx --yes wrangler@4 pages deploy dist --project-name=fizzdoc --branch=main

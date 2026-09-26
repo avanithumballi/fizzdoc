@@ -3,8 +3,8 @@
 import type { Op } from './engine/pdf.ts';
 
 export const SITE = {
-  name: 'HushPDF',
-  url: 'https://hushpdf.com',
+  name: 'Fizzdoc',
+  url: 'https://fizzdoc.in',
   repo: 'https://github.com/kingrishabdugar/localpdf',
   tagline: 'Private PDF tools that never upload your files',
 };
@@ -28,11 +28,11 @@ export interface Tool {
 const PRIVACY_FAQ: [string, string][] = [
   [
     'Are my files uploaded anywhere?',
-    'No. HushPDF runs the open-source qpdf engine inside your browser with WebAssembly. Your PDF is read from your device, processed in a background worker, and the result is saved straight back to your device. You can check this yourself: open your browser’s developer tools, go to the Network tab, and run a job — no request carries your file.',
+    'No. Fizzdoc runs the open-source qpdf engine inside your browser with WebAssembly. Your PDF is read from your device, processed in a background worker, and the result is saved straight back to your device. You can check this yourself: open your browser’s developer tools, go to the Network tab, and run a job — no request carries your file.',
   ],
   [
-    'Is HushPDF free?',
-    'Yes. There is no sign-up, no watermark and no daily limit. HushPDF is open source under the MIT license.',
+    'Is Fizzdoc free?',
+    'Yes. There is no sign-up, no watermark and no daily limit. Fizzdoc is open source under the MIT license.',
   ],
 ];
 
@@ -43,7 +43,7 @@ export const TOOLS: Tool[] = [
     name: 'Merge PDF',
     summary: 'Combine several PDFs into one, in the order you choose.',
     action: 'Merge PDFs',
-    title: 'Merge PDF Files Privately — No Upload, Free | HushPDF',
+    title: 'Merge PDF Files Privately — No Upload, Free | Fizzdoc',
     description:
       'Combine PDF files in your browser. Nothing is uploaded, and form fields and links are kept. Free, no sign-up, open source.',
     h1: 'Merge PDF files without uploading them',
@@ -57,7 +57,7 @@ export const TOOLS: Tool[] = [
       PRIVACY_FAQ[0],
       [
         'Will bookmarks, form fields and links survive?',
-        'Form fields and internal links from every file are kept. Bookmarks from the first file are kept; bookmarks from the other files cannot be combined yet, and HushPDF tells you when that happens instead of dropping them silently.',
+        'Form fields and internal links from every file are kept. Bookmarks from the first file are kept; bookmarks from the other files cannot be combined yet, and Fizzdoc tells you when that happens instead of dropping them silently.',
       ],
       [
         'Can I merge password-protected PDFs?',
@@ -65,7 +65,7 @@ export const TOOLS: Tool[] = [
       ],
       [
         'Is there a size limit?',
-        'There is no page limit. The size limit depends on your device’s memory — usually several hundred megabytes in total — and HushPDF tells you before starting if a job is too large for your device.',
+        'There is no page limit. The size limit depends on your device’s memory — usually several hundred megabytes in total — and Fizzdoc tells you before starting if a job is too large for your device.',
       ],
       PRIVACY_FAQ[1],
     ],
@@ -76,7 +76,7 @@ export const TOOLS: Tool[] = [
     name: 'Split PDF',
     summary: 'Extract the pages you need into a new PDF.',
     action: 'Extract pages',
-    title: 'Split PDF & Extract Pages Privately — No Upload | HushPDF',
+    title: 'Split PDF & Extract Pages Privately — No Upload | Fizzdoc',
     description:
       'Extract pages from a PDF in your browser. Pick ranges like 1-3, 8 — your file never leaves your device. Free, no sign-up, open source.',
     h1: 'Split a PDF and extract pages — privately',
@@ -94,7 +94,7 @@ export const TOOLS: Tool[] = [
       ],
       [
         'What happens to bookmarks and form fields?',
-        'Bookmarks are kept. If a bookmark points to a page you did not keep, HushPDF warns you. Form fields on removed pages are removed cleanly.',
+        'Bookmarks are kept. If a bookmark points to a page you did not keep, Fizzdoc warns you. Form fields on removed pages are removed cleanly.',
       ],
       PRIVACY_FAQ[1],
     ],
@@ -105,7 +105,7 @@ export const TOOLS: Tool[] = [
     name: 'Rotate PDF',
     summary: 'Turn sideways pages the right way, permanently.',
     action: 'Rotate pages',
-    title: 'Rotate PDF Pages Permanently — No Upload | HushPDF',
+    title: 'Rotate PDF Pages Permanently — No Upload | Fizzdoc',
     description:
       'Rotate all or selected PDF pages by 90°, 180° or 270° and save the result. Runs in your browser; your file is never uploaded.',
     h1: 'Rotate PDF pages and save them that way',
@@ -119,7 +119,7 @@ export const TOOLS: Tool[] = [
       PRIVACY_FAQ[0],
       [
         'Does rotating reduce quality?',
-        'No. HushPDF changes each page’s rotation setting; the page content is not re-rendered or re-compressed.',
+        'No. Fizzdoc changes each page’s rotation setting; the page content is not re-rendered or re-compressed.',
       ],
       ['Can I rotate only some pages?', 'Yes. Enter pages like “2, 5-7”, or leave the field empty to rotate every page.'],
       PRIVACY_FAQ[1],
@@ -131,7 +131,7 @@ export const TOOLS: Tool[] = [
     name: 'Delete PDF Pages',
     summary: 'Remove pages you don’t want to share.',
     action: 'Delete pages',
-    title: 'Delete Pages from a PDF — Private, No Upload | HushPDF',
+    title: 'Delete Pages from a PDF — Private, No Upload | Fizzdoc',
     description:
       'Remove unwanted pages from a PDF in your browser. Type the pages to delete; your file never leaves your device. Free and open source.',
     h1: 'Delete pages from a PDF — privately',
@@ -156,7 +156,7 @@ export const TOOLS: Tool[] = [
     name: 'Unlock PDF',
     summary: 'Save a copy without the password you know.',
     action: 'Remove password',
-    title: 'Remove a PDF Password (Unlock PDF) — No Upload | HushPDF',
+    title: 'Remove a PDF Password (Unlock PDF) — No Upload | Fizzdoc',
     description:
       'Remove the password from a PDF you are allowed to open. Decryption happens on your device and nothing is uploaded. Free, no sign-up.',
     h1: 'Remove a PDF password — on your device',
@@ -169,8 +169,8 @@ export const TOOLS: Tool[] = [
     faq: [
       PRIVACY_FAQ[0],
       [
-        'Can HushPDF crack a password I do not know?',
-        'No. HushPDF removes protection only when you know the password, or when the PDF opens without one and only restricts editing or printing. Only unlock files you have the right to modify.',
+        'Can Fizzdoc crack a password I do not know?',
+        'No. Fizzdoc removes protection only when you know the password, or when the PDF opens without one and only restricts editing or printing. Only unlock files you have the right to modify.',
       ],
       [
         'Is my password sent anywhere?',
@@ -182,21 +182,21 @@ export const TOOLS: Tool[] = [
 ];
 
 export const HOME = {
-  title: 'HushPDF — Private PDF Tools That Never Upload Your Files',
+  title: 'Fizzdoc — Private PDF Tools That Never Upload Your Files',
   description:
     'Merge, split, rotate, delete pages and unlock PDFs right in your browser. Zero uploads, no sign-up, open source. Keeps form fields and links intact.',
   h1: 'PDF tools that keep your files to themselves',
   lede: 'Merge, split, rotate and unlock PDFs in your browser. Your documents never leave your device — not even for a second.',
-  what: 'HushPDF is a free, open-source set of PDF tools that runs entirely in your web browser. Files are processed on your own device with the qpdf engine compiled to WebAssembly, so nothing is uploaded to a server.',
+  what: 'Fizzdoc is a free, open-source set of PDF tools that runs entirely in your web browser. Files are processed on your own device with the qpdf engine compiled to WebAssembly, so nothing is uploaded to a server.',
   faq: [
     PRIVACY_FAQ[0],
     [
-      'How is HushPDF different from other online PDF tools?',
-      'Most online PDF tools upload your document to their servers. HushPDF does the work in your browser tab instead. It is also built on qpdf, a mature PDF engine, and warns you whenever something such as a bookmark cannot be carried over — instead of silently dropping it.',
+      'How is Fizzdoc different from other online PDF tools?',
+      'Most online PDF tools upload your document to their servers. Fizzdoc does the work in your browser tab instead. It is also built on qpdf, a mature PDF engine, and warns you whenever something such as a bookmark cannot be carried over — instead of silently dropping it.',
     ],
     [
       'Does it work on my phone?',
-      'Yes. HushPDF works in current versions of Chrome, Safari, Firefox and Edge on desktop and mobile. Very large files may exceed a phone’s memory; HushPDF checks this before starting.',
+      'Yes. Fizzdoc works in current versions of Chrome, Safari, Firefox and Edge on desktop and mobile. Very large files may exceed a phone’s memory; Fizzdoc checks this before starting.',
     ],
     PRIVACY_FAQ[1],
   ] as [string, string][],

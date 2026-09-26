@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import { PAGES } from '../src/seo';
+import { SITE } from '../src/site';
 
 const fixture = (name: string) => new URL(`./fixtures/${name}.pdf`, import.meta.url).pathname;
 
@@ -116,7 +117,7 @@ for (const { path, tool } of PAGES) {
     expect(html).toContain('<meta http-equiv="Content-Security-Policy"');
     expect(html).toMatch(/<title>[^<]{20,70}<\/title>/);
     expect(html).toMatch(/<meta name="description" content="[^"]{80,160}">/);
-    expect(html).toContain(`<link rel="canonical" href="https://hushpdf.com${path}">`);
+    expect(html).toContain(`<link rel="canonical" href="${SITE.url}${path}">`);
     expect(html.match(/<h1>/g)).toHaveLength(1);
     const ld = JSON.parse(/<script type="application\/ld\+json">(.*?)<\/script>/s.exec(html)![1]);
     expect(ld['@graph'].map((n: { '@type': string }) => n['@type'])).toContain('FAQPage');
@@ -126,7 +127,7 @@ for (const { path, tool } of PAGES) {
 
 test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   const sitemap = await (await request.get('/sitemap.xml')).text();
-  for (const { path } of PAGES) expect(sitemap).toContain(`<loc>https://hushpdf.com${path}</loc>`);
-  expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://hushpdf.com/sitemap.xml');
+  for (const { path } of PAGES) expect(sitemap).toContain(`<loc>${SITE.url}${path}</loc>`);
+  expect(await (await request.get('/robots.txt')).text()).toContain(`Sitemap: ${SITE.url}/sitemap.xml`);
   expect(await (await request.get('/llms.txt')).text()).toContain('## Tools');
 });

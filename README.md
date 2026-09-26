@@ -1,10 +1,10 @@
 <div align="center">
 
-# HushPDF
+# Fizzdoc
 
 **Private PDF tools that never upload your files — and don't break your PDF.**
 
-Merge, split, rotate, delete pages and unlock PDFs entirely in your browser.<br>
+**[fizzdoc.in](https://fizzdoc.in)** · Merge, split, rotate, delete pages and unlock PDFs entirely in your browser.<br>
 No server, no sign-up, no watermark. Open source.
 
 [![CI](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml/badge.svg)](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml)
@@ -13,15 +13,15 @@ No server, no sign-up, no watermark. Open source.
 
 </div>
 
-## Why HushPDF
+## Why Fizzdoc
 
 Most "free online PDF" sites upload your contracts, payslips and medical records to their servers. A growing number of tools run in the browser instead, but copying pages with the popular pdf-lib library is known to lose bookmarks, the form catalog and internal links.
 
-HushPDF does both jobs properly:
+Fizzdoc does both jobs properly:
 
 - **Your files stay on your device.** Documents are processed by [qpdf](https://github.com/qpdf/qpdf), compiled to WebAssembly and run in a Web Worker in your tab. There is no upload endpoint to send them to.
 - **The browser enforces it.** Every page ships a Content Security Policy with `connect-src 'self'`: the page can only talk to its own static host.
-- **Your PDF stays intact.** qpdf rewrites the document structure instead of redrawing pages. When something genuinely can't be carried over, HushPDF says so — it never drops it silently.
+- **Your PDF stays intact.** qpdf rewrites the document structure instead of redrawing pages. When something genuinely can't be carried over, Fizzdoc says so — it never drops it silently.
 
 ## What survives
 
@@ -35,7 +35,7 @@ Measured by the test suite (`tests/engine.test.ts`) against the fixtures in `tes
 | Page quality | Lossless — nothing is re-rendered or re-compressed | Lossless | Lossless |
 | Password-protected input | 🔑 asks locally, output has no password | 🔑 | 🔑 |
 
-HushPDF also warns when a document's digital signatures will stop validating or when accessibility tags can't be rebuilt, and refuses dynamic XFA forms rather than corrupting them.
+Fizzdoc also warns when a document's digital signatures will stop validating or when accessibility tags can't be rebuilt, and refuses dynamic XFA forms rather than corrupting them.
 
 ## Tools
 
