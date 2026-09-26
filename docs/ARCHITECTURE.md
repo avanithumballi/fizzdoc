@@ -72,6 +72,12 @@ sequenceDiagram
 | `src/engine/worker.ts` | Worker entry: loads qpdf, mounts files, relays password prompts | `pdf.ts`, qpdf-wasm |
 | `src/engine/pdf.ts` | Environment-agnostic qpdf runner: preflight, fidelity warnings, command | – |
 | `src/engine/local.ts` | Jobs that don't need qpdf: Office metadata/images, JPG→PDF, PDF→JPG | fflate, pdf-lib, pdf.js |
+| `src/engine/compress.ts` | Compress PDF and Office images; resize/convert images | pdf-lib, fflate, canvas |
+| `src/engine/convert.ts` | PDF → text/Markdown, text/Markdown → print HTML, Excel ↔ CSV | pdf.js, fflate |
+| `src/engine/office.ts` | Word → print HTML, PDF → Word, PDF → PowerPoint | pdf.js, fflate |
+| `src/engine/ocr.ts` | English OCR for images and searchable PDFs | tesseract.js (self-hosted via `vite-plugins/ocr-assets.ts`), pdf-lib |
+| `src/tools/edit-pdf.ts` | In-page PDF editor: change text, add text, white-out | pdf.js, pdf-lib |
+| `src/tools/ocr-viewer.ts` | Image with selectable recognized text (Live Text style) | – |
 
 ## Design decisions
 
@@ -80,7 +86,9 @@ sequenceDiagram
 - **Disposable worker per qpdf job.** Terminating the worker is the cancel button and the cleanup:
   files, passwords and the WASM heap go away together. No shared state between jobs.
 - **Lazy engines.** The first page load is about 15 KB of app code plus CSS and font. qpdf (1.3 MB),
-  pdf.js and pdf-lib load only when a tool that needs them runs.
+  pdf.js, pdf-lib and the OCR engine (about 6 MB, self-hosted) load only when a tool that needs them runs.
+- **Native PDF writer for documents.** Word, text and Markdown → PDF prepare a print-ready page and use
+  the browser's own “Save as PDF”, which gets every language, script and font right with zero extra code.
 - **Fidelity is reported, not hidden.** `pdf.ts` inspects the input first and returns warnings
   for anything the output cannot carry over.
 - **One registry drives everything.** Adding a tool means one entry in `site.ts`, one branch in
@@ -94,5 +102,5 @@ sequenceDiagram
 - Maximum input size comes from reported device memory (128 MiB per GiB, capped at 1 GiB).
 - `local.ts` jobs run on the main thread; very large PDF → JPG jobs keep every page image in
   memory until the ZIP is built.
-- Compress, repair and Office → PDF are not offered: the available in-browser engines can't do
-  them reliably yet.
+- Repair, PowerPoint → PDF and legacy .doc/.ppt/.xls are not offered: the available in-browser engines
+  can't do them reliably yet.

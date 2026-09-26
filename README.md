@@ -2,9 +2,9 @@
 
 # Fizzdoc
 
-**Private PDF, Word, Excel and PowerPoint tools that never upload your files.**
+**Private PDF, Word, Excel, PowerPoint and image tools that never upload your files.**
 
-**[fizzdoc.in](https://fizzdoc.in)** · Merge, split, protect and convert PDFs; clean Word, Excel and PowerPoint files — entirely in your browser.<br>
+**[fizzdoc.in](https://fizzdoc.in)** · Edit, compress, convert and OCR PDFs; convert Word, Excel and images — entirely in your browser.<br>
 No server, no sign-up, no watermark. Open source.
 
 [![CI](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml/badge.svg)](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml)
@@ -41,10 +41,11 @@ Fizzdoc also warns when a document's digital signatures will stop validating or 
 
 | Format | Tools |
 |---|---|
-| PDF | Merge · Split / extract pages · Rotate · Delete pages · Unlock · Protect (AES-256) · Remove metadata · JPG → PDF · PDF → JPG |
-| Word (.docx) | Remove metadata · Extract images |
-| Excel (.xlsx) | Remove metadata · Extract images |
-| PowerPoint (.pptx) | Remove metadata · Extract images |
+| PDF | Edit PDF (change text in place) · Compress · Merge · Split · Rotate · Delete pages · Unlock · Protect (AES-256) · Remove metadata · OCR (searchable PDF) · PDF → Word · PDF → PowerPoint · PDF → JPG · PDF → Text · PDF → Markdown · JPG → PDF · Text → PDF · Markdown → PDF |
+| Word (.docx) | Word → PDF · Compress · Remove metadata · Extract images |
+| Excel (.xlsx) | Excel → CSV · CSV → Excel · Compress · Remove metadata · Extract images |
+| PowerPoint (.pptx) | Compress · Remove metadata · Extract images |
+| Images | Compress · Resize (larger or smaller) · Convert (JPG / PNG / WebP) · Image to text (OCR, select text on the picture) |
 
 Google Docs, Sheets and Slides work too: download the file as .docx, .xlsx or .pptx (File → Download) and use the matching tool. Nothing is sent to Google.
 
@@ -96,12 +97,11 @@ Canceling a job terminates its worker, which discards the files, passwords and e
 Ship each tool only once it is proven by tests on real documents:
 
 - Page thumbnails and visual reordering
-- Compress PDF (the current qpdf build gains nothing on images; needs a maintained engine and a real scan corpus)
 - Repair PDF (the current qpdf build can't recover damaged files)
-- Word / Excel / PowerPoint → PDF (needs a full office engine in the browser, tens of MB)
-- Excel ↔ CSV
+- PowerPoint → PDF or images, and legacy .doc / .ppt / .xls (need a full office engine in the browser, tens of MB)
+- OCR in more languages (Hindi and others), downloaded only when chosen
+- Layout-faithful PDF → Word (tables, columns, images)
 - Installable offline app (PWA)
-- PDF → Word (deferred until layout fidelity can be measured)
 
 ## Architecture
 
