@@ -31,7 +31,7 @@ export const SITE = {
   // ponytail: switch to 'https://fizzdoc.in' once that domain is connected in Cloudflare Pages;
   // canonical URLs must point at an address that actually serves the pages.
   url: 'https://fizzdoc.pages.dev',
-  repo: 'https://github.com/kingrishabdugar/localpdf',
+  repo: 'https://github.com/kingrishabdugar/fizzdoc',
   tagline: 'Private PDF, Word, Excel, PowerPoint and image tools that never upload your files',
 };
 

@@ -21,7 +21,7 @@ function setUpRipple() {
   document.addEventListener('pointerdown', (event) => {
     if (reducedMotion.matches || event.button !== 0) return;
     const target = event.target as Element;
-    if (target.closest('a, button, input, select, textarea, label, summary, dialog, [data-spring], .file-list')) return;
+    if (target.closest('a, button, input, select, textarea, label, summary, dialog, [data-spring], .workspace')) return;
     const ripple = document.createElement('span');
     ripple.className = 'tap-ripple';
     ripple.style.left = `${event.clientX}px`;

@@ -1,0 +1,22 @@
+name: 💡 Tool or feature request
+description: Suggest a new tool or an improvement to an existing one.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What do you want to do?
+      description: Describe the task, not the solution — e.g. "sign a PDF contract on my phone".
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could Fizzdoc do it?
+      description: Any idea, library or existing tool that does it well. It must be possible entirely in the browser, without uploading files.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to help build this

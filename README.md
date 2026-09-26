@@ -1,119 +1,169 @@
-<div align="center">
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
+    <img src="docs/assets/logo-light.svg" width="300" alt="Fizzdoc">
+  </picture>
+</p>
 
-# Fizzdoc
+<h3 align="center">The open-source iLovePDF alternative that never sees your files.</h3>
 
-**Private PDF, Word, Excel, PowerPoint and image tools that never upload your files.**
+<p align="center">
+  44 PDF, Word, Excel, PowerPoint and image tools — edit, compress, merge, convert, OCR —<br>
+  running <strong>100% in your browser</strong>. No uploads. No sign-up. No watermark. 16 languages.
+</p>
 
-**[fizzdoc.pages.dev](https://fizzdoc.pages.dev)** · Edit, compress, convert and OCR PDFs; convert Word, Excel and images — entirely in your browser.<br>
-No server, no sign-up, no watermark. Open source.
+<p align="center">
+  <a href="https://fizzdoc.pages.dev"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
+  <a href="#-all-44-tools"><strong>All tools</strong></a> &nbsp;·&nbsp;
+  <a href="#-how-it-works"><strong>How it works</strong></a> &nbsp;·&nbsp;
+  <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
+</p>
 
-[![CI](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml/badge.svg)](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-4f46e5.svg)](LICENSE)
-![Bytes uploaded: 0](https://img.shields.io/badge/bytes%20uploaded-0-16a34a.svg)
-[![GitHub stars](https://img.shields.io/github/stars/kingrishabdugar/localpdf?style=social)](https://github.com/kingrishabdugar/localpdf/stargazers)
+<p align="center">
+  <a href="https://github.com/kingrishabdugar/fizzdoc/stargazers"><img src="https://img.shields.io/github/stars/kingrishabdugar/fizzdoc?style=flat-square&logo=github&label=stars&color=e3b341" alt="GitHub stars"></a>
+  <a href="https://github.com/kingrishabdugar/fizzdoc/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/kingrishabdugar/fizzdoc/ci.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22c55e?style=flat-square" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/bytes%20uploaded-0-16a34a?style=flat-square" alt="0 bytes uploaded">
+  <img src="https://img.shields.io/badge/tools-44-e5322d?style=flat-square" alt="44 tools">
+  <img src="https://img.shields.io/badge/languages-16-2f6fdb?style=flat-square" alt="16 languages">
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-8b5cf6?style=flat-square" alt="PRs welcome"></a>
+</p>
 
-**If Fizzdoc saves you time, please ⭐ star this repo — it helps more people find a private alternative.**
+<p align="center">
+  <a href="https://fizzdoc.pages.dev"><img src="docs/assets/hero.png" width="960" alt="Fizzdoc: private document tools in light and dark mode"></a>
+</p>
 
-</div>
+---
 
-## Why Fizzdoc
+## ✨ Why Fizzdoc
 
-Most "free online PDF" sites upload your contracts, payslips and medical records to their servers. A growing number of tools run in the browser instead, but copying pages with the popular pdf-lib library is known to lose bookmarks, the form catalog and internal links.
+Every "free online PDF tool" asks you to upload your contract, payslip, bank statement or passport scan to someone else's server. **Fizzdoc doesn't have a server to upload to.** Everything runs inside your browser tab with WebAssembly and JavaScript, and the page's Content Security Policy makes it impossible for the site to send your file anywhere — you can check it yourself in the Network tab.
 
-Fizzdoc does both jobs properly:
+| | **Fizzdoc** | iLovePDF | Smallpdf | Adobe online | Stirling-PDF |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Your file stays on your device | ✅ | ❌ uploaded | ❌ uploaded | ❌ uploaded | ⚠️ goes to your own server |
+| Open source | ✅ MIT | ❌ | ❌ | ❌ | ✅ |
+| No account, no daily limits, no watermark | ✅ | ⚠️ free tier limits | ⚠️ free tier limits | ⚠️ sign-in for many tools | ✅ |
+| Nothing to install or host | ✅ | ✅ | ✅ | ✅ | ❌ needs Docker / a server |
+| Works on phones | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 languages incl. Hindi, Tamil, Telugu, Bengali, Marathi | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-- **Your files stay on your device.** Documents are processed by [qpdf](https://github.com/qpdf/qpdf), compiled to WebAssembly and run in a Web Worker in your tab. There is no upload endpoint to send them to.
-- **The browser enforces it.** Every page ships a Content Security Policy with `connect-src 'self'`: the page can only talk to its own static host.
-- **Your PDF stays intact.** qpdf rewrites the document structure instead of redrawing pages. When something genuinely can't be carried over, Fizzdoc says so — it never drops it silently.
+<p align="center">
+  <img src="docs/assets/demo.gif" width="860" alt="Fizzdoc demo: compress, edit PDF text, select text in a photo with OCR, Hindi interface, dark mode">
+</p>
 
-## What survives
-
-Measured by the test suite (`tests/engine.test.ts`) against the fixtures in `tests/fixtures`:
-
-| | Merge | Split / delete | Rotate |
-|---|---|---|---|
-| Form fields | ✅ from every file | ✅ (fields on removed pages are removed cleanly) | ✅ |
-| Internal links | ✅ retargeted to the new pages | ✅ | ✅ |
-| Bookmarks | ✅ first file · ⚠️ warns for later files | ✅ · ⚠️ warns if a target page was removed | ✅ |
-| Page quality | Lossless — nothing is re-rendered or re-compressed | Lossless | Lossless |
-| Password-protected input | 🔑 asks locally, output has no password | 🔑 | 🔑 |
-
-Fizzdoc also warns when a document's digital signatures will stop validating or when accessibility tags can't be rebuilt, and refuses dynamic XFA forms rather than corrupting them.
-
-## Tools
+## 🧰 All 44 tools
 
 | Format | Tools |
 |---|---|
-| PDF | Edit PDF (change text in place) · Compress · Merge · Split · Extract pages · Reorder pages · Rotate · Delete pages · Add page numbers · Watermark · Unlock · Protect (AES-256) · Remove metadata · OCR (searchable PDF) · PDF → Word · PDF → PowerPoint · PDF → JPG · PDF → PNG · PDF → Text · PDF → Markdown · JPG → PDF · PNG → PDF · Text → PDF · Markdown → PDF |
-| Word (.docx) | Word → PDF · Compress · Remove metadata · Extract images |
-| Excel (.xlsx) | Excel → CSV · CSV → Excel · Compress · Remove metadata · Extract images |
-| PowerPoint (.pptx) | Compress · Remove metadata · Extract images |
-| Images | Compress · Resize (larger or smaller) · Convert (JPG / PNG / WebP) · PNG → JPG · JPG → PNG · WebP → JPG · JPG → WebP · Image to text (OCR, select text on the picture) |
+| **PDF** | [Edit PDF](https://fizzdoc.pages.dev/edit-pdf/) (change text in place) · [Compress](https://fizzdoc.pages.dev/compress-pdf/) · [Merge](https://fizzdoc.pages.dev/merge-pdf/) · [Split](https://fizzdoc.pages.dev/split-pdf/) · [Extract pages](https://fizzdoc.pages.dev/extract-pdf-pages/) · [Reorder pages](https://fizzdoc.pages.dev/reorder-pdf-pages/) · [Rotate](https://fizzdoc.pages.dev/rotate-pdf/) · [Delete pages](https://fizzdoc.pages.dev/delete-pdf-pages/) · [Page numbers](https://fizzdoc.pages.dev/add-page-numbers-to-pdf/) · [Watermark](https://fizzdoc.pages.dev/watermark-pdf/) · [Unlock](https://fizzdoc.pages.dev/unlock-pdf/) · [Protect (AES-256)](https://fizzdoc.pages.dev/protect-pdf/) · [Remove metadata](https://fizzdoc.pages.dev/remove-pdf-metadata/) · [OCR](https://fizzdoc.pages.dev/ocr-pdf/) |
+| **PDF conversions** | [PDF → Word](https://fizzdoc.pages.dev/pdf-to-word/) · [PDF → PowerPoint](https://fizzdoc.pages.dev/pdf-to-powerpoint/) · [PDF → JPG](https://fizzdoc.pages.dev/pdf-to-jpg/) · [PDF → PNG](https://fizzdoc.pages.dev/pdf-to-png/) · [PDF → Text](https://fizzdoc.pages.dev/pdf-to-text/) · [PDF → Markdown](https://fizzdoc.pages.dev/pdf-to-markdown/) · [JPG → PDF](https://fizzdoc.pages.dev/jpg-to-pdf/) · [PNG → PDF](https://fizzdoc.pages.dev/png-to-pdf/) · [Text → PDF](https://fizzdoc.pages.dev/text-to-pdf/) · [Markdown → PDF](https://fizzdoc.pages.dev/markdown-to-pdf/) |
+| **Word** | [Word → PDF](https://fizzdoc.pages.dev/word-to-pdf/) · [Compress](https://fizzdoc.pages.dev/compress-word/) · [Remove metadata](https://fizzdoc.pages.dev/remove-word-metadata/) · [Extract images](https://fizzdoc.pages.dev/extract-images-from-word/) |
+| **Excel** | [Excel → CSV](https://fizzdoc.pages.dev/excel-to-csv/) · [CSV → Excel](https://fizzdoc.pages.dev/csv-to-excel/) · [Compress](https://fizzdoc.pages.dev/compress-excel/) · [Remove metadata](https://fizzdoc.pages.dev/remove-excel-metadata/) · [Extract images](https://fizzdoc.pages.dev/extract-images-from-excel/) |
+| **PowerPoint** | [Compress](https://fizzdoc.pages.dev/compress-powerpoint/) · [Remove metadata](https://fizzdoc.pages.dev/remove-powerpoint-metadata/) · [Extract images](https://fizzdoc.pages.dev/extract-images-from-powerpoint/) |
+| **Images** | [Compress](https://fizzdoc.pages.dev/compress-image/) · [Resize](https://fizzdoc.pages.dev/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.pages.dev/convert-image/) · [PNG → JPG](https://fizzdoc.pages.dev/png-to-jpg/) · [JPG → PNG](https://fizzdoc.pages.dev/jpg-to-png/) · [WebP → JPG](https://fizzdoc.pages.dev/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.pages.dev/jpg-to-webp/) · [Image → Text](https://fizzdoc.pages.dev/image-to-text/) (select text right on the photo, like Live Text) |
 
-Google Docs, Sheets and Slides work too: download the file as .docx, .xlsx or .pptx (File → Download) and use the matching tool. Nothing is sent to Google.
+**Google Docs, Sheets and Slides** work too: download as .docx / .xlsx / .pptx and use the matching tool. Nothing is sent to Google.
 
-Every tool has its own page at `/<slug>/`, listed in `src/site.ts`.
+**Languages:** English · हिन्दी · বাংলা · मराठी · தமிழ் · తెలుగు · Español · Português · Français · Deutsch · Italiano · Nederlands · Polski · Türkçe · Bahasa Indonesia · Tiếng Việt — [add yours](CONTRIBUTING.md#-translate-fizzdoc-no-coding-needed).
 
-## Verify the privacy claim yourself
+## 🔒 Private by design — verify it yourself
 
-1. Open any tool page and your browser's developer tools → **Network** tab.
+1. Open any tool, then your browser's developer tools → **Network**.
 2. Run a job.
-3. You'll see the app's own files load (the page, and the qpdf engine on first use) — and no request carrying your document.
+3. You'll see the app's own files load, and **no request carrying your document**.
 
-The end-to-end suite (`tests/app.e2e.ts`) automates exactly this: it merges files in real Chromium and fails if any request goes to another origin, uses a method other than `GET`, or has a body.
+The test suite does exactly this in real Chromium on every commit: it fails if any request goes to another origin, uses a method other than `GET`, or carries a body. Each job's engine runs in a disposable Web Worker that is terminated afterwards, taking your file, passwords and memory with it.
 
-## Develop
+### Your PDF stays intact
 
-Requires Node 22+.
+Most browser PDF tools copy pages with a library that silently drops bookmarks, forms and links. Fizzdoc's core PDF tools use [qpdf](https://github.com/qpdf/qpdf) compiled to WebAssembly, which rewrites the document structure instead:
+
+| | Merge | Split / delete | Rotate |
+|---|---|---|---|
+| Form fields | ✅ from every file | ✅ removed cleanly with their pages | ✅ |
+| Internal links | ✅ retargeted | ✅ | ✅ |
+| Bookmarks | ✅ first file · ⚠️ warns for later files | ✅ · ⚠️ warns if a target page was removed | ✅ |
+| Page quality | Lossless | Lossless | Lossless |
+
+When something genuinely can't be carried over (a digital signature, accessibility tags), Fizzdoc **tells you** instead of dropping it silently.
+
+## ⚙️ How it works
+
+```
+44 tools in src/site.ts ──▶ vite build ──▶ 720 static pages (16 languages) + sitemap + llms.txt ──▶ any static host
+                                                   │
+                                     your browser tab (nothing leaves it)
+         ┌─────────────────────┬──────────────────┼──────────────────┬──────────────────┐
+   qpdf (WebAssembly)      pdf.js            pdf-lib             Tesseract OCR        fflate
+   merge · split · lock    render · text     edit · stamp        image & PDF OCR      Word/Excel/PPT
+```
+
+- **Static site, zero backend.** Nothing to scale, nothing to breach, nothing to pay for.
+- **Lazy engines.** First load is ~15 KB of app code; each engine downloads only when a tool needs it.
+- **One registry drives everything.** Add a tool in `src/site.ts` and its page, SEO tags, sitemap entry and footer link appear in all 16 languages.
+
+Explore the interactive [architecture map](https://fizzdoc.pages.dev/architecture.html) or read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## 🚀 Run it locally
 
 ```sh
+git clone https://github.com/kingrishabdugar/fizzdoc.git
+cd fizzdoc
 npm install
-npm run dev          # http://localhost:5173/merge-pdf/
-npm run check        # typecheck + engine tests
+npm run dev          # http://localhost:5173
+```
+
+```sh
+npm run check        # typecheck + unit tests
 npm run test:e2e     # production build + real-browser tests
-npm run build        # static site in dist/
+npm run build        # static site in dist/ — deploy anywhere
 ```
 
-## Deploy
+Requires Node 22+. Deploys as plain static files to Cloudflare Pages, Netlify, GitHub Pages or any web server.
 
-`dist/` is a plain static site: one prerendered HTML page per tool, plus `sitemap.xml`, `robots.txt` and `llms.txt`. On Cloudflare Pages, connect the repo with build command `npm run build` and output directory `dist`; `public/_headers` adds the security headers. Set your domain in `src/site.ts`.
+## 🤝 Contributing
 
-## How it works
+Fizzdoc is built to be easy to contribute to — **you don't need to know anything about PDFs to help**.
 
-```
-index.html + src/site.ts ──(vite build, src/seo.ts)──▶ dist/<tool>/index.html  (SEO copy, JSON-LD, CSP)
-                                                        │
-src/app.ts        page UI: file list, options, password dialog, download
-   │ postMessage(job, File[])
-   ▼
-src/engine/worker.ts   one disposable worker per job; mounts files with WORKERFS (no copy into WASM memory)
-   │
-src/engine/pdf.ts      preflight (qpdf --json) → fidelity warnings → qpdf command → output bytes
+- 🌍 **Translate** — add or improve a language by editing one JSON file. [How →](CONTRIBUTING.md#-translate-fizzdoc-no-coding-needed)
+- 🧰 **Add a tool** — a new tool is one registry entry, one engine function and a test. [How →](CONTRIBUTING.md#-add-a-new-tool)
+- 🐛 **Fix a bug** — every issue labelled [`good first issue`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) is scoped for a first PR.
+- 💡 **Ideas** — open a [feature request](https://github.com/kingrishabdugar/fizzdoc/issues/new/choose) for the tool you wish existed.
 
-src/engine/local.ts    no qpdf needed: Office ZIP packages (fflate), JPG → PDF (pdf-lib), PDF → JPG (pdf.js)
-```
+Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. First-time contributors are very welcome.
 
-Canceling a job terminates its worker, which discards the files, passwords and engine memory it held.
+## 🗺️ Roadmap
 
-## Roadmap
+- [ ] Installable offline app (PWA)
+- [ ] Sign PDF (draw or type a signature)
+- [ ] Page thumbnails with drag-and-drop reordering
+- [ ] OCR in more languages, downloaded on demand
+- [ ] Layout-faithful PDF → Word (tables, columns, images)
+- [ ] Fill PDF forms
+- [ ] Redact PDF (truly remove text, not just cover it)
 
-Ship each tool only once it is proven by tests on real documents:
+Vote with a 👍 on the [issues](https://github.com/kingrishabdugar/fizzdoc/issues) you want most.
 
-- Page thumbnails and visual reordering
-- Repair PDF (the current qpdf build can't recover damaged files)
-- PowerPoint → PDF or images, and legacy .doc / .ppt / .xls (need a full office engine in the browser, tens of MB)
-- OCR in more languages (Hindi and others), downloaded only when chosen
-- Layout-faithful PDF → Word (tables, columns, images)
-- Installable offline app (PWA)
+## ⭐ Support the project
 
-## Architecture
+If Fizzdoc saved you from uploading something private, **[give it a star](https://github.com/kingrishabdugar/fizzdoc)** — it's the single best way to help more people find a private alternative.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for diagrams, module responsibilities and design decisions, and open [docs/architecture.html](docs/architecture.html) in a browser for the interactive map.
+<a href="https://star-history.com/#kingrishabdugar/fizzdoc&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kingrishabdugar/fizzdoc&type=Date&theme=dark">
+    <img alt="Star history" src="https://api.star-history.com/svg?repos=kingrishabdugar/fizzdoc&type=Date" width="600">
+  </picture>
+</a>
 
-## Contributing
+### Contributors
 
-Issues and pull requests are welcome. Please keep new tools client-side only, add fixtures and tests for what the tool preserves, and update `THIRD_PARTY_NOTICES.md` for any new engine.
+<a href="https://github.com/kingrishabdugar/fizzdoc/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kingrishabdugar/fizzdoc" alt="Contributors">
+</a>
 
-## License
+## 📄 License
 
-[MIT](LICENSE). Bundled third-party components are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[MIT](LICENSE) © [Rishab Dugar](https://github.com/kingrishabdugar). Fizzdoc stands on the shoulders of [qpdf](https://github.com/qpdf/qpdf), [pdf.js](https://github.com/mozilla/pdf.js), [pdf-lib](https://github.com/Hopding/pdf-lib), [Tesseract.js](https://github.com/naptha/tesseract.js) and [fflate](https://github.com/101arrowz/fflate) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF offline, private PDF converter, PDF to Word, OCR, iLovePDF alternative, Smallpdf alternative, open-source PDF tools, WebAssembly PDF, client-side document converter.</sub></p>

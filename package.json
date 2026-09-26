@@ -1,8 +1,37 @@
 {
   "name": "fizzdoc",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "Private PDF, Word, Excel and PowerPoint tools that run entirely in your browser. No uploads.",
+  "description": "Free, open-source iLovePDF alternative: 44 PDF, Word, Excel and image tools (edit, compress, merge, convert, OCR) that run 100% in your browser. No uploads.",
+  "keywords": [
+    "pdf",
+    "pdf-tools",
+    "pdf-editor",
+    "merge-pdf",
+    "compress-pdf",
+    "pdf-to-word",
+    "ocr",
+    "privacy",
+    "webassembly",
+    "client-side",
+    "ilovepdf-alternative",
+    "smallpdf-alternative",
+    "document-converter",
+    "qpdf",
+    "pdfjs",
+    "tesseract",
+    "image-compression",
+    "i18n"
+  ],
+  "homepage": "https://fizzdoc.pages.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingrishabdugar/fizzdoc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kingrishabdugar/fizzdoc/issues"
+  },
+  "author": "Rishab Dugar (https://github.com/kingrishabdugar)",
   "license": "MIT",
   "type": "module",
   "scripts": {

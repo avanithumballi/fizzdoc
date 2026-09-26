@@ -1,0 +1,43 @@
+name: 🐛 Bug report
+description: A tool gave a wrong result, an error, or behaved unexpectedly.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! **Never attach a private document.** If a specific file triggers the bug, a small sample with nothing sensitive in it helps enormously.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      description: Page address or tool name.
+      placeholder: https://fizzdoc.pages.dev/compress-pdf/
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      placeholder: I added a 3-page PDF and clicked Compress PDF. It said… I expected…
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Add …
+        3. Click …
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Chrome 140 on Windows 11 / Safari on iPhone 15
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Error text from the page, console errors, or a sample file with nothing private in it.

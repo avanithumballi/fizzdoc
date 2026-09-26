@@ -1,0 +1,24 @@
+name: 🌍 Translation
+description: Improve a translation or request a new language.
+labels: [translation]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: Japanese (ja)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should change?
+      description: Page, current wording and better wording — or which language you'd like added. Native speakers are very welcome to open a PR directly (see CONTRIBUTING.md).
+    validations:
+      required: true
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm a native speaker and can translate or review
