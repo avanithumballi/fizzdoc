@@ -33,6 +33,7 @@ const ERRORS: Record<Failure, string> = {
   BAD_IMAGE: 'One of the images could not be read. Try JPG or PNG.',
   PDF_PASSWORD: 'This PDF is password-protected. Remove the password with Unlock PDF first.',
   BAD_SIZE: 'The width and height must each be between 1 and 16,384 pixels.',
+  NO_TEXT: 'This PDF has no text to extract — it is probably a scanned image. Run OCR PDF first, then try again.',
   ENGINE_FAILED: 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
 };
 
