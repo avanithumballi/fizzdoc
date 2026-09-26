@@ -242,11 +242,44 @@ main {
   color: var(--text);
   background: var(--surface-2);
 }
-.site-header nav .gh svg {
-  width: 18px;
-  height: 18px;
+.star-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  padding: 5px 5px 5px 10px !important;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text) !important;
+  font-weight: 600 !important;
+}
+.star-btn:hover {
+  border-color: #e3b341;
+}
+.star-btn svg {
+  width: 16px;
+  height: 16px;
   fill: currentColor;
-  display: block;
+}
+.star-btn span:first-of-type {
+  padding-right: 5px;
+}
+.star-count {
+  padding: 1px 7px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.star-hero [aria-hidden],
+.star-big [aria-hidden] {
+  color: #e3b341;
+}
+.star-hero .star-count,
+.star-big .star-count {
+  margin-left: 4px;
 }
 
 .theme-toggle {
@@ -293,7 +326,7 @@ main {
 }
 
 @media (max-width: 720px) {
-  .site-header nav a:not(.gh) {
+  .site-header nav a:not(.star-btn) {
     display: none;
   }
 }
@@ -1244,4 +1277,54 @@ dialog p {
   width: 0;
   height: 0;
   border: 0;
+}
+
+/* ---------- GitHub stars ---------- */
+
+.star-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1120px, 100% - 32px);
+  margin: 104px auto 0;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(500px 200px at 100% 0%, color-mix(in srgb, #e3b341 14%, transparent), transparent 70%),
+    var(--surface);
+  box-shadow: var(--shadow-md);
+}
+.star-cta h2 {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+}
+.star-cta p {
+  max-width: 560px;
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+.star-big {
+  height: 48px;
+  padding: 0 22px;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--ink-text);
+}
+.star-big .star-count {
+  background: color-mix(in srgb, var(--ink-text) 18%, transparent);
+  color: inherit;
+}
+.star-nudge {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.star-nudge a {
+  color: var(--text);
+  font-weight: 600;
+}
+.site-footer {
+  margin-top: 56px;
 }

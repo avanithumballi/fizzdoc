@@ -284,6 +284,44 @@ test('makes a scanned PDF searchable', async ({ page }) => {
   expect((await downloadBytes(page)).bytes.toString()).toMatch(/invoice/i);
 });
 
+test('numbers and watermarks PDF pages, and converts between image formats', async ({ page }) => {
+  await page.goto('/add-page-numbers-to-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('mixed'));
+  await page.locator('select[name="style"]').selectOption('page-of');
+  await page.getByRole('button', { name: 'Add page numbers' }).click();
+  await expect(page.locator('#status')).toContainText('3 pages numbered');
+  expect((await downloadBytes(page)).name).toBe('mixed-numbered.pdf');
+
+  await page.goto('/watermark-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('mixed'));
+  await page.locator('input[name="text"]').fill('DRAFT');
+  await page.getByRole('button', { name: 'Add watermark' }).click();
+  await expect(page.locator('#status')).toContainText('3 pages watermarked');
+
+  await page.goto('/pdf-to-png/');
+  await page.locator('#file-input').setInputFiles(fixture('text-only'));
+  await page.getByRole('button', { name: 'Convert to PNG' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  expect((await downloadBytes(page)).name).toMatch(/\.(png|zip)$/);
+
+  await page.goto('/png-to-jpg/');
+  await expect(page.locator('select[name="format"]')).toHaveCount(0);
+  await page.locator('#file-input').setInputFiles(file('photo.png'));
+  await page.getByRole('button', { name: 'Convert to JPG' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  expect((await downloadBytes(page)).name).toMatch(/\.jpg$/);
+});
+
+test('asks for a GitHub star at the top, the bottom and after a download', async ({ page }) => {
+  await page.goto('/');
+  for (const star of [page.locator('.star-btn'), page.locator('.star-hero'), page.locator('.star-big')]) {
+    await expect(star).toHaveAttribute('href', SITE.repo);
+    await expect(star).toHaveAttribute('target', '_blank');
+  }
+  await page.goto('/merge-pdf/');
+  await expect(page.locator('.star-nudge a')).toHaveAttribute('href', SITE.repo);
+});
+
 test('remembers the chosen theme across pages', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto('/');
@@ -331,6 +369,7 @@ for (const { path, tool } of PAGES) {
     expect(html.match(/<h1>/g)).toHaveLength(1);
     const ld = JSON.parse(/<script type="application\/ld\+json">(.*?)<\/script>/s.exec(html)![1]);
     expect(ld['@graph'].map((n: { '@type': string }) => n['@type'])).toContain('FAQPage');
+    expect(html).toContain(`<meta property="og:image" content="${SITE.url}/og.png">`);
     if (tool) expect(html).toContain(`data-tool="${tool.op}"`);
   });
 }
@@ -340,4 +379,7 @@ test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   for (const { path } of PAGES) expect(sitemap).toContain(`<loc>${SITE.url}${path}</loc>`);
   expect(await (await request.get('/robots.txt')).text()).toContain(`Sitemap: ${SITE.url}/sitemap.xml`);
   expect(await (await request.get('/llms.txt')).text()).toContain('## Tools');
+  expect(await (await request.get('/llms-full.txt')).text()).toContain('## Watermark PDF');
+  expect(await (await request.get('/robots.txt')).text()).toContain('User-agent: GPTBot\nAllow: /');
+  expect((await request.get('/og.png')).headers()['content-type']).toBe('image/png');
 });

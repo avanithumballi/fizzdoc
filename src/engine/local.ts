@@ -10,7 +10,7 @@ export interface Output {
 }
 
 export class LocalError extends Error {
-  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'NO_TEXT') {
+  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'NO_TEXT' | 'NO_WATERMARK') {
     super(code);
   }
 }
@@ -109,8 +109,8 @@ export async function imagesToPdf(files: File[]): Promise<Output> {
   };
 }
 
-/** Renders every page to a JPEG at 150 DPI with pdf.js; several pages come back as a ZIP. */
-export async function pdfToImages(file: File): Promise<Output> {
+/** Renders every page to a JPEG (or PNG) at 150 DPI with pdf.js; several pages come back as a ZIP. */
+export async function pdfToImages(file: File, format: 'jpg' | 'png' = 'jpg'): Promise<Output> {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs'); // legacy = polyfilled for browsers from 2023 on
   pdfjs.GlobalWorkerOptions.workerSrc = (await import('pdfjs-dist/legacy/build/pdf.worker.min.mjs?url')).default;
   let doc;
@@ -132,12 +132,12 @@ export async function pdfToImages(file: File): Promise<Output> {
     context.fillStyle = '#fff'; // JPEG has no transparency; PDFs assume white paper.
     context.fillRect(0, 0, canvas.width, canvas.height);
     await page.render({ canvas: canvas as unknown as HTMLCanvasElement, canvasContext: context as unknown as CanvasRenderingContext2D, viewport }).promise;
-    last = await canvas.convertToBlob({ type: 'image/jpeg', quality: 0.9 });
-    images[`${name}-page-${String(number).padStart(3, '0')}.jpg`] = [await bytes(last), { level: 0 }];
+    last = await canvas.convertToBlob(format === 'png' ? { type: 'image/png' } : { type: 'image/jpeg', quality: 0.9 });
+    images[`${name}-page-${String(number).padStart(3, '0')}.${format}`] = [await bytes(last), { level: 0 }];
     page.cleanup();
   }
   const pages = doc.numPages;
   await doc.loadingTask.destroy();
-  if (pages === 1) return { blob: last!, name: `${name}.jpg`, summary: '1 image' };
+  if (pages === 1) return { blob: last!, name: `${name}.${format}`, summary: '1 image' };
   return { blob: new Blob([zipSync(images) as Uint8Array<ArrayBuffer>], { type: 'application/zip' }), name: `${name}-images.zip`, summary: `${pages} images` };
 }

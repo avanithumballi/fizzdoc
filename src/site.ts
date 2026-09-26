@@ -21,12 +21,16 @@ export type ToolOp =
   | 'excel-to-csv'
   | 'csv-to-excel'
   | 'image-convert'
-  | 'image-ocr';
+  | 'image-ocr'
+  | 'page-numbers'
+  | 'watermark-pdf';
 export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image';
 
 export const SITE = {
   name: 'Fizzdoc',
-  url: 'https://fizzdoc.in',
+  // ponytail: switch to 'https://fizzdoc.in' once that domain is connected in Cloudflare Pages;
+  // canonical URLs must point at an address that actually serves the pages.
+  url: 'https://fizzdoc.pages.dev',
   repo: 'https://github.com/kingrishabdugar/localpdf',
   tagline: 'Private PDF, Word, Excel, PowerPoint and image tools that never upload your files',
 };
@@ -670,6 +674,159 @@ TOOLS.push(
       PRIVACY_FAQ[1],
     ],
     input: { accept: 'image/*', kind: 'image', choose: 'Choose an image' },
+  },
+);
+
+// Popular searches that are the same job with a different file type get their own page and copy.
+const IMAGE_CONVERSIONS = [
+  { from: 'PNG', to: 'JPG', format: 'jpeg', accept: 'image/png,.png', why: 'JPG files are much smaller for photos and open everywhere, including old software and upload forms that reject PNG.' },
+  { from: 'JPG', to: 'PNG', format: 'png', accept: 'image/jpeg,.jpg,.jpeg', why: 'PNG is lossless, so the picture will not lose any more quality when you edit and save it again.' },
+  { from: 'WebP', to: 'JPG', format: 'jpeg', accept: 'image/webp,.webp', why: 'Many apps, printers and upload forms still cannot open WebP images saved from websites. JPG works everywhere.' },
+  { from: 'JPG', to: 'WebP', format: 'webp', accept: 'image/jpeg,.jpg,.jpeg', why: 'WebP images are usually 25–35% smaller than JPG at the same visual quality, which makes websites load faster.' },
+] as const;
+
+for (const c of IMAGE_CONVERSIONS) {
+  TOOLS.push({
+    op: 'image-convert',
+    format: 'image',
+    slug: `${c.from.toLowerCase()}-to-${c.to.toLowerCase()}`,
+    name: `${c.from} to ${c.to}`,
+    summary: `Convert ${c.from} images to ${c.to} in bulk.`,
+    action: `Convert to ${c.to}`,
+    title: `${c.from} to ${c.to} Converter — Free, No Upload | Fizzdoc`,
+    description: `Convert ${c.from} images to ${c.to} in your browser, one or many at once. Fast, free, no watermark, and your pictures are never uploaded.`,
+    h1: `Convert ${c.from} to ${c.to} — privately`,
+    lede: `${c.why} Fizzdoc converts your ${c.from} files right on your device.`,
+    steps: [`Add one or more ${c.from} images.`, c.format === 'png' ? 'Nothing to set: PNG is lossless.' : 'Pick a quality, or keep the default.', `Click “Convert to ${c.to}” and download.`],
+    faq: [
+      PRIVACY_FAQ[0],
+      [`Why convert ${c.from} to ${c.to}?`, c.why],
+      ['Can I convert many images at once?', 'Yes. Add as many as you like; several images download together as one ZIP file.'],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: c.accept, kind: c.from, choose: `Choose ${c.from} images`, multiple: true },
+    preset: { mode: 'convert', format: c.format },
+  });
+}
+
+TOOLS.push(
+  {
+    op: 'page-numbers',
+    format: 'pdf',
+    slug: 'add-page-numbers-to-pdf',
+    name: 'Add Page Numbers',
+    summary: 'Number every page of a PDF.',
+    action: 'Add page numbers',
+    title: 'Add Page Numbers to PDF — Free, No Upload | Fizzdoc',
+    description:
+      'Add page numbers to a PDF in your browser. Choose the position, the starting number and “Page 1 of 10” style. Nothing is uploaded. Free, no sign-up.',
+    h1: 'Add page numbers to a PDF',
+    lede: 'Number the pages of a report, thesis or contract in seconds. Pick where the numbers go and what number to start from — on your device.',
+    steps: ['Add one PDF file.', 'Choose the position, style and first number.', 'Click “Add page numbers” and download.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Can I start from a number other than 1?', 'Yes. Set “Start at” to any number — useful when the PDF is a chapter of a longer document.'],
+      ['Does it change my content?', 'No. The numbers are added on top of each page; everything else stays exactly as it was.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'watermark-pdf',
+    format: 'pdf',
+    slug: 'watermark-pdf',
+    name: 'Watermark PDF',
+    summary: 'Stamp text like CONFIDENTIAL across every page.',
+    action: 'Add watermark',
+    title: 'Watermark PDF — Add Text Watermark, No Upload | Fizzdoc',
+    description:
+      'Add a text watermark such as CONFIDENTIAL or DRAFT across every page of a PDF, in your browser. Choose the opacity. Nothing is uploaded. Free.',
+    h1: 'Add a watermark to a PDF',
+    lede: 'Mark a document as CONFIDENTIAL, DRAFT or with your name before sharing it. The watermark is drawn diagonally across every page.',
+    steps: ['Add one PDF file.', 'Type the watermark text and choose how see-through it is.', 'Click “Add watermark” and download.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Can the watermark be removed?', 'A text watermark discourages copying but a determined person with a PDF editor can remove it. For stronger protection, also use Protect PDF.'],
+      ['Which characters can I use?', 'Letters, numbers and common symbols in Latin script. Other scripts are not supported by the standard PDF fonts.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'pdf-to-jpg',
+    format: 'pdf',
+    slug: 'pdf-to-png',
+    name: 'PDF to PNG',
+    summary: 'Save every page as a lossless PNG image.',
+    action: 'Convert to PNG',
+    title: 'PDF to PNG Converter — Lossless, No Upload | Fizzdoc',
+    description:
+      'Convert each page of a PDF to a sharp, lossless PNG image in your browser. Many pages download as one ZIP. Nothing is uploaded. Free.',
+    h1: 'Convert PDF pages to PNG images',
+    lede: 'Render every page to a crisp, lossless PNG — ideal for slides, documentation and screenshots with sharp text. Nothing leaves your device.',
+    steps: ['Add one PDF file.', 'Click “Convert to PNG”.', 'Download the image, or a ZIP with one PNG per page.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['PNG or JPG?', 'PNG keeps text and lines perfectly sharp but files are larger. For photos and scans, PDF to JPG gives much smaller files.'],
+      PRIVACY_FAQ[1],
+    ],
+    preset: { format: 'png' },
+  },
+  {
+    op: 'split',
+    format: 'pdf',
+    slug: 'extract-pdf-pages',
+    name: 'Extract PDF Pages',
+    summary: 'Save selected pages as a new PDF.',
+    action: 'Extract pages',
+    title: 'Extract Pages from PDF — Free, Private, No Upload | Fizzdoc',
+    description:
+      'Pull specific pages out of a PDF into a new file, in your browser. Type pages like 2, 5-7. Links and form fields are kept. Nothing is uploaded.',
+    h1: 'Extract pages from a PDF',
+    lede: 'Need just the signature page or one chapter? Type the pages you want and get them as a new PDF — the original stays untouched.',
+    steps: ['Add one PDF file.', 'Type the pages to extract, for example “2, 5-7”.', 'Click “Extract pages” and download the new PDF.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Is the quality reduced?', 'No. Pages are copied as they are — nothing is re-rendered or re-compressed.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'split',
+    format: 'pdf',
+    slug: 'reorder-pdf-pages',
+    name: 'Reorder PDF Pages',
+    summary: 'Put the pages of a PDF in a new order.',
+    action: 'Reorder pages',
+    title: 'Reorder PDF Pages (Rearrange) — Free, No Upload | Fizzdoc',
+    description:
+      'Rearrange the pages of a PDF by typing the order you want, like 3, 1-2, 4-. Runs in your browser; your file is never uploaded. Free, no sign-up.',
+    h1: 'Reorder the pages of a PDF',
+    lede: 'Fix pages that were scanned out of order or move an appendix to the front. Type the new order and download the rearranged PDF.',
+    steps: ['Add one PDF file.', 'Type the new page order, for example “3, 1-2, 4-”.', 'Click “Reorder pages” and download.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['How do I write the order?', 'List pages and ranges separated by commas. “4-” means page 4 to the end. Pages you leave out are left out of the new file.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'jpg-to-pdf',
+    format: 'pdf',
+    slug: 'png-to-pdf',
+    name: 'PNG to PDF',
+    summary: 'Turn PNG screenshots and images into one PDF.',
+    action: 'Create PDF',
+    title: 'PNG to PDF Converter — Free, No Upload | Fizzdoc',
+    description:
+      'Combine PNG screenshots and images into a single PDF in your browser, one page per image, at full quality. Nothing is uploaded. No watermark.',
+    h1: 'Convert PNG images to PDF',
+    lede: 'Put screenshots, diagrams or scanned pages saved as PNG into one tidy PDF — sharp, lossless and in the order you choose.',
+    steps: ['Add one or more PNG images.', 'Put them in order with the ↑ and ↓ buttons.', 'Click “Create PDF” and download it.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Is transparency kept?', 'Yes. PNG images are placed in the PDF as they are, including transparent areas.'],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: 'image/png,.png', kind: 'PNG', choose: 'Choose PNG images', multiple: true },
   },
 );
 

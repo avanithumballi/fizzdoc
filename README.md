@@ -4,12 +4,15 @@
 
 **Private PDF, Word, Excel, PowerPoint and image tools that never upload your files.**
 
-**[fizzdoc.in](https://fizzdoc.in)** · Edit, compress, convert and OCR PDFs; convert Word, Excel and images — entirely in your browser.<br>
+**[fizzdoc.pages.dev](https://fizzdoc.pages.dev)** · Edit, compress, convert and OCR PDFs; convert Word, Excel and images — entirely in your browser.<br>
 No server, no sign-up, no watermark. Open source.
 
 [![CI](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml/badge.svg)](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-4f46e5.svg)](LICENSE)
 ![Bytes uploaded: 0](https://img.shields.io/badge/bytes%20uploaded-0-16a34a.svg)
+[![GitHub stars](https://img.shields.io/github/stars/kingrishabdugar/localpdf?style=social)](https://github.com/kingrishabdugar/localpdf/stargazers)
+
+**If Fizzdoc saves you time, please ⭐ star this repo — it helps more people find a private alternative.**
 
 </div>
 
@@ -41,11 +44,11 @@ Fizzdoc also warns when a document's digital signatures will stop validating or 
 
 | Format | Tools |
 |---|---|
-| PDF | Edit PDF (change text in place) · Compress · Merge · Split · Rotate · Delete pages · Unlock · Protect (AES-256) · Remove metadata · OCR (searchable PDF) · PDF → Word · PDF → PowerPoint · PDF → JPG · PDF → Text · PDF → Markdown · JPG → PDF · Text → PDF · Markdown → PDF |
+| PDF | Edit PDF (change text in place) · Compress · Merge · Split · Extract pages · Reorder pages · Rotate · Delete pages · Add page numbers · Watermark · Unlock · Protect (AES-256) · Remove metadata · OCR (searchable PDF) · PDF → Word · PDF → PowerPoint · PDF → JPG · PDF → PNG · PDF → Text · PDF → Markdown · JPG → PDF · PNG → PDF · Text → PDF · Markdown → PDF |
 | Word (.docx) | Word → PDF · Compress · Remove metadata · Extract images |
 | Excel (.xlsx) | Excel → CSV · CSV → Excel · Compress · Remove metadata · Extract images |
 | PowerPoint (.pptx) | Compress · Remove metadata · Extract images |
-| Images | Compress · Resize (larger or smaller) · Convert (JPG / PNG / WebP) · Image to text (OCR, select text on the picture) |
+| Images | Compress · Resize (larger or smaller) · Convert (JPG / PNG / WebP) · PNG → JPG · JPG → PNG · WebP → JPG · JPG → WebP · Image to text (OCR, select text on the picture) |
 
 Google Docs, Sheets and Slides work too: download the file as .docx, .xlsx or .pptx (File → Download) and use the matching tool. Nothing is sent to Google.
 

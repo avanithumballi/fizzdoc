@@ -34,6 +34,7 @@ const ERRORS: Record<Failure, string> = {
   PDF_PASSWORD: 'This PDF is password-protected. Remove the password with Unlock PDF first.',
   BAD_SIZE: 'The width and height must each be between 1 and 16,384 pixels.',
   NO_TEXT: 'This PDF has no text to extract — it is probably a scanned image. Run OCR PDF first, then try again.',
+  NO_WATERMARK: 'Type the watermark text (letters, numbers and common symbols).',
   ENGINE_FAILED: 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
 };
 
@@ -117,7 +118,15 @@ function setUp(op: ToolOp) {
   // Every tool that runs outside the qpdf worker. Engines load on first use.
   const LOCAL: Partial<Record<ToolOp, LocalJob>> = {
     'jpg-to-pdf': async (f) => (await import('./engine/local')).imagesToPdf(f),
-    'pdf-to-jpg': async (f) => (await import('./engine/local')).pdfToImages(f[0]),
+    'pdf-to-jpg': async (f, o) => (await import('./engine/local')).pdfToImages(f[0], o.format === 'png' ? 'png' : 'jpg'),
+    'page-numbers': async (f, o) =>
+      (await import('./engine/stamp')).addPageNumbers(f[0], {
+        position: o.position as 'bottom-center' | 'bottom-right' | 'top-right',
+        start: number(o.start),
+        style: o.style === 'page-of' ? 'page-of' : 'number',
+      }),
+    'watermark-pdf': async (f, o) =>
+      (await import('./engine/stamp')).watermarkPdf(f[0], { text: o.text ?? '', opacity: (number(o.opacity) ?? 20) / 100 }),
     'office-clean': async (f) => (await import('./engine/local')).cleanOffice(f[0]),
     'office-images': async (f) => (await import('./engine/local')).extractOfficeImages(f[0]),
     'compress-pdf': async (f, o) => (await import('./engine/compress')).compressPdf(f[0], { level: o.level === 'strong' ? 'strong' : 'light' }),
