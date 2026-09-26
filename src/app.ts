@@ -197,6 +197,8 @@ function setUp(op: ToolOp) {
     result.hidden = true;
     warnings.replaceChildren();
     if (op === 'image-ocr') viewer?.replaceChildren();
+    printFrame?.remove();
+    printFrame = undefined;
   }
 
   function render() {

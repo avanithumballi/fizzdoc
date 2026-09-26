@@ -42,7 +42,7 @@ function parseAttrs(source: string): Record<string, string> {
 export function parseXml(xml: string): XNode {
   const root: XNode = { tag: '#root', attrs: {}, children: [] };
   const stack: XNode[] = [root];
-  const re = /<\?[\s\S]*?\?>|<!--[\s\S]*?-->|<!\[CDATA\[([\s\S]*?)\]\]>|<(\/?)([a-zA-Z_][\w:.-]*)([^>]*?)(\/?)>/g;
+  const re = /<\?[\s\S]*?\?>|<!--[\s\S]*?-->|<!\[CDATA\[([\s\S]*?)\]\]>|<(\/?)([a-zA-Z_][\w:.-]*)((?:[^>"']|"[^"]*"|'[^']*')*?)(\/?)>/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   const push = (node: XNode, text: string) => {
@@ -232,11 +232,11 @@ function renderRun(run: XNode, media: Record<string, string>): string {
   if (vertAlign === 'superscript') content = `<sup>${content}</sup>`;
   if (vertAlign === 'subscript') content = `<sub>${content}</sub>`;
   const color = first(rPr, 'w:color')?.attrs['w:val'];
-  if (color && color !== 'auto') styles.push(`color:#${color}`);
+  if (color && /^[0-9a-f]{6}$/i.test(color)) styles.push(`color:#${color}`);
   const highlight = first(rPr, 'w:highlight')?.attrs['w:val'];
   if (highlight && HIGHLIGHTS[highlight]) styles.push(`background-color:${HIGHLIGHTS[highlight]}`);
   const size = first(rPr, 'w:sz')?.attrs['w:val'];
-  if (size) styles.push(`font-size:${Number(size) / 2}pt`);
+  if (size && Number(size) > 0) styles.push(`font-size:${Number(size) / 2}pt`);
   return styles.length ? `<span style="${styles.join(';')}">${content}</span>` : content;
 }
 
@@ -271,7 +271,7 @@ function renderTable(tbl: XNode, rels: Map<string, Rel>, media: Record<string, s
       } else {
         const shd = first(tcPr ?? tc, 'w:shd')?.attrs['w:fill'];
         const html = el(tc, 'w:p').map((p) => renderParagraph(p, rels, media, new Map(), []).html).join('');
-        const cell: TableCell = { colSpan: gridSpan, rowSpan: 1, shade: shd && shd !== 'auto' ? shd : undefined, html };
+        const cell: TableCell = { colSpan: gridSpan, rowSpan: 1, shade: shd && /^[0-9a-f]{6}$/i.test(shd) ? shd : undefined, html };
         rowCells.push(cell);
         if (vMerge && (vMerge.attrs['w:val'] === 'restart')) open.set(col, cell);
         else open.delete(col);
@@ -299,7 +299,8 @@ function renderParagraph(
   const inline = renderInline(p, rels, media) || '&nbsp;';
   const styleParts: string[] = [];
   const jc = first(pPr ?? p, 'w:jc')?.attrs['w:val'];
-  if (jc) styleParts.push(`text-align:${jc === 'both' ? 'justify' : jc === 'end' ? 'right' : jc === 'start' ? 'left' : jc}`);
+  const align = ({ both: 'justify', distribute: 'justify', start: 'left', end: 'right', left: 'left', right: 'right', center: 'center' } as Record<string, string>)[jc ?? ''];
+  if (align) styleParts.push(`text-align:${align}`);
   const ind = first(pPr ?? p, 'w:ind');
   if (ind?.attrs['w:left']) styleParts.push(`margin-left:${Number(ind.attrs['w:left']) / 20}pt`);
   if (ind?.attrs['w:right']) styleParts.push(`margin-right:${Number(ind.attrs['w:right']) / 20}pt`);
@@ -389,12 +390,12 @@ export async function docxToHtml(file: File): Promise<{ html: string; title: str
   const sectPr = body && first(body, 'w:sectPr');
   const pgSz = sectPr && first(sectPr, 'w:pgSz');
   const pgMar = sectPr && first(sectPr, 'w:pgMar');
-  const inches = (twips?: string) => (twips ? `${(Number(twips) / TWIP_PER_INCH).toFixed(2)}in` : undefined);
+  const inches = (twips?: string) => (twips && Number.isFinite(Number(twips)) ? `${(Number(twips) / TWIP_PER_INCH).toFixed(2)}in` : undefined);
   const pageWidth = inches(pgSz?.attrs['w:w']);
   const pageHeight = inches(pgSz?.attrs['w:h']);
   const pageRule = pageWidth && pageHeight ? `size: ${pageWidth} ${pageHeight};` : '';
   const marginRule = pgMar
-    ? `margin: ${inches(pgMar.attrs['w:top'])} ${inches(pgMar.attrs['w:right'])} ${inches(pgMar.attrs['w:bottom'])} ${inches(pgMar.attrs['w:left'])};`
+    ? `margin: ${['w:top', 'w:right', 'w:bottom', 'w:left'].map((side) => inches(pgMar.attrs[side]) ?? '1in').join(' ')};`
     : 'margin: 1in;';
 
   const coreXml = entries['docProps/core.xml'] && strFromU8(entries['docProps/core.xml']);
@@ -489,7 +490,8 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
   return paragraphs;
 }
 
-const XML_ESCAPE = (s: string) => escapeHtml(s).replace(/\n/g, '</w:t></w:r><w:r><w:br/><w:r><w:t xml:space="preserve">');
+// Control characters are legal in PDF text but not in XML 1.0; Word refuses files that contain them.
+const XML_ESCAPE = (s: string) => escapeHtml(s.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\uFFFE\uFFFF]/g, '')).replace(/\n/g, '</w:t></w:r><w:r><w:br/><w:r><w:t xml:space="preserve">');
 
 function headingStyle(fontSize: number, bodySize: number): 'Title' | 'Heading1' | 'Heading2' | 'Heading3' | null {
   if (fontSize >= bodySize * 1.7) return 'Title';

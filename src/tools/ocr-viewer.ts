@@ -18,7 +18,9 @@ export function showTextOverlay(container: HTMLElement, image: Blob, result: Ocr
   const img = document.createElement('img');
   img.src = url;
   img.alt = '';
+  // Revoke once the image is decoded, or failed to decode: either way the URL is no longer needed.
   img.addEventListener('load', () => URL.revokeObjectURL(url), { once: true });
+  img.addEventListener('error', () => URL.revokeObjectURL(url), { once: true });
   frame.append(img);
 
   const words: { box: HTMLElement; text: HTMLElement }[] = [];

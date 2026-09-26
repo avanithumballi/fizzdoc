@@ -237,52 +237,54 @@ export async function ocrPdf(file: File, onProgress?: (fraction: number) => void
   const scale = RENDER_DPI / 72;
   let recognized = 0;
 
-  await withWorker(undefined, async (worker) => {
-    for (let number = 1; number <= doc.numPages; number++) {
-      const srcPage = await doc.getPage(number);
-      if (await hasRealText(srcPage)) {
+  try {
+    await withWorker(undefined, async (worker) => {
+      for (let number = 1; number <= doc.numPages; number++) {
+        const srcPage = await doc.getPage(number);
+        if (await hasRealText(srcPage)) {
+          srcPage.cleanup();
+          onProgress?.(number / doc.numPages);
+          continue;
+        }
+
+        const viewport = srcPage.getViewport({ scale });
+        const canvas = new OffscreenCanvas(Math.ceil(viewport.width), Math.ceil(viewport.height));
+        const context = canvas.getContext('2d')!;
+        context.fillStyle = '#fff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        await srcPage
+          .render({ canvas: canvas as unknown as HTMLCanvasElement, canvasContext: context as unknown as CanvasRenderingContext2D, viewport })
+          .promise;
+        const blob = await canvas.convertToBlob({ type: 'image/png' });
+        const box: PageBox = { width: srcPage.view[2] - srcPage.view[0], height: srcPage.view[3] - srcPage.view[1], rotation: srcPage.rotate };
+        const originX = srcPage.view[0];
+        const originY = srcPage.view[1];
         srcPage.cleanup();
+
+        const { data } = await worker.recognize(blob, {}, { blocks: true });
+        const target = pages[number - 1];
+        const fontKey = target.node.newFontDictionary(font.name, font.ref);
+        const ops = [pushGraphicsState(), beginText(), setTextRenderingMode(TextRenderingMode.Invisible)];
+        for (const word of flattenWords(data)) {
+          const placed = placeWord({ text: word.text, confidence: word.confidence, bbox: word.bbox }, font, scale, box);
+          if (!placed) continue;
+          const cos = Math.cos(placed.angle);
+          const sin = Math.sin(placed.angle);
+          ops.push(
+            setFontAndSize(fontKey, placed.size),
+            setTextMatrix(cos * placed.hScale, sin * placed.hScale, -sin, cos, placed.x + originX, placed.y + originY),
+            showText(font.encodeText(placed.text)),
+          );
+        }
+        ops.push(endText(), popGraphicsState());
+        target.pushOperators(...ops);
+        recognized++;
         onProgress?.(number / doc.numPages);
-        continue;
       }
-
-      const viewport = srcPage.getViewport({ scale });
-      const canvas = new OffscreenCanvas(Math.ceil(viewport.width), Math.ceil(viewport.height));
-      const context = canvas.getContext('2d')!;
-      context.fillStyle = '#fff';
-      context.fillRect(0, 0, canvas.width, canvas.height);
-      await srcPage
-        .render({ canvas: canvas as unknown as HTMLCanvasElement, canvasContext: context as unknown as CanvasRenderingContext2D, viewport })
-        .promise;
-      const blob = await canvas.convertToBlob({ type: 'image/png' });
-      const box: PageBox = { width: srcPage.view[2] - srcPage.view[0], height: srcPage.view[3] - srcPage.view[1], rotation: srcPage.rotate };
-      const originX = srcPage.view[0];
-      const originY = srcPage.view[1];
-      srcPage.cleanup();
-
-      const { data } = await worker.recognize(blob, {}, { blocks: true });
-      const target = pages[number - 1];
-      const fontKey = target.node.newFontDictionary(font.name, font.ref);
-      const ops = [pushGraphicsState(), beginText(), setTextRenderingMode(TextRenderingMode.Invisible)];
-      for (const word of flattenWords(data)) {
-        const placed = placeWord({ text: word.text, confidence: word.confidence, bbox: word.bbox }, font, scale, box);
-        if (!placed) continue;
-        const cos = Math.cos(placed.angle);
-        const sin = Math.sin(placed.angle);
-        ops.push(
-          setFontAndSize(fontKey, placed.size),
-          setTextMatrix(cos * placed.hScale, sin * placed.hScale, -sin, cos, placed.x + originX, placed.y + originY),
-          showText(font.encodeText(placed.text)),
-        );
-      }
-      ops.push(endText(), popGraphicsState());
-      target.pushOperators(...ops);
-      recognized++;
-      onProgress?.(number / doc.numPages);
-    }
-  });
-
-  await doc.loadingTask.destroy();
+    });
+  } finally {
+    await doc.loadingTask.destroy();
+  }
   const saved = await pdf.save();
   const name = `${file.name.replace(/\.[^.]+$/, '')}-ocr.pdf`;
   return {

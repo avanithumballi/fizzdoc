@@ -26,6 +26,32 @@ describe('parseXml', () => {
   });
 });
 
+describe('review fixes', () => {
+  it('keeps ">" inside quoted attribute values', () => {
+    const root = parseXml('<a href="x?a=1>b" t=\'>\'><b/></a>');
+    const a = root.children[0];
+    expect(a.attrs).toEqual({ href: 'x?a=1>b', t: '>' });
+    expect(a.children[0].tag).toBe('b');
+  });
+
+  it('never lets run or cell formatting inject markup', async () => {
+    const { zipSync, strToU8 } = await import('fflate');
+    const run = (rPr: string) => `<w:r><w:rPr>${rPr}</w:rPr><w:t>x</w:t></w:r>`;
+    const body = `<w:p><w:pPr><w:jc w:val='left;x:y"'/></w:pPr>${run(`<w:color w:val='ff0000" onclick="alert(1)'/>`)}</w:p>`;
+    const docx = zipSync({
+      '[Content_Types].xml': strToU8('<Types/>'),
+      'word/document.xml': strToU8(`<w:document xmlns:w="w"><w:body>${body}</w:body></w:document>`),
+    });
+    const { html } = await docxToHtml(new File([docx], 'evil.docx'));
+    expect(html).not.toMatch(/onclick|x:y/);
+  });
+
+  it('drops XML-invalid control characters from converted PDF text', () => {
+    const { zipped } = buildDocxPackage([[{ text: 'a\u0000b\u0007c', fontSize: 12, bold: false, italic: false, bullet: false }]], { widthPt: 612, heightPt: 792 }, 'x');
+    expect(strFromU8(unzipSync(zipped)['word/document.xml'])).toContain('abc');
+  });
+});
+
 describe('docxToHtml', () => {
   it('rejects non-Office files', async () => {
     await expect(docxToHtml(file('photo.png'))).rejects.toThrow('NOT_OFFICE');
