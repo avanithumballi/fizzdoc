@@ -151,6 +151,13 @@ test('resizes and converts images with the chosen options', async ({ page }) => 
   await page.getByRole('button', { name: 'Convert images' }).click();
   await expect(page.locator('#status')).toContainText('Done — 2 images');
   expect((await downloadBytes(page)).name).toBe('images-resized.zip');
+
+  // Compressing an already-small image never makes it bigger.
+  await page.goto('/compress-image/');
+  await page.locator('#file-input').setInputFiles(file('photo.jpg'));
+  await page.locator('input[name="quality"]').fill('100');
+  await page.getByRole('button', { name: 'Compress images' }).click();
+  expect((await downloadBytes(page)).bytes.length).toBeLessThanOrEqual(readFileSync(file('photo.jpg')).length);
 });
 
 test('converts PDFs to text, Markdown, Word and PowerPoint', async ({ page }) => {
@@ -216,6 +223,13 @@ test('edits PDF text in place and saves on the device', async ({ page, baseURL }
   await page.goto('/edit-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('text-only'));
   const viewer = page.locator('#viewer');
+  const undo = page.getByRole('button', { name: 'Undo' });
+  // Undo while still typing reverts that edit, so only the next one is saved.
+  await viewer.locator('.edit-hitbox').nth(1).click();
+  await page.keyboard.type('Oops');
+  await expect(undo).toBeEnabled();
+  await undo.click();
+  await expect(undo).toBeDisabled();
   await viewer.locator('.edit-hitbox').first().click();
   await page.keyboard.press('ControlOrMeta+A');
   await page.keyboard.type('Replaced text');

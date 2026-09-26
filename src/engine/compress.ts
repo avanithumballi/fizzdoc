@@ -270,6 +270,12 @@ function uniqueName(used: Set<string>, name: string) {
   return alt;
 }
 
+/** True if an image file carries EXIF or XMP metadata (JPEG APP1, PNG eXIf/iTXt, WebP EXIF/XMP chunks). */
+function hasMetadata(data: Uint8Array) {
+  const head = new TextDecoder('latin1').decode(data.subarray(0, 256 * 1024));
+  return /Exif\0\0|eXIf|EXIF|XMP |x:xmpmeta/.test(head);
+}
+
 /** Resizes and/or recompresses one or more images; metadata such as EXIF/GPS is dropped as a side effect of re-encoding. */
 export async function convertImages(files: File[], options: ConvertOptions): Promise<Output> {
   if (options.width !== undefined && (options.width < 1 || options.width > 16384)) throw new LocalError('BAD_SIZE');
@@ -301,7 +307,12 @@ export async function convertImages(files: File[], options: ConvertOptions): Pro
     ctx.imageSmoothingQuality = 'high';
     ctx.drawImage(resized, 0, 0, size.width, size.height);
     const blob = await canvas.convertToBlob(type === 'image/png' ? { type } : { type, quality: options.quality });
-    const data = await bytes(blob);
+    let data = await bytes(blob);
+    // Same format and size but no smaller: keep the original, unless it carries EXIF/XMP (e.g. GPS) that re-encoding strips.
+    if (type === file.type && resized === bitmap && data.length >= file.size) {
+      const original = await bytes(file);
+      if (!hasMetadata(original)) data = original;
+    }
     totalBefore += file.size;
     totalAfter += data.length;
     const extension = IMAGE_EXT[type] ?? 'png';
