@@ -222,6 +222,7 @@ main {
   width: 16px;
   height: 16px;
   fill: var(--ink-text);
+  color: var(--ink-text);
 }
 
 .site-header nav {

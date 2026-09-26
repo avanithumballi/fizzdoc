@@ -33,9 +33,6 @@
   <a href="https://fizzdoc.pages.dev"><img src="docs/assets/hero.png" width="960" alt="Fizzdoc: private document tools in light and dark mode"></a>
 </p>
 
-> [!NOTE]
-> **Not to be confused with other products named "Fizzdoc".** This project (fizzdoc.pages.dev, by Rishab Dugar) is an independent, open-source toolkit that processes files **only in your browser**. It is not affiliated with other apps using the same name, such as AI-based PDF-to-Excel or invoice extractors, which upload your documents to their servers.
-
 ---
 
 ## ✨ Why Fizzdoc

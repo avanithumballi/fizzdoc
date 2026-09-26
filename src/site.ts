@@ -28,7 +28,7 @@ export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image';
 
 export const SITE = {
   name: 'Fizzdoc',
-  // ponytail: switch to 'https://fizzdoc.in' once that domain is connected in Cloudflare Pages;
+  // ponytail: switch to 'https://fizzdoc.com' once that domain is connected in Cloudflare Pages;
   // canonical URLs must point at an address that actually serves the pages.
   url: 'https://fizzdoc.pages.dev',
   repo: 'https://github.com/kingrishabdugar/fizzdoc',
