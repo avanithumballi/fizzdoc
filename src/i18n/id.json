@@ -1,0 +1,1572 @@
+{
+  "ui": {
+    "nav.label": "Utama",
+    "nav.home": "Beranda Fizzdoc",
+    "nav.theme": "Ganti tema warna",
+    "nav.star": "★ Star",
+    "nav.starAria": "Beri bintang Fizzdoc di GitHub",
+    "lang.label": "Bahasa",
+    "lang.tip": "Lebih suka bahasa lain? Pilih di sini.",
+    "lang.tipClose": "Tutup",
+    "footer.about": "Alat dokumen yang privat. File Anda diproses di perangkat Anda dan tidak pernah diunggah.",
+    "footer.license": "Open source (MIT)",
+    "footer.builtOn": "Dibangun dengan qpdf, pdf.js, dan pdf-lib",
+    "star.title": "Gratis dan open source. Selamanya.",
+    "star.text": "Tanpa iklan, tanpa akun, tanpa server yang mengintip file Anda. Jika Fizzdoc menghemat waktu Anda, beri bintang di GitHub agar lebih banyak orang menemukannya.",
+    "star.button": "Beri Bintang Fizzdoc di GitHub",
+    "star.hero": "Beri Bintang di GitHub",
+    "star.nudge": "Fizzdoc membantu Anda? {link} — gratis dan membantu orang lain menemukannya.",
+    "star.nudgeLink": "★ Beri bintang di GitHub",
+    "format.pdf": "PDF",
+    "format.word": "Word",
+    "format.excel": "Excel",
+    "format.powerpoint": "PowerPoint",
+    "format.image": "Gambar",
+    "group.title": "Alat {format}",
+    "home.eyebrow": "0 byte diunggah · Open source · Gratis",
+    "home.cta": "Gabung PDF",
+    "home.browse": "Jelajahi semua {n} alat",
+    "home.formats": "Format yang didukung",
+    "home.google": "+ Google Docs, Sheets & Slides",
+    "home.chip": "Diproses di perangkat ini",
+    "home.toolsTitle": "Semua alat, privat secara default",
+    "home.toolsLede": "Pilih alat. File Anda diproses di perangkat ini dan tidak pernah menyentuh server.",
+    "home.whatTitle": "Apa itu {name}?",
+    "tool.eyebrow": "Berjalan di perangkat Anda · 0 byte diunggah",
+    "tool.how": "Cara menggunakan {tool}",
+    "tool.more": "Alat privat lainnya",
+    "crumbs.label": "Navigasi breadcrumb",
+    "faq.title": "Pertanyaan yang sering diajukan",
+    "proof.title": "Privat sejak dirancang — dan Anda bisa memeriksanya",
+    "proof.lede": "File Anda tidak pernah diunggah, karena memang tidak ada tempat untuk mengunggahnya.",
+    "proof.noUpload": "Tidak ada langkah unggah",
+    "proof.noUploadText": "File dibaca dan ditulis di dalam tab browser ini. Tidak ada server yang bisa menerimanya.",
+    "proof.csp": "Browser yang memastikannya",
+    "proof.cspText": "Content Security Policy halaman ini hanya mengizinkan koneksi kembali ke situs ini, yang hanya menyajikan aplikasinya sendiri.",
+    "proof.check": "Buktikan sendiri",
+    "proof.checkText": "Buka developer tools, perhatikan tab Network, lalu jalankan sebuah proses: tidak ada request yang membawa dokumen Anda.",
+    "proof.open": "Open source",
+    "proof.openText": "Setiap baris kode ada di {github}, dibangun dengan {engines}.",
+    "ws.choosePdf": "Pilih file PDF",
+    "ws.choosePdfs": "Pilih file-file PDF",
+    "ws.chooseImage": "Pilih gambar",
+    "ws.chooseImages": "Pilih gambar-gambar",
+    "ws.chooseFile": "Pilih file {ext}",
+    "ws.chooseFiles": "Pilih file-file {ext}",
+    "ws.dropOne": "atau letakkan di sini · tidak pernah meninggalkan perangkat ini",
+    "ws.dropMany": "atau letakkan di sini · tidak pernah meninggalkan perangkat ini",
+    "ws.files": "File yang dipilih",
+    "ws.reorder": "Seret file untuk mengubah urutan, atau gunakan tombol panah.",
+    "ws.rotation": "Rotasi",
+    "ws.rot90": "90° searah jarum jam",
+    "ws.rot180": "180°",
+    "ws.rot270": "90° berlawanan arah jarum jam",
+    "ws.pagesKeep": "Halaman yang disimpan",
+    "ws.pagesDelete": "Halaman yang dihapus",
+    "ws.pagesRotate": "Halaman yang diputar (opsional)",
+    "ws.pagesAll": "Semua halaman",
+    "ws.pagesExtract": "Halaman yang diekstrak",
+    "ws.pagesOrder": "Urutan halaman baru",
+    "ws.example": "mis. {example}",
+    "ws.password": "Kata sandi",
+    "ws.repeat": "Ulangi kata sandi",
+    "ws.unlockNote": "Hanya buka kunci file yang memang berhak Anda ubah.",
+    "ws.protectNote": "Kata sandi yang terlupa tidak dapat dipulihkan. Simpan di tempat yang aman.",
+    "ws.cancel": "Batal",
+    "ws.download": "Unduh",
+    "ws.compression": "Kompresi",
+    "ws.balanced": "Seimbang — kualitas terbaik",
+    "ws.strong": "Kuat — ukuran file terkecil",
+    "ws.saveAs": "Simpan sebagai",
+    "ws.fmtOriginal": "Format sama seperti tiap file",
+    "ws.fmtJpeg": "JPG — foto, bisa dibuka di mana saja",
+    "ws.fmtWebp": "WebP — paling kecil",
+    "ws.fmtPng": "PNG — lossless",
+    "ws.quality": "Kualitas",
+    "ws.width": "Lebar (px)",
+    "ws.height": "Tinggi (px)",
+    "ws.scale": "Atau skala (%)",
+    "ws.auto": "Otomatis",
+    "ws.keepAspect": "Pertahankan rasio aspek",
+    "ws.position": "Posisi",
+    "ws.bottomCenter": "Tengah bawah",
+    "ws.bottomRight": "Kanan bawah",
+    "ws.topRight": "Kanan atas",
+    "ws.style": "Gaya",
+    "ws.pageOf": "Halaman 1 dari 10",
+    "ws.startAt": "Mulai dari",
+    "ws.wmText": "Teks watermark",
+    "ws.wmDefault": "RAHASIA",
+    "ws.opacity": "Opasitas",
+    "pw.title": "PDF ini dilindungi kata sandi",
+    "pw.titleFile": "“{file}” dilindungi kata sandi",
+    "pw.hint": "Masukkan kata sandinya. Kata sandi tetap ada di perangkat ini.",
+    "pw.retry": "Kata sandi itu tidak berhasil. Coba lagi ({n} dari 3).",
+    "pw.unlock": "Buka Kunci",
+    "app.working": "Memproses… file Anda tetap di perangkat ini.",
+    "app.workingPct": "Memproses… {pct}% — file Anda tetap di perangkat ini.",
+    "app.done": "Selesai — {summary}, {size}. Dibuat di perangkat ini.",
+    "app.ready": "Siap — pilih “Simpan sebagai PDF” di jendela cetak, lalu klik Simpan. Dibuat di perangkat ini.",
+    "app.saveAsPdf": "Simpan sebagai PDF",
+    "app.downloadExt": "Unduh {ext}",
+    "app.canceled": "Dibatalkan. Tidak ada yang diubah.",
+    "app.wrongType": "Jenis file itu tidak bisa digunakan dengan alat ini.",
+    "app.tooBig": "Total file ini {size}, lebih besar dari yang bisa diproses perangkat ini dengan aman ({max}).",
+    "app.moveUp": "Naikkan",
+    "app.moveDown": "Turunkan",
+    "app.remove": "Hapus",
+    "error.INVALID_PDF": "File ini tidak dapat dibaca sebagai PDF. Mungkin rusak atau memang bukan PDF.",
+    "error.BAD_PASSWORD": "Kata sandi itu tidak berhasil setelah tiga kali percobaan. Tidak ada yang diubah.",
+    "error.PASSWORD_REQUIRED": "PDF ini memerlukan kata sandinya untuk melanjutkan. Tidak ada yang diubah.",
+    "error.BAD_RANGE": "Periksa nomor halamannya. Gunakan angka dan rentang seperti “1-3, 8” sesuai jumlah halaman dokumen.",
+    "error.NOT_ENCRYPTED": "PDF ini tidak dilindungi kata sandi, jadi tidak ada yang perlu dibuka kuncinya.",
+    "error.UNSUPPORTED_XFA": "PDF ini menggunakan formulir XFA dinamis, yang tidak dapat diedit dengan aman. File Anda tidak diubah.",
+    "error.NO_PAGES_LEFT": "Itu akan menghapus semua halaman. Sisakan setidaknya satu halaman.",
+    "error.WRONG_FILE_COUNT": "Tambahkan jumlah file yang dibutuhkan alat ini.",
+    "error.PROCESSING_FAILED": "Terjadi kesalahan saat memproses. File asli Anda tidak berubah.",
+    "error.NO_PASSWORD": "Masukkan kata sandi yang ingin Anda tambahkan.",
+    "error.PASSWORDS_DIFFER": "Kedua kata sandi tidak cocok.",
+    "error.NOT_OFFICE": "File ini bukan dokumen Word, Excel, atau PowerPoint yang valid.",
+    "error.NO_IMAGES": "Dokumen ini tidak memiliki gambar yang disematkan.",
+    "error.BAD_IMAGE": "Salah satu gambar tidak dapat dibaca. Coba gunakan JPG atau PNG.",
+    "error.PDF_PASSWORD": "PDF ini dilindungi kata sandi. Hapus kata sandinya dengan Unlock PDF terlebih dahulu.",
+    "error.BAD_SIZE": "Lebar dan tinggi masing-masing harus antara 1 dan 16.384 piksel.",
+    "error.NO_TEXT": "PDF ini tidak memiliki teks untuk diekstrak — kemungkinan ini hasil pindaian gambar. Jalankan OCR PDF dulu, lalu coba lagi.",
+    "error.NO_WATERMARK": "Masukkan teks watermark (huruf, angka, dan simbol umum).",
+    "error.ENGINE_FAILED": "Mesin PDF berhenti secara tak terduga — file mungkin terlalu besar untuk perangkat ini.",
+    "warning.BOOKMARKS_DROPPED": "Bookmark dari file kedua dan seterusnya tidak dibawa. Bookmark file pertama tetap disimpan.",
+    "warning.BOOKMARKS_BROKEN": "Beberapa bookmark mengarah ke halaman yang sudah dihapus, sehingga tidak lagi mengarah ke mana pun.",
+    "warning.TAGS_NOT_UPDATED": "PDF ini memiliki tag aksesibilitas yang tidak dibangun ulang untuk halaman baru, sehingga struktur pembaca layar mungkin tidak lengkap.",
+    "warning.SIGNATURES_INVALIDATED": "Tanda tangan digital di PDF ini tidak akan lagi valid, karena dokumennya telah berubah.",
+    "warning.PASSWORD_REMOVED": "File baru ini tidak memiliki kata sandi.",
+    "warning.PERMISSIONS_REMOVED": "Batasan mengedit dan mencetak dari file asli tidak diterapkan pada file baru.",
+    "sum.page": "halaman",
+    "sum.pages": "halaman",
+    "sum.image": "gambar",
+    "sum.images": "gambar",
+    "sum.word": "kata",
+    "sum.words": "kata",
+    "sum.slide": "slide",
+    "sum.slides": "slide",
+    "sum.row": "baris",
+    "sum.rows": "baris",
+    "sum.sheet": "lembar",
+    "sum.sheets": "lembar",
+    "sum.edit": "suntingan",
+    "sum.edits": "suntingan",
+    "sum.recognized": "dikenali",
+    "sum.numbered": "diberi nomor",
+    "sum.watermarked": "diberi watermark",
+    "sum.smaller": "lebih kecil",
+    "sum.Already optimized": "Sudah optimal",
+    "sum.Metadata removed": "Metadata dihapus",
+    "ed.tools": "Alat penyuntingan",
+    "ed.editText": "Edit teks",
+    "ed.addText": "Tambah teks",
+    "ed.whiteout": "Blok putih",
+    "ed.undo": "Batalkan",
+    "ed.undoLabel": "Batalkan suntingan terakhir",
+    "ed.zoomOut": "Perkecil",
+    "ed.zoomIn": "Perbesar",
+    "ed.page": "Halaman {n} / {total}",
+    "ed.editRun": "Edit teks: {text}",
+    "ed.move": "Seret untuk memindahkan",
+    "ed.removeBox": "Hapus kotak teks",
+    "ed.replaced": "Beberapa karakter tidak didukung oleh font standar PDF dan telah diganti.",
+    "ed.hint": "Teks yang ditutup hanya disembunyikan, bukan dihapus dari file — untuk data sensitif, hapus saja halamannya.",
+    "ocr.copyAll": "Salin semua teks",
+    "ocr.copied": "Disalin",
+    "ocr.text": "Teks yang dikenali"
+  },
+  "home": {
+    "title": "Fizzdoc — Alat PDF, Word, Excel & Gambar Privat, Tanpa Upload",
+    "description": "Edit, kompres, konversi, OCR, dan gabungkan PDF; konversi Word, Excel, dan gambar — di browser Anda. Tanpa upload, tanpa daftar, gratis, open source.",
+    "h1": "Alat dokumen yang tidak pernah melihat dokumen Anda",
+    "lede": "Edit, kompres, konversi, dan OCR PDF. Konversi Word, Excel, PowerPoint, dan gambar. Semuanya berjalan di browser Anda — file Anda tidak pernah meninggalkan perangkat Anda.",
+    "what": "Fizzdoc adalah kumpulan alat dokumen gratis dan open source yang berjalan sepenuhnya di browser web Anda. PDF diproses dengan mesin qpdf, pdf.js, dan pdf-lib, pengenalan teks memakai Tesseract, dan file Office serta gambar juga ditangani secara lokal — jadi tidak ada yang pernah diunggah ke server.",
+    "faq": [
+      [
+        "Apakah file saya diunggah ke suatu tempat?",
+        "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+      ],
+      [
+        "Apa bedanya Fizzdoc dengan iLovePDF, Smallpdf, atau alat online Adobe?",
+        "Layanan-layanan itu mengunggah dokumen Anda ke server mereka untuk memprosesnya. Fizzdoc justru melakukan semua proses di tab browser Anda, jadi tidak ada yang perlu diunggah, disimpan, atau dihapus setelahnya. Fizzdoc juga open source, dan akan memberi tahu Anda setiap kali ada sesuatu seperti bookmark yang tidak bisa dibawa, alih-alih menghilangkannya diam-diam."
+      ],
+      [
+        "Apakah bisa digunakan dengan Google Docs, Sheets, dan Slides?",
+        "Ya. Unduh file dari Google sebagai file Word, Excel, atau PowerPoint (File → Download), lalu gunakan alat Fizzdoc yang sesuai. Tidak ada yang dikirim ke Google atau ke Fizzdoc."
+      ],
+      [
+        "Apakah bisa digunakan di ponsel saya?",
+        "Ya. Fizzdoc berjalan di versi terbaru Chrome, Safari, Firefox, dan Edge, baik di desktop maupun ponsel. File yang sangat besar mungkin melebihi memori ponsel; Fizzdoc memeriksanya sebelum memulai."
+      ],
+      [
+        "Apakah Fizzdoc gratis?",
+        "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+      ]
+    ]
+  },
+  "tools": {
+    "merge-pdf": {
+      "name": "Gabung PDF",
+      "summary": "Gabungkan beberapa PDF menjadi satu, sesuai urutan pilihan Anda.",
+      "action": "Gabungkan PDF",
+      "title": "Gabung PDF Online Secara Privat — Tanpa Upload, Gratis | Fizzdoc",
+      "description": "Gabungkan file PDF langsung di browser Anda. Tidak ada yang diunggah, dan form field serta link tetap utuh. Gratis, tanpa daftar, open source.",
+      "h1": "Gabung file PDF tanpa mengunggahnya",
+      "lede": "Gabungkan beberapa PDF menjadi satu dokumen langsung di browser Anda. Tidak ada yang dikirim ke server, dan form field serta link internal tetap utuh setelah digabung.",
+      "steps": [
+        "Tambahkan dua atau lebih file PDF — seret ke sini atau klik untuk memilih.",
+        "Urutkan dengan tombol ↑ dan ↓.",
+        "Klik “Gabungkan PDF” dan unduh file gabungannya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah bookmark, form field, dan link tetap ada?",
+          "Form field dan link internal dari setiap file tetap dipertahankan. Bookmark dari file pertama disimpan; bookmark dari file lainnya belum bisa digabungkan, dan Fizzdoc memberi tahu Anda saat itu terjadi, bukan menghilangkannya diam-diam."
+        ],
+        [
+          "Bisakah saya menggabungkan PDF yang dilindungi kata sandi?",
+          "Ya. Anda akan diminta memasukkan kata sandinya di perangkat Anda, dan file gabungannya disimpan tanpa kata sandi."
+        ],
+        [
+          "Apakah ada batas ukurannya?",
+          "Tidak ada batas jumlah halaman. Batas ukurannya tergantung memori perangkat Anda — biasanya beberapa ratus megabita secara total — dan Fizzdoc memberi tahu Anda sebelum memulai jika prosesnya terlalu besar untuk perangkat Anda."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "split-pdf": {
+      "name": "Pisah PDF",
+      "summary": "Ambil halaman yang Anda butuhkan menjadi PDF baru.",
+      "action": "Ekstrak halaman",
+      "title": "Pisah PDF & Ekstrak Halaman Secara Privat — Tanpa Upload | Fizzdoc",
+      "description": "Ekstrak halaman dari PDF di browser Anda. Pilih rentang seperti 1-3, 8 — file Anda tidak pernah meninggalkan perangkat. Gratis, tanpa daftar, open source.",
+      "h1": "Pisah PDF dan ekstrak halaman — secara privat",
+      "lede": "Ambil halaman yang Anda butuhkan ke dalam PDF baru. Ketik rentang seperti “1-3, 8”; urutan yang Anda ketik adalah urutan hasilnya.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Ketik halaman yang ingin disimpan, misalnya “1-3, 8” atau “5-” untuk halaman 5 sampai akhir.",
+        "Klik “Ekstrak halaman” dan unduh PDF barunya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah saya mengubah urutan halaman saat mengekstrak?",
+          "Ya. Halaman keluar sesuai urutan yang Anda ketik, jadi “3, 1-2” akan menempatkan halaman 3 di depan."
+        ],
+        [
+          "Apa yang terjadi pada bookmark dan form field?",
+          "Bookmark tetap disimpan. Jika sebuah bookmark mengarah ke halaman yang tidak Anda simpan, Fizzdoc akan memberi peringatan. Form field pada halaman yang dihapus akan dihapus dengan bersih."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "rotate-pdf": {
+      "name": "Putar PDF",
+      "summary": "Luruskan halaman yang miring, secara permanen.",
+      "action": "Putar halaman",
+      "title": "Putar Halaman PDF Secara Permanen — Tanpa Upload | Fizzdoc",
+      "description": "Putar semua atau sebagian halaman PDF sebesar 90°, 180°, atau 270° dan simpan hasilnya. Berjalan di browser Anda; file tidak pernah diunggah.",
+      "h1": "Putar halaman PDF dan simpan hasilnya",
+      "lede": "Perbaiki hasil scan yang miring untuk selamanya. Putar semua halaman atau hanya yang Anda pilih — tanpa render ulang, jadi kualitas tetap terjaga.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Pilih sudut putarannya dan, opsional, halaman mana yang diputar.",
+        "Klik “Putar halaman” dan unduh PDF yang sudah diperbaiki."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah memutar halaman mengurangi kualitas?",
+          "Tidak. Fizzdoc hanya mengubah pengaturan rotasi tiap halaman; isi halamannya tidak dirender atau dikompresi ulang."
+        ],
+        [
+          "Bisakah saya memutar hanya sebagian halaman?",
+          "Ya. Masukkan halaman seperti “2, 5-7”, atau biarkan kosong untuk memutar semua halaman."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "delete-pdf-pages": {
+      "name": "Hapus Halaman PDF",
+      "summary": "Hapus halaman yang tidak ingin Anda bagikan.",
+      "action": "Hapus halaman",
+      "title": "Hapus Halaman dari PDF — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Hapus halaman yang tidak diinginkan dari PDF di browser Anda. Ketik halaman yang ingin dihapus; file tidak pernah meninggalkan perangkat. Gratis, open source.",
+      "h1": "Hapus halaman dari PDF — secara privat",
+      "lede": "Hapus halaman kosong, duplikat, atau rahasia sebelum membagikan dokumen, tanpa menyerahkannya ke siapa pun.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Ketik halaman yang ingin dihapus, misalnya “2, 7-9”.",
+        "Klik “Hapus halaman” dan unduh PDF yang lebih ringkas."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah halaman yang dihapus benar-benar hilang?",
+          "Ya. Halaman yang dihapus tidak ikut ditulis ke file baru. File asli di perangkat Anda tidak berubah."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "unlock-pdf": {
+      "name": "Buka Kunci PDF",
+      "summary": "Simpan salinan PDF tanpa kata sandi yang Anda ketahui.",
+      "action": "Hapus kata sandi",
+      "title": "Hapus Kata Sandi PDF (Unlock PDF) — Tanpa Upload | Fizzdoc",
+      "description": "Hapus kata sandi dari PDF yang berhak Anda buka. Proses dekripsi terjadi di perangkat Anda, tidak ada yang diunggah. Gratis, tanpa daftar.",
+      "h1": "Hapus kata sandi PDF — di perangkat Anda",
+      "lede": "Simpan salinan PDF terproteksi yang sudah bisa Anda buka, tanpa kata sandi. Kata sandi dan dokumennya tetap ada di perangkat Anda.",
+      "steps": [
+        "Tambahkan PDF yang terproteksi.",
+        "Klik “Hapus kata sandi” dan masukkan kata sandinya saat diminta.",
+        "Unduh salinan yang sudah terbuka."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah Fizzdoc membobol kata sandi yang tidak saya ketahui?",
+          "Tidak. Fizzdoc hanya menghapus proteksi jika Anda tahu kata sandinya, atau jika PDF terbuka tanpa kata sandi dan hanya membatasi edit atau cetak. Hanya buka kunci file yang memang berhak Anda ubah."
+        ],
+        [
+          "Apakah kata sandi saya dikirim ke suatu tempat?",
+          "Tidak. Kata sandi diketik di halaman ini dan hanya digunakan oleh mesin yang berjalan di tab browser Anda. Tidak disimpan atau dicatat."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "protect-pdf": {
+      "name": "Proteksi PDF",
+      "summary": "Kunci PDF dengan kata sandi dan enkripsi AES-256.",
+      "action": "Proteksi PDF",
+      "title": "Beri Password PDF dengan Enkripsi AES-256 | Fizzdoc",
+      "description": "Tambahkan kata sandi ke PDF dengan enkripsi AES-256, langsung di browser Anda. File dan kata sandinya tidak pernah meninggalkan perangkat. Gratis.",
+      "h1": "Beri kata sandi pada PDF — di perangkat Anda",
+      "lede": "Enkripsi PDF dengan AES-256 agar hanya terbuka dengan kata sandi Anda. Enkripsi terjadi di tab ini; file maupun kata sandinya tidak dikirim ke mana pun.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Ketik kata sandi sebanyak dua kali.",
+        "Klik “Proteksi PDF” dan unduh salinan terenkripsinya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seberapa kuat proteksinya?",
+          "Fizzdoc menggunakan AES-256, enkripsi terkuat yang ditetapkan standar PDF, melalui mesin qpdf. File tetap terbuka di setiap pembaca PDF modern, termasuk Adobe Acrobat, Chrome, Edge, Firefox, dan Preview."
+        ],
+        [
+          "Bagaimana jika saya lupa kata sandinya?",
+          "Kata sandi tidak dapat dipulihkan — bukan oleh Fizzdoc, bukan oleh siapa pun. Simpan kata sandi di tempat yang aman, misalnya pengelola kata sandi."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "remove-pdf-metadata": {
+      "name": "Hapus Metadata PDF",
+      "summary": "Bersihkan penulis, judul, aplikasi pembuat, dan data XMP.",
+      "action": "Hapus metadata",
+      "title": "Hapus Metadata PDF (Penulis, Judul, XMP) | Fizzdoc",
+      "description": "Hapus metadata tersembunyi di PDF seperti penulis, judul, aplikasi pembuat, dan data XMP sebelum dibagikan. Berjalan di browser; tidak ada yang diunggah.",
+      "h1": "Hapus metadata tersembunyi dari PDF",
+      "lede": "PDF diam-diam mencatat siapa penulisnya, dengan aplikasi apa, dan kapan. Bersihkan penulis, judul, subjek, kata kunci, producer, dan metadata XMP sebelum berbagi.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Hapus metadata”.",
+        "Unduh salinan yang sudah bersih."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa saja yang dihapus?",
+          "Document information dictionary (penulis, judul, subjek, kata kunci, creator, dan producer) serta XMP metadata stream. Hanya tanggal modifikasi yang dipertahankan, karena file memang baru saja diubah. Isi halaman tidak disentuh."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "jpg-to-pdf": {
+      "name": "JPG ke PDF",
+      "summary": "Ubah foto dan hasil scan menjadi satu PDF.",
+      "action": "Buat PDF",
+      "title": "Konverter JPG ke PDF — Privat, Tanpa Upload, Gratis | Fizzdoc",
+      "description": "Konversi JPG, PNG, WebP, dan gambar lain menjadi satu PDF di browser Anda. Foto tidak pernah meninggalkan perangkat. Tanpa watermark, tanpa daftar.",
+      "h1": "Konversi gambar JPG dan PNG ke PDF — secara privat",
+      "lede": "Gabungkan foto, tangkapan layar, dan hasil scan menjadi satu PDF, satu halaman per gambar, dengan resolusi penuh. Foto Anda tetap di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar — JPG, PNG, WebP, GIF, dan lainnya.",
+        "Urutkan dengan tombol ↑ dan ↓.",
+        "Klik “Buat PDF” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah kualitas gambar berkurang?",
+          "Tidak. Gambar JPG dan PNG dimasukkan ke PDF apa adanya, tanpa kompresi ulang. Format lain dikonversi satu kali dengan kualitas tinggi."
+        ],
+        [
+          "Bisakah saya mengonversi foto iPhone?",
+          "Ya, selama browser Anda bisa menampilkannya. Safari membuka foto HEIC secara langsung; di browser lain, bagikan dulu sebagai JPG."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "pdf-to-jpg": {
+      "name": "PDF ke JPG",
+      "summary": "Simpan setiap halaman sebagai gambar JPG yang tajam.",
+      "action": "Konversi ke JPG",
+      "title": "Konverter PDF ke JPG — Privat, Tanpa Upload, Gratis | Fizzdoc",
+      "description": "Konversi setiap halaman PDF menjadi gambar JPG berkualitas tinggi di browser Anda. Tidak ada yang diunggah. Banyak halaman diunduh sebagai satu ZIP.",
+      "h1": "Konversi halaman PDF ke gambar JPG — secara privat",
+      "lede": "Render setiap halaman menjadi JPG 150 DPI yang tajam memakai pdf.js milik Mozilla, langsung di browser Anda. PDF banyak halaman diunduh sebagai satu ZIP.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Konversi ke JPG”.",
+        "Unduh gambarnya, atau ZIP berisi satu gambar per halaman."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Berapa resolusi gambarnya?",
+          "150 DPI — tajam di layar dan cukup baik untuk dicetak dalam ukuran aslinya. Halaman A4 menjadi gambar berukuran 1240 × 1754 piksel."
+        ],
+        [
+          "Apakah bisa untuk PDF yang dilindungi kata sandi?",
+          "Hapus dulu kata sandinya dengan Unlock PDF, baru konversi. Kedua langkah tetap berjalan di perangkat Anda."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "compress-pdf": {
+      "name": "Kompres PDF",
+      "summary": "Perkecil ukuran PDF dengan mengoptimalkan gambarnya. Teks tetap tajam.",
+      "action": "Kompres PDF",
+      "title": "Kompres PDF Online Tanpa Upload — Gratis | Fizzdoc",
+      "description": "Perkecil ukuran file PDF di browser Anda dengan mengompresi ulang gambar yang terlalu besar. Teks tetap tajam dan bisa diseleksi. Tanpa upload, open source.",
+      "h1": "Kompres PDF — tanpa mengunggahnya",
+      "lede": "Perkecil PDF agar cukup ringan untuk dikirim lewat email atau diunggah ke portal. Fizzdoc mengompresi ulang foto dan scan yang terlalu besar, tanpa menyentuh teks dan grafik vektor.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Pilih kompresi Seimbang atau Kuat.",
+        "Klik “Kompres PDF” dan unduh file yang lebih kecil."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seberapa besar pengurangan ukuran PDF saya?",
+          "PDF hasil scan dan foto seringkali menyusut 40–80%. PDF berisi teks saja biasanya sudah ringkas; jika Fizzdoc tidak bisa memperkecilnya lagi, Anda akan diberi tahu dan file aslinya dipertahankan."
+        ],
+        [
+          "Apakah teksnya jadi buram?",
+          "Tidak. Hanya gambar yang disematkan yang dikompresi ulang. Teks, font, dan gambar vektor disalin persis, sehingga teks tetap tajam dan bisa diseleksi."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "edit-pdf": {
+      "name": "Edit PDF",
+      "summary": "Ubah teks yang ada, tambah teks baru, dan blok putih, langsung di halaman.",
+      "action": "Simpan PDF",
+      "title": "Edit Teks PDF Online — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Klik teks di PDF untuk mengubahnya, tambahkan teks baru, atau blok area tertentu — langsung di halaman, di browser Anda. Tanpa upload, tanpa daftar.",
+      "h1": "Edit teks PDF langsung di halaman",
+      "lede": "Perbaiki salah ketik, ubah tanggal, atau isi bagian kosong tanpa file aslinya. Klik teks yang ingin diubah lalu ketik — semuanya terjadi di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik teks mana pun untuk mengubahnya, atau gunakan Tambah teks dan Blok putih dari toolbar.",
+        "Klik “Simpan PDF” dan unduh file yang sudah diedit."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah teks hasil edit akan sesuai font aslinya?",
+          "Fizzdoc memilih font standar yang paling mirip (sans-serif, serif, atau monospace, dengan varian tebal dan miring) dengan ukuran dan posisi yang sama. Font khusus milik brand tidak bisa ditiru secara persis."
+        ],
+        [
+          "Apakah teks aslinya benar-benar terhapus?",
+          "Teks asli hanya ditutup di halaman, dan teks baru Anda digambar di atasnya. Untuk informasi sensitif yang harus benar-benar hilang dari file, hapus halamannya atau buat ulang dokumennya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "ocr-pdf": {
+      "name": "OCR PDF",
+      "summary": "Buat PDF hasil scan bisa dicari dan disalin.",
+      "action": "Kenali teks",
+      "title": "OCR PDF — Buat PDF Scan Bisa Dicari, Tanpa Upload | Fizzdoc",
+      "description": "Ubah PDF hasil scan menjadi dokumen bisa dicari dan disalin dengan OCR bahasa Inggris di browser. Kualitas halaman terjaga. Tanpa upload.",
+      "h1": "Buat PDF hasil scan bisa dicari dengan OCR",
+      "lede": "Kenali teks bahasa Inggris pada halaman hasil scan dan tambahkan sebagai lapisan tak terlihat, sehingga Anda bisa mencari, menyeleksi, dan menyalinnya. Halamannya sendiri tidak berubah.",
+      "steps": [
+        "Tambahkan satu PDF hasil scan.",
+        "Klik “Kenali teks” dan tunggu setiap halaman diproses.",
+        "Unduh PDF yang sudah bisa dicari."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bahasa apa saja yang didukung?",
+          "Bahasa Inggris. Mesin pengenal teks (Tesseract) beserta data bahasa Inggrisnya diunduh ke browser Anda sekali saja, saat pertama kali menggunakan alat OCR — hanya beberapa megabita."
+        ],
+        [
+          "Apakah OCR mengubah tampilan halaman saya?",
+          "Tidak. Halaman hasil scan dipertahankan persis seperti aslinya; teks yang dikenali ditambahkan sebagai lapisan tak terlihat di atasnya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "pdf-to-word": {
+      "name": "PDF ke Word",
+      "summary": "Ubah teks PDF menjadi .docx yang bisa diedit.",
+      "action": "Konversi ke Word",
+      "title": "Konverter PDF ke Word (DOCX) — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Konversi PDF menjadi dokumen Word yang bisa diedit di browser Anda. Heading, paragraf, dan page break tetap dipertahankan. Tanpa upload, tanpa daftar.",
+      "h1": "Konversi PDF menjadi dokumen Word yang bisa diedit",
+      "lede": "Pindahkan teks PDF ke Word, dengan heading dan paragraf yang disusun ulang, sehingga bisa Anda edit. Konversi terjadi di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Konversi ke Word”.",
+        "Unduh file .docx-nya dan buka di Word, Google Docs, atau LibreOffice."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah tata letaknya akan sama persis dengan PDF?",
+          "Fizzdoc menyusun ulang alur teks — heading, paragraf, tebal dan miring, serta page break — sehingga dokumennya mudah diedit. Tata letak rumit dengan kolom, tabel, dan gambar akan disederhanakan."
+        ],
+        [
+          "Bagaimana dengan PDF hasil scan?",
+          "Halaman hasil scan adalah gambar, bukan teks. Jalankan OCR PDF dulu, baru konversi hasilnya ke Word."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "pdf-to-powerpoint": {
+      "name": "PDF ke PowerPoint",
+      "summary": "Ubah setiap halaman PDF menjadi slide.",
+      "action": "Konversi ke PowerPoint",
+      "title": "Konverter PDF ke PowerPoint (PPTX) — Tanpa Upload | Fizzdoc",
+      "description": "Konversi PDF menjadi presentasi PowerPoint dengan satu slide tajam per halaman, langsung di browser Anda. Tanpa upload, gratis dan open source.",
+      "h1": "Konversi PDF menjadi presentasi PowerPoint",
+      "lede": "Presentasikan PDF sebagai slide. Setiap halaman menjadi slide beresolusi tinggi berukuran penuh dalam file .pptx yang bisa dibuka di PowerPoint, Keynote, atau Google Slides.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Konversi ke PowerPoint”.",
+        "Unduh file .pptx-nya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah saya mengedit teks di slide-nya?",
+          "Setiap slide adalah gambar dari halaman tersebut, jadi tampilannya sama persis dengan PDF. Untuk mengedit kata-katanya, gunakan PDF ke Word, atau tambahkan kotak teks di atasnya lewat PowerPoint."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "pdf-to-text": {
+      "name": "PDF ke Teks",
+      "summary": "Ekstrak semua teks dari PDF menjadi file .txt.",
+      "action": "Ekstrak teks",
+      "title": "Konverter PDF ke Teks (TXT) — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Ekstrak teks dari PDF menjadi file .txt biasa di browser Anda, sesuai urutan baca. Tanpa upload, tanpa daftar, gratis dan open source.",
+      "h1": "Ekstrak teks dari PDF",
+      "lede": "Ambil setiap kata dari PDF sebagai teks biasa, dengan baris dan paragraf sesuai urutan bacanya. Cocok untuk disalin, dicari, atau dimasukkan ke alat lain.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Ekstrak teks”.",
+        "Unduh file .txt-nya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa file teks saya kosong?",
+          "PDF hasil scan berisi gambar teks, bukan teks sungguhan. Jalankan OCR PDF dulu, baru ekstrak teksnya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "pdf-to-markdown": {
+      "name": "PDF ke Markdown",
+      "summary": "Konversi PDF menjadi Markdown bersih dengan heading dan daftar.",
+      "action": "Konversi ke Markdown",
+      "title": "Konverter PDF ke Markdown — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Konversi PDF ke Markdown dengan heading dan daftar terdeteksi otomatis, siap untuk dokumentasi, catatan, atau alat AI. Berjalan di browser; tanpa upload.",
+      "h1": "Konversi PDF menjadi Markdown",
+      "lede": "Ubah PDF menjadi Markdown yang bersih — heading, paragraf, dan daftar — untuk Notion, Obsidian, GitHub, atau alat apa pun yang membaca Markdown.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Konversi ke Markdown”.",
+        "Unduh file .md-nya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana heading dideteksi?",
+          "Dari ukuran teksnya: baris yang jauh lebih besar dari teks isi menjadi heading, dan baris berpoin atau bernomor menjadi daftar."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "text-to-pdf": {
+      "name": "Teks ke PDF",
+      "summary": "Ubah file .txt menjadi PDF yang rapi.",
+      "action": "Buat PDF",
+      "title": "Konverter Teks ke PDF (TXT ke PDF) — Tanpa Upload | Fizzdoc",
+      "description": "Konversi file teks biasa menjadi PDF yang rapi dan mudah dibaca di browser Anda. Mendukung semua bahasa, termasuk Hindi dan aksara lainnya. Tanpa upload.",
+      "h1": "Konversi file teks menjadi PDF",
+      "lede": "Ubah catatan, log, atau file .txt apa pun menjadi PDF A4 yang tersusun rapi. Semua bahasa dan aksara didukung.",
+      "steps": [
+        "Tambahkan satu file .txt.",
+        "Klik “Buat PDF”.",
+        "Pilih “Simpan sebagai PDF” di jendela yang muncul, lalu klik Simpan."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa muncul jendela cetak?",
+          "Browser Anda punya penulis PDF bawaan yang menangani setiap bahasa dan font dengan sempurna. Fizzdoc menyiapkan dokumennya dan menyerahkannya ke penulis tersebut: pilih “Simpan sebagai PDF” sebagai tujuannya lalu klik Simpan. Tidak ada yang dicetak atau dikirim ke mana pun."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "markdown-to-pdf": {
+      "name": "Markdown ke PDF",
+      "summary": "Render file .md menjadi PDF yang sudah diformat.",
+      "action": "Buat PDF",
+      "title": "Konverter Markdown ke PDF — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Konversi Markdown menjadi PDF yang rapi dengan heading, daftar, tabel, dan blok kode, langsung di browser Anda. Tanpa upload, gratis dan open source.",
+      "h1": "Konversi Markdown menjadi PDF",
+      "lede": "Render README, catatan, atau dokumentasi yang ditulis dalam Markdown menjadi PDF bersih dan siap cetak lengkap dengan heading, daftar, tabel, dan blok kode.",
+      "steps": [
+        "Tambahkan satu file .md.",
+        "Klik “Buat PDF”.",
+        "Pilih “Simpan sebagai PDF” di jendela yang muncul, lalu klik Simpan."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Fitur Markdown apa saja yang didukung?",
+          "Heading, tebal, miring, kode inline dan blok kode, daftar berurutan dan berpoin, kutipan, link, garis horizontal, dan tabel. HTML mentah ditampilkan sebagai teks demi keamanan."
+        ],
+        [
+          "Kenapa muncul jendela cetak?",
+          "Browser Anda punya penulis PDF bawaan yang menangani setiap bahasa dan font dengan sempurna. Fizzdoc menyiapkan dokumennya dan menyerahkannya ke penulis tersebut: pilih “Simpan sebagai PDF” sebagai tujuannya lalu klik Simpan. Tidak ada yang dicetak atau dikirim ke mana pun."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "word-to-pdf": {
+      "name": "Word ke PDF",
+      "summary": "Konversi .docx ke PDF, semua bahasa didukung.",
+      "action": "Konversi ke PDF",
+      "title": "Konverter Word ke PDF (DOCX ke PDF) — Tanpa Upload | Fizzdoc",
+      "description": "Konversi dokumen Word ke PDF di browser Anda, dengan heading, daftar, tabel, dan gambar tetap terjaga. Kompatibel dengan unduhan Google Docs. Tanpa upload.",
+      "h1": "Konversi dokumen Word menjadi PDF",
+      "lede": "Ubah .docx menjadi PDF lengkap dengan heading, daftar, tabel, dan gambarnya, memakai penulis PDF bawaan browser Anda. Dokumen tidak pernah meninggalkan perangkat Anda.",
+      "steps": [
+        "Tambahkan satu file .docx (dari Word atau Google Docs).",
+        "Klik “Konversi ke PDF”.",
+        "Pilih “Simpan sebagai PDF” di jendela yang muncul, lalu klik Simpan."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah tampilannya akan sama persis seperti di Word?",
+          "Teks, heading, daftar, tabel, link, dan gambar tetap dipertahankan. Header, footer, dan tata letak lanjutan seperti kotak teks atau kolom ganda akan disederhanakan."
+        ],
+        [
+          "Kenapa muncul jendela cetak?",
+          "Browser Anda punya penulis PDF bawaan yang menangani setiap bahasa dan font dengan sempurna. Fizzdoc menyiapkan dokumennya dan menyerahkannya ke penulis tersebut: pilih “Simpan sebagai PDF” sebagai tujuannya lalu klik Simpan. Tidak ada yang dicetak atau dikirim ke mana pun."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "excel-to-csv": {
+      "name": "Excel ke CSV",
+      "summary": "Ekspor setiap sheet dari .xlsx ke CSV.",
+      "action": "Konversi ke CSV",
+      "title": "Konverter Excel ke CSV (XLSX ke CSV) — Tanpa Upload | Fizzdoc",
+      "description": "Konversi spreadsheet Excel ke CSV di browser Anda. Setiap sheet diekspor, tanggal menjadi format ISO, tanpa upload. Kompatibel dengan Google Sheets.",
+      "h1": "Konversi Excel menjadi CSV",
+      "lede": "Ekspor setiap sheet dari workbook .xlsx menjadi file CSV UTF-8 yang terbuka dengan benar di mana saja. Tanggal, angka, dan teks tetap seperti aslinya.",
+      "steps": [
+        "Tambahkan satu file .xlsx (dari Excel atau Google Sheets).",
+        "Klik “Konversi ke CSV”.",
+        "Unduh CSV-nya, atau ZIP berisi satu CSV per sheet."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa yang terjadi pada rumus?",
+          "CSV hanya menyimpan nilai, jadi hasil perhitungan terakhir tiap sel yang diekspor — sama seperti yang dilakukan Excel."
+        ],
+        [
+          "Apakah karakter non-Inggris tetap terjaga?",
+          "Ya. CSV-nya berformat UTF-8 dengan byte-order mark, sehingga Excel, Google Sheets, dan aplikasi lain membaca aksen dan aksara non-Latin dengan benar."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "csv-to-excel": {
+      "name": "CSV ke Excel",
+      "summary": "Ubah .csv menjadi workbook .xlsx yang sesungguhnya.",
+      "action": "Konversi ke Excel",
+      "title": "Konverter CSV ke Excel (CSV ke XLSX) — Tanpa Upload | Fizzdoc",
+      "description": "Konversi file CSV menjadi workbook Excel .xlsx di browser Anda. Angka tetap angka, nol di depan tetap terjaga, tanpa upload. Gratis.",
+      "h1": "Konversi CSV menjadi Excel",
+      "lede": "Ubah CSV menjadi workbook Excel sesungguhnya. Angka menjadi angka, kode seperti 007 tetap mempertahankan nol di depan, dan pemisahnya terdeteksi otomatis.",
+      "steps": [
+        "Tambahkan satu file .csv.",
+        "Klik “Konversi ke Excel”.",
+        "Unduh file .xlsx-nya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah mendukung titik koma dan tab?",
+          "Ya. Koma, titik koma, tab, dan pipe terdeteksi otomatis, begitu juga field berkutip yang mengandung baris baru di dalamnya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "compress-image": {
+      "name": "Kompres Gambar",
+      "summary": "Perkecil ukuran gambar JPG, PNG, dan WebP.",
+      "action": "Kompres gambar",
+      "title": "Kompres Gambar (JPG, PNG, WebP) — Tanpa Upload, Gratis | Fizzdoc",
+      "description": "Perkecil ukuran file gambar di browser Anda — JPG, PNG, WebP, dan lainnya, sekaligus banyak. Pilih kualitasnya atau tetap lossless. Foto tidak pernah diunggah.",
+      "h1": "Kompres gambar tanpa mengunggahnya",
+      "lede": "Perkecil foto dan tangkapan layar untuk email, situs web, dan formulir. Pilih tingkat kualitas, atau tetap lossless — semuanya di perangkat Anda, sekaligus banyak file.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar.",
+        "Pilih format keluaran dan kualitasnya.",
+        "Klik “Kompres gambar” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah saya mengompres tanpa kehilangan kualitas?",
+          "Ya. Pilih PNG untuk hasil lossless yang presisi piksel. Untuk foto, JPG atau WebP dengan kualitas 80% biasanya terlihat identik dan jauh lebih kecil."
+        ],
+        [
+          "Apakah data lokasi ikut terhapus?",
+          "Ya. Proses encode ulang menghapus metadata EXIF tersembunyi seperti lokasi GPS dan detail kamera."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "resize-image": {
+      "name": "Ubah Ukuran Gambar",
+      "summary": "Perbesar atau perkecil gambar, dalam piksel atau persen.",
+      "action": "Ubah ukuran",
+      "title": "Ubah Ukuran Gambar Online (Perbesar/Perkecil) | Fizzdoc",
+      "description": "Ubah ukuran gambar ke piksel atau persentase tertentu — lebih kecil atau lebih besar — di browser Anda, sekaligus banyak. Rasio aspek opsional. Tanpa upload.",
+      "h1": "Ubah ukuran gambar — perbesar atau perkecil",
+      "lede": "Tentukan lebar dan tinggi yang pasti atau skala dalam persen, untuk satu gambar atau banyak sekaligus. Rasio aspek dipertahankan kecuali Anda menonaktifkannya.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar.",
+        "Masukkan ukuran baru atau persentasenya.",
+        "Klik “Ubah ukuran” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah memperbesar gambar menambah detail?",
+          "Memperbesar membuat gambar lebih besar dengan penskalaan halus berkualitas tinggi, tapi tidak bisa menciptakan detail yang memang tidak ada. Cocok untuk memenuhi syarat ukuran minimum."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "convert-image": {
+      "name": "Konversi Gambar",
+      "summary": "Konversi antara JPG, PNG, dan WebP.",
+      "action": "Konversi gambar",
+      "title": "Konversi Gambar ke JPG, PNG, atau WebP — Tanpa Upload | Fizzdoc",
+      "description": "Konversi gambar antara JPG, PNG, dan WebP di browser Anda, sekaligus banyak. Kompatibel dengan GIF, BMP, AVIF, dan foto iPhone yang bisa dibuka browser Anda.",
+      "h1": "Konversi gambar ke JPG, PNG, atau WebP",
+      "lede": "Ubah format satu gambar atau sekumpulan gambar sekaligus — misalnya WebP ke JPG atau PNG ke WebP — tanpa mengirimkannya ke mana pun.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar.",
+        "Pilih format yang Anda butuhkan.",
+        "Klik “Konversi gambar” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Format mana yang sebaiknya saya pilih?",
+          "JPG untuk foto yang harus terbuka di mana saja, PNG untuk tangkapan layar dan grafik yang butuh tepi tajam atau transparansi, WebP untuk file terkecil di web."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "image-to-text": {
+      "name": "Gambar ke Teks (OCR)",
+      "summary": "Seleksi dan salin teks dari foto atau tangkapan layar apa pun.",
+      "action": "Kenali teks",
+      "title": "Gambar ke Teks (OCR) — Salin Teks dari Foto | Fizzdoc",
+      "description": "Ekstrak teks dari foto dan tangkapan layar dengan OCR bahasa Inggris di browser, lalu seleksi dan salin di gambarnya — mirip Live Text. Tanpa upload.",
+      "h1": "Salin teks dari gambar apa pun",
+      "lede": "Kenali teks bahasa Inggris dalam foto, scan, atau tangkapan layar, lalu seleksi langsung di gambarnya — persis seperti Live Text di iPhone. Tidak ada yang meninggalkan perangkat Anda.",
+      "steps": [
+        "Tambahkan satu gambar.",
+        "Klik “Kenali teks”.",
+        "Seleksi teks langsung di gambar, salin semuanya, atau unduh sebagai file .txt."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bahasa apa saja yang didukung?",
+          "Bahasa Inggris. Mesin pengenal teks beserta data bahasa Inggrisnya diunduh ke browser Anda sekali saja, saat pertama kali menggunakan OCR."
+        ],
+        [
+          "Bagaimana cara mendapatkan hasil terbaik?",
+          "Gunakan foto yang tajam, cukup terang, dan diambil lurus. Teks cetak memberi hasil terbaik; tulisan tangan dikenali kurang akurat."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "png-to-jpg": {
+      "name": "PNG ke JPG",
+      "summary": "Konversi gambar PNG ke JPG sekaligus banyak.",
+      "action": "Konversi ke JPG",
+      "title": "Konverter PNG ke JPG — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Konversi gambar PNG ke JPG di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
+      "h1": "Konversi PNG ke JPG — secara privat",
+      "lede": "File JPG jauh lebih kecil untuk foto dan bisa dibuka di mana saja, termasuk software lama dan formulir unggah yang menolak PNG. Fizzdoc mengonversi file PNG Anda langsung di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar PNG.",
+        "Pilih kualitas, atau biarkan default.",
+        "Klik “Konversi ke JPG” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa harus mengonversi PNG ke JPG?",
+          "File JPG jauh lebih kecil untuk foto dan bisa dibuka di mana saja, termasuk software lama dan formulir unggah yang menolak PNG."
+        ],
+        [
+          "Bisakah saya mengonversi banyak gambar sekaligus?",
+          "Ya. Tambahkan sebanyak yang Anda mau; beberapa gambar akan diunduh bersama sebagai satu file ZIP."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "jpg-to-png": {
+      "name": "JPG ke PNG",
+      "summary": "Konversi gambar JPG ke PNG sekaligus banyak.",
+      "action": "Konversi ke PNG",
+      "title": "Konverter JPG ke PNG — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Konversi gambar JPG ke PNG di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
+      "h1": "Konversi JPG ke PNG — secara privat",
+      "lede": "PNG bersifat lossless, jadi gambarnya tidak akan kehilangan kualitas lagi saat diedit dan disimpan ulang. Fizzdoc mengonversi file JPG Anda langsung di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar JPG.",
+        "Tidak ada yang perlu diatur: PNG bersifat lossless.",
+        "Klik “Konversi ke PNG” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa harus mengonversi JPG ke PNG?",
+          "PNG bersifat lossless, jadi gambarnya tidak akan kehilangan kualitas lagi saat diedit dan disimpan ulang."
+        ],
+        [
+          "Bisakah saya mengonversi banyak gambar sekaligus?",
+          "Ya. Tambahkan sebanyak yang Anda mau; beberapa gambar akan diunduh bersama sebagai satu file ZIP."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "webp-to-jpg": {
+      "name": "WebP ke JPG",
+      "summary": "Konversi gambar WebP ke JPG sekaligus banyak.",
+      "action": "Konversi ke JPG",
+      "title": "Konverter WebP ke JPG — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Konversi gambar WebP ke JPG di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
+      "h1": "Konversi WebP ke JPG — secara privat",
+      "lede": "Banyak aplikasi, printer, dan formulir unggah masih tidak bisa membuka gambar WebP yang disimpan dari situs web. JPG bisa dibuka di mana saja. Fizzdoc mengonversi file WebP Anda langsung di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar WebP.",
+        "Pilih kualitas, atau biarkan default.",
+        "Klik “Konversi ke JPG” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa harus mengonversi WebP ke JPG?",
+          "Banyak aplikasi, printer, dan formulir unggah masih tidak bisa membuka gambar WebP yang disimpan dari situs web. JPG bisa dibuka di mana saja."
+        ],
+        [
+          "Bisakah saya mengonversi banyak gambar sekaligus?",
+          "Ya. Tambahkan sebanyak yang Anda mau; beberapa gambar akan diunduh bersama sebagai satu file ZIP."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "jpg-to-webp": {
+      "name": "JPG ke WebP",
+      "summary": "Konversi gambar JPG ke WebP sekaligus banyak.",
+      "action": "Konversi ke WebP",
+      "title": "Konverter JPG ke WebP — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Konversi gambar JPG ke WebP di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
+      "h1": "Konversi JPG ke WebP — secara privat",
+      "lede": "Gambar WebP biasanya 25–35% lebih kecil dari JPG dengan kualitas visual yang sama, sehingga situs web memuat lebih cepat. Fizzdoc mengonversi file JPG Anda langsung di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar JPG.",
+        "Pilih kualitas, atau biarkan default.",
+        "Klik “Konversi ke WebP” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa harus mengonversi JPG ke WebP?",
+          "Gambar WebP biasanya 25–35% lebih kecil dari JPG dengan kualitas visual yang sama, sehingga situs web memuat lebih cepat."
+        ],
+        [
+          "Bisakah saya mengonversi banyak gambar sekaligus?",
+          "Ya. Tambahkan sebanyak yang Anda mau; beberapa gambar akan diunduh bersama sebagai satu file ZIP."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "add-page-numbers-to-pdf": {
+      "name": "Tambah Nomor Halaman",
+      "summary": "Beri nomor pada setiap halaman PDF.",
+      "action": "Tambah nomor halaman",
+      "title": "Tambah Nomor Halaman ke PDF — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Tambahkan nomor halaman ke PDF di browser Anda. Pilih posisinya, nomor awal, dan gaya “Halaman 1 dari 10”. Tanpa upload. Gratis, tanpa daftar.",
+      "h1": "Tambah nomor halaman ke PDF",
+      "lede": "Beri nomor halaman pada laporan, skripsi, atau kontrak dalam hitungan detik. Pilih posisi nomornya dan mulai dari angka berapa — langsung di perangkat Anda.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Pilih posisi, gaya, dan nomor pertamanya.",
+        "Klik “Tambah nomor halaman” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah saya memulai dari angka selain 1?",
+          "Ya. Atur “Mulai dari” ke angka berapa pun — berguna saat PDF-nya adalah bab dari dokumen yang lebih panjang."
+        ],
+        [
+          "Apakah ini mengubah isi dokumen saya?",
+          "Tidak. Nomor halaman ditambahkan di atas tiap halaman; semua yang lain tetap seperti semula."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "watermark-pdf": {
+      "name": "Watermark PDF",
+      "summary": "Bubuhkan teks seperti RAHASIA di setiap halaman.",
+      "action": "Tambah watermark",
+      "title": "Watermark PDF — Tambah Teks Watermark, Tanpa Upload | Fizzdoc",
+      "description": "Tambahkan watermark teks seperti RAHASIA atau DRAFT ke setiap halaman PDF, di browser Anda. Atur opasitasnya. Tanpa upload. Gratis.",
+      "h1": "Tambahkan watermark ke PDF",
+      "lede": "Tandai dokumen sebagai RAHASIA, DRAFT, atau dengan nama Anda sebelum dibagikan. Watermark digambar diagonal di setiap halaman.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Ketik teks watermark dan atur tingkat transparansinya.",
+        "Klik “Tambah watermark” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah watermark-nya dihapus?",
+          "Watermark teks memang mencegah penyalinan biasa, tapi orang yang gigih dengan editor PDF bisa saja menghapusnya. Untuk proteksi lebih kuat, gunakan juga Protect PDF."
+        ],
+        [
+          "Karakter apa saja yang bisa saya gunakan?",
+          "Huruf, angka, dan simbol umum dalam aksara Latin. Aksara lain tidak didukung oleh font standar PDF."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "pdf-to-png": {
+      "name": "PDF ke PNG",
+      "summary": "Simpan setiap halaman sebagai gambar PNG lossless.",
+      "action": "Konversi ke PNG",
+      "title": "Konverter PDF ke PNG — Lossless, Tanpa Upload | Fizzdoc",
+      "description": "Konversi setiap halaman PDF menjadi gambar PNG lossless yang tajam di browser Anda. Banyak halaman diunduh sebagai satu ZIP. Tanpa upload. Gratis.",
+      "h1": "Konversi halaman PDF ke gambar PNG",
+      "lede": "Render setiap halaman menjadi PNG lossless yang tajam — ideal untuk slide, dokumentasi, dan tangkapan layar dengan teks yang jelas. Tidak ada yang meninggalkan perangkat Anda.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Klik “Konversi ke PNG”.",
+        "Unduh gambarnya, atau ZIP berisi satu PNG per halaman."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "PNG atau JPG?",
+          "PNG membuat teks dan garis tetap sangat tajam tapi ukurannya lebih besar. Untuk foto dan hasil scan, PDF ke JPG menghasilkan file yang jauh lebih kecil."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "extract-pdf-pages": {
+      "name": "Ekstrak Halaman PDF",
+      "summary": "Simpan halaman terpilih sebagai PDF baru.",
+      "action": "Ekstrak halaman",
+      "title": "Ekstrak Halaman dari PDF — Gratis, Privat, Tanpa Upload | Fizzdoc",
+      "description": "Ambil halaman tertentu dari PDF ke file baru, di browser Anda. Ketik halaman seperti 2, 5-7. Link dan form field tetap terjaga. Tanpa upload.",
+      "h1": "Ekstrak halaman dari PDF",
+      "lede": "Butuh halaman tanda tangan atau satu bab saja? Ketik halaman yang Anda inginkan dan dapatkan sebagai PDF baru — file aslinya tetap tidak tersentuh.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Ketik halaman yang ingin diekstrak, misalnya “2, 5-7”.",
+        "Klik “Ekstrak halaman” dan unduh PDF barunya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah kualitasnya berkurang?",
+          "Tidak. Halaman disalin apa adanya — tidak ada yang dirender atau dikompresi ulang."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "reorder-pdf-pages": {
+      "name": "Urutkan Ulang Halaman PDF",
+      "summary": "Susun ulang urutan halaman PDF sesuai keinginan Anda.",
+      "action": "Urutkan ulang",
+      "title": "Urutkan Ulang Halaman PDF — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Susun ulang halaman PDF dengan mengetik urutan yang Anda mau, seperti 3, 1-2, 4-. Berjalan di browser; file tidak pernah diunggah. Gratis, tanpa daftar.",
+      "h1": "Susun ulang urutan halaman PDF",
+      "lede": "Perbaiki halaman yang terpindai tidak berurutan atau pindahkan lampiran ke depan. Ketik urutan barunya dan unduh PDF yang sudah disusun ulang.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Ketik urutan halaman baru, misalnya “3, 1-2, 4-”.",
+        "Klik “Urutkan ulang” lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana cara menuliskan urutannya?",
+          "Tuliskan halaman dan rentangnya dipisahkan koma. “4-” berarti halaman 4 sampai akhir. Halaman yang tidak Anda tulis akan dihilangkan dari file baru."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "png-to-pdf": {
+      "name": "PNG ke PDF",
+      "summary": "Ubah tangkapan layar dan gambar PNG menjadi satu PDF.",
+      "action": "Buat PDF",
+      "title": "Konverter PNG ke PDF — Gratis, Tanpa Upload | Fizzdoc",
+      "description": "Gabungkan tangkapan layar dan gambar PNG menjadi satu PDF di browser Anda, satu halaman per gambar, kualitas penuh. Tanpa upload. Tanpa watermark.",
+      "h1": "Konversi gambar PNG menjadi PDF",
+      "lede": "Masukkan tangkapan layar, diagram, atau halaman hasil scan berformat PNG ke dalam satu PDF yang rapi — tajam, lossless, dan sesuai urutan pilihan Anda.",
+      "steps": [
+        "Tambahkan satu atau lebih gambar PNG.",
+        "Urutkan dengan tombol ↑ dan ↓.",
+        "Klik “Buat PDF” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah transparansinya tetap terjaga?",
+          "Ya. Gambar PNG dimasukkan ke PDF apa adanya, termasuk bagian yang transparan."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "remove-word-metadata": {
+      "name": "Hapus Metadata Word",
+      "summary": "Bersihkan nama penulis, perusahaan, dan editor dari .docx.",
+      "action": "Hapus metadata",
+      "title": "Hapus Metadata Word — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file Word di browser Anda. Kompatibel dengan unduhan Google Docs. Tanpa upload.",
+      "h1": "Hapus metadata tersembunyi dari dokumen Word",
+      "lede": "Setiap .docx mencatat siapa pembuatnya, siapa pengedit terakhirnya, dan perusahaan mana pemiliknya. Bersihkan detail itu sebelum dikirim — tanpa mengunggah filenya ke mana pun.",
+      "steps": [
+        "Tambahkan satu file .docx (dari Word atau Google Docs).",
+        "Klik “Hapus metadata”.",
+        "Unduh file .docx yang sudah bersih."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa saja yang dihapus?",
+          "Penulis, terakhir diedit oleh, judul, subjek, deskripsi, kata kunci, kategori, status, perusahaan, manajer, hyperlink base, custom properties, dan thumbnail pratinjau yang disematkan. Tanggal dibuat dan diubah dipertahankan karena dibutuhkan Office. Isi dokumen tidak disentuh."
+        ],
+        [
+          "Apakah bisa untuk Google Docs?",
+          "Ya. Di Google Docs, pilih File → Download → Microsoft Word (.docx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "extract-images-from-word": {
+      "name": "Ekstrak Gambar dari Word",
+      "summary": "Simpan setiap gambar di .docx dengan kualitas asli.",
+      "action": "Ekstrak gambar",
+      "title": "Ekstrak Gambar dari Word — Tanpa Upload | Fizzdoc",
+      "description": "Unduh setiap gambar yang disematkan dalam dokumen Word sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Docs. Berjalan di browser.",
+      "h1": "Ekstrak semua gambar dari dokumen Word",
+      "lede": "Ambil setiap foto, logo, dan chart dari .docx dalam format dan resolusi aslinya — tanpa tangkapan layar, tanpa kompresi ulang, tanpa upload.",
+      "steps": [
+        "Tambahkan satu file .docx (dari Word atau Google Docs).",
+        "Klik “Ekstrak gambar”.",
+        "Unduh ZIP berisi gambar-gambarnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah kualitas gambarnya berkurang?",
+          "Tidak. Gambar disalin persis seperti tersimpan di dalam file, dalam format aslinya (PNG, JPG, GIF, SVG, EMF, dan sebagainya)."
+        ],
+        [
+          "Apakah bisa untuk Google Docs?",
+          "Ya. Di Google Docs, pilih File → Download → Microsoft Word (.docx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "compress-word": {
+      "name": "Kompres Word",
+      "summary": "Perkecil ukuran .docx dengan mengoptimalkan gambarnya.",
+      "action": "Kompres Word",
+      "title": "Kompres File Word (.docx) — Tanpa Upload | Fizzdoc",
+      "description": "Perkecil ukuran file Word dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload.",
+      "h1": "Kompres dokumen Word",
+      "lede": "Perkecil .docx agar cukup ringan untuk dikirim lewat email dengan mengompresi ulang foto yang terlalu besar di dalamnya. Teks, format, dan yang lainnya tetap persis sama.",
+      "steps": [
+        "Tambahkan satu file .docx (dari Word atau Google Docs).",
+        "Pilih kompresi Seimbang atau Kuat.",
+        "Klik “Kompres Word” dan unduh file yang lebih kecil."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seberapa besar pengurangan ukurannya?",
+          "File dengan foto besar sering menyusut hingga setengah atau lebih. File yang isinya kebanyakan teks biasanya sudah ringkas; jika Fizzdoc tidak bisa memperkecilnya lagi, Anda akan diberi tahu dan file aslinya dipertahankan."
+        ],
+        [
+          "Apakah bisa untuk Google Docs?",
+          "Ya. Di Google Docs, pilih File → Download → Microsoft Word (.docx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "remove-excel-metadata": {
+      "name": "Hapus Metadata Excel",
+      "summary": "Bersihkan nama penulis, perusahaan, dan editor dari .xlsx.",
+      "action": "Hapus metadata",
+      "title": "Hapus Metadata Excel — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file Excel di browser Anda. Kompatibel dengan unduhan Google Sheets. Tanpa upload.",
+      "h1": "Hapus metadata tersembunyi dari spreadsheet Excel",
+      "lede": "Setiap .xlsx mencatat siapa pembuatnya, siapa pengedit terakhirnya, dan perusahaan mana pemiliknya. Bersihkan detail itu sebelum dikirim — tanpa mengunggah filenya ke mana pun.",
+      "steps": [
+        "Tambahkan satu file .xlsx (dari Excel atau Google Sheets).",
+        "Klik “Hapus metadata”.",
+        "Unduh file .xlsx yang sudah bersih."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa saja yang dihapus?",
+          "Penulis, terakhir diedit oleh, judul, subjek, deskripsi, kata kunci, kategori, status, perusahaan, manajer, hyperlink base, custom properties, dan thumbnail pratinjau yang disematkan. Tanggal dibuat dan diubah dipertahankan karena dibutuhkan Office. Isi dokumen tidak disentuh."
+        ],
+        [
+          "Apakah bisa untuk Google Sheets?",
+          "Ya. Di Google Sheets, pilih File → Download → Microsoft Excel (.xlsx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "extract-images-from-excel": {
+      "name": "Ekstrak Gambar dari Excel",
+      "summary": "Simpan setiap gambar di .xlsx dengan kualitas asli.",
+      "action": "Ekstrak gambar",
+      "title": "Ekstrak Gambar dari Excel — Tanpa Upload | Fizzdoc",
+      "description": "Unduh setiap gambar yang disematkan dalam spreadsheet Excel sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Sheets. Berjalan di browser.",
+      "h1": "Ekstrak semua gambar dari spreadsheet Excel",
+      "lede": "Ambil setiap foto, logo, dan chart dari .xlsx dalam format dan resolusi aslinya — tanpa tangkapan layar, tanpa kompresi ulang, tanpa upload.",
+      "steps": [
+        "Tambahkan satu file .xlsx (dari Excel atau Google Sheets).",
+        "Klik “Ekstrak gambar”.",
+        "Unduh ZIP berisi gambar-gambarnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah kualitas gambarnya berkurang?",
+          "Tidak. Gambar disalin persis seperti tersimpan di dalam file, dalam format aslinya (PNG, JPG, GIF, SVG, EMF, dan sebagainya)."
+        ],
+        [
+          "Apakah bisa untuk Google Sheets?",
+          "Ya. Di Google Sheets, pilih File → Download → Microsoft Excel (.xlsx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "compress-excel": {
+      "name": "Kompres Excel",
+      "summary": "Perkecil ukuran .xlsx dengan mengoptimalkan gambarnya.",
+      "action": "Kompres Excel",
+      "title": "Kompres File Excel (.xlsx) — Tanpa Upload | Fizzdoc",
+      "description": "Perkecil ukuran file Excel dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload.",
+      "h1": "Kompres spreadsheet Excel",
+      "lede": "Perkecil .xlsx agar cukup ringan untuk dikirim lewat email dengan mengompresi ulang foto yang terlalu besar di dalamnya. Teks, format, dan yang lainnya tetap persis sama.",
+      "steps": [
+        "Tambahkan satu file .xlsx (dari Excel atau Google Sheets).",
+        "Pilih kompresi Seimbang atau Kuat.",
+        "Klik “Kompres Excel” dan unduh file yang lebih kecil."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seberapa besar pengurangan ukurannya?",
+          "File dengan foto besar sering menyusut hingga setengah atau lebih. File yang isinya kebanyakan teks biasanya sudah ringkas; jika Fizzdoc tidak bisa memperkecilnya lagi, Anda akan diberi tahu dan file aslinya dipertahankan."
+        ],
+        [
+          "Apakah bisa untuk Google Sheets?",
+          "Ya. Di Google Sheets, pilih File → Download → Microsoft Excel (.xlsx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "remove-powerpoint-metadata": {
+      "name": "Hapus Metadata PowerPoint",
+      "summary": "Bersihkan nama penulis, perusahaan, dan editor dari .pptx.",
+      "action": "Hapus metadata",
+      "title": "Hapus Metadata PowerPoint — Privat, Tanpa Upload | Fizzdoc",
+      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file PowerPoint di browser Anda. Kompatibel dengan unduhan Google Slides. Tanpa upload.",
+      "h1": "Hapus metadata tersembunyi dari presentasi PowerPoint",
+      "lede": "Setiap .pptx mencatat siapa pembuatnya, siapa pengedit terakhirnya, dan perusahaan mana pemiliknya. Bersihkan detail itu sebelum dikirim — tanpa mengunggah filenya ke mana pun.",
+      "steps": [
+        "Tambahkan satu file .pptx (dari PowerPoint atau Google Slides).",
+        "Klik “Hapus metadata”.",
+        "Unduh file .pptx yang sudah bersih."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa saja yang dihapus?",
+          "Penulis, terakhir diedit oleh, judul, subjek, deskripsi, kata kunci, kategori, status, perusahaan, manajer, hyperlink base, custom properties, dan thumbnail pratinjau yang disematkan. Tanggal dibuat dan diubah dipertahankan karena dibutuhkan Office. Isi dokumen tidak disentuh."
+        ],
+        [
+          "Apakah bisa untuk Google Slides?",
+          "Ya. Di Google Slides, pilih File → Download → Microsoft PowerPoint (.pptx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "extract-images-from-powerpoint": {
+      "name": "Ekstrak Gambar dari PowerPoint",
+      "summary": "Simpan setiap gambar di .pptx dengan kualitas asli.",
+      "action": "Ekstrak gambar",
+      "title": "Ekstrak Gambar dari PowerPoint — Tanpa Upload | Fizzdoc",
+      "description": "Unduh setiap gambar yang disematkan dalam presentasi PowerPoint sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Slides. Berjalan di browser.",
+      "h1": "Ekstrak semua gambar dari presentasi PowerPoint",
+      "lede": "Ambil setiap foto, logo, dan chart dari .pptx dalam format dan resolusi aslinya — tanpa tangkapan layar, tanpa kompresi ulang, tanpa upload.",
+      "steps": [
+        "Tambahkan satu file .pptx (dari PowerPoint atau Google Slides).",
+        "Klik “Ekstrak gambar”.",
+        "Unduh ZIP berisi gambar-gambarnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah kualitas gambarnya berkurang?",
+          "Tidak. Gambar disalin persis seperti tersimpan di dalam file, dalam format aslinya (PNG, JPG, GIF, SVG, EMF, dan sebagainya)."
+        ],
+        [
+          "Apakah bisa untuk Google Slides?",
+          "Ya. Di Google Slides, pilih File → Download → Microsoft PowerPoint (.pptx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    },
+    "compress-powerpoint": {
+      "name": "Kompres PowerPoint",
+      "summary": "Perkecil ukuran .pptx dengan mengoptimalkan gambarnya.",
+      "action": "Kompres PowerPoint",
+      "title": "Kompres File PowerPoint (.pptx) — Tanpa Upload | Fizzdoc",
+      "description": "Perkecil ukuran file PowerPoint dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload.",
+      "h1": "Kompres presentasi PowerPoint",
+      "lede": "Perkecil .pptx agar cukup ringan untuk dikirim lewat email dengan mengompresi ulang foto yang terlalu besar di dalamnya. Teks, format, dan yang lainnya tetap persis sama.",
+      "steps": [
+        "Tambahkan satu file .pptx (dari PowerPoint atau Google Slides).",
+        "Pilih kompresi Seimbang atau Kuat.",
+        "Klik “Kompres PowerPoint” dan unduh file yang lebih kecil."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seberapa besar pengurangan ukurannya?",
+          "File dengan foto besar sering menyusut hingga setengah atau lebih. File yang isinya kebanyakan teks biasanya sudah ringkas; jika Fizzdoc tidak bisa memperkecilnya lagi, Anda akan diberi tahu dan file aslinya dipertahankan."
+        ],
+        [
+          "Apakah bisa untuk Google Slides?",
+          "Ya. Di Google Slides, pilih File → Download → Microsoft PowerPoint (.pptx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi MIT."
+        ]
+      ]
+    }
+  }
+}
