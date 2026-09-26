@@ -1,0 +1,246 @@
+/* Sejda-style PDF editor: toolbar + scrollable page canvas + text/box overlays. */
+.edit-pdf {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: min(80vh, 900px);
+  min-height: 420px;
+}
+
+.edit-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm, none);
+}
+
+.edit-mode-group,
+.edit-zoom-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--surface-2);
+}
+
+.edit-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: calc(var(--radius) - 6px);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.edit-btn:hover {
+  background: var(--surface);
+}
+
+.edit-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.mode-btn[aria-pressed='true'] {
+  background: var(--accent);
+  color: #fff;
+}
+
+.edit-btn-icon {
+  padding: 7px 10px;
+  min-width: 34px;
+  text-align: center;
+}
+
+.edit-btn-icon:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.edit-zoom-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-width: 3.5em;
+  text-align: center;
+}
+
+.edit-page-label {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.edit-notice {
+  font-size: 0.8rem;
+  color: var(--danger, #dc2626);
+  flex-basis: 100%;
+}
+
+.edit-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.edit-scroll {
+  flex: 1;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.edit-page {
+  position: relative;
+  background: #fff;
+  box-shadow: var(--shadow-md, 0 1px 4px rgb(0 0 0 / 0.2));
+  border-radius: 2px;
+  flex: none;
+}
+
+.edit-page canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.edit-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.edit-scroll[data-mode='add-text'] .edit-overlay {
+  cursor: text;
+}
+
+.edit-scroll[data-mode='white-out'] .edit-overlay {
+  cursor: crosshair;
+}
+
+.edit-hitbox {
+  position: absolute;
+  border-radius: 2px;
+  cursor: text;
+}
+
+.edit-hitbox:hover,
+.edit-hitbox:focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 1px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.edit-run-box {
+  position: absolute;
+  color: #000;
+  background: #fff; /* masks the untouched canvas glyphs underneath until save() redraws them */
+  white-space: pre;
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
+  cursor: text;
+}
+
+.edit-run-box:not(.editing):hover,
+.edit-run-box:not(.editing):focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.edit-run-box.editing {
+  background: #fff;
+  outline: 1.5px solid var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.edit-added-box {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.edit-added-text {
+  min-width: 1.5em;
+  min-height: 1.2em;
+  color: #000;
+  background: color-mix(in srgb, #fff 65%, transparent);
+  outline: 1px dashed var(--line-strong);
+  padding: 1px 3px;
+  white-space: pre-wrap;
+  border-radius: 2px;
+}
+
+.edit-added-text:focus {
+  outline: 1.5px solid var(--accent);
+  background: #fff;
+}
+
+.edit-box-handle,
+.edit-box-close {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 1;
+  font-size: 11px;
+  padding: 0;
+  cursor: pointer;
+  flex: none;
+}
+
+.edit-box-handle {
+  cursor: grab;
+  touch-action: none;
+}
+
+.edit-box-close:hover {
+  background: var(--danger, #dc2626);
+  color: #fff;
+  border-color: transparent;
+}
+
+.edit-whiteout,
+.edit-whiteout-ghost {
+  position: absolute;
+  background: #fff;
+}
+
+.edit-whiteout {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--line-strong) 60%, transparent) inset;
+}
+
+.edit-whiteout-ghost {
+  background: color-mix(in srgb, #fff 70%, transparent);
+  border: 1px dashed var(--accent);
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .edit-page-label {
+    margin-left: 0;
+    flex-basis: 100%;
+    order: 3;
+  }
+}
