@@ -6,8 +6,13 @@ import type { LocalError, Output } from './engine/local';
 import type { FromWorker, ToWorker } from './engine/worker';
 import type { ToolOp } from './site';
 
-/** Tools that run in engine/local.ts; the rest run on qpdf in the worker. */
-const LOCAL_OPS: readonly string[] = ['jpg-to-pdf', 'pdf-to-jpg', 'office-clean', 'office-images'];
+/** A document for the browser's own PDF writer (print → Save as PDF): handles every script and font. */
+interface Printable {
+  html: string;
+  title: string;
+}
+type Options = Record<string, string>;
+type LocalJob = (files: File[], options: Options) => Promise<Output | Printable>;
 
 type Failure = ErrorCode | LocalError['code'] | 'ENGINE_FAILED' | 'PASSWORDS_DIFFER';
 
@@ -86,6 +91,8 @@ function setUp(op: ToolOp) {
   const newPassword = $<HTMLInputElement>('new-password');
   const confirmPassword = $<HTMLInputElement>('confirm-password');
   const workspace = $('workspace')!;
+  const viewer = $('viewer');
+  const optionsPanel = workspace.querySelector('.options')!;
 
   const multiple = workspace.dataset.multiple === 'true';
   // Mirrors the input's accept list (".pdf", "image/*", …) for dropped files.
@@ -98,6 +105,82 @@ function setUp(op: ToolOp) {
   let worker: Worker | undefined;
   let localBusy = false;
   const busy = () => !!worker || localBusy;
+  let printFrame: HTMLIFrameElement | undefined;
+  let editor: { file: File; ready: Promise<{ save(): Promise<Output>; destroy(): void }> } | undefined;
+
+  const progressLabel = (fraction: number) => say(`Working… ${Math.round(fraction * 100)}% — your files stay on this device.`);
+  const baseName = (file: File) => file.name.replace(/\.[^.]+$/, '');
+  const number = (value: string | undefined) => (value ? Number(value) : undefined);
+
+  // Every tool that runs outside the qpdf worker. Engines load on first use.
+  const LOCAL: Partial<Record<ToolOp, LocalJob>> = {
+    'jpg-to-pdf': async (f) => (await import('./engine/local')).imagesToPdf(f),
+    'pdf-to-jpg': async (f) => (await import('./engine/local')).pdfToImages(f[0]),
+    'office-clean': async (f) => (await import('./engine/local')).cleanOffice(f[0]),
+    'office-images': async (f) => (await import('./engine/local')).extractOfficeImages(f[0]),
+    'compress-pdf': async (f, o) => (await import('./engine/compress')).compressPdf(f[0], { level: o.level === 'strong' ? 'strong' : 'light' }),
+    'office-compress': async (f, o) => (await import('./engine/compress')).compressOffice(f[0], { level: o.level === 'strong' ? 'strong' : 'light' }),
+    'image-convert': async (f, o) =>
+      (await import('./engine/compress')).convertImages(f, {
+        format: (o.format ?? 'original') as 'jpeg' | 'png' | 'webp' | 'original',
+        quality: (number(o.quality) ?? 90) / 100,
+        width: number(o.width),
+        height: number(o.height),
+        scale: number(o.scale),
+        keepAspect: o.keepAspect !== 'false',
+      }),
+    'pdf-to-text': async (f, o) => (await import('./engine/convert')).pdfToText(f[0], { format: o.format === 'md' ? 'md' : 'txt' }),
+    'text-to-pdf': async (f) => (await import('./engine/convert')).textToHtml(f[0]),
+    'excel-to-csv': async (f) => (await import('./engine/convert')).xlsxToCsv(f[0]),
+    'csv-to-excel': async (f) => (await import('./engine/convert')).csvToXlsx(f[0]),
+    'word-to-pdf': async (f) => (await import('./engine/office')).docxToHtml(f[0]),
+    'pdf-to-word': async (f) => (await import('./engine/office')).pdfToDocx(f[0]),
+    'pdf-to-powerpoint': async (f) => (await import('./engine/office')).pdfToPptx(f[0]),
+    'ocr-pdf': async (f) => (await import('./engine/ocr')).ocrPdf(f[0], progressLabel),
+    'image-ocr': async (f) => {
+      const [{ ocrImage }, { showTextOverlay }] = await Promise.all([import('./engine/ocr'), import('./tools/ocr-viewer')]);
+      const recognized = await ocrImage(f[0], progressLabel);
+      showTextOverlay(viewer!, f[0], recognized);
+      const words = recognized.words.length;
+      return {
+        blob: new Blob([recognized.text], { type: 'text/plain;charset=utf-8' }),
+        name: `${baseName(f[0])}.txt`,
+        summary: `${words} ${words === 1 ? 'word' : 'words'} recognized`,
+      };
+    },
+    'edit-pdf': async () => (await editor!.ready).save(),
+  };
+
+  /** The editor follows the chosen file: opening a new one replaces it, removing it closes it. */
+  function syncEditor() {
+    if (op !== 'edit-pdf' || editor?.file === files[0]) return;
+    editor?.ready.then((e) => e.destroy(), () => {});
+    viewer!.replaceChildren();
+    editor = undefined;
+    if (!files[0]) return;
+    const file = files[0];
+    const ready = import('./tools/edit-pdf').then((m) => m.openEditor(file, viewer!));
+    editor = { file, ready };
+    ready.catch((error) => {
+      files = [];
+      render();
+      fail(error);
+    });
+  }
+
+  function fail(error: unknown) {
+    const code = (error as LocalError).code as Failure | undefined;
+    if (!code) console.error(error); // unexpected: keep the details for bug reports
+    say(code && code in ERRORS ? ERRORS[code] : ERRORS.PROCESSING_FAILED, 'error');
+  }
+
+  const options = (): Options =>
+    Object.fromEntries(
+      [...optionsPanel.querySelectorAll<HTMLInputElement | HTMLSelectElement>('[name]')].map((field) => [
+        field.name,
+        field instanceof HTMLInputElement && field.type === 'checkbox' ? String(field.checked) : field.value,
+      ]),
+    );
   let outputUrl: string | undefined;
   let dragIndex: number | null = null;
 
@@ -111,6 +194,7 @@ function setUp(op: ToolOp) {
     outputUrl = undefined;
     result.hidden = true;
     warnings.replaceChildren();
+    if (op === 'image-ocr') viewer?.replaceChildren();
   }
 
   function render() {
@@ -154,6 +238,7 @@ function setUp(op: ToolOp) {
     if (reorderHint) reorderHint.hidden = files.length < 2 || busy();
     input.disabled = busy();
     drop.classList.toggle('compact', files.length > 0);
+    syncEditor();
   }
 
   /** Desktop drag-and-drop reordering for the merge list; the arrow buttons cover touch and keyboard. */
@@ -240,6 +325,7 @@ function setUp(op: ToolOp) {
   function show(blob: Blob, name: string, summary: string) {
     if (outputUrl) URL.revokeObjectURL(outputUrl);
     outputUrl = URL.createObjectURL(blob);
+    download.onclick = null;
     download.href = outputUrl;
     download.download = name;
     download.textContent = `Download ${name.split('.').pop()!.toUpperCase()}`;
@@ -248,25 +334,37 @@ function setUp(op: ToolOp) {
     download.focus();
   }
 
-  async function runLocal() {
+  /** Hands a prepared document to the browser's print dialog, where "Save as PDF" writes the file. */
+  function printDocument(doc: Printable) {
+    printFrame?.remove();
+    printFrame = document.createElement('iframe');
+    printFrame.className = 'print-frame';
+    printFrame.title = doc.title;
+    printFrame.srcdoc = doc.html;
+    const frame = printFrame;
+    frame.onload = () => frame.contentWindow?.print();
+    document.body.append(frame);
+    download.removeAttribute('download');
+    download.href = '#';
+    download.textContent = 'Save as PDF';
+    download.onclick = (event) => {
+      event.preventDefault();
+      frame.contentWindow?.print();
+    };
+    say('Ready — choose “Save as PDF” in the print window, then Save. Created on this device.');
+    result.hidden = false;
+  }
+
+  async function runLocal(job: LocalJob) {
     say('Working… your files stay on this device.');
     localBusy = true;
     render();
     try {
-      const local = await import('./engine/local');
-      const output: Output =
-        op === 'jpg-to-pdf'
-          ? await local.imagesToPdf(files)
-          : op === 'pdf-to-jpg'
-            ? await local.pdfToImages(files[0])
-            : op === 'office-clean'
-              ? await local.cleanOffice(files[0])
-              : await local.extractOfficeImages(files[0]);
-      show(output.blob, output.name, output.summary);
+      const output = await job(files, options());
+      if ('html' in output) printDocument(output);
+      else show(output.blob, output.name, output.summary);
     } catch (error) {
-      const code = (error as LocalError).code;
-      if (!code) console.error(error); // unexpected: keep the details for bug reports
-      say(code && code in ERRORS ? ERRORS[code] : ERRORS.PROCESSING_FAILED, 'error');
+      fail(error);
     } finally {
       localBusy = false;
       render();
@@ -281,7 +379,8 @@ function setUp(op: ToolOp) {
       say(`These files total ${formatSize(total)}, more than this device can safely process (${formatSize(inputBudget())}).`, 'error');
       return;
     }
-    if (LOCAL_OPS.includes(op)) return void runLocal();
+    const local = LOCAL[op];
+    if (local) return void runLocal(local);
     if (newPassword && newPassword.value !== confirmPassword?.value) return say(ERRORS.PASSWORDS_DIFFER, 'error');
     const job: Job = {
       op: op as Op,
@@ -321,6 +420,12 @@ function setUp(op: ToolOp) {
   pages?.addEventListener('input', clearResult);
   angle?.addEventListener('change', clearResult);
   newPassword?.addEventListener('input', clearResult);
+  optionsPanel.addEventListener('input', (event) => {
+    const field = event.target as HTMLInputElement;
+    // Range sliders show their value next to the label.
+    if (field.type === 'range') field.previousElementSibling!.textContent = `${field.value}%`;
+    clearResult();
+  });
   runButton.onclick = run;
   cancelButton.onclick = () => {
     stop();

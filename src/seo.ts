@@ -13,6 +13,8 @@ export const PAGES: Page[] = [{ path: '/' }, ...TOOLS.map((tool) => ({ path: `/$
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'wasm-unsafe-eval'",
+  // Inline styles only: the Word/Markdown → PDF documents carry their own stylesheet. Scripts stay blocked.
+  "style-src 'self' 'unsafe-inline'",
   "connect-src 'self'",
   "img-src 'self' data: blob:",
   "object-src 'none'",
@@ -35,7 +37,23 @@ const faqHtml = (faq: [string, string][]) => `
 
 // 24px stroke icons, one per operation; they inherit color from their tile.
 const CLEAN = '<path d="m7 21-4.3-4.3a1 1 0 0 1 0-1.4l9.6-9.6a1 1 0 0 1 1.4 0l5.6 5.6a1 1 0 0 1 0 1.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/>';
+const CONVERT = '<path d="m17 3 4 4-4 4"/><path d="M3 7h18"/><path d="m7 21-4-4 4-4"/><path d="M21 17H3"/>';
+const SHRINK = '<path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="m14 10 7-7"/><path d="m3 21 7-7"/>';
+const SCAN = '<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 8h8M8 12h8M8 16h5"/>';
 const ICON_PATHS: Record<ToolOp, string> = {
+  'compress-pdf': SHRINK,
+  'office-compress': SHRINK,
+  'edit-pdf': '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+  'ocr-pdf': SCAN,
+  'image-ocr': SCAN,
+  'pdf-to-word': CONVERT,
+  'pdf-to-powerpoint': CONVERT,
+  'word-to-pdf': CONVERT,
+  'excel-to-csv': CONVERT,
+  'csv-to-excel': CONVERT,
+  'text-to-pdf': CONVERT,
+  'pdf-to-text': '<path d="M4 6h16M4 12h16M4 18h10"/>',
+  'image-convert': '<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/>',
   merge: '<rect x="8" y="3" width="13" height="13" rx="2"/><path d="M8 7H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/><path d="M14.5 7v5M12 9.5h5"/>',
   split: '<path d="M12 3v7"/><path d="m8 21 4-11 4 11"/><path d="M5 7h3M16 7h3"/>',
   rotate: '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/>',
@@ -94,12 +112,13 @@ const proofHtml = `
 // File cards beside the home hero; draggable, they spring back when released.
 const heroArt = `
 <div class="hero-art" aria-hidden="true">
-  ${FORMAT_ORDER.map((f) => `<div class="file-card fmt-${f}" data-spring><span class="badge fmt-${f}">${FORMATS[f].badge}</span><i></i><i></i><i></i><i></i></div>`).join('\n  ')}
+  ${FORMAT_ORDER.slice(0, 4).map((f) => `<div class="file-card fmt-${f}" data-spring><span class="badge fmt-${f}">${FORMATS[f].badge}</span><i></i><i></i><i></i><i></i></div>`).join('\n  ')}
   <div class="lock-chip"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Processed on this device</div>
 </div>`;
 
 /** What the file picker accepts, how it names those files, and whether it takes several. */
 function input(tool: Tool) {
+  if (tool.input) return { multiple: false, ...tool.input };
   if (tool.op === 'jpg-to-pdf') return { accept: 'image/*', kind: 'image', choose: 'Choose images', multiple: true };
   if (tool.format === 'pdf') {
     const multiple = tool.op === 'merge';
@@ -107,6 +126,34 @@ function input(tool: Tool) {
   }
   const { ext, label } = FORMATS[tool.format];
   return { accept: `.${ext}`, kind: `${label} (.${ext})`, choose: `Choose a .${ext} file`, multiple: false };
+}
+
+const LEVEL = `<label>Compression<select name="level"><option value="light">Balanced — best quality</option><option value="strong">Strong — smallest file</option></select></label>`;
+const FORMAT_SELECT = (selected: string) =>
+  `<label>Save as<select name="format">${[
+    ['original', 'Same format as each file'],
+    ['jpeg', 'JPG — photos, opens everywhere'],
+    ['webp', 'WebP — smallest'],
+    ['png', 'PNG — lossless'],
+  ]
+    .map(([value, label]) => `<option value="${value}"${value === selected ? ' selected' : ''}>${label}</option>`)
+    .join('')}</select></label>`;
+const QUALITY = (value: number) =>
+  `<label>Quality <output>${value}%</output><input name="quality" type="range" min="10" max="100" step="5" value="${value}"></label>`;
+
+/** Extra controls a tool needs beyond the file picker. Each control's name is an engine option. */
+function optionsHtml(tool: Tool) {
+  const mode = tool.preset?.mode;
+  if (tool.op === 'compress-pdf' || tool.op === 'office-compress') return LEVEL;
+  if (mode === 'compress') return FORMAT_SELECT('original') + QUALITY(75);
+  if (mode === 'convert') return FORMAT_SELECT('jpeg') + QUALITY(90);
+  if (mode === 'resize')
+    return `<label>Width (px)<input name="width" type="number" min="1" max="16384" inputmode="numeric" placeholder="Auto"></label>
+    <label>Height (px)<input name="height" type="number" min="1" max="16384" inputmode="numeric" placeholder="Auto"></label>
+    <label>Or scale (%)<input name="scale" type="number" min="1" max="1000" inputmode="numeric" placeholder="e.g. 50 or 200"></label>
+    <label class="check"><input name="keepAspect" type="checkbox" checked> Keep aspect ratio</label>
+    ${FORMAT_SELECT('original')}${QUALITY(92)}`;
+  return '';
 }
 
 function workspaceHtml(tool: Tool) {
@@ -120,7 +167,7 @@ function workspaceHtml(tool: Tool) {
           : null;
   const { accept, kind, choose, multiple } = input(tool);
   return `
-<section class="workspace" id="workspace" data-kind="${esc(kind)}" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
+<section class="workspace${tool.op === 'edit-pdf' ? ' wide' : ''}" id="workspace" data-kind="${esc(kind)}" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
   <label class="drop" id="drop">
     <input id="file-input" type="file" accept="${accept}"${multiple ? ' multiple' : ''}>
     <span class="drop-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m6 10 6-6 6 6"/><path d="M4 20h16"/></svg></span>
@@ -128,6 +175,7 @@ function workspaceHtml(tool: Tool) {
     <span>or drop ${multiple ? 'them' : 'it'} here · never leaves this device</span>
   </label>
   <ol id="file-list" class="file-list" aria-label="Selected files"></ol>
+  ${tool.op === 'edit-pdf' || tool.op === 'image-ocr' ? '<div id="viewer" class="viewer"></div>' : ''}
   ${multiple ? '<p class="hint" id="reorder-hint" hidden>Drag files to reorder, or use the arrows.</p>' : ''}
   <div class="options">
     ${
@@ -135,6 +183,10 @@ function workspaceHtml(tool: Tool) {
         ? `<label>Rotation<select id="angle"><option value="90">90° clockwise</option><option value="180">180°</option><option value="270">90° counter-clockwise</option></select></label>`
         : ''
     }
+    ${optionsHtml(tool)}
+    ${Object.entries(tool.preset ?? {})
+      .map(([name, value]) => `<input type="hidden" name="${name}" value="${esc(value)}">`)
+      .join('')}
     ${pagesField ? `<label>${pagesField.label}<input id="pages" placeholder="${pagesField.placeholder}" autocomplete="off" spellcheck="false"></label>` : ''}
     ${
       tool.op === 'protect'

@@ -3,14 +3,32 @@
 import type { Op } from './engine/pdf.ts';
 
 /** qpdf jobs (engine/pdf.ts) plus the tools that run in engine/local.ts. */
-export type ToolOp = Op | 'jpg-to-pdf' | 'pdf-to-jpg' | 'office-clean' | 'office-images';
-export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint';
+export type ToolOp =
+  | Op
+  | 'jpg-to-pdf'
+  | 'pdf-to-jpg'
+  | 'office-clean'
+  | 'office-images'
+  | 'office-compress'
+  | 'compress-pdf'
+  | 'edit-pdf'
+  | 'ocr-pdf'
+  | 'pdf-to-word'
+  | 'pdf-to-powerpoint'
+  | 'pdf-to-text'
+  | 'text-to-pdf'
+  | 'word-to-pdf'
+  | 'excel-to-csv'
+  | 'csv-to-excel'
+  | 'image-convert'
+  | 'image-ocr';
+export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image';
 
 export const SITE = {
   name: 'Fizzdoc',
   url: 'https://fizzdoc.in',
   repo: 'https://github.com/kingrishabdugar/localpdf',
-  tagline: 'Private PDF, Word, Excel and PowerPoint tools that never upload your files',
+  tagline: 'Private PDF, Word, Excel, PowerPoint and image tools that never upload your files',
 };
 
 export interface Tool {
@@ -28,6 +46,10 @@ export interface Tool {
   lede: string;
   steps: string[];
   faq: [question: string, answer: string][];
+  /** File picker override; the default follows the format (one .pdf, .docx, …). */
+  input?: { accept: string; kind: string; choose: string; multiple?: boolean };
+  /** Fixed engine options for this page, e.g. { format: 'md' } for PDF to Markdown. */
+  preset?: Record<string, string>;
 }
 
 const PRIVACY_FAQ: [string, string][] = [
@@ -292,6 +314,365 @@ export const TOOLS: Tool[] = [
   },
 ];
 
+const PDF_IN = { accept: 'application/pdf,.pdf', kind: 'PDF', choose: 'Choose a PDF file' };
+const IMAGES_IN = { accept: 'image/*', kind: 'image', choose: 'Choose images', multiple: true };
+const SAVE_AS_PDF: [string, string] = [
+  'Why does a print window open?',
+  'Your browser has a built-in PDF writer that handles every language and font perfectly. Fizzdoc prepares the document and hands it to that writer: choose “Save as PDF” as the destination and click Save. Nothing is printed or sent anywhere.',
+];
+
+TOOLS.push(
+  {
+    op: 'compress-pdf',
+    format: 'pdf',
+    slug: 'compress-pdf',
+    name: 'Compress PDF',
+    summary: 'Shrink a PDF by optimizing its images. Text stays sharp.',
+    action: 'Compress PDF',
+    title: 'Compress PDF Online Without Uploading — Free | Fizzdoc',
+    description:
+      'Reduce PDF file size in your browser by recompressing oversized images. Text stays selectable and sharp. Nothing is uploaded; free and open source.',
+    h1: 'Compress a PDF — without uploading it',
+    lede: 'Make a PDF small enough to email or upload to a portal. Fizzdoc recompresses oversized photos and scans and leaves text and vector graphics untouched.',
+    steps: ['Add one PDF file.', 'Choose Balanced or Strong compression.', 'Click “Compress PDF” and download the smaller file.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'How much smaller will my PDF get?',
+        'PDFs made from scans and photos often shrink by 40–80%. Text-only PDFs are usually already compact; if Fizzdoc cannot make a file smaller, it tells you and keeps the original.',
+      ],
+      ['Will text become blurry?', 'No. Only embedded pictures are recompressed. Text, fonts and vector drawings are copied exactly, so text stays sharp and selectable.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'edit-pdf',
+    format: 'pdf',
+    slug: 'edit-pdf',
+    name: 'Edit PDF',
+    summary: 'Change existing text, add text and white-out, right on the page.',
+    action: 'Save PDF',
+    title: 'Edit PDF Text Online — Free, No Upload | Fizzdoc',
+    description:
+      'Click any text in a PDF to change it, add new text, or white-out areas — directly on the page, in your browser. Nothing is uploaded. Free, no sign-up.',
+    h1: 'Edit PDF text directly on the page',
+    lede: 'Fix a typo, update a date or fill in a blank without the original file. Click the text you want to change and type — it all happens on your device.',
+    steps: [
+      'Add one PDF file.',
+      'Click any text to change it, or use Add text and White-out from the toolbar.',
+      'Click “Save PDF” and download the edited file.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Will the edited text match the original font?',
+        'Fizzdoc picks the closest standard font (sans-serif, serif or monospace, with bold and italic) at the same size and position. Custom brand fonts cannot be reproduced exactly.',
+      ],
+      [
+        'Is the original text removed?',
+        'The original text is covered on the page and your new text is drawn on top. For sensitive information that must be gone from the file, delete the page or re-create the document instead.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'ocr-pdf',
+    format: 'pdf',
+    slug: 'ocr-pdf',
+    name: 'OCR PDF',
+    summary: 'Make a scanned PDF searchable and copyable.',
+    action: 'Recognize text',
+    title: 'OCR PDF — Make Scanned PDFs Searchable, No Upload | Fizzdoc',
+    description:
+      'Turn scanned PDFs into searchable, copyable documents with English OCR that runs in your browser. Pages keep their original quality. Nothing is uploaded.',
+    h1: 'Make a scanned PDF searchable with OCR',
+    lede: 'Recognize the English text in scanned pages and add it as an invisible layer, so you can search, select and copy it. The pages themselves are not changed.',
+    steps: ['Add one scanned PDF.', 'Click “Recognize text” and wait while each page is read.', 'Download the searchable PDF.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Which languages are supported?',
+        'English. The recognition engine (Tesseract) and its English language data are downloaded to your browser once, the first time you use an OCR tool — about a few megabytes.',
+      ],
+      ['Does OCR change how my pages look?', 'No. The scanned pages are kept exactly as they are; the recognized text is added as an invisible layer on top.'],
+      PRIVACY_FAQ[1],
+    ],
+    input: PDF_IN,
+  },
+  {
+    op: 'pdf-to-word',
+    format: 'pdf',
+    slug: 'pdf-to-word',
+    name: 'PDF to Word',
+    summary: 'Turn PDF text into an editable .docx.',
+    action: 'Convert to Word',
+    title: 'PDF to Word (DOCX) Converter — Private, No Upload | Fizzdoc',
+    description:
+      'Convert a PDF to an editable Word document in your browser. Headings, paragraphs and page breaks are kept. Nothing is uploaded. Free, no sign-up.',
+    h1: 'Convert PDF to an editable Word document',
+    lede: 'Get the text of a PDF into Word, with headings and paragraphs rebuilt, so you can edit it. Conversion happens on your device.',
+    steps: ['Add one PDF file.', 'Click “Convert to Word”.', 'Download the .docx and open it in Word, Google Docs or LibreOffice.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Will the layout look exactly like the PDF?',
+        'Fizzdoc rebuilds the text flow — headings, paragraphs, bold and italic, and page breaks — so the document is easy to edit. Complex layouts with columns, tables and images are simplified.',
+      ],
+      ['What about scanned PDFs?', 'Scanned pages are pictures, not text. Run OCR PDF first, then convert the result to Word.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'pdf-to-powerpoint',
+    format: 'pdf',
+    slug: 'pdf-to-powerpoint',
+    name: 'PDF to PowerPoint',
+    summary: 'Turn each PDF page into a slide.',
+    action: 'Convert to PowerPoint',
+    title: 'PDF to PowerPoint (PPTX) — Private, No Upload | Fizzdoc',
+    description:
+      'Convert a PDF into a PowerPoint presentation with one sharp slide per page, right in your browser. Nothing is uploaded. Free and open source.',
+    h1: 'Convert a PDF to a PowerPoint presentation',
+    lede: 'Present a PDF as slides. Every page becomes a full-size, high-resolution slide in a .pptx you can open in PowerPoint, Keynote or Google Slides.',
+    steps: ['Add one PDF file.', 'Click “Convert to PowerPoint”.', 'Download the .pptx.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Can I edit the text on the slides?',
+        'Each slide is a picture of the page, so it looks exactly like the PDF. To edit the wording, use PDF to Word instead, or add text boxes on top in PowerPoint.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'pdf-to-text',
+    format: 'pdf',
+    slug: 'pdf-to-text',
+    name: 'PDF to Text',
+    summary: 'Extract all text from a PDF as a .txt file.',
+    action: 'Extract text',
+    title: 'PDF to Text (TXT) Converter — Private, No Upload | Fizzdoc',
+    description:
+      'Extract the text from a PDF into a plain .txt file in your browser, in the right reading order. Nothing is uploaded. Free, no sign-up, open source.',
+    h1: 'Extract text from a PDF',
+    lede: 'Get every word out of a PDF as plain text, with lines and paragraphs in reading order. Perfect for copying, searching or feeding into other tools.',
+    steps: ['Add one PDF file.', 'Click “Extract text”.', 'Download the .txt file.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Why is my text file empty?', 'Scanned PDFs contain pictures of text, not text. Run OCR PDF first, then extract the text.'],
+      PRIVACY_FAQ[1],
+    ],
+    preset: { format: 'txt' },
+  },
+  {
+    op: 'pdf-to-text',
+    format: 'pdf',
+    slug: 'pdf-to-markdown',
+    name: 'PDF to Markdown',
+    summary: 'Convert a PDF to clean Markdown with headings and lists.',
+    action: 'Convert to Markdown',
+    title: 'PDF to Markdown Converter — Private, No Upload | Fizzdoc',
+    description:
+      'Convert a PDF to Markdown with headings and lists detected, ready for docs, notes or AI tools. Runs in your browser; nothing is uploaded. Free.',
+    h1: 'Convert a PDF to Markdown',
+    lede: 'Turn a PDF into clean Markdown — headings, paragraphs and lists — for Notion, Obsidian, GitHub or any tool that reads Markdown.',
+    steps: ['Add one PDF file.', 'Click “Convert to Markdown”.', 'Download the .md file.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['How are headings detected?', 'From the size of the text: lines noticeably larger than the body text become headings, and bulleted or numbered lines become lists.'],
+      PRIVACY_FAQ[1],
+    ],
+    preset: { format: 'md' },
+  },
+  {
+    op: 'text-to-pdf',
+    format: 'pdf',
+    slug: 'text-to-pdf',
+    name: 'Text to PDF',
+    summary: 'Turn a .txt file into a clean PDF.',
+    action: 'Create PDF',
+    title: 'Text to PDF (TXT to PDF) Converter — No Upload | Fizzdoc',
+    description:
+      'Convert a plain text file to a clean, readable PDF in your browser. Supports every language, including Hindi and other scripts. Nothing is uploaded.',
+    h1: 'Convert a text file to PDF',
+    lede: 'Turn notes, logs or any .txt file into a neatly formatted A4 PDF. Every language and script is supported.',
+    steps: ['Add one .txt file.', 'Click “Create PDF”.', 'Choose “Save as PDF” in the window that opens and click Save.'],
+    faq: [PRIVACY_FAQ[0], SAVE_AS_PDF, PRIVACY_FAQ[1]],
+    input: { accept: '.txt,text/plain', kind: 'text (.txt)', choose: 'Choose a .txt file' },
+  },
+  {
+    op: 'text-to-pdf',
+    format: 'pdf',
+    slug: 'markdown-to-pdf',
+    name: 'Markdown to PDF',
+    summary: 'Render a .md file as a formatted PDF.',
+    action: 'Create PDF',
+    title: 'Markdown to PDF Converter — Private, No Upload | Fizzdoc',
+    description:
+      'Convert Markdown to a formatted PDF with headings, lists, tables and code blocks, right in your browser. Nothing is uploaded. Free and open source.',
+    h1: 'Convert Markdown to PDF',
+    lede: 'Render a README, notes or documentation written in Markdown into a clean, printable PDF with headings, lists, tables and code blocks.',
+    steps: ['Add one .md file.', 'Click “Create PDF”.', 'Choose “Save as PDF” in the window that opens and click Save.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Which Markdown features are supported?', 'Headings, bold, italic, inline code and code blocks, ordered and bulleted lists, quotes, links, horizontal rules and tables. Raw HTML is shown as text for safety.'],
+      SAVE_AS_PDF,
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: '.md,.markdown,text/markdown', kind: 'Markdown (.md)', choose: 'Choose a .md file' },
+  },
+  {
+    op: 'word-to-pdf',
+    format: 'word',
+    slug: 'word-to-pdf',
+    name: 'Word to PDF',
+    summary: 'Convert a .docx to PDF, all languages supported.',
+    action: 'Convert to PDF',
+    title: 'Word to PDF (DOCX to PDF) Converter — No Upload | Fizzdoc',
+    description:
+      'Convert a Word document to PDF in your browser, keeping headings, lists, tables and images. Works with Google Docs downloads. Nothing is uploaded.',
+    h1: 'Convert a Word document to PDF',
+    lede: 'Turn a .docx into a PDF with its headings, lists, tables and pictures, using your browser’s own PDF writer. The document never leaves your device.',
+    steps: ['Add one .docx file (from Word or Google Docs).', 'Click “Convert to PDF”.', 'Choose “Save as PDF” in the window that opens and click Save.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Will it look exactly like in Word?',
+        'Text, headings, lists, tables, links and pictures are kept. Headers, footers and advanced layouts such as text boxes and multi-column sections are simplified.',
+      ],
+      SAVE_AS_PDF,
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'excel-to-csv',
+    format: 'excel',
+    slug: 'excel-to-csv',
+    name: 'Excel to CSV',
+    summary: 'Export every sheet of an .xlsx to CSV.',
+    action: 'Convert to CSV',
+    title: 'Excel to CSV (XLSX to CSV) Converter — No Upload | Fizzdoc',
+    description:
+      'Convert Excel spreadsheets to CSV in your browser. Every sheet is exported, dates become ISO dates, and nothing is uploaded. Works with Google Sheets.',
+    h1: 'Convert Excel to CSV',
+    lede: 'Export each sheet of an .xlsx workbook to a UTF-8 CSV file that opens correctly everywhere. Dates, numbers and text are kept as they are.',
+    steps: ['Add one .xlsx file (from Excel or Google Sheets).', 'Click “Convert to CSV”.', 'Download the CSV, or a ZIP with one CSV per sheet.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['What happens to formulas?', 'CSV stores values only, so each cell’s last calculated value is exported — the same thing Excel does.'],
+      ['Are non-English characters kept?', 'Yes. The CSV is UTF-8 with a byte-order mark, so Excel, Google Sheets and other apps read accents and non-Latin scripts correctly.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'csv-to-excel',
+    format: 'excel',
+    slug: 'csv-to-excel',
+    name: 'CSV to Excel',
+    summary: 'Turn a .csv into a proper .xlsx workbook.',
+    action: 'Convert to Excel',
+    title: 'CSV to Excel (CSV to XLSX) Converter — No Upload | Fizzdoc',
+    description:
+      'Convert a CSV file to an Excel .xlsx workbook in your browser. Numbers stay numbers, leading zeros are kept, and nothing is uploaded. Free.',
+    h1: 'Convert CSV to Excel',
+    lede: 'Turn a CSV into a real Excel workbook. Numbers become numbers, codes like 007 keep their leading zeros, and the delimiter is detected for you.',
+    steps: ['Add one .csv file.', 'Click “Convert to Excel”.', 'Download the .xlsx.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Does it handle semicolons and tabs?', 'Yes. Commas, semicolons, tabs and pipes are detected automatically, as are quoted fields with line breaks inside them.'],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: '.csv,.tsv,text/csv', kind: 'CSV', choose: 'Choose a .csv file' },
+  },
+  {
+    op: 'image-convert',
+    format: 'image',
+    slug: 'compress-image',
+    name: 'Compress Image',
+    summary: 'Make JPG, PNG and WebP images smaller.',
+    action: 'Compress images',
+    title: 'Compress Images (JPG, PNG, WebP) — No Upload, Free | Fizzdoc',
+    description:
+      'Reduce image file size in your browser — JPG, PNG, WebP and more, in bulk. Choose the quality or keep it lossless. Photos are never uploaded.',
+    h1: 'Compress images without uploading them',
+    lede: 'Shrink photos and screenshots for email, websites and forms. Pick a quality level, or keep them lossless — all on your device, in bulk.',
+    steps: ['Add one or more images.', 'Choose the output format and quality.', 'Click “Compress images” and download the result.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Can I compress without losing quality?',
+        'Yes. Choose PNG for pixel-perfect lossless output. For photos, JPG or WebP at 80% quality usually looks identical and is far smaller.',
+      ],
+      ['Is location data removed?', 'Yes. Re-encoding drops hidden EXIF metadata such as GPS location and camera details.'],
+      PRIVACY_FAQ[1],
+    ],
+    input: IMAGES_IN,
+    preset: { mode: 'compress' },
+  },
+  {
+    op: 'image-convert',
+    format: 'image',
+    slug: 'resize-image',
+    name: 'Resize Image',
+    summary: 'Make images larger or smaller, by pixels or percent.',
+    action: 'Resize images',
+    title: 'Resize Images Online (Enlarge or Shrink) — No Upload | Fizzdoc',
+    description:
+      'Resize images to exact pixels or a percentage — smaller or larger — in your browser, in bulk. Keep the aspect ratio or not. Nothing is uploaded.',
+    h1: 'Resize images — bigger or smaller',
+    lede: 'Set an exact width and height or scale by percent, for one picture or many. Aspect ratio is kept unless you say otherwise.',
+    steps: ['Add one or more images.', 'Enter a new size or a percentage.', 'Click “Resize images” and download the result.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Does enlarging an image add detail?',
+        'Enlarging makes the picture bigger with smooth, high-quality scaling, but it cannot invent detail that was not captured. It is ideal for meeting minimum-size requirements.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: IMAGES_IN,
+    preset: { mode: 'resize' },
+  },
+  {
+    op: 'image-convert',
+    format: 'image',
+    slug: 'convert-image',
+    name: 'Convert Image',
+    summary: 'Convert between JPG, PNG and WebP.',
+    action: 'Convert images',
+    title: 'Convert Images to JPG, PNG or WebP — No Upload | Fizzdoc',
+    description:
+      'Convert images between JPG, PNG and WebP in your browser, in bulk. Works with GIF, BMP, AVIF and iPhone photos your browser can open. Nothing is uploaded.',
+    h1: 'Convert images to JPG, PNG or WebP',
+    lede: 'Change the format of one image or a whole batch — for example WebP to JPG or PNG to WebP — without sending them anywhere.',
+    steps: ['Add one or more images.', 'Choose the format you need.', 'Click “Convert images” and download the result.'],
+    faq: [PRIVACY_FAQ[0], ['Which format should I choose?', 'JPG for photos that must open everywhere, PNG for screenshots and graphics that need sharp edges or transparency, WebP for the smallest files on the web.'], PRIVACY_FAQ[1]],
+    input: IMAGES_IN,
+    preset: { mode: 'convert' },
+  },
+  {
+    op: 'image-ocr',
+    format: 'image',
+    slug: 'image-to-text',
+    name: 'Image to Text (OCR)',
+    summary: 'Select and copy text from any photo or screenshot.',
+    action: 'Recognize text',
+    title: 'Image to Text (OCR) — Copy Text from Photos, No Upload | Fizzdoc',
+    description:
+      'Extract text from photos and screenshots with English OCR in your browser, then select and copy it right on the image — like Live Text. Nothing is uploaded.',
+    h1: 'Copy text from any image',
+    lede: 'Recognize the English text in a photo, scan or screenshot, then select it directly on the picture — just like Live Text on iPhone. Nothing leaves your device.',
+    steps: ['Add one image.', 'Click “Recognize text”.', 'Select text right on the image, copy it all, or download it as a .txt file.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Which languages are supported?', 'English. The recognition engine and its English data download to your browser once, the first time you use OCR.'],
+      ['How do I get the best results?', 'Use a sharp, well-lit, straight-on photo. Printed text works best; handwriting is recognized less reliably.'],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: 'image/*', kind: 'image', choose: 'Choose an image' },
+  },
+);
+
 // Word, Excel and PowerPoint files (and Google Docs, Sheets and Slides downloaded as them) are ZIP
 // packages, so the same two tools work for all three; only the words change.
 const OFFICE = [
@@ -351,6 +732,28 @@ for (const o of OFFICE) {
         PRIVACY_FAQ[1],
       ],
     },
+    {
+      op: 'office-compress',
+      format: o.format,
+      slug: `compress-${o.format}`,
+      name: `Compress ${o.app}`,
+      summary: `Shrink a .${o.ext} by optimizing its pictures.`,
+      action: `Compress ${o.app}`,
+      title: `Compress ${o.app} Files (.${o.ext}) — No Upload | Fizzdoc`,
+      description: `Reduce the size of ${o.a} ${o.app} file by recompressing its photos, in your browser. Content and formatting stay the same. Nothing is uploaded.`,
+      h1: `Compress ${o.a} ${o.app} ${o.thing}`,
+      lede: `Make a .${o.ext} small enough to email by recompressing oversized photos inside it. Text, formatting and everything else stay exactly the same.`,
+      steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Choose Balanced or Strong compression.', `Click “Compress ${o.app}” and download the smaller file.`],
+      faq: [
+        PRIVACY_FAQ[0],
+        [
+          'How much smaller will it get?',
+          'Files with large photos often shrink by half or more. Files that are mostly text are already compact; if Fizzdoc cannot make a file smaller, it tells you and keeps the original.',
+        ],
+        googleFaq(o),
+        PRIVACY_FAQ[1],
+      ],
+    },
   );
 }
 
@@ -359,15 +762,16 @@ export const FORMATS: Record<Format, { label: string; badge: string; ext: string
   word: { label: 'Word', badge: 'DOC', ext: 'docx' },
   excel: { label: 'Excel', badge: 'XLS', ext: 'xlsx' },
   powerpoint: { label: 'PowerPoint', badge: 'PPT', ext: 'pptx' },
+  image: { label: 'Image', badge: 'IMG', ext: 'jpg' },
 };
 
 export const HOME = {
-  title: 'Fizzdoc — Private PDF, Word, Excel & PowerPoint Tools. No Uploads.',
+  title: 'Fizzdoc — Private PDF, Word, Excel & Image Tools. No Uploads.',
   description:
-    'Merge, split, protect and convert PDFs, and clean Word, Excel and PowerPoint files — right in your browser. Zero uploads, no sign-up, free and open source.',
+    'Edit, compress, convert, OCR and merge PDFs; convert Word, Excel and images — right in your browser. Zero uploads, no sign-up, free and open source.',
   h1: 'Document tools that never see your documents',
-  lede: 'Merge, split, protect and convert PDFs. Clean Word, Excel and PowerPoint files. Everything runs in your browser — your files never leave your device.',
-  what: 'Fizzdoc is a free, open-source set of document tools that runs entirely in your web browser. PDFs are processed with the qpdf and pdf.js engines, and Office files are handled locally too, so nothing is ever uploaded to a server.',
+  lede: 'Edit, compress, convert and OCR PDFs. Convert Word, Excel, PowerPoint and images. Everything runs in your browser — your files never leave your device.',
+  what: 'Fizzdoc is a free, open-source set of document tools that runs entirely in your web browser. PDFs are processed with the qpdf, pdf.js and pdf-lib engines, text recognition uses Tesseract, and Office files and images are handled locally too — so nothing is ever uploaded to a server.',
   faq: [
     PRIVACY_FAQ[0],
     [
