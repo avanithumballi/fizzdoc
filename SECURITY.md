@@ -19,4 +19,4 @@ Especially interesting:
 
 ## Supported versions
 
-Only the latest deployment at [fizzdoc.pages.dev](https://fizzdoc.pages.dev) and the `main` branch are supported.
+Only the latest deployment at [fizzdoc.com](https://fizzdoc.com) and the `main` branch are supported.

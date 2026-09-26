@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://fizzdoc.pages.dev"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
+  <a href="https://fizzdoc.com"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
   <a href="#-all-44-tools"><strong>All tools</strong></a> &nbsp;·&nbsp;
   <a href="#-how-it-works"><strong>How it works</strong></a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-  <a href="https://fizzdoc.pages.dev"><img src="docs/assets/hero.png" width="960" alt="Fizzdoc: private document tools in light and dark mode"></a>
+  <a href="https://fizzdoc.com"><img src="docs/assets/hero.png" width="960" alt="Fizzdoc: private document tools in light and dark mode"></a>
 </p>
 
 ---
@@ -59,24 +59,24 @@ Every "free online PDF tool" asks you to upload your contract, payslip, bank sta
     <td width="50%" valign="top">
       <strong>✏️ Edit PDF text in place</strong><br>
       <sub>Click any text and type. The closest standard font is used, and nothing is uploaded.</sub><br><br>
-      <a href="https://fizzdoc.pages.dev/edit-pdf/"><img src="docs/assets/edit.gif" alt="Editing PDF text directly on the page" width="100%"></a>
+      <a href="https://fizzdoc.com/edit-pdf/"><img src="docs/assets/edit.gif" alt="Editing PDF text directly on the page" width="100%"></a>
     </td>
     <td width="50%" valign="top">
       <strong>🔍 Copy text from any photo</strong><br>
       <sub>On-device OCR with Live Text-style selection, right on the image.</sub><br><br>
-      <a href="https://fizzdoc.pages.dev/image-to-text/"><img src="docs/assets/ocr.gif" alt="Selecting recognized text on an image" width="100%"></a>
+      <a href="https://fizzdoc.com/image-to-text/"><img src="docs/assets/ocr.gif" alt="Selecting recognized text on an image" width="100%"></a>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <strong>🧩 Merge, reorder, done</strong><br>
       <sub>Drag to reorder. Forms and links survive; anything that can't is reported.</sub><br><br>
-      <a href="https://fizzdoc.pages.dev/merge-pdf/"><img src="docs/assets/merge.gif" alt="Merging and reordering PDFs" width="100%"></a>
+      <a href="https://fizzdoc.com/merge-pdf/"><img src="docs/assets/merge.gif" alt="Merging and reordering PDFs" width="100%"></a>
     </td>
     <td width="50%" valign="top">
       <strong>🌍 16 languages</strong><br>
       <sub>Every page, tool and error message, from Hindi and Tamil to German and Vietnamese.</sub><br><br>
-      <a href="https://fizzdoc.pages.dev/hi/"><img src="docs/assets/lang.gif" alt="Fizzdoc in Hindi, Spanish, Tamil, German, Bengali and Vietnamese" width="100%"></a>
+      <a href="https://fizzdoc.com/hi/"><img src="docs/assets/lang.gif" alt="Fizzdoc in Hindi, Spanish, Tamil, German, Bengali and Vietnamese" width="100%"></a>
     </td>
   </tr>
 </table>
@@ -85,12 +85,12 @@ Every "free online PDF tool" asks you to upload your contract, payslip, bank sta
 
 | Format | Tools |
 |---|---|
-| **PDF** | [Edit PDF](https://fizzdoc.pages.dev/edit-pdf/) (change text in place) · [Compress](https://fizzdoc.pages.dev/compress-pdf/) · [Merge](https://fizzdoc.pages.dev/merge-pdf/) · [Split](https://fizzdoc.pages.dev/split-pdf/) · [Extract pages](https://fizzdoc.pages.dev/extract-pdf-pages/) · [Reorder pages](https://fizzdoc.pages.dev/reorder-pdf-pages/) · [Rotate](https://fizzdoc.pages.dev/rotate-pdf/) · [Delete pages](https://fizzdoc.pages.dev/delete-pdf-pages/) · [Page numbers](https://fizzdoc.pages.dev/add-page-numbers-to-pdf/) · [Watermark](https://fizzdoc.pages.dev/watermark-pdf/) · [Unlock](https://fizzdoc.pages.dev/unlock-pdf/) · [Protect (AES-256)](https://fizzdoc.pages.dev/protect-pdf/) · [Remove metadata](https://fizzdoc.pages.dev/remove-pdf-metadata/) · [OCR](https://fizzdoc.pages.dev/ocr-pdf/) |
-| **PDF conversions** | [PDF → Word](https://fizzdoc.pages.dev/pdf-to-word/) · [PDF → PowerPoint](https://fizzdoc.pages.dev/pdf-to-powerpoint/) · [PDF → JPG](https://fizzdoc.pages.dev/pdf-to-jpg/) · [PDF → PNG](https://fizzdoc.pages.dev/pdf-to-png/) · [PDF → Text](https://fizzdoc.pages.dev/pdf-to-text/) · [PDF → Markdown](https://fizzdoc.pages.dev/pdf-to-markdown/) · [JPG → PDF](https://fizzdoc.pages.dev/jpg-to-pdf/) · [PNG → PDF](https://fizzdoc.pages.dev/png-to-pdf/) · [Text → PDF](https://fizzdoc.pages.dev/text-to-pdf/) · [Markdown → PDF](https://fizzdoc.pages.dev/markdown-to-pdf/) |
-| **Word** | [Word → PDF](https://fizzdoc.pages.dev/word-to-pdf/) · [Compress](https://fizzdoc.pages.dev/compress-word/) · [Remove metadata](https://fizzdoc.pages.dev/remove-word-metadata/) · [Extract images](https://fizzdoc.pages.dev/extract-images-from-word/) |
-| **Excel** | [Excel → CSV](https://fizzdoc.pages.dev/excel-to-csv/) · [CSV → Excel](https://fizzdoc.pages.dev/csv-to-excel/) · [Compress](https://fizzdoc.pages.dev/compress-excel/) · [Remove metadata](https://fizzdoc.pages.dev/remove-excel-metadata/) · [Extract images](https://fizzdoc.pages.dev/extract-images-from-excel/) |
-| **PowerPoint** | [Compress](https://fizzdoc.pages.dev/compress-powerpoint/) · [Remove metadata](https://fizzdoc.pages.dev/remove-powerpoint-metadata/) · [Extract images](https://fizzdoc.pages.dev/extract-images-from-powerpoint/) |
-| **Images** | [Compress](https://fizzdoc.pages.dev/compress-image/) · [Resize](https://fizzdoc.pages.dev/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.pages.dev/convert-image/) · [PNG → JPG](https://fizzdoc.pages.dev/png-to-jpg/) · [JPG → PNG](https://fizzdoc.pages.dev/jpg-to-png/) · [WebP → JPG](https://fizzdoc.pages.dev/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.pages.dev/jpg-to-webp/) · [Image → Text](https://fizzdoc.pages.dev/image-to-text/) (select text right on the photo, like Live Text) |
+| **PDF** | [Edit PDF](https://fizzdoc.com/edit-pdf/) (change text in place) · [Compress](https://fizzdoc.com/compress-pdf/) · [Merge](https://fizzdoc.com/merge-pdf/) · [Split](https://fizzdoc.com/split-pdf/) · [Extract pages](https://fizzdoc.com/extract-pdf-pages/) · [Reorder pages](https://fizzdoc.com/reorder-pdf-pages/) · [Rotate](https://fizzdoc.com/rotate-pdf/) · [Delete pages](https://fizzdoc.com/delete-pdf-pages/) · [Page numbers](https://fizzdoc.com/add-page-numbers-to-pdf/) · [Watermark](https://fizzdoc.com/watermark-pdf/) · [Unlock](https://fizzdoc.com/unlock-pdf/) · [Protect (AES-256)](https://fizzdoc.com/protect-pdf/) · [Remove metadata](https://fizzdoc.com/remove-pdf-metadata/) · [OCR](https://fizzdoc.com/ocr-pdf/) |
+| **PDF conversions** | [PDF → Word](https://fizzdoc.com/pdf-to-word/) · [PDF → PowerPoint](https://fizzdoc.com/pdf-to-powerpoint/) · [PDF → JPG](https://fizzdoc.com/pdf-to-jpg/) · [PDF → PNG](https://fizzdoc.com/pdf-to-png/) · [PDF → Text](https://fizzdoc.com/pdf-to-text/) · [PDF → Markdown](https://fizzdoc.com/pdf-to-markdown/) · [JPG → PDF](https://fizzdoc.com/jpg-to-pdf/) · [PNG → PDF](https://fizzdoc.com/png-to-pdf/) · [Text → PDF](https://fizzdoc.com/text-to-pdf/) · [Markdown → PDF](https://fizzdoc.com/markdown-to-pdf/) |
+| **Word** | [Word → PDF](https://fizzdoc.com/word-to-pdf/) · [Compress](https://fizzdoc.com/compress-word/) · [Remove metadata](https://fizzdoc.com/remove-word-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-word/) |
+| **Excel** | [Excel → CSV](https://fizzdoc.com/excel-to-csv/) · [CSV → Excel](https://fizzdoc.com/csv-to-excel/) · [Compress](https://fizzdoc.com/compress-excel/) · [Remove metadata](https://fizzdoc.com/remove-excel-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-excel/) |
+| **PowerPoint** | [Compress](https://fizzdoc.com/compress-powerpoint/) · [Remove metadata](https://fizzdoc.com/remove-powerpoint-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-powerpoint/) |
+| **Images** | [Compress](https://fizzdoc.com/compress-image/) · [Resize](https://fizzdoc.com/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.com/convert-image/) · [PNG → JPG](https://fizzdoc.com/png-to-jpg/) · [JPG → PNG](https://fizzdoc.com/jpg-to-png/) · [WebP → JPG](https://fizzdoc.com/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.com/jpg-to-webp/) · [Image → Text](https://fizzdoc.com/image-to-text/) (select text right on the photo, like Live Text) |
 
 **Google Docs, Sheets and Slides** work too: download as .docx / .xlsx / .pptx and use the matching tool. Nothing is sent to Google.
 
@@ -132,7 +132,7 @@ When something genuinely can't be carried over (a digital signature, accessibili
 - **Lazy engines.** First load is about 9 KB of gzipped app code; each engine downloads only when a tool needs it.
 - **One registry drives everything.** Add a tool in `src/site.ts` and its page, SEO tags, sitemap entry and footer link appear in all 16 languages.
 
-Explore the interactive [architecture map](https://fizzdoc.pages.dev/architecture.html) or read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+Explore the interactive [architecture map](https://fizzdoc.com/architecture.html) or read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## 🚀 Run it locally
 

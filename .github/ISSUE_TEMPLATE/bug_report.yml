@@ -11,7 +11,7 @@ body:
     attributes:
       label: Tool
       description: Page address or tool name.
-      placeholder: https://fizzdoc.pages.dev/compress-pdf/
+      placeholder: https://fizzdoc.com/compress-pdf/
     validations:
       required: true
   - type: textarea
