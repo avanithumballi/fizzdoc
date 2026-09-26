@@ -85,7 +85,7 @@ sequenceDiagram
   hosting costs nothing at any traffic level. It also scales with the visitor's device.
 - **Disposable worker per qpdf job.** Terminating the worker is the cancel button and the cleanup:
   files, passwords and the WASM heap go away together. No shared state between jobs.
-- **Lazy engines.** The first page load is about 15 KB of app code plus CSS and font. qpdf (1.3 MB),
+- **Lazy engines.** The first page load is about 9 KB of gzipped app code plus CSS and font. qpdf (1.3 MB),
   pdf.js, pdf-lib and the OCR engine (about 6 MB, self-hosted) load only when a tool that needs them runs.
 - **Native PDF writer for documents.** Word, text and Markdown → PDF prepare a print-ready page and use
   the browser's own “Save as PDF”, which gets every language, script and font right with zero extra code.

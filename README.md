@@ -129,7 +129,7 @@ When something genuinely can't be carried over (a digital signature, accessibili
 ```
 
 - **Static site, zero backend.** Nothing to scale, nothing to breach, nothing to pay for.
-- **Lazy engines.** First load is ~15 KB of app code; each engine downloads only when a tool needs it.
+- **Lazy engines.** First load is about 9 KB of gzipped app code; each engine downloads only when a tool needs it.
 - **One registry drives everything.** Add a tool in `src/site.ts` and its page, SEO tags, sitemap entry and footer link appear in all 16 languages.
 
 Explore the interactive [architecture map](https://fizzdoc.pages.dev/architecture.html) or read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
