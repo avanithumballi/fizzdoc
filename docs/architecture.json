@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Fizzdoc architecture",
+    "output": "architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "delivery",
+        "label": "Build and delivery",
+        "focus": [
+          "registry",
+          "build",
+          "host",
+          "app"
+        ],
+        "note": "One registry of tools becomes prerendered, search-ready pages on a static host."
+      },
+      {
+        "id": "processing",
+        "label": "On-device processing",
+        "focus": [
+          "user",
+          "app",
+          "qpdf",
+          "local",
+          "ocr",
+          "editor",
+          "device"
+        ],
+        "note": "Files go from the visitor's device into the tab's engines and straight back. Nothing crosses the network."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "registry",
+      "type": "frontend",
+      "label": "Tool registry",
+      "sublabel": "site.ts \u00b7 33 tools",
+      "pos": [
+        40,
+        90
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "build",
+      "type": "backend",
+      "label": "Vite build",
+      "sublabel": "seo.ts prerender",
+      "pos": [
+        40,
+        330
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "host",
+      "type": "cloud",
+      "label": "Cloudflare Pages",
+      "sublabel": "static files only",
+      "pos": [
+        310,
+        330
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "user",
+      "type": "external",
+      "label": "Visitor",
+      "sublabel": "chooses files",
+      "pos": [
+        580,
+        90
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "app",
+      "type": "frontend",
+      "label": "Page controller",
+      "sublabel": "app.ts",
+      "pos": [
+        580,
+        330
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "qpdf",
+      "type": "backend",
+      "label": "qpdf worker",
+      "sublabel": "WASM \u00b7 one per job",
+      "pos": [
+        860,
+        90
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "local",
+      "type": "backend",
+      "label": "Local engines",
+      "sublabel": "pdf.js \u00b7 pdf-lib \u00b7 fflate",
+      "pos": [
+        860,
+        330
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "ocr",
+      "type": "backend",
+      "label": "OCR engine",
+      "sublabel": "Tesseract WASM",
+      "pos": [
+        860,
+        570
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "editor",
+      "type": "frontend",
+      "label": "PDF editor",
+      "sublabel": "edit-pdf.ts",
+      "pos": [
+        580,
+        570
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "device",
+      "type": "database",
+      "label": "Visitor's device",
+      "sublabel": "download \u00b7 Save as PDF",
+      "pos": [
+        1150,
+        330
+      ],
+      "size": [
+        160,
+        60
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Build time",
+      "wraps": [
+        "registry",
+        "build"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "Browser tab \u00b7 CSP connect-src 'self'",
+      "wraps": [
+        "user",
+        "app",
+        "qpdf",
+        "local",
+        "ocr",
+        "editor"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "registry-build",
+      "from": "registry",
+      "to": "build",
+      "label": "tools + copy",
+      "labelAt": [
+        110,
+        240
+      ]
+    },
+    {
+      "id": "build-host",
+      "from": "build",
+      "to": "host",
+      "label": "HTML \u00b7 sitemap"
+    },
+    {
+      "id": "host-app",
+      "from": "host",
+      "to": "app",
+      "label": "GET only",
+      "variant": "emphasis"
+    },
+    {
+      "id": "user-app",
+      "from": "user",
+      "to": "app",
+      "label": "files",
+      "labelAt": [
+        650,
+        240
+      ]
+    },
+    {
+      "id": "app-qpdf",
+      "from": "app",
+      "to": "qpdf",
+      "label": "postMessage",
+      "labelAt": [
+        790,
+        220
+      ]
+    },
+    {
+      "id": "app-local",
+      "from": "app",
+      "to": "local",
+      "label": "import()",
+      "labelAt": [
+        833,
+        366
+      ]
+    },
+    {
+      "id": "app-ocr",
+      "from": "app",
+      "to": "ocr",
+      "label": "import()"
+    },
+    {
+      "id": "app-editor",
+      "from": "app",
+      "to": "editor",
+      "label": "open",
+      "labelAt": [
+        650,
+        480
+      ]
+    },
+    {
+      "id": "local-device",
+      "from": "local",
+      "to": "device",
+      "label": "Blob",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "Privacy",
+      "items": [
+        "No upload endpoint exists",
+        "CSP blocks every other origin",
+        "Worker terminated after each job"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Performance",
+      "items": [
+        "~15 KB app on first load",
+        "Engines load only when a tool runs",
+        "OCR assets self-hosted, fetched once"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Fidelity",
+      "items": [
+        "qpdf rewrites structure, no re-render",
+        "Losses are reported as warnings",
+        "Browser print writer for Word/Markdown \u2192 PDF"
+      ]
+    }
+  ]
+}

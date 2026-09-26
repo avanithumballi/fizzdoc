@@ -1,0 +1,71 @@
+/* iPhone-Live-Text-style overlay: an image with an invisible, selectable text layer on top. */
+
+.ocr-viewer {
+  display: grid;
+  gap: 14px;
+}
+
+.ocr-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.ocr-frame img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Each word's hit box: percent-positioned against the frame, so it tracks resizes with no JS. */
+.ocr-word {
+  position: absolute;
+  container-type: size;
+  cursor: text;
+}
+
+/* Sized in cqh (a percentage of the word box's own height) so it scales with the box; the
+   horizontal stretch that fits its width is a fixed ratio applied once, in showTextOverlay. */
+.ocr-word-text {
+  display: block;
+  width: max-content;
+  transform-origin: 0 0;
+  font-size: 100cqh;
+  line-height: 1;
+  white-space: pre;
+  color: transparent;
+}
+
+.ocr-word-text::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: transparent;
+}
+
+.ocr-controls {
+  display: flex;
+}
+
+.ocr-text {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+.ocr-text::placeholder {
+  color: var(--muted);
+}

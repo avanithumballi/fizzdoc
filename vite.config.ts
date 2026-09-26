@@ -1,6 +1,7 @@
 /// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite';
 import { PAGES, fileName, llms, renderPage, robots, sitemap } from './src/seo.ts';
+import { ocrAssets } from './vite-plugins/ocr-assets.ts';
 
 /** Serves each tool page in dev and writes one prerendered HTML file per page at build. */
 function pages(): Plugin {
@@ -34,7 +35,7 @@ function pages(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [pages()],
+  plugins: [pages(), ocrAssets()],
   worker: { format: 'es' },
   build: { target: 'es2022' },
   test: { include: ['tests/**/*.test.ts'] },

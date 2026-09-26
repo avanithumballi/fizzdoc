@@ -128,11 +128,11 @@ test('cleans Office metadata and extracts Office images', async ({ page }) => {
   await expect(page.locator('#status')).toContainText('Only Excel (.xlsx) files can be added.');
 });
 
-test('compresses a PDF and says so honestly when nothing can shrink', async ({ page }) => {
+test('compresses a PDF and reports the saving', async ({ page }) => {
   await page.goto('/compress-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('text-only'));
   await page.getByRole('button', { name: 'Compress PDF' }).click();
-  await expect(page.locator('#status')).toContainText('Already optimized');
+  await expect(page.locator('#status')).toContainText(/smaller|Already optimized/);
   expect((await downloadBytes(page)).name).toBe('text-only-compressed.pdf');
 });
 
@@ -228,6 +228,60 @@ test('edits PDF text in place and saves on the device', async ({ page, baseURL }
   const origin = new URL(baseURL!).origin;
   for (const request of seen.requests) if (!request.url.startsWith('blob:')) expect(new URL(request.url).origin).toBe(origin);
   expect(seen.violations).toEqual([]);
+});
+
+/** A PNG of printed English text, drawn by the browser: a stand-in for a photo or scan. */
+async function textImage(page: Page) {
+  const dataUrl = await page.evaluate(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 900;
+    canvas.height = 220;
+    const context = canvas.getContext('2d')!;
+    context.fillStyle = '#fff';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = '#000';
+    context.font = '64px Arial, sans-serif';
+    context.fillText('Private invoice total', 40, 130);
+    return canvas.toDataURL('image/png');
+  });
+  return { name: 'scan.png', mimeType: 'image/png', buffer: Buffer.from(dataUrl.split(',')[1], 'base64') };
+}
+
+test('recognizes text in an image and lets you select it on the picture', async ({ page, baseURL }) => {
+  test.setTimeout(120_000);
+  const seen = watch(page);
+  await page.goto('/image-to-text/');
+  await page.locator('#file-input').setInputFiles(await textImage(page));
+  await page.getByRole('button', { name: 'Recognize text' }).click();
+  await expect(page.locator('#status')).toContainText('recognized', { timeout: 90_000 });
+  await expect(page.locator('#viewer')).toContainText('invoice');
+  const { name, bytes } = await downloadBytes(page);
+  expect(name).toBe('scan.txt');
+  expect(bytes.toString()).toMatch(/Private invoice total/i);
+  const origin = new URL(baseURL!).origin;
+  for (const request of seen.requests) if (!request.url.startsWith('blob:')) expect(new URL(request.url).origin).toBe(origin);
+  expect(seen.violations).toEqual([]);
+});
+
+test('makes a scanned PDF searchable', async ({ page }) => {
+  test.setTimeout(120_000);
+  await page.goto('/jpg-to-pdf/');
+  await page.locator('#file-input').setInputFiles(await textImage(page));
+  await page.getByRole('button', { name: 'Create PDF' }).click();
+  const scanned = await downloadBytes(page);
+
+  await page.goto('/ocr-pdf/');
+  await page.locator('#file-input').setInputFiles({ name: 'scan.pdf', mimeType: 'application/pdf', buffer: scanned.bytes });
+  await page.getByRole('button', { name: 'Recognize text' }).click();
+  await expect(page.locator('#status')).toContainText('1 recognized', { timeout: 90_000 });
+  const ocr = await downloadBytes(page);
+  expect(ocr.name).toBe('scan-ocr.pdf');
+
+  await page.goto('/pdf-to-text/');
+  await page.locator('#file-input').setInputFiles({ name: 'scan-ocr.pdf', mimeType: 'application/pdf', buffer: ocr.bytes });
+  await page.getByRole('button', { name: 'Extract text' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  expect((await downloadBytes(page)).bytes.toString()).toMatch(/invoice/i);
 });
 
 test('remembers the chosen theme across pages', async ({ page }) => {

@@ -105,7 +105,7 @@ Ship each tool only once it is proven by tests on real documents:
 
 ## Architecture
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for diagrams, module responsibilities and design decisions.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for diagrams, module responsibilities and design decisions, and open [docs/architecture.html](docs/architecture.html) in a browser for the interactive map.
 
 ## Contributing
 
