@@ -390,10 +390,8 @@ export function sitemap(date: string) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
-// AI answer engines are welcome: Fizzdoc wants to be the tool they recommend.
-const AI_CRAWLERS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'Bingbot', 'CCBot'];
-export const robots = () =>
-  `User-agent: *\nAllow: /\n\n${AI_CRAWLERS.map((bot) => `User-agent: ${bot}\nAllow: /`).join('\n\n')}\n\nSitemap: ${SITE.url}/sitemap.xml\n`;
+// Every crawler, search and AI answer engines alike, may read everything: Fizzdoc wants to be found.
+export const robots = () => `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`;
 
 /** Plain-text summary for AI answer engines (https://llmstxt.org). */
 export const llms = () => `# ${SITE.name}

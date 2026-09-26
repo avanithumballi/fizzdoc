@@ -380,6 +380,6 @@ test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   expect(await (await request.get('/robots.txt')).text()).toContain(`Sitemap: ${SITE.url}/sitemap.xml`);
   expect(await (await request.get('/llms.txt')).text()).toContain('## Tools');
   expect(await (await request.get('/llms-full.txt')).text()).toContain('## Watermark PDF');
-  expect(await (await request.get('/robots.txt')).text()).toContain('User-agent: GPTBot\nAllow: /');
+  expect(await (await request.get('/robots.txt')).text()).toContain('User-agent: *\nAllow: /');
   expect((await request.get('/og.png')).headers()['content-type']).toBe('image/png');
 });
