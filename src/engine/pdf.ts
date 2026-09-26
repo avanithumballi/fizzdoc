@@ -1,13 +1,15 @@
 // Environment-agnostic PDF job runner on top of qpdf (WASM). The caller owns the
 // qpdf instance and makes the input files available at `inputs` paths.
 
-export type Op = 'merge' | 'split' | 'rotate' | 'delete' | 'unlock';
+export type Op = 'merge' | 'split' | 'rotate' | 'delete' | 'unlock' | 'protect' | 'clean';
 
 export interface Job {
   op: Op;
   /** Page selection such as "1-3, 8". Required for split/delete, optional for rotate. */
   pages?: string;
   angle?: 90 | 180 | 270;
+  /** New password for protect. */
+  password?: string;
 }
 
 export type ErrorCode =
@@ -19,6 +21,7 @@ export type ErrorCode =
   | 'UNSUPPORTED_XFA'
   | 'NO_PAGES_LEFT'
   | 'WRONG_FILE_COUNT'
+  | 'NO_PASSWORD'
   | 'PROCESSING_FAILED';
 
 /** Anything the output does not carry over from the input is reported, never dropped silently. */
@@ -179,6 +182,8 @@ const EXPECTED_FILES: Record<Op, (n: number) => boolean> = {
   rotate: (n) => n === 1,
   delete: (n) => n === 1,
   unlock: (n) => n === 1,
+  protect: (n) => n === 1,
+  clean: (n) => n === 1,
 };
 
 export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: AskPassword): Promise<Result> {
@@ -196,7 +201,8 @@ export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: A
   const first = infos[0];
   if (infos.some((info) => info.xfa) && job.op !== 'unlock') throw new PdfError('UNSUPPORTED_XFA');
   if (job.op === 'unlock' && !first.encrypted) throw new PdfError('NOT_ENCRYPTED');
-  if (job.op !== 'unlock') {
+  if (job.op === 'protect' && !job.password) throw new PdfError('NO_PASSWORD');
+  if (job.op !== 'unlock' && job.op !== 'protect') {
     infos.forEach((info, i) => {
       if (info.encrypted) warnings.add(passwords[i] ? 'PASSWORD_REMOVED' : 'PERMISSIONS_REMOVED');
     });
@@ -204,7 +210,8 @@ export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: A
   if (infos.some((info) => info.signed)) warnings.add('SIGNATURES_INVALIDATED');
 
   // The first input is the primary document: its catalog (bookmarks, form, tags) is kept.
-  const args = [inputs[0], `--password=${passwords[0]}`, '--decrypt'];
+  // qpdf rejects --decrypt together with --encrypt; protect replaces any old encryption anyway.
+  const args = [inputs[0], `--password=${passwords[0]}`, job.op === 'protect' ? '' : '--decrypt'].filter(Boolean);
   let pageCount = first.pages;
   if (job.op === 'merge') {
     args.push('--pages', '.', '1-z');
@@ -232,6 +239,10 @@ export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: A
     if (![90, 180, 270].includes(job.angle ?? 0)) throw new PdfError('PROCESSING_FAILED');
     const pages = job.pages?.trim() ? parsePages(job.pages, first.pages).join(',') : '1-z';
     args.push(`--rotate=+${job.angle}:${pages}`);
+  }
+  if (job.op === 'clean') args.push('--remove-info', '--remove-metadata');
+  if (job.op === 'protect') {
+    args.push('--encrypt', `--user-password=${job.password}`, `--owner-password=${job.password}`, '--bits=256', '--');
   }
   args.push(OUT);
 

@@ -3,7 +3,8 @@ import { expect, test, type Page } from '@playwright/test';
 import { PAGES } from '../src/seo';
 import { SITE } from '../src/site';
 
-const fixture = (name: string) => new URL(`./fixtures/${name}.pdf`, import.meta.url).pathname;
+const file = (name: string) => new URL(`./fixtures/${name}`, import.meta.url).pathname;
+const fixture = (name: string) => file(`${name}.pdf`);
 
 /** Records every request and console CSP violation, so tests can prove nothing leaves the page. */
 function watch(page: Page) {
@@ -75,6 +76,58 @@ test('explains bad page ranges and cancels cleanly', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Remove password' })).toBeEnabled();
 });
 
+test('password-protects a PDF after checking both entries match', async ({ page }) => {
+  await page.goto('/protect-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('text-only'));
+  await page.locator('#new-password').fill('s3cret');
+  await page.locator('#confirm-password').fill('typo');
+  await page.getByRole('button', { name: 'Protect PDF' }).click();
+  await expect(page.locator('#status')).toContainText('do not match');
+  await page.locator('#confirm-password').fill('s3cret');
+  await page.getByRole('button', { name: 'Protect PDF' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  const { name, bytes } = await downloadBytes(page);
+  expect(name).toBe('text-only-protected.pdf');
+  expect(bytes.toString('latin1')).toContain('/Encrypt');
+});
+
+test('turns images into a PDF and PDF pages into images', async ({ page }) => {
+  const seen = watch(page);
+  await page.goto('/jpg-to-pdf/');
+  await page.locator('#file-input').setInputFiles([file('photo.png'), file('photo.jpg')]);
+  await page.getByRole('button', { name: 'Create PDF' }).click();
+  await expect(page.locator('#status')).toContainText('Done — 2 pages');
+  expect((await downloadBytes(page)).name).toBe('photo-and-more.pdf');
+
+  await page.goto('/pdf-to-jpg/');
+  await page.locator('#file-input').setInputFiles(fixture('mixed'));
+  await page.getByRole('button', { name: 'Convert to JPG' }).click();
+  await expect(page.locator('#status')).toContainText('Done — 3 images');
+  await expect(page.locator('#download')).toHaveText('Download ZIP');
+  const { name, bytes } = await downloadBytes(page);
+  expect(name).toBe('mixed-images.zip');
+  expect(bytes.subarray(0, 2).toString()).toBe('PK');
+  expect(seen.violations).toEqual([]);
+});
+
+test('cleans Office metadata and extracts Office images', async ({ page }) => {
+  await page.goto('/remove-word-metadata/');
+  await page.locator('#file-input').setInputFiles(file('report.docx'));
+  await page.getByRole('button', { name: 'Remove metadata' }).click();
+  await expect(page.locator('#status')).toContainText('Done — Metadata removed');
+  const clean = await downloadBytes(page);
+  expect(clean.name).toBe('report-clean.docx');
+
+  await page.goto('/extract-images-from-excel/');
+  await page.locator('#file-input').setInputFiles(file('sheet.xlsx'));
+  await page.getByRole('button', { name: 'Extract images' }).click();
+  await expect(page.locator('#status')).toContainText('Done — 1 image');
+  expect((await downloadBytes(page)).name).toBe('sheet-images.zip');
+
+  await page.locator('#file-input').setInputFiles(file('report.docx'));
+  await expect(page.locator('#status')).toContainText('Only Excel (.xlsx) files can be added.');
+});
+
 test('remembers the chosen theme across pages', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto('/');
@@ -87,6 +140,7 @@ test('remembers the chosen theme across pages', async ({ page }) => {
 test('dragged cards spring back and do not open their link', async ({ page }) => {
   await page.goto('/');
   const card = page.locator('.tool-card').first();
+  await card.scrollIntoViewIfNeeded();
   const box = (await card.boundingBox())!;
   await page.mouse.move(box.x + 30, box.y + 30);
   await page.mouse.down();

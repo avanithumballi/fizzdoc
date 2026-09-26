@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import createQpdf from '@neslinesli93/qpdf-wasm';
+import { PDFDocument } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
 import { parsePages, runJob, type Job, type Qpdf } from '../src/engine/pdf';
 
@@ -169,4 +170,37 @@ describe('passwords', () => {
 
 it('rejects files that are not PDFs', async () => {
   expect(await code(run([new TextEncoder().encode('not a pdf')], { op: 'rotate', angle: 90 }))).toBe('INVALID_PDF');
+});
+
+describe('protect and clean', () => {
+  const opens = async (bytes: Uint8Array, password: string) => {
+    const q = await load();
+    q.FS.writeFile('/x.pdf', bytes);
+    return q.callMain([`--password=${password}`, '--check', '/x.pdf']) === 0;
+  };
+
+  it('protects a PDF so it only opens with the new password', async () => {
+    const result = await run(['text-only'], { op: 'protect', password: 'correct horse' });
+    expect(await opens(result.output, '')).toBe(false);
+    expect(await opens(result.output, 'correct horse')).toBe(true);
+    expect(result.warnings).toEqual([]);
+    expect(await code(run(['text-only'], { op: 'protect', password: '' }))).toBe('NO_PASSWORD');
+  });
+
+  it('removes the document info dictionary and XMP metadata', async () => {
+    const info = async (bytes: Uint8Array) => {
+      const q = await load();
+      q.FS.writeFile('/x.pdf', bytes);
+      q.callMain(['--json=2', '--json-key=qpdf', '/x.pdf', '/x.json']);
+      const objects = JSON.parse(new TextDecoder().decode(q.FS.readFile('/x.json'))).qpdf[1];
+      const catalog = objects[`obj:${objects.trailer.value['/Root']}`].value;
+      const info = objects[`obj:${objects.trailer.value['/Info']}`]?.value ?? {};
+      return { info: Object.keys(info), xmp: '/Metadata' in catalog };
+    };
+    const doc = await PDFDocument.load(fixture('text-only'));
+    doc.setAuthor('Secret Author');
+    const withAuthor = await doc.save();
+    expect((await info(withAuthor)).info).toContain('/Author');
+    expect(await info((await run([withAuthor], { op: 'clean' })).output)).toEqual({ info: ['/ModDate'], xmp: false });
+  });
 });

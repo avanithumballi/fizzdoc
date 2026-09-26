@@ -2,9 +2,9 @@
 
 # Fizzdoc
 
-**Private PDF tools that never upload your files — and don't break your PDF.**
+**Private PDF, Word, Excel and PowerPoint tools that never upload your files.**
 
-**[fizzdoc.in](https://fizzdoc.in)** · Merge, split, rotate, delete pages and unlock PDFs entirely in your browser.<br>
+**[fizzdoc.in](https://fizzdoc.in)** · Merge, split, protect and convert PDFs; clean Word, Excel and PowerPoint files — entirely in your browser.<br>
 No server, no sign-up, no watermark. Open source.
 
 [![CI](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml/badge.svg)](https://github.com/kingrishabdugar/localpdf/actions/workflows/ci.yml)
@@ -39,13 +39,16 @@ Fizzdoc also warns when a document's digital signatures will stop validating or 
 
 ## Tools
 
-| Tool | Page |
+| Format | Tools |
 |---|---|
-| Merge PDF | `/merge-pdf/` |
-| Split PDF / extract pages | `/split-pdf/` |
-| Rotate PDF | `/rotate-pdf/` |
-| Delete PDF pages | `/delete-pdf-pages/` |
-| Unlock PDF (remove a password you know) | `/unlock-pdf/` |
+| PDF | Merge · Split / extract pages · Rotate · Delete pages · Unlock · Protect (AES-256) · Remove metadata · JPG → PDF · PDF → JPG |
+| Word (.docx) | Remove metadata · Extract images |
+| Excel (.xlsx) | Remove metadata · Extract images |
+| PowerPoint (.pptx) | Remove metadata · Extract images |
+
+Google Docs, Sheets and Slides work too: download the file as .docx, .xlsx or .pptx (File → Download) and use the matching tool. Nothing is sent to Google.
+
+Every tool has its own page at `/<slug>/`, listed in `src/site.ts`.
 
 ## Verify the privacy claim yourself
 
@@ -82,6 +85,8 @@ src/app.ts        page UI: file list, options, password dialog, download
 src/engine/worker.ts   one disposable worker per job; mounts files with WORKERFS (no copy into WASM memory)
    │
 src/engine/pdf.ts      preflight (qpdf --json) → fidelity warnings → qpdf command → output bytes
+
+src/engine/local.ts    no qpdf needed: Office ZIP packages (fflate), JPG → PDF (pdf-lib), PDF → JPG (pdf.js)
 ```
 
 Canceling a job terminates its worker, which discards the files, passwords and engine memory it held.
@@ -90,10 +95,11 @@ Canceling a job terminates its worker, which discards the files, passwords and e
 
 Ship each tool only once it is proven by tests on real documents:
 
-- Page thumbnails and drag-to-reorder
-- Images → PDF and PDF → images
-- Add a password, strip metadata
-- Compress PDF (needs a maintained engine build and a real-photo/scan quality corpus)
+- Page thumbnails and visual reordering
+- Compress PDF (the current qpdf build gains nothing on images; needs a maintained engine and a real scan corpus)
+- Repair PDF (the current qpdf build can't recover damaged files)
+- Word / Excel / PowerPoint → PDF (needs a full office engine in the browser, tens of MB)
+- Excel ↔ CSV
 - Installable offline app (PWA)
 - PDF → Word (deferred until layout fidelity can be measured)
 

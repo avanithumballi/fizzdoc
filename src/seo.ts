@@ -1,6 +1,6 @@
 // Renders every page of the static site from index.html, plus sitemap.xml, robots.txt and llms.txt.
 // Runs in Node (inside the Vite build and dev server), never in the browser.
-import { HOME, SITE, TOOLS, type Tool } from './site.ts';
+import { FORMATS, HOME, SITE, TOOLS, type Format, type Tool, type ToolOp } from './site.ts';
 
 export interface Page {
   path: string;
@@ -23,53 +23,91 @@ const CSP = [
 const esc = (text: string) =>
   text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
+const FORMAT_ORDER = Object.keys(FORMATS) as Format[];
+
 const faqHtml = (faq: [string, string][]) => `
 <section class="section faq" aria-labelledby="faq">
-  <h2 id="faq">Frequently asked questions</h2>
+  <div class="section-head"><h2 id="faq">Frequently asked questions</h2></div>
+  <div class="faq-list">
   ${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n  ')}
+  </div>
 </section>`;
 
-// 24px stroke icons, one per tool; inherit color from the card.
-const ICON_PATHS: Record<Tool['op'], string> = {
+// 24px stroke icons, one per operation; they inherit color from their tile.
+const CLEAN = '<path d="m7 21-4.3-4.3a1 1 0 0 1 0-1.4l9.6-9.6a1 1 0 0 1 1.4 0l5.6 5.6a1 1 0 0 1 0 1.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/>';
+const ICON_PATHS: Record<ToolOp, string> = {
   merge: '<path d="M8 3v6a4 4 0 0 0 4 4h0a4 4 0 0 1 4 4v4"/><path d="M16 3v6a4 4 0 0 1-4 4"/><path d="m5 18 3 3 3-3"/>',
   split: '<path d="M12 3v7"/><path d="m8 21 4-11 4 11"/><path d="M5 7h3M16 7h3"/>',
   rotate: '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/>',
   delete: '<path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/>',
   unlock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/>',
+  protect: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><path d="M12 15v2"/>',
+  clean: CLEAN,
+  'office-clean': CLEAN,
+  'jpg-to-pdf': '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
+  'pdf-to-jpg': '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="10" cy="13" r="1.5"/><path d="m20 19-4-4-6 6"/>',
+  'office-images': '<rect x="7" y="7" width="14" height="14" rx="2"/><path d="M3 17V5a2 2 0 0 1 2-2h12"/><path d="m21 17-4-4-7 7"/>',
 };
 
-const icon = (op: Tool['op']) =>
-  `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON_PATHS[op]}</svg>`;
+const icon = (op: ToolOp) =>
+  `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICON_PATHS[op]}</svg>`;
 
-// Cards can be tossed around with the mouse; app.ts springs them back into place.
+const badge = (format: Format) => `<span class="badge fmt-${format}" aria-hidden="true">${FORMATS[format].badge}</span>`;
+
+// Cards can be tossed around with the mouse; effects.ts springs them back into place.
 const toolCards = (tools: Tool[]) => `
 <ul class="tool-grid">
   ${tools
     .map(
       (t) =>
-        `<li><a class="tool-card" data-spring href="/${t.slug}/" draggable="false"><span class="tool-icon tone-${t.op}">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
+        `<li><a class="tool-card fmt-${t.format}" data-spring href="/${t.slug}/" draggable="false"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
     )
     .join('\n  ')}
 </ul>`;
 
+const toolGroup = (format: Format) => {
+  const tools = TOOLS.filter((t) => t.format === format);
+  return `
+<div class="format-group" id="${format}">
+  <h3>${badge(format)}${FORMATS[format].label} tools <span class="count">${tools.length}</span></h3>
+  ${toolCards(tools)}
+</div>`;
+};
+
+// PDF gets the full width; the three Office formats sit side by side.
+const toolGroups = () => `${toolGroup('pdf')}
+<div class="office-groups">${FORMAT_ORDER.slice(1).map(toolGroup).join('')}</div>`;
+
+const CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+
 const proofHtml = `
 <section class="section proof" aria-labelledby="proof">
-  <h2 id="proof">Private by design — and you can check</h2>
+  <div class="section-head"><h2 id="proof">Private by design — and you can check</h2><p>Your files are never uploaded, because there is nowhere to upload them to.</p></div>
   <ul class="proof-grid">
-    <li><strong>No upload step exists</strong><span>Files are read and written by a background worker in this tab. There is no server that could receive them.</span></li>
-    <li><strong>The browser enforces it</strong><span>This page’s Content Security Policy only allows connections back to this site, which serves nothing but the app itself.</span></li>
-    <li><strong>See for yourself</strong><span>Open developer tools, watch the Network tab and run a job: no request carries your document.</span></li>
-    <li><strong>Open source</strong><span>Every line is on <a href="${SITE.repo}">GitHub</a>, built on the proven <a href="https://qpdf.readthedocs.io/">qpdf</a> engine.</span></li>
+    <li>${CHECK}<strong>No upload step exists</strong><span>Files are read and written inside this browser tab. There is no server that could receive them.</span></li>
+    <li>${CHECK}<strong>The browser enforces it</strong><span>This page’s Content Security Policy only allows connections back to this site, which serves nothing but the app itself.</span></li>
+    <li>${CHECK}<strong>See for yourself</strong><span>Open developer tools, watch the Network tab and run a job: no request carries your document.</span></li>
+    <li>${CHECK}<strong>Open source</strong><span>Every line is on <a href="${SITE.repo}">GitHub</a>, built on <a href="https://qpdf.readthedocs.io/">qpdf</a>, <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> and <a href="https://pdf-lib.js.org/">pdf-lib</a>.</span></li>
   </ul>
 </section>`;
 
-// Decorative paper sheets beside the home hero; draggable, they spring back when released.
+// File cards beside the home hero; draggable, they spring back when released.
 const heroArt = `
 <div class="hero-art" aria-hidden="true">
-  <div class="sheet sheet-pdf" data-spring><b>PDF</b><i></i><i></i><i></i></div>
-  <div class="sheet sheet-doc" data-spring><b>DOC</b><i></i><i></i><i></i></div>
-  <div class="sheet sheet-img" data-spring><b>IMG</b><i></i><i></i><i></i></div>
+  ${FORMAT_ORDER.map((f) => `<div class="file-card fmt-${f}" data-spring><span class="badge fmt-${f}">${FORMATS[f].badge}</span><i></i><i></i><i></i><i></i></div>`).join('\n  ')}
+  <div class="lock-chip"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Processed on this device</div>
 </div>`;
+
+/** What the file picker accepts, how it names those files, and whether it takes several. */
+function input(tool: Tool) {
+  if (tool.op === 'jpg-to-pdf') return { accept: 'image/*', kind: 'image', choose: 'Choose images', multiple: true };
+  if (tool.format === 'pdf') {
+    const multiple = tool.op === 'merge';
+    return { accept: 'application/pdf,.pdf', kind: 'PDF', choose: multiple ? 'Choose PDF files' : 'Choose a PDF file', multiple };
+  }
+  const { ext, label } = FORMATS[tool.format];
+  return { accept: `.${ext}`, kind: `${label} (.${ext})`, choose: `Choose a .${ext} file`, multiple: false };
+}
 
 function workspaceHtml(tool: Tool) {
   const pagesField =
@@ -80,14 +118,14 @@ function workspaceHtml(tool: Tool) {
         : tool.op === 'rotate'
           ? { label: 'Pages to rotate (optional)', placeholder: 'All pages' }
           : null;
-  const multiple = tool.op === 'merge';
+  const { accept, kind, choose, multiple } = input(tool);
   return `
-<section class="workspace" aria-label="${esc(tool.name)}">
+<section class="workspace" id="workspace" data-kind="${esc(kind)}" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
   <label class="drop" id="drop">
-    <input id="file-input" type="file" accept="application/pdf,.pdf"${multiple ? ' multiple' : ''}>
-    <span class="drop-icon" aria-hidden="true">+</span>
-    <strong>Choose ${multiple ? 'PDF files' : 'a PDF file'}</strong>
-    <span>or drop ${multiple ? 'them' : 'it'} here · stays on this device</span>
+    <input id="file-input" type="file" accept="${accept}"${multiple ? ' multiple' : ''}>
+    <span class="drop-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m6 10 6-6 6 6"/><path d="M4 20h16"/></svg></span>
+    <strong>${choose}</strong>
+    <span>or drop ${multiple ? 'them' : 'it'} here · never leaves this device</span>
   </label>
   <ol id="file-list" class="file-list" aria-label="Selected files"></ol>
   ${multiple ? '<p class="hint" id="reorder-hint" hidden>Drag files to reorder, or use the arrows.</p>' : ''}
@@ -98,8 +136,15 @@ function workspaceHtml(tool: Tool) {
         : ''
     }
     ${pagesField ? `<label>${pagesField.label}<input id="pages" placeholder="${pagesField.placeholder}" autocomplete="off" spellcheck="false"></label>` : ''}
+    ${
+      tool.op === 'protect'
+        ? `<label>Password<input id="new-password" type="password" autocomplete="new-password"></label>
+    <label>Repeat password<input id="confirm-password" type="password" autocomplete="new-password"></label>`
+        : ''
+    }
   </div>
   ${tool.op === 'unlock' ? '<p class="note">Only unlock files you have the right to modify.</p>' : ''}
+  ${tool.op === 'protect' ? '<p class="note">A forgotten password cannot be recovered. Keep it somewhere safe.</p>' : ''}
   <div class="actions">
     <button id="run" class="button primary" type="button" disabled>${esc(tool.action)}</button>
     <button id="cancel" class="button" type="button" hidden>Cancel</button>
@@ -107,7 +152,7 @@ function workspaceHtml(tool: Tool) {
   <div id="progress" class="progress" hidden><span></span></div>
   <p id="status" class="status" role="status" aria-live="polite"></p>
   <div id="result" class="result" hidden>
-    <a id="download" class="button primary" href="#">Download PDF</a>
+    <a id="download" class="button primary" href="#">Download</a>
     <ul id="warnings" class="warnings"></ul>
   </div>
 </section>
@@ -129,44 +174,56 @@ function mainHtml(page: Page) {
   if (!tool) {
     return `
 <section class="hero hero-home">
-  <div>
-    <p class="eyebrow">0 bytes uploaded · Open source · Free</p>
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>0 bytes uploaded · Open source · Free</p>
     <h1>${esc(HOME.h1)}</h1>
     <p class="lede">${esc(HOME.lede)}</p>
-    <div class="actions"><a class="button primary" href="/merge-pdf/">Merge PDFs</a><a class="button" href="#tools">All tools</a></div>
+    <div class="actions"><a class="button primary" href="/merge-pdf/">Merge PDF</a><a class="button" href="#tools">Browse all ${TOOLS.length} tools</a></div>
+    <ul class="formats-row" aria-label="Supported formats">${FORMAT_ORDER.map((f) => `<li>${badge(f)}${FORMATS[f].label}</li>`).join('')}<li class="google">+ Google Docs, Sheets &amp; Slides</li></ul>
   </div>
   ${heroArt}
 </section>
 <section class="section" id="tools" aria-labelledby="tools-title">
-  <h2 id="tools-title">Choose a tool</h2>
-  ${toolCards(TOOLS)}
+  <div class="section-head"><h2 id="tools-title">Every tool, private by default</h2><p>Pick a tool. Your file is processed on this device and never touches a server.</p></div>
+  ${toolGroups()}
 </section>
-<section class="section" aria-labelledby="what">
-  <h2 id="what">What is ${SITE.name}?</h2>
-  <p>${esc(HOME.what)}</p>
+<section class="section split" aria-labelledby="what">
+  <div class="section-head"><h2 id="what">What is ${SITE.name}?</h2></div>
+  <p class="prose">${esc(HOME.what)}</p>
 </section>
 ${proofHtml}
 ${faqHtml(HOME.faq)}`;
   }
+  const related = [...TOOLS.filter((t) => t !== tool && t.format === tool.format), ...TOOLS.filter((t) => t.format !== tool.format)].slice(0, 8);
   return `
-<section class="hero">
-  <span class="hero-icon tool-icon tone-${tool.op}" aria-hidden="true">${icon(tool.op)}</span>
-  <p class="eyebrow">Runs on your device · 0 bytes uploaded</p>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">${SITE.name}</a><span aria-hidden="true">/</span><a href="/#${tool.format}">${FORMATS[tool.format].label} tools</a><span aria-hidden="true">/</span><span aria-current="page">${esc(tool.name)}</span></nav>
+<section class="hero hero-tool">
+  <span class="tool-mark" aria-hidden="true">${icon(tool.op)}</span>
   <h1>${esc(tool.h1)}</h1>
   <p class="lede">${esc(tool.lede)}</p>
+  <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Runs on your device · 0 bytes uploaded</p>
 </section>
 ${workspaceHtml(tool)}
 <section class="section" aria-labelledby="how">
-  <h2 id="how">How to ${esc(tool.name[0].toLowerCase() + tool.name.slice(1))}</h2>
+  <div class="section-head"><h2 id="how">How to ${esc(tool.name[0].toLowerCase() + tool.name.slice(1))}</h2></div>
   <ol class="steps">${tool.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
 </section>
 ${proofHtml}
 ${faqHtml(tool.faq)}
 <section class="section" aria-labelledby="more">
-  <h2 id="more">More private PDF tools</h2>
-  ${toolCards(TOOLS.filter((t) => t !== tool))}
+  <div class="section-head"><h2 id="more">More private tools</h2></div>
+  ${toolCards(related)}
 </section>`;
 }
+
+// Every tool linked from every page's footer, grouped by format: helps visitors and crawlers alike.
+const footerHtml = () =>
+  FORMAT_ORDER.map(
+    (f) =>
+      `<div><h2>${FORMATS[f].label}</h2><ul>${TOOLS.filter((t) => t.format === f)
+        .map((t) => `<li><a href="/${t.slug}/">${esc(t.name)}</a></li>`)
+        .join('')}</ul></div>`,
+  ).join('');
 
 function jsonLd(page: Page) {
   const url = SITE.url + page.path;
@@ -182,6 +239,7 @@ function jsonLd(page: Page) {
     browserRequirements: 'Requires JavaScript and WebAssembly',
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    author: { '@type': 'Person', name: 'Rishab Dugar', url: 'https://github.com/kingrishabdugar' },
     ...(tool ? {} : { featureList: TOOLS.map((t) => t.name) }),
   };
   const graph: object[] = [
@@ -225,7 +283,8 @@ export function renderPage(template: string, page: Page, withCsp: boolean) {
   return template
     .replace('<!--head-->', head)
     .replace('<!--main-->', mainHtml(page))
-    .replace('data-tool=""', `data-tool="${page.tool?.op ?? ''}"`);
+    .replace('<!--footer-->', footerHtml())
+    .replace('data-tool=""', `data-tool="${page.tool?.op ?? ''}"${page.tool ? ` data-format="${page.tool.format}"` : ''}`);
 }
 
 export const fileName = (page: Page) => (page.path === '/' ? 'index.html' : `${page.path.slice(1)}index.html`);
@@ -244,15 +303,21 @@ export const llms = () => `# ${SITE.name}
 
 ## Tools
 
-${TOOLS.map((t) => `- [${t.name}](${SITE.url}/${t.slug}/): ${t.description}`).join('\n')}
+${FORMAT_ORDER.map(
+  (f) =>
+    `### ${FORMATS[f].label}\n\n${TOOLS.filter((t) => t.format === f)
+      .map((t) => `- [${t.name}](${SITE.url}/${t.slug}/): ${t.description}`)
+      .join('\n')}`,
+).join('\n\n')}
 
 ## Privacy
 
-- Files are processed locally in the browser with qpdf compiled to WebAssembly; there is no upload endpoint.
+- Files are processed locally in the browser (qpdf compiled to WebAssembly, pdf.js, pdf-lib, fflate); there is no upload endpoint.
 - The Content Security Policy only permits connections to the site's own origin.
+- Google Docs, Sheets and Slides work by downloading them as .docx, .xlsx or .pptx first; nothing is sent to Google.
 - Anything a tool cannot carry over (for example bookmarks from the second file of a merge) is reported to the user, not dropped silently.
 
 ## Source
 
-- [GitHub repository](${SITE.repo}) — MIT license
+- [GitHub repository](${SITE.repo}) — MIT license, by Rishab Dugar
 `;

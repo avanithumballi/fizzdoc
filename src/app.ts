@@ -1,9 +1,15 @@
 import './style.css';
+import '@fontsource-variable/inter';
 import { setUpEffects } from './effects';
 import type { ErrorCode, Job, Op, Warning } from './engine/pdf';
+import type { LocalError, Output } from './engine/local';
 import type { FromWorker, ToWorker } from './engine/worker';
+import type { ToolOp } from './site';
 
-type Failure = ErrorCode | 'ENGINE_FAILED';
+/** Tools that run in engine/local.ts; the rest run on qpdf in the worker. */
+const LOCAL_OPS: readonly string[] = ['jpg-to-pdf', 'pdf-to-jpg', 'office-clean', 'office-images'];
+
+type Failure = ErrorCode | LocalError['code'] | 'ENGINE_FAILED' | 'PASSWORDS_DIFFER';
 
 const ERRORS: Record<Failure, string> = {
   INVALID_PDF: 'This file could not be read as a PDF. It may be damaged or not a PDF.',
@@ -15,6 +21,12 @@ const ERRORS: Record<Failure, string> = {
   NO_PAGES_LEFT: 'That would remove every page. Keep at least one.',
   WRONG_FILE_COUNT: 'Add the number of files this tool needs.',
   PROCESSING_FAILED: 'Something went wrong while processing. Your original file is unchanged.',
+  NO_PASSWORD: 'Type the password you want to add.',
+  PASSWORDS_DIFFER: 'The two passwords do not match.',
+  NOT_OFFICE: 'This file is not a valid Word, Excel or PowerPoint document.',
+  NO_IMAGES: 'This document has no embedded images.',
+  BAD_IMAGE: 'One of the images could not be read. Try JPG or PNG.',
+  PDF_PASSWORD: 'This PDF is password-protected. Remove the password with Unlock PDF first.',
   ENGINE_FAILED: 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
 };
 
@@ -33,6 +45,8 @@ const SUFFIX: Record<Op, string> = {
   rotate: 'rotated',
   delete: 'trimmed',
   unlock: 'unlocked',
+  protect: 'protected',
+  clean: 'clean',
 };
 
 const MiB = 1024 * 1024;
@@ -49,7 +63,7 @@ function inputBudget() {
 const formatSize = (bytes: number) =>
   bytes < MiB ? `${Math.max(1, Math.round(bytes / 1024))} KB` : `${(bytes / MiB).toFixed(1)} MB`;
 
-function setUp(op: Op) {
+function setUp(op: ToolOp) {
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T | null;
   const input = $<HTMLInputElement>('file-input')!;
   const drop = $('drop')!;
@@ -68,8 +82,17 @@ function setUp(op: Op) {
   const password = $<HTMLInputElement>('password')!;
   const passwordTitle = $('password-title')!;
   const passwordHint = $('password-hint')!;
+  const newPassword = $<HTMLInputElement>('new-password');
+  const confirmPassword = $<HTMLInputElement>('confirm-password');
+  const workspace = $('workspace')!;
 
-  const multiple = op === 'merge';
+  const multiple = workspace.dataset.multiple === 'true';
+  // Mirrors the input's accept list (".pdf", "image/*", …) for dropped files.
+  const acceptList = input.accept.split(',');
+  const accepted = (file: File) =>
+    acceptList.some((rule) =>
+      rule.startsWith('.') ? file.name.toLowerCase().endsWith(rule) : rule.endsWith('/*') ? file.type.startsWith(rule.slice(0, -1)) : file.type === rule,
+    );
   let files: File[] = [];
   let worker: Worker | undefined;
   let outputUrl: string | undefined;
@@ -122,7 +145,7 @@ function setUp(op: Op) {
         return item;
       }),
     );
-    runButton.disabled = !!worker || (multiple ? files.length < 2 : files.length !== 1);
+    runButton.disabled = !!worker || files.length < (op === 'merge' ? 2 : 1);
     cancelButton.hidden = !worker;
     progress.hidden = !worker;
     if (reorderHint) reorderHint.hidden = files.length < 2 || !!worker;
@@ -161,17 +184,17 @@ function setUp(op: Op) {
 
   function addFiles(incoming: File[]) {
     if (worker) return;
-    const pdfs = incoming.filter((f) => f.type === 'application/pdf' || /\.pdf$/i.test(f.name));
-    if (pdfs.length < incoming.length) say('Only PDF files can be added.', 'error');
+    const usable = incoming.filter(accepted);
+    if (usable.length < incoming.length) say(`Only ${workspace.dataset.kind} files can be added.`, 'error');
     else say('');
-    if (!pdfs.length) return;
-    files = multiple ? [...files, ...pdfs] : [pdfs[0]];
+    if (!usable.length) return;
+    files = multiple ? [...files, ...usable] : [usable[0]];
     clearResult();
     render();
   }
 
   function askPassword(file: number, attempt: number): Promise<string | null> {
-    passwordTitle.textContent = multiple ? `“${files[file].name}” is password-protected` : 'This PDF is password-protected';
+    passwordTitle.textContent = files.length > 1 ? `“${files[file].name}” is password-protected` : 'This PDF is password-protected';
     passwordHint.textContent =
       attempt > 1 ? `That password did not work. Try again (${attempt} of 3).` : 'Type its password. It stays on this device.';
     password.value = '';
@@ -200,11 +223,8 @@ function setUp(op: Op) {
       return;
     }
     if (message.type !== 'done') return;
-    outputUrl = URL.createObjectURL(message.output);
-    download.href = outputUrl;
-    download.download = `${files[0].name.replace(/\.pdf$/i, '')}-${SUFFIX[op]}.pdf`;
     const pageLabel = message.pageCount === 1 ? 'page' : 'pages';
-    say(`Done — ${message.pageCount} ${pageLabel}, ${formatSize(message.output.size)}. Created on this device.`);
+    show(message.output, `${files[0].name.replace(/\.pdf$/i, '')}-${SUFFIX[op as Op]}.pdf`, `${message.pageCount} ${pageLabel}`);
     warnings.replaceChildren(
       ...message.warnings.map((code) => {
         const item = document.createElement('li');
@@ -212,8 +232,41 @@ function setUp(op: Op) {
         return item;
       }),
     );
+  }
+
+  function show(blob: Blob, name: string, summary: string) {
+    if (outputUrl) URL.revokeObjectURL(outputUrl);
+    outputUrl = URL.createObjectURL(blob);
+    download.href = outputUrl;
+    download.download = name;
+    download.textContent = `Download ${name.split('.').pop()!.toUpperCase()}`;
+    say(`Done — ${summary}, ${formatSize(blob.size)}. Created on this device.`);
     result.hidden = false;
     download.focus();
+  }
+
+  async function runLocal() {
+    const local = await import('./engine/local');
+    say('Working… your files stay on this device.');
+    runButton.disabled = true;
+    progress.hidden = false;
+    try {
+      const output: Output =
+        op === 'jpg-to-pdf'
+          ? await local.imagesToPdf(files)
+          : op === 'pdf-to-jpg'
+            ? await local.pdfToImages(files[0])
+            : op === 'office-clean'
+              ? await local.cleanOffice(files[0])
+              : await local.extractOfficeImages(files[0]);
+      show(output.blob, output.name, output.summary);
+    } catch (error) {
+      const code = (error as LocalError).code;
+      if (!code) console.error(error); // unexpected: keep the details for bug reports
+      say(code && code in ERRORS ? ERRORS[code] : ERRORS.PROCESSING_FAILED, 'error');
+    } finally {
+      render();
+    }
   }
 
   function run() {
@@ -224,7 +277,14 @@ function setUp(op: Op) {
       say(`These files total ${formatSize(total)}, more than this device can safely process (${formatSize(inputBudget())}).`, 'error');
       return;
     }
-    const job: Job = { op, pages: pages?.value, angle: angle ? (Number(angle.value) as Job['angle']) : undefined };
+    if (LOCAL_OPS.includes(op)) return void runLocal();
+    if (newPassword && newPassword.value !== confirmPassword?.value) return say(ERRORS.PASSWORDS_DIFFER, 'error');
+    const job: Job = {
+      op: op as Op,
+      pages: pages?.value,
+      angle: angle ? (Number(angle.value) as Job['angle']) : undefined,
+      password: newPassword?.value,
+    };
     worker = new Worker(new URL('./engine/worker.ts', import.meta.url), { type: 'module' });
     worker.onmessage = async ({ data }: MessageEvent<FromWorker>) => {
       if (data.type !== 'password') return finish(data);
@@ -256,6 +316,7 @@ function setUp(op: Op) {
   };
   pages?.addEventListener('input', clearResult);
   angle?.addEventListener('change', clearResult);
+  newPassword?.addEventListener('input', clearResult);
   runButton.onclick = run;
   cancelButton.onclick = () => {
     stop();
@@ -266,5 +327,5 @@ function setUp(op: Op) {
 }
 
 setUpEffects();
-const op = document.body.dataset.tool as Op | '';
+const op = document.body.dataset.tool as ToolOp | '';
 if (op) setUp(op);
