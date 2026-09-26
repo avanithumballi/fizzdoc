@@ -7,6 +7,8 @@
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
     <script src="/theme.js"></script>
     <script type="module" src="/src/app.ts"></script>
   </head>
@@ -14,7 +16,7 @@
     <header class="site-header">
       <div class="bar">
         <a class="brand" href="{{home}}" aria-label="{{t:nav.home}}">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9.5" cy="14.5" r="5.8"/><circle cx="18" cy="7" r="3.2"/><circle cx="19" cy="17" r="1.6"/></g><path d="M6.6 12.4a3 3 0 0 1 2.2-1.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.2 2.6h7.7l5.1 5.1v12.1a1.6 1.6 0 0 1-1.6 1.6H6.2a1.6 1.6 0 0 1-1.6-1.6V4.2a1.6 1.6 0 0 1 1.6-1.6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13.6 2.8v5.1h5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9.7" cy="15.9" r="2.75" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="14.3" cy="12" r="1.65" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="10.9" cy="9.1" r="1.05" fill="currentColor"/></svg></span>
           <span>Fizzdoc</span>
         </a>
         <nav aria-label="{{t:nav.label}}">
@@ -45,7 +47,7 @@
     <footer class="site-footer">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="{{home}}"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9.5" cy="14.5" r="5.8"/><circle cx="18" cy="7" r="3.2"/><circle cx="19" cy="17" r="1.6"/></g><path d="M6.6 12.4a3 3 0 0 1 2.2-1.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><span>Fizzdoc</span></a>
+          <a class="brand" href="{{home}}"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.2 2.6h7.7l5.1 5.1v12.1a1.6 1.6 0 0 1-1.6 1.6H6.2a1.6 1.6 0 0 1-1.6-1.6V4.2a1.6 1.6 0 0 1 1.6-1.6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13.6 2.8v5.1h5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9.7" cy="15.9" r="2.75" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="14.3" cy="12" r="1.65" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="10.9" cy="9.1" r="1.05" fill="currentColor"/></svg></span><span>Fizzdoc</span></a>
           <p>{{t:footer.about}}</p>
           <a class="maker" href="https://rishabdugarjain.in" target="_blank" rel="noopener author">
             <span class="maker-avatar" aria-hidden="true">RD</span>

@@ -129,7 +129,7 @@
     "error.NOT_OFFICE": "File ini bukan dokumen Word, Excel, atau PowerPoint yang valid.",
     "error.NO_IMAGES": "Dokumen ini tidak memiliki gambar yang disematkan.",
     "error.BAD_IMAGE": "Salah satu gambar tidak dapat dibaca. Coba gunakan JPG atau PNG.",
-    "error.PDF_PASSWORD": "PDF ini dilindungi kata sandi. Hapus kata sandinya dengan Unlock PDF terlebih dahulu.",
+    "error.PDF_PASSWORD": "PDF ini dilindungi kata sandi. Hapus kata sandinya dengan Buka Kunci PDF terlebih dahulu.",
     "error.BAD_SIZE": "Lebar dan tinggi masing-masing harus antara 1 dan 16.384 piksel.",
     "error.NO_TEXT": "PDF ini tidak memiliki teks untuk diekstrak — kemungkinan ini hasil pindaian gambar. Jalankan OCR PDF dulu, lalu coba lagi.",
     "error.NO_WATERMARK": "Masukkan teks watermark (huruf, angka, dan simbol umum).",
@@ -374,7 +374,7 @@
       "name": "Proteksi PDF",
       "summary": "Kunci PDF dengan kata sandi dan enkripsi AES-256.",
       "action": "Proteksi PDF",
-      "title": "Beri Password PDF dengan Enkripsi AES-256 | Fizzdoc",
+      "title": "Beri Kata Sandi PDF dengan AES-256 — Tanpa Upload | Fizzdoc",
       "description": "Tambahkan kata sandi ke PDF dengan enkripsi AES-256, langsung di browser Anda. File dan kata sandinya tidak pernah meninggalkan perangkat. Gratis.",
       "h1": "Beri kata sandi pada PDF — di perangkat Anda",
       "lede": "Enkripsi PDF dengan AES-256 agar hanya terbuka dengan kata sandi Anda. Enkripsi terjadi di tab ini; file maupun kata sandinya tidak dikirim ke mana pun.",
@@ -406,7 +406,7 @@
       "name": "Hapus Metadata PDF",
       "summary": "Bersihkan penulis, judul, aplikasi pembuat, dan data XMP.",
       "action": "Hapus metadata",
-      "title": "Hapus Metadata PDF (Penulis, Judul, XMP) | Fizzdoc",
+      "title": "Hapus Metadata PDF (Penulis, Judul, XMP) — Tanpa Upload | Fizzdoc",
       "description": "Hapus metadata tersembunyi di PDF seperti penulis, judul, aplikasi pembuat, dan data XMP sebelum dibagikan. Berjalan di browser; tidak ada yang diunggah.",
       "h1": "Hapus metadata tersembunyi dari PDF",
       "lede": "PDF diam-diam mencatat siapa penulisnya, dengan aplikasi apa, dan kapan. Bersihkan penulis, judul, subjek, kata kunci, producer, dan metadata XMP sebelum berbagi.",
@@ -486,7 +486,7 @@
         ],
         [
           "Apakah bisa untuk PDF yang dilindungi kata sandi?",
-          "Hapus dulu kata sandinya dengan Unlock PDF, baru konversi. Kedua langkah tetap berjalan di perangkat Anda."
+          "Hapus dulu kata sandinya dengan Buka Kunci PDF, baru konversi. Kedua langkah tetap berjalan di perangkat Anda."
         ],
         [
           "Apakah Fizzdoc gratis?",
@@ -894,7 +894,7 @@
       "name": "Ubah Ukuran Gambar",
       "summary": "Perbesar atau perkecil gambar, dalam piksel atau persen.",
       "action": "Ubah ukuran",
-      "title": "Ubah Ukuran Gambar Online (Perbesar/Perkecil) | Fizzdoc",
+      "title": "Ubah Ukuran Gambar Online (Perbesar/Perkecil) — Tanpa Upload | Fizzdoc",
       "description": "Ubah ukuran gambar ke piksel atau persentase tertentu — lebih kecil atau lebih besar — di browser Anda, sekaligus banyak. Rasio aspek opsional. Tanpa upload.",
       "h1": "Ubah ukuran gambar — perbesar atau perkecil",
       "lede": "Tentukan lebar dan tinggi yang pasti atau skala dalam persen, untuk satu gambar atau banyak sekaligus. Rasio aspek dipertahankan kecuali Anda menonaktifkannya.",
@@ -950,7 +950,7 @@
       "name": "Gambar ke Teks (OCR)",
       "summary": "Seleksi dan salin teks dari foto atau tangkapan layar apa pun.",
       "action": "Kenali teks",
-      "title": "Gambar ke Teks (OCR) — Salin Teks dari Foto | Fizzdoc",
+      "title": "Gambar ke Teks (OCR) — Salin Teks dari Foto, Tanpa Upload | Fizzdoc",
       "description": "Ekstrak teks dari foto dan tangkapan layar dengan OCR bahasa Inggris di browser, lalu seleksi dan salin di gambarnya — mirip Live Text. Tanpa upload.",
       "h1": "Salin teks dari gambar apa pun",
       "lede": "Kenali teks bahasa Inggris dalam foto, scan, atau tangkapan layar, lalu seleksi langsung di gambarnya — persis seperti Live Text di iPhone. Tidak ada yang meninggalkan perangkat Anda.",
@@ -1158,7 +1158,7 @@
         ],
         [
           "Bisakah watermark-nya dihapus?",
-          "Watermark teks memang mencegah penyalinan biasa, tapi orang yang gigih dengan editor PDF bisa saja menghapusnya. Untuk proteksi lebih kuat, gunakan juga Protect PDF."
+          "Watermark teks memang mencegah penyalinan biasa, tapi orang yang gigih dengan editor PDF bisa saja menghapusnya. Untuk proteksi lebih kuat, gunakan juga Proteksi PDF."
         ],
         [
           "Karakter apa saja yang bisa saya gunakan?",

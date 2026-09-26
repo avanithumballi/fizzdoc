@@ -563,7 +563,7 @@
       "summary": "Rendi un PDF scansionato ricercabile e copiabile.",
       "action": "Riconosci testo",
       "title": "OCR PDF — Rendi Ricercabili i PDF Scansionati | Fizzdoc",
-      "description": "Trasforma i PDF scansionati in documenti ricercabili e copiabili con OCR in inglese che funziona nel browser. Le pagine mantengono la qualità originale.",
+      "description": "Trasforma i PDF scansionati in documenti ricercabili e copiabili con OCR in inglese nel browser. Le pagine mantengono la qualità. Niente viene caricato.",
       "h1": "Rendi un PDF scansionato ricercabile con l'OCR",
       "lede": "Riconosce il testo in inglese nelle pagine scansionate e lo aggiunge come livello invisibile, così puoi cercarlo, selezionarlo e copiarlo. Le pagine stesse non cambiano.",
       "steps": [
@@ -1175,7 +1175,7 @@
       "summary": "Salva ogni pagina come immagine PNG senza perdita di qualità.",
       "action": "Converti in PNG",
       "title": "Convertitore da PDF a PNG — Senza Perdita, No Upload | Fizzdoc",
-      "description": "Converti ogni pagina di un PDF in un'immagine PNG nitida e senza perdita di qualità nel browser. Più pagine si scaricano come un unico ZIP. Gratis.",
+      "description": "Converti ogni pagina di un PDF in un'immagine PNG nitida e senza perdita di qualità nel browser. Più pagine si scaricano come un unico ZIP. Niente upload.",
       "h1": "Converti le pagine di un PDF in immagini PNG",
       "lede": "Genera ogni pagina come un PNG nitido e senza perdita di qualità — ideale per diapositive, documentazione e screenshot con testo nitido. Niente lascia il tuo dispositivo.",
       "steps": [

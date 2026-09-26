@@ -27,7 +27,7 @@
     "home.cta": "Ghép PDF",
     "home.browse": "Xem tất cả {n} công cụ",
     "home.formats": "Định dạng hỗ trợ",
-    "home.google": "+ Google Docs, Sheets & Slides",
+    "home.google": "+ Google Docs, Sheets và Slides",
     "home.chip": "Xử lý ngay trên thiết bị này",
     "home.toolsTitle": "Mọi công cụ đều riêng tư theo mặc định",
     "home.toolsLede": "Chọn một công cụ. Tệp của bạn được xử lý ngay trên thiết bị này và không bao giờ chạm tới máy chủ.",
@@ -106,7 +106,7 @@
     "app.working": "Đang xử lý… tệp của bạn vẫn ở trên thiết bị này.",
     "app.workingPct": "Đang xử lý… {pct}% — tệp của bạn vẫn ở trên thiết bị này.",
     "app.done": "Hoàn tất — {summary}, {size}. Được tạo ngay trên thiết bị này.",
-    "app.ready": "Sẵn sàng — chọn “Save as PDF” trong cửa sổ in, rồi nhấn Save. Được tạo ngay trên thiết bị này.",
+    "app.ready": "Sẵn sàng — chọn “Lưu dưới dạng PDF” trong cửa sổ in, rồi nhấn Lưu. Được tạo ngay trên thiết bị này.",
     "app.saveAsPdf": "Lưu dưới dạng PDF",
     "app.downloadExt": "Tải xuống {ext}",
     "app.canceled": "Đã hủy. Không có gì thay đổi.",
@@ -197,7 +197,7 @@
       ],
       [
         "Có dùng được với Google Docs, Sheets và Slides không?",
-        "Có. Tải tệp từ Google về dưới dạng Word, Excel hoặc PowerPoint (File → Download) rồi dùng công cụ Fizzdoc tương ứng. Không có gì được gửi tới Google hay tới Fizzdoc."
+        "Có. Tải tệp từ Google về dưới dạng Word, Excel hoặc PowerPoint (Tệp → Tải xuống) rồi dùng công cụ Fizzdoc tương ứng. Không có gì được gửi tới Google hay tới Fizzdoc."
       ],
       [
         "Có dùng được trên điện thoại không?",
@@ -717,7 +717,7 @@
       "steps": [
         "Thêm một tệp .txt.",
         "Bấm “Tạo PDF”.",
-        "Chọn “Save as PDF” trong cửa sổ mở ra và bấm Save."
+        "Chọn “Lưu dưới dạng PDF” trong cửa sổ mở ra và bấm Lưu."
       ],
       "faq": [
         [
@@ -726,7 +726,7 @@
         ],
         [
           "Vì sao lại mở ra cửa sổ in?",
-          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Save as PDF” làm nơi lưu và bấm Save. Không có gì được in ra hay gửi đi đâu cả."
+          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Lưu dưới dạng PDF” làm nơi lưu và bấm Lưu. Không có gì được in ra hay gửi đi đâu cả."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -745,7 +745,7 @@
       "steps": [
         "Thêm một tệp .md.",
         "Bấm “Tạo PDF”.",
-        "Chọn “Save as PDF” trong cửa sổ mở ra và bấm Save."
+        "Chọn “Lưu dưới dạng PDF” trong cửa sổ mở ra và bấm Lưu."
       ],
       "faq": [
         [
@@ -758,7 +758,7 @@
         ],
         [
           "Vì sao lại mở ra cửa sổ in?",
-          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Save as PDF” làm nơi lưu và bấm Save. Không có gì được in ra hay gửi đi đâu cả."
+          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Lưu dưới dạng PDF” làm nơi lưu và bấm Lưu. Không có gì được in ra hay gửi đi đâu cả."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -777,7 +777,7 @@
       "steps": [
         "Thêm một tệp .docx (từ Word hoặc Google Docs).",
         "Bấm “Chuyển sang PDF”.",
-        "Chọn “Save as PDF” trong cửa sổ mở ra và bấm Save."
+        "Chọn “Lưu dưới dạng PDF” trong cửa sổ mở ra và bấm Lưu."
       ],
       "faq": [
         [
@@ -790,7 +790,7 @@
         ],
         [
           "Vì sao lại mở ra cửa sổ in?",
-          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Save as PDF” làm nơi lưu và nhấn Save. Không có gì được in ra hay gửi đi đâu cả."
+          "Trình duyệt của bạn có sẵn một công cụ ghi PDF xử lý hoàn hảo mọi ngôn ngữ và phông chữ. Fizzdoc chuẩn bị tài liệu rồi chuyển cho công cụ đó: chọn “Lưu dưới dạng PDF” làm nơi lưu và nhấn Lưu. Không có gì được in ra hay gửi đi đâu cả."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1139,7 +1139,7 @@
       ]
     },
     "watermark-pdf": {
-      "name": "Watermark PDF",
+      "name": "Thêm watermark PDF",
       "summary": "Đóng dấu chữ như CONFIDENTIAL lên mọi trang.",
       "action": "Thêm watermark",
       "title": "Watermark PDF — Thêm Watermark Chữ, Không Tải Lên | Fizzdoc",
@@ -1306,7 +1306,7 @@
         ],
         [
           "Có dùng được với Google Docs không?",
-          "Có. Trong Google Docs, chọn File → Download → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Docs, chọn Tệp → Tải xuống → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1338,7 +1338,7 @@
         ],
         [
           "Có dùng được với Google Docs không?",
-          "Có. Trong Google Docs, chọn File → Download → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Docs, chọn Tệp → Tải xuống → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1370,7 +1370,7 @@
         ],
         [
           "Có dùng được với Google Docs không?",
-          "Có. Trong Google Docs, chọn File → Download → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Docs, chọn Tệp → Tải xuống → Microsoft Word (.docx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1402,7 +1402,7 @@
         ],
         [
           "Có dùng được với Google Sheets không?",
-          "Có. Trong Google Sheets, chọn File → Download → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Sheets, chọn Tệp → Tải xuống → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1434,7 +1434,7 @@
         ],
         [
           "Có dùng được với Google Sheets không?",
-          "Có. Trong Google Sheets, chọn File → Download → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Sheets, chọn Tệp → Tải xuống → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1466,7 +1466,7 @@
         ],
         [
           "Có dùng được với Google Sheets không?",
-          "Có. Trong Google Sheets, chọn File → Download → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Sheets, chọn Tệp → Tải xuống → Microsoft Excel (.xlsx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1498,7 +1498,7 @@
         ],
         [
           "Có dùng được với Google Slides không?",
-          "Có. Trong Google Slides, chọn File → Download → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Slides, chọn Tệp → Tải xuống → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1530,7 +1530,7 @@
         ],
         [
           "Có dùng được với Google Slides không?",
-          "Có. Trong Google Slides, chọn File → Download → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Slides, chọn Tệp → Tải xuống → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",
@@ -1562,7 +1562,7 @@
         ],
         [
           "Có dùng được với Google Slides không?",
-          "Có. Trong Google Slides, chọn File → Download → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+          "Có. Trong Google Slides, chọn Tệp → Tải xuống → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
         ],
         [
           "Fizzdoc có miễn phí không?",

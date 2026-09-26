@@ -343,7 +343,7 @@
       "summary": "Salve uma cópia sem a senha que você já conhece.",
       "action": "Remover senha",
       "title": "Remover Senha de PDF (Desbloquear PDF) Sem Upload | Fizzdoc",
-      "description": "Remova a senha de um PDF que você tem permissão para abrir. A descriptografia acontece no seu dispositivo. Grátis, sem cadastro.",
+      "description": "Remova a senha de um PDF que você tem permissão para abrir. A descriptografia acontece no seu dispositivo e nada é enviado. Grátis, sem cadastro.",
       "h1": "Remova a senha de um PDF — no seu dispositivo",
       "lede": "Salve uma cópia desbloqueada de um PDF protegido que você já consegue abrir. A senha e o documento permanecem no seu dispositivo.",
       "steps": [

@@ -364,6 +364,7 @@ function jsonLd(c: Copy, page: Page) {
   const tool = page.tool && c.tool(page.tool);
   const faq = tool ? tool.faq : c.home.faq;
   const author = { '@id': `${SITE.url}/#author` };
+  const org = { '@id': `${SITE.url}/#org` };
   const app = {
     '@type': 'WebApplication',
     name: tool ? `${SITE.name} ${tool.name}` : SITE.name,
@@ -375,7 +376,7 @@ function jsonLd(c: Copy, page: Page) {
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     author,
-    publisher: author,
+    publisher: org,
     inLanguage: c.lang,
     image: `${SITE.url}${ogImage(c.lang)}`,
     ...(tool ? {} : { featureList: TOOLS.map((t) => c.tool(t).name) }),
@@ -389,8 +390,29 @@ function jsonLd(c: Copy, page: Page) {
             { '@type': 'ListItem', position: 2, name: tool.name, item: url },
           ],
         }
-      : { '@type': 'WebSite', name: SITE.name, url, inLanguage: c.lang, publisher: author },
+      : { '@type': 'WebSite', name: SITE.name, url, description: c.home.description, inLanguage: c.lang, publisher: org },
     app,
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#org`,
+      name: SITE.name,
+      url: `${SITE.url}/`,
+      logo: `${SITE.url}/icon-512.png`,
+      founder: author,
+      sameAs: [SITE.repo],
+    },
+    ...(tool
+      ? []
+      : [
+          {
+            '@type': 'SoftwareSourceCode',
+            name: SITE.name,
+            codeRepository: SITE.repo,
+            license: 'https://opensource.org/licenses/MIT',
+            programmingLanguage: ['TypeScript', 'WebAssembly'],
+            author,
+          },
+        ]),
     {
       '@type': 'Person',
       '@id': `${SITE.url}/#author`,
@@ -500,7 +522,8 @@ export function sitemap(date: string) {
 }
 
 // Every crawler, search and AI answer engines alike, may read everything: Fizzdoc wants to be found.
-export const robots = () => `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`;
+export const robots = () =>
+  `# Everyone is welcome to crawl. A plain-text guide for AI assistants: ${SITE.url}/llms.txt\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`;
 
 /** Plain-text summary for AI answer engines (https://llmstxt.org). */
 export const llms = () => `# ${SITE.name}

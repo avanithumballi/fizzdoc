@@ -1,0 +1,5 @@
+Contact: https://github.com/kingrishabdugar/fizzdoc/security/advisories/new
+Expires: 2027-09-26T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://fizzdoc.com/.well-known/security.txt
+Policy: https://github.com/kingrishabdugar/fizzdoc/blob/main/SECURITY.md

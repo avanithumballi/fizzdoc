@@ -134,6 +134,32 @@ When something genuinely can't be carried over (a digital signature, accessibili
 
 Explore the interactive [architecture map](https://fizzdoc.com/architecture.html) or read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
+## ❓ FAQ
+
+<details>
+<summary><strong>Is it really private? How can I check?</strong></summary>
+
+Yes. There is no server that receives files: the site is static, and every page ships a Content Security Policy that only allows connections to its own origin. Open DevTools → Network, run any tool, and you'll see no request carrying your document. The test suite fails if one ever appears.
+</details>
+
+<details>
+<summary><strong>How is it free? What's the catch?</strong></summary>
+
+There isn't one. Your browser does the work, so there are no servers to pay for. No account, no daily limit, no watermark, no ads.
+</details>
+
+<details>
+<summary><strong>Does it work offline or on a phone?</strong></summary>
+
+It works in any modern browser on phones, tablets and desktops. An installable offline app is on the roadmap.
+</details>
+
+<details>
+<summary><strong>What doesn't it do (yet)?</strong></summary>
+
+OCR is English-only for now, PowerPoint → PDF and legacy .doc/.xls/.ppt aren't supported, and the PDF text editor covers original text rather than removing it (so it isn't redaction). See the roadmap below.
+</details>
+
 ## 🚀 Run it locally
 
 ```sh

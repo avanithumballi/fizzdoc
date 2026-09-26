@@ -181,7 +181,7 @@
     "footer.feedback": "Reporta un error o sugiere una herramienta"
   },
   "home": {
-    "title": "Fizzdoc — Herramientas Privadas de PDF, Word y Excel",
+    "title": "Fizzdoc — PDF, Word, Excel e Imagen Privados. Sin Subir.",
     "description": "Edita, comprime, convierte y aplica OCR a PDF; convierte Word, Excel e imágenes, directamente en tu navegador. Sin subidas, sin registro, gratis.",
     "h1": "Herramientas de documentos que nunca ven tus documentos",
     "lede": "Edita, comprime, convierte y aplica OCR a PDF. Convierte Word, Excel, PowerPoint e imágenes. Todo funciona en tu navegador — tus archivos nunca salen de tu dispositivo.",
@@ -407,7 +407,7 @@
       "summary": "Borra autor, título, programa y datos XMP.",
       "action": "Eliminar metadatos",
       "title": "Eliminar Metadatos de un PDF (Autor, Título, XMP) | Fizzdoc",
-      "description": "Borra los metadatos ocultos de un PDF, como autor, título, aplicación creadora y datos XMP, antes de compartirlo. Funciona en tu navegador.",
+      "description": "Borra los metadatos ocultos de un PDF, como autor, título, aplicación creadora y datos XMP, antes de compartirlo. Funciona en tu navegador; nada se sube.",
       "h1": "Elimina los metadatos ocultos de un PDF",
       "lede": "Los PDF registran en silencio quién los escribió, con qué programa y cuándo. Borra el autor, el título, el asunto, las palabras clave, el productor y los metadatos XMP antes de compartirlo.",
       "steps": [
@@ -499,7 +499,7 @@
       "summary": "Reduce un PDF optimizando sus imágenes. El texto sigue nítido.",
       "action": "Comprimir PDF",
       "title": "Comprimir PDF Online Sin Subir Archivos — Gratis | Fizzdoc",
-      "description": "Reduce el tamaño de un PDF en tu navegador recomprimiendo las imágenes pesadas. El texto sigue nítido y seleccionable. Gratis y de código abierto.",
+      "description": "Reduce el tamaño de un PDF en tu navegador recomprimiendo las imágenes pesadas. El texto sigue nítido y seleccionable. Nada se sube; gratis y de código abierto.",
       "h1": "Comprime un PDF — sin subirlo a ningún sitio",
       "lede": "Haz que un PDF sea lo bastante pequeño para enviarlo por correo o subirlo a un portal. Fizzdoc recomprime fotos y escaneos pesados y deja intactos el texto y los gráficos vectoriales.",
       "steps": [
@@ -531,7 +531,7 @@
       "summary": "Cambia el texto, añade texto nuevo y tapa zonas, directamente en la página.",
       "action": "Guardar PDF",
       "title": "Editar el Texto de un PDF Online — Gratis, Sin Subir | Fizzdoc",
-      "description": "Haz clic en cualquier texto de un PDF para cambiarlo, añade texto nuevo o tapa zonas — directamente en la página, en tu navegador. Gratis, sin registro.",
+      "description": "Haz clic en cualquier texto de un PDF para cambiarlo, añade texto nuevo o tapa zonas — directamente en la página, en tu navegador. Nada se sube. Gratis.",
       "h1": "Edita el texto de un PDF directamente en la página",
       "lede": "Corrige una errata, actualiza una fecha o rellena un hueco sin necesitar el archivo original. Haz clic en el texto que quieres cambiar y escribe — todo ocurre en tu dispositivo.",
       "steps": [
@@ -563,7 +563,7 @@
       "summary": "Convierte un PDF escaneado en un documento buscable y copiable.",
       "action": "Reconocer texto",
       "title": "OCR PDF — Haz que un PDF Escaneado sea Buscable | Fizzdoc",
-      "description": "Convierte PDF escaneados en documentos buscables y copiables con OCR en inglés que se ejecuta en tu navegador. Las páginas conservan su calidad original.",
+      "description": "Convierte PDF escaneados en documentos buscables y copiables con OCR en inglés en tu navegador. Las páginas conservan su calidad original. Nada se sube.",
       "h1": "Haz que un PDF escaneado sea buscable con OCR",
       "lede": "Reconoce el texto en inglés de las páginas escaneadas y añádelo como una capa invisible, para poder buscarlo, seleccionarlo y copiarlo. Las páginas en sí no cambian.",
       "steps": [
@@ -595,7 +595,7 @@
       "summary": "Convierte el texto de un PDF en un .docx editable.",
       "action": "Convertir a Word",
       "title": "Convertidor de PDF a Word (DOCX) — Privado | Fizzdoc",
-      "description": "Convierte un PDF en un documento Word editable, en tu navegador. Se conservan los títulos, párrafos y saltos de página. Gratis, sin registro.",
+      "description": "Convierte un PDF en un documento Word editable, en tu navegador. Se conservan los títulos, párrafos y saltos de página. Nada se sube. Gratis, sin registro.",
       "h1": "Convierte un PDF en un documento Word editable",
       "lede": "Lleva el texto de un PDF a Word, con los títulos y párrafos reconstruidos, para poder editarlo. La conversión ocurre en tu dispositivo.",
       "steps": [
@@ -711,7 +711,7 @@
       "summary": "Convierte un archivo .txt en un PDF limpio.",
       "action": "Crear PDF",
       "title": "Convertidor de Texto a PDF (TXT a PDF) | Fizzdoc",
-      "description": "Convierte un archivo de texto en un PDF limpio y legible, en tu navegador. Compatible con todos los idiomas, incluido el hindi y otras escrituras.",
+      "description": "Convierte un archivo de texto en un PDF limpio y legible, en tu navegador. Compatible con todos los idiomas, incluido el hindi y otras escrituras. Nada se sube.",
       "h1": "Convierte un archivo de texto en PDF",
       "lede": "Convierte notas, registros o cualquier archivo .txt en un PDF A4 bien formateado. Se admite cualquier idioma y escritura.",
       "steps": [
@@ -771,7 +771,7 @@
       "summary": "Convierte un .docx a PDF, con todos los idiomas.",
       "action": "Convertir a PDF",
       "title": "Convertidor de Word a PDF (DOCX a PDF) | Fizzdoc",
-      "description": "Convierte un documento Word a PDF en tu navegador, conservando títulos, listas, tablas e imágenes. Funciona con archivos de Google Docs.",
+      "description": "Convierte un documento Word a PDF en tu navegador, conservando títulos, listas, tablas e imágenes. Funciona con archivos de Google Docs. Nada se sube.",
       "h1": "Convierte un documento Word en PDF",
       "lede": "Transforma un .docx en un PDF con sus títulos, listas, tablas e imágenes, usando el propio generador de PDF de tu navegador. El documento nunca sale de tu dispositivo.",
       "steps": [
@@ -835,7 +835,7 @@
       "summary": "Convierte un .csv en un libro .xlsx completo.",
       "action": "Convertir a Excel",
       "title": "Convertidor de CSV a Excel (CSV a XLSX) | Fizzdoc",
-      "description": "Convierte un archivo CSV en un libro de Excel .xlsx, en tu navegador. Los números siguen siendo números, se conservan los ceros iniciales. Gratis.",
+      "description": "Convierte un archivo CSV en un libro de Excel .xlsx, en tu navegador. Los números siguen siendo números, se conservan los ceros iniciales. Nada se sube.",
       "h1": "Convierte CSV a Excel",
       "lede": "Transforma un CSV en un libro de Excel real. Los números se convierten en números, códigos como 007 conservan sus ceros iniciales, y el delimitador se detecta automáticamente.",
       "steps": [
@@ -923,7 +923,7 @@
       "summary": "Convierte entre JPG, PNG y WebP.",
       "action": "Convertir imágenes",
       "title": "Convertir Imágenes a JPG, PNG o WebP — Sin Subir | Fizzdoc",
-      "description": "Convierte imágenes entre JPG, PNG y WebP en tu navegador, en lote. Compatible con GIF, BMP, AVIF y fotos de iPhone que tu navegador pueda abrir.",
+      "description": "Convierte imágenes entre JPG, PNG y WebP en tu navegador, en lote. Compatible con GIF, BMP, AVIF y fotos de iPhone que tu navegador pueda abrir. Nada se sube.",
       "h1": "Convierte imágenes a JPG, PNG o WebP",
       "lede": "Cambia el formato de una imagen o de un lote entero — por ejemplo de WebP a JPG o de PNG a WebP — sin enviarlas a ningún sitio.",
       "steps": [
@@ -1143,7 +1143,7 @@
       "summary": "Estampa un texto como CONFIDENCIAL en todas las páginas.",
       "action": "Añadir marca de agua",
       "title": "Añadir Marca de Agua de Texto a un PDF — Sin Subir | Fizzdoc",
-      "description": "Añade una marca de agua de texto como CONFIDENCIAL o BORRADOR en todas las páginas de un PDF, en tu navegador. Elige la opacidad. Gratis.",
+      "description": "Añade una marca de agua de texto como CONFIDENCIAL o BORRADOR en todas las páginas de un PDF, en tu navegador. Elige la opacidad. Nada se sube. Gratis.",
       "h1": "Añade una marca de agua a un PDF",
       "lede": "Marca un documento como CONFIDENCIAL, BORRADOR o con tu nombre antes de compartirlo. La marca de agua se dibuja en diagonal en todas las páginas.",
       "steps": [
