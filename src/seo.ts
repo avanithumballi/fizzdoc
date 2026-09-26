@@ -156,7 +156,10 @@ function workspaceHtml(tool: Tool) {
     <ul id="warnings" class="warnings"></ul>
   </div>
 </section>
-<dialog id="password-dialog" aria-labelledby="password-title">
+${tool.format === 'pdf' ? PASSWORD_DIALOG : ''}`;
+}
+
+const PASSWORD_DIALOG = `<dialog id="password-dialog" aria-labelledby="password-title">
   <form method="dialog">
     <h2 id="password-title">This PDF is password-protected</h2>
     <p id="password-hint">Type its password. It stays on this device.</p>
@@ -167,7 +170,6 @@ function workspaceHtml(tool: Tool) {
     </div>
   </form>
 </dialog>`;
-}
 
 function mainHtml(page: Page) {
   const tool = page.tool;

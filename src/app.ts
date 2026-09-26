@@ -78,6 +78,7 @@ function setUp(op: ToolOp) {
   const result = $('result')!;
   const download = $<HTMLAnchorElement>('download')!;
   const warnings = $<HTMLUListElement>('warnings')!;
+  // Only PDF pages have the password dialog; Office tools never ask for one.
   const dialog = $<HTMLDialogElement>('password-dialog')!;
   const password = $<HTMLInputElement>('password')!;
   const passwordTitle = $('password-title')!;
@@ -212,7 +213,7 @@ function setUp(op: ToolOp) {
   function stop() {
     worker?.terminate();
     worker = undefined;
-    if (dialog.open) dialog.close();
+    if (dialog?.open) dialog.close();
     render();
   }
 

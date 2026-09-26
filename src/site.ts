@@ -295,9 +295,9 @@ export const TOOLS: Tool[] = [
 // Word, Excel and PowerPoint files (and Google Docs, Sheets and Slides downloaded as them) are ZIP
 // packages, so the same two tools work for all three; only the words change.
 const OFFICE = [
-  { format: 'word', app: 'Word', ext: 'docx', google: 'Google Docs', thing: 'document' },
-  { format: 'excel', app: 'Excel', ext: 'xlsx', google: 'Google Sheets', thing: 'spreadsheet' },
-  { format: 'powerpoint', app: 'PowerPoint', ext: 'pptx', google: 'Google Slides', thing: 'presentation' },
+  { format: 'word', app: 'Word', ext: 'docx', google: 'Google Docs', thing: 'document', a: 'a' },
+  { format: 'excel', app: 'Excel', ext: 'xlsx', google: 'Google Sheets', thing: 'spreadsheet', a: 'an' },
+  { format: 'powerpoint', app: 'PowerPoint', ext: 'pptx', google: 'Google Slides', thing: 'presentation', a: 'a' },
 ] as const;
 
 const googleFaq = (o: (typeof OFFICE)[number]): [string, string] => [
@@ -315,8 +315,8 @@ for (const o of OFFICE) {
       summary: `Erase author, company and editor names from a .${o.ext}.`,
       action: 'Remove metadata',
       title: `Remove ${o.app} Metadata — Private, No Upload | Fizzdoc`,
-      description: `Delete author, editor, company, title and thumbnail from a ${o.app} file in your browser. Works with ${o.google} downloads. Nothing is uploaded.`,
-      h1: `Remove hidden metadata from a ${o.app} ${o.thing}`,
+      description: `Delete author, editor, company, title and thumbnail from ${o.a} ${o.app} file in your browser. Works with ${o.google} downloads. Nothing is uploaded.`,
+      h1: `Remove hidden metadata from ${o.a} ${o.app} ${o.thing}`,
       lede: `Every .${o.ext} records who created it, who edited it last and which company it belongs to. Erase those details before you send it — without uploading the file anywhere.`,
       steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Click “Remove metadata”.', `Download the clean .${o.ext}.`],
       faq: [
@@ -338,7 +338,7 @@ for (const o of OFFICE) {
       action: 'Extract images',
       title: `Extract Images from ${o.app} — No Upload | Fizzdoc`,
       description: `Download every picture embedded in a ${o.app} ${o.thing} as a ZIP, at original resolution. Works with ${o.google} downloads. Runs in your browser.`,
-      h1: `Extract all images from a ${o.app} ${o.thing}`,
+      h1: `Extract all images from ${o.a} ${o.app} ${o.thing}`,
       lede: `Get every photo, logo and chart image out of a .${o.ext} in its original format and resolution — no screenshots, no re-compression, no upload.`,
       steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Click “Extract images”.', 'Download the ZIP of images.'],
       faq: [
