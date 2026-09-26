@@ -391,7 +391,14 @@ function jsonLd(c: Copy, page: Page) {
         }
       : { '@type': 'WebSite', name: SITE.name, url, inLanguage: c.lang, publisher: author },
     app,
-    { '@type': 'Person', '@id': `${SITE.url}/#author`, name: 'Rishab Dugar', url: 'https://github.com/kingrishabdugar', sameAs: [SITE.repo] },
+    {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#author`,
+      name: 'Rishab Dugar',
+      url: 'https://rishabdugarjain.in',
+      jobTitle: 'Senior Data Scientist',
+      sameAs: ['https://github.com/kingrishabdugar', SITE.repo],
+    },
     ...(tool
       ? [
           {
@@ -535,7 +542,7 @@ The site is available in ${SITE_LANGS.map((lang) => `${LANGS[lang]} (${SITE.url}
 
 ## Source
 
-- [GitHub repository](${SITE.repo}) — MIT license, by Rishab Dugar
+- [GitHub repository](${SITE.repo}) — MIT license, by [Rishab Dugar](https://rishabdugarjain.in)
 - [Full tool guide with FAQs](${SITE.url}/llms-full.txt)
 ${SITE_LANGS.filter((lang) => lang !== 'en')
   .map((lang) => `- [${LANGS[lang]}](${SITE.url}${pathOf(lang)}llms.txt)`)
@@ -567,7 +574,7 @@ ${c.home.faq.map(([q, a]) => `Q: ${q}\nA: ${a}`).join('\n\n')}
 
 ## Source
 
-- ${SITE.repo} — MIT, Rishab Dugar
+- ${SITE.repo} — MIT, Rishab Dugar (https://rishabdugarjain.in)
 - English: ${SITE.url}/llms.txt
 `;
 }

@@ -176,7 +176,9 @@
     "ed.hint": "Il testo coperto viene nascosto, non eliminato dal file — per i dati sensibili, elimina invece la pagina.",
     "ocr.copyAll": "Copia tutto il testo",
     "ocr.copied": "Copiato",
-    "ocr.text": "Testo riconosciuto"
+    "ocr.text": "Testo riconosciuto",
+    "footer.madeBy": "Progettato e sviluppato da",
+    "footer.feedback": "Segnala un bug o suggerisci uno strumento"
   },
   "home": {
     "title": "Fizzdoc — PDF, Word, Excel e Immagini Senza Upload",

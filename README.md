@@ -52,6 +52,35 @@ Every "free online PDF tool" asks you to upload your contract, payslip, bank sta
   <img src="docs/assets/demo.gif" width="860" alt="Fizzdoc demo: compress, edit PDF text, select text in a photo with OCR, Hindi interface, dark mode">
 </p>
 
+## 🎬 See it in action
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>✏️ Edit PDF text in place</strong><br>
+      <sub>Click any text and type. The closest standard font is used, and nothing is uploaded.</sub><br><br>
+      <a href="https://fizzdoc.pages.dev/edit-pdf/"><img src="docs/assets/edit.gif" alt="Editing PDF text directly on the page" width="100%"></a>
+    </td>
+    <td width="50%" valign="top">
+      <strong>🔍 Copy text from any photo</strong><br>
+      <sub>On-device OCR with Live Text-style selection, right on the image.</sub><br><br>
+      <a href="https://fizzdoc.pages.dev/image-to-text/"><img src="docs/assets/ocr.gif" alt="Selecting recognized text on an image" width="100%"></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>🧩 Merge, reorder, done</strong><br>
+      <sub>Drag to reorder. Forms and links survive; anything that can't is reported.</sub><br><br>
+      <a href="https://fizzdoc.pages.dev/merge-pdf/"><img src="docs/assets/merge.gif" alt="Merging and reordering PDFs" width="100%"></a>
+    </td>
+    <td width="50%" valign="top">
+      <strong>🌍 16 languages</strong><br>
+      <sub>Every page, tool and error message, from Hindi and Tamil to German and Vietnamese.</sub><br><br>
+      <a href="https://fizzdoc.pages.dev/hi/"><img src="docs/assets/lang.gif" alt="Fizzdoc in Hindi, Spanish, Tamil, German, Bengali and Vietnamese" width="100%"></a>
+    </td>
+  </tr>
+</table>
+
 ## 🧰 All 44 tools
 
 | Format | Tools |
@@ -162,8 +191,18 @@ If Fizzdoc saved you from uploading something private, **[give it a star](https:
   <img src="https://contrib.rocks/image?repo=kingrishabdugar/fizzdoc" alt="Contributors">
 </a>
 
+## 👋 About the author
+
+Fizzdoc is designed and built by **[Rishab Dugar](https://rishabdugarjain.in)**, a Senior Data Scientist in Bengaluru working on AI systems and production data platforms.
+It started from a simple frustration: why should a payslip or a passport scan travel to someone else's server just to be merged or compressed?
+
+<p>
+  <a href="https://rishabdugarjain.in"><img src="https://img.shields.io/badge/Website-rishabdugarjain.in-111111?style=for-the-badge" alt="rishabdugarjain.in"></a>
+  <a href="https://github.com/kingrishabdugar"><img src="https://img.shields.io/badge/GitHub-kingrishabdugar-181717?style=for-the-badge&logo=github" alt="GitHub @kingrishabdugar"></a>
+</p>
+
 ## 📄 License
 
-[MIT](LICENSE) © [Rishab Dugar](https://github.com/kingrishabdugar). Fizzdoc stands on the shoulders of [qpdf](https://github.com/qpdf/qpdf), [pdf.js](https://github.com/mozilla/pdf.js), [pdf-lib](https://github.com/Hopding/pdf-lib), [Tesseract.js](https://github.com/naptha/tesseract.js) and [fflate](https://github.com/101arrowz/fflate) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[MIT](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). Fizzdoc stands on the shoulders of [qpdf](https://github.com/qpdf/qpdf), [pdf.js](https://github.com/mozilla/pdf.js), [pdf-lib](https://github.com/Hopding/pdf-lib), [Tesseract.js](https://github.com/naptha/tesseract.js) and [fflate](https://github.com/101arrowz/fflate) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 <p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF offline, private PDF converter, PDF to Word, OCR, iLovePDF alternative, Smallpdf alternative, open-source PDF tools, WebAssembly PDF, client-side document converter.</sub></p>

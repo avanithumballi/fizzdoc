@@ -176,7 +176,9 @@
     "ed.hint": "Üzeri kapatılan metin gizlenir, dosyadan silinmez — hassas veriler için bunun yerine sayfayı silin.",
     "ocr.copyAll": "Tüm metni kopyala",
     "ocr.copied": "Kopyalandı",
-    "ocr.text": "Tanınan metin"
+    "ocr.text": "Tanınan metin",
+    "footer.madeBy": "Tasarlayan ve geliştiren",
+    "footer.feedback": "Hata bildir veya araç öner"
   },
   "home": {
     "title": "Fizzdoc — Gizli PDF, Word, Excel ve Görsel Araçları. Yükleme Yok.",

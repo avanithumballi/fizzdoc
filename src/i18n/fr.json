@@ -176,7 +176,9 @@
     "ed.hint": "Le texte masqué est caché, pas supprimé du fichier — pour des données sensibles, supprimez plutôt la page.",
     "ocr.copyAll": "Copier tout le texte",
     "ocr.copied": "Copié",
-    "ocr.text": "Texte reconnu"
+    "ocr.text": "Texte reconnu",
+    "footer.madeBy": "Conçu et développé par",
+    "footer.feedback": "Signaler un bug ou proposer un outil"
   },
   "home": {
     "title": "Fizzdoc — Outils PDF, Word, Excel & Image privés. Sans envoi.",

@@ -176,7 +176,9 @@
     "ed.hint": "Teks yang ditutup hanya disembunyikan, bukan dihapus dari file — untuk data sensitif, hapus saja halamannya.",
     "ocr.copyAll": "Salin semua teks",
     "ocr.copied": "Disalin",
-    "ocr.text": "Teks yang dikenali"
+    "ocr.text": "Teks yang dikenali",
+    "footer.madeBy": "Dirancang dan dibuat oleh",
+    "footer.feedback": "Laporkan bug atau usulkan alat"
   },
   "home": {
     "title": "Fizzdoc — Alat PDF, Word, Excel & Gambar Privat, Tanpa Upload",

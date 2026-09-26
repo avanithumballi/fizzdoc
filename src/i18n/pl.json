@@ -176,7 +176,9 @@
     "ed.hint": "Zamalowany tekst jest ukryty, a nie usunięty z pliku — w przypadku danych wrażliwych usuń zamiast tego całą stronę.",
     "ocr.copyAll": "Kopiuj cały tekst",
     "ocr.copied": "Skopiowano",
-    "ocr.text": "Rozpoznany tekst"
+    "ocr.text": "Rozpoznany tekst",
+    "footer.madeBy": "Zaprojektował i zbudował",
+    "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie"
   },
   "home": {
     "title": "Fizzdoc — prywatne narzędzia PDF, Word, Excel i obrazy. Bez wysyłania.",

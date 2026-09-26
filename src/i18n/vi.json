@@ -176,7 +176,9 @@
     "ed.hint": "Văn bản bị che chỉ ẩn đi, không bị xóa khỏi tệp — với dữ liệu nhạy cảm, hãy xóa cả trang thay vì che.",
     "ocr.copyAll": "Sao chép toàn bộ văn bản",
     "ocr.copied": "Đã sao chép",
-    "ocr.text": "Văn bản đã nhận dạng"
+    "ocr.text": "Văn bản đã nhận dạng",
+    "footer.madeBy": "Thiết kế và phát triển bởi",
+    "footer.feedback": "Báo lỗi hoặc đề xuất công cụ"
   },
   "home": {
     "title": "Fizzdoc — Công cụ PDF, Word, Excel & Ảnh riêng tư, không tải lên",

@@ -176,7 +176,9 @@
     "ed.hint": "Bedekte tekst is verborgen, niet verwijderd uit het bestand — verwijder voor gevoelige gegevens in plaats daarvan de pagina.",
     "ocr.copyAll": "Alle tekst kopiëren",
     "ocr.copied": "Gekopieerd",
-    "ocr.text": "Herkende tekst"
+    "ocr.text": "Herkende tekst",
+    "footer.madeBy": "Ontworpen en gebouwd door",
+    "footer.feedback": "Meld een bug of stel een tool voor"
   },
   "home": {
     "title": "Fizzdoc — Privé PDF, Word, Excel & Afbeeldingen Tools",

@@ -34,6 +34,8 @@ export const UI = {
   'footer.about': 'Private document tools. Your files are processed on your device and never uploaded.',
   'footer.license': 'Open source (MIT)',
   'footer.builtOn': 'Built on qpdf, pdf.js and pdf-lib',
+  'footer.madeBy': 'Designed and built by',
+  'footer.feedback': 'Report a bug or suggest a tool',
   'star.title': 'Free and open source. Forever.',
   'star.text': 'No ads, no accounts, no servers looking at your files. If Fizzdoc saved you time, a star on GitHub helps more people find it.',
   'star.button': 'Star Fizzdoc on GitHub',
