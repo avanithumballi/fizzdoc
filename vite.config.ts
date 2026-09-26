@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite';
-import { PAGES, fileName, llms, llmsFull, renderPage, robots, sitemap } from './src/seo.ts';
+import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, renderPage, robots, sitemap } from './src/seo.ts';
 import { SITE } from './src/site.ts';
 import { ocrAssets } from './vite-plugins/ocr-assets.ts';
 
@@ -47,6 +47,7 @@ function pages(): Plugin {
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots() });
       this.emitFile({ type: 'asset', fileName: 'llms.txt', source: llms() });
       this.emitFile({ type: 'asset', fileName: 'llms-full.txt', source: llmsFull() });
+      for (const lang of SITE_LANGS.filter((l) => l !== 'en')) this.emitFile({ type: 'asset', fileName: `${lang}/llms.txt`, source: llmsFor(lang) });
     },
   };
 }

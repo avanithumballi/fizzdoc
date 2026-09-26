@@ -1,0 +1,1572 @@
+{
+  "ui": {
+    "nav.label": "Ana",
+    "nav.home": "Fizzdoc ana sayfa",
+    "nav.theme": "Renk temasını değiştir",
+    "nav.star": "★ Yıldızla",
+    "nav.starAria": "Fizzdoc'u GitHub'da yıldızla",
+    "lang.label": "Dil",
+    "lang.tip": "Başka bir dili mi tercih ediyorsunuz? Buradan seçin.",
+    "lang.tipClose": "Kapat",
+    "footer.about": "Gizliliğe önem veren belge araçları. Dosyalarınız cihazınızda işlenir ve asla yüklenmez.",
+    "footer.license": "Açık kaynak (MIT)",
+    "footer.builtOn": "qpdf, pdf.js ve pdf-lib üzerine inşa edilmiştir",
+    "star.title": "Ücretsiz ve açık kaynak. Sonsuza dek.",
+    "star.text": "Reklam yok, hesap yok, dosyalarınıza bakan sunucu yok. Fizzdoc zamandan kazandırdıysa, GitHub'da bir yıldız daha çok kişinin onu bulmasına yardımcı olur.",
+    "star.button": "Fizzdoc'u GitHub'da yıldızla",
+    "star.hero": "GitHub'da yıldızla",
+    "star.nudge": "Fizzdoc işinize yaradı mı? {link} — ücretsizdir ve başkalarının onu bulmasına yardımcı olur.",
+    "star.nudgeLink": "★ GitHub'da yıldızla",
+    "format.pdf": "PDF",
+    "format.word": "Word",
+    "format.excel": "Excel",
+    "format.powerpoint": "PowerPoint",
+    "format.image": "Görseller",
+    "group.title": "{format} araçları",
+    "home.eyebrow": "0 bayt yüklenir · Açık kaynak · Ücretsiz",
+    "home.cta": "PDF Birleştir",
+    "home.browse": "Tüm {n} aracına göz atın",
+    "home.formats": "Desteklenen formatlar",
+    "home.google": "+ Google Dokümanlar, E-Tablolar ve Slaytlar",
+    "home.chip": "Bu cihazda işlenir",
+    "home.toolsTitle": "Her araç, varsayılan olarak gizli",
+    "home.toolsLede": "Bir araç seçin. Dosyanız bu cihazda işlenir ve hiçbir sunucuya dokunmaz.",
+    "home.whatTitle": "{name} nedir?",
+    "tool.eyebrow": "Cihazınızda çalışır · 0 bayt yüklenir",
+    "tool.how": "{tool} nasıl kullanılır",
+    "tool.more": "Daha fazla gizli araç",
+    "crumbs.label": "Sayfa yolu",
+    "faq.title": "Sık sorulan sorular",
+    "proof.title": "Tasarım gereği gizli — ve kontrol edebilirsiniz",
+    "proof.lede": "Dosyalarınız asla yüklenmez, çünkü yüklenebilecekleri bir yer yoktur.",
+    "proof.noUpload": "Yükleme adımı yoktur",
+    "proof.noUploadText": "Dosyalar bu tarayıcı sekmesinin içinde okunur ve yazılır. Onları alabilecek bir sunucu yoktur.",
+    "proof.csp": "Tarayıcı bunu zorunlu kılar",
+    "proof.cspText": "Bu sayfanın İçerik Güvenliği Politikası, yalnızca bu siteye geri bağlantılara izin verir; bu site de yalnızca uygulamanın kendisini sunar.",
+    "proof.check": "Kendiniz görün",
+    "proof.checkText": "Geliştirici araçlarını açın, Ağ sekmesini izleyin ve bir işlem çalıştırın: hiçbir istek belgenizi taşımaz.",
+    "proof.open": "Açık kaynak",
+    "proof.openText": "Her satır {github} üzerindedir, {engines} üzerine inşa edilmiştir.",
+    "ws.choosePdf": "Bir PDF dosyası seçin",
+    "ws.choosePdfs": "PDF dosyaları seçin",
+    "ws.chooseImage": "Bir görsel seçin",
+    "ws.chooseImages": "Görseller seçin",
+    "ws.chooseFile": "Bir {ext} dosyası seçin",
+    "ws.chooseFiles": "{ext} dosyaları seçin",
+    "ws.dropOne": "veya buraya bırakın · bu cihazdan asla çıkmaz",
+    "ws.dropMany": "veya buraya bırakın · bu cihazdan asla çıkmaz",
+    "ws.files": "Seçilen dosyalar",
+    "ws.reorder": "Sırasını değiştirmek için dosyaları sürükleyin veya okları kullanın.",
+    "ws.rotation": "Döndürme",
+    "ws.rot90": "Saat yönünde 90°",
+    "ws.rot180": "180°",
+    "ws.rot270": "Saat yönünün tersine 90°",
+    "ws.pagesKeep": "Tutulacak sayfalar",
+    "ws.pagesDelete": "Silinecek sayfalar",
+    "ws.pagesRotate": "Döndürülecek sayfalar (isteğe bağlı)",
+    "ws.pagesAll": "Tüm sayfalar",
+    "ws.pagesExtract": "Çıkarılacak sayfalar",
+    "ws.pagesOrder": "Yeni sayfa sırası",
+    "ws.example": "örn. {example}",
+    "ws.password": "Parola",
+    "ws.repeat": "Parolayı tekrarlayın",
+    "ws.unlockNote": "Yalnızca değiştirme hakkına sahip olduğunuz dosyaların kilidini açın.",
+    "ws.protectNote": "Unutulan bir parola kurtarılamaz. Güvenli bir yerde saklayın.",
+    "ws.cancel": "İptal",
+    "ws.download": "İndir",
+    "ws.compression": "Sıkıştırma",
+    "ws.balanced": "Dengeli — en iyi kalite",
+    "ws.strong": "Güçlü — en küçük dosya",
+    "ws.saveAs": "Farklı kaydet",
+    "ws.fmtOriginal": "Her dosyayla aynı format",
+    "ws.fmtJpeg": "JPG — fotoğraflar, her yerde açılır",
+    "ws.fmtWebp": "WebP — en küçük",
+    "ws.fmtPng": "PNG — kayıpsız",
+    "ws.quality": "Kalite",
+    "ws.width": "Genişlik (px)",
+    "ws.height": "Yükseklik (px)",
+    "ws.scale": "Veya ölçek (%)",
+    "ws.auto": "Otomatik",
+    "ws.keepAspect": "En boy oranını koru",
+    "ws.position": "Konum",
+    "ws.bottomCenter": "Alt orta",
+    "ws.bottomRight": "Sağ alt",
+    "ws.topRight": "Sağ üst",
+    "ws.style": "Stil",
+    "ws.pageOf": "Sayfa 1 / 10",
+    "ws.startAt": "Başlangıç",
+    "ws.wmText": "Filigran metni",
+    "ws.wmDefault": "CONFIDENTIAL",
+    "ws.opacity": "Saydamlık",
+    "pw.title": "Bu PDF parola korumalı",
+    "pw.titleFile": "“{file}” parola korumalı",
+    "pw.hint": "Parolasını yazın. Bu cihazda kalır.",
+    "pw.retry": "Bu parola çalışmadı. Tekrar deneyin ({n}/3).",
+    "pw.unlock": "Kilidi Aç",
+    "app.working": "İşleniyor… dosyalarınız bu cihazda kalır.",
+    "app.workingPct": "İşleniyor… %{pct} — dosyalarınız bu cihazda kalır.",
+    "app.done": "Tamamlandı — {summary}, {size}. Bu cihazda oluşturuldu.",
+    "app.ready": "Hazır — yazdırma penceresinde “PDF olarak kaydet”i seçin, ardından Kaydet’e tıklayın. Bu cihazda oluşturuldu.",
+    "app.saveAsPdf": "PDF olarak kaydet",
+    "app.downloadExt": "{ext} indir",
+    "app.canceled": "İptal edildi. Hiçbir şey değişmedi.",
+    "app.wrongType": "Bu dosya türü bu araçla kullanılamaz.",
+    "app.tooBig": "Bu dosyaların toplamı {size}, bu cihazın güvenle işleyebileceğinden ({max}) daha fazla.",
+    "app.moveUp": "Yukarı taşı",
+    "app.moveDown": "Aşağı taşı",
+    "app.remove": "Kaldır",
+    "error.INVALID_PDF": "Bu dosya PDF olarak okunamadı. Bozuk olabilir veya PDF olmayabilir.",
+    "error.BAD_PASSWORD": "Bu parola üç denemede de çalışmadı. Hiçbir şey değişmedi.",
+    "error.PASSWORD_REQUIRED": "Devam etmek için bu PDF’nin parolası gerekiyor. Hiçbir şey değişmedi.",
+    "error.BAD_RANGE": "Sayfa numaralarını kontrol edin. Belgenin sayfa sayısı içinde “1-3, 8” gibi sayılar ve aralıklar kullanın.",
+    "error.NOT_ENCRYPTED": "Bu PDF parola korumalı değil, dolayısıyla açılacak bir kilit yok.",
+    "error.UNSUPPORTED_XFA": "Bu PDF, güvenle düzenlenemeyen dinamik bir XFA formu kullanıyor. Dosyanız değiştirilmedi.",
+    "error.NO_PAGES_LEFT": "Bu, tüm sayfaları kaldırır. En az bir sayfa bırakın.",
+    "error.WRONG_FILE_COUNT": "Bu aracın ihtiyaç duyduğu sayıda dosya ekleyin.",
+    "error.PROCESSING_FAILED": "İşlenirken bir sorun oluştu. Orijinal dosyanız değişmedi.",
+    "error.NO_PASSWORD": "Eklemek istediğiniz parolayı yazın.",
+    "error.PASSWORDS_DIFFER": "İki parola birbiriyle eşleşmiyor.",
+    "error.NOT_OFFICE": "Bu dosya geçerli bir Word, Excel veya PowerPoint belgesi değil.",
+    "error.NO_IMAGES": "Bu belgede gömülü görsel yok.",
+    "error.BAD_IMAGE": "Görsellerden biri okunamadı. JPG veya PNG deneyin.",
+    "error.PDF_PASSWORD": "Bu PDF parola korumalı. Önce Unlock PDF ile parolayı kaldırın.",
+    "error.BAD_SIZE": "Genişlik ve yükseklik 1 ile 16.384 piksel arasında olmalı.",
+    "error.NO_TEXT": "Bu PDF’de çıkarılacak metin yok — muhtemelen taranmış bir görüntü. Önce OCR PDF çalıştırın, ardından tekrar deneyin.",
+    "error.NO_WATERMARK": "Filigran metnini yazın (harfler, rakamlar ve yaygın simgeler).",
+    "error.ENGINE_FAILED": "PDF motoru beklenmedik şekilde durdu — dosya bu cihaz için çok büyük olabilir.",
+    "warning.BOOKMARKS_DROPPED": "İkinci ve sonraki dosyalardaki yer imleri aktarılmadı. İlk dosyanın yer imleri korundu.",
+    "warning.BOOKMARKS_BROKEN": "Bazı yer imleri kaldırılan sayfalara işaret ediyordu, bu yüzden artık hiçbir yere gitmiyorlar.",
+    "warning.TAGS_NOT_UPDATED": "Bu PDF’deki erişilebilirlik etiketleri yeni sayfalar için yeniden oluşturulmadı, bu yüzden ekran okuyucu yapısı eksik olabilir.",
+    "warning.SIGNATURES_INVALIDATED": "Belge değiştiği için bu PDF’deki dijital imzalar artık doğrulanmayacak.",
+    "warning.PASSWORD_REMOVED": "Yeni dosyanın parolası yok.",
+    "warning.PERMISSIONS_REMOVED": "Orijinalin düzenleme ve yazdırma kısıtlamaları yeni dosyaya uygulanmıyor.",
+    "sum.page": "sayfa",
+    "sum.pages": "sayfa",
+    "sum.image": "görsel",
+    "sum.images": "görsel",
+    "sum.word": "kelime",
+    "sum.words": "kelime",
+    "sum.slide": "slayt",
+    "sum.slides": "slayt",
+    "sum.row": "satır",
+    "sum.rows": "satır",
+    "sum.sheet": "sayfa",
+    "sum.sheets": "sayfa",
+    "sum.edit": "düzenleme",
+    "sum.edits": "düzenleme",
+    "sum.recognized": "tanındı",
+    "sum.numbered": "numaralandırıldı",
+    "sum.watermarked": "filigranlandı",
+    "sum.smaller": "daha küçük",
+    "sum.Already optimized": "Zaten optimize edilmiş",
+    "sum.Metadata removed": "Meta veriler kaldırıldı",
+    "ed.tools": "Düzenleme aracı",
+    "ed.editText": "Metni düzenle",
+    "ed.addText": "Metin ekle",
+    "ed.whiteout": "Beyazlatma",
+    "ed.undo": "Geri al",
+    "ed.undoLabel": "Son düzenlemeyi geri al",
+    "ed.zoomOut": "Uzaklaştır",
+    "ed.zoomIn": "Yakınlaştır",
+    "ed.page": "Sayfa {n} / {total}",
+    "ed.editRun": "Metni düzenle: {text}",
+    "ed.move": "Taşımak için sürükleyin",
+    "ed.removeBox": "Metin kutusunu kaldır",
+    "ed.replaced": "Bazı karakterler standart PDF yazı tipleri tarafından desteklenmiyor ve değiştirildi.",
+    "ed.hint": "Üzeri kapatılan metin gizlenir, dosyadan silinmez — hassas veriler için bunun yerine sayfayı silin.",
+    "ocr.copyAll": "Tüm metni kopyala",
+    "ocr.copied": "Kopyalandı",
+    "ocr.text": "Tanınan metin"
+  },
+  "home": {
+    "title": "Fizzdoc — Gizli PDF, Word, Excel ve Görsel Araçları. Yükleme Yok.",
+    "description": "PDF düzenleyin, sıkıştırın, dönüştürün, OCR uygulayın; Word, Excel ve görselleri dönüştürün — tarayıcınızda. Sıfır yükleme, kayıt yok, ücretsiz ve açık kaynak.",
+    "h1": "Belgelerinizi hiç görmeyen belge araçları",
+    "lede": "PDF düzenleyin, sıkıştırın, dönüştürün ve OCR uygulayın. Word, Excel, PowerPoint ve görselleri dönüştürün. Her şey tarayıcınızda çalışır — dosyalarınız cihazınızdan asla çıkmaz.",
+    "what": "Fizzdoc, tamamen web tarayıcınızın içinde çalışan ücretsiz, açık kaynaklı bir belge araçları setidir. PDF'ler qpdf, pdf.js ve pdf-lib motorlarıyla işlenir, metin tanıma Tesseract kullanır ve Office dosyaları ile görseller de yerel olarak işlenir — böylece hiçbir şey bir sunucuya yüklenmez.",
+    "faq": [
+      [
+        "Dosyalarım herhangi bir yere yükleniyor mu?",
+        "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+      ],
+      [
+        "Fizzdoc, iLovePDF, Smallpdf veya Adobe'nin çevrimiçi araçlarından farkı nedir?",
+        "Bu servisler belgenizi işlemek için sunucularına yükler. Fizzdoc ise işi tarayıcı sekmenizde yapar, böylece yüklenecek, saklanacak veya sonradan silinecek hiçbir şey kalmaz. Ayrıca açık kaynaktır ve bir yer iminin aktarılamaması gibi durumlarda sessizce atlamak yerine sizi uyarır."
+      ],
+      [
+        "Google Dokümanlar, E-Tablolar ve Slaytlar ile çalışır mı?",
+        "Evet. Dosyayı Google'dan Word, Excel veya PowerPoint dosyası olarak indirin (Dosya → İndir) ve ilgili Fizzdoc aracını kullanın. Hiçbir şey Google'a veya Fizzdoc'a gönderilmez."
+      ],
+      [
+        "Telefonumda çalışır mı?",
+        "Evet. Fizzdoc, masaüstü ve mobilde Chrome, Safari, Firefox ve Edge'in güncel sürümlerinde çalışır. Çok büyük dosyalar bir telefonun belleğini aşabilir; Fizzdoc bunu başlamadan önce kontrol eder."
+      ],
+      [
+        "Fizzdoc ücretsiz mi?",
+        "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+      ]
+    ]
+  },
+  "tools": {
+    "merge-pdf": {
+      "name": "PDF Birleştir",
+      "summary": "Birden çok PDF'yi seçtiğiniz sırayla tek dosyada birleştirin.",
+      "action": "PDF'leri Birleştir",
+      "title": "PDF Dosyalarını Gizlice Birleştir — Ücretsiz | Fizzdoc",
+      "description": "PDF dosyalarını tarayıcınızda birleştirin. Hiçbir şey yüklenmez, form alanları ve bağlantılar korunur. Ücretsiz, kayıtsız, açık kaynak.",
+      "h1": "PDF dosyalarını yüklemeden birleştirin",
+      "lede": "PDF'leri tarayıcınızda tek bir belgede birleştirin. Hiçbir şey sunucuya gönderilmez; form alanları ve iç bağlantılar birleştirmeden sağ çıkar.",
+      "steps": [
+        "İki veya daha fazla PDF dosyası ekleyin — sürükleyin veya tıklayarak seçin.",
+        "↑ ve ↓ düğmeleriyle sıraya koyun.",
+        "“PDF'leri Birleştir”e tıklayın ve birleşik dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Yer imleri, form alanları ve bağlantılar korunur mu?",
+          "Her dosyadaki form alanları ve iç bağlantılar korunur. İlk dosyanın yer imleri tutulur; diğer dosyaların yer imleri henüz birleştirilemiyor ve Fizzdoc bunları sessizce atmak yerine size haber verir."
+        ],
+        [
+          "Parola korumalı PDF'leri birleştirebilir miyim?",
+          "Evet. Parola cihazınızda sorulur ve birleştirilmiş dosya parolasız kaydedilir."
+        ],
+        [
+          "Bir boyut sınırı var mı?",
+          "Sayfa sınırı yoktur. Boyut sınırı cihazınızın belleğine bağlıdır — genellikle toplamda birkaç yüz megabayt — ve bir işlem cihazınız için çok büyükse Fizzdoc başlamadan önce size söyler."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "split-pdf": {
+      "name": "PDF Böl",
+      "summary": "İhtiyacınız olan sayfaları yeni bir PDF'e çıkarın.",
+      "action": "Sayfaları Çıkar",
+      "title": "PDF Bölme ve Sayfa Çıkarma — Gizli, Ücretsiz | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'den sayfa çıkarın. 1-3, 8 gibi aralıklar seçin — dosyanız cihazınızdan hiç çıkmaz. Ücretsiz, kayıtsız, açık kaynak.",
+      "h1": "Bir PDF'i bölün ve sayfaları gizlice çıkarın",
+      "lede": "İhtiyacınız olan sayfaları yeni bir PDF'e aktarın. “1-3, 8” gibi aralıklar yazın; yazdığınız sıra, aldığınız sıradır.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Tutulacak sayfaları yazın, örneğin “1-3, 8” veya 5. sayfadan sona kadar için “5-”.",
+        "“Sayfaları Çıkar”a tıklayın ve yeni PDF'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Çıkarırken sayfaları yeniden sıralayabilir miyim?",
+          "Evet. Sayfalar yazdığınız sırayla çıkar, yani “3, 1-2” önce 3. sayfayı verir."
+        ],
+        [
+          "Yer imlerine ve form alanlarına ne olur?",
+          "Yer imleri korunur. Bir yer imi tutmadığınız bir sayfaya işaret ediyorsa Fizzdoc sizi uyarır. Kaldırılan sayfalardaki form alanları temiz biçimde kaldırılır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "rotate-pdf": {
+      "name": "PDF Döndür",
+      "summary": "Yan duran sayfaları kalıcı olarak düzeltin.",
+      "action": "Sayfaları Döndür",
+      "title": "PDF Sayfalarını Kalıcı Olarak Döndür — Ücretsiz | Fizzdoc",
+      "description": "PDF sayfalarının tümünü veya seçtiklerinizi 90°, 180° ya da 270° döndürüp kaydedin. Tarayıcınızda çalışır; dosyanız asla yüklenmez.",
+      "h1": "PDF sayfalarını döndürün ve öyle kaydedin",
+      "lede": "Yan taranmış sayfaları kalıcı olarak düzeltin. Tüm sayfaları ya da yalnızca seçtiklerinizi döndürün — yeniden oluşturma olmadığı için kalite bozulmaz.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Açıyı ve isteğe bağlı olarak hangi sayfaların döndürüleceğini seçin.",
+        "“Sayfaları Döndür”e tıklayın ve düzeltilmiş PDF'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Döndürmek kaliteyi düşürür mü?",
+          "Hayır. Fizzdoc yalnızca her sayfanın döndürme ayarını değiştirir; sayfa içeriği yeniden oluşturulmaz veya yeniden sıkıştırılmaz."
+        ],
+        [
+          "Yalnızca bazı sayfaları döndürebilir miyim?",
+          "Evet. “2, 5-7” gibi sayfalar girin, ya da her sayfayı döndürmek için alanı boş bırakın."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "delete-pdf-pages": {
+      "name": "PDF Sayfası Sil",
+      "summary": "Paylaşmak istemediğiniz sayfaları kaldırın.",
+      "action": "Sayfaları Sil",
+      "title": "Bir PDF'den Sayfa Silme — Gizli, Ücretsiz | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'den istenmeyen sayfaları kaldırın. Silinecek sayfaları yazın; dosyanız cihazınızdan hiç çıkmaz. Ücretsiz ve açık kaynak.",
+      "h1": "Bir PDF'den sayfaları gizlice silin",
+      "lede": "Bir belgeyi paylaşmadan önce boş, tekrarlanan veya gizli sayfaları kaldırın, kimseye teslim etmeden.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Silinecek sayfaları yazın, örneğin “2, 7-9”.",
+        "“Sayfaları Sil”e tıklayın ve kısaltılmış PDF'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Silinen sayfalar gerçekten yok oluyor mu?",
+          "Evet. Kaldırılan sayfalar yeni dosyaya yazılmaz. Cihazınızdaki orijinal dosya değişmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "unlock-pdf": {
+      "name": "PDF Kilidini Aç",
+      "summary": "Bildiğiniz parola olmadan bir kopya kaydedin.",
+      "action": "Parolayı Kaldır",
+      "title": "PDF Parolasını Kaldır (Kilidi Aç) — Ücretsiz | Fizzdoc",
+      "description": "Açma hakkınız olan bir PDF'in parolasını kaldırın. Şifre çözme cihazınızda gerçekleşir, hiçbir şey yüklenmez. Ücretsiz, kayıtsız.",
+      "h1": "Bir PDF parolasını cihazınızda kaldırın",
+      "lede": "Zaten açabildiğiniz korumalı bir PDF'in kilitsiz bir kopyasını kaydedin. Parola ve belge cihazınızda kalır.",
+      "steps": [
+        "Korumalı PDF'i ekleyin.",
+        "“Parolayı Kaldır”a tıklayın ve sorulduğunda parolayı yazın.",
+        "Kilidi açılmış kopyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Fizzdoc bilmediğim bir parolayı kırabilir mi?",
+          "Hayır. Fizzdoc korumayı yalnızca parolayı biliyorsanız kaldırır, ya da PDF parolasız açılıp yalnızca düzenlemeyi veya yazdırmayı kısıtlıyorsa. Yalnızca değiştirme hakkına sahip olduğunuz dosyaların kilidini açın."
+        ],
+        [
+          "Parolam bir yere gönderiliyor mu?",
+          "Hayır. Parola bu sayfaya yazılır ve yalnızca tarayıcı sekmenizde çalışan motor tarafından kullanılır. Kaydedilmez veya kayıt altına alınmaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "protect-pdf": {
+      "name": "PDF Parola Koru",
+      "summary": "Bir PDF'i parola ve AES-256 şifrelemesiyle kilitleyin.",
+      "action": "PDF'i Koru",
+      "title": "AES-256 ile PDF'e Parola Koyma — Ücretsiz | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'e AES-256 şifrelemesiyle parola ekleyin. Dosya ve parola cihazınızdan hiç çıkmaz. Ücretsiz, kayıtsız.",
+      "h1": "Bir PDF'i cihazınızda parola ile koruyun",
+      "lede": "Bir PDF'i yalnızca parolanızla açılacak şekilde AES-256 ile şifreleyin. Şifreleme bu sekmede gerçekleşir; ne dosya ne de parola bir yere gönderilir.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Parolayı iki kez yazın.",
+        "“PDF'i Koru”ya tıklayın ve şifrelenmiş kopyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Koruma ne kadar güçlü?",
+          "Fizzdoc, qpdf motoru üzerinden PDF standardının tanımladığı en güçlü şifreleme olan AES-256'yı kullanır. Adobe Acrobat, Chrome, Edge, Firefox ve Preview dahil her modern PDF okuyucusunda açılır."
+        ],
+        [
+          "Parolayı unutursam ne olur?",
+          "Kurtarılamaz — ne Fizzdoc ne de başka biri kurtaramaz. Parolayı bir parola yöneticisi gibi güvenli bir yerde saklayın."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "remove-pdf-metadata": {
+      "name": "PDF Meta Verisini Kaldır",
+      "summary": "Yazar, başlık, yazılım ve XMP bilgilerini temizleyin.",
+      "action": "Meta Veriyi Kaldır",
+      "title": "PDF Meta Verisini Kaldır (Yazar, Başlık, XMP) | Fizzdoc",
+      "description": "Bir dosyayı paylaşmadan önce yazar, başlık, oluşturan uygulama gibi gizli PDF meta verilerini silin. Tarayıcınızda çalışır; hiçbir şey yüklenmez.",
+      "h1": "Bir PDF'den gizli meta verileri kaldırın",
+      "lede": "PDF'ler kimin, hangi uygulamayla ve ne zaman oluşturduğunu sessizce kaydeder. Paylaşmadan önce yazar, başlık, konu, anahtar kelime, üretici ve XMP meta verilerini silin.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“Meta Veriyi Kaldır”a tıklayın.",
+        "Temiz kopyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Tam olarak ne kaldırılıyor?",
+          "Belge bilgi sözlüğü (yazar, başlık, konu, anahtar kelimeler, oluşturan ve üretici) ve XMP meta veri akışı. Dosya gerçekten değiştiği için yalnızca değiştirme tarihi korunur. Sayfa içeriğine dokunulmaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "jpg-to-pdf": {
+      "name": "JPG'den PDF'e",
+      "summary": "Fotoğraf ve taramaları tek bir PDF'e dönüştürün.",
+      "action": "PDF Oluştur",
+      "title": "JPG'den PDF'e Dönüştürücü — Gizli, Ücretsiz | Fizzdoc",
+      "description": "JPG, PNG, WebP ve diğer görselleri tarayıcınızda tek bir PDF'e dönüştürün. Fotoğraflarınız cihazınızdan çıkmaz. Filigransız, kayıtsız.",
+      "h1": "JPG ve PNG görsellerini gizlice PDF'e dönüştürün",
+      "lede": "Fotoğrafları, ekran görüntülerini ve taramaları görsel başına bir sayfa olacak şekilde ve tam çözünürlükte tek bir PDF'de birleştirin. Fotoğraflarınız cihazınızda kalır.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin — JPG, PNG, WebP, GIF ve daha fazlası.",
+        "↑ ve ↓ düğmeleriyle sıraya koyun.",
+        "“PDF Oluştur”a tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Görsel kalitesi düşer mi?",
+          "Hayır. JPG ve PNG görselleri PDF'e oldukları gibi, yeniden sıkıştırılmadan yerleştirilir. Diğer formatlar bir kez, yüksek kalitede dönüştürülür."
+        ],
+        [
+          "iPhone fotoğraflarını dönüştürebilir miyim?",
+          "Evet, tarayıcınız onları gösterebiliyorsa. Safari, HEIC fotoğrafları doğrudan açar; diğer tarayıcılarda önce JPG olarak paylaşın."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-jpg": {
+      "name": "PDF'den JPG'e",
+      "summary": "Her sayfayı net bir JPG görseli olarak kaydedin.",
+      "action": "JPG'e Dönüştür",
+      "title": "PDF'den JPG'e Dönüştürücü — Gizli, Ücretsiz | Fizzdoc",
+      "description": "Bir PDF'in her sayfasını tarayıcınızda yüksek kaliteli bir JPG görseline dönüştürün. Hiçbir şey yüklenmez. Çok sayfalı dosyalar tek bir ZIP olarak iner.",
+      "h1": "PDF sayfalarını gizlice JPG görsellerine dönüştürün",
+      "lede": "Mozilla'nın pdf.js'i kullanılarak her sayfa 150 DPI net bir JPG'e dönüştürülür, tamamı tarayıcınızda. Çok sayfalı bir PDF tek bir ZIP olarak iner.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“JPG'e Dönüştür”e tıklayın.",
+        "Görseli, ya da sayfa başına bir görsel içeren bir ZIP'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Görsellerin çözünürlüğü nedir?",
+          "150 DPI — ekranda net, orijinal boyutunda yazdırmak için de yeterli. Bir A4 sayfa 1240 × 1754 piksellik bir görsel olur."
+        ],
+        [
+          "Parola korumalı PDF'lerle çalışır mı?",
+          "Önce PDF Kilidini Aç ile parolayı kaldırın, ardından dönüştürün. Her iki adım da cihazınızda kalır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-pdf": {
+      "name": "PDF Sıkıştır",
+      "summary": "Görselleri optimize ederek bir PDF'i küçültün. Metin keskin kalır.",
+      "action": "PDF'i Sıkıştır",
+      "title": "PDF Sıkıştırma — Yüklemeden, Çevrimiçi ve Ücretsiz | Fizzdoc",
+      "description": "Aşırı büyük görselleri yeniden sıkıştırarak PDF dosya boyutunu tarayıcınızda küçültün. Metin seçilebilir ve keskin kalır. Hiçbir şey yüklenmez.",
+      "h1": "Bir PDF'i yüklemeden sıkıştırın",
+      "lede": "Bir PDF'i e-postayla göndermeye ya da bir portale yüklemeye yetecek kadar küçültün. Fizzdoc aşırı büyük fotoğraf ve taramaları yeniden sıkıştırır, metne ve vektör grafiklere dokunmaz.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Dengeli veya Güçlü sıkıştırmayı seçin.",
+        "“PDF'i Sıkıştır”a tıklayın ve daha küçük dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "PDF'im ne kadar küçülür?",
+          "Taramalardan ve fotoğraflardan oluşan PDF'ler genellikle %40-80 küçülür. Yalnızca metin içeren PDF'ler zaten kompakttır; Fizzdoc bir dosyayı küçültemezse bunu size söyler ve orijinali korur."
+        ],
+        [
+          "Metin bulanıklaşır mı?",
+          "Hayır. Yalnızca gömülü görseller yeniden sıkıştırılır. Metin, yazı tipleri ve vektör çizimler birebir kopyalanır, bu yüzden metin keskin ve seçilebilir kalır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "edit-pdf": {
+      "name": "PDF Düzenle",
+      "summary": "Mevcut metni değiştirin, metin ekleyin ve doğrudan sayfada beyazlatın.",
+      "action": "PDF'i Kaydet",
+      "title": "PDF Metnini Çevrimiçi Düzenle — Ücretsiz, Yüklemesiz | Fizzdoc",
+      "description": "Bir PDF'deki herhangi bir metne tıklayıp değiştirin, yeni metin ekleyin veya alanları beyazlatın — doğrudan sayfada, tarayıcınızda. Hiçbir şey yüklenmez.",
+      "h1": "PDF metnini doğrudan sayfada düzenleyin",
+      "lede": "Orijinal dosya olmadan bir yazım hatasını düzeltin, bir tarihi güncelleyin veya boş bir alanı doldurun. Değiştirmek istediğiniz metne tıklayıp yazın — hepsi cihazınızda olur.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Değiştirmek için herhangi bir metne tıklayın, ya da araç çubuğundaki Metin ekle ve Beyazlatma'yı kullanın.",
+        "“PDF'i Kaydet”e tıklayın ve düzenlenmiş dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Düzenlenen metin orijinal yazı tipiyle eşleşir mi?",
+          "Fizzdoc, aynı boyut ve konumda en yakın standart yazı tipini (sans-serif, serif veya sabit genişlikli, kalın ve italik dahil) seçer. Özel marka yazı tipleri birebir yeniden üretilemez."
+        ],
+        [
+          "Orijinal metin kaldırılıyor mu?",
+          "Orijinal metin sayfada kapatılır ve yeni metniniz üzerine çizilir. Dosyadan tamamen gitmesi gereken hassas bilgiler için bunun yerine sayfayı silin veya belgeyi yeniden oluşturun."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "ocr-pdf": {
+      "name": "OCR PDF",
+      "summary": "Taranmış bir PDF'i aranabilir ve kopyalanabilir hale getirin.",
+      "action": "Metni Tanı",
+      "title": "OCR PDF — Taranmış PDF'leri Aranabilir Yap | Fizzdoc",
+      "description": "Taranmış PDF'leri tarayıcınızda İngilizce OCR ile aranabilir, kopyalanabilir hale getirin. Sayfalar orijinal kalitesini korur. Hiçbir şey yüklenmez.",
+      "h1": "OCR ile taranmış bir PDF'i aranabilir yapın",
+      "lede": "Taranmış sayfalardaki İngilizce metni tanıyıp görünmez bir katman olarak ekleyin, böylece arayabilir, seçebilir ve kopyalayabilirsiniz. Sayfaların kendisi değişmez.",
+      "steps": [
+        "Taranmış bir PDF ekleyin.",
+        "“Metni Tanı”ya tıklayın ve her sayfa okunurken bekleyin.",
+        "Aranabilir PDF'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi diller destekleniyor?",
+          "İngilizce. Tanıma motoru (Tesseract) ve İngilizce dil verisi, bir OCR aracını ilk kullanışınızda tarayıcınıza bir kez indirilir — birkaç megabayt kadar."
+        ],
+        [
+          "OCR sayfalarımın görünümünü değiştirir mi?",
+          "Hayır. Taranmış sayfalar tamamen olduğu gibi kalır; tanınan metin üzerine görünmez bir katman olarak eklenir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-word": {
+      "name": "PDF'den Word'e",
+      "summary": "PDF metnini düzenlenebilir bir .docx'e dönüştürün.",
+      "action": "Word'e Dönüştür",
+      "title": "PDF'den Word'e (DOCX) Dönüştürücü — Gizli | Fizzdoc",
+      "description": "Bir PDF'i tarayıcınızda düzenlenebilir bir Word belgesine dönüştürün. Başlıklar, paragraflar ve sayfa sonları korunur. Hiçbir şey yüklenmez, kayıt gerekmez.",
+      "h1": "PDF'i düzenlenebilir bir Word belgesine dönüştürün",
+      "lede": "Bir PDF'in metnini, başlıkları ve paragrafları yeniden oluşturarak Word'e aktarın, böylece düzenleyebilirsiniz. Dönüştürme cihazınızda gerçekleşir.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“Word'e Dönüştür”e tıklayın.",
+        "İndirilen .docx'i Word, Google Dokümanlar veya LibreOffice'te açın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Düzen PDF'deki gibi görünecek mi?",
+          "Fizzdoc metin akışını — başlıklar, paragraflar, kalın ve italik, sayfa sonları — yeniden kurar, böylece belge kolayca düzenlenebilir olur. Sütun, tablo ve görsel içeren karmaşık düzenler basitleştirilir."
+        ],
+        [
+          "Taranmış PDF'ler ne olacak?",
+          "Taranmış sayfalar metin değil, görüntüdür. Önce OCR PDF çalıştırın, ardından sonucu Word'e dönüştürün."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-powerpoint": {
+      "name": "PDF'den PowerPoint'e",
+      "summary": "Her PDF sayfasını bir slayda dönüştürün.",
+      "action": "PowerPoint'e Dönüştür",
+      "title": "PDF'den PowerPoint'e (PPTX) — Gizli, Ücretsiz | Fizzdoc",
+      "description": "Bir PDF'i, sayfa başına bir net slayt olacak şekilde tarayıcınızda bir PowerPoint sunumuna dönüştürün. Hiçbir şey yüklenmez, açık kaynak.",
+      "h1": "Bir PDF'i PowerPoint sunumuna dönüştürün",
+      "lede": "Bir PDF'i slayt olarak sunun. Her sayfa, PowerPoint, Keynote veya Google Slaytlar'da açabileceğiniz bir .pptx içinde tam boyutlu, yüksek çözünürlüklü bir slayt olur.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“PowerPoint'e Dönüştür”e tıklayın.",
+        ".pptx dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Slaytlardaki metni düzenleyebilir miyim?",
+          "Her slayt, sayfanın bir görüntüsüdür, bu yüzden tıpkı PDF gibi görünür. Metni düzenlemek için PDF'den Word'e aracını kullanın, ya da PowerPoint'te üzerine metin kutuları ekleyin."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-text": {
+      "name": "PDF'den Metne",
+      "summary": "Bir PDF'deki tüm metni .txt dosyası olarak çıkarın.",
+      "action": "Metni Çıkar",
+      "title": "PDF'den Metne (TXT) Dönüştürücü — Gizli | Fizzdoc",
+      "description": "Bir PDF'in metnini tarayıcınızda doğru okuma sırasıyla düz bir .txt dosyasına çıkarın. Hiçbir şey yüklenmez. Ücretsiz, kayıtsız, açık kaynak.",
+      "h1": "Bir PDF'den metin çıkarın",
+      "lede": "Bir PDF'deki her kelimeyi, satır ve paragrafları okuma sırasında koruyarak düz metin olarak alın. Kopyalamak, aramak veya başka araçlara aktarmak için ideal.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“Metni Çıkar”a tıklayın.",
+        ".txt dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Neden metin dosyam boş?",
+          "Taranmış PDF'ler metin değil, metnin görüntülerini içerir. Önce OCR PDF çalıştırın, sonra metni çıkarın."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-markdown": {
+      "name": "PDF'den Markdown'a",
+      "summary": "Bir PDF'i başlık ve listeleriyle temiz Markdown'a dönüştürün.",
+      "action": "Markdown'a Dönüştür",
+      "title": "PDF'den Markdown'a Dönüştürücü — Gizli | Fizzdoc",
+      "description": "Bir PDF'i, başlık ve listeleri algılanmış, notlar veya yapay zeka araçları için hazır Markdown'a dönüştürün. Tarayıcınızda çalışır, hiçbir şey yüklenmez.",
+      "h1": "Bir PDF'i Markdown'a dönüştürün",
+      "lede": "Bir PDF'i Notion, Obsidian, GitHub veya Markdown okuyan herhangi bir araç için temiz Markdown'a — başlıklar, paragraflar ve listeler halinde — dönüştürün.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“Markdown'a Dönüştür”e tıklayın.",
+        ".md dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Başlıklar nasıl algılanıyor?",
+          "Metin boyutuna göre: gövde metninden belirgin şekilde büyük satırlar başlık olur, madde işaretli veya numaralı satırlar liste haline gelir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "text-to-pdf": {
+      "name": "Metinden PDF'e",
+      "summary": "Bir .txt dosyasını temiz bir PDF'e dönüştürün.",
+      "action": "PDF Oluştur",
+      "title": "Metinden PDF'e (TXT'den PDF'e) Dönüştürücü | Fizzdoc",
+      "description": "Düz bir metin dosyasını tarayıcınızda temiz, okunaklı bir PDF'e dönüştürün. Hintçe dahil her dili ve alfabeyi destekler. Hiçbir şey yüklenmez.",
+      "h1": "Bir metin dosyasını PDF'e dönüştürün",
+      "lede": "Notlarınızı, kayıtlarınızı veya herhangi bir .txt dosyasını düzgün biçimlendirilmiş bir A4 PDF'e dönüştürün. Her dil ve alfabe desteklenir.",
+      "steps": [
+        "Bir .txt dosyası ekleyin.",
+        "“PDF Oluştur”a tıklayın.",
+        "Açılan pencerede “PDF olarak kaydet”i seçin ve Kaydet'e tıklayın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Neden bir yazdırma penceresi açılıyor?",
+          "Tarayıcınızda her dili ve yazı tipini kusursuz işleyen yerleşik bir PDF yazıcısı var. Fizzdoc belgeyi hazırlar ve bu yazıcıya teslim eder: hedef olarak “PDF olarak kaydet”i seçin ve Kaydet'e tıklayın. Hiçbir şey yazdırılmaz veya bir yere gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "markdown-to-pdf": {
+      "name": "Markdown'dan PDF'e",
+      "summary": "Bir .md dosyasını biçimlendirilmiş bir PDF olarak oluşturun.",
+      "action": "PDF Oluştur",
+      "title": "Markdown'dan PDF'e Dönüştürücü — Gizli | Fizzdoc",
+      "description": "Markdown'ı tarayıcınızda başlıklar, listeler, tablolar ve kod bloklarıyla biçimlendirilmiş bir PDF'e dönüştürün. Hiçbir şey yüklenmez, açık kaynak.",
+      "h1": "Markdown'ı PDF'e dönüştürün",
+      "lede": "Markdown ile yazılmış bir README, notlar veya dokümantasyonu; başlıklar, listeler, tablolar ve kod bloklarıyla temiz, yazdırılabilir bir PDF'e dönüştürün.",
+      "steps": [
+        "Bir .md dosyası ekleyin.",
+        "“PDF Oluştur”a tıklayın.",
+        "Açılan pencerede “PDF olarak kaydet”i seçin ve Kaydet'e tıklayın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi Markdown özellikleri destekleniyor?",
+          "Başlıklar, kalın, italik, satır içi kod ve kod blokları, sıralı ve madde işaretli listeler, alıntılar, bağlantılar, yatay çizgiler ve tablolar. Ham HTML, güvenlik için düz metin olarak gösterilir."
+        ],
+        [
+          "Neden bir yazdırma penceresi açılıyor?",
+          "Tarayıcınızda her dili ve yazı tipini kusursuz işleyen yerleşik bir PDF yazıcısı var. Fizzdoc belgeyi hazırlar ve bu yazıcıya teslim eder: hedef olarak “PDF olarak kaydet”i seçin ve Kaydet'e tıklayın. Hiçbir şey yazdırılmaz veya bir yere gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "word-to-pdf": {
+      "name": "Word'den PDF'e",
+      "summary": "Bir .docx'i PDF'e dönüştürün, tüm diller desteklenir.",
+      "action": "PDF'e Dönüştür",
+      "title": "Word'den PDF'e (DOCX'ten PDF'e) Dönüştürücü | Fizzdoc",
+      "description": "Bir Word belgesini tarayıcınızda başlıkları, listeleri ve görselleri koruyarak PDF'e dönüştürün. Google Dokümanlar dosyalarıyla çalışır. Hiçbir şey yüklenmez.",
+      "h1": "Bir Word belgesini PDF'e dönüştürün",
+      "lede": "Bir .docx'i başlıkları, listeleri, tabloları ve görselleriyle, tarayıcınızın kendi PDF yazıcısını kullanarak PDF'e dönüştürün. Belge cihazınızdan hiç çıkmaz.",
+      "steps": [
+        "Bir .docx dosyası ekleyin (Word veya Google Dokümanlar'dan).",
+        "“PDF'e Dönüştür”e tıklayın.",
+        "Açılan pencerede “PDF olarak kaydet”i seçin ve Kaydet'e tıklayın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Word'deki gibi mi görünecek?",
+          "Metin, başlıklar, listeler, tablolar, bağlantılar ve görseller korunur. Üst/alt bilgiler ve metin kutuları, çok sütunlu bölümler gibi gelişmiş düzenler basitleştirilir."
+        ],
+        [
+          "Neden bir yazdırma penceresi açılıyor?",
+          "Tarayıcınızda her dili ve yazı tipini kusursuz işleyen yerleşik bir PDF yazıcısı var. Fizzdoc belgeyi hazırlar ve bu yazıcıya teslim eder: hedef olarak “PDF olarak kaydet”i seçin ve Kaydet'e tıklayın. Hiçbir şey yazdırılmaz veya bir yere gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "excel-to-csv": {
+      "name": "Excel'den CSV'ye",
+      "summary": "Bir .xlsx'in her sayfasını CSV olarak dışa aktarın.",
+      "action": "CSV'ye Dönüştür",
+      "title": "Excel'den CSV'ye (XLSX'ten CSV'ye) Dönüştürücü | Fizzdoc",
+      "description": "Excel tablolarını tarayıcınızda CSV'ye dönüştürün. Her sayfa dışa aktarılır, tarihler ISO tarihine döner, hiçbir şey yüklenmez. Google E-Tablolar ile çalışır.",
+      "h1": "Excel'i CSV'ye dönüştürün",
+      "lede": "Bir .xlsx çalışma kitabının her sayfasını, her yerde doğru açılan UTF-8 bir CSV dosyasına aktarın. Tarihler, sayılar ve metinler olduğu gibi korunur.",
+      "steps": [
+        "Bir .xlsx dosyası ekleyin (Excel veya Google E-Tablolar'dan).",
+        "“CSV'ye Dönüştür”e tıklayın.",
+        "CSV'yi, ya da sayfa başına bir CSV içeren bir ZIP'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Formüllere ne olur?",
+          "CSV yalnızca değerleri saklar, bu yüzden her hücrenin son hesaplanan değeri dışa aktarılır — Excel'in yaptığı da tam olarak budur."
+        ],
+        [
+          "Türkçe karakterler korunuyor mu?",
+          "Evet. CSV, bayt sırası işaretli UTF-8 formatındadır; bu sayede Excel, Google E-Tablolar ve diğer uygulamalar aksanlı ve Latin olmayan karakterleri doğru okur."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "csv-to-excel": {
+      "name": "CSV'den Excel'e",
+      "summary": "Bir .csv'yi gerçek bir .xlsx çalışma kitabına dönüştürün.",
+      "action": "Excel'e Dönüştür",
+      "title": "CSV'den Excel'e (CSV'den XLSX'e) Dönüştürücü | Fizzdoc",
+      "description": "Bir CSV dosyasını tarayıcınızda bir Excel .xlsx çalışma kitabına dönüştürün. Sayılar sayı kalır, başındaki sıfırlar korunur, hiçbir şey yüklenmez.",
+      "h1": "CSV'yi Excel'e dönüştürün",
+      "lede": "Bir CSV'yi gerçek bir Excel çalışma kitabına dönüştürün. Sayılar sayı olur, 007 gibi kodlar baştaki sıfırlarını korur ve ayraç sizin için otomatik algılanır.",
+      "steps": [
+        "Bir .csv dosyası ekleyin.",
+        "“Excel'e Dönüştür”e tıklayın.",
+        ".xlsx dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Noktalı virgül ve sekmeleri destekliyor mu?",
+          "Evet. Virgül, noktalı virgül, sekme ve dikey çizgi ayraçları, içinde satır sonu bulunan tırnaklı alanlarla birlikte otomatik olarak algılanır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-image": {
+      "name": "Görsel Sıkıştır",
+      "summary": "JPG, PNG ve WebP görsellerini küçültün.",
+      "action": "Görselleri Sıkıştır",
+      "title": "Görsel Sıkıştırma (JPG, PNG, WebP) — Ücretsiz | Fizzdoc",
+      "description": "Görsel dosya boyutunu tarayıcınızda küçültün — JPG, PNG, WebP ve daha fazlası, toplu olarak. Kaliteyi seçin veya kayıpsız tutun. Fotoğraflar asla yüklenmez.",
+      "h1": "Görselleri yüklemeden sıkıştırın",
+      "lede": "Fotoğrafları ve ekran görüntülerini e-posta, web siteleri ve formlar için küçültün. Bir kalite düzeyi seçin ya da kayıpsız tutun — hepsi cihazınızda, toplu olarak.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin.",
+        "Çıktı formatını ve kaliteyi seçin.",
+        "“Görselleri Sıkıştır”a tıklayın ve sonucu indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Kalite kaybetmeden sıkıştırabilir miyim?",
+          "Evet. Piksel piksel kayıpsız çıktı için PNG seçin. Fotoğraflarda, %80 kalitede JPG veya WebP genellikle aynı görünür ve çok daha küçüktür."
+        ],
+        [
+          "Konum bilgisi kaldırılıyor mu?",
+          "Evet. Yeniden kodlama, GPS konumu ve kamera bilgileri gibi gizli EXIF meta verilerini kaldırır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "resize-image": {
+      "name": "Görsel Boyutlandır",
+      "summary": "Görselleri piksel veya yüzde olarak büyütün ya da küçültün.",
+      "action": "Görselleri Boyutlandır",
+      "title": "Görselleri Çevrimiçi Boyutlandır (Büyüt/Küçült) | Fizzdoc",
+      "description": "Görselleri tam piksele veya bir yüzdeye göre tarayıcınızda, toplu olarak boyutlandırın — küçültün ya da büyütün. En boy oranını koruyun veya korumayın.",
+      "h1": "Görselleri boyutlandırın — büyüt veya küçült",
+      "lede": "Tek bir görsel ya da birçoğu için tam bir genişlik ve yükseklik belirleyin ya da yüzdeyle ölçeklendirin. Aksini söylemediğiniz sürece en boy oranı korunur.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin.",
+        "Yeni bir boyut veya yüzde girin.",
+        "“Görselleri Boyutlandır”a tıklayın ve sonucu indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Büyütmek ayrıntı ekler mi?",
+          "Büyütme, resmi düzgün ve yüksek kaliteli bir ölçeklendirmeyle genişletir, ama yakalanmamış bir ayrıntıyı icat edemez. Minimum boyut gereksinimlerini karşılamak için idealdir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "convert-image": {
+      "name": "Görsel Dönüştür",
+      "summary": "JPG, PNG ve WebP arasında dönüştürün.",
+      "action": "Görselleri Dönüştür",
+      "title": "Görselleri JPG, PNG veya WebP'e Dönüştür — Ücretsiz | Fizzdoc",
+      "description": "Görselleri tarayıcınızda, toplu olarak JPG, PNG ve WebP arasında dönüştürün. GIF, BMP, AVIF ve tarayıcınızın açabildiği iPhone fotoğraflarıyla çalışır.",
+      "h1": "Görselleri JPG, PNG veya WebP'e dönüştürün",
+      "lede": "Tek bir görselin ya da bütün bir grubun formatını değiştirin — örneğin WebP'den JPG'e ya da PNG'den WebP'e — hiçbir yere göndermeden.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin.",
+        "İhtiyacınız olan formatı seçin.",
+        "“Görselleri Dönüştür”e tıklayın ve sonucu indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi formatı seçmeliyim?",
+          "Her yerde açılması gereken fotoğraflar için JPG, keskin kenar veya saydamlık gereken ekran görüntüsü ve grafikler için PNG, web'de en küçük dosyalar için WebP."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "image-to-text": {
+      "name": "Görselden Metne (OCR)",
+      "summary": "Herhangi bir fotoğraf veya ekran görüntüsündeki metni seçip kopyalayın.",
+      "action": "Metni Tanı",
+      "title": "Görselden Metne (OCR) — Fotoğraftan Metin Kopyala | Fizzdoc",
+      "description": "Fotoğraf ve ekran görüntülerinden İngilizce OCR ile tarayıcınızda metin çıkarın, görsel üzerinde seçip kopyalayın — Live Text gibi. Hiçbir şey yüklenmez.",
+      "h1": "Herhangi bir görselden metin kopyalayın",
+      "lede": "Bir fotoğraf, tarama veya ekran görüntüsündeki İngilizce metni tanıyın, sonra tıpkı iPhone'daki Live Text gibi doğrudan resmin üzerinde seçin. Hiçbir şey cihazınızdan çıkmaz.",
+      "steps": [
+        "Bir görsel ekleyin.",
+        "“Metni Tanı”ya tıklayın.",
+        "Metni doğrudan görsel üzerinde seçin, tümünü kopyalayın veya .txt dosyası olarak indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi diller destekleniyor?",
+          "İngilizce. Tanıma motoru ve İngilizce verisi, OCR'ı ilk kullanışınızda tarayıcınıza bir kez iner."
+        ],
+        [
+          "En iyi sonucu nasıl alırım?",
+          "Net, iyi aydınlatılmış, dik açıdan çekilmiş bir fotoğraf kullanın. Basılı metin en iyi sonucu verir; el yazısı daha az güvenilir tanınır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "png-to-jpg": {
+      "name": "PNG'den JPG'e",
+      "summary": "PNG görsellerini toplu olarak JPG'e dönüştürün.",
+      "action": "JPG'e Dönüştür",
+      "title": "PNG'den JPG'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "description": "PNG görsellerini tarayıcınızda, tek tek veya toplu olarak JPG'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
+      "h1": "PNG'i JPG'e gizlice dönüştürün",
+      "lede": "JPG dosyaları fotoğraflar için çok daha küçüktür ve eski yazılımlar ile PNG'i reddeden yükleme formları dahil her yerde açılır. Fizzdoc PNG dosyalarınızı doğrudan cihazınızda dönüştürür.",
+      "steps": [
+        "Bir veya daha fazla PNG görseli ekleyin.",
+        "Bir kalite seçin, ya da varsayılanı koruyun.",
+        "“JPG'e Dönüştür”e tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "PNG'i neden JPG'e dönüştürmeli?",
+          "JPG dosyaları fotoğraflar için çok daha küçüktür ve eski yazılımlar ile PNG'i reddeden yükleme formları dahil her yerde açılır."
+        ],
+        [
+          "Birden çok görseli aynı anda dönüştürebilir miyim?",
+          "Evet. İstediğiniz kadar ekleyin; birden fazla görsel tek bir ZIP dosyası olarak birlikte iner."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "jpg-to-png": {
+      "name": "JPG'den PNG'e",
+      "summary": "JPG görsellerini toplu olarak PNG'e dönüştürün.",
+      "action": "PNG'e Dönüştür",
+      "title": "JPG'den PNG'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "description": "JPG görsellerini tarayıcınızda, tek tek veya toplu olarak PNG'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
+      "h1": "JPG'i PNG'e gizlice dönüştürün",
+      "lede": "PNG kayıpsızdır, bu yüzden resmi tekrar düzenleyip kaydettiğinizde daha fazla kalite kaybetmez. Fizzdoc JPG dosyalarınızı doğrudan cihazınızda dönüştürür.",
+      "steps": [
+        "Bir veya daha fazla JPG görseli ekleyin.",
+        "Ayarlanacak bir şey yok: PNG kayıpsızdır.",
+        "“PNG'e Dönüştür”e tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "JPG'i neden PNG'e dönüştürmeli?",
+          "PNG kayıpsızdır, bu yüzden resmi tekrar düzenleyip kaydettiğinizde daha fazla kalite kaybetmez."
+        ],
+        [
+          "Birden çok görseli aynı anda dönüştürebilir miyim?",
+          "Evet. İstediğiniz kadar ekleyin; birden fazla görsel tek bir ZIP dosyası olarak birlikte iner."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "webp-to-jpg": {
+      "name": "WebP'den JPG'e",
+      "summary": "WebP görsellerini toplu olarak JPG'e dönüştürün.",
+      "action": "JPG'e Dönüştür",
+      "title": "WebP'den JPG'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "description": "WebP görsellerini tarayıcınızda, tek tek veya toplu olarak JPG'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
+      "h1": "WebP'i JPG'e gizlice dönüştürün",
+      "lede": "Birçok uygulama, yazıcı ve yükleme formu, web sitelerinden kaydedilen WebP görsellerini hâlâ açamıyor. JPG her yerde çalışır. Fizzdoc WebP dosyalarınızı doğrudan cihazınızda dönüştürür.",
+      "steps": [
+        "Bir veya daha fazla WebP görseli ekleyin.",
+        "Bir kalite seçin, ya da varsayılanı koruyun.",
+        "“JPG'e Dönüştür”e tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "WebP'i neden JPG'e dönüştürmeli?",
+          "Birçok uygulama, yazıcı ve yükleme formu, web sitelerinden kaydedilen WebP görsellerini hâlâ açamıyor. JPG her yerde çalışır."
+        ],
+        [
+          "Birden çok görseli aynı anda dönüştürebilir miyim?",
+          "Evet. İstediğiniz kadar ekleyin; birden fazla görsel tek bir ZIP dosyası olarak birlikte iner."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "jpg-to-webp": {
+      "name": "JPG'den WebP'e",
+      "summary": "JPG görsellerini toplu olarak WebP'e dönüştürün.",
+      "action": "WebP'e Dönüştür",
+      "title": "JPG'den WebP'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "description": "JPG görsellerini tarayıcınızda, tek tek veya toplu olarak WebP'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
+      "h1": "JPG'i WebP'e gizlice dönüştürün",
+      "lede": "WebP görselleri aynı görsel kalitede JPG'den genellikle %25-35 daha küçüktür, bu da web sitelerinin daha hızlı yüklenmesini sağlar. Fizzdoc JPG dosyalarınızı doğrudan cihazınızda dönüştürür.",
+      "steps": [
+        "Bir veya daha fazla JPG görseli ekleyin.",
+        "Bir kalite seçin, ya da varsayılanı koruyun.",
+        "“WebP'e Dönüştür”e tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "JPG'i neden WebP'e dönüştürmeli?",
+          "WebP görselleri aynı görsel kalitede JPG'den genellikle %25-35 daha küçüktür, bu da web sitelerinin daha hızlı yüklenmesini sağlar."
+        ],
+        [
+          "Birden çok görseli aynı anda dönüştürebilir miyim?",
+          "Evet. İstediğiniz kadar ekleyin; birden fazla görsel tek bir ZIP dosyası olarak birlikte iner."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "add-page-numbers-to-pdf": {
+      "name": "Sayfa Numarası Ekle",
+      "summary": "Bir PDF'in her sayfasını numaralandırın.",
+      "action": "Sayfa Numarası Ekle",
+      "title": "PDF'e Sayfa Numarası Ekle — Ücretsiz | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'e sayfa numarası ekleyin. Konumu, başlangıç numarasını ve “Sayfa 1 / 10” stilini seçin. Hiçbir şey yüklenmez, kayıtsız.",
+      "h1": "Bir PDF'e sayfa numarası ekleyin",
+      "lede": "Bir raporun, tezin veya sözleşmenin sayfalarını saniyeler içinde numaralandırın. Numaraların nereye gideceğini ve hangi numaradan başlayacağını seçin — cihazınızda.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Konumu, stili ve ilk numarayı seçin.",
+        "“Sayfa Numarası Ekle”ye tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "1'den başka bir numaradan başlayabilir miyim?",
+          "Evet. “Başlangıç”ı istediğiniz herhangi bir sayıya ayarlayın — PDF daha uzun bir belgenin bir bölümü olduğunda kullanışlıdır."
+        ],
+        [
+          "İçeriğimi değiştirir mi?",
+          "Hayır. Numaralar her sayfanın üzerine eklenir; geri kalan her şey tam olarak eskisi gibi kalır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "watermark-pdf": {
+      "name": "PDF'e Filigran Ekle",
+      "summary": "Her sayfaya CONFIDENTIAL gibi bir metin damgalayın.",
+      "action": "Filigran Ekle",
+      "title": "PDF'e Filigran Ekle — Metin Filigranı, Yüklemesiz | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'in her sayfasına CONFIDENTIAL veya DRAFT gibi bir metin filigranı ekleyin. Saydamlığı seçin. Hiçbir şey yüklenmez.",
+      "h1": "Bir PDF'e filigran ekleyin",
+      "lede": "Paylaşmadan önce bir belgeyi CONFIDENTIAL, DRAFT ya da adınızla işaretleyin. Filigran her sayfaya çapraz olarak çizilir.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Filigran metnini yazın ve ne kadar saydam olacağını seçin.",
+        "“Filigran Ekle”ye tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Filigran kaldırılabilir mi?",
+          "Bir metin filigranı kopyalamayı caydırır, ama bir PDF düzenleyicisiyle kararlı biri onu kaldırabilir. Daha güçlü koruma için ayrıca PDF'i Koru'yu kullanın."
+        ],
+        [
+          "Hangi karakterleri kullanabilirim?",
+          "Latin alfabesindeki harfler, rakamlar ve yaygın simgeler. Diğer alfabeler standart PDF yazı tipleri tarafından desteklenmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-png": {
+      "name": "PDF'den PNG'e",
+      "summary": "Her sayfayı kayıpsız bir PNG görseli olarak kaydedin.",
+      "action": "PNG'e Dönüştür",
+      "title": "PDF'den PNG'e Dönüştürücü — Kayıpsız, Ücretsiz | Fizzdoc",
+      "description": "Bir PDF'in her sayfasını tarayıcınızda net, kayıpsız bir PNG görseline dönüştürün. Çok sayfalı dosyalar tek bir ZIP olarak iner. Hiçbir şey yüklenmez.",
+      "h1": "PDF sayfalarını PNG görsellerine dönüştürün",
+      "lede": "Her sayfayı net, kayıpsız bir PNG'e dönüştürün — sunumlar, dokümantasyon ve keskin metinli ekran görüntüleri için ideal. Hiçbir şey cihazınızdan çıkmaz.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "“PNG'e Dönüştür”e tıklayın.",
+        "Görseli, ya da sayfa başına bir PNG içeren bir ZIP'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "PNG mi JPG mi?",
+          "PNG metni ve çizgileri kusursuz keskin tutar ama dosyalar daha büyük olur. Fotoğraf ve taramalar için PDF'den JPG'e çok daha küçük dosyalar verir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "extract-pdf-pages": {
+      "name": "PDF Sayfalarını Çıkar",
+      "summary": "Seçilen sayfaları yeni bir PDF olarak kaydedin.",
+      "action": "Sayfaları Çıkar",
+      "title": "PDF'den Sayfa Çıkarma — Ücretsiz, Gizli | Fizzdoc",
+      "description": "Bir PDF'den belirli sayfaları tarayıcınızda yeni bir dosyaya aktarın. 2, 5-7 gibi sayfalar yazın. Bağlantılar ve form alanları korunur. Hiçbir şey yüklenmez.",
+      "h1": "Bir PDF'den sayfaları çıkarın",
+      "lede": "Yalnızca imza sayfasına veya bir bölüme mi ihtiyacınız var? İstediğiniz sayfaları yazın ve onları yeni bir PDF olarak alın — orijinal dosya dokunulmadan kalır.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Çıkarılacak sayfaları yazın, örneğin “2, 5-7”.",
+        "“Sayfaları Çıkar”a tıklayın ve yeni PDF'i indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Kalite düşüyor mu?",
+          "Hayır. Sayfalar oldukları gibi kopyalanır — hiçbir şey yeniden oluşturulmaz veya yeniden sıkıştırılmaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "reorder-pdf-pages": {
+      "name": "PDF Sayfalarını Yeniden Sırala",
+      "summary": "Bir PDF'in sayfalarını yeni bir sıraya koyun.",
+      "action": "Sayfaları Yeniden Sırala",
+      "title": "PDF Sayfalarını Yeniden Sırala — Ücretsiz, Yüklemesiz | Fizzdoc",
+      "description": "Bir PDF'in sayfalarını istediğiniz sırayı yazarak, örneğin 3, 1-2, 4- şeklinde yeniden düzenleyin. Tarayıcınızda çalışır; dosyanız asla yüklenmez.",
+      "h1": "Bir PDF'in sayfalarını yeniden sıralayın",
+      "lede": "Sırası bozuk taranmış sayfaları düzeltin ya da bir eki en başa taşıyın. Yeni sırayı yazın ve yeniden düzenlenmiş PDF'i indirin.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Yeni sayfa sırasını yazın, örneğin “3, 1-2, 4-”.",
+        "“Sayfaları Yeniden Sırala”ya tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Sırayı nasıl yazmalıyım?",
+          "Sayfaları ve aralıkları virgülle ayırarak listeleyin. “4-”, 4. sayfadan sona kadar demektir. Belirtmediğiniz sayfalar yeni dosyaya dahil edilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "png-to-pdf": {
+      "name": "PNG'den PDF'e",
+      "summary": "PNG ekran görüntülerini ve görselleri tek bir PDF'e dönüştürün.",
+      "action": "PDF Oluştur",
+      "title": "PNG'den PDF'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "description": "PNG ekran görüntülerini ve görselleri tarayıcınızda tek bir PDF'de, görsel başına bir sayfa ve tam kalitede birleştirin. Hiçbir şey yüklenmez, filigransız.",
+      "h1": "PNG görsellerini PDF'e dönüştürün",
+      "lede": "PNG olarak kaydedilmiş ekran görüntülerini, diyagramları veya taranmış sayfaları tek, düzenli bir PDF'de toplayın — keskin, kayıpsız ve seçtiğiniz sırada.",
+      "steps": [
+        "Bir veya daha fazla PNG görseli ekleyin.",
+        "↑ ve ↓ düğmeleriyle sıraya koyun.",
+        "“PDF Oluştur”a tıklayın ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Saydamlık korunuyor mu?",
+          "Evet. PNG görselleri, saydam alanlar dahil olduğu gibi PDF'e yerleştirilir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "remove-word-metadata": {
+      "name": "Word Meta Verisini Kaldır",
+      "summary": "Bir .docx'ten yazar, şirket ve editör adlarını silin.",
+      "action": "Meta Veriyi Kaldır",
+      "title": "Word Meta Verisini Kaldır — Gizli, Yüklemesiz | Fizzdoc",
+      "description": "Bir Word dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google Dokümanlar indirmeleriyle çalışır. Hiçbir şey yüklenmez.",
+      "h1": "Bir Word belgesinden gizli meta verileri kaldırın",
+      "lede": "Her .docx, onu kimin oluşturduğunu, en son kimin düzenlediğini ve hangi şirkete ait olduğunu kaydeder. Göndermeden önce bu bilgileri, dosyayı hiçbir yere yüklemeden silin.",
+      "steps": [
+        "Bir .docx dosyası ekleyin (Word veya Google Dokümanlar'dan).",
+        "“Meta Veriyi Kaldır”a tıklayın.",
+        "Temiz .docx dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kaldırılıyor?",
+          "Yazar, son düzenleyen, başlık, konu, açıklama, anahtar kelimeler, kategori, durum, şirket, yönetici, köprü tabanı, özel özellikler ve gömülü önizleme küçük resmi. Oluşturma ve değiştirme tarihleri, Office bunlara ihtiyaç duyduğu için korunur. İçeriğinize dokunulmaz."
+        ],
+        [
+          "Google Dokümanlar ile çalışır mı?",
+          "Evet. Google Dokümanlar'da Dosya → İndir → Microsoft Word (.docx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "extract-images-from-word": {
+      "name": "Word'den Görsel Çıkar",
+      "summary": "Bir .docx'teki her görseli orijinal kalitesinde kaydedin.",
+      "action": "Görselleri Çıkar",
+      "title": "Word'den Görsel Çıkarma — Yüklemesiz | Fizzdoc",
+      "description": "Bir Word belgesine gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google Dokümanlar indirmeleriyle çalışır. Tarayıcınızda çalışır.",
+      "h1": "Bir Word belgesinden tüm görselleri çıkarın",
+      "lede": "Bir .docx'teki her fotoğrafı, logoyu ve grafik görselini orijinal formatında ve çözünürlüğünde alın — ekran görüntüsü yok, yeniden sıkıştırma yok, yükleme yok.",
+      "steps": [
+        "Bir .docx dosyası ekleyin (Word veya Google Dokümanlar'dan).",
+        "“Görselleri Çıkar”a tıklayın.",
+        "Görsellerin ZIP dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Görsellerin kalitesi düşüyor mu?",
+          "Hayır. Dosyanın içinde saklandıkları orijinal formatta (PNG, JPG, GIF, SVG, EMF vb.) birebir kopyalanırlar."
+        ],
+        [
+          "Google Dokümanlar ile çalışır mı?",
+          "Evet. Google Dokümanlar'da Dosya → İndir → Microsoft Word (.docx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-word": {
+      "name": "Word Sıkıştır",
+      "summary": "Görsellerini optimize ederek bir .docx'i küçültün.",
+      "action": "Word'ü Sıkıştır",
+      "title": "Word Dosyalarını Sıkıştır (.docx) — Yüklemesiz | Fizzdoc",
+      "description": "Tarayıcınızda içindeki fotoğrafları yeniden sıkıştırarak bir Word dosyasının boyutunu küçültün. İçerik ve biçimlendirme aynı kalır. Hiçbir şey yüklenmez.",
+      "h1": "Bir Word belgesini sıkıştırın",
+      "lede": "İçindeki aşırı büyük fotoğrafları yeniden sıkıştırarak bir .docx'i e-postayla göndermeye yetecek kadar küçültün. Metin, biçimlendirme ve geri kalan her şey aynen kalır.",
+      "steps": [
+        "Bir .docx dosyası ekleyin (Word veya Google Dokümanlar'dan).",
+        "Dengeli veya Güçlü sıkıştırmayı seçin.",
+        "“Word'ü Sıkıştır”a tıklayın ve daha küçük dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kadar küçülür?",
+          "Büyük fotoğraflar içeren dosyalar genellikle yarı yarıya veya daha fazla küçülür. Çoğunlukla metinden oluşan dosyalar zaten kompakttır; Fizzdoc bir dosyayı küçültemezse bunu size söyler ve orijinali korur."
+        ],
+        [
+          "Google Dokümanlar ile çalışır mı?",
+          "Evet. Google Dokümanlar'da Dosya → İndir → Microsoft Word (.docx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "remove-excel-metadata": {
+      "name": "Excel Meta Verisini Kaldır",
+      "summary": "Bir .xlsx'ten yazar, şirket ve editör adlarını silin.",
+      "action": "Meta Veriyi Kaldır",
+      "title": "Excel Meta Verisini Kaldır — Gizli, Yüklemesiz | Fizzdoc",
+      "description": "Bir Excel dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google E-Tablolar indirmeleriyle çalışır. Hiçbir şey yüklenmez.",
+      "h1": "Bir Excel tablosundan gizli meta verileri kaldırın",
+      "lede": "Her .xlsx, onu kimin oluşturduğunu, en son kimin düzenlediğini ve hangi şirkete ait olduğunu kaydeder. Göndermeden önce bu bilgileri, dosyayı hiçbir yere yüklemeden silin.",
+      "steps": [
+        "Bir .xlsx dosyası ekleyin (Excel veya Google E-Tablolar'dan).",
+        "“Meta Veriyi Kaldır”a tıklayın.",
+        "Temiz .xlsx dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kaldırılıyor?",
+          "Yazar, son düzenleyen, başlık, konu, açıklama, anahtar kelimeler, kategori, durum, şirket, yönetici, köprü tabanı, özel özellikler ve gömülü önizleme küçük resmi. Oluşturma ve değiştirme tarihleri, Office bunlara ihtiyaç duyduğu için korunur. İçeriğinize dokunulmaz."
+        ],
+        [
+          "Google E-Tablolar ile çalışır mı?",
+          "Evet. Google E-Tablolar'da Dosya → İndir → Microsoft Excel (.xlsx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "extract-images-from-excel": {
+      "name": "Excel'den Görsel Çıkar",
+      "summary": "Bir .xlsx'teki her görseli orijinal kalitesinde kaydedin.",
+      "action": "Görselleri Çıkar",
+      "title": "Excel'den Görsel Çıkarma — Yüklemesiz | Fizzdoc",
+      "description": "Bir Excel tablosuna gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google E-Tablolar indirmeleriyle çalışır. Tarayıcınızda çalışır.",
+      "h1": "Bir Excel tablosundan tüm görselleri çıkarın",
+      "lede": "Bir .xlsx'teki her fotoğrafı, logoyu ve grafik görselini orijinal formatında ve çözünürlüğünde alın — ekran görüntüsü yok, yeniden sıkıştırma yok, yükleme yok.",
+      "steps": [
+        "Bir .xlsx dosyası ekleyin (Excel veya Google E-Tablolar'dan).",
+        "“Görselleri Çıkar”a tıklayın.",
+        "Görsellerin ZIP dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Görsellerin kalitesi düşüyor mu?",
+          "Hayır. Dosyanın içinde saklandıkları orijinal formatta (PNG, JPG, GIF, SVG, EMF vb.) birebir kopyalanırlar."
+        ],
+        [
+          "Google E-Tablolar ile çalışır mı?",
+          "Evet. Google E-Tablolar'da Dosya → İndir → Microsoft Excel (.xlsx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-excel": {
+      "name": "Excel Sıkıştır",
+      "summary": "Görsellerini optimize ederek bir .xlsx'i küçültün.",
+      "action": "Excel'i Sıkıştır",
+      "title": "Excel Dosyalarını Sıkıştır (.xlsx) — Yüklemesiz | Fizzdoc",
+      "description": "Tarayıcınızda içindeki fotoğrafları yeniden sıkıştırarak bir Excel dosyasının boyutunu küçültün. İçerik ve biçimlendirme aynı kalır. Hiçbir şey yüklenmez.",
+      "h1": "Bir Excel tablosunu sıkıştırın",
+      "lede": "İçindeki aşırı büyük fotoğrafları yeniden sıkıştırarak bir .xlsx'i e-postayla göndermeye yetecek kadar küçültün. Metin, biçimlendirme ve geri kalan her şey aynen kalır.",
+      "steps": [
+        "Bir .xlsx dosyası ekleyin (Excel veya Google E-Tablolar'dan).",
+        "Dengeli veya Güçlü sıkıştırmayı seçin.",
+        "“Excel'i Sıkıştır”a tıklayın ve daha küçük dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kadar küçülür?",
+          "Büyük fotoğraflar içeren dosyalar genellikle yarı yarıya veya daha fazla küçülür. Çoğunlukla metinden oluşan dosyalar zaten kompakttır; Fizzdoc bir dosyayı küçültemezse bunu size söyler ve orijinali korur."
+        ],
+        [
+          "Google E-Tablolar ile çalışır mı?",
+          "Evet. Google E-Tablolar'da Dosya → İndir → Microsoft Excel (.xlsx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "remove-powerpoint-metadata": {
+      "name": "PowerPoint Meta Verisini Kaldır",
+      "summary": "Bir .pptx'ten yazar, şirket ve editör adlarını silin.",
+      "action": "Meta Veriyi Kaldır",
+      "title": "PowerPoint Meta Verisini Kaldır — Gizli | Fizzdoc",
+      "description": "Bir PowerPoint dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google Slaytlar indirmeleriyle çalışır. Hiçbir şey yüklenmez.",
+      "h1": "Bir PowerPoint sunumundan gizli meta verileri kaldırın",
+      "lede": "Her .pptx, onu kimin oluşturduğunu, en son kimin düzenlediğini ve hangi şirkete ait olduğunu kaydeder. Göndermeden önce bu bilgileri, dosyayı hiçbir yere yüklemeden silin.",
+      "steps": [
+        "Bir .pptx dosyası ekleyin (PowerPoint veya Google Slaytlar'dan).",
+        "“Meta Veriyi Kaldır”a tıklayın.",
+        "Temiz .pptx dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kaldırılıyor?",
+          "Yazar, son düzenleyen, başlık, konu, açıklama, anahtar kelimeler, kategori, durum, şirket, yönetici, köprü tabanı, özel özellikler ve gömülü önizleme küçük resmi. Oluşturma ve değiştirme tarihleri, Office bunlara ihtiyaç duyduğu için korunur. İçeriğinize dokunulmaz."
+        ],
+        [
+          "Google Slaytlar ile çalışır mı?",
+          "Evet. Google Slaytlar'da Dosya → İndir → Microsoft PowerPoint (.pptx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "extract-images-from-powerpoint": {
+      "name": "PowerPoint'ten Görsel Çıkar",
+      "summary": "Bir .pptx'teki her görseli orijinal kalitesinde kaydedin.",
+      "action": "Görselleri Çıkar",
+      "title": "PowerPoint'ten Görsel Çıkarma — Yüklemesiz | Fizzdoc",
+      "description": "Bir PowerPoint sunumuna gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google Slaytlar indirmeleriyle çalışır. Tarayıcınızda çalışır.",
+      "h1": "Bir PowerPoint sunumundan tüm görselleri çıkarın",
+      "lede": "Bir .pptx'teki her fotoğrafı, logoyu ve grafik görselini orijinal formatında ve çözünürlüğünde alın — ekran görüntüsü yok, yeniden sıkıştırma yok, yükleme yok.",
+      "steps": [
+        "Bir .pptx dosyası ekleyin (PowerPoint veya Google Slaytlar'dan).",
+        "“Görselleri Çıkar”a tıklayın.",
+        "Görsellerin ZIP dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Görsellerin kalitesi düşüyor mu?",
+          "Hayır. Dosyanın içinde saklandıkları orijinal formatta (PNG, JPG, GIF, SVG, EMF vb.) birebir kopyalanırlar."
+        ],
+        [
+          "Google Slaytlar ile çalışır mı?",
+          "Evet. Google Slaytlar'da Dosya → İndir → Microsoft PowerPoint (.pptx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-powerpoint": {
+      "name": "PowerPoint Sıkıştır",
+      "summary": "Görsellerini optimize ederek bir .pptx'i küçültün.",
+      "action": "PowerPoint'i Sıkıştır",
+      "title": "PowerPoint Dosyalarını Sıkıştır (.pptx) — Yüklemesiz | Fizzdoc",
+      "description": "Tarayıcınızda içindeki fotoğrafları yeniden sıkıştırarak bir PowerPoint dosyasının boyutunu küçültün. İçerik ve biçimlendirme aynı kalır. Hiçbir şey yüklenmez.",
+      "h1": "Bir PowerPoint sunumunu sıkıştırın",
+      "lede": "İçindeki aşırı büyük fotoğrafları yeniden sıkıştırarak bir .pptx'i e-postayla göndermeye yetecek kadar küçültün. Metin, biçimlendirme ve geri kalan her şey aynen kalır.",
+      "steps": [
+        "Bir .pptx dosyası ekleyin (PowerPoint veya Google Slaytlar'dan).",
+        "Dengeli veya Güçlü sıkıştırmayı seçin.",
+        "“PowerPoint'i Sıkıştır”a tıklayın ve daha küçük dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kadar küçülür?",
+          "Büyük fotoğraflar içeren dosyalar genellikle yarı yarıya veya daha fazla küçülür. Çoğunlukla metinden oluşan dosyalar zaten kompakttır; Fizzdoc bir dosyayı küçültemezse bunu size söyler ve orijinali korur."
+        ],
+        [
+          "Google Slaytlar ile çalışır mı?",
+          "Evet. Google Slaytlar'da Dosya → İndir → Microsoft PowerPoint (.pptx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, MIT lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    }
+  }
+}

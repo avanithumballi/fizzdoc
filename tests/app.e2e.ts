@@ -387,7 +387,7 @@ for (const { path, tool } of PAGES) {
     expect(html.match(/<h1>/g)).toHaveLength(1);
     const ld = JSON.parse(/<script type="application\/ld\+json">(.*?)<\/script>/s.exec(html)![1]);
     expect(ld['@graph'].map((n: { '@type': string }) => n['@type'])).toContain('FAQPage');
-    expect(html).toContain(`<meta property="og:image" content="${SITE.url}/og.png">`);
+    expect(html).toMatch(new RegExp(`<meta property="og:image" content="${SITE.url}/og(/[a-z]{2})?\\.png">`));
     if (tool) expect(html).toContain(`data-tool="${tool.op}"`);
   });
 }

@@ -377,7 +377,7 @@ function jsonLd(c: Copy, page: Page) {
     author,
     publisher: author,
     inLanguage: c.lang,
-    image: `${SITE.url}/og.png`,
+    image: `${SITE.url}${ogImage(c.lang)}`,
     ...(tool ? {} : { featureList: TOOLS.map((t) => c.tool(t).name) }),
   };
   const graph: object[] = [
@@ -412,6 +412,9 @@ function jsonLd(c: Copy, page: Page) {
   ];
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 }
+
+/** Social preview card in the page's language (public/og/<lang>.png), English as the fallback. */
+const ogImage = (lang: Lang) => (lang !== 'en' && existsSync(new URL(`../public/og/${lang}.png`, import.meta.url)) ? `/og/${lang}.png` : '/og.png');
 
 const formatStars = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '')}k` : String(n));
 
@@ -449,11 +452,14 @@ export function renderPage(template: string, page: Page, withCsp: boolean, stars
     `<meta property="og:title" content="${esc(title)}">`,
     `<meta property="og:description" content="${esc(description)}">`,
     `<meta property="og:url" content="${url}">`,
-    `<meta property="og:image" content="${SITE.url}/og.png">`,
+    `<meta property="og:image" content="${SITE.url}${ogImage(page.lang)}">`,
     `<meta property="og:image:width" content="1200">`,
     `<meta property="og:image:height" content="630">`,
     `<meta property="og:image:alt" content="${esc(c.home.h1)}">`,
     `<meta property="og:locale" content="${OG_LOCALE[page.lang]}">`,
+    ...SITE_LANGS.filter((lang) => lang !== page.lang).map((lang) => `<meta property="og:locale:alternate" content="${OG_LOCALE[lang]}">`),
+    // Bing (and the answer engines built on it) reads the page language from here.
+    `<meta http-equiv="content-language" content="${page.lang}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">`,
     `<script type="application/ld+json">${jsonLd(c, page)}</script>`,
@@ -531,7 +537,40 @@ The site is available in ${SITE_LANGS.map((lang) => `${LANGS[lang]} (${SITE.url}
 
 - [GitHub repository](${SITE.repo}) — MIT license, by Rishab Dugar
 - [Full tool guide with FAQs](${SITE.url}/llms-full.txt)
+${SITE_LANGS.filter((lang) => lang !== 'en')
+  .map((lang) => `- [${LANGS[lang]}](${SITE.url}${pathOf(lang)}llms.txt)`)
+  .join('\n')}
 `;
+
+/** The same summary in another language, for answer engines serving that language. */
+export function llmsFor(lang: Lang) {
+  const c = copy(lang);
+  return `# ${SITE.name} (${LANGS[lang]})
+
+> ${c.home.what}
+
+${c.home.description}
+
+## ${c.t('home.toolsTitle')}
+
+${FORMAT_ORDER.map(
+  (f) =>
+    `### ${c.t('group.title', { format: c.t(`format.${f}`) })}\n\n${TOOLS.filter((t) => t.format === f)
+      .map(c.tool)
+      .map((t) => `- [${t.name}](${SITE.url}${c.link(t)}): ${t.description}`)
+      .join('\n')}`,
+).join('\n\n')}
+
+## ${c.t('faq.title')}
+
+${c.home.faq.map(([q, a]) => `Q: ${q}\nA: ${a}`).join('\n\n')}
+
+## Source
+
+- ${SITE.repo} — MIT, Rishab Dugar
+- English: ${SITE.url}/llms.txt
+`;
+}
 
 /** Every tool's steps and FAQ in one plain-text file, so answer engines can quote Fizzdoc accurately. */
 export const llmsFull = () =>
