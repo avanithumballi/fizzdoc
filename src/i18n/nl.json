@@ -96,6 +96,12 @@
     "ws.style": "Stijl",
     "ws.pageOf": "Pagina 1 van 10",
     "ws.startAt": "Begin bij",
+    "ws.dpiStandard": "Standaard (kleiner bestand)",
+    "ws.dpiHigh": "Hoog (scherpere kleine lettertjes)",
+    "ws.look": "Look",
+    "ws.lookColor": "Kleur",
+    "ws.lookGray": "Zwart-wit",
+    "ws.lookScanned": "Gescand (grijs, licht gekanteld)",
     "ws.wmText": "Watermerktekst",
     "ws.wmDefault": "VERTROUWELIJK",
     "ws.opacity": "Dekking",
@@ -180,6 +186,14 @@
     "ocr.copyAll": "Alle tekst kopiëren",
     "ocr.copied": "Gekopieerd",
     "ocr.text": "Herkende tekst",
+    "rd.find": "Zoek een woord of nummer om te verbergen",
+    "rd.markAll": "Alles markeren",
+    "rd.clear": "Alles wissen",
+    "rd.count": "Gemarkeerde gebieden: {n}",
+    "rd.found": "Gemarkeerde matches: {n}",
+    "rd.none": "Geen matches voor “{text}”",
+    "rd.remove": "Deze markering verwijderen",
+    "rd.hint": "Sleep over een pagina om iets te bedekken: tekst, een handtekening, een foto. Bij het opslaan wordt elke pagina een afbeelding, dus wat je bedekte is voorgoed weg.",
     "footer.madeBy": "Ontworpen en gebouwd door",
     "footer.feedback": "Meld een bug of stel een tool voor"
   },
@@ -554,6 +568,70 @@
         [
           "Wordt de originele tekst verwijderd?",
           "De originele tekst wordt op de pagina bedekt en je nieuwe tekst wordt eroverheen getekend. Voor gevoelige informatie die echt uit het bestand moet verdwijnen, verwijder je in plaats daarvan de pagina of maak je het document opnieuw."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "PDF zwart lakken",
+      "summary": "Maak tekst, handtekeningen of foto's zwart zodat ze voorgoed weg zijn.",
+      "action": "Zwart gelakt PDF opslaan",
+      "title": "PDF Zwart Lakken Online — Tekst Voorgoed Verwijderen | Fizzdoc",
+      "description": "Maak namen, nummers, handtekeningen of foto's in een PDF zwart en sla een kopie op waarin ze echt weg zijn. Werkt in je browser; niets wordt geüpload. Gratis.",
+      "h1": "PDF zwart lakken: maak alles voorgoed onleesbaar",
+      "lede": "Sleep over wat moet verdwijnen, of zoek een naam of nummer en markeer elke match. Bij het opslaan wordt elke pagina een afbeelding, dus de verborgen tekst kan niet worden gekopieerd of teruggehaald.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Sleep over de pagina om een gebied te bedekken, of typ een woord en klik op “Alles markeren”.",
+        "Kies de kwaliteit en de look, klik dan op “Zwart gelakt PDF opslaan” en download het bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Is de zwartgelakte tekst echt weg?",
+          "Ja. Fizzdoc tekent elke pagina opnieuw als afbeelding met je zwarte markeringen erin gebrand en bouwt daaruit een nieuw PDF-bestand. De originele tekst, lettertypen en documentmetadata worden niet meegenomen, dus niets onder een markering kan worden geselecteerd, doorzocht of teruggehaald."
+        ],
+        [
+          "Kan ik de rest van de tekst nog doorzoeken of kopiëren?",
+          "Nee. Elke pagina wordt een afbeelding, dus het opgeslagen bestand heeft geen selecteerbare tekst meer. Heb je weer doorzoekbare tekst nodig, laat het zwartgelakte bestand dan door OCR PDF lopen; de zwarte markeringen blijven zwart."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF naar Gescande PDF",
+      "summary": "Maak van elke pagina een afbeelding, zoals een gescand document.",
+      "action": "Gescande PDF maken",
+      "title": "PDF naar Gescande PDF — Look van een Scan, Geen Upload | Fizzdoc",
+      "description": "Zet een PDF om in een gescande PDF met alleen afbeeldingen: in kleur, zwart-wit, of met scannerlook. Werkt in je browser; niets wordt geüpload. Gratis.",
+      "h1": "Zet een PDF om in een gescande PDF",
+      "lede": "Elke pagina wordt een afbeelding, dus de tekst kan niet worden geselecteerd of bewerkt. Behoud de kleuren, ga naar zwart-wit, of voeg een lichte kanteling en papierkorrel toe voor een gescande look.",
+      "steps": [
+        "Voeg één PDF-bestand toe.",
+        "Kies de kwaliteit en de look: kleur, zwart-wit, of gescand.",
+        "Klik op “Gescande PDF maken” en download het bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Waarom zou ik een gescande PDF willen?",
+          "Sommige kantoren en portalen vragen om gescande kopieën, en een PDF met alleen afbeeldingen voorkomt dat de tekst makkelijk wordt gekopieerd of bewerkt. Het maakt formuliervelden en opmerkingen ook plat tot wat je op de pagina ziet."
+        ],
+        [
+          "Wordt het bestand groter?",
+          "Meestal wel, omdat pagina's als afbeeldingen worden opgeslagen. Standaardkwaliteit (150 DPI) houdt het bestand klein; hoge kwaliteit (300 DPI) houdt kleine lettertjes scherp."
         ],
         [
           "Is Fizzdoc gratis?",

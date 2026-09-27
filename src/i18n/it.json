@@ -96,6 +96,12 @@
     "ws.style": "Stile",
     "ws.pageOf": "Pagina 1 di 10",
     "ws.startAt": "Inizia da",
+    "ws.dpiStandard": "Standard (file più piccolo)",
+    "ws.dpiHigh": "Alta (stampa piccola più nitida)",
+    "ws.look": "Aspetto",
+    "ws.lookColor": "Colore",
+    "ws.lookGray": "Bianco e nero",
+    "ws.lookScanned": "Scansionato (grigio, leggermente inclinato)",
     "ws.wmText": "Testo della filigrana",
     "ws.wmDefault": "RISERVATO",
     "ws.opacity": "Opacità",
@@ -180,6 +186,14 @@
     "ocr.copyAll": "Copia tutto il testo",
     "ocr.copied": "Copiato",
     "ocr.text": "Testo riconosciuto",
+    "rd.find": "Cerca una parola o un numero da nascondere",
+    "rd.markAll": "Segna tutto",
+    "rd.clear": "Cancella tutto",
+    "rd.count": "Aree segnate: {n}",
+    "rd.found": "Corrispondenze segnate: {n}",
+    "rd.none": "Nessuna corrispondenza per “{text}”",
+    "rd.remove": "Rimuovi questo segno",
+    "rd.hint": "Trascina su una pagina per coprire qualsiasi cosa: testo, una firma, una foto. Al salvataggio, ogni pagina diventa un'immagine, quindi ciò che hai coperto sparisce per sempre.",
     "footer.madeBy": "Progettato e sviluppato da",
     "footer.feedback": "Segnala un bug o suggerisci uno strumento"
   },
@@ -554,6 +568,70 @@
         [
           "Il testo originale viene rimosso?",
           "Il testo originale viene coperto sulla pagina e il nuovo testo viene disegnato sopra. Per informazioni sensibili che devono sparire dal file, elimina la pagina o ricrea il documento."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "Oscura PDF",
+      "summary": "Annerisci testo, firme o foto perché spariscano per sempre.",
+      "action": "Salva PDF oscurato",
+      "title": "Oscurare un PDF Online — Cancella Testo per Sempre | Fizzdoc",
+      "description": "Annerisci nomi, numeri, firme o foto in un PDF e salva una copia in cui sono davvero spariti. Funziona nel browser; niente viene caricato. Gratis.",
+      "h1": "Oscura un PDF: annerisci qualsiasi cosa per sempre",
+      "lede": "Trascina su ciò che deve sparire, oppure cerca un nome o un numero e segna ogni corrispondenza. Al salvataggio, ogni pagina diventa un'immagine, quindi il testo coperto non può essere copiato né recuperato.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Trascina sulla pagina per coprire un’area, oppure digita una parola e clicca su “Segna tutto”.",
+        "Scegli qualità e aspetto, poi clicca su “Salva PDF oscurato” e scaricalo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Il testo oscurato sparisce davvero?",
+          "Sì. Fizzdoc ridisegna ogni pagina come immagine con i tuoi segni neri incorporati e crea un nuovo PDF da quelle immagini. Il testo, i font e i metadati originali non vengono copiati, quindi nulla sotto un segno può essere selezionato, cercato o recuperato."
+        ],
+        [
+          "Posso ancora cercare o copiare il resto del testo?",
+          "No. Ogni pagina diventa un'immagine, quindi il file salvato non ha testo selezionabile. Se ti serve di nuovo testo ricercabile, passa il file oscurato per OCR PDF; i segni neri resteranno neri."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "Da PDF a PDF Scansionato",
+      "summary": "Trasforma ogni pagina in un'immagine, come un documento scansionato.",
+      "action": "Crea PDF scansionato",
+      "title": "Da PDF a PDF Scansionato — Aspetto da Scanner | Fizzdoc",
+      "description": "Trasforma un PDF in un PDF scansionato fatto di immagini: a colori, in bianco e nero, o con aspetto da scanner. Funziona nel browser; niente è caricato.",
+      "h1": "Converti un PDF in un PDF scansionato",
+      "lede": "Ogni pagina diventa un'immagine, quindi il testo non può essere selezionato né modificato. Mantieni i colori, passa al bianco e nero, oppure aggiungi una leggera inclinazione e grana della carta per un aspetto da scansione.",
+      "steps": [
+        "Aggiungi un file PDF.",
+        "Scegli qualità e aspetto: a colori, bianco e nero, o scansionato.",
+        "Clicca su “Crea PDF scansionato” e scaricalo."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Perché mi servirebbe un PDF scansionato?",
+          "Alcuni uffici e portali chiedono copie scansionate, e un PDF fatto solo di immagini impedisce di copiare o modificare facilmente il testo. Appiattisce anche i campi modulo e i commenti in ciò che si vede sulla pagina."
+        ],
+        [
+          "Il file diventerà più pesante?",
+          "Di solito sì, perché le pagine sono salvate come immagini. La qualità standard (150 DPI) mantiene il file piccolo; quella alta (300 DPI) mantiene nitido anche il testo piccolo."
         ],
         [
           "Fizzdoc è gratuito?",

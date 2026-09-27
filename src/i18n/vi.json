@@ -96,6 +96,12 @@
     "ws.style": "Kiểu",
     "ws.pageOf": "Trang 1 / 10",
     "ws.startAt": "Bắt đầu từ",
+    "ws.dpiStandard": "Tiêu chuẩn (tệp nhỏ hơn)",
+    "ws.dpiHigh": "Cao (chữ in nhỏ sắc nét hơn)",
+    "ws.look": "Kiểu hiển thị",
+    "ws.lookColor": "Có màu",
+    "ws.lookGray": "Đen trắng",
+    "ws.lookScanned": "Dạng scan (xám, hơi nghiêng)",
     "ws.wmText": "Nội dung watermark",
     "ws.wmDefault": "CONFIDENTIAL",
     "ws.opacity": "Độ mờ",
@@ -180,6 +186,14 @@
     "ocr.copyAll": "Sao chép toàn bộ văn bản",
     "ocr.copied": "Đã sao chép",
     "ocr.text": "Văn bản đã nhận dạng",
+    "rd.find": "Tìm một từ hoặc số để ẩn",
+    "rd.markAll": "Đánh dấu tất cả",
+    "rd.clear": "Xóa tất cả",
+    "rd.count": "Vùng đã đánh dấu: {n}",
+    "rd.found": "Kết quả khớp đã đánh dấu: {n}",
+    "rd.none": "Không có kết quả khớp cho “{text}”",
+    "rd.remove": "Xóa vết đánh dấu này",
+    "rd.hint": "Kéo trên một trang để che bất cứ thứ gì: văn bản, chữ ký, ảnh. Khi lưu, mỗi trang trở thành một hình ảnh, nên phần bạn che sẽ biến mất vĩnh viễn.",
     "footer.madeBy": "Thiết kế và phát triển bởi",
     "footer.feedback": "Báo lỗi hoặc đề xuất công cụ"
   },
@@ -554,6 +568,70 @@
         [
           "Văn bản gốc có bị xóa không?",
           "Văn bản gốc chỉ bị che trên trang và văn bản mới được vẽ đè lên trên. Với thông tin nhạy cảm cần biến mất hoàn toàn khỏi tệp, hãy xóa cả trang hoặc tạo lại tài liệu."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "Che Đen PDF",
+      "summary": "Che đen văn bản, chữ ký hoặc ảnh để chúng biến mất vĩnh viễn.",
+      "action": "Lưu PDF đã che đen",
+      "title": "Che Đen PDF Trực Tuyến — Xóa Văn Bản Vĩnh Viễn | Fizzdoc",
+      "description": "Che đen tên, số, chữ ký hoặc ảnh trong PDF và lưu một bản mà chúng thực sự biến mất. Chạy trong trình duyệt của bạn; không tải lên. Miễn phí.",
+      "h1": "Che đen PDF: xóa vĩnh viễn bất cứ thứ gì",
+      "lede": "Kéo lên phần cần biến mất, hoặc tìm một tên hay số rồi đánh dấu mọi kết quả khớp. Khi lưu, mỗi trang trở thành một hình ảnh, nên văn bản bị che không thể sao chép hay khôi phục.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Kéo trên trang để che một vùng, hoặc gõ một từ rồi bấm “Đánh dấu tất cả”.",
+        "Chọn chất lượng và kiểu hiển thị, rồi bấm “Lưu PDF đã che đen” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Văn bản bị che đen có thực sự biến mất không?",
+          "Có. Fizzdoc vẽ lại mỗi trang thành một hình ảnh với các vết đen đã được in cố định vào, rồi tạo một PDF mới từ những hình ảnh đó. Văn bản, phông chữ và metadata gốc không được sao chép, nên không thể chọn, tìm kiếm hay khôi phục bất cứ thứ gì bên dưới vết che."
+        ],
+        [
+          "Tôi có còn tìm kiếm hoặc sao chép được phần văn bản còn lại không?",
+          "Không. Mỗi trang trở thành một hình ảnh, nên tệp đã lưu không còn văn bản có thể chọn được. Nếu cần văn bản có thể tìm kiếm lại, hãy chạy tệp đã che đen qua OCR PDF; các vết đen sẽ vẫn giữ nguyên màu đen."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "Chuyển PDF Thành PDF Dạng Scan",
+      "summary": "Biến mỗi trang thành hình ảnh, giống như một tài liệu đã scan.",
+      "action": "Tạo PDF Dạng Scan",
+      "title": "Chuyển PDF Thành PDF Dạng Scan — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển một PDF thành PDF chỉ gồm hình ảnh, trông như đã scan: có màu, đen trắng, hoặc như scan thật. Chạy trong trình duyệt; không tải lên. Miễn phí.",
+      "h1": "Chuyển đổi PDF thành PDF dạng scan",
+      "lede": "Mỗi trang trở thành một hình ảnh, nên văn bản không thể chọn hay chỉnh sửa. Giữ nguyên màu sắc, chuyển sang đen trắng, hoặc thêm chút nghiêng và vân giấy để trông như đã scan.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Chọn chất lượng và kiểu hiển thị: có màu, đen trắng, hoặc dạng scan.",
+        "Bấm “Tạo PDF Dạng Scan” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tại sao tôi lại cần một PDF dạng scan?",
+          "Một số cơ quan và cổng thông tin yêu cầu bản scan, và một PDF chỉ gồm hình ảnh giúp ngăn việc sao chép hay chỉnh sửa văn bản một cách dễ dàng. Nó cũng làm phẳng các trường biểu mẫu và ghi chú thành đúng những gì hiển thị trên trang."
+        ],
+        [
+          "Tệp có bị to hơn không?",
+          "Thường là có, vì các trang được lưu dưới dạng hình ảnh. Chất lượng tiêu chuẩn (150 DPI) giữ tệp nhỏ gọn; chất lượng cao (300 DPI) giữ chữ in nhỏ vẫn sắc nét."
         ],
         [
           "Fizzdoc có miễn phí không?",

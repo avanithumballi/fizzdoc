@@ -96,6 +96,12 @@
     "ws.style": "Gaya",
     "ws.pageOf": "Halaman 1 dari 10",
     "ws.startAt": "Mulai dari",
+    "ws.dpiStandard": "Standar (file lebih kecil)",
+    "ws.dpiHigh": "Tinggi (cetakan kecil lebih tajam)",
+    "ws.look": "Tampilan",
+    "ws.lookColor": "Berwarna",
+    "ws.lookGray": "Hitam putih",
+    "ws.lookScanned": "Hasil scan (abu-abu, sedikit miring)",
     "ws.wmText": "Teks watermark",
     "ws.wmDefault": "RAHASIA",
     "ws.opacity": "Opasitas",
@@ -180,6 +186,14 @@
     "ocr.copyAll": "Salin semua teks",
     "ocr.copied": "Disalin",
     "ocr.text": "Teks yang dikenali",
+    "rd.find": "Cari kata atau nomor untuk disembunyikan",
+    "rd.markAll": "Tandai semua",
+    "rd.clear": "Hapus semua",
+    "rd.count": "Area yang ditandai: {n}",
+    "rd.found": "Kecocokan yang ditandai: {n}",
+    "rd.none": "Tidak ada kecocokan untuk “{text}”",
+    "rd.remove": "Hapus tanda ini",
+    "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya.",
     "footer.madeBy": "Dirancang dan dibuat oleh",
     "footer.feedback": "Laporkan bug atau usulkan alat"
   },
@@ -554,6 +568,70 @@
         [
           "Apakah teks aslinya benar-benar terhapus?",
           "Teks asli hanya ditutup di halaman, dan teks baru Anda digambar di atasnya. Untuk informasi sensitif yang harus benar-benar hilang dari file, hapus halamannya atau buat ulang dokumennya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "Sensor PDF",
+      "summary": "Hitamkan teks, tanda tangan, atau foto agar hilang selamanya.",
+      "action": "Simpan PDF yang Disensor",
+      "title": "Sensor PDF Online — Hapus Teks Selamanya, Tanpa Upload | Fizzdoc",
+      "description": "Hitamkan nama, nomor, tanda tangan, atau foto di PDF dan simpan salinan yang benar-benar menghilangkannya. Berjalan di browser Anda; tanpa upload. Gratis.",
+      "h1": "Sensor PDF: hitamkan apa saja selamanya",
+      "lede": "Seret area yang harus hilang, atau cari nama atau nomor lalu tandai setiap kecocokan. Saat disimpan, setiap halaman menjadi gambar, jadi teks yang disembunyikan tidak bisa disalin atau dipulihkan.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Seret pada halaman untuk menutup area, atau ketik kata lalu klik “Tandai semua”.",
+        "Pilih kualitas dan tampilan, lalu klik “Simpan PDF yang Disensor” dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah teks yang disensor benar-benar hilang?",
+          "Ya. Fizzdoc menggambar ulang setiap halaman sebagai gambar dengan tanda hitam Anda tertanam di dalamnya dan membuat PDF baru dari gambar-gambar itu. Teks asli, font, dan metadata dokumen tidak disalin, jadi apa pun di bawah tanda tidak bisa dipilih, dicari, atau dipulihkan."
+        ],
+        [
+          "Apakah saya masih bisa mencari atau menyalin teks yang lain?",
+          "Tidak. Setiap halaman menjadi gambar, jadi file yang disimpan tidak punya teks yang bisa dipilih. Jika butuh teks yang bisa dicari lagi, jalankan file yang disensor lewat OCR PDF; tanda hitamnya akan tetap hitam."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF ke PDF Hasil Scan",
+      "summary": "Ubah setiap halaman menjadi gambar, seperti dokumen hasil scan.",
+      "action": "Buat PDF Hasil Scan",
+      "title": "PDF ke PDF Hasil Scan — Tampilan Scan, Tanpa Upload | Fizzdoc",
+      "description": "Ubah PDF menjadi PDF berbasis gambar bertampilan scan: berwarna, hitam putih, atau tampilan scanner asli. Berjalan di browser Anda; tanpa upload. Gratis.",
+      "h1": "Ubah PDF menjadi PDF hasil scan",
+      "lede": "Setiap halaman menjadi gambar, jadi teksnya tidak bisa dipilih atau diedit. Pertahankan warnanya, ubah jadi hitam putih, atau tambahkan sedikit kemiringan dan tekstur kertas agar terlihat seperti hasil scan.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Pilih kualitas dan tampilan: berwarna, hitam putih, atau hasil scan.",
+        "Klik “Buat PDF Hasil Scan” dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa saya perlu PDF hasil scan?",
+          "Beberapa kantor dan portal meminta salinan hasil scan, dan PDF berbasis gambar mencegah teks disalin atau diedit dengan mudah. Ini juga meratakan kolom formulir dan komentar menjadi apa yang terlihat di halaman."
+        ],
+        [
+          "Apakah ukuran filenya jadi lebih besar?",
+          "Biasanya ya, karena halaman disimpan sebagai gambar. Kualitas standar (150 DPI) membuat file tetap kecil; kualitas tinggi (300 DPI) membuat cetakan kecil tetap tajam."
         ],
         [
           "Apakah Fizzdoc gratis?",
