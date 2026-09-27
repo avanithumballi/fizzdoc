@@ -190,6 +190,7 @@
     "ed.removeBox": "Textfeld entfernen",
     "ed.replaced": "Einige Zeichen werden von den Standard-PDF-Schriften nicht unterstützt und wurden ersetzt.",
     "ed.hint": "Überdeckter Text wird verborgen, nicht aus der Datei gelöscht — löschen Sie für sensible Daten stattdessen die Seite.",
+    "ocr.unsure": "Ein Teil dieses Textes kann falsch sein. Die Texterkennung liest aufrechten englischen Text: Drehen Sie seitliche Fotos zuerst, andere Schriften kommen verfälscht heraus.",
     "ocr.copyAll": "Gesamten Text kopieren",
     "ocr.copied": "Kopiert",
     "ocr.text": "Erkannter Text",

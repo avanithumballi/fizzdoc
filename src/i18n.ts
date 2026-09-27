@@ -236,6 +236,7 @@ export const UI = {
   'rd.none': 'No matches for “{text}”',
   'rd.remove': 'Remove this mark',
   'rd.hint': 'Drag on a page to cover anything: text, a signature, a photo. When you save, every page becomes an image, so what you covered is gone for good.',
+  'ocr.unsure': 'Some of this text may be wrong. Text recognition reads English that is upright: rotate sideways photos first, and expect other scripts to come out garbled.',
   'ocr.copyAll': 'Copy all text',
   'ocr.copied': 'Copied',
   'ocr.text': 'Recognized text',

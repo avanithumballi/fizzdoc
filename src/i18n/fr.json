@@ -190,6 +190,7 @@
     "ed.removeBox": "Retirer la zone de texte",
     "ed.replaced": "Certains caractères ne sont pas pris en charge par les polices PDF standard et ont été remplacés.",
     "ed.hint": "Le texte masqué est caché, pas supprimé du fichier — pour des données sensibles, supprimez plutôt la page.",
+    "ocr.unsure": "Une partie de ce texte peut être fausse. La reconnaissance lit du texte anglais bien droit : faites d’abord pivoter les photos de travers ; les autres écritures sortiront brouillées.",
     "ocr.copyAll": "Copier tout le texte",
     "ocr.copied": "Copié",
     "ocr.text": "Texte reconnu",

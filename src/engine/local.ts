@@ -7,6 +7,8 @@ export interface Output {
   name: string;
   /** Human summary, e.g. "3 images". */
   summary: string;
+  /** UI keys of things worth knowing about the result, listed under it. */
+  notes?: string[];
 }
 
 export class LocalError extends Error {

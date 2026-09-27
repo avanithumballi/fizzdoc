@@ -139,13 +139,14 @@ function setUp(op: ToolOp) {
     'ocr-pdf': async (f) => (await import('./engine/ocr')).ocrPdf(f[0], progressLabel),
     'image-ocr': async (f) => {
       const [{ ocrImage }, { showTextOverlay }] = await Promise.all([import('./engine/ocr'), import('./tools/ocr-viewer')]);
-      const recognized = await ocrImage(f[0], progressLabel);
+      const [recognized, { unsure }] = await Promise.all([ocrImage(f[0], progressLabel), import('./engine/ocr')]);
       showTextOverlay(viewer!, f[0], recognized);
       const words = recognized.words.length;
       return {
         blob: new Blob([recognized.text], { type: 'text/plain;charset=utf-8' }),
         name: `${baseName(f[0])}.txt`,
         summary: `${words} ${words === 1 ? 'word' : 'words'} recognized`, // localized by show()
+        notes: unsure(recognized.words) ? ['ocr.unsure'] : [],
       };
     },
     'edit-pdf': async (_, o) => (await editor!.ready).save(o, progressLabel),
@@ -399,7 +400,10 @@ function setUp(op: ToolOp) {
       const output = await job(files, options());
       if (id !== localJob) return;
       if ('html' in output) printDocument(output);
-      else show(output.blob, output.name, output.summary);
+      else {
+        show(output.blob, output.name, output.summary);
+        warnings.replaceChildren(...(output.notes ?? []).map((key) => Object.assign(document.createElement('li'), { textContent: t(key as UiKey) })));
+      }
     } catch (error) {
       if (id === localJob) fail(error);
     } finally {
