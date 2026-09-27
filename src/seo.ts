@@ -85,6 +85,8 @@ const ICON_PATHS: Record<ToolOp, string> = {
   'compress-pdf': SHRINK,
   'office-compress': SHRINK,
   'edit-pdf': '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+  'redact-pdf': '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><rect x="7" y="12" width="10" height="3" fill="currentColor"/><path d="M7 18h6"/>',
+  'scan-pdf': '<path d="M5 3h14v8H5z"/><path d="M3 11h18v4H3z"/><path d="M7 15v6h10v-6"/><path d="M9 18h6"/>',
   'ocr-pdf': SCAN,
   'image-ocr': SCAN,
   'pdf-to-word': CONVERT,
@@ -195,6 +197,9 @@ const range = (label: string, name: string, value: number, min: number, max: num
 function optionsHtml(c: Copy, tool: Tool) {
   const mode = tool.preset?.mode;
   const quality = (value: number) => range(c.t('ws.quality'), 'quality', value, 10, 100);
+  if (tool.op === 'redact-pdf' || tool.op === 'scan-pdf')
+    return `<label>${esc(c.t('ws.quality'))}<select name="dpi">${option('150', c.t('ws.dpiStandard'))}${option('300', c.t('ws.dpiHigh'))}</select></label>
+    <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
     return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
   if (mode === 'compress') {
@@ -239,7 +244,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
               : null;
   const { accept, choose, multiple } = input(c, tool);
   return `
-<section class="workspace${tool.op === 'edit-pdf' ? ' wide' : ''}" id="workspace" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
+<section class="workspace${tool.op === 'edit-pdf' || tool.op === 'redact-pdf' ? ' wide' : ''}" id="workspace" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
   <label class="drop" id="drop">
     <input id="file-input" type="file" accept="${accept}"${multiple ? ' multiple' : ''}>
     <span class="drop-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m6 10 6-6 6 6"/><path d="M4 20h16"/></svg></span>
@@ -247,7 +252,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
     <span>${esc(c.t(multiple ? 'ws.dropMany' : 'ws.dropOne'))}</span>
   </label>
   <ol id="file-list" class="file-list" aria-label="${esc(c.t('ws.files'))}"></ol>
-  ${tool.op === 'edit-pdf' || tool.op === 'image-ocr' ? '<div id="viewer" class="viewer"></div>' : ''}
+  ${tool.op === 'edit-pdf' || tool.op === 'redact-pdf' || tool.op === 'image-ocr' ? '<div id="viewer" class="viewer"></div>' : ''}
   ${multiple ? `<p class="hint" id="reorder-hint" hidden>${esc(c.t('ws.reorder'))}</p>` : ''}
   <div class="options">
     ${

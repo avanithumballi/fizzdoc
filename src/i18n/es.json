@@ -3,7 +3,7 @@
     "nav.label": "Principal",
     "nav.home": "Inicio de Fizzdoc",
     "nav.theme": "Cambiar tema de color",
-    "nav.star": "★ Destacar",
+    "nav.star": "Destacar",
     "nav.starAria": "Destaca Fizzdoc en GitHub",
     "lang.label": "Idioma",
     "lang.tip": "¿Prefieres otro idioma? Elígelo aquí.",
@@ -98,6 +98,12 @@
     "ws.startAt": "Empezar en",
     "ws.targetKb": "Tamaño máximo (KB)",
     "ws.targetAny": "Sin límite",
+    "ws.dpiStandard": "Estándar (archivo más pequeño)",
+    "ws.dpiHigh": "Alta (letra pequeña más nítida)",
+    "ws.look": "Aspecto",
+    "ws.lookColor": "Color",
+    "ws.lookGray": "Blanco y negro",
+    "ws.lookScanned": "Escaneado (gris, ligeramente inclinado)",
     "ws.wmText": "Texto de la marca de agua",
     "ws.wmDefault": "CONFIDENCIAL",
     "ws.opacity": "Opacidad",
@@ -187,6 +193,14 @@
     "ocr.copyAll": "Copiar todo el texto",
     "ocr.copied": "Copiado",
     "ocr.text": "Texto reconocido",
+    "rd.find": "Busca una palabra o número para ocultar",
+    "rd.markAll": "Marcar todo",
+    "rd.clear": "Borrar todo",
+    "rd.count": "Áreas marcadas: {n}",
+    "rd.found": "Coincidencias marcadas: {n}",
+    "rd.none": "Sin coincidencias para «{text}»",
+    "rd.remove": "Quitar esta marca",
+    "rd.hint": "Arrastra sobre una página para tapar cualquier cosa: texto, una firma, una foto. Al guardar, cada página se convierte en una imagen, así que lo que tapaste desaparece para siempre.",
     "footer.madeBy": "Diseñado y creado por",
     "footer.feedback": "Reporta un error o sugiere una herramienta"
   },
@@ -561,6 +575,70 @@
         [
           "¿Se elimina el texto original?",
           "El texto original se tapa en la página y tu texto nuevo se dibuja encima. Para información sensible que deba desaparecer del archivo, elimina la página o vuelve a crear el documento en su lugar."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí. No hace falta registrarse, no añade marca de agua y no tiene límite diario. Fizzdoc es de código abierto bajo la licencia Apache-2.0."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "Censurar PDF",
+      "summary": "Tapa de negro texto, firmas o fotos para que desaparezcan para siempre.",
+      "action": "Guardar PDF censurado",
+      "title": "Censurar un PDF Online — Tapa Texto para Siempre, Sin Subir | Fizzdoc",
+      "description": "Tapa de negro nombres, números, firmas o fotos en un PDF y guarda una copia donde de verdad desaparecen. Funciona en tu navegador; nada se sube. Gratis.",
+      "h1": "Censura un PDF: tapa cualquier cosa para siempre",
+      "lede": "Arrastra sobre lo que quieras ocultar, o busca un nombre o número y marca cada coincidencia. Al guardar, cada página se convierte en una imagen, así que el texto oculto no se puede copiar ni recuperar.",
+      "steps": [
+        "Añade un archivo PDF.",
+        "Arrastra sobre la página para tapar una zona, o escribe una palabra y haz clic en «Marcar todo».",
+        "Elige la calidad y el aspecto, luego haz clic en «Guardar PDF censurado» y descárgalo."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿El texto censurado desaparece de verdad?",
+          "Sí. Fizzdoc vuelve a dibujar cada página como una imagen con tus marcas negras integradas y crea un PDF nuevo a partir de esas imágenes. El texto, las fuentes y los metadatos originales no se copian, así que nada de lo que hay debajo de una marca se puede seleccionar, buscar ni recuperar."
+        ],
+        [
+          "¿Puedo seguir buscando o copiando el resto del texto?",
+          "No. Cada página se convierte en una imagen, así que el archivo guardado no tiene texto seleccionable. Si necesitas texto buscable de nuevo, pasa el archivo censurado por OCR PDF; las marcas negras seguirán siendo negras."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí. No hace falta registrarse, no añade marca de agua y no tiene límite diario. Fizzdoc es de código abierto bajo la licencia Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF a PDF Escaneado",
+      "summary": "Convierte cada página en una imagen, como un documento escaneado.",
+      "action": "Crear PDF escaneado",
+      "title": "PDF a PDF Escaneado — Aspecto de Escaneo, Sin Subir | Fizzdoc",
+      "description": "Convierte un PDF en un PDF escaneado solo con imágenes: en color, en blanco y negro, o con look de escáner. Funciona en tu navegador; nada se sube. Gratis.",
+      "h1": "Convierte un PDF en un PDF escaneado",
+      "lede": "Cada página se convierte en una imagen, así que el texto no se puede seleccionar ni editar. Mantén los colores, pásalo a blanco y negro, o añade una ligera inclinación y grano de papel para que parezca escaneado.",
+      "steps": [
+        "Añade un archivo PDF.",
+        "Elige la calidad y el aspecto: color, blanco y negro, o escaneado.",
+        "Haz clic en «Crear PDF escaneado» y descárgalo."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿Por qué querría un PDF escaneado?",
+          "Algunas oficinas y trámites piden copias escaneadas, y un PDF solo con imágenes evita que el texto se copie o edite fácilmente. También aplana los campos de formulario y los comentarios a lo que se ve en la página."
+        ],
+        [
+          "¿El archivo pesará más?",
+          "Normalmente sí, porque las páginas se guardan como imágenes. La calidad estándar (150 DPI) mantiene el archivo pequeño; la calidad alta (300 DPI) mantiene nítido el texto pequeño."
         ],
         [
           "¿Es gratis Fizzdoc?",

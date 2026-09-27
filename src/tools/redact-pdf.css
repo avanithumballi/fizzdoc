@@ -1,0 +1,140 @@
+/* Redact PDF: toolbar + scrollable pages you draw black marks on. */
+.redact-pdf {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: min(80vh, 900px);
+  min-height: 420px;
+}
+
+.redact-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.redact-find {
+  display: flex;
+  flex: 1 1 260px;
+  gap: 6px;
+}
+
+.redact-find input {
+  flex: 1;
+  min-width: 0;
+}
+
+.redact-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 6px);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 7px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.redact-btn:hover:not(:disabled) {
+  border-color: var(--line-strong);
+}
+
+.redact-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.redact-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.redact-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.redact-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.redact-scroll {
+  flex: 1;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.redact-page {
+  position: relative;
+  flex: none;
+  background: #fff;
+  box-shadow: var(--shadow-md, 0 1px 4px rgb(0 0 0 / 0.2));
+  border-radius: 2px;
+}
+
+.redact-page canvas {
+  display: block;
+}
+
+.redact-overlay {
+  position: absolute;
+  inset: 0;
+  cursor: crosshair;
+  touch-action: none; /* a finger draws on the page; scroll in the grey space around it */
+}
+
+.redact-box {
+  position: absolute;
+  background: rgb(0 0 0 / 0.88);
+  outline: 1px solid rgb(255 255 255 / 0.35);
+}
+
+.redact-box.draft {
+  background: rgb(0 0 0 / 0.5);
+  outline: 1.5px dashed var(--accent);
+}
+
+.redact-remove {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.redact-box:hover .redact-remove,
+.redact-remove:focus-visible {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .redact-remove {
+    opacity: 1;
+  }
+}

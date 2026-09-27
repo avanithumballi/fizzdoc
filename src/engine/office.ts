@@ -367,15 +367,20 @@ export async function docxToHtml(file: File): Promise<{ html: string; title: str
   const styles = loadStyles(entries);
   const numbering = loadNumbering(entries);
   const rels = loadRels(entries, 'word/_rels/document.xml.rels');
-  const media: Record<string, string> = {};
-  for (const [rId, rel] of rels) {
-    const match = /^(?:word\/)?media\/(.+)$/.exec(rel.target.replace(/^\.\.\//, ''));
-    if (!match) continue;
-    const path = `word/media/${match[1]}`;
-    const ext = match[1].split('.').pop()?.toLowerCase() ?? '';
-    const mime = IMAGE_MIME[ext];
-    if (mime && entries[path]) media[rId] = `data:${mime};base64,${toBase64(entries[path])}`;
-  }
+  // Images a part links to, inlined as data: URLs (the print frame never fetches anything).
+  const mediaFor = (partRels: Map<string, Rel>) => {
+    const media: Record<string, string> = {};
+    for (const [rId, rel] of partRels) {
+      const match = /^(?:word\/)?media\/(.+)$/.exec(rel.target.replace(/^\.\.\//, ''));
+      if (!match) continue;
+      const path = `word/media/${match[1]}`;
+      const ext = match[1].split('.').pop()?.toLowerCase() ?? '';
+      const mime = IMAGE_MIME[ext];
+      if (mime && entries[path]) media[rId] = `data:${mime};base64,${toBase64(entries[path])}`;
+    }
+    return media;
+  };
+  const media = mediaFor(rels);
 
   const root = parseXml(strFromU8(entries['word/document.xml']));
   const body = deep(root, 'w:body')[0];
@@ -386,9 +391,39 @@ export async function docxToHtml(file: File): Promise<{ html: string; title: str
       else if (child.tag === 'w:tbl') blocks.push({ html: renderTable(child, rels, media) });
     }
   }
-  const content = nestLists(blocks);
-
   const sectPr = body && first(body, 'w:sectPr');
+
+  /** The section's default header or footer. Lines with page-number fields are left out: the
+   *  numbers can't be reproduced on each printed page in every browser. */
+  const part = (kind: 'header' | 'footer') => {
+    const refs = sectPr ? el(sectPr, `w:${kind}Reference`) : [];
+    const ref = refs.find((r) => r.attrs['w:type'] === 'default') ?? refs[0];
+    const target = ref && rels.get(ref.attrs['r:id'])?.target.replace(/^\/?(word\/)?/, '');
+    const xml = target && entries[`word/${target}`];
+    const top = xml && parseXml(strFromU8(xml)).children.find((c) => c.tag === (kind === 'header' ? 'w:hdr' : 'w:ftr'));
+    if (!top) return '';
+    const partRels = loadRels(entries, `word/_rels/${target}.rels`);
+    const partMedia = mediaFor(partRels);
+    const pageField = (node: XNode) =>
+      deep(node, 'w:instrText').some((n) => /\b(NUM)?PAGES?\b/.test(textOf(n))) ||
+      deep(node, 'w:fldSimple').some((n) => /\b(NUM)?PAGES?\b/.test(n.attrs['w:instr'] ?? ''));
+    const partBlocks: typeof blocks = [];
+    for (const child of top.children) {
+      if (pageField(child)) continue;
+      if (child.tag === 'w:p') partBlocks.push(renderParagraph(child, partRels, partMedia, styles, [numbering]));
+      else if (child.tag === 'w:tbl') partBlocks.push({ html: renderTable(child, partRels, partMedia) });
+    }
+    const html = nestLists(partBlocks);
+    return (html.replace(/<[^>]*>/g, '').trim() || /<img/.test(html)) ? html : ''; // an empty part adds nothing
+  };
+  const header = part('header');
+  const footer = part('footer');
+  // A table's header and footer rows repeat on every printed page, in every major browser.
+  const content =
+    header || footer
+      ? `<table class="page-frame">${header ? `<thead><tr><td>${header}</td></tr></thead>` : ''}${footer ? `<tfoot><tr><td>${footer}</td></tr></tfoot>` : ''}<tbody><tr><td>${nestLists(blocks)}</td></tr></tbody></table>`
+      : nestLists(blocks);
+
   const pgSz = sectPr && first(sectPr, 'w:pgSz');
   const pgMar = sectPr && first(sectPr, 'w:pgMar');
   const inches = (twips?: string) => (twips && Number.isFinite(Number(twips)) ? `${(Number(twips) / TWIP_PER_INCH).toFixed(2)}in` : undefined);
@@ -415,6 +450,10 @@ td { border: 1px solid #999; padding: 4px 8px; vertical-align: top; }
 img { max-width: 100%; }
 ul, ol { margin: 0.3em 0 0.3em 1.5em; }
 a { color: #0563c1; }
+table.page-frame { width: 100%; margin: 0; }
+table.page-frame > * > tr > td { border: 0; padding: 0; }
+table.page-frame > thead td { padding-bottom: 14pt; color: #444; }
+table.page-frame > tfoot td { padding-top: 14pt; color: #444; }
 </style></head>
 <body>
 ${content}

@@ -3,7 +3,7 @@
     "nav.label": "Ana",
     "nav.home": "Fizzdoc ana sayfa",
     "nav.theme": "Renk temasını değiştir",
-    "nav.star": "★ Yıldızla",
+    "nav.star": "Yıldızla",
     "nav.starAria": "Fizzdoc'u GitHub'da yıldızla",
     "lang.label": "Dil",
     "lang.tip": "Başka bir dili mi tercih ediyorsunuz? Buradan seçin.",
@@ -98,6 +98,12 @@
     "ws.startAt": "Başlangıç",
     "ws.targetKb": "Maks. dosya boyutu (KB)",
     "ws.targetAny": "Sınır yok",
+    "ws.dpiStandard": "Standart (daha küçük dosya)",
+    "ws.dpiHigh": "Yüksek (daha net küçük yazı)",
+    "ws.look": "Görünüm",
+    "ws.lookColor": "Renkli",
+    "ws.lookGray": "Siyah beyaz",
+    "ws.lookScanned": "Taranmış (gri, hafif eğik)",
     "ws.wmText": "Filigran metni",
     "ws.wmDefault": "CONFIDENTIAL",
     "ws.opacity": "Saydamlık",
@@ -187,6 +193,14 @@
     "ocr.copyAll": "Tüm metni kopyala",
     "ocr.copied": "Kopyalandı",
     "ocr.text": "Tanınan metin",
+    "rd.find": "Gizlemek için bir kelime veya numara arayın",
+    "rd.markAll": "Tümünü işaretle",
+    "rd.clear": "Tümünü temizle",
+    "rd.count": "İşaretli alanlar: {n}",
+    "rd.found": "İşaretlenen eşleşmeler: {n}",
+    "rd.none": "“{text}” için eşleşme yok",
+    "rd.remove": "Bu işareti kaldır",
+    "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur.",
     "footer.madeBy": "Tasarlayan ve geliştiren",
     "footer.feedback": "Hata bildir veya araç öner"
   },
@@ -561,6 +575,70 @@
         [
           "Orijinal metin kaldırılıyor mu?",
           "Orijinal metin sayfada kapatılır ve yeni metniniz üzerine çizilir. Dosyadan tamamen gitmesi gereken hassas bilgiler için bunun yerine sayfayı silin veya belgeyi yeniden oluşturun."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "PDF Karart",
+      "summary": "Metni, imzaları veya fotoğrafları temelli kaybolacak şekilde karartın.",
+      "action": "Karartılmış PDF'i Kaydet",
+      "title": "PDF Karartma Çevrimiçi — Metni Kalıcı Olarak Sil | Fizzdoc",
+      "description": "Bir PDF'deki adları, numaraları, imzaları veya fotoğrafları karartıp gerçekten kaybolduğu bir kopya kaydedin. Tarayıcıda çalışır; yükleme yok.",
+      "h1": "PDF Karart: her şeyi kalıcı olarak karartın",
+      "lede": "Kaybolması gerekeni sürükleyerek örtün, ya da bir ad veya numara arayıp her eşleşmeyi işaretleyin. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece gizlenen metin kopyalanamaz veya geri getirilemez.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Bir alanı örtmek için sayfada sürükleyin, ya da bir kelime yazıp “Tümünü işaretle”ye tıklayın.",
+        "Kaliteyi ve görünümü seçin, sonra “Karartılmış PDF'i Kaydet”e tıklayıp indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Karartılan metin gerçekten kayboluyor mu?",
+          "Evet. Fizzdoc her sayfayı, siyah işaretleriniz işlenmiş şekilde bir görsel olarak yeniden çizer ve bu görsellerden yeni bir PDF oluşturur. Orijinal metin, yazı tipleri ve belge meta verileri kopyalanmaz, bu yüzden bir işaretin altındaki hiçbir şey seçilemez, aranamaz veya kurtarılamaz."
+        ],
+        [
+          "Geri kalan metni hâlâ arayabilir veya kopyalayabilir miyim?",
+          "Hayır. Her sayfa bir görsele dönüşür, bu yüzden kaydedilen dosyada seçilebilir metin kalmaz. Yeniden aranabilir metne ihtiyacınız olursa, karartılmış dosyayı OCR PDF'ten geçirin; siyah işaretler siyah kalır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF'i Taranmış PDF'e Dönüştür",
+      "summary": "Her sayfayı, taranmış bir belge gibi görsele dönüştürün.",
+      "action": "Taranmış PDF Oluştur",
+      "title": "PDF'i Taranmış PDF'e Dönüştür — Yüklemesiz | Fizzdoc",
+      "description": "Bir PDF'i yalnızca görsellerden oluşan taranmış bir PDF'e dönüştürün: renkli, siyah beyaz, ya da tarayıcı görünümüyle. Tarayıcıda çalışır; yükleme yok.",
+      "h1": "Bir PDF'i taranmış PDF'e dönüştürün",
+      "lede": "Her sayfa bir görsele dönüşür, bu yüzden metin seçilemez veya düzenlenemez. Renkleri koruyun, siyah beyaza geçin, ya da taranmış görünüm için hafif bir eğiklik ve kağıt dokusu ekleyin.",
+      "steps": [
+        "Bir PDF dosyası ekleyin.",
+        "Kaliteyi ve görünümü seçin: renkli, siyah beyaz, ya da taranmış.",
+        "“Taranmış PDF Oluştur”a tıklayıp indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Neden taranmış bir PDF isteyeyim ki?",
+          "Bazı kurumlar ve portallar taranmış kopya ister ve yalnızca görsellerden oluşan bir PDF, metnin kolayca kopyalanmasını veya düzenlenmesini engeller. Ayrıca form alanlarını ve yorumları da sayfada göründüğü hale düzleştirir."
+        ],
+        [
+          "Dosya büyür mü?",
+          "Genellikle evet, çünkü sayfalar görsel olarak saklanır. Standart kalite (150 DPI) dosyayı küçük tutar; yüksek kalite (300 DPI) küçük yazıları bile keskin tutar."
         ],
         [
           "Fizzdoc ücretsiz mi?",

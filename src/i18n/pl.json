@@ -3,7 +3,7 @@
     "nav.label": "Menu główne",
     "nav.home": "Strona główna Fizzdoc",
     "nav.theme": "Zmień motyw kolorystyczny",
-    "nav.star": "★ Gwiazdka",
+    "nav.star": "Gwiazdka",
     "nav.starAria": "Dodaj gwiazdkę Fizzdoc na GitHub",
     "lang.label": "Język",
     "lang.tip": "Wolisz inny język? Wybierz go tutaj.",
@@ -98,6 +98,12 @@
     "ws.startAt": "Zacznij od",
     "ws.targetKb": "Maks. rozmiar pliku (KB)",
     "ws.targetAny": "Bez limitu",
+    "ws.dpiStandard": "Standardowa (mniejszy plik)",
+    "ws.dpiHigh": "Wysoka (ostrzejszy drobny druk)",
+    "ws.look": "Wygląd",
+    "ws.lookColor": "Kolor",
+    "ws.lookGray": "Czarno-biały",
+    "ws.lookScanned": "Zeskanowany (szary, lekko przekrzywiony)",
     "ws.wmText": "Tekst znaku wodnego",
     "ws.wmDefault": "POUFNE",
     "ws.opacity": "Krycie",
@@ -187,6 +193,14 @@
     "ocr.copyAll": "Kopiuj cały tekst",
     "ocr.copied": "Skopiowano",
     "ocr.text": "Rozpoznany tekst",
+    "rd.find": "Znajdź słowo lub numer do ukrycia",
+    "rd.markAll": "Zaznacz wszystko",
+    "rd.clear": "Wyczyść wszystko",
+    "rd.count": "Zaznaczone obszary: {n}",
+    "rd.found": "Zaznaczone dopasowania: {n}",
+    "rd.none": "Brak dopasowań dla „{text}”",
+    "rd.remove": "Usuń ten znacznik",
+    "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre.",
     "footer.madeBy": "Zaprojektował i zbudował",
     "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie"
   },
@@ -561,6 +575,70 @@
         [
           "Czy oryginalny tekst jest usuwany?",
           "Oryginalny tekst zostaje zamalowany na stronie, a nowy tekst jest rysowany na wierzchu. Dla informacji wrażliwych, które muszą całkiem zniknąć z pliku, usuń zamiast tego stronę albo odtwórz dokument od nowa."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "Cenzuruj PDF",
+      "summary": "Zaczernij tekst, podpisy albo zdjęcia, żeby zniknęły na dobre.",
+      "action": "Zapisz ocenzurowany PDF",
+      "title": "Cenzurowanie PDF Online — Usuń Tekst na Zawsze, Bez Wysyłki | Fizzdoc",
+      "description": "Zaczernij imiona, numery, podpisy albo zdjęcia w PDF i zapisz kopię, w której naprawdę znikają. Działa w przeglądarce; nic nie jest przesyłane. Za darmo.",
+      "h1": "Cenzuruj PDF: zaczernij cokolwiek na zawsze",
+      "lede": "Przeciągnij po tym, co ma zniknąć, albo wyszukaj imię lub numer i zaznacz każde dopasowanie. Po zapisaniu każda strona staje się obrazem, więc ukrytego tekstu nie da się skopiować ani odzyskać.",
+      "steps": [
+        "Dodaj jeden plik PDF.",
+        "Przeciągnij po stronie, aby zakryć obszar, albo wpisz słowo i kliknij „Zaznacz wszystko”.",
+        "Wybierz jakość i wygląd, a potem kliknij „Zapisz ocenzurowany PDF” i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy ocenzurowany tekst naprawdę znika?",
+          "Tak. Fizzdoc rysuje każdą stronę od nowa jako obraz z wypalonymi czarnymi znacznikami i buduje z tych obrazów nowy PDF. Oryginalny tekst, czcionki i metadane dokumentu nie są kopiowane, więc nic pod znacznikiem nie da się zaznaczyć, wyszukać ani odzyskać."
+        ],
+        [
+          "Czy mogę nadal przeszukiwać lub kopiować resztę tekstu?",
+          "Nie. Każda strona staje się obrazem, więc zapisany plik nie ma tekstu do zaznaczenia. Jeśli znów potrzebujesz przeszukiwalnego tekstu, przepuść ocenzurowany plik przez OCR PDF; czarne znaczniki zostaną czarne."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF na Zeskanowany PDF",
+      "summary": "Zamień każdą stronę w obraz, jak zeskanowany dokument.",
+      "action": "Utwórz zeskanowany PDF",
+      "title": "PDF na Zeskanowany PDF — Wygląd Skanu, Bez Wysyłania | Fizzdoc",
+      "description": "Zamień PDF w zeskanowany PDF złożony z obrazów: w kolorze, czarno-biały, albo z wyglądem skanera. Działa w przeglądarce; nic nie jest przesyłane.",
+      "h1": "Zamień PDF w zeskanowany PDF",
+      "lede": "Każda strona staje się obrazem, więc tekstu nie da się zaznaczyć ani edytować. Zachowaj kolory, przełącz na czarno-biały, albo dodaj lekkie przekrzywienie i ziarno papieru dla wyglądu skanu.",
+      "steps": [
+        "Dodaj jeden plik PDF.",
+        "Wybierz jakość i wygląd: kolor, czarno-biały, albo zeskanowany.",
+        "Kliknij „Utwórz zeskanowany PDF” i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Po co mi zeskanowany PDF?",
+          "Niektóre urzędy i portale proszą o zeskanowane kopie, a PDF złożony wyłącznie z obrazów utrudnia przypadkowe skopiowanie albo edycję tekstu. Spłaszcza też pola formularzy i komentarze do tego, co widać na stronie."
+        ],
+        [
+          "Czy plik zrobi się większy?",
+          "Zwykle tak, bo strony są zapisywane jako obrazy. Standardowa jakość (150 DPI) utrzymuje mały plik; wysoka jakość (300 DPI) utrzymuje ostry drobny druk."
         ],
         [
           "Czy Fizzdoc jest darmowy?",

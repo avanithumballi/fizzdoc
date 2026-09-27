@@ -227,6 +227,53 @@ test('converts PDFs to text, Markdown, Word and PowerPoint', async ({ page }) =>
   await expect(page.locator('#status')).toContainText('Run OCR PDF first');
 });
 
+/** All text pdf.js can still find in a PDF, page by page. */
+async function pdfText(bytes: Buffer) {
+  const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.mjs');
+  const doc = await getDocument({ data: new Uint8Array(bytes) }).promise;
+  const pages: string[] = [];
+  for (let n = 1; n <= doc.numPages; n++) pages.push((await (await doc.getPage(n)).getTextContent()).items.map((i) => ('str' in i ? i.str : '')).join('').trim());
+  return pages;
+}
+
+test('redacts marked areas for good and turns PDFs into scanned PDFs', async ({ page }) => {
+  const seen = watch(page);
+  await page.goto('/redact-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('rich-text'));
+  await page.getByPlaceholder('Find a word or number to hide').fill('section one');
+  await page.getByRole('button', { name: 'Mark all' }).click();
+  await expect(page.locator('.redact-count')).toHaveText('Matches marked: 1');
+  await expect(page.locator('.redact-page').first().locator('.redact-box')).toHaveCount(1);
+
+  // Drag a box over the title, then undo and redo it.
+  await page.locator('.redact-overlay').first().scrollIntoViewIfNeeded();
+  const box = (await page.locator('.redact-overlay').first().boundingBox())!;
+  await page.mouse.move(box.x + 20, box.y + 20);
+  await page.mouse.down();
+  await page.mouse.move(box.x + 200, box.y + 90, { steps: 5 });
+  await page.mouse.up();
+  await expect(page.locator('.redact-count')).toHaveText('Marked areas: 2');
+  await page.getByRole('button', { name: 'Undo' }).click();
+  await expect(page.locator('.redact-count')).toHaveText('Marked areas: 1');
+
+  await page.getByRole('button', { name: 'Save redacted PDF' }).click();
+  await expect(page.locator('#status')).toContainText('2 pages');
+  const redacted = await downloadBytes(page);
+  expect(redacted.name).toBe('rich-text-redacted.pdf');
+  expect(await pdfText(redacted.bytes)).toEqual(['', '']);
+
+  await page.goto('/pdf-to-scanned-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('rich-text'));
+  await expect(page.locator('select[name="look"]')).toHaveValue('scanned');
+  await page.getByRole('button', { name: 'Make scanned PDF' }).click();
+  await expect(page.locator('#status')).toContainText('2 pages');
+  const scanned = await downloadBytes(page);
+  expect(scanned.name).toBe('rich-text-scanned.pdf');
+  expect(await pdfText(scanned.bytes)).toEqual(['', '']);
+  expect(seen.violations).toEqual([]);
+  expect(seen.requests.filter((r) => !r.url.startsWith(page.url().split('/').slice(0, 3).join('/')))).toEqual([]);
+});
+
 test('prepares Word and Markdown documents for Save as PDF without running their scripts', async ({ page }) => {
   const seen = watch(page);
   await page.goto('/word-to-pdf/');
