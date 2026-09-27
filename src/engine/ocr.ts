@@ -19,7 +19,7 @@ export interface OcrResult {
   height: number;
 }
 
-// ponytail: one fixed core build (LSTM-only, SIMD) instead of feature-detecting at runtime — every
+// One fixed core build (LSTM-only, SIMD) instead of feature-detecting at runtime — every
 // browser this site otherwise supports (the build targets es2022) already has wasm SIMD.
 const ocrAsset = (name: string) => `${import.meta.env.BASE_URL}ocr/${name}`;
 const MAX_SIDE = 3000; // downscaling past this saves time on phone photos without hurting accuracy
@@ -191,7 +191,7 @@ export function placeWord(word: Word, font: PDFFont, scale: number, box: PageBox
 async function hasRealText(page: { getTextContent(): Promise<{ items: unknown[] }> }): Promise<boolean> {
   const content = await page.getTextContent();
   const text = content.items.map((item) => (item as { str?: string }).str ?? '').join('').trim();
-  // ponytail: a handful of stray glyphs (e.g. a page number pdf.js can already read) shouldn't
+  // A handful of stray glyphs (e.g. a page number pdf.js can already read) shouldn't
   // count as "has a text layer" and block OCR of an otherwise-scanned page.
   return text.length > 3;
 }

@@ -533,7 +533,7 @@ function excelSerialToIso(serial: number, date1904: boolean, withTime: boolean):
   if (date1904) {
     ms = Date.UTC(1904, 0, 1) + wholeDays * 86400000;
   } else if (wholeDays === 60) {
-    // ponytail: Excel labels this nonexistent date "2/29/1900"; there is no real Date for it.
+    // Excel labels this nonexistent date "2/29/1900"; there is no real Date for it.
     return withTime ? `1900-02-29 ${fractionToTime(fraction)}` : '1900-02-29';
   } else {
     const days = wholeDays > 60 ? wholeDays - 2 : wholeDays - 1;
