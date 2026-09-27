@@ -1,10 +1,12 @@
 import { readFileSync } from 'node:fs';
 import { strFromU8, unzipSync } from 'fflate';
 import { describe, expect, it } from 'vitest';
+import { fixIndic } from '../src/engine/convert';
 import {
   buildDocxPackage,
   buildPptxPackage,
   docxToHtml,
+  headingStyles,
   linesFromItems,
   paragraphsFromLines,
   parseXml,
@@ -122,6 +124,52 @@ describe('pdfToDocx text grouping (pure)', () => {
     const paragraphs = paragraphsFromLines(linesFromItems([item('• First point', 0, 700)]));
     expect(paragraphs[0].bullet).toBe(true);
     expect(paragraphs[0].text).toBe('First point');
+  });
+
+  it('gives every list item its own paragraph and keeps wrapped lines with their item', () => {
+    const paragraphs = paragraphsFromLines(
+      linesFromItems([
+        item('• Revenue up', 0, 700),
+        item('• Costs down and this item', 0, 686),
+        item('wraps onto a second line', 0, 672),
+        item('1. First step', 0, 640),
+        item('2. Second step', 0, 626),
+      ]),
+    );
+    expect(paragraphs.map((p) => p.text)).toEqual([
+      'Revenue up',
+      'Costs down and this item wraps onto a second line',
+      '1. First step',
+      '2. Second step',
+    ]);
+    expect(paragraphs.map((p) => p.bullet || p.numbered)).toEqual([true, true, true, true]);
+  });
+
+  it('ranks heading sizes and saves Title for a single opening line', () => {
+    const p = (text: string, fontSize: number): DocParagraph => ({ text, fontSize, bold: false, italic: false, bullet: false });
+    const body = 'Body text that is much longer than any heading on the page, as body text is.';
+    const doc = [p('Annual Report', 32), p('Summary', 24), p(body, 12), p('Details', 18), p(body, 12), p('Outlook', 24)];
+    expect(Object.fromEntries(headingStyles(doc, 12))).toEqual({ 32: 'Title', 24: 'Heading1', 18: 'Heading2' });
+    // Two lines at the largest size: they are headings, not a title.
+    expect(Object.fromEntries(headingStyles([p('Part one', 32), p(body, 12), p('Part two', 32)], 12))).toEqual({ 32: 'Heading1' });
+  });
+});
+
+describe('fixIndic', () => {
+  it('puts pre-base vowel signs back after their consonant when a PDF stores visual order', () => {
+    expect(fixIndic('दुिनया')).toBe('दुनिया');
+    expect(fixIndic('िविवध')).toBe('विविध');
+    expect(fixIndic('েবাঝা')).toBe('বোঝা'.normalize('NFC'));
+  });
+
+  it('leaves text that is already in reading order alone', () => {
+    for (const text of ['दुनिया', 'हिंदी भाषा', 'किताब', 'தமிழ் மொழி', 'বাংলা']) expect(fixIndic(text)).toBe(text);
+  });
+
+  it('removes the stray space after a Hindi half-letter', () => {
+    expect(fixIndic('नमस् ते')).toBe('नमस्ते');
+    // Tamil words often end with ், so a space there is real.
+    expect(fixIndic('தமிழ் மொழி')).toBe('தமிழ் மொழி');
   });
 });
 
