@@ -220,7 +220,7 @@ If Fizzdoc saved you from uploading something private, **[give it a star](https:
 ## 👋 About the author
 
 Fizzdoc is designed and built by **[Rishab Dugar](https://rishabdugarjain.in)**, a Senior Data Scientist in Bengaluru working on AI systems and production data platforms.
-It started from a simple frustration: why should a payslip or a passport scan travel to someone else's server just to be merged or compressed?
+It started from a simple frustration: why should a payslip or a passport scan travel to someone else's server just to be merged or compressed? (How it was built: [Independent work](#-independent-work).)
 
 <p>
   <a href="https://rishabdugarjain.in"><img src="https://img.shields.io/badge/Website-rishabdugarjain.in-111111?style=for-the-badge" alt="rishabdugarjain.in"></a>
