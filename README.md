@@ -126,14 +126,14 @@ When something genuinely can't be carried over (a digital signature, accessibili
 
 ## ⚙️ How it works
 
-```
-44 tools in src/site.ts ──▶ vite build ──▶ 720 static pages (16 languages) + sitemap + llms.txt ──▶ any static host
-                                                   │
-                                     your browser tab (nothing leaves it)
-         ┌─────────────────────┬──────────────────┼──────────────────┬──────────────────┐
-   qpdf (WebAssembly)      pdf.js            pdf-lib             Tesseract OCR        fflate
-   merge · split · lock    render · text     edit · stamp        image & PDF OCR      Word/Excel/PPT
-```
+<p align="center">
+  <a href="https://fizzdoc.com/architecture.html">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/architecture-dark.png">
+      <img src="docs/assets/architecture-light.png" width="900" alt="Fizzdoc architecture: a build step prerenders static pages to Cloudflare Pages; in the browser tab, the page controller hands files to the qpdf worker, pdf.js / pdf-lib / fflate and the OCR engine, and the result is saved straight back to the visitor's device">
+    </picture>
+  </a>
+</p>
 
 - **Static site, zero backend.** Nothing to scale, nothing to breach, nothing to pay for.
 - **Lazy engines.** First load is about 9 KB of gzipped app code; each engine downloads only when a tool needs it.
