@@ -134,6 +134,8 @@
     "error.BAD_IMAGE": "Una delle immagini non può essere letta. Prova con JPG o PNG.",
     "error.PDF_PASSWORD": "Questo PDF è protetto da password. Rimuovi prima la password con Sblocca PDF.",
     "error.BAD_SIZE": "La larghezza e l'altezza devono essere comprese tra 1 e 16.384 pixel.",
+    "error.BAD_SCALE": "La scala deve essere tra l’1% e il 1000%.",
+    "error.TOO_LARGE": "Questa dimensione è troppo grande da creare nel browser (oltre 100 megapixel). Scegli una dimensione più piccola.",
     "error.NO_TEXT": "Questo PDF non ha testo da estrarre — probabilmente è un'immagine scansionata. Esegui prima OCR PDF, poi riprova.",
     "error.NO_WATERMARK": "Digita il testo della filigrana (lettere, numeri e simboli comuni).",
     "error.ENGINE_FAILED": "Il motore PDF si è interrotto inaspettatamente — il file potrebbe essere troppo grande per questo dispositivo.",

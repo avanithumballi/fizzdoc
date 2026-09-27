@@ -10,7 +10,7 @@ export interface Output {
 }
 
 export class LocalError extends Error {
-  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'NO_TEXT' | 'NO_WATERMARK') {
+  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'BAD_SCALE' | 'TOO_LARGE' | 'NO_TEXT' | 'NO_WATERMARK') {
     super(code);
   }
 }

@@ -280,6 +280,7 @@ function hasMetadata(data: Uint8Array) {
 export async function convertImages(files: File[], options: ConvertOptions): Promise<Output> {
   if (options.width !== undefined && (options.width < 1 || options.width > 16384)) throw new LocalError('BAD_SIZE');
   if (options.height !== undefined && (options.height < 1 || options.height > 16384)) throw new LocalError('BAD_SIZE');
+  if (options.scale !== undefined && !(options.scale >= 1 && options.scale <= 1000)) throw new LocalError('BAD_SCALE');
 
   const used = new Set<string>();
   const outputs: { name: string; data: Uint8Array }[] = [];
@@ -295,6 +296,8 @@ export async function convertImages(files: File[], options: ConvertOptions): Pro
       throw new LocalError('BAD_IMAGE');
     }
     const size = targetSize(bitmap.width, bitmap.height, options);
+    // A browser tab can't hold much more than this in one picture; stop before it runs out of memory.
+    if (size.width * size.height > 100_000_000) throw new LocalError('TOO_LARGE');
     lastSize = size;
     const resized = size.width === bitmap.width && size.height === bitmap.height ? bitmap : await resizeBitmap(bitmap, size.width, size.height);
     const type = outputType(file, options.format);
@@ -319,18 +322,22 @@ export async function convertImages(files: File[], options: ConvertOptions): Pro
     outputs.push({ name: uniqueName(used, `${baseName(file)}.${extension}`), data });
   }
 
+  // Say what changed in size, so "nothing to gain" is visible too.
+  const saving =
+    totalAfter < totalBefore
+      ? ` · ${Math.round((1 - totalAfter / totalBefore) * 100)}% smaller`
+      : totalAfter === totalBefore ? ' · Already optimized' : '';
   if (outputs.length === 1) {
     const [only] = outputs;
     const ext = only.name.split('.').pop();
     return {
       blob: new Blob([only.data as Uint8Array<ArrayBuffer>]),
       name: `${baseName(files[0])}-${lastSize.width}x${lastSize.height}.${ext}`,
-      summary: `1 image · ${lastSize.width} × ${lastSize.height}`,
+      summary: `1 image · ${lastSize.width} × ${lastSize.height}${saving}`,
     };
   }
 
   const zipped = zipSync(Object.fromEntries(outputs.map(({ name, data }) => [name, [data, { level: 0 }]])) as Zippable);
-  const summary =
-    totalAfter < totalBefore ? `${outputs.length} images · ${Math.round((1 - totalAfter / totalBefore) * 100)}% smaller` : `${outputs.length} images`;
+  const summary = `${outputs.length} images${saving}`;
   return { blob: new Blob([zipped as Uint8Array<ArrayBuffer>], { type: 'application/zip' }), name: 'images-resized.zip', summary };
 }

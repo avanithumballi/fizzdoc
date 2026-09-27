@@ -134,6 +134,8 @@
     "error.BAD_IMAGE": "Nie udało się odczytać jednego z obrazów. Spróbuj z formatem JPG lub PNG.",
     "error.PDF_PASSWORD": "Ten plik PDF jest zabezpieczony hasłem. Najpierw usuń hasło za pomocą narzędzia Odblokuj PDF.",
     "error.BAD_SIZE": "Szerokość i wysokość muszą mieścić się w zakresie od 1 do 16 384 pikseli.",
+    "error.BAD_SCALE": "Skala musi wynosić od 1% do 1000%.",
+    "error.TOO_LARGE": "Ten rozmiar jest za duży, by utworzyć go w przeglądarce (ponad 100 megapikseli). Wybierz mniejszy rozmiar.",
     "error.NO_TEXT": "Ten plik PDF nie zawiera tekstu do wyodrębnienia — to prawdopodobnie zeskanowany obraz. Najpierw uruchom OCR PDF, a potem spróbuj ponownie.",
     "error.NO_WATERMARK": "Wpisz tekst znaku wodnego (litery, cyfry i popularne symbole).",
     "error.ENGINE_FAILED": "Silnik PDF nieoczekiwanie się zatrzymał — plik może być zbyt duży dla tego urządzenia.",

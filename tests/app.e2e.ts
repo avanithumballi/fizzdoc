@@ -156,6 +156,15 @@ test('resizes and converts images with the chosen options', async ({ page }) => 
   await expect(page.locator('#status')).toContainText('60 × 40');
   expect((await downloadBytes(page)).name).toBe('photo-60x40.png');
 
+  // A scale outside 1–1000 % is refused up front instead of making a 1×1 image or exhausting memory.
+  await page.locator('input[name="width"]').fill('');
+  for (const scale of ['0', '-50', '99999']) {
+    await page.locator('input[name="scale"]').fill(scale);
+    await page.getByRole('button', { name: 'Resize images' }).click();
+    await expect(page.locator('#status')).toHaveText('The scale must be between 1% and 1000%.');
+  }
+  await page.locator('input[name="scale"]').fill('');
+
   await page.goto('/convert-image/');
   await page.locator('#file-input').setInputFiles([file('photo.png'), file('photo.jpg')]);
   await page.locator('input[name="quality"]').fill('50');

@@ -134,6 +134,8 @@
     "error.BAD_IMAGE": "Không thể đọc một trong các hình ảnh. Hãy thử dùng JPG hoặc PNG.",
     "error.PDF_PASSWORD": "Tệp PDF này được bảo vệ bằng mật khẩu. Hãy xóa mật khẩu bằng công cụ Mở khóa PDF trước.",
     "error.BAD_SIZE": "Chiều rộng và chiều cao đều phải nằm trong khoảng từ 1 đến 16.384 pixel.",
+    "error.BAD_SCALE": "Tỷ lệ phải nằm trong khoảng 1% đến 1000%.",
+    "error.TOO_LARGE": "Kích thước đó quá lớn để tạo trong trình duyệt (hơn 100 megapixel). Hãy chọn kích thước nhỏ hơn.",
     "error.NO_TEXT": "Tệp PDF này không có văn bản để trích xuất — có thể đây là bản quét dạng hình ảnh. Hãy chạy công cụ OCR PDF trước, rồi thử lại.",
     "error.NO_WATERMARK": "Nhập nội dung watermark (chữ cái, số và ký hiệu thông dụng).",
     "error.ENGINE_FAILED": "Công cụ xử lý PDF đã dừng đột ngột — tệp có thể quá lớn đối với thiết bị này.",

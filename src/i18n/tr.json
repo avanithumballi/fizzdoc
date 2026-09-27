@@ -134,6 +134,8 @@
     "error.BAD_IMAGE": "Görsellerden biri okunamadı. JPG veya PNG deneyin.",
     "error.PDF_PASSWORD": "Bu PDF parola korumalı. Önce Unlock PDF ile parolayı kaldırın.",
     "error.BAD_SIZE": "Genişlik ve yükseklik 1 ile 16.384 piksel arasında olmalı.",
+    "error.BAD_SCALE": "Ölçek %1 ile %1000 arasında olmalıdır.",
+    "error.TOO_LARGE": "Bu boyut tarayıcıda oluşturmak için çok büyük (100 megapikselden fazla). Daha küçük bir boyut seçin.",
     "error.NO_TEXT": "Bu PDF’de çıkarılacak metin yok — muhtemelen taranmış bir görüntü. Önce OCR PDF çalıştırın, ardından tekrar deneyin.",
     "error.NO_WATERMARK": "Filigran metnini yazın (harfler, rakamlar ve yaygın simgeler).",
     "error.ENGINE_FAILED": "PDF motoru beklenmedik şekilde durdu — dosya bu cihaz için çok büyük olabilir.",

@@ -168,6 +168,8 @@ export const UI = {
   'error.BAD_IMAGE': 'One of the images could not be read. Try JPG or PNG.',
   'error.PDF_PASSWORD': 'This PDF is password-protected. Remove the password with Unlock PDF first.',
   'error.BAD_SIZE': 'The width and height must each be between 1 and 16,384 pixels.',
+  'error.BAD_SCALE': 'The scale must be between 1% and 1000%.',
+  'error.TOO_LARGE': 'That size is too large to create in a browser (over 100 megapixels). Choose a smaller size.',
   'error.NO_TEXT': 'This PDF has no text to extract — it is probably a scanned image. Run OCR PDF first, then try again.',
   'error.NO_WATERMARK': 'Type the watermark text (letters, numbers and common symbols).',
   'error.ENGINE_FAILED': 'The PDF engine stopped unexpectedly — the file may be too large for this device.',
