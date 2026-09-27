@@ -5,12 +5,14 @@
   </picture>
 </p>
 
-<h3 align="center">The open-source iLovePDF alternative that never sees your files.</h3>
+<h3 align="center">Free, private tools for PDF, images, audio, Word, Excel and PowerPoint that never see your files.</h3>
 
 <p align="center">
-  51 PDF, Word, Excel, PowerPoint, image and audio tools — edit, redact, compress, merge, convert, OCR —<br>
-  running <strong>100% in your browser</strong>. No uploads. No sign-up. No watermark. 16 languages.
+  51 tools — compress, convert, edit, redact, merge, split, cut, OCR — running <strong>100% in your browser</strong>.<br>
+  <strong>No uploads. No sign-up. No watermark. No limits. Free forever. 16 languages.</strong>
 </p>
+
+<p align="center"><sub>The open-source alternative to iLovePDF, Smallpdf, TinyPNG and online MP3 cutters — without handing your files to anyone.</sub></p>
 
 <p align="center">
   <a href="https://fizzdoc.com"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
@@ -24,6 +26,7 @@
   <a href="https://github.com/kingrishabdugar/fizzdoc/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/kingrishabdugar/fizzdoc/ci.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-22c55e?style=flat-square" alt="Apache-2.0 license"></a>
   <img src="https://img.shields.io/badge/bytes%20uploaded-0-16a34a?style=flat-square" alt="0 bytes uploaded">
+  <img src="https://img.shields.io/badge/price-free%20forever-16a34a?style=flat-square" alt="Free forever">
   <img src="https://img.shields.io/badge/tools-51-e5322d?style=flat-square" alt="51 tools">
   <img src="https://img.shields.io/badge/languages-16-2f6fdb?style=flat-square" alt="16 languages">
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-8b5cf6?style=flat-square" alt="PRs welcome"></a>
@@ -45,7 +48,7 @@
 
 ## ✨ Why Fizzdoc
 
-Most free online PDF tools ask you to upload your contract, payslip, bank statement or passport scan to someone else's server. **Fizzdoc doesn't have a server to upload to.** Everything runs inside your browser tab with WebAssembly and JavaScript, and the page's Content Security Policy blocks it from connecting to any other site — you can check it yourself in the Network tab.
+Most free online file tools ask you to upload your contract, payslip, bank statement, passport photo or voice recording to someone else's server. **Fizzdoc doesn't have a server to upload to.** Everything runs inside your browser tab with WebAssembly and JavaScript, and the page's Content Security Policy blocks it from connecting to any other site — you can check it yourself in the Network tab.
 
 | | **Fizzdoc** | iLovePDF | Smallpdf | Adobe online | Stirling-PDF |
 |---|:---:|:---:|:---:|:---:|:---:|
@@ -54,6 +57,8 @@ Most free online PDF tools ask you to upload your contract, payslip, bank statem
 | No account, no daily limits, no watermark | ✅ | ⚠️ free tier limits | ⚠️ free tier limits | ⚠️ sign-in for many tools | ✅ |
 | Nothing to install or host | ✅ | ✅ | ✅ | ✅ | ⚠️ self-host or install the desktop app |
 | Works on phones | ✅ | ✅ | ✅ | ✅ | ✅ |
+| PDF, image, audio and Office tools in one place | ✅ | ⚠️ mostly PDF | ⚠️ mostly PDF | ⚠️ mostly PDF | ⚠️ mostly PDF |
+| Free forever, no premium tier | ✅ | ❌ paid plans | ❌ paid plans | ❌ paid plans | ⚠️ free core, paid enterprise features |
 
 <p align="center">
   <img src="docs/assets/demo.gif" width="860" alt="Fizzdoc demo: compress, edit PDF text, select text in a photo with OCR, Hindi interface, dark mode">
@@ -88,6 +93,23 @@ Most free online PDF tools ask you to upload your contract, payslip, bank statem
   </tr>
 </table>
 
+## 🔎 Popular tasks
+
+| I want to… | Use |
+|---|---|
+| Get a photo or signature **under 20 / 50 / 100 KB** for an exam, job or government form | [Compress image to 20 KB](https://fizzdoc.com/compress-image-to-20kb/) · [50 KB](https://fizzdoc.com/compress-image-to-50kb/) · [100 KB](https://fizzdoc.com/compress-image-to-100kb/) |
+| **Compress images without losing quality**, JPG, PNG or WebP, in bulk | [Compress Image](https://fizzdoc.com/compress-image/) |
+| **Cut an MP3**, trim a song or make a ringtone, with no quality loss | [Cut & Split Audio](https://fizzdoc.com/split-audio/) |
+| **Join MP3 or M4A** files or voice notes into one track | [Merge Audio](https://fizzdoc.com/merge-audio/) |
+| **Reduce PDF size** for email or an upload portal | [Compress PDF](https://fizzdoc.com/compress-pdf/) |
+| **Edit text** in a PDF, or **black out** personal details for good | [Edit PDF](https://fizzdoc.com/edit-pdf/) · [Redact PDF](https://fizzdoc.com/redact-pdf/) |
+| Turn a PDF into an **editable Word** file, or Word into PDF | [PDF to Word](https://fizzdoc.com/pdf-to-word/) · [Word to PDF](https://fizzdoc.com/word-to-pdf/) |
+| **Remove the password** from a bank statement, or add one | [Unlock PDF](https://fizzdoc.com/unlock-pdf/) · [Protect PDF](https://fizzdoc.com/protect-pdf/) |
+| **Copy text** from a scanned PDF, a photo or a screenshot | [OCR PDF](https://fizzdoc.com/ocr-pdf/) · [Image to Text](https://fizzdoc.com/image-to-text/) |
+| Combine **photos or screenshots into one PDF** | [JPG to PDF](https://fizzdoc.com/jpg-to-pdf/) · [PNG to PDF](https://fizzdoc.com/png-to-pdf/) |
+| Convert **everyday formats**: PNG ↔ JPG, WebP → JPG, Excel ↔ CSV | [Convert Image](https://fizzdoc.com/convert-image/) · [Excel to CSV](https://fizzdoc.com/excel-to-csv/) · [CSV to Excel](https://fizzdoc.com/csv-to-excel/) |
+| **Remove hidden author and company names** before sharing an Office file or PDF | [Word](https://fizzdoc.com/remove-word-metadata/) · [Excel](https://fizzdoc.com/remove-excel-metadata/) · [PowerPoint](https://fizzdoc.com/remove-powerpoint-metadata/) · [PDF](https://fizzdoc.com/remove-pdf-metadata/) |
+
 ## 🧰 All 51 tools
 
 | Format | Tools |
@@ -105,6 +127,15 @@ Most free online PDF tools ask you to upload your contract, payslip, bank statem
 **Languages:** English · हिन्दी · বাংলা · मराठी · தமிழ் · తెలుగు · Español · Português · Français · Deutsch · Italiano · Nederlands · Polski · Türkçe · Bahasa Indonesia · Tiếng Việt — [add yours](CONTRIBUTING.md#-translate-fizzdoc-no-coding-needed).
 
 ## 🔒 Private by design — verify it yourself
+
+Safe for bank statements, ID cards, payslips, medical records and client files, because:
+
+- **No uploads, ever.** There is no upload endpoint and no backend that could receive a file.
+- **The browser enforces it.** Every page ships a Content Security Policy (`connect-src 'self'`) that blocks connections to any other site.
+- **No account, no cookies, no analytics, no ads, no trackers.** The only things stored are your theme and whether you've seen the language tip.
+- **Nothing is kept.** Close the tab and your file, passwords and results are gone.
+
+Check it yourself:
 
 1. Open any tool, then your browser's developer tools → **Network**.
 2. Run a job.
@@ -151,9 +182,9 @@ Yes. There is no server that receives files: the site is static, and every page 
 </details>
 
 <details>
-<summary><strong>How is it free? What's the catch?</strong></summary>
+<summary><strong>Is it really free forever? What's the catch?</strong></summary>
 
-There isn't one. Your browser does the work, so there are no servers to pay for. No account, no daily limit, no watermark, no ads.
+There isn't one. Your browser does the work, so Fizzdoc is just static files that cost almost nothing to host — there are no servers to pay for. No account, no daily limit, no watermark, no ads, no premium tier. And it's open source under Apache-2.0, so anyone can run their own copy.
 </details>
 
 <details>
@@ -165,7 +196,7 @@ It works in any modern browser on phones, tablets and desktops. An installable o
 <details>
 <summary><strong>What doesn't it do (yet)?</strong></summary>
 
-OCR is English-only for now, PowerPoint → PDF and legacy .doc/.xls/.ppt aren't supported, and the PDF text editor covers original text rather than removing it (so it isn't redaction). See the roadmap below.
+OCR is English-only for now, audio tools handle MP3 and M4A only, and PowerPoint → PDF and legacy .doc/.xls/.ppt aren't supported. To hide text for good, use [Redact PDF](https://fizzdoc.com/redact-pdf/) rather than the text editor, which covers text instead of removing it. See the roadmap below.
 </details>
 
 ## 🚀 Run it locally
@@ -209,7 +240,8 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. First-time contributors 
 - [ ] OCR in more languages, downloaded on demand
 - [ ] Layout-faithful PDF → Word (tables, columns, images)
 - [ ] Fill PDF forms
-- [ ] Redact PDF (truly remove text, not just cover it)
+- [ ] More audio formats (WAV, OPUS, WebM) and conversion to MP3 or M4A
+- [ ] Remove image background
 
 Vote with a 👍 on the [issues](https://github.com/kingrishabdugar/fizzdoc/issues) you want most.
 
@@ -279,4 +311,4 @@ Familiar interface patterns, such as a grid of tools per format, drag-and-drop u
 
 [Apache-2.0](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). You're free to use, modify and share Fizzdoc, including commercially, as long as you keep the copyright and the [NOTICE](NOTICE) file crediting the original project in every copy or derivative. Fizzdoc stands on the shoulders of the projects listed in [Credits](#-credits) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Product names mentioned in this README are trademarks of their owners and are used only for comparison.
 
-<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF offline, private PDF converter, PDF to Word, OCR, iLovePDF alternative, Smallpdf alternative, open-source PDF tools, WebAssembly PDF, client-side document converter.</sub></p>
+<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF free, PDF to Word, redact PDF, OCR, compress image without losing quality, reduce photo size to 50 KB, image resizer, JPG to PNG, WebP to JPG, cut MP3 online free, merge MP3, audio trimmer, Word to PDF, Excel to CSV, remove metadata, iLovePDF alternative, Smallpdf alternative, TinyPNG alternative, private file converter, no upload, free forever, open-source, WebAssembly, client-side.</sub></p>
