@@ -96,6 +96,8 @@
     "ws.style": "Stil",
     "ws.pageOf": "Sayfa 1 / 10",
     "ws.startAt": "Başlangıç",
+    "ws.targetKb": "Maks. dosya boyutu (KB)",
+    "ws.targetAny": "Sınır yok",
     "ws.wmText": "Filigran metni",
     "ws.wmDefault": "CONFIDENTIAL",
     "ws.opacity": "Saydamlık",
@@ -136,6 +138,8 @@
     "error.PDF_PASSWORD": "Bu PDF parola korumalı. Önce Unlock PDF ile parolayı kaldırın.",
     "error.BAD_SIZE": "Genişlik ve yükseklik 1 ile 16.384 piksel arasında olmalı.",
     "error.BAD_SCALE": "Ölçek %1 ile %1000 arasında olmalıdır.",
+    "error.BAD_TARGET": "Boyut sınırı en az 5 KB olmalıdır.",
+    "error.TARGET_TOO_SMALL": "Bu sınır, fotoğrafı okunmaz hale getirmeden bu görsel için çok küçük. Daha büyük bir sınır deneyin; çoğu form 50–200 KB kabul eder.",
     "error.TOO_LARGE": "Bu boyut tarayıcıda oluşturmak için çok büyük (100 megapikselden fazla). Daha küçük bir boyut seçin.",
     "error.NO_TEXT": "Bu PDF’de çıkarılacak metin yok — muhtemelen taranmış bir görüntü. Önce OCR PDF çalıştırın, ardından tekrar deneyin.",
     "error.NO_WATERMARK": "Filigran metnini yazın (harfler, rakamlar ve yaygın simgeler).",
@@ -889,6 +893,102 @@
         [
           "Konum bilgisi kaldırılıyor mu?",
           "Evet. Yeniden kodlama, GPS konumu ve kamera bilgileri gibi gizli EXIF meta verilerini kaldırır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Görseli 20 KB'a Sıkıştır",
+      "summary": "Bir fotoğrafı veya imzayı çevrimiçi form için 20 KB'ın altına indirin.",
+      "action": "Görselleri Sıkıştır",
+      "title": "Görseli 20 KB'a Sıkıştır — JPG, Yükleme Yok | Fizzdoc",
+      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 20 KB'ın altına indirin. Hiçbir şey yüklenmez.",
+      "h1": "Bir görseli 20 KB'ın altına sıkıştırma",
+      "lede": "Formlar genellikle 20 KB'ın altında bir fotoğraf veya imza ister. Fizzdoc fotoğrafı olabildiğince büyük ve net tutar, JPG kalitesini yalnızca gerektiği kadar kademeli olarak düşürür ve fotoğrafınızı asla yüklemez.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin (JPG, PNG, WebP veya telefon fotoğrafı).",
+        "Limiti kontrol edin (20 KB önceden dolduruldu; formunuz farklı bir boyut istiyorsa değiştirin).",
+        "“Görselleri Sıkıştır”a tıklayın ve sonucu indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Fotoğrafı nasıl net tutuyor?",
+          "Mesajlaşma uygulamaları gibi, önce fotoğrafın uzun kenarını yaklaşık 1600 piksel olarak tutar ve JPG kalitesini kademeli olarak düşürür — fotoğraf 1000 piksel veya daha büyük olduğu sürece kalite hiçbir zaman %50'nin altına inmez. Boyut hâlâ büyükse ancak o zaman görseli küçültür."
+        ],
+        [
+          "Formum tam bir piksel boyutu da istiyorsa?",
+          "Önce Resize Image ile formun istediği genişlik ve yüksekliği ayarlayın, ardından sonucu burada sıkıştırın."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Görseli 50 KB'a Sıkıştır",
+      "summary": "Bir fotoğrafı veya imzayı çevrimiçi form için 50 KB'ın altına indirin.",
+      "action": "Görselleri Sıkıştır",
+      "title": "Görseli 50 KB'a Sıkıştır — JPG, Yükleme Yok | Fizzdoc",
+      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 50 KB'ın altına indirin. Hiçbir şey yüklenmez.",
+      "h1": "Bir görseli 50 KB'ın altına sıkıştırma",
+      "lede": "Formlar genellikle 50 KB'ın altında bir fotoğraf veya imza ister. Fizzdoc fotoğrafı olabildiğince büyük ve net tutar, JPG kalitesini yalnızca gerektiği kadar kademeli olarak düşürür ve fotoğrafınızı asla yüklemez.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin (JPG, PNG, WebP veya telefon fotoğrafı).",
+        "Limiti kontrol edin (50 KB önceden dolduruldu; formunuz farklı bir boyut istiyorsa değiştirin).",
+        "“Görselleri Sıkıştır”a tıklayın ve sonucu indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Fotoğrafı nasıl net tutuyor?",
+          "Mesajlaşma uygulamaları gibi, önce fotoğrafın uzun kenarını yaklaşık 1600 piksel olarak tutar ve JPG kalitesini kademeli olarak düşürür — fotoğraf 1000 piksel veya daha büyük olduğu sürece kalite hiçbir zaman %50'nin altına inmez. Boyut hâlâ büyükse ancak o zaman görseli küçültür."
+        ],
+        [
+          "Formum tam bir piksel boyutu da istiyorsa?",
+          "Önce Resize Image ile formun istediği genişlik ve yüksekliği ayarlayın, ardından sonucu burada sıkıştırın."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Görseli 100 KB'a Sıkıştır",
+      "summary": "Bir fotoğrafı veya imzayı çevrimiçi form için 100 KB'ın altına indirin.",
+      "action": "Görselleri Sıkıştır",
+      "title": "Görseli 100 KB'a Sıkıştır — JPG, Yükleme Yok | Fizzdoc",
+      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 100 KB'ın altına indirin. Hiçbir şey yüklenmez.",
+      "h1": "Bir görseli 100 KB'ın altına sıkıştırma",
+      "lede": "Formlar genellikle 100 KB'ın altında bir fotoğraf veya imza ister. Fizzdoc fotoğrafı olabildiğince büyük ve net tutar, JPG kalitesini yalnızca gerektiği kadar kademeli olarak düşürür ve fotoğrafınızı asla yüklemez.",
+      "steps": [
+        "Bir veya daha fazla görsel ekleyin (JPG, PNG, WebP veya telefon fotoğrafı).",
+        "Limiti kontrol edin (100 KB önceden dolduruldu; formunuz farklı bir boyut istiyorsa değiştirin).",
+        "“Görselleri Sıkıştır”a tıklayın ve sonucu indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Fotoğrafı nasıl net tutuyor?",
+          "Mesajlaşma uygulamaları gibi, önce fotoğrafın uzun kenarını yaklaşık 1600 piksel olarak tutar ve JPG kalitesini kademeli olarak düşürür — fotoğraf 1000 piksel veya daha büyük olduğu sürece kalite hiçbir zaman %50'nin altına inmez. Boyut hâlâ büyükse ancak o zaman görseli küçültür."
+        ],
+        [
+          "Formum tam bir piksel boyutu da istiyorsa?",
+          "Önce Resize Image ile formun istediği genişlik ve yüksekliği ayarlayın, ardından sonucu burada sıkıştırın."
         ],
         [
           "Fizzdoc ücretsiz mi?",

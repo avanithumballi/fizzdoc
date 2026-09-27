@@ -96,6 +96,8 @@
     "ws.style": "Stile",
     "ws.pageOf": "Pagina 1 di 10",
     "ws.startAt": "Inizia da",
+    "ws.targetKb": "Dimensione massima file (KB)",
+    "ws.targetAny": "Nessun limite",
     "ws.wmText": "Testo della filigrana",
     "ws.wmDefault": "RISERVATO",
     "ws.opacity": "Opacità",
@@ -136,6 +138,8 @@
     "error.PDF_PASSWORD": "Questo PDF è protetto da password. Rimuovi prima la password con Sblocca PDF.",
     "error.BAD_SIZE": "La larghezza e l'altezza devono essere comprese tra 1 e 16.384 pixel.",
     "error.BAD_SCALE": "La scala deve essere tra l’1% e il 1000%.",
+    "error.BAD_TARGET": "Il limite di dimensione deve essere di almeno 5 KB.",
+    "error.TARGET_TOO_SMALL": "Questo limite è troppo basso per questa immagine senza renderla illeggibile. Prova un limite più alto; la maggior parte dei moduli accetta 50–200 KB.",
     "error.TOO_LARGE": "Questa dimensione è troppo grande da creare nel browser (oltre 100 megapixel). Scegli una dimensione più piccola.",
     "error.NO_TEXT": "Questo PDF non ha testo da estrarre — probabilmente è un'immagine scansionata. Esegui prima OCR PDF, poi riprova.",
     "error.NO_WATERMARK": "Digita il testo della filigrana (lettere, numeri e simboli comuni).",
@@ -889,6 +893,102 @@
         [
           "I dati di posizione vengono rimossi?",
           "Sì. La ricodifica elimina i metadati EXIF nascosti, come la posizione GPS e i dettagli della fotocamera."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Comprimi Immagine a 20 KB",
+      "summary": "Porta una foto o una firma sotto i 20 KB per un modulo online.",
+      "action": "Comprimi immagini",
+      "title": "Comprimi Immagine a 20 KB Online — JPG, Senza Upload | Fizzdoc",
+      "description": "Riduci una foto JPG, PNG o WebP a meno di 20 KB per esami e moduli della pubblica amministrazione, restando il più nitida possibile. Non viene caricato nulla.",
+      "h1": "Comprimere un'immagine a meno di 20 KB",
+      "lede": "I moduli spesso chiedono una foto o una firma sotto i 20 KB. Fizzdoc mantiene la foto il più grande e nitida possibile, abbassa la qualità JPG solo quanto serve e non carica mai la tua foto.",
+      "steps": [
+        "Aggiungi una o più immagini (JPG, PNG, WebP o una foto dal telefono).",
+        "Controlla il limite (20 KB è già impostato; cambialo se il tuo modulo chiede una dimensione diversa).",
+        "Clicca su “Comprimi immagini” e scarica il risultato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Come mantiene nitida la foto?",
+          "Come nelle app di messaggistica, prima mantiene la foto a circa 1600 pixel sul lato più lungo e abbassa la qualità JPG a step, senza mai scendere sotto il 50% finché la foto è di 1000 pixel o più. Solo se è ancora troppo grande riduce le dimensioni dell'immagine."
+        ],
+        [
+          "E se il mio modulo richiede anche una dimensione esatta in pixel?",
+          "Usa prima Resize Image per impostare la larghezza e l'altezza richieste dal modulo, poi comprimi qui il risultato."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Comprimi Immagine a 50 KB",
+      "summary": "Porta una foto o una firma sotto i 50 KB per un modulo online.",
+      "action": "Comprimi immagini",
+      "title": "Comprimi Immagine a 50 KB Online — JPG, Senza Upload | Fizzdoc",
+      "description": "Riduci una foto JPG, PNG o WebP a meno di 50 KB per esami e moduli della pubblica amministrazione, restando il più nitida possibile. Non viene caricato nulla.",
+      "h1": "Comprimere un'immagine a meno di 50 KB",
+      "lede": "I moduli spesso chiedono una foto o una firma sotto i 50 KB. Fizzdoc mantiene la foto il più grande e nitida possibile, abbassa la qualità JPG solo quanto serve e non carica mai la tua foto.",
+      "steps": [
+        "Aggiungi una o più immagini (JPG, PNG, WebP o una foto dal telefono).",
+        "Controlla il limite (50 KB è già impostato; cambialo se il tuo modulo chiede una dimensione diversa).",
+        "Clicca su “Comprimi immagini” e scarica il risultato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Come mantiene nitida la foto?",
+          "Come nelle app di messaggistica, prima mantiene la foto a circa 1600 pixel sul lato più lungo e abbassa la qualità JPG a step, senza mai scendere sotto il 50% finché la foto è di 1000 pixel o più. Solo se è ancora troppo grande riduce le dimensioni dell'immagine."
+        ],
+        [
+          "E se il mio modulo richiede anche una dimensione esatta in pixel?",
+          "Usa prima Resize Image per impostare la larghezza e l'altezza richieste dal modulo, poi comprimi qui il risultato."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Comprimi Immagine a 100 KB",
+      "summary": "Porta una foto o una firma sotto i 100 KB per un modulo online.",
+      "action": "Comprimi immagini",
+      "title": "Comprimi Immagine a 100 KB Online — JPG, Senza Upload | Fizzdoc",
+      "description": "Riduci una foto JPG, PNG o WebP a meno di 100 KB per esami e moduli della pubblica amministrazione, restando il più nitida possibile. Non viene caricato nulla.",
+      "h1": "Comprimere un'immagine a meno di 100 KB",
+      "lede": "I moduli spesso chiedono una foto o una firma sotto i 100 KB. Fizzdoc mantiene la foto il più grande e nitida possibile, abbassa la qualità JPG solo quanto serve e non carica mai la tua foto.",
+      "steps": [
+        "Aggiungi una o più immagini (JPG, PNG, WebP o una foto dal telefono).",
+        "Controlla il limite (100 KB è già impostato; cambialo se il tuo modulo chiede una dimensione diversa).",
+        "Clicca su “Comprimi immagini” e scarica il risultato."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Come mantiene nitida la foto?",
+          "Come nelle app di messaggistica, prima mantiene la foto a circa 1600 pixel sul lato più lungo e abbassa la qualità JPG a step, senza mai scendere sotto il 50% finché la foto è di 1000 pixel o più. Solo se è ancora troppo grande riduce le dimensioni dell'immagine."
+        ],
+        [
+          "E se il mio modulo richiede anche una dimensione esatta in pixel?",
+          "Usa prima Resize Image per impostare la larghezza e l'altezza richieste dal modulo, poi comprimi qui il risultato."
         ],
         [
           "Fizzdoc è gratuito?",
