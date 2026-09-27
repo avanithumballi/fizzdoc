@@ -181,7 +181,41 @@
     "ocr.copied": "Đã sao chép",
     "ocr.text": "Văn bản đã nhận dạng",
     "footer.madeBy": "Thiết kế và phát triển bởi",
-    "footer.feedback": "Báo lỗi hoặc đề xuất công cụ"
+    "footer.feedback": "Báo lỗi hoặc đề xuất công cụ",
+    "format.audio": "Âm thanh",
+    "ws.chooseAudio": "Chọn một tệp MP3 hoặc M4A",
+    "ws.chooseAudios": "Chọn các tệp MP3 hoặc M4A",
+    "error.AUDIO_UNSUPPORTED": "Không thể đọc tệp này dưới dạng âm thanh MP3 hoặc M4A. Các định dạng khác như WAV, OPUS và WebM đang được lên kế hoạch.",
+    "error.AUDIO_MIXED": "Chỉ ghép các tệp cùng một định dạng trong một lần: tất cả MP3 hoặc tất cả M4A.",
+    "error.AUDIO_MISMATCH": "Các tệp này dùng thông số âm thanh khác nhau (ví dụ 44,1 kHz và 48 kHz), nên chưa thể ghép mà không mã hóa lại.",
+    "error.AUDIO_EMPTY": "Hãy giữ lại ít nhất một đoạn có chứa âm thanh.",
+    "sum.file": "tệp",
+    "sum.files": "tệp",
+    "au.trim": "Cắt gọn",
+    "au.split": "Chia thành nhiều đoạn",
+    "au.play": "Phát",
+    "au.pause": "Tạm dừng",
+    "au.playSelection": "Phát đoạn đã chọn",
+    "au.start": "Bắt đầu",
+    "au.end": "Kết thúc",
+    "au.startHandle": "Điểm bắt đầu của đoạn cần giữ",
+    "au.endHandle": "Điểm kết thúc của đoạn cần giữ",
+    "au.setStart": "Bắt đầu tại đây",
+    "au.setEnd": "Kết thúc tại đây",
+    "au.addSplit": "Chia tại đây",
+    "au.every": "Mỗi",
+    "au.minutes": "phút",
+    "au.equal": "Chia đều",
+    "au.apply": "Áp dụng",
+    "au.clear": "Xóa điểm chia",
+    "au.keep": "Giữ lại",
+    "au.part": "Đoạn {n}",
+    "au.preview": "Xem trước",
+    "au.marker": "Điểm chia {n}",
+    "au.hint": "Bấm vào dạng sóng để chuyển tới đó rồi bấm Phát. Kéo các tay cầm, hoặc gõ đúng thời điểm như 1:30.5. “Bắt đầu tại đây”, “Kết thúc tại đây” và “Chia tại đây” sử dụng vị trí đang phát.",
+    "au.badTime": "Nhập thời điểm như 1:30 hoặc 1:30.5.",
+    "au.results": "Tệp của bạn",
+    "au.download": "Tải xuống"
   },
   "home": {
     "title": "Fizzdoc — Công cụ PDF, Word, Excel & Ảnh riêng tư, không tải lên",
@@ -1566,6 +1600,70 @@
         [
           "Có dùng được với Google Slides không?",
           "Có. Trong Google Slides, chọn Tệp → Tải xuống → Microsoft PowerPoint (.pptx), rồi thêm tệp đó vào đây. Không có gì được gửi tới Google hay tới chúng tôi."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Cắt âm thanh",
+      "summary": "Cắt gọn một tệp MP3 hoặc M4A, hoặc chia thành nhiều đoạn. Nghe thử trước khi lưu.",
+      "action": "Lưu âm thanh",
+      "title": "Cắt MP3 hoặc M4A Trực Tuyến — Cắt Âm Thanh, Không Tải Lên | Fizzdoc",
+      "description": "Cắt gọn một tệp MP3 hoặc M4A, hoặc chia thành nhiều đoạn tại đúng thời điểm. Xem dạng sóng, nghe từng đoạn, rồi lưu. Không mã hóa lại, không tải lên. Miễn phí.",
+      "h1": "Cắt, gọt và chia âm thanh ngay trong trình duyệt",
+      "lede": "Kéo các tay cầm trên dạng sóng hoặc gõ đúng thời điểm, nghe thử đoạn đã chọn, rồi lưu lại. Việc cắt được thực hiện mà không mã hóa lại, nên chất lượng âm thanh giữ nguyên như cũ.",
+      "steps": [
+        "Thêm một tệp MP3 hoặc M4A.",
+        "Chọn Cắt gọn để giữ lại một đoạn, hoặc Chia để cắt thành nhiều đoạn. Kéo các tay cầm hoặc gõ thời điểm như 1:30.5, rồi bấm Xem trước để nghe thử.",
+        "Bấm “Lưu âm thanh” và tải tệp của bạn xuống, hoặc tải tất cả các đoạn trong một tệp ZIP."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Cắt âm thanh có làm giảm chất lượng không?",
+          "Không. Fizzdoc cắt giữa các khối nhỏ mà âm thanh đã được lưu sẵn, nên không có gì bị mã hóa lại và mỗi đoạn nghe y hệt bản gốc. Điểm cắt nằm trong khoảng vài phần trăm giây so với thời điểm bạn chọn."
+        ],
+        [
+          "Những định dạng âm thanh nào hoạt động được?",
+          "MP3 và M4A (bao gồm ghi âm thoại trên iPhone và hầu hết các tệp nhạc). WAV, OPUS, WebM và các định dạng khác đang được lên kế hoạch, rất hoan nghênh đóng góp trên GitHub."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Ghép âm thanh",
+      "summary": "Ghép các tệp MP3 hoặc M4A thành một, theo thứ tự bạn chọn.",
+      "action": "Ghép âm thanh",
+      "title": "Ghép MP3 hoặc M4A Trực Tuyến — Không Tải Lên | Fizzdoc",
+      "description": "Ghép các tệp MP3 hoặc M4A thành một bản theo thứ tự bạn chọn, rồi nghe thử trước khi tải xuống. Không mã hóa lại, không tải lên, không cần đăng ký. Miễn phí.",
+      "h1": "Ghép các tệp âm thanh thành một",
+      "lede": "Thêm các tệp MP3 hoặc M4A của bạn, sắp xếp thứ tự rồi ghép thành một bản. Nghe thử kết quả trước khi tải xuống; không có gì bị mã hóa lại hay tải lên.",
+      "steps": [
+        "Thêm từ hai tệp MP3 trở lên, hoặc từ hai tệp M4A trở lên.",
+        "Sắp xếp thứ tự bằng các nút ↑ và ↓.",
+        "Bấm “Ghép âm thanh”, nghe thử kết quả rồi tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tôi có thể ghép một tệp MP3 với một tệp M4A không?",
+          "Chưa được. Chỉ ghép các tệp cùng một định dạng trong một lần. Việc chuyển đổi giữa các định dạng đang được lên kế hoạch, rất hoan nghênh đóng góp trên GitHub."
+        ],
+        [
+          "Vì sao báo rằng các tệp của tôi dùng thông số âm thanh khác nhau?",
+          "Các tệp được ghi ở tần số lấy mẫu khác nhau (ví dụ 44,1 kHz và 48 kHz) không thể ghép mà không mã hóa lại, điều mà Fizzdoc chưa hỗ trợ. Các tệp từ cùng một điện thoại, ứng dụng hoặc album hầu như luôn khớp nhau."
         ],
         [
           "Fizzdoc có miễn phí không?",
