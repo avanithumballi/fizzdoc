@@ -63,6 +63,18 @@ describe('docxToHtml', () => {
     await expect(docxToHtml(file('sheet.xlsx'))).rejects.toThrow('NOT_OFFICE');
   });
 
+  it('repeats the header and footer on every printed page, leaving out page-number lines', async () => {
+    const { html } = await docxToHtml(file('header-footer.docx'));
+    expect(html).toMatch(/<thead><tr><td>.*Jane Doe — Curriculum Vitae.*<\/td><\/tr><\/thead>/s);
+    expect(html).toMatch(/<tfoot><tr><td>.*Confidential.*<\/td><\/tr><\/tfoot>/s);
+    expect(html).not.toContain('Page 1');
+    expect(html).toMatch(/<tbody><tr><td>.*Experience.*<\/td><\/tr><\/tbody>/s);
+  });
+
+  it('keeps documents without a header or footer as plain flowing content', async () => {
+    expect((await docxToHtml(file('report.docx'))).html).not.toContain('page-frame"');
+  });
+
   it('converts the plain report fixture: heading, text and an inline image', async () => {
     const { html, title } = await docxToHtml(file('report.docx'));
     expect(title).toBe('Private title'); // docProps/core.xml dc:title, not the heading text
