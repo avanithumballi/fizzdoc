@@ -203,7 +203,41 @@
     "rd.remove": "Bu işareti kaldır",
     "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur.",
     "footer.madeBy": "Tasarlayan ve geliştiren",
-    "footer.feedback": "Hata bildir veya araç öner"
+    "footer.feedback": "Hata bildir veya araç öner",
+    "format.audio": "Ses",
+    "ws.chooseAudio": "Bir MP3 veya M4A dosyası seçin",
+    "ws.chooseAudios": "MP3 veya M4A dosyaları seçin",
+    "error.AUDIO_UNSUPPORTED": "Bu dosya MP3 veya M4A sesi olarak okunamadı. WAV, OPUS ve WebM gibi diğer formatlar planlanıyor.",
+    "error.AUDIO_MIXED": "Aynı anda tek bir tür dosyayı birleştirin: hepsi MP3 ya da hepsi M4A.",
+    "error.AUDIO_MISMATCH": "Bu dosyalar farklı ses ayarları kullanıyor (örneğin 44,1 kHz ve 48 kHz), bu yüzden henüz yeniden kodlama olmadan birleştirilemezler.",
+    "error.AUDIO_EMPTY": "İçinde biraz ses olan en az bir parça bırakın.",
+    "sum.file": "dosya",
+    "sum.files": "dosya",
+    "au.trim": "Kırp",
+    "au.split": "Parçalara böl",
+    "au.play": "Oynat",
+    "au.pause": "Duraklat",
+    "au.playSelection": "Seçimi oynat",
+    "au.start": "Başlangıç",
+    "au.end": "Bitiş",
+    "au.startHandle": "Tutulacak parçanın başlangıcı",
+    "au.endHandle": "Tutulacak parçanın bitişi",
+    "au.setStart": "Buradan başla",
+    "au.setEnd": "Burada bitir",
+    "au.addSplit": "Burada böl",
+    "au.every": "Her",
+    "au.minutes": "dk",
+    "au.equal": "Eşit parçalar",
+    "au.apply": "Uygula",
+    "au.clear": "Bölmeleri kaldır",
+    "au.keep": "Tut",
+    "au.part": "{n}. parça",
+    "au.preview": "Önizleme",
+    "au.marker": "Bölme noktası {n}",
+    "au.hint": "Oraya atlamak için dalga formuna tıklayın ve Oynat'a basın. Tutamaçları sürükleyin ya da 1:30.5 gibi tam zamanlar yazın. “Buradan başla”, “Burada bitir” ve “Burada böl” çalma konumunu kullanır.",
+    "au.badTime": "1:30 veya 1:30.5 gibi bir zaman yazın.",
+    "au.results": "Dosyalarınız",
+    "au.download": "İndir"
   },
   "home": {
     "title": "Fizzdoc — Gizli PDF, Word, Excel ve Görsel Araçları. Yükleme Yok.",
@@ -1748,6 +1782,70 @@
         [
           "Google Slaytlar ile çalışır mı?",
           "Evet. Google Slaytlar'da Dosya → İndir → Microsoft PowerPoint (.pptx) yolunu izleyin, sonra dosyayı buraya ekleyin. Google'a veya bize hiçbir şey gönderilmez."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Ses kes",
+      "summary": "Bir MP3 veya M4A'yı kırpın ya da parçalara bölün. Kaydetmeden önce dinleyin.",
+      "action": "Sesi Kaydet",
+      "title": "MP3 veya M4A Çevrimiçi Kes — Ses Kırp, Yükleme Yok | Fizzdoc",
+      "description": "Bir MP3 veya M4A'yı kırpın ya da tam zamanlarda parçalara bölün. Dalga formunu görün, dinleyin, sonra kaydedin. Yeniden kodlama yok, yükleme yok. Ücretsiz.",
+      "h1": "Tarayıcınızda ses kesin, kırpın ve bölün",
+      "lede": "Dalga formundaki tutamaçları sürükleyin ya da tam zamanlar yazın, seçtiğinizi dinleyin ve kaydedin. Kesimler yeniden kodlama yapılmadan gerçekleştirilir, bu yüzden ses kalitesi tıpatıp aynı kalır.",
+      "steps": [
+        "Bir MP3 veya M4A dosyası ekleyin.",
+        "Tek bir parçayı tutmak için Kırp'ı, birkaç parçaya bölmek için Böl'ü seçin. Tutamaçları sürükleyin ya da 1:30.5 gibi zamanlar yazın, dinlemek için Önizleme'ye basın.",
+        "“Sesi Kaydet”e tıklayın ve dosyanızı, ya da tüm parçaları tek bir ZIP içinde indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Kesme işlemi ses kalitesini düşürür mü?",
+          "Hayır. Fizzdoc, sesin zaten saklandığı küçük bloklar arasında keser, bu yüzden hiçbir şey yeniden kodlanmaz ve her parça orijinaliyle birebir aynı sesler. Kesimler, seçtiğiniz zamanın saniyenin birkaç yüzde biri yakınında gerçekleşir."
+        ],
+        [
+          "Hangi ses formatları çalışır?",
+          "MP3 ve M4A (iPhone sesli notları ve çoğu müzik dosyası dahil). WAV, OPUS, WebM ve diğerleri planlanıyor, GitHub'da yardım bekleniyor."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Ses birleştir",
+      "summary": "MP3 veya M4A dosyalarını seçtiğiniz sırayla tek dosyada birleştirin.",
+      "action": "Sesi Birleştir",
+      "title": "MP3 veya M4A Dosyalarını Çevrimiçi Birleştir — Yükleme Yok | Fizzdoc",
+      "description": "MP3 veya M4A dosyalarını seçtiğiniz sırayla tek bir parçada birleştirin, indirmeden önce dinleyin. Yeniden kodlama yok, yükleme yok, kayıt yok. Ücretsiz.",
+      "h1": "Ses dosyalarını tek dosyada birleştirin",
+      "lede": "MP3 veya M4A dosyalarınızı ekleyin, sıraya koyun ve tek bir parçada birleştirin. İndirmeden önce sonucu dinleyin; hiçbir şey yeniden kodlanmaz veya yüklenmez.",
+      "steps": [
+        "İki veya daha fazla MP3 dosyası, ya da iki veya daha fazla M4A dosyası ekleyin.",
+        "↑ ve ↓ düğmeleriyle sıraya koyun.",
+        "“Sesi Birleştir”e tıklayın, sonucu dinleyin ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Bir MP3'ü bir M4A ile birleştirebilir miyim?",
+          "Henüz değil. Aynı anda tek bir tür dosyayı birleştirin. Formatlar arası dönüştürme planlanıyor, GitHub'da yardım bekleniyor."
+        ],
+        [
+          "Dosyalarımın farklı ses ayarları kullandığı neden yazıyor?",
+          "Farklı örnekleme hızlarında (örneğin 44,1 kHz ve 48 kHz) kaydedilmiş dosyalar, Fizzdoc'un henüz yapmadığı yeniden kodlama olmadan birleştirilemez. Aynı telefondan, uygulamadan veya albümden gelen dosyalar neredeyse her zaman eşleşir."
         ],
         [
           "Fizzdoc ücretsiz mi?",

@@ -203,7 +203,41 @@
     "rd.remove": "Remover esta marca",
     "rd.hint": "Arraste sobre uma página para cobrir qualquer coisa: texto, uma assinatura, uma foto. Ao salvar, cada página vira uma imagem, então o que você cobriu some de vez.",
     "footer.madeBy": "Projetado e criado por",
-    "footer.feedback": "Relate um erro ou sugira uma ferramenta"
+    "footer.feedback": "Relate um erro ou sugira uma ferramenta",
+    "format.audio": "Áudio",
+    "ws.chooseAudio": "Escolher um arquivo MP3 ou M4A",
+    "ws.chooseAudios": "Escolher arquivos MP3 ou M4A",
+    "error.AUDIO_UNSUPPORTED": "Este arquivo não pôde ser lido como áudio MP3 ou M4A. Outros formatos como WAV, OPUS e WebM estão planejados.",
+    "error.AUDIO_MIXED": "Junte arquivos de um só tipo por vez: todos MP3 ou todos M4A.",
+    "error.AUDIO_MISMATCH": "Esses arquivos usam configurações de áudio diferentes (por exemplo 44.1 kHz e 48 kHz), então ainda não podem ser juntados sem recodificação.",
+    "error.AUDIO_EMPTY": "Mantenha pelo menos uma parte com algum áudio nela.",
+    "sum.file": "arquivo",
+    "sum.files": "arquivos",
+    "au.trim": "Cortar",
+    "au.split": "Dividir em partes",
+    "au.play": "Tocar",
+    "au.pause": "Pausar",
+    "au.playSelection": "Tocar seleção",
+    "au.start": "Início",
+    "au.end": "Fim",
+    "au.startHandle": "Início da parte a manter",
+    "au.endHandle": "Fim da parte a manter",
+    "au.setStart": "Começar aqui",
+    "au.setEnd": "Terminar aqui",
+    "au.addSplit": "Dividir aqui",
+    "au.every": "A cada",
+    "au.minutes": "min",
+    "au.equal": "Partes iguais",
+    "au.apply": "Aplicar",
+    "au.clear": "Remover divisões",
+    "au.keep": "Manter",
+    "au.part": "Parte {n}",
+    "au.preview": "Pré-visualizar",
+    "au.marker": "Ponto de divisão {n}",
+    "au.hint": "Clique na forma de onda para pular até lá e aperte Tocar. Arraste as alças, ou digite tempos exatos como 1:30.5. “Começar aqui”, “Terminar aqui” e “Dividir aqui” usam a posição de reprodução.",
+    "au.badTime": "Digite um tempo como 1:30 ou 1:30.5.",
+    "au.results": "Seus arquivos",
+    "au.download": "Baixar"
   },
   "home": {
     "title": "Fizzdoc — PDF, Word, Excel e Imagens Sem Upload",
@@ -1748,6 +1782,70 @@
         [
           "Funciona com Google Slides?",
           "Sim. No Google Slides, escolha Arquivo → Fazer download → Microsoft PowerPoint (.pptx), depois adicione esse arquivo aqui. Nada é enviado ao Google nem para nós."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim. Não é preciso criar conta, não há marca d'água nem limite diário. O Fizzdoc é open source sob a licença Apache-2.0."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Cortar áudio",
+      "summary": "Corte um MP3 ou M4A, ou divida em partes. Escute antes de salvar.",
+      "action": "Salvar áudio",
+      "title": "Cortar MP3 ou M4A Online — Recortar Áudio Sem Upload | Fizzdoc",
+      "description": "Corte um MP3 ou M4A, ou divida em partes em tempos exatos. Veja a forma de onda, escute cada parte e salve. Sem recodificação, sem upload. Grátis.",
+      "h1": "Corte, recorte e divida áudio no seu navegador",
+      "lede": "Arraste as alças na forma de onda ou digite tempos exatos, escute o que você escolheu e salve. Os cortes são feitos sem recodificação, então a qualidade do som continua exatamente igual.",
+      "steps": [
+        "Adicione um arquivo MP3 ou M4A.",
+        "Escolha Cortar para manter uma parte, ou Dividir para cortar em várias. Arraste as alças ou digite tempos como 1:30.5, e clique em Pré-visualizar para escutar.",
+        "Clique em “Salvar áudio” e baixe seu arquivo, ou todas as partes em um ZIP."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Cortar vai reduzir a qualidade do som?",
+          "Não. O Fizzdoc corta entre os pequenos blocos em que o áudio já está armazenado, então nada é recodificado e cada parte soa exatamente como o original. Os cortes ficam a poucos centésimos de segundo do tempo escolhido."
+        ],
+        [
+          "Quais formatos de áudio funcionam?",
+          "MP3 e M4A (incluindo memorandos de voz do iPhone e a maioria dos arquivos de música). WAV, OPUS, WebM e outros estão planejados, e ajuda no GitHub é bem-vinda."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim. Não é preciso criar conta, não há marca d'água nem limite diário. O Fizzdoc é open source sob a licença Apache-2.0."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Juntar áudio",
+      "summary": "Junte arquivos MP3 ou M4A em um só, na ordem que você escolher.",
+      "action": "Juntar áudio",
+      "title": "Juntar Arquivos MP3 ou M4A Online — Sem Upload | Fizzdoc",
+      "description": "Junte arquivos MP3 ou M4A em uma única faixa na ordem que você escolher, depois escute antes de baixar. Sem recodificação, sem upload, sem cadastro. Grátis.",
+      "h1": "Junte arquivos de áudio em um só",
+      "lede": "Adicione seus arquivos MP3 ou M4A, coloque-os em ordem e junte-os em uma única faixa. Escute o resultado antes de baixar; nada é recodificado ou enviado.",
+      "steps": [
+        "Adicione dois ou mais arquivos MP3, ou dois ou mais arquivos M4A.",
+        "Coloque-os na ordem certa com os botões ↑ e ↓.",
+        "Clique em “Juntar áudio”, escute o resultado e baixe."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Posso juntar um MP3 com um M4A?",
+          "Ainda não. Junte arquivos de um só tipo por vez. Converter entre formatos está planejado, e ajuda no GitHub é bem-vinda."
+        ],
+        [
+          "Por que diz que meus arquivos usam configurações de áudio diferentes?",
+          "Arquivos gravados com taxas de amostragem diferentes (por exemplo 44.1 kHz e 48 kHz) não podem ser juntados sem recodificação, algo que o Fizzdoc ainda não faz. Arquivos do mesmo telefone, app ou álbum quase sempre combinam."
         ],
         [
           "O Fizzdoc é gratuito?",

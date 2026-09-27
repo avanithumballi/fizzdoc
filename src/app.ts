@@ -78,8 +78,8 @@ function setUp(op: ToolOp) {
     );
   let files: File[] = [];
   let worker: Worker | undefined;
-  // Page counts shown next to the file name on page-range tools, so people know what they can pick.
-  const pageCounts = new WeakMap<File, number>();
+  // Shown next to the file name: page counts on page-range tools, durations on audio tools.
+  const notes = new WeakMap<File, string>();
   let counter: Worker | undefined;
   let localBusy = false;
   const busy = () => !!worker || localBusy;
@@ -88,6 +88,7 @@ function setUp(op: ToolOp) {
   type Editor = { save(options: Options, onProgress: (fraction: number) => void): Promise<Output>; destroy(): void };
   const EDITORS: Partial<Record<ToolOp, (file: File, viewer: HTMLElement) => Promise<Editor>>> = {
     'edit-pdf': async (file, view) => (await import('./tools/edit-pdf')).openEditor(file, view),
+    'audio-split': async (file, view) => (await import('./tools/audio-split')).openSplitter(file, view),
     'redact-pdf': async (file, view) => {
       const redactor = await (await import('./tools/redact-pdf')).openRedactor(file, view);
       return { save: (o, onProgress) => redactor.save(rasterOptions(o), onProgress), destroy: redactor.destroy };
@@ -151,6 +152,17 @@ function setUp(op: ToolOp) {
     },
     'edit-pdf': async (_, o) => (await editor!.ready).save(o, progressLabel),
     'redact-pdf': async (_, o) => (await editor!.ready).save(o, progressLabel),
+    'audio-split': async () => (await editor!.ready).save({}, progressLabel),
+    'audio-merge': async (f) => {
+      const { parseAudio, write, formatTime, extension } = await import('./engine/audio');
+      const tracks = await Promise.all(f.map(async (file) => parseAudio(new Uint8Array(await file.arrayBuffer()))));
+      const total = tracks.reduce((sum, track) => sum + track.duration, 0);
+      return {
+        blob: write(tracks.map((track) => ({ track, frames: track.frames }))),
+        name: `${baseName(f[0])}-merged.${extension(tracks[0])}`,
+        summary: `${tracks.length} files · ${formatTime(total, false)}`,
+      };
+    },
     'scan-pdf': async (f, o) => (await import('./engine/raster')).scanPdf(f[0], rasterOptions(o), progressLabel),
   };
 
@@ -193,9 +205,12 @@ function setUp(op: ToolOp) {
     status.dataset.tone = tone;
   };
 
+  let preview: HTMLAudioElement | undefined;
   function clearResult() {
     if (outputUrl) URL.revokeObjectURL(outputUrl);
     outputUrl = undefined;
+    preview?.remove();
+    preview = undefined;
     result.hidden = true;
     warnings.replaceChildren();
     if (op === 'image-ocr') viewer?.replaceChildren();
@@ -212,10 +227,8 @@ function setUp(op: ToolOp) {
         name.textContent = file.name;
         const size = document.createElement('span');
         size.className = 'file-size';
-        const count = pageCounts.get(file);
-        size.textContent = count
-          ? `${count} ${t(count === 1 ? 'sum.page' : 'sum.pages')} · ${formatSize(file.size)}`
-          : formatSize(file.size);
+        const note = notes.get(file);
+        size.textContent = note ? `${note} · ${formatSize(file.size)}` : formatSize(file.size);
         item.append(name, size);
         if (multiple && !busy()) enableReorder(item, index);
         const buttons: [string, string, () => void, boolean][] = [
@@ -290,13 +303,28 @@ function setUp(op: ToolOp) {
     clearResult();
     render();
     countPages();
+    if (document.body.dataset.format === 'audio') void timeAudio();
+  }
+
+  /** Reads each audio file's length for the list, and says straight away if one can't be used. */
+  async function timeAudio() {
+    const { parseAudio, formatTime } = await import('./engine/audio');
+    for (const file of files) {
+      if (notes.has(file)) continue;
+      try {
+        notes.set(file, formatTime(parseAudio(new Uint8Array(await file.arrayBuffer())).duration, false));
+      } catch (error) {
+        fail(error);
+      }
+    }
+    render();
   }
 
   function countPages() {
     counter?.terminate();
     counter = undefined;
     const file = files[0];
-    if (!pages || !file || pageCounts.has(file)) return;
+    if (!pages || !file || notes.has(file)) return;
     const current = new Worker(new URL('./engine/worker.ts', import.meta.url), { type: 'module' });
     counter = current;
     const done = () => {
@@ -306,7 +334,7 @@ function setUp(op: ToolOp) {
     current.onmessage = ({ data }: MessageEvent<FromWorker>) => {
       done();
       if (data.type !== 'count' || !data.pages) return;
-      pageCounts.set(file, data.pages);
+      notes.set(file, `${data.pages} ${t(data.pages === 1 ? 'sum.page' : 'sum.pages')}`);
       render();
     };
     current.onerror = done;
@@ -364,6 +392,13 @@ function setUp(op: ToolOp) {
     download.download = name;
     download.textContent = t('app.downloadExt', { ext: name.split('.').pop()!.toUpperCase() });
     say(t('app.done', { summary: localizeSummary(summary), size: formatSize(blob.size) }));
+    preview?.remove();
+    preview = undefined;
+    if (blob.type.startsWith('audio/')) {
+      // Listen before downloading.
+      preview = Object.assign(new Audio(outputUrl), { controls: true, className: 'audio-preview' });
+      result.prepend(preview);
+    }
     result.hidden = false;
     download.focus();
   }

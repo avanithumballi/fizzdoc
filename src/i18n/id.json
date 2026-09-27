@@ -203,7 +203,41 @@
     "rd.remove": "Hapus tanda ini",
     "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya.",
     "footer.madeBy": "Dirancang dan dibuat oleh",
-    "footer.feedback": "Laporkan bug atau usulkan alat"
+    "footer.feedback": "Laporkan bug atau usulkan alat",
+    "format.audio": "Audio",
+    "ws.chooseAudio": "Pilih file MP3 atau M4A",
+    "ws.chooseAudios": "Pilih file MP3 atau M4A",
+    "error.AUDIO_UNSUPPORTED": "File ini tidak dapat dibaca sebagai audio MP3 atau M4A. Format lain seperti WAV, OPUS, dan WebM sedang direncanakan.",
+    "error.AUDIO_MIXED": "Gabungkan file dari satu jenis dalam satu waktu: semua MP3 atau semua M4A.",
+    "error.AUDIO_MISMATCH": "File-file ini memakai pengaturan audio yang berbeda (misalnya 44,1 kHz dan 48 kHz), sehingga belum bisa digabungkan tanpa re-encoding.",
+    "error.AUDIO_EMPTY": "Sisakan setidaknya satu bagian yang masih berisi audio.",
+    "sum.file": "file",
+    "sum.files": "file",
+    "au.trim": "Pangkas",
+    "au.split": "Bagi menjadi beberapa bagian",
+    "au.play": "Putar",
+    "au.pause": "Jeda",
+    "au.playSelection": "Putar bagian yang dipilih",
+    "au.start": "Mulai",
+    "au.end": "Selesai",
+    "au.startHandle": "Awal bagian yang akan disimpan",
+    "au.endHandle": "Akhir bagian yang akan disimpan",
+    "au.setStart": "Mulai di sini",
+    "au.setEnd": "Selesai di sini",
+    "au.addSplit": "Bagi di sini",
+    "au.every": "Setiap",
+    "au.minutes": "mnt",
+    "au.equal": "Bagian sama besar",
+    "au.apply": "Terapkan",
+    "au.clear": "Hapus pembagian",
+    "au.keep": "Simpan",
+    "au.part": "Bagian {n}",
+    "au.preview": "Pratinjau",
+    "au.marker": "Titik pembagian {n}",
+    "au.hint": "Klik gelombang suara untuk melompat ke sana lalu tekan Putar. Seret gagang, atau ketik waktu yang tepat seperti 1:30.5. “Mulai di sini”, “Selesai di sini”, dan “Bagi di sini” menggunakan posisi putar saat ini.",
+    "au.badTime": "Ketik waktu seperti 1:30 atau 1:30.5.",
+    "au.results": "File Anda",
+    "au.download": "Unduh"
   },
   "home": {
     "title": "Fizzdoc — Alat PDF, Word, Excel & Gambar Privat, Tanpa Upload",
@@ -1748,6 +1782,70 @@
         [
           "Apakah bisa untuk Google Slides?",
           "Ya. Di Google Slides, pilih File → Download → Microsoft PowerPoint (.pptx), lalu tambahkan file itu di sini. Tidak ada yang dikirim ke Google atau ke kami."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Potong audio",
+      "summary": "Potong MP3 atau M4A, atau bagi menjadi beberapa bagian. Dengarkan sebelum menyimpan.",
+      "action": "Simpan Audio",
+      "title": "Potong MP3 atau M4A Online — Pangkas Audio, Tanpa Unggah | Fizzdoc",
+      "description": "Pangkas MP3 atau M4A, atau bagi menjadi beberapa bagian pada waktu yang tepat. Lihat gelombang suara, lalu simpan. Tanpa re-encoding, tanpa unggah. Gratis.",
+      "h1": "Potong, pangkas, dan bagi audio di browser Anda",
+      "lede": "Seret gagang pada gelombang suara atau ketik waktu yang tepat, dengarkan bagian yang dipilih, lalu simpan. Pemotongan dilakukan tanpa re-encoding, sehingga kualitas suara tetap sama persis.",
+      "steps": [
+        "Tambahkan satu file MP3 atau M4A.",
+        "Pilih Pangkas untuk menyimpan satu bagian, atau Bagi untuk memotongnya menjadi beberapa bagian. Seret gagang atau ketik waktu seperti 1:30.5, lalu tekan Pratinjau untuk mendengarkan.",
+        "Klik “Simpan Audio” dan unduh file Anda, atau semua bagian dalam satu ZIP."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah pemotongan menurunkan kualitas suara?",
+          "Tidak. Fizzdoc memotong di antara blok-blok kecil tempat audio sudah tersimpan, sehingga tidak ada yang di-encode ulang dan setiap bagian terdengar persis seperti aslinya. Potongan berada dalam jarak beberapa perseratus detik dari waktu yang Anda pilih."
+        ],
+        [
+          "Format audio apa saja yang didukung?",
+          "MP3 dan M4A (termasuk memo suara iPhone dan sebagian besar file musik). WAV, OPUS, WebM, dan lainnya sedang direncanakan, dan bantuan di GitHub sangat diterima."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Gabung audio",
+      "summary": "Gabungkan file MP3 atau M4A menjadi satu, sesuai urutan yang Anda pilih.",
+      "action": "Gabungkan Audio",
+      "title": "Gabungkan File MP3 atau M4A Online — Tanpa Unggah | Fizzdoc",
+      "description": "Gabungkan file MP3 atau M4A menjadi satu trek sesuai urutan pilihan Anda, lalu dengarkan sebelum mengunduh. Tanpa re-encoding, tanpa unggah. Gratis.",
+      "h1": "Gabungkan file audio menjadi satu",
+      "lede": "Tambahkan file MP3 atau M4A Anda, urutkan, lalu gabungkan menjadi satu trek. Dengarkan hasilnya sebelum mengunduh; tidak ada yang di-encode ulang atau diunggah.",
+      "steps": [
+        "Tambahkan dua atau lebih file MP3, atau dua atau lebih file M4A.",
+        "Urutkan dengan tombol ↑ dan ↓.",
+        "Klik “Gabungkan Audio”, dengarkan hasilnya, lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah saya menggabungkan MP3 dengan M4A?",
+          "Belum bisa. Gabungkan file dari satu jenis dalam satu waktu. Konversi antarformat sedang direncanakan, dan bantuan di GitHub sangat diterima."
+        ],
+        [
+          "Mengapa muncul pesan bahwa file saya memakai pengaturan audio yang berbeda?",
+          "File yang direkam dengan sample rate berbeda (misalnya 44,1 kHz dan 48 kHz) tidak dapat digabungkan tanpa re-encoding, yang belum dilakukan Fizzdoc. File dari ponsel, aplikasi, atau album yang sama hampir selalu cocok."
         ],
         [
           "Apakah Fizzdoc gratis?",

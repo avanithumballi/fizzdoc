@@ -203,7 +203,41 @@
     "rd.remove": "Supprimer cette marque",
     "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon.",
     "footer.madeBy": "Conçu et développé par",
-    "footer.feedback": "Signaler un bug ou proposer un outil"
+    "footer.feedback": "Signaler un bug ou proposer un outil",
+    "format.audio": "Audio",
+    "ws.chooseAudio": "Choisir un fichier MP3 ou M4A",
+    "ws.chooseAudios": "Choisir des fichiers MP3 ou M4A",
+    "error.AUDIO_UNSUPPORTED": "Ce fichier n’a pas pu être lu comme audio MP3 ou M4A. D’autres formats comme WAV, OPUS et WebM sont prévus.",
+    "error.AUDIO_MIXED": "Fusionnez des fichiers d’un seul type à la fois : tous en MP3 ou tous en M4A.",
+    "error.AUDIO_MISMATCH": "Ces fichiers utilisent des réglages audio différents (par exemple 44.1 kHz et 48 kHz), ils ne peuvent donc pas encore être assemblés sans réencodage.",
+    "error.AUDIO_EMPTY": "Gardez au moins une partie contenant de l’audio.",
+    "sum.file": "fichier",
+    "sum.files": "fichiers",
+    "au.trim": "Recadrer",
+    "au.split": "Découper en parties",
+    "au.play": "Lecture",
+    "au.pause": "Pause",
+    "au.playSelection": "Lire la sélection",
+    "au.start": "Début",
+    "au.end": "Fin",
+    "au.startHandle": "Début de la partie à conserver",
+    "au.endHandle": "Fin de la partie à conserver",
+    "au.setStart": "Commencer ici",
+    "au.setEnd": "Finir ici",
+    "au.addSplit": "Découper ici",
+    "au.every": "Toutes les",
+    "au.minutes": "min",
+    "au.equal": "Parties égales",
+    "au.apply": "Appliquer",
+    "au.clear": "Retirer les découpes",
+    "au.keep": "Garder",
+    "au.part": "Partie {n}",
+    "au.preview": "Aperçu",
+    "au.marker": "Point de découpe {n}",
+    "au.hint": "Cliquez sur la forme d’onde pour y aller et appuyez sur Lecture. Faites glisser les poignées, ou saisissez des instants précis comme 1:30.5. « Commencer ici », « Finir ici » et « Découper ici » utilisent la tête de lecture.",
+    "au.badTime": "Saisissez un instant comme 1:30 ou 1:30.5.",
+    "au.results": "Vos fichiers",
+    "au.download": "Télécharger"
   },
   "home": {
     "title": "Fizzdoc — Outils PDF, Word, Excel & Image privés. Sans envoi.",
@@ -1748,6 +1782,70 @@
         [
           "Est-ce que ça fonctionne avec Google Slides ?",
           "Oui. Dans Google Slides, choisissez Fichier → Télécharger → Microsoft PowerPoint (.pptx), puis ajoutez ce fichier ici. Rien n'est envoyé à Google ni à nous."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Couper un audio",
+      "summary": "Recadrez un MP3 ou M4A, ou découpez-le en plusieurs parties. Écoutez avant d’enregistrer.",
+      "action": "Enregistrer l’audio",
+      "title": "Couper un MP3 ou M4A en Ligne — Sans Envoi | Fizzdoc",
+      "description": "Recadrez un MP3 ou M4A, ou découpez-le en parties à des instants précis. Écoutez chaque partie, puis enregistrez. Sans réencodage, sans envoi. Gratuit.",
+      "h1": "Coupez, recadrez et découpez l’audio dans votre navigateur",
+      "lede": "Faites glisser les poignées sur la forme d’onde ou saisissez des instants précis, écoutez votre sélection, puis enregistrez. Les découpes se font sans réencodage, la qualité du son reste donc exactement la même.",
+      "steps": [
+        "Ajoutez un fichier MP3 ou M4A.",
+        "Choisissez Recadrer pour ne garder qu’une partie, ou Découper pour le diviser en plusieurs. Faites glisser les poignées ou saisissez des instants comme 1:30.5, puis cliquez sur Aperçu pour écouter.",
+        "Cliquez sur « Enregistrer l’audio » et téléchargez votre fichier, ou toutes les parties dans un ZIP."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Découper réduit-il la qualité du son ?",
+          "Non. Fizzdoc découpe entre les petits blocs dans lesquels l’audio est déjà stocké, donc rien n’est réencodé et chaque partie sonne exactement comme l’original. Les découpes tombent à quelques centièmes de seconde près de l’instant choisi."
+        ],
+        [
+          "Quels formats audio fonctionnent ?",
+          "MP3 et M4A (y compris les mémos vocaux iPhone et la plupart des fichiers musicaux). WAV, OPUS, WebM et d’autres sont prévus, et l’aide est la bienvenue sur GitHub."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Fusionner des audios",
+      "summary": "Assemblez des fichiers MP3 ou M4A en un seul, dans l’ordre de votre choix.",
+      "action": "Fusionner l’audio",
+      "title": "Fusionner des Fichiers MP3 ou M4A en Ligne — Sans Envoi | Fizzdoc",
+      "description": "Assemblez des fichiers MP3 ou M4A en une seule piste, dans l’ordre choisi, puis écoutez avant de télécharger. Sans réencodage, sans envoi. Gratuit.",
+      "h1": "Fusionnez des fichiers audio en un seul",
+      "lede": "Ajoutez vos fichiers MP3 ou M4A, classez-les et assemblez-les en une seule piste. Écoutez le résultat avant de le télécharger ; rien n’est réencodé ni envoyé.",
+      "steps": [
+        "Ajoutez deux fichiers MP3 ou plus, ou deux fichiers M4A ou plus.",
+        "Classez-les avec les boutons ↑ et ↓.",
+        "Cliquez sur « Fusionner l’audio », écoutez le résultat et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Puis-je fusionner un MP3 avec un M4A ?",
+          "Pas encore. Assemblez des fichiers d’un seul type à la fois. La conversion entre formats est prévue, et l’aide est la bienvenue sur GitHub."
+        ],
+        [
+          "Pourquoi indique-t-il que mes fichiers utilisent des réglages audio différents ?",
+          "Les fichiers enregistrés à des fréquences d’échantillonnage différentes (par exemple 44.1 kHz et 48 kHz) ne peuvent pas être assemblés sans réencodage, ce que Fizzdoc ne fait pas encore. Les fichiers issus du même téléphone, de la même appli ou du même album correspondent presque toujours."
         ],
         [
           "Est-ce que Fizzdoc est gratuit ?",

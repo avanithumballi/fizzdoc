@@ -203,7 +203,41 @@
     "rd.remove": "Deze markering verwijderen",
     "rd.hint": "Sleep over een pagina om iets te bedekken: tekst, een handtekening, een foto. Bij het opslaan wordt elke pagina een afbeelding, dus wat je bedekte is voorgoed weg.",
     "footer.madeBy": "Ontworpen en gebouwd door",
-    "footer.feedback": "Meld een bug of stel een tool voor"
+    "footer.feedback": "Meld een bug of stel een tool voor",
+    "format.audio": "Audio",
+    "ws.chooseAudio": "Kies een MP3- of M4A-bestand",
+    "ws.chooseAudios": "Kies MP3- of M4A-bestanden",
+    "error.AUDIO_UNSUPPORTED": "Dit bestand kon niet worden gelezen als MP3- of M4A-audio. Andere formaten zoals WAV, OPUS en WebM zijn gepland.",
+    "error.AUDIO_MIXED": "Voeg bestanden van één type per keer samen: allemaal MP3 of allemaal M4A.",
+    "error.AUDIO_MISMATCH": "Deze bestanden gebruiken verschillende audio-instellingen (bijvoorbeeld 44,1 kHz en 48 kHz), dus ze kunnen nog niet zonder her-encoding worden samengevoegd.",
+    "error.AUDIO_EMPTY": "Houd minstens één deel met wat audio erin over.",
+    "sum.file": "bestand",
+    "sum.files": "bestanden",
+    "au.trim": "Bijsnijden",
+    "au.split": "Splitsen in delen",
+    "au.play": "Afspelen",
+    "au.pause": "Pauzeren",
+    "au.playSelection": "Selectie afspelen",
+    "au.start": "Start",
+    "au.end": "Einde",
+    "au.startHandle": "Start van het deel om te houden",
+    "au.endHandle": "Einde van het deel om te houden",
+    "au.setStart": "Start hier",
+    "au.setEnd": "Eindig hier",
+    "au.addSplit": "Splits hier",
+    "au.every": "Elke",
+    "au.minutes": "min",
+    "au.equal": "Gelijke delen",
+    "au.apply": "Toepassen",
+    "au.clear": "Splitsingen verwijderen",
+    "au.keep": "Houden",
+    "au.part": "Deel {n}",
+    "au.preview": "Preview",
+    "au.marker": "Splitspunt {n}",
+    "au.hint": "Klik op de golfvorm om ernaartoe te springen en druk op Afspelen. Sleep de handvatten, of typ exacte tijden zoals 1:30.5. “Start hier”, “Eindig hier” en “Splits hier” gebruiken de afspeelpositie.",
+    "au.badTime": "Typ een tijd zoals 1:30 of 1:30.5.",
+    "au.results": "Je bestanden",
+    "au.download": "Downloaden"
   },
   "home": {
     "title": "Fizzdoc — privétools: PDF, Word, Excel en afbeeldingen. Geen upload.",
@@ -1748,6 +1782,70 @@
         [
           "Werkt het met Google Slides?",
           "Ja. Kies in Google Slides voor Bestand → Downloaden → Microsoft PowerPoint (.pptx), en voeg dat bestand hier toe. Er wordt niets naar Google of naar ons verstuurd."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Audio knippen",
+      "summary": "Knip een MP3 of M4A bij, of splits het in delen. Luister voordat je opslaat.",
+      "action": "Audio opslaan",
+      "title": "MP3 of M4A knippen online — Audio bijsnijden, geen upload | Fizzdoc",
+      "description": "Snijd een MP3 of M4A bij, of splits het op exacte tijden in delen. Bekijk de golfvorm, luister elk deel, en sla op. Geen her-encoding, geen upload. Gratis.",
+      "h1": "Audio knippen, bijsnijden en splitsen in je browser",
+      "lede": "Sleep de handvatten op de golfvorm of typ exacte tijden, luister naar wat je koos, en sla op. Knippen gebeurt zonder her-encoding, dus de geluidskwaliteit blijft precies hetzelfde.",
+      "steps": [
+        "Voeg één MP3- of M4A-bestand toe.",
+        "Kies Bijsnijden om één deel te houden, of Splitsen om het in meerdere delen te knippen. Sleep de handvatten of typ tijden zoals 1:30.5, en druk op Preview om te luisteren.",
+        "Klik op “Audio opslaan” en download je bestand, of alle delen in één ZIP."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wordt de geluidskwaliteit slechter door het knippen?",
+          "Nee. Fizzdoc knipt tussen de kleine blokken waarin de audio al is opgeslagen, dus er wordt niets opnieuw gecodeerd en elk deel klinkt precies als het origineel. Knippunten liggen binnen enkele honderdsten van een seconde van de tijd die je kiest."
+        ],
+        [
+          "Welke audioformaten werken er?",
+          "MP3 en M4A (inclusief iPhone-spraakmemo's en de meeste muziekbestanden). WAV, OPUS, WebM en andere zijn gepland, en hulp is welkom op GitHub."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Audio samenvoegen",
+      "summary": "Voeg MP3- of M4A-bestanden samen tot één, in de volgorde die je kiest.",
+      "action": "Audio samenvoegen",
+      "title": "MP3 of M4A samenvoegen online — Audio koppelen | Fizzdoc",
+      "description": "Voeg MP3- of M4A-bestanden samen tot één track, in de volgorde die je kiest, en luister voordat je downloadt. Geen her-encoding, geen upload. Gratis.",
+      "h1": "Audiobestanden samenvoegen tot één",
+      "lede": "Voeg je MP3- of M4A-bestanden toe, zet ze in de juiste volgorde en voeg ze samen tot één track. Luister naar het resultaat voordat je downloadt; er wordt niets opnieuw gecodeerd of geüpload.",
+      "steps": [
+        "Voeg twee of meer MP3-bestanden toe, of twee of meer M4A-bestanden.",
+        "Zet ze in de juiste volgorde met de ↑ en ↓ knoppen.",
+        "Klik op “Audio samenvoegen”, luister naar het resultaat en download het."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan ik een MP3 met een M4A samenvoegen?",
+          "Nog niet. Voeg bestanden van één type per keer samen. Converteren tussen formaten is gepland, en hulp is welkom op GitHub."
+        ],
+        [
+          "Waarom staat er dat mijn bestanden verschillende audio-instellingen gebruiken?",
+          "Bestanden die zijn opgenomen met verschillende samplerates (bijvoorbeeld 44,1 kHz en 48 kHz) kunnen niet worden samengevoegd zonder her-encoding, wat Fizzdoc nog niet doet. Bestanden van dezelfde telefoon, app of album komen bijna altijd overeen."
         ],
         [
           "Is Fizzdoc gratis?",

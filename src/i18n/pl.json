@@ -203,7 +203,41 @@
     "rd.remove": "Usuń ten znacznik",
     "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre.",
     "footer.madeBy": "Zaprojektował i zbudował",
-    "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie"
+    "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie",
+    "format.audio": "Audio",
+    "ws.chooseAudio": "Wybierz plik MP3 lub M4A",
+    "ws.chooseAudios": "Wybierz pliki MP3 lub M4A",
+    "error.AUDIO_UNSUPPORTED": "Nie udało się odczytać tego pliku jako audio MP3 lub M4A. Inne formaty, takie jak WAV, OPUS i WebM, są planowane.",
+    "error.AUDIO_MIXED": "Łącz pliki jednego typu naraz: wszystkie MP3 albo wszystkie M4A.",
+    "error.AUDIO_MISMATCH": "Te pliki mają różne ustawienia audio (na przykład 44,1 kHz i 48 kHz), więc nie można ich jeszcze połączyć bez ponownego kodowania.",
+    "error.AUDIO_EMPTY": "Zostaw przynajmniej jedną część zawierającą jakieś audio.",
+    "sum.file": "plik",
+    "sum.files": "pliki",
+    "au.trim": "Przytnij",
+    "au.split": "Podziel na części",
+    "au.play": "Odtwórz",
+    "au.pause": "Wstrzymaj",
+    "au.playSelection": "Odtwórz zaznaczenie",
+    "au.start": "Początek",
+    "au.end": "Koniec",
+    "au.startHandle": "Początek części do zachowania",
+    "au.endHandle": "Koniec części do zachowania",
+    "au.setStart": "Zacznij tutaj",
+    "au.setEnd": "Zakończ tutaj",
+    "au.addSplit": "Podziel tutaj",
+    "au.every": "Co",
+    "au.minutes": "min",
+    "au.equal": "Równe części",
+    "au.apply": "Zastosuj",
+    "au.clear": "Usuń podziały",
+    "au.keep": "Zachowaj",
+    "au.part": "Część {n}",
+    "au.preview": "Podgląd",
+    "au.marker": "Punkt podziału {n}",
+    "au.hint": "Kliknij przebieg fali, aby przeskoczyć do tego miejsca, i naciśnij Odtwórz. Przeciągaj uchwyty albo wpisuj dokładne czasy, np. 1:30.5. „Zacznij tutaj”, „Zakończ tutaj” i „Podziel tutaj” korzystają z pozycji odtwarzania.",
+    "au.badTime": "Wpisz czas, np. 1:30 lub 1:30.5.",
+    "au.results": "Twoje pliki",
+    "au.download": "Pobierz"
   },
   "home": {
     "title": "Fizzdoc — prywatne narzędzia PDF, Word, Excel i obrazy. Bez wysyłania.",
@@ -1748,6 +1782,70 @@
         [
           "Czy działa z Google Slides?",
           "Tak. W Google Slides wybierz Plik → Pobierz → Microsoft PowerPoint (.pptx), a potem dodaj ten plik tutaj. Nic nie jest wysyłane do Google ani do nas."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Przytnij audio",
+      "summary": "Przytnij plik MP3 lub M4A albo podziel go na części. Odsłuchaj przed zapisaniem.",
+      "action": "Zapisz audio",
+      "title": "Przytnij MP3 lub M4A online — Podziel audio, bez przesyłania | Fizzdoc",
+      "description": "Przytnij plik MP3 lub M4A albo podziel go na części w dokładnych momentach. Zobacz przebieg fali i zapisz. Bez ponownego kodowania, bez przesyłania. Za darmo.",
+      "h1": "Przycinaj i dziel audio w przeglądarce",
+      "lede": "Przeciągaj uchwyty na przebiegu fali albo wpisuj dokładne czasy, odsłuchaj wybrany fragment i zapisz. Cięcia wykonywane są bez ponownego kodowania, więc jakość dźwięku pozostaje dokładnie taka sama.",
+      "steps": [
+        "Dodaj jeden plik MP3 lub M4A.",
+        "Wybierz Przytnij, aby zachować jedną część, albo Podziel, aby pociąć go na kilka. Przeciągaj uchwyty albo wpisuj czasy, np. 1:30.5, i naciśnij Podgląd, aby odsłuchać.",
+        "Kliknij „Zapisz audio” i pobierz plik albo wszystkie części w jednym ZIP."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy przycinanie obniży jakość dźwięku?",
+          "Nie. Fizzdoc tnie między małymi blokami, w których audio jest już zapisane, więc nic nie jest ponownie kodowane, a każda część brzmi dokładnie jak oryginał. Cięcia mieszczą się w granicach kilku setnych sekundy od wybranego momentu."
+        ],
+        [
+          "Jakie formaty audio są obsługiwane?",
+          "MP3 i M4A (w tym notatki głosowe z iPhone'a i większość plików muzycznych). WAV, OPUS, WebM i inne są planowane, a pomoc na GitHubie jest mile widziana."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Połącz audio",
+      "summary": "Połącz pliki MP3 lub M4A w jeden, w wybranej przez Ciebie kolejności.",
+      "action": "Połącz audio",
+      "title": "Połącz MP3 lub M4A online — Scal audio, bez przesyłania | Fizzdoc",
+      "description": "Połącz pliki MP3 lub M4A w jeden utwór w wybranej kolejności, a potem odsłuchaj przed pobraniem. Bez ponownego kodowania, bez przesyłania. Za darmo.",
+      "h1": "Połącz pliki audio w jeden",
+      "lede": "Dodaj pliki MP3 lub M4A, ustaw ich kolejność i połącz je w jeden utwór. Odsłuchaj wynik przed pobraniem; nic nie jest ponownie kodowane ani przesyłane.",
+      "steps": [
+        "Dodaj co najmniej dwa pliki MP3 albo co najmniej dwa pliki M4A.",
+        "Ustaw ich kolejność strzałkami ↑ i ↓.",
+        "Kliknij „Połącz audio”, odsłuchaj wynik i pobierz go."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy mogę połączyć MP3 z M4A?",
+          "Jeszcze nie. Łącz pliki jednego typu naraz. Konwersja między formatami jest planowana, a pomoc na GitHubie jest mile widziana."
+        ],
+        [
+          "Dlaczego pojawia się informacja, że moje pliki mają różne ustawienia audio?",
+          "Plików nagranych z różnymi częstotliwościami próbkowania (na przykład 44,1 kHz i 48 kHz) nie da się połączyć bez ponownego kodowania, którego Fizzdoc jeszcze nie robi. Pliki z tego samego telefonu, aplikacji lub albumu prawie zawsze pasują do siebie."
         ],
         [
           "Czy Fizzdoc jest darmowy?",

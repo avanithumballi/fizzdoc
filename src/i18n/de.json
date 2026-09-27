@@ -203,7 +203,41 @@
     "rd.remove": "Diese Markierung entfernen",
     "rd.hint": "Ziehen Sie über eine Seite, um etwas zu bedecken: Text, eine Unterschrift, ein Foto. Beim Speichern wird jede Seite zu einem Bild, sodass das Bedeckte für immer verschwindet.",
     "footer.madeBy": "Entworfen und entwickelt von",
-    "footer.feedback": "Fehler melden oder Tool vorschlagen"
+    "footer.feedback": "Fehler melden oder Tool vorschlagen",
+    "format.audio": "Audio",
+    "ws.chooseAudio": "MP3- oder M4A-Datei auswählen",
+    "ws.chooseAudios": "MP3- oder M4A-Dateien auswählen",
+    "error.AUDIO_UNSUPPORTED": "Diese Datei konnte nicht als MP3- oder M4A-Audio gelesen werden. Weitere Formate wie WAV, OPUS und WebM sind geplant.",
+    "error.AUDIO_MIXED": "Fügen Sie jeweils Dateien eines Typs zusammen: entweder alle MP3 oder alle M4A.",
+    "error.AUDIO_MISMATCH": "Diese Dateien verwenden unterschiedliche Audioeinstellungen (zum Beispiel 44.1 kHz und 48 kHz) und können daher noch nicht ohne Neucodierung zusammengefügt werden.",
+    "error.AUDIO_EMPTY": "Behalten Sie mindestens einen Teil mit etwas Audio darin.",
+    "sum.file": "Datei",
+    "sum.files": "Dateien",
+    "au.trim": "Zuschneiden",
+    "au.split": "In Teile teilen",
+    "au.play": "Abspielen",
+    "au.pause": "Pause",
+    "au.playSelection": "Auswahl abspielen",
+    "au.start": "Start",
+    "au.end": "Ende",
+    "au.startHandle": "Anfang des zu behaltenden Teils",
+    "au.endHandle": "Ende des zu behaltenden Teils",
+    "au.setStart": "Hier starten",
+    "au.setEnd": "Hier enden",
+    "au.addSplit": "Hier teilen",
+    "au.every": "Alle",
+    "au.minutes": "Min",
+    "au.equal": "Gleiche Teile",
+    "au.apply": "Anwenden",
+    "au.clear": "Teilungen entfernen",
+    "au.keep": "Behalten",
+    "au.part": "Teil {n}",
+    "au.preview": "Vorschau",
+    "au.marker": "Teilungspunkt {n}",
+    "au.hint": "Klicken Sie auf die Wellenform, um dorthin zu springen, und drücken Sie Abspielen. Ziehen Sie die Griffe, oder geben Sie genaue Zeiten wie 1:30.5 ein. „Hier starten“, „Hier enden“ und „Hier teilen“ verwenden die Wiedergabeposition.",
+    "au.badTime": "Geben Sie eine Zeit wie 1:30 oder 1:30.5 ein.",
+    "au.results": "Ihre Dateien",
+    "au.download": "Herunterladen"
   },
   "home": {
     "title": "Fizzdoc — Private PDF-, Word-, Excel- & Bild-Tools. Kein Upload.",
@@ -1748,6 +1782,70 @@
         [
           "Funktioniert es mit Google Slides?",
           "Ja. Wählen Sie in Google Slides Datei → Herunterladen → Microsoft PowerPoint (.pptx) und fügen Sie diese Datei hier hinzu. Es wird nichts an Google oder an uns gesendet."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "split-audio": {
+      "name": "Audio schneiden",
+      "summary": "MP3 oder M4A zuschneiden oder in Teile zerlegen. Vor dem Speichern anhören.",
+      "action": "Audio speichern",
+      "title": "MP3 oder M4A Online Schneiden — Ohne Upload | Fizzdoc",
+      "description": "MP3 oder M4A zuschneiden oder in Teile mit genauen Zeiten zerlegen. Jeden Teil anhören, dann speichern. Ohne Neucodierung, ohne Upload. Kostenlos.",
+      "h1": "Audio im Browser schneiden, zuschneiden und teilen",
+      "lede": "Ziehen Sie die Griffe auf der Wellenform oder geben Sie genaue Zeiten ein, hören Sie sich die Auswahl an und speichern Sie. Die Schnitte erfolgen ohne Neucodierung, die Klangqualität bleibt also exakt erhalten.",
+      "steps": [
+        "Eine MP3- oder M4A-Datei hinzufügen.",
+        "Zuschneiden wählen, um einen Teil zu behalten, oder Teilen, um sie in mehrere Teile zu zerlegen. Griffe ziehen oder Zeiten wie 1:30.5 eingeben, und auf Vorschau klicken, um anzuhören.",
+        "Auf „Audio speichern“ klicken und die Datei herunterladen, oder alle Teile in einem ZIP."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Verschlechtert das Schneiden die Klangqualität?",
+          "Nein. Fizzdoc schneidet zwischen den kleinen Blöcken, in denen das Audio bereits gespeichert ist, sodass nichts neu codiert wird und jeder Teil exakt wie das Original klingt. Die Schnitte liegen wenige Hundertstelsekunden von der gewählten Zeit entfernt."
+        ],
+        [
+          "Welche Audioformate funktionieren?",
+          "MP3 und M4A (einschließlich iPhone-Sprachmemos und der meisten Musikdateien). WAV, OPUS, WebM und weitere sind geplant, und Mithilfe auf GitHub ist willkommen."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "merge-audio": {
+      "name": "Audio zusammenfügen",
+      "summary": "MP3- oder M4A-Dateien in der gewünschten Reihenfolge zu einer zusammenfügen.",
+      "action": "Audio zusammenfügen",
+      "title": "MP3 oder M4A Dateien Online Zusammenfügen — Ohne Upload | Fizzdoc",
+      "description": "MP3- oder M4A-Dateien in der gewünschten Reihenfolge zu einer Spur zusammenfügen, dann vor dem Download anhören. Ohne Neucodierung, ohne Upload. Kostenlos.",
+      "h1": "Audiodateien zu einer zusammenfügen",
+      "lede": "Fügen Sie Ihre MP3- oder M4A-Dateien hinzu, bringen Sie sie in die gewünschte Reihenfolge und fügen Sie sie zu einer Spur zusammen. Hören Sie sich das Ergebnis vor dem Herunterladen an; nichts wird neu codiert oder hochgeladen.",
+      "steps": [
+        "Zwei oder mehr MP3-Dateien hinzufügen, oder zwei oder mehr M4A-Dateien.",
+        "Mit den Pfeilen ↑ und ↓ in die gewünschte Reihenfolge bringen.",
+        "Auf „Audio zusammenfügen“ klicken, das Ergebnis anhören und herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Kann ich eine MP3 mit einer M4A zusammenfügen?",
+          "Noch nicht. Fügen Sie jeweils Dateien eines Typs zusammen. Die Umwandlung zwischen Formaten ist geplant, und Mithilfe auf GitHub ist willkommen."
+        ],
+        [
+          "Warum heißt es, meine Dateien verwenden unterschiedliche Audioeinstellungen?",
+          "Dateien, die mit unterschiedlichen Abtastraten aufgenommen wurden (zum Beispiel 44.1 kHz und 48 kHz), können ohne Neucodierung nicht zusammengefügt werden, was Fizzdoc noch nicht macht. Dateien vom selben Telefon, derselben App oder demselben Album stimmen fast immer überein."
         ],
         [
           "Ist Fizzdoc kostenlos?",

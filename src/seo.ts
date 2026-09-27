@@ -56,6 +56,8 @@ const CSP = [
   "style-src 'self' 'unsafe-inline'",
   "connect-src 'self'",
   "img-src 'self' data: blob:",
+  // Audio previews play the local file from a blob: URL; nothing is fetched.
+  "media-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'none'",
   "form-action 'none'",
@@ -84,6 +86,8 @@ const ICON_PATHS: Record<ToolOp, string> = {
   'watermark-pdf': '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
   'compress-pdf': SHRINK,
   'office-compress': SHRINK,
+  'audio-split': '<path d="M3 12h2M7 8v8M11 5v14M15 9v6"/><path d="m18 8 3 8M21 8l-3 8"/>',
+  'audio-merge': '<path d="M3 12h2M7 9v6M11 6v12"/><path d="M14 12h7M18 9l3 3-3 3"/>',
   'edit-pdf': '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
   'redact-pdf': '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><rect x="7" y="12" width="10" height="3" fill="currentColor"/><path d="M7 18h6"/>',
   'scan-pdf': '<path d="M5 3h14v8H5z"/><path d="M3 11h18v4H3z"/><path d="M7 15v6h10v-6"/><path d="M9 18h6"/>',
@@ -170,7 +174,9 @@ function input(c: Copy, tool: Tool) {
         ? { accept: 'application/pdf,.pdf', multiple: tool.op === 'merge' }
         : { accept: `.${FORMATS[tool.format].ext}` });
   const ext = /\.\w+/.exec(accept)?.[0] ?? '';
-  const choose = accept.startsWith('application/pdf')
+  const choose = accept.startsWith('.mp3')
+    ? c.t(multiple ? 'ws.chooseAudios' : 'ws.chooseAudio')
+    : accept.startsWith('application/pdf')
     ? c.t(multiple ? 'ws.choosePdfs' : 'ws.choosePdf')
     : accept.startsWith('image/')
       ? c.t(multiple ? 'ws.chooseImages' : 'ws.chooseImage')
@@ -244,7 +250,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
               : null;
   const { accept, choose, multiple } = input(c, tool);
   return `
-<section class="workspace${tool.op === 'edit-pdf' || tool.op === 'redact-pdf' ? ' wide' : ''}" id="workspace" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
+<section class="workspace${tool.op === 'edit-pdf' || tool.op === 'redact-pdf' || tool.op === 'audio-split' ? ' wide' : ''}" id="workspace" data-multiple="${multiple}" aria-label="${esc(tool.name)}">
   <label class="drop" id="drop">
     <input id="file-input" type="file" accept="${accept}"${multiple ? ' multiple' : ''}>
     <span class="drop-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m6 10 6-6 6 6"/><path d="M4 20h16"/></svg></span>
@@ -252,7 +258,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
     <span>${esc(c.t(multiple ? 'ws.dropMany' : 'ws.dropOne'))}</span>
   </label>
   <ol id="file-list" class="file-list" aria-label="${esc(c.t('ws.files'))}"></ol>
-  ${tool.op === 'edit-pdf' || tool.op === 'redact-pdf' || tool.op === 'image-ocr' ? '<div id="viewer" class="viewer"></div>' : ''}
+  ${['edit-pdf', 'redact-pdf', 'image-ocr', 'audio-split'].includes(tool.op) ? '<div id="viewer" class="viewer"></div>' : ''}
   ${multiple ? `<p class="hint" id="reorder-hint" hidden>${esc(c.t('ws.reorder'))}</p>` : ''}
   <div class="options">
     ${
