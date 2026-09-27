@@ -413,6 +413,8 @@ for (const { path, tool } of PAGES) {
 }
 
 test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
+  const licenses = await (await request.get('/third-party-licenses.txt')).text();
+  for (const part of ['Apache License', 'pdf-lib (MIT)', 'fflate (MIT)', 'Independent JPEG Group', 'Open Font License']) expect(licenses).toContain(part);
   const sitemap = await (await request.get('/sitemap.xml')).text();
   for (const { path } of PAGES) expect(sitemap).toContain(`<loc>${SITE.url}${path}</loc>`);
   expect(await (await request.get('/robots.txt')).text()).toContain(`Sitemap: ${SITE.url}/sitemap.xml`);
