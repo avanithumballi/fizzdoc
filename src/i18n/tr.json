@@ -120,6 +120,8 @@
     "error.BAD_PASSWORD": "Bu parola üç denemede de çalışmadı. Hiçbir şey değişmedi.",
     "error.PASSWORD_REQUIRED": "Devam etmek için bu PDF’nin parolası gerekiyor. Hiçbir şey değişmedi.",
     "error.BAD_RANGE": "Sayfa numaralarını kontrol edin. Belgenin sayfa sayısı içinde “1-3, 8” gibi sayılar ve aralıklar kullanın.",
+    "error.onePage": "Bu PDF'de yalnızca 1 sayfa var, bu yüzden yalnızca 1. sayfayı seçebilirsiniz.",
+    "error.pageCount": "Bu PDF'de {count} sayfa var. 1 ile {count} arasındaki sayfa numaralarını kullanın, örneğin “1-3, 8”.",
     "error.NOT_ENCRYPTED": "Bu PDF parola korumalı değil, dolayısıyla açılacak bir kilit yok.",
     "error.UNSUPPORTED_XFA": "Bu PDF, güvenle düzenlenemeyen dinamik bir XFA formu kullanıyor. Dosyanız değiştirilmedi.",
     "error.NO_PAGES_LEFT": "Bu, tüm sayfaları kaldırır. En az bir sayfa bırakın.",

@@ -120,6 +120,8 @@
     "error.BAD_PASSWORD": "Esa contraseña no ha funcionado tras tres intentos. No se ha cambiado nada.",
     "error.PASSWORD_REQUIRED": "Este PDF necesita su contraseña para continuar. No se ha cambiado nada.",
     "error.BAD_RANGE": "Revisa los números de página. Usa números y rangos como «1-3, 8» dentro del número total de páginas del documento.",
+    "error.onePage": "Este PDF solo tiene 1 página, así que la página 1 es la única que puedes elegir.",
+    "error.pageCount": "Este PDF tiene {count} páginas. Usa números de página del 1 al {count}, como «1-3, 8».",
     "error.NOT_ENCRYPTED": "Este PDF no está protegido con contraseña, así que no hay nada que desbloquear.",
     "error.UNSUPPORTED_XFA": "Este PDF usa un formulario XFA dinámico, que no se puede editar con seguridad. Tu archivo no se ha modificado.",
     "error.NO_PAGES_LEFT": "Eso eliminaría todas las páginas. Conserva al menos una.",

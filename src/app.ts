@@ -78,6 +78,9 @@ function setUp(op: ToolOp) {
     );
   let files: File[] = [];
   let worker: Worker | undefined;
+  // Page counts shown next to the file name on page-range tools, so people know what they can pick.
+  const pageCounts = new WeakMap<File, number>();
+  let counter: Worker | undefined;
   let localBusy = false;
   const busy = () => !!worker || localBusy;
   let printFrame: HTMLIFrameElement | undefined;
@@ -191,7 +194,10 @@ function setUp(op: ToolOp) {
         name.textContent = file.name;
         const size = document.createElement('span');
         size.className = 'file-size';
-        size.textContent = formatSize(file.size);
+        const count = pageCounts.get(file);
+        size.textContent = count
+          ? `${count} ${t(count === 1 ? 'sum.page' : 'sum.pages')} · ${formatSize(file.size)}`
+          : formatSize(file.size);
         item.append(name, size);
         if (multiple && !busy()) enableReorder(item, index);
         const buttons: [string, string, () => void, boolean][] = [
@@ -264,6 +270,28 @@ function setUp(op: ToolOp) {
     files = multiple ? [...files, ...usable] : [usable[0]];
     clearResult();
     render();
+    countPages();
+  }
+
+  function countPages() {
+    counter?.terminate();
+    counter = undefined;
+    const file = files[0];
+    if (!pages || !file || pageCounts.has(file)) return;
+    const current = new Worker(new URL('./engine/worker.ts', import.meta.url), { type: 'module' });
+    counter = current;
+    const done = () => {
+      current.terminate();
+      if (counter === current) counter = undefined;
+    };
+    current.onmessage = ({ data }: MessageEvent<FromWorker>) => {
+      done();
+      if (data.type !== 'count' || !data.pages) return;
+      pageCounts.set(file, data.pages);
+      render();
+    };
+    current.onerror = done;
+    current.postMessage({ type: 'count', file } satisfies ToWorker);
   }
 
   function askPassword(file: number, attempt: number): Promise<string | null> {
@@ -292,7 +320,9 @@ function setUp(op: ToolOp) {
   function finish(message: FromWorker) {
     stop();
     if (message.type === 'error') {
-      say(errorText(message.code), 'error');
+      const count = message.pages;
+      if (message.code === 'BAD_RANGE' && count) say(t(count === 1 ? 'error.onePage' : 'error.pageCount', { count }), 'error');
+      else say(errorText(message.code), 'error');
       return;
     }
     if (message.type !== 'done') return;
@@ -416,7 +446,10 @@ function setUp(op: ToolOp) {
     stop();
     say(t('app.canceled'));
   };
-  addEventListener('pagehide', stop);
+  addEventListener('pagehide', () => {
+    stop();
+    counter?.terminate();
+  });
   render();
 }
 

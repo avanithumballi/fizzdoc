@@ -120,6 +120,8 @@
     "error.BAD_PASSWORD": "To hasło nie zadziałało po trzech próbach. Nic nie zostało zmienione.",
     "error.PASSWORD_REQUIRED": "Ten plik PDF wymaga hasła, aby kontynuować. Nic nie zostało zmienione.",
     "error.BAD_RANGE": "Sprawdź numery stron. Użyj liczb i zakresów w stylu „1-3, 8” w granicach liczby stron dokumentu.",
+    "error.onePage": "Ten PDF ma tylko 1 stronę, więc możesz wybrać wyłącznie stronę 1.",
+    "error.pageCount": "Ten PDF ma {count} stron(y). Użyj numerów stron od 1 do {count}, np. „1-3, 8”.",
     "error.NOT_ENCRYPTED": "Ten plik PDF nie jest zabezpieczony hasłem, więc nie ma czego odblokowywać.",
     "error.UNSUPPORTED_XFA": "Ten plik PDF używa dynamicznego formularza XFA, którego nie można bezpiecznie edytować. Twój plik nie został zmieniony.",
     "error.NO_PAGES_LEFT": "To usunęłoby wszystkie strony. Zostaw przynajmniej jedną.",

@@ -120,6 +120,8 @@
     "error.BAD_PASSWORD": "Mật khẩu không đúng sau ba lần thử. Không có gì thay đổi.",
     "error.PASSWORD_REQUIRED": "Tệp PDF này cần mật khẩu để tiếp tục. Không có gì thay đổi.",
     "error.BAD_RANGE": "Kiểm tra lại số trang. Hãy dùng số và khoảng trang như “1-3, 8” trong phạm vi số trang của tài liệu.",
+    "error.onePage": "PDF này chỉ có 1 trang, nên bạn chỉ có thể chọn trang 1.",
+    "error.pageCount": "PDF này có {count} trang. Hãy dùng số trang từ 1 đến {count}, ví dụ “1-3, 8”.",
     "error.NOT_ENCRYPTED": "Tệp PDF này không được bảo vệ bằng mật khẩu, nên không có gì để mở khóa.",
     "error.UNSUPPORTED_XFA": "Tệp PDF này dùng biểu mẫu XFA động, không thể chỉnh sửa an toàn. Tệp của bạn không bị thay đổi.",
     "error.NO_PAGES_LEFT": "Thao tác này sẽ xóa hết mọi trang. Hãy giữ lại ít nhất một trang.",

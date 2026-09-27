@@ -53,6 +53,15 @@ describe('parsePages', () => {
     expect(parsePages('2–4', 10)).toEqual([2, 3, 4]);
   });
 
+  it('stops a range at the last page', () => {
+    expect(parsePages('1-5', 1)).toEqual([1]);
+    expect(parsePages('2-99, 1', 3)).toEqual([2, 3, 1]);
+  });
+
+  it('reports the page count with a bad range', () => {
+    expect(() => parsePages('4', 3)).toThrow(expect.objectContaining({ code: 'BAD_RANGE', pages: 3 }));
+  });
+
   it.each(['', '0', '5-3', '11', 'a', '1-2-3', ' , '])('rejects %j', (text) => {
     expect(() => parsePages(text, 10)).toThrow('BAD_RANGE');
   });
@@ -110,6 +119,11 @@ describe('split and delete', () => {
 
   it('rejects ranges outside the document', async () => {
     expect(await code(run(['mixed'], { op: 'split', pages: '4' }))).toBe('BAD_RANGE');
+  });
+
+  it('keeps what exists when a range runs past the last page', async () => {
+    const result = await run(['mixed'], { op: 'split', pages: '2-10' });
+    expect(result.pageCount).toBe(2);
   });
 });
 

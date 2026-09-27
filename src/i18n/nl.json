@@ -120,6 +120,8 @@
     "error.BAD_PASSWORD": "Dat wachtwoord werkte niet, ook niet na drie pogingen. Er is niets gewijzigd.",
     "error.PASSWORD_REQUIRED": "Deze PDF heeft zijn wachtwoord nodig om verder te gaan. Er is niets gewijzigd.",
     "error.BAD_RANGE": "Controleer de paginanummers. Gebruik getallen en reeksen zoals “1-3, 8” binnen het aantal pagina's van het document.",
+    "error.onePage": "Deze pdf heeft maar 1 pagina, dus je kunt alleen pagina 1 kiezen.",
+    "error.pageCount": "Deze pdf heeft {count} pagina's. Gebruik paginanummers van 1 tot en met {count}, zoals “1-3, 8”.",
     "error.NOT_ENCRYPTED": "Deze PDF is niet met een wachtwoord beveiligd, dus er valt niets te ontgrendelen.",
     "error.UNSUPPORTED_XFA": "Deze PDF gebruikt een dynamisch XFA-formulier, dat niet veilig kan worden bewerkt. Je bestand is niet gewijzigd.",
     "error.NO_PAGES_LEFT": "Dat zou alle pagina's verwijderen. Behoud er minstens één.",
