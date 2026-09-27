@@ -245,6 +245,8 @@ main {
 .star-btn {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
   gap: 6px;
   margin-left: 6px;
   padding: 5px 5px 5px 10px !important;
@@ -261,7 +263,19 @@ main {
   height: 16px;
   fill: currentColor;
 }
-.star-btn span:first-of-type {
+.star-btn .star-icon {
+  margin-left: -2px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  transition: fill 0.15s, stroke 0.15s;
+}
+.star-btn:hover .star-icon {
+  fill: #e3b341;
+  stroke: #e3b341;
+}
+.star-btn .star-label {
   padding-right: 5px;
 }
 .star-count {
@@ -327,6 +341,12 @@ main {
 
 @media (max-width: 720px) {
   .site-header nav a:not(.star-btn) {
+    display: none;
+  }
+}
+/* Small phones: the GitHub mark, the star and the count say enough. */
+@media (max-width: 440px) {
+  .star-btn .star-label {
     display: none;
   }
 }

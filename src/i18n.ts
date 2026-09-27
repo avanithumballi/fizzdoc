@@ -26,7 +26,7 @@ export const UI = {
   'nav.label': 'Main',
   'nav.home': 'Fizzdoc home',
   'nav.theme': 'Switch colour theme',
-  'nav.star': '★ Star',
+  'nav.star': 'Star',
   'nav.starAria': 'Star Fizzdoc on GitHub',
   'lang.label': 'Language',
   'lang.tip': 'Prefer another language? Choose it here.',
