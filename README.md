@@ -30,6 +30,13 @@
 </p>
 
 <p align="center">
+  <a href="https://fizzdoc.com"><img src="https://img.shields.io/website?url=https%3A%2F%2Ffizzdoc.com&style=flat-square&label=fizzdoc.com&up_message=live" alt="Website status"></a>
+  <a href="https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"><img src="https://img.shields.io/github/issues/kingrishabdugar/fizzdoc/good%20first%20issue?style=flat-square&label=good%20first%20issues&color=7057ff" alt="Good first issues"></a>
+  <a href="https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22new+tool%22"><img src="https://img.shields.io/github/issues/kingrishabdugar/fizzdoc/new%20tool?style=flat-square&label=tools%20wanted&color=0ea5e9" alt="Tools wanted"></a>
+  <a href="https://github.com/kingrishabdugar/fizzdoc/commits/main"><img src="https://img.shields.io/github/last-commit/kingrishabdugar/fizzdoc?style=flat-square" alt="Last commit"></a>
+</p>
+
+<p align="center">
   <a href="https://fizzdoc.com"><img src="docs/assets/hero.png" width="960" alt="Fizzdoc: private document tools in light and dark mode"></a>
 </p>
 
@@ -161,6 +168,10 @@ OCR is English-only for now, PowerPoint → PDF and legacy .doc/.xls/.ppt aren't
 </details>
 
 ## 🚀 Run it locally
+
+<a href="https://codespaces.new/kingrishabdugar/fizzdoc"><img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" height="32"></a>
+
+Or on your machine:
 
 ```sh
 git clone https://github.com/kingrishabdugar/fizzdoc.git
