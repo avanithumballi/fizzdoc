@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch: # Actions → CI → Run workflow: test, then publish main
 
 jobs:
   test:
@@ -19,12 +20,12 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
 
-  # Publishes main to Cloudflare Pages once the tests pass. Needs a token with
+  # Publishes main to Cloudflare Pages only when started by hand, after the tests pass. Needs a token with
   # Account > Cloudflare Pages > Edit (CLOUDFLARE_API_TOKEN_ACCOUNT, else CLOUDFLARE_API_TOKEN)
   # and CLOUDFLARE_ACCOUNT_ID.
   deploy:
     needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN_ACCOUNT || secrets.CLOUDFLARE_API_TOKEN }}
