@@ -228,6 +228,22 @@ If Fizzdoc saved you from uploading something private, **[give it a star](https:
   <img src="https://contrib.rocks/image?repo=kingrishabdugar/fizzdoc" alt="Contributors">
 </a>
 
+## 🙏 Credits
+
+Fizzdoc would not exist without these open-source projects and the people who maintain them:
+
+| Project | What it does in Fizzdoc | By |
+|---|---|---|
+| [qpdf](https://github.com/qpdf/qpdf) | Merge, split, rotate, encrypt and decrypt PDFs losslessly | [@jberkenbilt](https://github.com/jberkenbilt) and the qpdf contributors |
+| [qpdf-wasm](https://github.com/neslinesli93/qpdf-wasm) | qpdf compiled to WebAssembly | [@neslinesli93](https://github.com/neslinesli93) |
+| [pdf.js](https://github.com/mozilla/pdf.js) | Renders pages, extracts text, powers the editor | [Mozilla](https://github.com/mozilla) and contributors |
+| [pdf-lib](https://github.com/Hopding/pdf-lib) | Writes and edits PDFs, stamps, the OCR text layer | [@Hopding](https://github.com/Hopding) |
+| [Tesseract](https://github.com/tesseract-ocr/tesseract) and [tesseract.js](https://github.com/naptha/tesseract.js) | Text recognition, compiled to WebAssembly | [tesseract-ocr](https://github.com/tesseract-ocr) and [naptha](https://github.com/naptha) |
+| [fflate](https://github.com/101arrowz/fflate) | Reads and writes Word, Excel, PowerPoint and ZIP files | [@101arrowz](https://github.com/101arrowz) |
+| [Inter](https://github.com/rsms/inter) | The typeface | [@rsms](https://github.com/rsms) |
+
+Built and tested with [Vite](https://github.com/vitejs/vite), [TypeScript](https://github.com/microsoft/TypeScript), [Vitest](https://github.com/vitest-dev/vitest) and [Playwright](https://github.com/microsoft/playwright). Full license details are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 ## 👋 About the author
 
 Fizzdoc is designed and built by **[Rishab Dugar](https://rishabdugarjain.in)**, a Senior Data Scientist in Bengaluru working on AI systems and production data platforms.
