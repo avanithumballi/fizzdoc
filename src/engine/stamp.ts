@@ -72,27 +72,59 @@ export async function addPageNumbers(
 /** Characters the standard PDF fonts can draw; anything else would throw inside pdf-lib. */
 export const winAnsiSafe = (text: string) => text.replace(/[^\x20-\x7E\xA0-\xFF]/g, '');
 
+/**
+ * The watermark drawn by the browser, for text the standard PDF fonts can't show (Hindi, Tamil,
+ * Chinese, emoji…): the device's own fonts render it, so every script comes out as typed.
+ */
+async function textImage(text: string) {
+  const font = 'bold 200px sans-serif';
+  const probe = new OffscreenCanvas(1, 1).getContext('2d')!;
+  probe.font = font;
+  const width = Math.ceil(probe.measureText(text).width) + 40;
+  const canvas = new OffscreenCanvas(width, 280);
+  const context = canvas.getContext('2d')!;
+  context.font = font;
+  context.fillStyle = 'rgb(140, 140, 140)';
+  context.textBaseline = 'middle';
+  context.fillText(text, 20, 140);
+  return { bytes: new Uint8Array(await (await canvas.convertToBlob({ type: 'image/png' })).arrayBuffer()), width, height: 280 };
+}
+
 export async function watermarkPdf(file: File, options: { text: string; opacity?: number }): Promise<Output> {
-  const text = winAnsiSafe(options.text).trim();
+  const text = options.text.trim();
   if (!text) throw new LocalError('NO_WATERMARK');
   const pdf = await load(file);
   const { StandardFonts, rgb, degrees } = await import('pdf-lib');
-  const font = await pdf.embedFont(StandardFonts.HelveticaBold);
   const opacity = Math.min(1, Math.max(0.05, options.opacity ?? 0.2));
+  // Latin text stays real, crisp text; anything else is drawn by the browser so no character is lost.
+  const vector = winAnsiSafe(text) === text;
+  const font = vector ? await pdf.embedFont(StandardFonts.HelveticaBold) : undefined;
+  const picture = vector ? undefined : await textImage(text);
+  const image = picture && (await pdf.embedPng(picture.bytes));
   const pages = pdf.getPages();
   for (const page of pages) {
     const box = page.getCropBox();
     // Diagonal across the page, as wide as ~70% of the diagonal.
     const angle = Math.atan2(box.height, box.width);
     const diagonal = Math.hypot(box.width, box.height);
-    const size = Math.min(160, (diagonal * 0.7) / Math.max(1, font.widthOfTextAtSize(text, 1)));
-    const width = font.widthOfTextAtSize(text, size);
+    const naturalWidth = font ? font.widthOfTextAtSize(text, 1) : picture!.width / 200;
+    const size = Math.min(160, (diagonal * 0.7) / Math.max(1, naturalWidth));
+    const width = naturalWidth * size;
+    const height = font ? size : (picture!.height / 200) * size;
     const cx = box.x + box.width / 2;
     const cy = box.y + box.height / 2;
-    // drawText rotates around the text origin, so start half the text back along the diagonal.
-    const x = cx - (Math.cos(angle) * width) / 2 + (Math.sin(angle) * size) / 3;
-    const y = cy - (Math.sin(angle) * width) / 2 - (Math.cos(angle) * size) / 3;
-    page.drawText(text, { x, y, size, font, color: rgb(0.55, 0.55, 0.55), opacity, rotate: degrees((angle * 180) / Math.PI) });
+    const rotate = degrees((angle * 180) / Math.PI);
+    if (font) {
+      // drawText rotates around the text origin, so start half the text back along the diagonal.
+      const x = cx - (Math.cos(angle) * width) / 2 + (Math.sin(angle) * size) / 3;
+      const y = cy - (Math.sin(angle) * width) / 2 - (Math.cos(angle) * size) / 3;
+      page.drawText(text, { x, y, size, font, color: rgb(0.55, 0.55, 0.55), opacity, rotate });
+    } else {
+      // drawImage rotates around its bottom-left corner: step back half the width and half the height.
+      const x = cx - (Math.cos(angle) * width) / 2 + (Math.sin(angle) * height) / 2;
+      const y = cy - (Math.sin(angle) * width) / 2 - (Math.cos(angle) * height) / 2;
+      page.drawImage(image!, { x, y, width, height, opacity, rotate });
+    }
   }
   return save(pdf, `${baseName(file)}-watermarked.pdf`, `${pages.length} ${pages.length === 1 ? 'page' : 'pages'} watermarked`);
 }
