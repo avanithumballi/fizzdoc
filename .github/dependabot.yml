@@ -7,6 +7,10 @@ updates:
     groups:
       dependencies:
         patterns: ['*']
+    ignore:
+      # Types follow the Node version CI and contributors run (22), not the latest release.
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
     open-pull-requests-limit: 5
   - package-ecosystem: github-actions
     directory: /
