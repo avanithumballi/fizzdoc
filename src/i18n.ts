@@ -218,6 +218,7 @@ export const UI = {
   'ed.removeBox': 'Remove text box',
   'ed.replaced': 'Some characters aren’t supported by the standard PDF fonts and were replaced.',
   'ed.hint': 'Covered text is hidden, not deleted from the file — for sensitive data, delete the page instead.',
+  'ocr.unsure': 'Some of this text may be wrong. Text recognition reads English that is upright: rotate sideways photos first, and expect other scripts to come out garbled.',
   'ocr.copyAll': 'Copy all text',
   'ocr.copied': 'Copied',
   'ocr.text': 'Recognized text',

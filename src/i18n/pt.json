@@ -180,6 +180,7 @@
     "ed.removeBox": "Remover caixa de texto",
     "ed.replaced": "Alguns caracteres não são suportados pelas fontes padrão de PDF e foram substituídos.",
     "ed.hint": "O texto coberto fica oculto, e não excluído do arquivo — para dados sensíveis, exclua a página em vez disso.",
+    "ocr.unsure": "Parte deste texto pode estar errada. O reconhecimento lê texto em inglês na posição certa: gire antes as fotos de lado e espere que outros alfabetos saiam embaralhados.",
     "ocr.copyAll": "Copiar todo o texto",
     "ocr.copied": "Copiado",
     "ocr.text": "Texto reconhecido",

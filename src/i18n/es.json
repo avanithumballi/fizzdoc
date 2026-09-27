@@ -180,6 +180,7 @@
     "ed.removeBox": "Eliminar cuadro de texto",
     "ed.replaced": "Algunos caracteres no son compatibles con las fuentes estándar de PDF y se han sustituido.",
     "ed.hint": "El texto tapado se oculta, no se elimina del archivo — para datos sensibles, elimina la página en su lugar.",
+    "ocr.unsure": "Parte de este texto puede estar mal. El reconocimiento lee texto en inglés y derecho: gira primero las fotos de lado y ten en cuenta que otros alfabetos saldrán desordenados.",
     "ocr.copyAll": "Copiar todo el texto",
     "ocr.copied": "Copiado",
     "ocr.text": "Texto reconocido",

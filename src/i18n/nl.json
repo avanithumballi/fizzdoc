@@ -180,6 +180,7 @@
     "ed.removeBox": "Tekstvak verwijderen",
     "ed.replaced": "Sommige tekens worden niet ondersteund door de standaard PDF-lettertypen en zijn vervangen.",
     "ed.hint": "Bedekte tekst is verborgen, niet verwijderd uit het bestand — verwijder voor gevoelige gegevens in plaats daarvan de pagina.",
+    "ocr.unsure": "Een deel van deze tekst kan onjuist zijn. Tekstherkenning leest rechtop staande Engelse tekst: draai scheve foto's eerst, en andere schriften komen er rommelig uit.",
     "ocr.copyAll": "Alle tekst kopiëren",
     "ocr.copied": "Gekopieerd",
     "ocr.text": "Herkende tekst",

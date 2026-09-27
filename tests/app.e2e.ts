@@ -300,6 +300,14 @@ test('recognizes text in an image and lets you select it on the picture', async 
   const { name, bytes } = await downloadBytes(page);
   expect(name).toBe('scan.txt');
   expect(bytes.toString()).toMatch(/Private invoice total/i);
+  // Clear English text: no warning that the result may be wrong.
+  await expect(page.locator('#warnings li')).toHaveCount(0);
+
+  // A photo without readable text gets a note saying the result may be wrong, and why.
+  await page.locator('#file-input').setInputFiles(file('photo.png'));
+  await page.getByRole('button', { name: 'Recognize text' }).click();
+  await expect(page.locator('#status')).toContainText('recognized', { timeout: 90_000 });
+  await expect(page.locator('#warnings')).toContainText('Some of this text may be wrong');
   const origin = new URL(baseURL!).origin;
   for (const request of seen.requests) if (!request.url.startsWith('blob:')) expect(new URL(request.url).origin).toBe(origin);
   expect(seen.violations).toEqual([]);

@@ -180,6 +180,7 @@
     "ed.removeBox": "Xóa hộp văn bản",
     "ed.replaced": "Một số ký tự không được các phông chữ PDF chuẩn hỗ trợ nên đã được thay thế.",
     "ed.hint": "Văn bản bị che chỉ ẩn đi, không bị xóa khỏi tệp — với dữ liệu nhạy cảm, hãy xóa cả trang thay vì che.",
+    "ocr.unsure": "Một phần văn bản này có thể sai. Nhận dạng chữ đọc văn bản tiếng Anh đặt thẳng: hãy xoay ảnh bị nghiêng trước, và các hệ chữ khác có thể ra lộn xộn.",
     "ocr.copyAll": "Sao chép toàn bộ văn bản",
     "ocr.copied": "Đã sao chép",
     "ocr.text": "Văn bản đã nhận dạng",

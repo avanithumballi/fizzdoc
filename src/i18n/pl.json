@@ -180,6 +180,7 @@
     "ed.removeBox": "Usuń pole tekstowe",
     "ed.replaced": "Niektóre znaki nie są obsługiwane przez standardowe czcionki PDF i zostały zastąpione.",
     "ed.hint": "Zamalowany tekst jest ukryty, a nie usunięty z pliku — w przypadku danych wrażliwych usuń zamiast tego całą stronę.",
+    "ocr.unsure": "Część tego tekstu może być błędna. Rozpoznawanie czyta prosty tekst angielski: najpierw obróć zdjęcia bokiem, a inne alfabety mogą wyjść zniekształcone.",
     "ocr.copyAll": "Kopiuj cały tekst",
     "ocr.copied": "Skopiowano",
     "ocr.text": "Rozpoznany tekst",

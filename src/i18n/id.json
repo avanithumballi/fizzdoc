@@ -180,6 +180,7 @@
     "ed.removeBox": "Hapus kotak teks",
     "ed.replaced": "Beberapa karakter tidak didukung oleh font standar PDF dan telah diganti.",
     "ed.hint": "Teks yang ditutup hanya disembunyikan, bukan dihapus dari file — untuk data sensitif, hapus saja halamannya.",
+    "ocr.unsure": "Sebagian teks ini mungkin salah. Pengenalan teks membaca teks bahasa Inggris yang tegak: putar dulu foto yang miring, dan aksara lain akan keluar berantakan.",
     "ocr.copyAll": "Salin semua teks",
     "ocr.copied": "Disalin",
     "ocr.text": "Teks yang dikenali",

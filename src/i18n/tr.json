@@ -180,6 +180,7 @@
     "ed.removeBox": "Metin kutusunu kaldır",
     "ed.replaced": "Bazı karakterler standart PDF yazı tipleri tarafından desteklenmiyor ve değiştirildi.",
     "ed.hint": "Üzeri kapatılan metin gizlenir, dosyadan silinmez — hassas veriler için bunun yerine sayfayı silin.",
+    "ocr.unsure": "Bu metnin bir kısmı hatalı olabilir. Metin tanıma düz duran İngilizce metni okur: yan duran fotoğrafları önce döndürün; diğer alfabeler bozuk çıkabilir.",
     "ocr.copyAll": "Tüm metni kopyala",
     "ocr.copied": "Kopyalandı",
     "ocr.text": "Tanınan metin",

@@ -180,6 +180,7 @@
     "ed.removeBox": "Rimuovi casella di testo",
     "ed.replaced": "Alcuni caratteri non sono supportati dai font PDF standard e sono stati sostituiti.",
     "ed.hint": "Il testo coperto viene nascosto, non eliminato dal file — per i dati sensibili, elimina invece la pagina.",
+    "ocr.unsure": "Parte di questo testo potrebbe essere sbagliata. Il riconoscimento legge testo inglese dritto: ruota prima le foto storte e aspettati che altri alfabeti escano confusi.",
     "ocr.copyAll": "Copia tutto il testo",
     "ocr.copied": "Copiato",
     "ocr.text": "Testo riconosciuto",
