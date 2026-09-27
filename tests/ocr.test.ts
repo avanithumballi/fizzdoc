@@ -1,6 +1,6 @@
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { downscaleFactor, imageToPdfPoint, placeWord, sanitizeForFont, type PageBox, type Word } from '../src/engine/ocr';
+import { downscaleFactor, imageToPdfPoint, placeWord, sanitizeForFont, unsure, type PageBox, type Word } from '../src/engine/ocr';
 
 describe('downscaleFactor', () => {
   it('leaves images at or under the limit alone', () => {
@@ -97,5 +97,14 @@ describe('sanitizeForFont and placeWord', () => {
     const box: PageBox = { width: 600, height: 800, rotation: 0 };
     expect(placeWord(word('   ', 0, 0, 10, 10), font, 1, box)).toBeNull();
     expect(placeWord(word('x', 0, 0, 0, 0), font, 1, box)).toBeNull();
+  });
+});
+
+describe('unsure', () => {
+  it('flags little text or low average confidence, weighted by word length', () => {
+    expect(unsure([])).toBe(true);
+    expect(unsure([{ text: 'a', confidence: 95 }])).toBe(true);
+    expect(unsure([{ text: 'Invoice', confidence: 92 }, { text: 'total', confidence: 88 }])).toBe(false);
+    expect(unsure([{ text: 'TART', confidence: 31 }, { text: 'Uh', confidence: 40 }, { text: 'ok', confidence: 90 }])).toBe(true);
   });
 });

@@ -3,7 +3,7 @@
     "nav.label": "Menu principal",
     "nav.home": "Accueil Fizzdoc",
     "nav.theme": "Changer le thème de couleur",
-    "nav.star": "★ Star",
+    "nav.star": "Star",
     "nav.starAria": "Mettre une star à Fizzdoc sur GitHub",
     "lang.label": "Langue",
     "lang.tip": "Vous préférez une autre langue ? Choisissez-la ici.",
@@ -96,6 +96,14 @@
     "ws.style": "Style",
     "ws.pageOf": "Page 1 sur 10",
     "ws.startAt": "Commencer à",
+    "ws.targetKb": "Taille de fichier max. (KB)",
+    "ws.targetAny": "Aucune limite",
+    "ws.dpiStandard": "Standard (fichier plus léger)",
+    "ws.dpiHigh": "Haute (petits caractères plus nets)",
+    "ws.look": "Apparence",
+    "ws.lookColor": "Couleur",
+    "ws.lookGray": "Noir et blanc",
+    "ws.lookScanned": "Scanné (gris, légèrement incliné)",
     "ws.wmText": "Texte du filigrane",
     "ws.wmDefault": "CONFIDENTIEL",
     "ws.opacity": "Opacité",
@@ -112,6 +120,7 @@
     "app.downloadExt": "Télécharger {ext}",
     "app.canceled": "Annulé. Rien n'a été modifié.",
     "app.wrongType": "Ce type de fichier ne peut pas être utilisé avec cet outil.",
+    "app.oneFile": "Cet outil traite un fichier à la fois : le premier fichier a été ajouté.",
     "app.tooBig": "Ces fichiers totalisent {size}, plus que ce que cet appareil peut traiter en toute sécurité ({max}).",
     "app.moveUp": "Monter",
     "app.moveDown": "Descendre",
@@ -134,6 +143,10 @@
     "error.BAD_IMAGE": "Une des images n'a pas pu être lue. Essayez JPG ou PNG.",
     "error.PDF_PASSWORD": "Ce PDF est protégé par un mot de passe. Retirez d'abord le mot de passe avec Déverrouiller un PDF.",
     "error.BAD_SIZE": "La largeur et la hauteur doivent chacune être comprises entre 1 et 16 384 pixels.",
+    "error.BAD_SCALE": "L’échelle doit être comprise entre 1 % et 1000 %.",
+    "error.BAD_TARGET": "La limite de taille doit être d'au moins 5 KB.",
+    "error.TARGET_TOO_SMALL": "Cette limite est trop basse pour cette image sans la rendre illisible. Essayez une limite plus grande ; la plupart des formulaires acceptent 50–200 KB.",
+    "error.TOO_LARGE": "Cette taille est trop grande pour être créée dans un navigateur (plus de 100 mégapixels). Choisissez une taille plus petite.",
     "error.NO_TEXT": "Ce PDF ne contient pas de texte à extraire — c'est probablement une image numérisée. Lancez d'abord OCR PDF, puis réessayez.",
     "error.NO_WATERMARK": "Saisissez le texte du filigrane (lettres, chiffres et symboles courants).",
     "error.ENGINE_FAILED": "Le moteur PDF s'est arrêté de façon inattendue — le fichier est peut-être trop volumineux pour cet appareil.",
@@ -177,9 +190,18 @@
     "ed.removeBox": "Retirer la zone de texte",
     "ed.replaced": "Certains caractères ne sont pas pris en charge par les polices PDF standard et ont été remplacés.",
     "ed.hint": "Le texte masqué est caché, pas supprimé du fichier — pour des données sensibles, supprimez plutôt la page.",
+    "ocr.unsure": "Une partie de ce texte peut être fausse. La reconnaissance lit du texte anglais bien droit : faites d’abord pivoter les photos de travers ; les autres écritures sortiront brouillées.",
     "ocr.copyAll": "Copier tout le texte",
     "ocr.copied": "Copié",
     "ocr.text": "Texte reconnu",
+    "rd.find": "Recherchez un mot ou un numéro à masquer",
+    "rd.markAll": "Tout marquer",
+    "rd.clear": "Tout effacer",
+    "rd.count": "Zones marquées : {n}",
+    "rd.found": "Occurrences marquées : {n}",
+    "rd.none": "Aucune occurrence de « {text} »",
+    "rd.remove": "Supprimer cette marque",
+    "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon.",
     "footer.madeBy": "Conçu et développé par",
     "footer.feedback": "Signaler un bug ou proposer un outil",
     "format.audio": "Audio",
@@ -595,6 +617,70 @@
         ]
       ]
     },
+    "redact-pdf": {
+      "name": "Caviarder un PDF",
+      "summary": "Noircissez du texte, une signature ou une photo pour qu'ils disparaissent pour de bon.",
+      "action": "Enregistrer le PDF caviardé",
+      "title": "Caviarder un PDF en Ligne — Effacer du Texte Définitivement | Fizzdoc",
+      "description": "Noircissez des noms, numéros, signatures ou photos dans un PDF et gardez une copie où ils ont vraiment disparu. Dans votre navigateur ; rien n'est envoyé.",
+      "h1": "Caviarder un PDF : noircir n'importe quoi pour de bon",
+      "lede": "Faites glisser sur ce qui doit disparaître, ou recherchez un nom ou un numéro et marquez chaque occurrence. À l'enregistrement, chaque page devient une image, si bien que le texte masqué ne peut plus être copié ni récupéré.",
+      "steps": [
+        "Ajoutez un fichier PDF.",
+        "Faites glisser sur la page pour couvrir une zone, ou tapez un mot et cliquez sur « Tout marquer ».",
+        "Choisissez la qualité et l'apparence, puis cliquez sur « Enregistrer le PDF caviardé » et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Le texte caviardé a-t-il vraiment disparu ?",
+          "Oui. Fizzdoc redessine chaque page en image avec vos marques noires intégrées et construit un nouveau PDF à partir de ces images. Le texte, les polices et les métadonnées d'origine ne sont pas copiés, donc rien sous une marque ne peut être sélectionné, recherché ou récupéré."
+        ],
+        [
+          "Puis-je encore rechercher ou copier le reste du texte ?",
+          "Non. Chaque page devient une image, donc le fichier enregistré n'a aucun texte sélectionnable. Si vous avez besoin de texte à nouveau consultable, passez le fichier caviardé dans OCR PDF ; les marques noires resteront noires."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF vers PDF Scanné",
+      "summary": "Transformez chaque page en image, comme un document scanné.",
+      "action": "Créer le PDF scanné",
+      "title": "PDF vers PDF Scanné — Aspect Numérisé, Sans Envoi | Fizzdoc",
+      "description": "Transformez un PDF en PDF scanné composé d'images : en couleur, en noir et blanc, ou avec un rendu de scanner. Dans votre navigateur ; rien n'est envoyé.",
+      "h1": "Convertir un PDF en PDF scanné",
+      "lede": "Chaque page devient une image, si bien que le texte ne peut plus être sélectionné ni modifié. Gardez les couleurs, passez en noir et blanc, ou ajoutez une légère inclinaison et un grain de papier pour un rendu scanné.",
+      "steps": [
+        "Ajoutez un fichier PDF.",
+        "Choisissez la qualité et l'apparence : couleur, noir et blanc, ou scanné.",
+        "Cliquez sur « Créer le PDF scanné » et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Pourquoi voudrais-je un PDF scanné ?",
+          "Certains bureaux et portails demandent des copies scannées, et un PDF composé uniquement d'images empêche de copier ou modifier le texte facilement. Cela aplatit aussi les champs de formulaire et les commentaires en ce qui est visible sur la page."
+        ],
+        [
+          "Le fichier sera-t-il plus lourd ?",
+          "Généralement oui, car les pages sont stockées comme des images. La qualité standard (150 DPI) garde le fichier léger ; la qualité haute (300 DPI) garde les petits caractères nets."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Rendez un PDF scanné consultable et copiable.",
@@ -920,6 +1006,102 @@
         [
           "Les données de localisation sont-elles supprimées ?",
           "Oui. Le nouvel encodage supprime les métadonnées EXIF cachées comme la localisation GPS et les détails de l'appareil photo."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Compresser une image à 20 KB",
+      "summary": "Ramenez une photo ou une signature à moins de 20 KB pour un formulaire en ligne.",
+      "action": "Compresser les images",
+      "title": "Compresser une Image à 20 KB — JPG, Sans Upload | Fizzdoc",
+      "description": "Réduisez une photo JPG, PNG ou WebP à moins de 20 KB pour un examen ou un formulaire administratif, en la gardant nette. Rien n'est envoyé, c'est gratuit.",
+      "h1": "Compresser une image à moins de 20 KB",
+      "lede": "Les formulaires demandent souvent une photo ou une signature de moins de 20 KB. Fizzdoc garde la photo aussi grande et nette que possible, réduit la qualité JPG juste ce qu'il faut, et n'envoie jamais votre photo.",
+      "steps": [
+        "Ajoutez une ou plusieurs images (JPG, PNG, WebP ou une photo de téléphone).",
+        "Vérifiez la limite (20 KB est déjà rempli ; changez-la si votre formulaire demande une autre taille).",
+        "Cliquez sur « Compresser les images » et téléchargez le résultat."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment la photo reste-t-elle nette ?",
+          "Comme les applications de messagerie, l'outil garde d'abord la photo à environ 1600 pixels sur son côté le plus long et réduit la qualité JPG par paliers, sans jamais descendre sous 50 % tant que la photo fait 1000 pixels ou plus. Ce n'est que si elle est encore trop lourde qu'il réduit la taille de l'image."
+        ],
+        [
+          "Et si mon formulaire demande aussi une taille exacte en pixels ?",
+          "Utilisez d'abord Resize Image pour régler la largeur et la hauteur demandées par le formulaire, puis compressez le résultat ici."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Compresser une image à 50 KB",
+      "summary": "Ramenez une photo ou une signature à moins de 50 KB pour un formulaire en ligne.",
+      "action": "Compresser les images",
+      "title": "Compresser une Image à 50 KB — JPG, Sans Upload | Fizzdoc",
+      "description": "Réduisez une photo JPG, PNG ou WebP à moins de 50 KB pour un examen ou un formulaire administratif, en la gardant nette. Rien n'est envoyé, c'est gratuit.",
+      "h1": "Compresser une image à moins de 50 KB",
+      "lede": "Les formulaires demandent souvent une photo ou une signature de moins de 50 KB. Fizzdoc garde la photo aussi grande et nette que possible, réduit la qualité JPG juste ce qu'il faut, et n'envoie jamais votre photo.",
+      "steps": [
+        "Ajoutez une ou plusieurs images (JPG, PNG, WebP ou une photo de téléphone).",
+        "Vérifiez la limite (50 KB est déjà rempli ; changez-la si votre formulaire demande une autre taille).",
+        "Cliquez sur « Compresser les images » et téléchargez le résultat."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment la photo reste-t-elle nette ?",
+          "Comme les applications de messagerie, l'outil garde d'abord la photo à environ 1600 pixels sur son côté le plus long et réduit la qualité JPG par paliers, sans jamais descendre sous 50 % tant que la photo fait 1000 pixels ou plus. Ce n'est que si elle est encore trop lourde qu'il réduit la taille de l'image."
+        ],
+        [
+          "Et si mon formulaire demande aussi une taille exacte en pixels ?",
+          "Utilisez d'abord Resize Image pour régler la largeur et la hauteur demandées par le formulaire, puis compressez le résultat ici."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Compresser une image à 100 KB",
+      "summary": "Ramenez une photo ou une signature à moins de 100 KB pour un formulaire en ligne.",
+      "action": "Compresser les images",
+      "title": "Compresser une Image à 100 KB — JPG, Sans Upload | Fizzdoc",
+      "description": "Réduisez une photo JPG, PNG ou WebP à moins de 100 KB pour un examen ou un formulaire administratif, en la gardant nette. Rien n'est envoyé, c'est gratuit.",
+      "h1": "Compresser une image à moins de 100 KB",
+      "lede": "Les formulaires demandent souvent une photo ou une signature de moins de 100 KB. Fizzdoc garde la photo aussi grande et nette que possible, réduit la qualité JPG juste ce qu'il faut, et n'envoie jamais votre photo.",
+      "steps": [
+        "Ajoutez une ou plusieurs images (JPG, PNG, WebP ou une photo de téléphone).",
+        "Vérifiez la limite (100 KB est déjà rempli ; changez-la si votre formulaire demande une autre taille).",
+        "Cliquez sur « Compresser les images » et téléchargez le résultat."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment la photo reste-t-elle nette ?",
+          "Comme les applications de messagerie, l'outil garde d'abord la photo à environ 1600 pixels sur son côté le plus long et réduit la qualité JPG par paliers, sans jamais descendre sous 50 % tant que la photo fait 1000 pixels ou plus. Ce n'est que si elle est encore trop lourde qu'il réduit la taille de l'image."
+        ],
+        [
+          "Et si mon formulaire demande aussi une taille exacte en pixels ?",
+          "Utilisez d'abord Resize Image pour régler la largeur et la hauteur demandées par le formulaire, puis compressez le résultat ici."
         ],
         [
           "Est-ce que Fizzdoc est gratuit ?",

@@ -207,6 +207,8 @@ export interface ConvertOptions {
   width?: number;
   height?: number;
   keepAspect?: boolean;
+  /** Largest file allowed, in KB (e.g. 100 for a form that says "under 100 KB"). */
+  targetKb?: number;
 }
 
 /** Works out the output pixel size for one image; pure so it can be unit-tested without a browser. */
@@ -276,10 +278,51 @@ function hasMetadata(data: Uint8Array) {
   return /Exif\0\0|eXIf|EXIF|XMP |x:xmpmeta/.test(head);
 }
 
+/** Long sides to try, largest first: WhatsApp's everyday size, then smaller only when needed. */
+const FIT_SIDES = [1600, 1280, 1024, 800, 640, 480, 320];
+
+/**
+ * The best-looking JPEG/WebP under `maxBytes`, the way messaging apps do it: keep the picture large
+ * and lower the quality first (never below 50% while it is 1000px or more), and only then step the
+ * size down. Returns null when even 320px at low quality is too big.
+ */
+async function fitToSize(bitmap: ImageBitmap, maxBytes: number, type: string) {
+  const long = Math.max(bitmap.width, bitmap.height);
+  const sides = [...new Set([Math.min(long, FIT_SIDES[0]), ...FIT_SIDES.filter((side) => side < long)])];
+  for (const side of sides) {
+    const width = Math.max(1, Math.round((bitmap.width * side) / long));
+    const height = Math.max(1, Math.round((bitmap.height * side) / long));
+    const resized = side === long ? bitmap : await resizeBitmap(bitmap, width, height);
+    const canvas = new OffscreenCanvas(width, height);
+    const ctx = canvas.getContext('2d')!;
+    ctx.fillStyle = '#fff'; // forms want JPEG, which has no transparency
+    ctx.fillRect(0, 0, width, height);
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(resized, 0, 0, width, height);
+    const encode = async (quality: number) => bytes(await canvas.convertToBlob({ type, quality }));
+    const best = await encode(0.92);
+    if (best.length <= maxBytes) return { data: best, width, height };
+    let low = side >= 1000 ? 0.5 : 0.35;
+    let fit = await encode(low);
+    if (fit.length > maxBytes) continue;
+    let high = 0.92;
+    for (let step = 0; step < 6; step++) {
+      const middle = (low + high) / 2;
+      const data = await encode(middle);
+      if (data.length <= maxBytes) [low, fit] = [middle, data];
+      else high = middle;
+    }
+    return { data: fit, width, height };
+  }
+  return null;
+}
+
 /** Resizes and/or recompresses one or more images; metadata such as EXIF/GPS is dropped as a side effect of re-encoding. */
 export async function convertImages(files: File[], options: ConvertOptions): Promise<Output> {
   if (options.width !== undefined && (options.width < 1 || options.width > 16384)) throw new LocalError('BAD_SIZE');
   if (options.height !== undefined && (options.height < 1 || options.height > 16384)) throw new LocalError('BAD_SIZE');
+  if (options.scale !== undefined && !(options.scale >= 1 && options.scale <= 1000)) throw new LocalError('BAD_SCALE');
+  if (options.targetKb !== undefined && !(options.targetKb >= 5)) throw new LocalError('BAD_TARGET');
 
   const used = new Set<string>();
   const outputs: { name: string; data: Uint8Array }[] = [];
@@ -294,7 +337,19 @@ export async function convertImages(files: File[], options: ConvertOptions): Pro
     } catch {
       throw new LocalError('BAD_IMAGE');
     }
+    if (options.targetKb) {
+      const type = options.format === 'webp' ? 'image/webp' : 'image/jpeg';
+      const fitted = await fitToSize(bitmap, options.targetKb * 1024, type);
+      if (!fitted) throw new LocalError('TARGET_TOO_SMALL');
+      lastSize = fitted;
+      totalBefore += file.size;
+      totalAfter += fitted.data.length;
+      outputs.push({ name: uniqueName(used, `${baseName(file)}.${IMAGE_EXT[type]}`), data: fitted.data });
+      continue;
+    }
     const size = targetSize(bitmap.width, bitmap.height, options);
+    // A browser tab can't hold much more than this in one picture; stop before it runs out of memory.
+    if (size.width * size.height > 100_000_000) throw new LocalError('TOO_LARGE');
     lastSize = size;
     const resized = size.width === bitmap.width && size.height === bitmap.height ? bitmap : await resizeBitmap(bitmap, size.width, size.height);
     const type = outputType(file, options.format);
@@ -319,18 +374,22 @@ export async function convertImages(files: File[], options: ConvertOptions): Pro
     outputs.push({ name: uniqueName(used, `${baseName(file)}.${extension}`), data });
   }
 
+  // Say what changed in size, so "nothing to gain" is visible too.
+  const saving =
+    totalAfter < totalBefore
+      ? ` · ${Math.round((1 - totalAfter / totalBefore) * 100)}% smaller`
+      : totalAfter === totalBefore ? ' · Already optimized' : '';
   if (outputs.length === 1) {
     const [only] = outputs;
     const ext = only.name.split('.').pop();
     return {
       blob: new Blob([only.data as Uint8Array<ArrayBuffer>]),
-      name: `${baseName(files[0])}-${lastSize.width}x${lastSize.height}.${ext}`,
-      summary: `1 image · ${lastSize.width} × ${lastSize.height}`,
+      name: options.targetKb ? `${baseName(files[0])}-${options.targetKb}kb.${ext}` : `${baseName(files[0])}-${lastSize.width}x${lastSize.height}.${ext}`,
+      summary: `1 image · ${lastSize.width} × ${lastSize.height}${saving}`,
     };
   }
 
   const zipped = zipSync(Object.fromEntries(outputs.map(({ name, data }) => [name, [data, { level: 0 }]])) as Zippable);
-  const summary =
-    totalAfter < totalBefore ? `${outputs.length} images · ${Math.round((1 - totalAfter / totalBefore) * 100)}% smaller` : `${outputs.length} images`;
+  const summary = `${outputs.length} images${saving}`;
   return { blob: new Blob([zipped as Uint8Array<ArrayBuffer>], { type: 'application/zip' }), name: 'images-resized.zip', summary };
 }

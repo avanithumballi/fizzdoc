@@ -3,7 +3,7 @@
     "nav.label": "Menu główne",
     "nav.home": "Strona główna Fizzdoc",
     "nav.theme": "Zmień motyw kolorystyczny",
-    "nav.star": "★ Gwiazdka",
+    "nav.star": "Gwiazdka",
     "nav.starAria": "Dodaj gwiazdkę Fizzdoc na GitHub",
     "lang.label": "Język",
     "lang.tip": "Wolisz inny język? Wybierz go tutaj.",
@@ -96,6 +96,14 @@
     "ws.style": "Styl",
     "ws.pageOf": "Strona 1 z 10",
     "ws.startAt": "Zacznij od",
+    "ws.targetKb": "Maks. rozmiar pliku (KB)",
+    "ws.targetAny": "Bez limitu",
+    "ws.dpiStandard": "Standardowa (mniejszy plik)",
+    "ws.dpiHigh": "Wysoka (ostrzejszy drobny druk)",
+    "ws.look": "Wygląd",
+    "ws.lookColor": "Kolor",
+    "ws.lookGray": "Czarno-biały",
+    "ws.lookScanned": "Zeskanowany (szary, lekko przekrzywiony)",
     "ws.wmText": "Tekst znaku wodnego",
     "ws.wmDefault": "POUFNE",
     "ws.opacity": "Krycie",
@@ -112,6 +120,7 @@
     "app.downloadExt": "Pobierz {ext}",
     "app.canceled": "Anulowano. Nic nie zostało zmienione.",
     "app.wrongType": "Tego typu pliku nie można użyć z tym narzędziem.",
+    "app.oneFile": "To narzędzie działa na jednym pliku naraz, więc dodano pierwszy plik.",
     "app.tooBig": "Te pliki mają łącznie {size}, czyli więcej, niż to urządzenie może bezpiecznie przetworzyć ({max}).",
     "app.moveUp": "Przesuń w górę",
     "app.moveDown": "Przesuń w dół",
@@ -134,6 +143,10 @@
     "error.BAD_IMAGE": "Nie udało się odczytać jednego z obrazów. Spróbuj z formatem JPG lub PNG.",
     "error.PDF_PASSWORD": "Ten plik PDF jest zabezpieczony hasłem. Najpierw usuń hasło za pomocą narzędzia Odblokuj PDF.",
     "error.BAD_SIZE": "Szerokość i wysokość muszą mieścić się w zakresie od 1 do 16 384 pikseli.",
+    "error.BAD_SCALE": "Skala musi wynosić od 1% do 1000%.",
+    "error.BAD_TARGET": "Limit rozmiaru musi wynosić co najmniej 5 KB.",
+    "error.TARGET_TOO_SMALL": "Ten limit jest zbyt mały dla tego zdjęcia i sprawi, że stanie się nieczytelne. Spróbuj większego limitu; większość formularzy akceptuje 50–200 KB.",
+    "error.TOO_LARGE": "Ten rozmiar jest za duży, by utworzyć go w przeglądarce (ponad 100 megapikseli). Wybierz mniejszy rozmiar.",
     "error.NO_TEXT": "Ten plik PDF nie zawiera tekstu do wyodrębnienia — to prawdopodobnie zeskanowany obraz. Najpierw uruchom OCR PDF, a potem spróbuj ponownie.",
     "error.NO_WATERMARK": "Wpisz tekst znaku wodnego (litery, cyfry i popularne symbole).",
     "error.ENGINE_FAILED": "Silnik PDF nieoczekiwanie się zatrzymał — plik może być zbyt duży dla tego urządzenia.",
@@ -177,9 +190,18 @@
     "ed.removeBox": "Usuń pole tekstowe",
     "ed.replaced": "Niektóre znaki nie są obsługiwane przez standardowe czcionki PDF i zostały zastąpione.",
     "ed.hint": "Zamalowany tekst jest ukryty, a nie usunięty z pliku — w przypadku danych wrażliwych usuń zamiast tego całą stronę.",
+    "ocr.unsure": "Część tego tekstu może być błędna. Rozpoznawanie czyta prosty tekst angielski: najpierw obróć zdjęcia bokiem, a inne alfabety mogą wyjść zniekształcone.",
     "ocr.copyAll": "Kopiuj cały tekst",
     "ocr.copied": "Skopiowano",
     "ocr.text": "Rozpoznany tekst",
+    "rd.find": "Znajdź słowo lub numer do ukrycia",
+    "rd.markAll": "Zaznacz wszystko",
+    "rd.clear": "Wyczyść wszystko",
+    "rd.count": "Zaznaczone obszary: {n}",
+    "rd.found": "Zaznaczone dopasowania: {n}",
+    "rd.none": "Brak dopasowań dla „{text}”",
+    "rd.remove": "Usuń ten znacznik",
+    "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre.",
     "footer.madeBy": "Zaprojektował i zbudował",
     "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie",
     "format.audio": "Audio",
@@ -595,6 +617,70 @@
         ]
       ]
     },
+    "redact-pdf": {
+      "name": "Cenzuruj PDF",
+      "summary": "Zaczernij tekst, podpisy albo zdjęcia, żeby zniknęły na dobre.",
+      "action": "Zapisz ocenzurowany PDF",
+      "title": "Cenzurowanie PDF Online — Usuń Tekst na Zawsze, Bez Wysyłki | Fizzdoc",
+      "description": "Zaczernij imiona, numery, podpisy albo zdjęcia w PDF i zapisz kopię, w której naprawdę znikają. Działa w przeglądarce; nic nie jest przesyłane. Za darmo.",
+      "h1": "Cenzuruj PDF: zaczernij cokolwiek na zawsze",
+      "lede": "Przeciągnij po tym, co ma zniknąć, albo wyszukaj imię lub numer i zaznacz każde dopasowanie. Po zapisaniu każda strona staje się obrazem, więc ukrytego tekstu nie da się skopiować ani odzyskać.",
+      "steps": [
+        "Dodaj jeden plik PDF.",
+        "Przeciągnij po stronie, aby zakryć obszar, albo wpisz słowo i kliknij „Zaznacz wszystko”.",
+        "Wybierz jakość i wygląd, a potem kliknij „Zapisz ocenzurowany PDF” i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy ocenzurowany tekst naprawdę znika?",
+          "Tak. Fizzdoc rysuje każdą stronę od nowa jako obraz z wypalonymi czarnymi znacznikami i buduje z tych obrazów nowy PDF. Oryginalny tekst, czcionki i metadane dokumentu nie są kopiowane, więc nic pod znacznikiem nie da się zaznaczyć, wyszukać ani odzyskać."
+        ],
+        [
+          "Czy mogę nadal przeszukiwać lub kopiować resztę tekstu?",
+          "Nie. Każda strona staje się obrazem, więc zapisany plik nie ma tekstu do zaznaczenia. Jeśli znów potrzebujesz przeszukiwalnego tekstu, przepuść ocenzurowany plik przez OCR PDF; czarne znaczniki zostaną czarne."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF na Zeskanowany PDF",
+      "summary": "Zamień każdą stronę w obraz, jak zeskanowany dokument.",
+      "action": "Utwórz zeskanowany PDF",
+      "title": "PDF na Zeskanowany PDF — Wygląd Skanu, Bez Wysyłania | Fizzdoc",
+      "description": "Zamień PDF w zeskanowany PDF złożony z obrazów: w kolorze, czarno-biały, albo z wyglądem skanera. Działa w przeglądarce; nic nie jest przesyłane.",
+      "h1": "Zamień PDF w zeskanowany PDF",
+      "lede": "Każda strona staje się obrazem, więc tekstu nie da się zaznaczyć ani edytować. Zachowaj kolory, przełącz na czarno-biały, albo dodaj lekkie przekrzywienie i ziarno papieru dla wyglądu skanu.",
+      "steps": [
+        "Dodaj jeden plik PDF.",
+        "Wybierz jakość i wygląd: kolor, czarno-biały, albo zeskanowany.",
+        "Kliknij „Utwórz zeskanowany PDF” i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Po co mi zeskanowany PDF?",
+          "Niektóre urzędy i portale proszą o zeskanowane kopie, a PDF złożony wyłącznie z obrazów utrudnia przypadkowe skopiowanie albo edycję tekstu. Spłaszcza też pola formularzy i komentarze do tego, co widać na stronie."
+        ],
+        [
+          "Czy plik zrobi się większy?",
+          "Zwykle tak, bo strony są zapisywane jako obrazy. Standardowa jakość (150 DPI) utrzymuje mały plik; wysoka jakość (300 DPI) utrzymuje ostry drobny druk."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Zamień zeskanowany PDF w przeszukiwalny i kopiowalny.",
@@ -920,6 +1006,102 @@
         [
           "Czy dane lokalizacji są usuwane?",
           "Tak. Ponowne kodowanie usuwa ukryte metadane EXIF, takie jak lokalizacja GPS i dane aparatu."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Kompresuj obraz do 20 KB",
+      "summary": "Zmniejsz zdjęcie lub podpis poniżej 20 KB na potrzeby formularza online.",
+      "action": "Kompresuj obrazy",
+      "title": "Kompresuj Obraz do 20 KB Online — JPG, Bez Wysyłania | Fizzdoc",
+      "description": "Zmniejsz zdjęcie JPG, PNG lub WebP poniżej 20 KB na egzamin czy formularz urzędowy, zachowując jak najwyższą ostrość. Nic nie jest wysyłane.",
+      "h1": "Kompresowanie obrazu do mniej niż 20 KB",
+      "lede": "Formularze często wymagają zdjęcia lub podpisu poniżej 20 KB. Fizzdoc utrzymuje zdjęcie tak duże i ostre, jak to możliwe, obniża jakość JPG tylko na tyle, na ile trzeba, i nigdy nie wysyła Twojego zdjęcia.",
+      "steps": [
+        "Dodaj jedno lub więcej zdjęć (JPG, PNG, WebP lub zdjęcie z telefonu).",
+        "Sprawdź limit (20 KB jest już wpisane; zmień, jeśli formularz wymaga innego rozmiaru).",
+        "Kliknij „Kompresuj obrazy” i pobierz wynik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak to zachowuje ostrość zdjęcia?",
+          "Podobnie jak w aplikacjach do wiadomości, najpierw zachowuje około 1600 pikseli na dłuższym boku zdjęcia i obniża jakość JPG stopniowo — nigdy poniżej 50%, dopóki zdjęcie ma 1000 pikseli lub więcej. Dopiero jeśli nadal jest za duże, zmniejsza rozmiar obrazu."
+        ],
+        [
+          "A jeśli mój formularz wymaga też dokładnego rozmiaru w pikselach?",
+          "Najpierw użyj Resize Image, aby ustawić szerokość i wysokość wymaganą przez formularz, a potem skompresuj wynik tutaj."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Kompresuj obraz do 50 KB",
+      "summary": "Zmniejsz zdjęcie lub podpis poniżej 50 KB na potrzeby formularza online.",
+      "action": "Kompresuj obrazy",
+      "title": "Kompresuj Obraz do 50 KB Online — JPG, Bez Wysyłania | Fizzdoc",
+      "description": "Zmniejsz zdjęcie JPG, PNG lub WebP poniżej 50 KB na egzamin czy formularz urzędowy, zachowując jak najwyższą ostrość. Nic nie jest wysyłane.",
+      "h1": "Kompresowanie obrazu do mniej niż 50 KB",
+      "lede": "Formularze często wymagają zdjęcia lub podpisu poniżej 50 KB. Fizzdoc utrzymuje zdjęcie tak duże i ostre, jak to możliwe, obniża jakość JPG tylko na tyle, na ile trzeba, i nigdy nie wysyła Twojego zdjęcia.",
+      "steps": [
+        "Dodaj jedno lub więcej zdjęć (JPG, PNG, WebP lub zdjęcie z telefonu).",
+        "Sprawdź limit (50 KB jest już wpisane; zmień, jeśli formularz wymaga innego rozmiaru).",
+        "Kliknij „Kompresuj obrazy” i pobierz wynik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak to zachowuje ostrość zdjęcia?",
+          "Podobnie jak w aplikacjach do wiadomości, najpierw zachowuje około 1600 pikseli na dłuższym boku zdjęcia i obniża jakość JPG stopniowo — nigdy poniżej 50%, dopóki zdjęcie ma 1000 pikseli lub więcej. Dopiero jeśli nadal jest za duże, zmniejsza rozmiar obrazu."
+        ],
+        [
+          "A jeśli mój formularz wymaga też dokładnego rozmiaru w pikselach?",
+          "Najpierw użyj Resize Image, aby ustawić szerokość i wysokość wymaganą przez formularz, a potem skompresuj wynik tutaj."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak. Nie ma rejestracji, znaku wodnego ani dziennego limitu. Fizzdoc jest open source na licencji Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Kompresuj obraz do 100 KB",
+      "summary": "Zmniejsz zdjęcie lub podpis poniżej 100 KB na potrzeby formularza online.",
+      "action": "Kompresuj obrazy",
+      "title": "Kompresuj Obraz do 100 KB Online — JPG, Bez Wysyłania | Fizzdoc",
+      "description": "Zmniejsz zdjęcie JPG, PNG lub WebP poniżej 100 KB na egzamin czy formularz urzędowy, zachowując jak najwyższą ostrość. Nic nie jest wysyłane.",
+      "h1": "Kompresowanie obrazu do mniej niż 100 KB",
+      "lede": "Formularze często wymagają zdjęcia lub podpisu poniżej 100 KB. Fizzdoc utrzymuje zdjęcie tak duże i ostre, jak to możliwe, obniża jakość JPG tylko na tyle, na ile trzeba, i nigdy nie wysyła Twojego zdjęcia.",
+      "steps": [
+        "Dodaj jedno lub więcej zdjęć (JPG, PNG, WebP lub zdjęcie z telefonu).",
+        "Sprawdź limit (100 KB jest już wpisane; zmień, jeśli formularz wymaga innego rozmiaru).",
+        "Kliknij „Kompresuj obrazy” i pobierz wynik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak to zachowuje ostrość zdjęcia?",
+          "Podobnie jak w aplikacjach do wiadomości, najpierw zachowuje około 1600 pikseli na dłuższym boku zdjęcia i obniża jakość JPG stopniowo — nigdy poniżej 50%, dopóki zdjęcie ma 1000 pikseli lub więcej. Dopiero jeśli nadal jest za duże, zmniejsza rozmiar obrazu."
+        ],
+        [
+          "A jeśli mój formularz wymaga też dokładnego rozmiaru w pikselach?",
+          "Najpierw użyj Resize Image, aby ustawić szerokość i wysokość wymaganą przez formularz, a potem skompresuj wynik tutaj."
         ],
         [
           "Czy Fizzdoc jest darmowy?",

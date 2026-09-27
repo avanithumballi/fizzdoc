@@ -2,6 +2,7 @@
 // docx/pptx are ZIP packages of XML parts (OOXML); Node has no DOMParser, so a small
 // tolerant tokenizer stands in for one below instead of pulling in a real XML library.
 import { strFromU8, strToU8, unzipSync, zipSync, type Zippable } from 'fflate';
+import { fixIndic } from './convert';
 import { LocalError, type Output } from './local';
 
 const baseName = (file: File) => file.name.replace(/\.[^.]+$/, '');
@@ -366,15 +367,20 @@ export async function docxToHtml(file: File): Promise<{ html: string; title: str
   const styles = loadStyles(entries);
   const numbering = loadNumbering(entries);
   const rels = loadRels(entries, 'word/_rels/document.xml.rels');
-  const media: Record<string, string> = {};
-  for (const [rId, rel] of rels) {
-    const match = /^(?:word\/)?media\/(.+)$/.exec(rel.target.replace(/^\.\.\//, ''));
-    if (!match) continue;
-    const path = `word/media/${match[1]}`;
-    const ext = match[1].split('.').pop()?.toLowerCase() ?? '';
-    const mime = IMAGE_MIME[ext];
-    if (mime && entries[path]) media[rId] = `data:${mime};base64,${toBase64(entries[path])}`;
-  }
+  // Images a part links to, inlined as data: URLs (the print frame never fetches anything).
+  const mediaFor = (partRels: Map<string, Rel>) => {
+    const media: Record<string, string> = {};
+    for (const [rId, rel] of partRels) {
+      const match = /^(?:word\/)?media\/(.+)$/.exec(rel.target.replace(/^\.\.\//, ''));
+      if (!match) continue;
+      const path = `word/media/${match[1]}`;
+      const ext = match[1].split('.').pop()?.toLowerCase() ?? '';
+      const mime = IMAGE_MIME[ext];
+      if (mime && entries[path]) media[rId] = `data:${mime};base64,${toBase64(entries[path])}`;
+    }
+    return media;
+  };
+  const media = mediaFor(rels);
 
   const root = parseXml(strFromU8(entries['word/document.xml']));
   const body = deep(root, 'w:body')[0];
@@ -385,9 +391,39 @@ export async function docxToHtml(file: File): Promise<{ html: string; title: str
       else if (child.tag === 'w:tbl') blocks.push({ html: renderTable(child, rels, media) });
     }
   }
-  const content = nestLists(blocks);
-
   const sectPr = body && first(body, 'w:sectPr');
+
+  /** The section's default header or footer. Lines with page-number fields are left out: the
+   *  numbers can't be reproduced on each printed page in every browser. */
+  const part = (kind: 'header' | 'footer') => {
+    const refs = sectPr ? el(sectPr, `w:${kind}Reference`) : [];
+    const ref = refs.find((r) => r.attrs['w:type'] === 'default') ?? refs[0];
+    const target = ref && rels.get(ref.attrs['r:id'])?.target.replace(/^\/?(word\/)?/, '');
+    const xml = target && entries[`word/${target}`];
+    const top = xml && parseXml(strFromU8(xml)).children.find((c) => c.tag === (kind === 'header' ? 'w:hdr' : 'w:ftr'));
+    if (!top) return '';
+    const partRels = loadRels(entries, `word/_rels/${target}.rels`);
+    const partMedia = mediaFor(partRels);
+    const pageField = (node: XNode) =>
+      deep(node, 'w:instrText').some((n) => /\b(NUM)?PAGES?\b/.test(textOf(n))) ||
+      deep(node, 'w:fldSimple').some((n) => /\b(NUM)?PAGES?\b/.test(n.attrs['w:instr'] ?? ''));
+    const partBlocks: typeof blocks = [];
+    for (const child of top.children) {
+      if (pageField(child)) continue;
+      if (child.tag === 'w:p') partBlocks.push(renderParagraph(child, partRels, partMedia, styles, [numbering]));
+      else if (child.tag === 'w:tbl') partBlocks.push({ html: renderTable(child, partRels, partMedia) });
+    }
+    const html = nestLists(partBlocks);
+    return (html.replace(/<[^>]*>/g, '').trim() || /<img/.test(html)) ? html : ''; // an empty part adds nothing
+  };
+  const header = part('header');
+  const footer = part('footer');
+  // A table's header and footer rows repeat on every printed page, in every major browser.
+  const content =
+    header || footer
+      ? `<table class="page-frame">${header ? `<thead><tr><td>${header}</td></tr></thead>` : ''}${footer ? `<tfoot><tr><td>${footer}</td></tr></tfoot>` : ''}<tbody><tr><td>${nestLists(blocks)}</td></tr></tbody></table>`
+      : nestLists(blocks);
+
   const pgSz = sectPr && first(sectPr, 'w:pgSz');
   const pgMar = sectPr && first(sectPr, 'w:pgMar');
   const inches = (twips?: string) => (twips && Number.isFinite(Number(twips)) ? `${(Number(twips) / TWIP_PER_INCH).toFixed(2)}in` : undefined);
@@ -414,6 +450,10 @@ td { border: 1px solid #999; padding: 4px 8px; vertical-align: top; }
 img { max-width: 100%; }
 ul, ol { margin: 0.3em 0 0.3em 1.5em; }
 a { color: #0563c1; }
+table.page-frame { width: 100%; margin: 0; }
+table.page-frame > * > tr > td { border: 0; padding: 0; }
+table.page-frame > thead td { padding-bottom: 14pt; color: #444; }
+table.page-frame > tfoot td { padding-top: 14pt; color: #444; }
 </style></head>
 <body>
 ${content}
@@ -427,7 +467,7 @@ ${content}
 
 interface TextItem { str: string; transform: number[]; width: number; height: number; fontName?: string; hasEOL?: boolean }
 interface Line { text: string; y: number; fontSize: number; bold: boolean; italic: boolean }
-export interface DocParagraph { text: string; fontSize: number; bold: boolean; italic: boolean; bullet: boolean }
+export interface DocParagraph { text: string; fontSize: number; bold: boolean; italic: boolean; bullet: boolean; numbered?: boolean }
 
 /** Groups raw pdf.js text items (already in reading order) into visual lines. */
 export function linesFromItems(items: TextItem[]): Line[] {
@@ -454,12 +494,18 @@ export function linesFromItems(items: TextItem[]): Line[] {
     }
   }
   if (current) lines.push(current);
-  return lines.filter((l) => l.text.trim());
+  return lines.map((l) => ({ ...l, text: fixIndic(l.text) })).filter((l) => l.text.trim());
 }
 
-const BULLET_RE = /^[••●▪‣⁃*-]\s+/;
+const BULLET_RE = /^[••●▪‣⁃*–-]\s+/;
+// Numbered items keep their own number ("1.", "2)", "a.") so the order reads the same in Word.
+const NUMBER_RE = /^(?:\d{1,3}|[a-z])[.)]\s+/i;
+const isItem = (text: string) => BULLET_RE.test(text) || NUMBER_RE.test(text);
 
-/** Joins lines into paragraphs (a big vertical gap starts a new one) and derives style hints. */
+/**
+ * Joins lines into paragraphs and derives style hints. A big vertical gap, a size change or a new
+ * list item starts a new paragraph; the wrapped lines of one item stay together.
+ */
 export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
   const paragraphs: DocParagraph[] = [];
   let buffer: Line[] = [];
@@ -467,12 +513,14 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
     if (!buffer.length) return;
     const text = buffer.map((l) => l.text).join(' ').trim();
     const bullet = BULLET_RE.test(buffer[0].text);
+    const numbered = NUMBER_RE.test(buffer[0].text);
     paragraphs.push({
       text: bullet ? text.replace(BULLET_RE, '') : text,
       fontSize: buffer[0].fontSize,
       bold: buffer.every((l) => l.bold),
       italic: buffer.every((l) => l.italic),
       bullet,
+      numbered,
     });
     buffer = [];
   };
@@ -482,7 +530,8 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
     if (prev) {
       const gap = prev.y - line.y; // PDF y grows upward
       const lineHeight = prev.fontSize * 1.15;
-      if (gap > lineHeight * 1.5 || prev.fontSize !== line.fontSize || BULLET_RE.test(line.text) !== BULLET_RE.test(buffer[0].text)) flush();
+      const endsList = isItem(buffer[0].text) && !isItem(line.text) && gap > lineHeight * 1.2;
+      if (gap > lineHeight * 1.5 || prev.fontSize !== line.fontSize || isItem(line.text) || endsList) flush();
     }
     buffer.push(line);
   }
@@ -493,12 +542,20 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
 // Control characters are legal in PDF text but not in XML 1.0; Word refuses files that contain them.
 const XML_ESCAPE = (s: string) => escapeHtml(s.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\uFFFE\uFFFF]/g, '')).replace(/\n/g, '</w:t></w:r><w:r><w:br/><w:r><w:t xml:space="preserve">');
 
-function headingStyle(fontSize: number, bodySize: number): 'Title' | 'Heading1' | 'Heading2' | 'Heading3' | null {
-  if (fontSize >= bodySize * 1.7) return 'Title';
-  if (fontSize >= bodySize * 1.4) return 'Heading1';
-  if (fontSize >= bodySize * 1.2) return 'Heading2';
-  if (fontSize >= bodySize * 1.08) return 'Heading3';
-  return null;
+type Style = 'Title' | 'Heading1' | 'Heading2' | 'Heading3';
+
+/**
+ * Heading levels by rank: the largest size above body text is Heading 1, the next Heading 2, and so
+ * on. A size used for a single line at the very start (a document title) becomes Title instead.
+ */
+export function headingStyles(paragraphs: DocParagraph[], bodySize: number): Map<number, Style> {
+  const sizes = [...new Set(paragraphs.map((p) => p.fontSize).filter((size) => size >= bodySize * 1.08))].sort((a, b) => b - a);
+  const styles = new Map<number, Style>();
+  const top = sizes[0];
+  const titled = top !== undefined && paragraphs[0]?.fontSize === top && paragraphs.filter((p) => p.fontSize === top).length === 1;
+  if (titled) styles.set(sizes.shift()!, 'Title');
+  sizes.slice(0, 3).forEach((size, i) => styles.set(size, (['Heading1', 'Heading2', 'Heading3'] as const)[i]));
+  return styles;
 }
 
 const DOCX_STYLES_XML = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -540,19 +597,21 @@ const appXml = (words: number, pages: number) => `<?xml version="1.0" encoding="
 
 /** Builds a minimal, valid .docx from already-extracted paragraphs. Pure and Node-testable. */
 export function buildDocxPackage(pages: DocParagraph[][], pageSize: { widthPt: number; heightPt: number }, title: string): { zipped: Uint8Array; words: number } {
+  // Body text is the size most of the characters are set in (a few short headings mustn't win).
   const bodySize = (() => {
-    const sizes = pages.flat().map((p) => p.fontSize);
-    if (!sizes.length) return 12;
-    sizes.sort((a, b) => a - b);
-    return sizes[Math.floor(sizes.length / 2)];
+    const chars = new Map<number, number>();
+    for (const p of pages.flat()) chars.set(p.fontSize, (chars.get(p.fontSize) ?? 0) + p.text.length);
+    return [...chars].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 12;
   })();
+
+  const styles = headingStyles(pages.flat(), bodySize);
 
   let words = 0;
   const paragraphXml = (p: DocParagraph, pageBreakBefore: boolean) => {
     words += p.text.split(/\s+/).filter(Boolean).length;
-    const style = headingStyle(p.fontSize, bodySize);
+    const style = p.bullet || p.numbered ? undefined : styles.get(p.fontSize);
     const pPr = [
-      style ? `<w:pStyle w:val="${style}"/>` : p.bullet ? '<w:pStyle w:val="ListParagraph"/>' : '',
+      style ? `<w:pStyle w:val="${style}"/>` : p.bullet || p.numbered ? '<w:pStyle w:val="ListParagraph"/>' : '',
       pageBreakBefore ? '<w:pageBreakBefore/>' : '',
     ].join('');
     const text = XML_ESCAPE((p.bullet ? '• ' : '') + p.text);

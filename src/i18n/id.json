@@ -3,7 +3,7 @@
     "nav.label": "Utama",
     "nav.home": "Beranda Fizzdoc",
     "nav.theme": "Ganti tema warna",
-    "nav.star": "★ Star",
+    "nav.star": "Star",
     "nav.starAria": "Beri bintang Fizzdoc di GitHub",
     "lang.label": "Bahasa",
     "lang.tip": "Lebih suka bahasa lain? Pilih di sini.",
@@ -96,6 +96,14 @@
     "ws.style": "Gaya",
     "ws.pageOf": "Halaman 1 dari 10",
     "ws.startAt": "Mulai dari",
+    "ws.targetKb": "Ukuran file maks. (KB)",
+    "ws.targetAny": "Tanpa batas",
+    "ws.dpiStandard": "Standar (file lebih kecil)",
+    "ws.dpiHigh": "Tinggi (cetakan kecil lebih tajam)",
+    "ws.look": "Tampilan",
+    "ws.lookColor": "Berwarna",
+    "ws.lookGray": "Hitam putih",
+    "ws.lookScanned": "Hasil scan (abu-abu, sedikit miring)",
     "ws.wmText": "Teks watermark",
     "ws.wmDefault": "RAHASIA",
     "ws.opacity": "Opasitas",
@@ -112,6 +120,7 @@
     "app.downloadExt": "Unduh {ext}",
     "app.canceled": "Dibatalkan. Tidak ada yang diubah.",
     "app.wrongType": "Jenis file itu tidak bisa digunakan dengan alat ini.",
+    "app.oneFile": "Alat ini memproses satu file sekaligus, jadi file pertama yang ditambahkan.",
     "app.tooBig": "Total file ini {size}, lebih besar dari yang bisa diproses perangkat ini dengan aman ({max}).",
     "app.moveUp": "Naikkan",
     "app.moveDown": "Turunkan",
@@ -134,6 +143,10 @@
     "error.BAD_IMAGE": "Salah satu gambar tidak dapat dibaca. Coba gunakan JPG atau PNG.",
     "error.PDF_PASSWORD": "PDF ini dilindungi kata sandi. Hapus kata sandinya dengan Buka Kunci PDF terlebih dahulu.",
     "error.BAD_SIZE": "Lebar dan tinggi masing-masing harus antara 1 dan 16.384 piksel.",
+    "error.BAD_SCALE": "Skala harus antara 1% dan 1000%.",
+    "error.BAD_TARGET": "Batas ukuran harus minimal 5 KB.",
+    "error.TARGET_TOO_SMALL": "Batas ini terlalu kecil untuk gambar ini tanpa membuatnya tidak jelas. Coba batas yang lebih besar; sebagian besar formulir menerima 50–200 KB.",
+    "error.TOO_LARGE": "Ukuran itu terlalu besar untuk dibuat di browser (lebih dari 100 megapiksel). Pilih ukuran yang lebih kecil.",
     "error.NO_TEXT": "PDF ini tidak memiliki teks untuk diekstrak — kemungkinan ini hasil pindaian gambar. Jalankan OCR PDF dulu, lalu coba lagi.",
     "error.NO_WATERMARK": "Masukkan teks watermark (huruf, angka, dan simbol umum).",
     "error.ENGINE_FAILED": "Mesin PDF berhenti secara tak terduga — file mungkin terlalu besar untuk perangkat ini.",
@@ -177,9 +190,18 @@
     "ed.removeBox": "Hapus kotak teks",
     "ed.replaced": "Beberapa karakter tidak didukung oleh font standar PDF dan telah diganti.",
     "ed.hint": "Teks yang ditutup hanya disembunyikan, bukan dihapus dari file — untuk data sensitif, hapus saja halamannya.",
+    "ocr.unsure": "Sebagian teks ini mungkin salah. Pengenalan teks membaca teks bahasa Inggris yang tegak: putar dulu foto yang miring, dan aksara lain akan keluar berantakan.",
     "ocr.copyAll": "Salin semua teks",
     "ocr.copied": "Disalin",
     "ocr.text": "Teks yang dikenali",
+    "rd.find": "Cari kata atau nomor untuk disembunyikan",
+    "rd.markAll": "Tandai semua",
+    "rd.clear": "Hapus semua",
+    "rd.count": "Area yang ditandai: {n}",
+    "rd.found": "Kecocokan yang ditandai: {n}",
+    "rd.none": "Tidak ada kecocokan untuk “{text}”",
+    "rd.remove": "Hapus tanda ini",
+    "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya.",
     "footer.madeBy": "Dirancang dan dibuat oleh",
     "footer.feedback": "Laporkan bug atau usulkan alat",
     "format.audio": "Audio",
@@ -595,6 +617,70 @@
         ]
       ]
     },
+    "redact-pdf": {
+      "name": "Sensor PDF",
+      "summary": "Hitamkan teks, tanda tangan, atau foto agar hilang selamanya.",
+      "action": "Simpan PDF yang Disensor",
+      "title": "Sensor PDF Online — Hapus Teks Selamanya, Tanpa Upload | Fizzdoc",
+      "description": "Hitamkan nama, nomor, tanda tangan, atau foto di PDF dan simpan salinan yang benar-benar menghilangkannya. Berjalan di browser Anda; tanpa upload. Gratis.",
+      "h1": "Sensor PDF: hitamkan apa saja selamanya",
+      "lede": "Seret area yang harus hilang, atau cari nama atau nomor lalu tandai setiap kecocokan. Saat disimpan, setiap halaman menjadi gambar, jadi teks yang disembunyikan tidak bisa disalin atau dipulihkan.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Seret pada halaman untuk menutup area, atau ketik kata lalu klik “Tandai semua”.",
+        "Pilih kualitas dan tampilan, lalu klik “Simpan PDF yang Disensor” dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah teks yang disensor benar-benar hilang?",
+          "Ya. Fizzdoc menggambar ulang setiap halaman sebagai gambar dengan tanda hitam Anda tertanam di dalamnya dan membuat PDF baru dari gambar-gambar itu. Teks asli, font, dan metadata dokumen tidak disalin, jadi apa pun di bawah tanda tidak bisa dipilih, dicari, atau dipulihkan."
+        ],
+        [
+          "Apakah saya masih bisa mencari atau menyalin teks yang lain?",
+          "Tidak. Setiap halaman menjadi gambar, jadi file yang disimpan tidak punya teks yang bisa dipilih. Jika butuh teks yang bisa dicari lagi, jalankan file yang disensor lewat OCR PDF; tanda hitamnya akan tetap hitam."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF ke PDF Hasil Scan",
+      "summary": "Ubah setiap halaman menjadi gambar, seperti dokumen hasil scan.",
+      "action": "Buat PDF Hasil Scan",
+      "title": "PDF ke PDF Hasil Scan — Tampilan Scan, Tanpa Upload | Fizzdoc",
+      "description": "Ubah PDF menjadi PDF berbasis gambar bertampilan scan: berwarna, hitam putih, atau tampilan scanner asli. Berjalan di browser Anda; tanpa upload. Gratis.",
+      "h1": "Ubah PDF menjadi PDF hasil scan",
+      "lede": "Setiap halaman menjadi gambar, jadi teksnya tidak bisa dipilih atau diedit. Pertahankan warnanya, ubah jadi hitam putih, atau tambahkan sedikit kemiringan dan tekstur kertas agar terlihat seperti hasil scan.",
+      "steps": [
+        "Tambahkan satu file PDF.",
+        "Pilih kualitas dan tampilan: berwarna, hitam putih, atau hasil scan.",
+        "Klik “Buat PDF Hasil Scan” dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Kenapa saya perlu PDF hasil scan?",
+          "Beberapa kantor dan portal meminta salinan hasil scan, dan PDF berbasis gambar mencegah teks disalin atau diedit dengan mudah. Ini juga meratakan kolom formulir dan komentar menjadi apa yang terlihat di halaman."
+        ],
+        [
+          "Apakah ukuran filenya jadi lebih besar?",
+          "Biasanya ya, karena halaman disimpan sebagai gambar. Kualitas standar (150 DPI) membuat file tetap kecil; kualitas tinggi (300 DPI) membuat cetakan kecil tetap tajam."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Buat PDF hasil scan bisa dicari dan disalin.",
@@ -920,6 +1006,102 @@
         [
           "Apakah data lokasi ikut terhapus?",
           "Ya. Proses encode ulang menghapus metadata EXIF tersembunyi seperti lokasi GPS dan detail kamera."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Kompres Gambar ke 20 KB",
+      "summary": "Buat foto atau tanda tangan di bawah 20 KB untuk formulir online.",
+      "action": "Kompres gambar",
+      "title": "Kompres Gambar ke 20 KB Online — JPG, Tanpa Unggah | Fizzdoc",
+      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 20 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah.",
+      "h1": "Kompres gambar menjadi di bawah 20 KB",
+      "lede": "Formulir sering meminta foto atau tanda tangan di bawah 20 KB. Fizzdoc menjaga foto sebesar dan setajam mungkin, menurunkan kualitas JPG hanya sebatas yang diperlukan, dan tidak pernah mengunggah foto Anda.",
+      "steps": [
+        "Tambahkan satu atau beberapa gambar (JPG, PNG, WebP atau foto dari ponsel).",
+        "Periksa batas ukuran (20 KB sudah terisi; ubah jika formulir Anda meminta ukuran lain).",
+        "Klik “Kompres gambar” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana cara menjaga foto tetap tajam?",
+          "Seperti aplikasi pesan, alat ini pertama-tama menjaga sisi terpanjang foto sekitar 1600 piksel, lalu menurunkan kualitas JPG secara bertahap — tidak pernah di bawah 50% selama foto berukuran 1000 piksel atau lebih. Hanya jika ukurannya masih terlalu besar, foto akan diperkecil."
+        ],
+        [
+          "Bagaimana jika formulir saya juga meminta ukuran piksel yang tepat?",
+          "Gunakan Resize Image terlebih dahulu untuk mengatur lebar dan tinggi yang diminta formulir, lalu kompres hasilnya di sini."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Kompres Gambar ke 50 KB",
+      "summary": "Buat foto atau tanda tangan di bawah 50 KB untuk formulir online.",
+      "action": "Kompres gambar",
+      "title": "Kompres Gambar ke 50 KB Online — JPG, Tanpa Unggah | Fizzdoc",
+      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 50 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah.",
+      "h1": "Kompres gambar menjadi di bawah 50 KB",
+      "lede": "Formulir sering meminta foto atau tanda tangan di bawah 50 KB. Fizzdoc menjaga foto sebesar dan setajam mungkin, menurunkan kualitas JPG hanya sebatas yang diperlukan, dan tidak pernah mengunggah foto Anda.",
+      "steps": [
+        "Tambahkan satu atau beberapa gambar (JPG, PNG, WebP atau foto dari ponsel).",
+        "Periksa batas ukuran (50 KB sudah terisi; ubah jika formulir Anda meminta ukuran lain).",
+        "Klik “Kompres gambar” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana cara menjaga foto tetap tajam?",
+          "Seperti aplikasi pesan, alat ini pertama-tama menjaga sisi terpanjang foto sekitar 1600 piksel, lalu menurunkan kualitas JPG secara bertahap — tidak pernah di bawah 50% selama foto berukuran 1000 piksel atau lebih. Hanya jika ukurannya masih terlalu besar, foto akan diperkecil."
+        ],
+        [
+          "Bagaimana jika formulir saya juga meminta ukuran piksel yang tepat?",
+          "Gunakan Resize Image terlebih dahulu untuk mengatur lebar dan tinggi yang diminta formulir, lalu kompres hasilnya di sini."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Kompres Gambar ke 100 KB",
+      "summary": "Buat foto atau tanda tangan di bawah 100 KB untuk formulir online.",
+      "action": "Kompres gambar",
+      "title": "Kompres Gambar ke 100 KB Online — JPG, Tanpa Unggah | Fizzdoc",
+      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 100 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah.",
+      "h1": "Kompres gambar menjadi di bawah 100 KB",
+      "lede": "Formulir sering meminta foto atau tanda tangan di bawah 100 KB. Fizzdoc menjaga foto sebesar dan setajam mungkin, menurunkan kualitas JPG hanya sebatas yang diperlukan, dan tidak pernah mengunggah foto Anda.",
+      "steps": [
+        "Tambahkan satu atau beberapa gambar (JPG, PNG, WebP atau foto dari ponsel).",
+        "Periksa batas ukuran (100 KB sudah terisi; ubah jika formulir Anda meminta ukuran lain).",
+        "Klik “Kompres gambar” dan unduh hasilnya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana cara menjaga foto tetap tajam?",
+          "Seperti aplikasi pesan, alat ini pertama-tama menjaga sisi terpanjang foto sekitar 1600 piksel, lalu menurunkan kualitas JPG secara bertahap — tidak pernah di bawah 50% selama foto berukuran 1000 piksel atau lebih. Hanya jika ukurannya masih terlalu besar, foto akan diperkecil."
+        ],
+        [
+          "Bagaimana jika formulir saya juga meminta ukuran piksel yang tepat?",
+          "Gunakan Resize Image terlebih dahulu untuk mengatur lebar dan tinggi yang diminta formulir, lalu kompres hasilnya di sini."
         ],
         [
           "Apakah Fizzdoc gratis?",

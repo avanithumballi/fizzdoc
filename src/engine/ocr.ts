@@ -81,6 +81,16 @@ async function decodeImage(file: File): Promise<ImageBitmap> {
 }
 
 /** Recognizes the English text in a photo or scan. Bboxes are in the original image's pixels. */
+/**
+ * True when recognition looks unreliable: little or no text found, or low average confidence
+ * (typical of sideways photos and scripts other than English).
+ */
+export function unsure(words: { text: string; confidence: number }[]): boolean {
+  const chars = words.reduce((sum, w) => sum + w.text.length, 0);
+  if (chars < 3) return true;
+  return words.reduce((sum, w) => sum + w.confidence * w.text.length, 0) / chars < 60;
+}
+
 export async function ocrImage(file: File, onProgress?: (fraction: number) => void): Promise<OcrResult> {
   const original = await decodeImage(file);
   // Read the size before close(): a closed ImageBitmap reports 0 × 0.
@@ -199,6 +209,7 @@ async function hasRealText(page: { getTextContent(): Promise<{ items: unknown[] 
 /** Adds an invisible, searchable text layer to a scanned PDF; pages that already have real text
  * are left untouched. The visible content of every page is never modified. */
 export async function ocrPdf(file: File, onProgress?: (fraction: number) => void): Promise<Output> {
+  const allWords: { text: string; confidence: number }[] = [];
   const bytes = new Uint8Array(await file.arrayBuffer());
 
   const { PDFDocument, StandardFonts } = await import('pdf-lib');
@@ -264,6 +275,7 @@ export async function ocrPdf(file: File, onProgress?: (fraction: number) => void
         srcPage.cleanup();
 
         const { data } = await worker.recognize(blob, {}, { blocks: true });
+        allWords.push(...flattenWords(data).map((w) => ({ text: w.text, confidence: w.confidence })));
         const target = pages[number - 1];
         const fontKey = target.node.newFontDictionary(font.name, font.ref);
         const ops = [pushGraphicsState(), beginText(), setTextRenderingMode(TextRenderingMode.Invisible)];
@@ -293,5 +305,6 @@ export async function ocrPdf(file: File, onProgress?: (fraction: number) => void
     blob: new Blob([saved as Uint8Array<ArrayBuffer>], { type: 'application/pdf' }),
     name,
     summary: `${doc.numPages} ${doc.numPages === 1 ? 'page' : 'pages'} · ${recognized} recognized`,
+    notes: unsure(allWords) ? ['ocr.unsure'] : [],
   };
 }

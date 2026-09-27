@@ -128,6 +128,7 @@ function setUp(op: ToolOp) {
         height: number(o.height),
         scale: number(o.scale),
         keepAspect: o.keepAspect !== 'false',
+        targetKb: number(o.targetKb),
       }),
     'pdf-to-text': async (f, o) => (await import('./engine/convert')).pdfToText(f[0], { format: o.format === 'md' ? 'md' : 'txt' }),
     'text-to-pdf': async (f) => (await import('./engine/convert')).textToHtml(f[0]),
@@ -139,13 +140,14 @@ function setUp(op: ToolOp) {
     'ocr-pdf': async (f) => (await import('./engine/ocr')).ocrPdf(f[0], progressLabel),
     'image-ocr': async (f) => {
       const [{ ocrImage }, { showTextOverlay }] = await Promise.all([import('./engine/ocr'), import('./tools/ocr-viewer')]);
-      const recognized = await ocrImage(f[0], progressLabel);
+      const [recognized, { unsure }] = await Promise.all([ocrImage(f[0], progressLabel), import('./engine/ocr')]);
       showTextOverlay(viewer!, f[0], recognized);
       const words = recognized.words.length;
       return {
         blob: new Blob([recognized.text], { type: 'text/plain;charset=utf-8' }),
         name: `${baseName(f[0])}.txt`,
         summary: `${words} ${words === 1 ? 'word' : 'words'} recognized`, // localized by show()
+        notes: unsure(recognized.words) ? ['ocr.unsure'] : [],
       };
     },
     'edit-pdf': async (_, o) => (await editor!.ready).save(o, progressLabel),
@@ -253,7 +255,7 @@ function setUp(op: ToolOp) {
       }),
     );
     runButton.disabled = busy() || files.length < (op === 'merge' ? 2 : 1);
-    cancelButton.hidden = !worker;
+    cancelButton.hidden = !busy();
     progress.hidden = !busy();
     if (reorderHint) reorderHint.hidden = files.length < 2 || busy();
     input.disabled = busy();
@@ -294,6 +296,7 @@ function setUp(op: ToolOp) {
     if (busy()) return;
     const usable = incoming.filter(accepted);
     if (usable.length < incoming.length) say(t('app.wrongType'), 'error');
+    else if (!multiple && usable.length > 1) say(t('app.oneFile'));
     else say('');
     if (!usable.length) return;
     files = multiple ? [...files, ...usable] : [usable[0]];
@@ -421,19 +424,28 @@ function setUp(op: ToolOp) {
     result.hidden = false;
   }
 
+  // Local jobs can't be interrupted mid-way, so Cancel lets go of them and ignores their result.
+  let localJob = 0;
   async function runLocal(job: LocalJob) {
     say(t('app.working'));
     localBusy = true;
+    const id = ++localJob;
     render();
     try {
       const output = await job(files, options());
+      if (id !== localJob) return;
       if ('html' in output) printDocument(output);
-      else show(output.blob, output.name, output.summary);
+      else {
+        show(output.blob, output.name, output.summary);
+        warnings.replaceChildren(...(output.notes ?? []).map((key) => Object.assign(document.createElement('li'), { textContent: t(key as UiKey) })));
+      }
     } catch (error) {
-      fail(error);
+      if (id === localJob) fail(error);
     } finally {
-      localBusy = false;
-      render();
+      if (id === localJob) {
+        localBusy = false;
+        render();
+      }
     }
   }
 
@@ -494,6 +506,8 @@ function setUp(op: ToolOp) {
   });
   runButton.onclick = run;
   cancelButton.onclick = () => {
+    localJob++;
+    localBusy = false;
     stop();
     say(t('app.canceled'));
   };

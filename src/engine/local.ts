@@ -7,10 +7,12 @@ export interface Output {
   name: string;
   /** Human summary, e.g. "3 images". */
   summary: string;
+  /** UI keys of things worth knowing about the result, listed under it. */
+  notes?: string[];
 }
 
 export class LocalError extends Error {
-  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'NO_TEXT' | 'NO_WATERMARK') {
+  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'BAD_SCALE' | 'TOO_LARGE' | 'BAD_TARGET' | 'TARGET_TOO_SMALL' | 'NO_TEXT' | 'NO_WATERMARK') {
     super(code);
   }
 }
