@@ -24,7 +24,7 @@
     "format.powerpoint": "PowerPoint",
     "format.image": "Immagini",
     "group.title": "Strumenti {format}",
-    "home.eyebrow": "0 byte caricati · Open source · Gratis",
+    "home.eyebrow": "0 byte caricati · Open source · Gratis per sempre",
     "home.cta": "Unisci PDF",
     "home.browse": "Sfoglia tutti i {n} strumenti",
     "home.formats": "Formati supportati",
@@ -37,7 +37,8 @@
     "home.toolsTitle": "Ogni strumento, privato per natura",
     "home.toolsLede": "Scegli uno strumento. Il tuo file viene elaborato su questo dispositivo e non tocca mai un server.",
     "home.whatTitle": "Cos'è {name}?",
-    "tool.eyebrow": "Funziona sul tuo dispositivo · 0 byte caricati",
+    "tool.eyebrow": "Gratis per sempre · Funziona sul tuo dispositivo · 0 byte caricati",
+    "tool.uses": "Utile anche per",
     "tool.how": "Come usare {tool}",
     "tool.more": "Altri strumenti privati",
     "crumbs.label": "Percorso di navigazione",
@@ -244,8 +245,8 @@
     "au.download": "Scarica"
   },
   "home": {
-    "title": "Fizzdoc — PDF, Word, Excel e Immagini Senza Upload",
-    "description": "Modifica, comprimi, converti, esegui OCR e unisci PDF; converti Word, Excel e immagini — nel browser. Zero upload, senza registrazione, gratis e open source.",
+    "title": "Fizzdoc — Strumenti Gratis per PDF, Immagini e Audio",
+    "description": "Gratis per sempre: modifica, comprimi, converti e usa l'OCR su PDF, immagini, audio e file Office nel browser. Nessun upload, niente registrazione.",
     "h1": "Strumenti per documenti che non vedono mai i tuoi documenti",
     "lede": "Modifica, comprimi, converti ed esegui OCR sui PDF. Converti Word, Excel, PowerPoint e immagini, e taglia o unisci audio. Tutto funziona nel tuo browser — i tuoi file non lasciano mai il tuo dispositivo.",
     "what": "Fizzdoc è un insieme gratuito e open source di strumenti per documenti che funziona interamente nel tuo browser. I PDF vengono elaborati con i motori qpdf, pdf.js e pdf-lib, il riconoscimento del testo usa Tesseract, e anche i file Office e le immagini vengono gestiti in locale — così niente viene mai caricato su un server.",
@@ -253,6 +254,10 @@
       [
         "I miei file vengono caricati da qualche parte?",
         "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+      ],
+      [
+        "È sicuro per estratti conto, documenti d'identità o cartelle cliniche?",
+        "Sì. Il file viene aperto ed elaborato dentro la scheda del tuo browser e non viene mai inviato da nessuna parte, quindi non resta nessuna copia su un server che potrebbe essere violato, venduto o trapelare. Il tuo browser lo garantisce, puoi verificarlo nella scheda Rete, e chiudere la scheda cancella tutto."
       ],
       [
         "In cosa Fizzdoc è diverso da iLovePDF, Smallpdf o dagli strumenti online di Adobe?",
@@ -268,7 +273,7 @@
       ],
       [
         "Fizzdoc è gratuito?",
-        "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+        "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
       ]
     ]
   },
@@ -277,7 +282,7 @@
       "name": "Unisci PDF",
       "summary": "Combina più PDF in uno solo, nell'ordine che preferisci.",
       "action": "Unisci PDF",
-      "title": "Unisci PDF Online Senza Upload, Gratis | Fizzdoc",
+      "title": "Unire PDF Gratis Online — Senza Caricare File | Fizzdoc",
       "description": "Combina file PDF nel browser. Niente viene caricato, e campi modulo e collegamenti vengono mantenuti. Gratis, senza registrazione, open source.",
       "h1": "Unisci file PDF senza caricarli online",
       "lede": "Combina più PDF in un unico documento direttamente nel browser. Niente viene inviato a un server, e campi modulo e collegamenti interni sopravvivono all'unione.",
@@ -305,15 +310,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "unire pdf gratis",
+        "combinare pdf senza caricarli",
+        "unire più pdf in uno solo",
+        "unire pdf scansionati",
+        "unire pdf dal telefono"
       ]
     },
     "split-pdf": {
       "name": "Dividi PDF",
       "summary": "Estrai le pagine che ti servono in un nuovo PDF.",
       "action": "Estrai pagine",
-      "title": "Dividi PDF ed Estrai Pagine Senza Upload | Fizzdoc",
+      "title": "Dividere PDF Gratis — Separare le Pagine Online | Fizzdoc",
       "description": "Estrai pagine da un PDF nel browser. Scegli intervalli come 1-3, 8 — il tuo file non lascia mai il dispositivo. Gratis, senza registrazione, open source.",
       "h1": "Dividi un PDF ed estrai pagine — in privato",
       "lede": "Estrai le pagine che ti servono in un nuovo PDF. Digita intervalli come “1-3, 8”; l'ordine che digiti è l'ordine che ottieni.",
@@ -337,15 +349,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "dividere pdf gratis",
+        "separare una pagina da un pdf",
+        "dividere un pdf grande in parti",
+        "tagliare pagine pdf online gratis",
+        "dividere pdf senza Adobe"
       ]
     },
     "rotate-pdf": {
       "name": "Ruota PDF",
       "summary": "Raddrizza le pagine storte, in modo permanente.",
       "action": "Ruota pagine",
-      "title": "Ruota le Pagine di un PDF in Modo Permanente | Fizzdoc",
+      "title": "Ruotare PDF Gratis — Girare le Pagine Senza Upload | Fizzdoc",
       "description": "Ruota tutte le pagine di un PDF o solo alcune di 90°, 180° o 270° e salva il risultato. Funziona nel browser; il file non viene mai caricato.",
       "h1": "Ruota le pagine di un PDF e salvale così",
       "lede": "Correggi per sempre le scansioni storte. Ruota ogni pagina o solo quelle che scegli — senza ridisegnarle, così la qualità resta intatta.",
@@ -369,15 +388,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ruotare un pdf e salvare",
+        "correggere un pdf scansionato storto",
+        "ruotare una pagina di un pdf",
+        "girare le pagine pdf di 90 gradi",
+        "ruotare pdf online gratis"
       ]
     },
     "delete-pdf-pages": {
       "name": "Elimina Pagine PDF",
       "summary": "Rimuovi le pagine che non vuoi condividere.",
       "action": "Elimina pagine",
-      "title": "Elimina Pagine da un PDF — Privato, No Upload | Fizzdoc",
+      "title": "Eliminare Pagine da un PDF Gratis, Senza Upload | Fizzdoc",
       "description": "Rimuovi le pagine indesiderate da un PDF nel browser. Digita le pagine da eliminare; il file non lascia mai il dispositivo. Gratis e open source.",
       "h1": "Elimina pagine da un PDF — in privato",
       "lede": "Rimuovi pagine vuote, duplicate o riservate prima di condividere un documento, senza consegnarlo a nessuno.",
@@ -397,15 +423,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "eliminare pagine da un pdf",
+        "eliminare una pagina bianca dal pdf",
+        "eliminare pagine pdf senza Acrobat",
+        "eliminare l'ultima pagina di un pdf",
+        "eliminare pagine dal pdf gratis"
       ]
     },
     "unlock-pdf": {
       "name": "Sblocca PDF",
       "summary": "Salva una copia senza la password che conosci.",
       "action": "Rimuovi password",
-      "title": "Rimuovi la Password da un PDF (Sblocca PDF) | Fizzdoc",
+      "title": "Sbloccare PDF Gratis — Rimuovere la Password | Fizzdoc",
       "description": "Rimuovi la password da un PDF che hai il diritto di aprire. La decrittazione avviene sul tuo dispositivo e niente viene caricato. Gratis, senza registrazione.",
       "h1": "Rimuovi una password da un PDF — sul tuo dispositivo",
       "lede": "Salva una copia sbloccata di un PDF protetto che puoi già aprire. La password e il documento restano sul tuo dispositivo.",
@@ -429,15 +462,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "rimuovere la password da un pdf",
+        "sbloccare un pdf dell'estratto conto",
+        "il pdf chiede una password che non conosco",
+        "rimuovere le restrizioni da un pdf",
+        "sbloccare pdf gratis online"
       ]
     },
     "protect-pdf": {
       "name": "Proteggi PDF",
       "summary": "Blocca un PDF con una password e crittografia AES-256.",
       "action": "Proteggi PDF",
-      "title": "Proteggi un PDF con Password AES-256 | Fizzdoc",
+      "title": "Proteggere PDF con Password Gratis — AES-256 | Fizzdoc",
       "description": "Aggiungi una password a un PDF con crittografia AES-256, nel browser. File e password non lasciano mai il dispositivo. Gratis, senza registrazione.",
       "h1": "Proteggi un PDF con password — sul tuo dispositivo",
       "lede": "Cripta un PDF con AES-256 così si apre solo con la tua password. La crittografia avviene in questa scheda; né il file né la password vengono inviati altrove.",
@@ -461,15 +501,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "mettere una password a un pdf",
+        "criptare un pdf con AES-256",
+        "bloccare un file pdf",
+        "proteggere un pdf senza Acrobat",
+        "proteggere un pdf prima di inviarlo via email"
       ]
     },
     "remove-pdf-metadata": {
       "name": "Rimuovi Metadati PDF",
       "summary": "Elimina autore, titolo, software e dati XMP.",
       "action": "Rimuovi metadati",
-      "title": "Rimuovi Metadati da un PDF (Autore, Titolo, XMP) | Fizzdoc",
+      "title": "Rimuovere Metadati da PDF Gratis — Autore e Titolo | Fizzdoc",
       "description": "Elimina i metadati nascosti di un PDF, come autore, titolo, app creatrice e dati XMP, prima di condividerlo. Funziona nel browser; niente viene caricato.",
       "h1": "Rimuovi i metadati nascosti da un PDF",
       "lede": "I PDF registrano silenziosamente chi li ha scritti, con quale app e quando. Elimina autore, titolo, oggetto, parole chiave, produttore e metadati XMP prima di condividere.",
@@ -489,16 +536,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "rimuovere il nome dell'autore da un pdf",
+        "pulire i metadati di un pdf prima di condividerlo",
+        "eliminare dati nascosti in un pdf",
+        "rimuovere i metadati xmp",
+        "anonimizzare un pdf"
       ]
     },
     "jpg-to-pdf": {
       "name": "Da JPG a PDF",
       "summary": "Trasforma foto e scansioni in un unico PDF.",
       "action": "Crea PDF",
-      "title": "Convertitore da JPG a PDF — Privato, Gratis | Fizzdoc",
-      "description": "Converti JPG, PNG, WebP e altre immagini in un unico PDF nel browser. Le foto non lasciano mai il dispositivo. Nessuna filigrana, nessuna registrazione.",
+      "title": "Convertire JPG in PDF Gratis — Foto in PDF | Fizzdoc",
+      "description": "Converti JPG, PNG, WebP e altre immagini in un unico PDF nel browser. Le foto non lasciano mai il tuo dispositivo. Gratis, senza filigrana.",
       "h1": "Converti immagini JPG e PNG in PDF — in privato",
       "lede": "Combina foto, screenshot e scansioni in un unico PDF, una pagina per immagine, a piena risoluzione. Le tue immagini restano sul tuo dispositivo.",
       "steps": [
@@ -521,15 +575,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire foto in pdf",
+        "unire immagini in un unico pdf",
+        "convertitore da immagine a pdf gratis",
+        "jpg in pdf dal telefono",
+        "creare un pdf da foto"
       ]
     },
     "pdf-to-jpg": {
       "name": "Da PDF a JPG",
       "summary": "Salva ogni pagina come immagine JPG nitida.",
       "action": "Converti in JPG",
-      "title": "Convertitore da PDF a JPG — Privato, Gratis | Fizzdoc",
+      "title": "Convertire PDF in JPG Gratis — Alta Qualità | Fizzdoc",
       "description": "Converti ogni pagina di un PDF in un'immagine JPG di alta qualità nel browser. Niente viene caricato. Più pagine si scaricano come un unico ZIP.",
       "h1": "Converti le pagine di un PDF in immagini JPG — in privato",
       "lede": "Genera ogni pagina come un nitido JPG a 150 DPI usando pdf.js di Mozilla, direttamente nel tuo browser. Un PDF con più pagine si scarica come un unico ZIP.",
@@ -553,15 +614,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire le pagine di un pdf in immagini",
+        "salvare un pdf come jpg",
+        "pdf a immagine alta qualità",
+        "estrarre una pagina di un pdf come foto",
+        "pdf a jpg dal telefono"
       ]
     },
     "compress-pdf": {
       "name": "Comprimi PDF",
       "summary": "Rimpicciolisci un PDF ottimizzando le immagini. Il testo resta nitido.",
       "action": "Comprimi PDF",
-      "title": "Comprimi PDF Online Senza Caricarlo, Gratis | Fizzdoc",
+      "title": "Comprimere PDF Gratis — Ridurre le Dimensioni | Fizzdoc",
       "description": "Riduci la dimensione di un PDF nel browser ricomprimendo le immagini troppo grandi. Il testo resta selezionabile e nitido. Niente upload, open source.",
       "h1": "Comprimi un PDF — senza caricarlo",
       "lede": "Rendi un PDF abbastanza piccolo da inviare via email o caricare su un portale. Fizzdoc ricomprime foto e scansioni troppo pesanti e lascia intatti testo e grafica vettoriale.",
@@ -585,16 +653,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre le dimensioni di un pdf",
+        "comprimere pdf senza perdere qualità",
+        "rendere un pdf più leggero per l'email",
+        "comprimere pdf per caricarlo su un portale",
+        "ridurre le dimensioni di un pdf scansionato"
       ]
     },
     "edit-pdf": {
       "name": "Modifica PDF",
       "summary": "Cambia il testo esistente, aggiungi testo e copri parti, direttamente sulla pagina.",
       "action": "Salva PDF",
-      "title": "Modifica il Testo di un PDF Online, Gratis | Fizzdoc",
-      "description": "Clicca su qualsiasi testo di un PDF per cambiarlo, aggiungine di nuovo o copri delle aree — direttamente sulla pagina, nel browser. Niente viene caricato.",
+      "title": "Modificare PDF Gratis Online — Cambiare il Testo | Fizzdoc",
+      "description": "Clicca su qualsiasi testo di un PDF per modificarlo, aggiungi nuovo testo o copri delle zone, direttamente nel browser. Gratis, senza registrazione.",
       "h1": "Modifica il testo di un PDF direttamente sulla pagina",
       "lede": "Correggi un refuso, aggiorna una data o riempi uno spazio vuoto senza il file originale. Clicca sul testo che vuoi cambiare e digita — avviene tutto sul tuo dispositivo.",
       "steps": [
@@ -617,15 +692,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "modificare il testo di un pdf",
+        "cambiare parole in un pdf gratis",
+        "aggiungere testo a un pdf",
+        "coprire del testo in un pdf",
+        "editor di pdf senza registrazione"
       ]
     },
     "redact-pdf": {
       "name": "Oscura PDF",
       "summary": "Annerisci testo, firme o foto perché spariscano per sempre.",
       "action": "Salva PDF oscurato",
-      "title": "Oscurare un PDF Online — Cancella Testo per Sempre | Fizzdoc",
+      "title": "Censurare PDF Gratis — Coprire il Testo per Sempre | Fizzdoc",
       "description": "Annerisci nomi, numeri, firme o foto in un PDF e salva una copia in cui sono davvero spariti. Funziona nel browser; niente viene caricato. Gratis.",
       "h1": "Oscura un PDF: annerisci qualsiasi cosa per sempre",
       "lede": "Trascina su ciò che deve sparire, oppure cerca un nome o un numero e segna ogni corrispondenza. Al salvataggio, ogni pagina diventa un'immagine, quindi il testo coperto non può essere copiato né recuperato.",
@@ -649,15 +731,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "coprire del testo in un pdf",
+        "nascondere informazioni personali in un pdf",
+        "censurare un pdf senza Acrobat Pro",
+        "rimuovere dati sensibili da un pdf",
+        "censurare nomi in un pdf"
       ]
     },
     "pdf-to-scanned-pdf": {
       "name": "Da PDF a PDF Scansionato",
       "summary": "Trasforma ogni pagina in un'immagine, come un documento scansionato.",
       "action": "Crea PDF scansionato",
-      "title": "Da PDF a PDF Scansionato — Aspetto da Scanner | Fizzdoc",
+      "title": "PDF a PDF Scansionato Gratis — Effetto Scanner | Fizzdoc",
       "description": "Trasforma un PDF in un PDF scansionato fatto di immagini: a colori, in bianco e nero, o con aspetto da scanner. Funziona nel browser; niente è caricato.",
       "h1": "Converti un PDF in un PDF scansionato",
       "lede": "Ogni pagina diventa un'immagine, quindi il testo non può essere selezionato né modificato. Mantieni i colori, passa al bianco e nero, oppure aggiungi una leggera inclinazione e grana della carta per un aspetto da scansione.",
@@ -681,16 +770,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "far sembrare scansionato un pdf",
+        "trasformare un pdf in immagini",
+        "convertire un pdf in pdf di sole immagini",
+        "effetto scansione bianco e nero",
+        "impedire la copia del testo da un pdf"
       ]
     },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Rendi un PDF scansionato ricercabile e copiabile.",
       "action": "Riconosci testo",
-      "title": "OCR PDF — Rendi Ricercabili i PDF Scansionati | Fizzdoc",
-      "description": "Trasforma i PDF scansionati in documenti ricercabili e copiabili con OCR in inglese nel browser. Le pagine mantengono la qualità. Niente viene caricato.",
+      "title": "OCR PDF Gratis — Rendere Ricercabile uno Scan | Fizzdoc",
+      "description": "Trasforma i PDF scansionati in documenti ricercabili e copiabili con OCR in inglese nel browser. Gratis; le pagine mantengono la qualità originale.",
       "h1": "Rendi un PDF scansionato ricercabile con l'OCR",
       "lede": "Riconosce il testo in inglese nelle pagine scansionate e lo aggiunge come livello invisibile, così puoi cercarlo, selezionarlo e copiarlo. Le pagine stesse non cambiano.",
       "steps": [
@@ -713,16 +809,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "rendere ricercabile un pdf scansionato",
+        "ocr pdf gratis",
+        "copiare testo da un pdf scansionato",
+        "convertire un pdf scansionato in testo",
+        "pdf ricercabile senza upload"
       ]
     },
     "pdf-to-word": {
       "name": "Da PDF a Word",
       "summary": "Trasforma il testo di un PDF in un .docx modificabile.",
       "action": "Converti in Word",
-      "title": "Convertitore da PDF a Word (DOCX), Privato | Fizzdoc",
-      "description": "Converti un PDF in un documento Word modificabile nel browser. Titoli, paragrafi e interruzioni di pagina vengono mantenuti. Niente viene caricato.",
+      "title": "Convertire PDF in Word Gratis — DOCX Modificabile | Fizzdoc",
+      "description": "Converti un PDF in un documento Word modificabile nel browser. Titoli, paragrafi e interruzioni di pagina vengono mantenuti. Gratis, senza upload.",
       "h1": "Converti un PDF in un documento Word modificabile",
       "lede": "Porta il testo di un PDF in Word, con titoli e paragrafi ricostruiti, così puoi modificarlo. La conversione avviene sul tuo dispositivo.",
       "steps": [
@@ -745,15 +848,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un pdf in word modificabile",
+        "pdf a docx gratis",
+        "modificare un pdf in word",
+        "pdf a word mantenendo i titoli",
+        "pdf a word dal telefono"
       ]
     },
     "pdf-to-powerpoint": {
       "name": "Da PDF a PowerPoint",
       "summary": "Trasforma ogni pagina PDF in una diapositiva.",
       "action": "Converti in PowerPoint",
-      "title": "Da PDF a PowerPoint (PPTX), Privato | Fizzdoc",
+      "title": "Convertire PDF in PowerPoint Gratis — PDF a PPTX | Fizzdoc",
       "description": "Converti un PDF in una presentazione PowerPoint con una diapositiva nitida per pagina, nel browser. Niente viene caricato. Gratis e open source.",
       "h1": "Converti un PDF in una presentazione PowerPoint",
       "lede": "Presenta un PDF come diapositive. Ogni pagina diventa una diapositiva a schermo intero e alta risoluzione in un .pptx apribile in PowerPoint, Keynote o Google Slides.",
@@ -773,15 +883,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un pdf in diapositive",
+        "pdf a ppt gratis",
+        "presentare un pdf in powerpoint",
+        "pdf a presentazione",
+        "pdf a google slides"
       ]
     },
     "pdf-to-text": {
       "name": "Da PDF a Testo",
       "summary": "Estrai tutto il testo di un PDF in un file .txt.",
       "action": "Estrai testo",
-      "title": "Convertitore da PDF a Testo (TXT), Privato | Fizzdoc",
+      "title": "Convertire PDF in Testo Gratis — Estrarre il Testo | Fizzdoc",
       "description": "Estrai il testo di un PDF in un semplice file .txt nel browser, nel giusto ordine di lettura. Niente viene caricato. Gratis, open source.",
       "h1": "Estrai il testo da un PDF",
       "lede": "Ottieni ogni parola di un PDF come testo semplice, con righe e paragrafi nell'ordine di lettura. Perfetto per copiare, cercare o usarlo in altri strumenti.",
@@ -801,15 +918,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "estrarre il testo da un pdf",
+        "copiare tutto il testo di un pdf",
+        "pdf a txt gratis",
+        "pdf a testo semplice",
+        "tirare fuori il testo da un pdf"
       ]
     },
     "pdf-to-markdown": {
       "name": "Da PDF a Markdown",
       "summary": "Converti un PDF in Markdown pulito con titoli ed elenchi.",
       "action": "Converti in Markdown",
-      "title": "Convertitore da PDF a Markdown, Privato | Fizzdoc",
+      "title": "Convertire PDF in Markdown Gratis — Note e IA | Fizzdoc",
       "description": "Converti un PDF in Markdown con titoli ed elenchi rilevati, pronto per documentazione, appunti o strumenti IA. Funziona nel browser; niente upload.",
       "h1": "Converti un PDF in Markdown",
       "lede": "Trasforma un PDF in Markdown pulito — titoli, paragrafi ed elenchi — per Notion, Obsidian, GitHub o qualsiasi strumento che legge Markdown.",
@@ -829,16 +953,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un pdf in markdown per chatgpt",
+        "pdf a md gratis",
+        "pdf a notion o obsidian",
+        "estrarre titoli ed elenchi da un pdf",
+        "preparare un pdf per uno strumento di ia"
       ]
     },
     "text-to-pdf": {
       "name": "Da Testo a PDF",
       "summary": "Trasforma un file .txt in un PDF pulito.",
       "action": "Crea PDF",
-      "title": "Convertitore da Testo a PDF (TXT a PDF) | Fizzdoc",
-      "description": "Converti un file di testo semplice in un PDF pulito e leggibile nel browser. Supporta ogni lingua, incluso l'hindi e altri alfabeti. Niente upload.",
+      "title": "Convertire TXT in PDF Gratis — Qualsiasi Lingua | Fizzdoc",
+      "description": "Converti un file di testo in un PDF leggibile nel browser. Supporta ogni lingua, incluso l'hindi e altri alfabeti. Gratis, niente upload.",
       "h1": "Converti un file di testo in PDF",
       "lede": "Trasforma appunti, log o qualsiasi file .txt in un PDF A4 ben formattato. Ogni lingua e alfabeto è supportato.",
       "steps": [
@@ -857,15 +988,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un txt in pdf",
+        "salvare appunti come pdf",
+        "testo in qualsiasi lingua a pdf",
+        "convertire testo semplice in pdf gratis",
+        "creare un pdf da un testo"
       ]
     },
     "markdown-to-pdf": {
       "name": "Da Markdown a PDF",
       "summary": "Trasforma un file .md in un PDF formattato.",
       "action": "Crea PDF",
-      "title": "Convertitore da Markdown a PDF, Privato | Fizzdoc",
+      "title": "Convertire Markdown in PDF Gratis — MD a PDF | Fizzdoc",
       "description": "Converti Markdown in un PDF formattato con titoli, elenchi, tabelle e blocchi di codice, nel browser. Niente upload. Gratis e open source.",
       "h1": "Converti Markdown in PDF",
       "lede": "Trasforma un README, appunti o documentazione scritta in Markdown in un PDF pulito e stampabile con titoli, elenchi, tabelle e blocchi di codice.",
@@ -889,16 +1027,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un readme in pdf",
+        "md a pdf gratis",
+        "stampare markdown come pdf",
+        "markdown con tabelle a pdf",
+        "esportare appunti markdown come pdf"
       ]
     },
     "word-to-pdf": {
       "name": "Da Word a PDF",
       "summary": "Converti un .docx in PDF, tutte le lingue supportate.",
       "action": "Converti in PDF",
-      "title": "Da Word a PDF (DOCX a PDF), Senza Upload | Fizzdoc",
-      "description": "Converti un documento Word in PDF nel browser, mantenendo titoli, elenchi, tabelle e immagini. Funziona con file scaricati da Google Docs. Niente upload.",
+      "title": "Convertire Word in PDF Gratis — DOCX a PDF | Fizzdoc",
+      "description": "Converti un documento Word in PDF nel browser, mantenendo titoli, elenchi, tabelle e immagini. Gratis; funziona con i download di Google Docs.",
       "h1": "Converti un documento Word in PDF",
       "lede": "Trasforma un .docx in un PDF con titoli, elenchi, tabelle e immagini, usando lo strumento PDF integrato nel tuo browser. Il documento non lascia mai il dispositivo.",
       "steps": [
@@ -921,16 +1066,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un docx in pdf",
+        "salvare word come pdf gratis",
+        "google docs a pdf",
+        "curriculum in pdf",
+        "word a pdf dal telefono"
       ]
     },
     "excel-to-csv": {
       "name": "Da Excel a CSV",
       "summary": "Esporta ogni foglio di un .xlsx in CSV.",
       "action": "Converti in CSV",
-      "title": "Da Excel a CSV (XLSX a CSV), Senza Upload | Fizzdoc",
-      "description": "Converti fogli di calcolo Excel in CSV nel browser. Ogni foglio viene esportato, le date diventano date ISO, niente viene caricato. Funziona con Google Sheets.",
+      "title": "Convertire Excel in CSV Gratis — XLSX a CSV | Fizzdoc",
+      "description": "Converti i fogli di calcolo Excel in CSV nel browser. Ogni foglio viene esportato e le date diventano date ISO. Gratis; funziona con Sheets.",
       "h1": "Converti Excel in CSV",
       "lede": "Esporta ogni foglio di una cartella .xlsx in un file CSV UTF-8 che si apre correttamente ovunque. Date, numeri e testo restano come sono.",
       "steps": [
@@ -953,15 +1105,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un xlsx in csv",
+        "esportare un foglio excel come csv",
+        "google sheets a csv",
+        "excel a csv con tutti i fogli",
+        "xlsx a csv gratis"
       ]
     },
     "csv-to-excel": {
       "name": "Da CSV a Excel",
       "summary": "Trasforma un .csv in una vera cartella .xlsx.",
       "action": "Converti in Excel",
-      "title": "Da CSV a Excel (CSV a XLSX), Senza Upload | Fizzdoc",
+      "title": "Convertire CSV in Excel Gratis — CSV a XLSX | Fizzdoc",
       "description": "Converti un file CSV in una cartella Excel .xlsx nel browser. I numeri restano numeri, gli zeri iniziali vengono mantenuti, niente viene caricato.",
       "h1": "Converti CSV in Excel",
       "lede": "Trasforma un CSV in una vera cartella Excel. I numeri diventano numeri, codici come 007 mantengono gli zeri iniziali, e il delimitatore viene rilevato automaticamente.",
@@ -981,16 +1140,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "aprire un csv in excel correttamente",
+        "csv a xlsx gratis",
+        "mantenere gli zeri iniziali nel csv",
+        "convertire un csv in foglio di calcolo",
+        "csv a excel dal telefono"
       ]
     },
     "compress-image": {
       "name": "Comprimi Immagine",
       "summary": "Riduci la dimensione di immagini JPG, PNG e WebP.",
       "action": "Comprimi immagini",
-      "title": "Comprimi Immagini (JPG, PNG, WebP), Gratis | Fizzdoc",
-      "description": "Riduci la dimensione delle immagini nel browser — JPG, PNG, WebP e altro, in blocco. Scegli la qualità o mantienile senza perdita. Niente upload.",
+      "title": "Comprimere Immagini Gratis — Ridurre il Peso | Fizzdoc",
+      "description": "Riduci la dimensione delle immagini nel browser — JPG, PNG, WebP e altro, in blocco. Gratis; scegli la qualità o senza perdita.",
       "h1": "Comprimi immagini senza caricarle online",
       "lede": "Riduci foto e screenshot per email, siti web e moduli. Scegli un livello di qualità, o mantienile senza perdita — tutto sul tuo dispositivo, in blocco.",
       "steps": [
@@ -1013,16 +1179,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "comprimere un'immagine senza perdere qualità",
+        "ridurre il peso di una foto",
+        "comprimere jpg e png in blocco",
+        "rendere le immagini più leggere per un sito",
+        "ridurre il peso di un'immagine in kb"
       ]
     },
     "compress-image-to-20kb": {
       "name": "Comprimi Immagine a 20 KB",
       "summary": "Porta una foto o una firma sotto i 20 KB per un modulo online.",
       "action": "Comprimi immagini",
-      "title": "Comprimi Immagine a 20 KB Online — JPG, Senza Upload | Fizzdoc",
-      "description": "Riduci una foto JPG, PNG o WebP a meno di 20 KB per esami e moduli della pubblica amministrazione, restando il più nitida possibile. Non viene caricato nulla.",
+      "title": "Comprimere Immagine a 20 KB Gratis — Moduli | Fizzdoc",
+      "description": "Riduci una foto JPG, PNG o WebP a meno di 20 KB per esami e moduli pubblici, restando il più nitida possibile. Gratis; nulla viene caricato.",
       "h1": "Comprimere un'immagine a meno di 20 KB",
       "lede": "I moduli spesso chiedono una foto o una firma sotto i 20 KB. Fizzdoc mantiene la foto il più grande e nitida possibile, abbassa la qualità JPG solo quanto serve e non carica mai la tua foto.",
       "steps": [
@@ -1045,16 +1218,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre una foto a 20 kb",
+        "foto firma sotto i 20 kb",
+        "comprimere una foto per un concorso",
+        "ridimensionare un'immagine a 20 kb per un modulo",
+        "jpg sotto i 20 kb"
       ]
     },
     "compress-image-to-50kb": {
       "name": "Comprimi Immagine a 50 KB",
       "summary": "Porta una foto o una firma sotto i 50 KB per un modulo online.",
       "action": "Comprimi immagini",
-      "title": "Comprimi Immagine a 50 KB Online — JPG, Senza Upload | Fizzdoc",
-      "description": "Riduci una foto JPG, PNG o WebP a meno di 50 KB per esami e moduli della pubblica amministrazione, restando il più nitida possibile. Non viene caricato nulla.",
+      "title": "Comprimere Immagine a 50 KB Gratis — Moduli | Fizzdoc",
+      "description": "Riduci una foto JPG, PNG o WebP a meno di 50 KB per esami e moduli pubblici, restando il più nitida possibile. Gratis; nulla viene caricato.",
       "h1": "Comprimere un'immagine a meno di 50 KB",
       "lede": "I moduli spesso chiedono una foto o una firma sotto i 50 KB. Fizzdoc mantiene la foto il più grande e nitida possibile, abbassa la qualità JPG solo quanto serve e non carica mai la tua foto.",
       "steps": [
@@ -1077,16 +1257,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre una foto a 50 kb",
+        "foto tessera sotto i 50 kb",
+        "comprimere un'immagine per un modulo ufficiale",
+        "ridimensionare un'immagine a 50 kb online",
+        "jpg sotto i 50 kb"
       ]
     },
     "compress-image-to-100kb": {
       "name": "Comprimi Immagine a 100 KB",
       "summary": "Porta una foto o una firma sotto i 100 KB per un modulo online.",
       "action": "Comprimi immagini",
-      "title": "Comprimi Immagine a 100 KB Online — JPG, Senza Upload | Fizzdoc",
-      "description": "Riduci una foto JPG, PNG o WebP a meno di 100 KB per esami e moduli della pubblica amministrazione, restando il più nitida possibile. Non viene caricato nulla.",
+      "title": "Comprimere Immagine a 100 KB Gratis — Moduli | Fizzdoc",
+      "description": "Riduci una foto JPG, PNG o WebP a meno di 100 KB per esami e moduli pubblici, restando il più nitida possibile. Gratis; nulla viene caricato.",
       "h1": "Comprimere un'immagine a meno di 100 KB",
       "lede": "I moduli spesso chiedono una foto o una firma sotto i 100 KB. Fizzdoc mantiene la foto il più grande e nitida possibile, abbassa la qualità JPG solo quanto serve e non carica mai la tua foto.",
       "steps": [
@@ -1109,16 +1296,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre una foto a 100 kb",
+        "comprimere un'immagine per una candidatura",
+        "foto sotto i 100 kb per un modulo online",
+        "ridimensionare un'immagine a 100 kb online",
+        "jpg sotto i 100 kb"
       ]
     },
     "resize-image": {
       "name": "Ridimensiona Immagine",
       "summary": "Ingrandisci o rimpicciolisci immagini, in pixel o percentuale.",
       "action": "Ridimensiona immagini",
-      "title": "Ridimensiona Immagini Online, Senza Upload | Fizzdoc",
-      "description": "Ridimensiona immagini a pixel esatti o a una percentuale — più piccole o più grandi — nel browser, in blocco. Mantieni le proporzioni o meno. Niente upload.",
+      "title": "Ridimensionare Immagine Gratis — Taglia in Pixel | Fizzdoc",
+      "description": "Ridimensiona immagini a pixel esatti o a una percentuale, più piccole o più grandi, nel browser, in blocco. Gratis; niente upload.",
       "h1": "Ridimensiona immagini — più grandi o più piccole",
       "lede": "Imposta una larghezza e un'altezza esatte, oppure scala in percentuale, per una foto o per molte. Le proporzioni vengono mantenute a meno che tu non dica il contrario.",
       "steps": [
@@ -1137,16 +1331,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridimensionare un'immagine a pixel esatti",
+        "cambiare le dimensioni di una foto",
+        "ridimensionare una foto per passaporto o visto",
+        "ridimensionare immagini in blocco",
+        "ingrandire o rimpicciolire un'immagine"
       ]
     },
     "convert-image": {
       "name": "Converti Immagine",
       "summary": "Converti tra JPG, PNG e WebP.",
       "action": "Converti immagini",
-      "title": "Converti Immagini in JPG, PNG o WebP | Fizzdoc",
-      "description": "Converti immagini tra JPG, PNG e WebP nel browser, in blocco. Funziona con GIF, BMP, AVIF e foto di iPhone che il tuo browser sa aprire. Niente upload.",
+      "title": "Convertire Immagine Gratis — JPG, PNG, WebP | Fizzdoc",
+      "description": "Converti immagini tra JPG, PNG e WebP nel browser, in blocco. Compatibile con GIF, BMP, AVIF e foto iPhone. Gratis; niente viene caricato.",
       "h1": "Converti immagini in JPG, PNG o WebP",
       "lede": "Cambia il formato di un'immagine o di un intero gruppo — per esempio da WebP a JPG o da PNG a WebP — senza inviarle da nessuna parte.",
       "steps": [
@@ -1165,16 +1366,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire avif o bmp in jpg",
+        "cambiare il formato di un'immagine",
+        "convertire gif o bmp in png",
+        "convertitore di immagini in blocco",
+        "convertire un'immagine in webp"
       ]
     },
     "image-to-text": {
       "name": "Da Immagine a Testo (OCR)",
       "summary": "Seleziona e copia il testo da qualsiasi foto o screenshot.",
       "action": "Riconosci testo",
-      "title": "Da Immagine a Testo (OCR) — Senza Upload | Fizzdoc",
-      "description": "Estrai testo da foto e screenshot con OCR in inglese nel browser, poi selezionalo e copialo direttamente sull'immagine — come Live Text. Niente upload.",
+      "title": "Immagine in Testo Gratis (OCR) — Copiare da Foto | Fizzdoc",
+      "description": "Estrai testo da foto e screenshot con OCR in inglese nel browser, poi selezionalo e copialo sull'immagine. Gratis; niente upload.",
       "h1": "Copia il testo da qualsiasi immagine",
       "lede": "Riconosce il testo in inglese in una foto, scansione o screenshot, poi selezionalo direttamente sull'immagine — proprio come Live Text su iPhone. Niente lascia il tuo dispositivo.",
       "steps": [
@@ -1197,15 +1405,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "copiare testo da una foto",
+        "convertire uno screenshot in testo",
+        "estrarre testo da un'immagine gratis",
+        "ocr immagine a testo",
+        "copiare testo da una foto del telefono"
       ]
     },
     "png-to-jpg": {
       "name": "Da PNG a JPG",
       "summary": "Converti immagini PNG in JPG in blocco.",
       "action": "Converti in JPG",
-      "title": "Convertitore da PNG a JPG, Gratis, No Upload | Fizzdoc",
+      "title": "Convertire PNG in JPG Gratis Online, Senza Upload | Fizzdoc",
       "description": "Converti immagini PNG in JPG nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
       "h1": "Converti PNG in JPG — in privato",
       "lede": "I file JPG sono molto più leggeri per le foto e si aprono ovunque, anche su software datati e moduli di caricamento che rifiutano il PNG. Fizzdoc converte i tuoi file PNG direttamente sul dispositivo.",
@@ -1229,15 +1444,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire png in jpg gratis",
+        "png a jpeg",
+        "rimpicciolire un png",
+        "convertire uno screenshot in jpg",
+        "png a jpg in blocco"
       ]
     },
     "jpg-to-png": {
       "name": "Da JPG a PNG",
       "summary": "Converti immagini JPG in PNG in blocco.",
       "action": "Converti in PNG",
-      "title": "Convertitore da JPG a PNG, Gratis, No Upload | Fizzdoc",
+      "title": "Convertire JPG in PNG Gratis Online, Senza Upload | Fizzdoc",
       "description": "Converti immagini JPG in PNG nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
       "h1": "Converti JPG in PNG — in privato",
       "lede": "Il PNG è senza perdita di qualità, quindi l'immagine non perderà ulteriore qualità quando la modifichi e la salvi di nuovo. Fizzdoc converte i tuoi file JPG direttamente sul dispositivo.",
@@ -1261,15 +1483,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire jpg in png gratis",
+        "jpeg a png",
+        "salvare una foto come png",
+        "copia di un'immagine senza perdita",
+        "jpg a png in blocco"
       ]
     },
     "webp-to-jpg": {
       "name": "Da WebP a JPG",
       "summary": "Converti immagini WebP in JPG in blocco.",
       "action": "Converti in JPG",
-      "title": "Convertitore da WebP a JPG, Gratis, No Upload | Fizzdoc",
+      "title": "Convertire WebP in JPG Gratis Online, Senza Upload | Fizzdoc",
       "description": "Converti immagini WebP in JPG nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
       "h1": "Converti WebP in JPG — in privato",
       "lede": "Molte app, stampanti e moduli di caricamento non riescono ancora ad aprire immagini WebP salvate dai siti web. Il JPG funziona ovunque. Fizzdoc converte i tuoi file WebP direttamente sul dispositivo.",
@@ -1293,15 +1522,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire webp in jpg gratis",
+        "aprire un'immagine webp",
+        "webp a jpeg",
+        "salvare webp come jpg",
+        "webp a jpg in blocco"
       ]
     },
     "jpg-to-webp": {
       "name": "Da JPG a WebP",
       "summary": "Converti immagini JPG in WebP in blocco.",
       "action": "Converti in WebP",
-      "title": "Convertitore da JPG a WebP, Gratis, No Upload | Fizzdoc",
+      "title": "Convertire JPG in WebP Gratis Online, Senza Upload | Fizzdoc",
       "description": "Converti immagini JPG in WebP nel browser, una o molte insieme. Veloce, gratis, nessuna filigrana, le tue immagini non vengono mai caricate.",
       "h1": "Converti JPG in WebP — in privato",
       "lede": "Le immagini WebP sono di solito il 25–35% più leggere del JPG alla stessa qualità visiva, il che fa caricare i siti più in fretta. Fizzdoc converte i tuoi file JPG direttamente sul dispositivo.",
@@ -1325,16 +1561,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire jpg in webp gratis",
+        "rendere le immagini più leggere per un sito",
+        "jpeg a webp",
+        "convertitore in webp",
+        "jpg a webp in blocco"
       ]
     },
     "add-page-numbers-to-pdf": {
       "name": "Aggiungi Numeri di Pagina",
       "summary": "Numera ogni pagina di un PDF.",
       "action": "Aggiungi numeri di pagina",
-      "title": "Aggiungi Numeri di Pagina a un PDF, Gratis | Fizzdoc",
-      "description": "Aggiungi numeri di pagina a un PDF nel browser. Scegli la posizione, il numero iniziale e lo stile “Pagina 1 di 10”. Niente upload, senza registrazione.",
+      "title": "Numerare le Pagine di un PDF Gratis, Senza Upload | Fizzdoc",
+      "description": "Aggiungi i numeri di pagina a un PDF nel browser. Scegli la posizione, il numero iniziale e lo stile «Pagina 1 di 10». Gratis, senza upload.",
       "h1": "Aggiungi numeri di pagina a un PDF",
       "lede": "Numera le pagine di un report, una tesi o un contratto in pochi secondi. Scegli dove vanno i numeri e da quale numero iniziare — sul tuo dispositivo.",
       "steps": [
@@ -1357,15 +1600,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "numerare le pagine di un pdf",
+        "aggiungere pagina 1 di 10 a un pdf",
+        "inserire numeri di pagina in un pdf gratis",
+        "numeri di pagina per una tesi in pdf",
+        "numeri di pagina in fondo a un pdf"
       ]
     },
     "watermark-pdf": {
       "name": "Filigrana PDF",
       "summary": "Stampa un testo come RISERVATO su ogni pagina.",
       "action": "Aggiungi filigrana",
-      "title": "Aggiungi una Filigrana di Testo a un PDF | Fizzdoc",
+      "title": "Filigrana su PDF Gratis — Testo, Senza Upload | Fizzdoc",
       "description": "Aggiungi una filigrana di testo come RISERVATO o BOZZA su ogni pagina di un PDF, nel browser. Scegli l'opacità. Niente upload. Gratis.",
       "h1": "Aggiungi una filigrana a un PDF",
       "lede": "Contrassegna un documento come RISERVATO, BOZZA o con il tuo nome prima di condividerlo. La filigrana viene disegnata in diagonale su ogni pagina.",
@@ -1389,15 +1639,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "aggiungere riservato a un pdf",
+        "mettere bozza sulle pagine di un pdf",
+        "filigrana pdf gratis",
+        "aggiungere una filigrana di testo a un pdf",
+        "filigrana in italiano su un pdf"
       ]
     },
     "pdf-to-png": {
       "name": "Da PDF a PNG",
       "summary": "Salva ogni pagina come immagine PNG senza perdita di qualità.",
       "action": "Converti in PNG",
-      "title": "Convertitore da PDF a PNG — Senza Perdita, No Upload | Fizzdoc",
+      "title": "Convertire PDF in PNG Gratis — Senza Perdita | Fizzdoc",
       "description": "Converti ogni pagina di un PDF in un'immagine PNG nitida e senza perdita di qualità nel browser. Più pagine si scaricano come un unico ZIP. Niente upload.",
       "h1": "Converti le pagine di un PDF in immagini PNG",
       "lede": "Genera ogni pagina come un PNG nitido e senza perdita di qualità — ideale per diapositive, documentazione e screenshot con testo nitido. Niente lascia il tuo dispositivo.",
@@ -1417,15 +1674,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire un pdf in png",
+        "pagina pdf a immagine senza perdita",
+        "immagini nitide di un pdf per slide",
+        "salvare slide di un pdf come png",
+        "pdf a png gratis"
       ]
     },
     "extract-pdf-pages": {
       "name": "Estrai Pagine PDF",
       "summary": "Salva le pagine selezionate come nuovo PDF.",
       "action": "Estrai pagine",
-      "title": "Estrai Pagine da un PDF — Gratis, Privato | Fizzdoc",
+      "title": "Estrarre Pagine da un PDF Gratis — Nuovo PDF | Fizzdoc",
       "description": "Estrai pagine specifiche da un PDF in un nuovo file, nel browser. Digita pagine come 2, 5-7. Collegamenti e campi modulo vengono mantenuti. No upload.",
       "h1": "Estrai pagine da un PDF",
       "lede": "Ti serve solo la pagina della firma o un capitolo? Digita le pagine che vuoi e ottienile come nuovo PDF — l'originale resta intatto.",
@@ -1445,15 +1709,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "salvare una pagina di un pdf",
+        "estrarre pagine come nuovo pdf",
+        "tirare fuori pagine da un pdf",
+        "copiare pagine da un pdf",
+        "estrarre pagine pdf gratis"
       ]
     },
     "reorder-pdf-pages": {
       "name": "Riordina Pagine PDF",
       "summary": "Metti le pagine di un PDF in un nuovo ordine.",
       "action": "Riordina pagine",
-      "title": "Riordina le Pagine di un PDF — Gratis, No Upload | Fizzdoc",
+      "title": "Riordinare le Pagine di un PDF Gratis, Senza Upload | Fizzdoc",
       "description": "Riordina le pagine di un PDF digitando l'ordine che vuoi, come 3, 1-2, 4-. Funziona nel browser; il file non viene mai caricato. Gratis, senza registrazione.",
       "h1": "Riordina le pagine di un PDF",
       "lede": "Correggi pagine scansionate nell'ordine sbagliato o sposta un'appendice all'inizio. Digita il nuovo ordine e scarica il PDF riordinato.",
@@ -1473,16 +1744,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "riordinare le pagine di un pdf",
+        "cambiare l'ordine delle pagine di un pdf",
+        "spostare pagine in un pdf",
+        "ordinare le pagine di un pdf",
+        "riordinare pdf gratis"
       ]
     },
     "png-to-pdf": {
       "name": "Da PNG a PDF",
       "summary": "Trasforma screenshot e immagini PNG in un unico PDF.",
       "action": "Crea PDF",
-      "title": "Convertitore da PNG a PDF, Gratis, No Upload | Fizzdoc",
-      "description": "Combina screenshot e immagini PNG in un unico PDF nel browser, una pagina per immagine, a piena qualità. Niente upload. Nessuna filigrana.",
+      "title": "Convertire PNG in PDF Gratis — Screenshot in PDF | Fizzdoc",
+      "description": "Combina screenshot e immagini PNG in un unico PDF nel browser, una pagina per immagine, a piena qualità. Gratis, senza filigrana.",
       "h1": "Converti immagini PNG in PDF",
       "lede": "Metti screenshot, diagrammi o pagine scansionate salvate come PNG in un unico PDF ordinato — nitido, senza perdita di qualità e nell'ordine che scegli.",
       "steps": [
@@ -1501,16 +1779,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "convertire screenshot in pdf",
+        "png a pdf gratis",
+        "combinare immagini png in un pdf",
+        "immagine a pdf senza perdita di qualità",
+        "png a pdf dal telefono"
       ]
     },
     "remove-word-metadata": {
       "name": "Rimuovi Metadati Word",
       "summary": "Cancella nomi di autore, azienda ed editor da un .docx.",
       "action": "Rimuovi metadati",
-      "title": "Rimuovi Metadati da un File Word, No Upload | Fizzdoc",
-      "description": "Elimina autore, editor, azienda, titolo e miniatura da un file Word nel browser. Funziona con file scaricati da Google Docs. Niente viene caricato.",
+      "title": "Rimuovere Metadati da Word Gratis — Pulire DOCX | Fizzdoc",
+      "description": "Elimina autore, editore, azienda, titolo e miniatura da un file Word, nel browser. Gratis; funziona con i download di Google Docs.",
       "h1": "Rimuovi i metadati nascosti da un documento Word",
       "lede": "Ogni .docx registra chi lo ha creato, chi lo ha modificato per ultimo e a quale azienda appartiene. Cancella questi dettagli prima di inviarlo — senza caricare il file da nessuna parte.",
       "steps": [
@@ -1533,16 +1818,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "rimuovere l'autore da un documento word",
+        "pulire un docx prima di condividerlo",
+        "eliminare le proprietà di un documento word",
+        "anonimizzare un file word",
+        "rimuovere il nome dell'azienda da un docx"
       ]
     },
     "extract-images-from-word": {
       "name": "Estrai Immagini da Word",
       "summary": "Salva ogni immagine di un .docx alla qualità originale.",
       "action": "Estrai immagini",
-      "title": "Estrai Immagini da un File Word, No Upload | Fizzdoc",
-      "description": "Scarica come ZIP ogni immagine incorporata in un documento Word, alla risoluzione originale. Funziona con file scaricati da Google Docs. Nel browser.",
+      "title": "Estrarre Immagini da Word Gratis — DOCX a ZIP | Fizzdoc",
+      "description": "Scarica ogni immagine incorporata in un documento Word come ZIP, alla risoluzione originale. Gratis; funziona con i download di Google Docs.",
       "h1": "Estrai tutte le immagini da un documento Word",
       "lede": "Ottieni ogni foto, logo e grafico da un .docx nel formato e nella risoluzione originali — niente screenshot, niente ricompressione, niente upload.",
       "steps": [
@@ -1565,16 +1857,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "salvare tutte le immagini di un word",
+        "scaricare le foto da un docx",
+        "prendere foto da google docs",
+        "estrarre immagini da un docx gratis",
+        "immagini di word alla risoluzione originale"
       ]
     },
     "compress-word": {
       "name": "Comprimi Word",
       "summary": "Rimpicciolisci un .docx ottimizzando le sue immagini.",
       "action": "Comprimi Word",
-      "title": "Comprimi File Word (.docx), No Upload | Fizzdoc",
-      "description": "Riduci la dimensione di un file Word ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Niente viene caricato.",
+      "title": "Comprimere Word Gratis — Ridurre le Dimensioni | Fizzdoc",
+      "description": "Riduci la dimensione di un file Word ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Gratis.",
       "h1": "Comprimi un documento Word",
       "lede": "Rendi un .docx abbastanza piccolo da inviare via email ricomprimendo le foto troppo pesanti al suo interno. Testo, formattazione e tutto il resto restano esattamente uguali.",
       "steps": [
@@ -1597,16 +1896,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre il peso di un file word",
+        "comprimere un docx con immagini",
+        "rendere un documento word più leggero per l'email",
+        "rimpicciolire un docx",
+        "comprimere word gratis"
       ]
     },
     "remove-excel-metadata": {
       "name": "Rimuovi Metadati Excel",
       "summary": "Cancella nomi di autore, azienda ed editor da un .xlsx.",
       "action": "Rimuovi metadati",
-      "title": "Rimuovi Metadati da un File Excel, No Upload | Fizzdoc",
-      "description": "Elimina autore, editor, azienda, titolo e miniatura da un file Excel nel browser. Funziona con file scaricati da Google Sheets. Niente viene caricato.",
+      "title": "Rimuovere Metadati da Excel Gratis — Pulire XLSX | Fizzdoc",
+      "description": "Elimina autore, editore, azienda, titolo e miniatura da un file Excel, nel browser. Gratis; funziona con i download di Google Sheets.",
       "h1": "Rimuovi i metadati nascosti da un foglio Excel",
       "lede": "Ogni .xlsx registra chi lo ha creato, chi lo ha modificato per ultimo e a quale azienda appartiene. Cancella questi dettagli prima di inviarlo — senza caricare il file da nessuna parte.",
       "steps": [
@@ -1629,16 +1935,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "rimuovere l'autore da un file excel",
+        "pulire un xlsx prima di condividerlo",
+        "eliminare le proprietà di un documento excel",
+        "anonimizzare un foglio di calcolo",
+        "rimuovere il nome dell'azienda da un xlsx"
       ]
     },
     "extract-images-from-excel": {
       "name": "Estrai Immagini da Excel",
       "summary": "Salva ogni immagine di un .xlsx alla qualità originale.",
       "action": "Estrai immagini",
-      "title": "Estrai Immagini da un File Excel, No Upload | Fizzdoc",
-      "description": "Scarica come ZIP ogni immagine incorporata in un foglio Excel, alla risoluzione originale. Funziona con file scaricati da Google Sheets. Nel browser.",
+      "title": "Estrarre Immagini da Excel Gratis — XLSX a ZIP | Fizzdoc",
+      "description": "Scarica ogni immagine incorporata in un foglio di calcolo Excel come ZIP, alla risoluzione originale. Gratis; con download di Google Sheets.",
       "h1": "Estrai tutte le immagini da un foglio Excel",
       "lede": "Ottieni ogni foto, logo e grafico da un .xlsx nel formato e nella risoluzione originali — niente screenshot, niente ricompressione, niente upload.",
       "steps": [
@@ -1661,16 +1974,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "salvare tutte le immagini di un excel",
+        "scaricare le foto da un xlsx",
+        "prendere immagini da google sheets",
+        "estrarre immagini da un xlsx gratis",
+        "immagini di excel alla risoluzione originale"
       ]
     },
     "compress-excel": {
       "name": "Comprimi Excel",
       "summary": "Rimpicciolisci un .xlsx ottimizzando le sue immagini.",
       "action": "Comprimi Excel",
-      "title": "Comprimi File Excel (.xlsx), No Upload | Fizzdoc",
-      "description": "Riduci la dimensione di un file Excel ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Niente viene caricato.",
+      "title": "Comprimere Excel Gratis — Ridurre le Dimensioni | Fizzdoc",
+      "description": "Riduci la dimensione di un file Excel ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Gratis.",
       "h1": "Comprimi un foglio Excel",
       "lede": "Rendi un .xlsx abbastanza piccolo da inviare via email ricomprimendo le foto troppo pesanti al suo interno. Testo, formattazione e tutto il resto restano esattamente uguali.",
       "steps": [
@@ -1693,16 +2013,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre il peso di un file excel",
+        "comprimere un xlsx con immagini",
+        "rendere un foglio di calcolo più leggero per l'email",
+        "rimpicciolire un xlsx",
+        "comprimere excel gratis"
       ]
     },
     "remove-powerpoint-metadata": {
       "name": "Rimuovi Metadati PowerPoint",
       "summary": "Cancella nomi di autore, azienda ed editor da un .pptx.",
       "action": "Rimuovi metadati",
-      "title": "Rimuovi Metadati da un File PowerPoint, No Upload | Fizzdoc",
-      "description": "Elimina autore, editor, azienda, titolo e miniatura da un file PowerPoint nel browser. Funziona con file scaricati da Google Slides. Niente caricato.",
+      "title": "Rimuovere Metadati da PowerPoint Gratis | Fizzdoc",
+      "description": "Elimina autore, editore, azienda, titolo e miniatura da un file PowerPoint, nel browser. Gratis; funziona con i download di Google Slides.",
       "h1": "Rimuovi i metadati nascosti da una presentazione PowerPoint",
       "lede": "Ogni .pptx registra chi lo ha creato, chi lo ha modificato per ultimo e a quale azienda appartiene. Cancella questi dettagli prima di inviarlo — senza caricare il file da nessuna parte.",
       "steps": [
@@ -1725,16 +2052,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "rimuovere l'autore da un powerpoint",
+        "pulire un pptx prima di condividerlo",
+        "eliminare le proprietà di una presentazione",
+        "anonimizzare una presentazione",
+        "rimuovere il nome dell'azienda da un pptx"
       ]
     },
     "extract-images-from-powerpoint": {
       "name": "Estrai Immagini da PowerPoint",
       "summary": "Salva ogni immagine di un .pptx alla qualità originale.",
       "action": "Estrai immagini",
-      "title": "Estrai Immagini da un File PowerPoint, No Upload | Fizzdoc",
-      "description": "Scarica come ZIP ogni immagine incorporata in una presentazione PowerPoint, alla risoluzione originale. Funziona con Google Slides. Nel browser.",
+      "title": "Estrarre Immagini da PowerPoint Gratis, ZIP | Fizzdoc",
+      "description": "Scarica ogni immagine di una presentazione PowerPoint come ZIP, alla risoluzione originale. Funziona con i download di Google Slides. Gratis.",
       "h1": "Estrai tutte le immagini da una presentazione PowerPoint",
       "lede": "Ottieni ogni foto, logo e grafico da un .pptx nel formato e nella risoluzione originali — niente screenshot, niente ricompressione, niente upload.",
       "steps": [
@@ -1757,16 +2091,23 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "salvare tutte le immagini di una presentazione",
+        "scaricare le foto da un pptx",
+        "prendere immagini da google slides",
+        "estrarre immagini da un pptx gratis",
+        "immagini delle slide alla risoluzione originale"
       ]
     },
     "compress-powerpoint": {
       "name": "Comprimi PowerPoint",
       "summary": "Rimpicciolisci un .pptx ottimizzando le sue immagini.",
       "action": "Comprimi PowerPoint",
-      "title": "Comprimi File PowerPoint (.pptx), No Upload | Fizzdoc",
-      "description": "Riduci la dimensione di un file PowerPoint ricomprimendo le sue foto, nel browser. Contenuto e formattazione restano gli stessi. Niente caricato.",
+      "title": "Comprimere PowerPoint Gratis — Ridurre il PPTX | Fizzdoc",
+      "description": "Riduci la dimensione di un file PowerPoint ricomprimendo le sue foto, nel browser. Contenuto e formato restano gli stessi. Gratis.",
       "h1": "Comprimi una presentazione PowerPoint",
       "lede": "Rendi un .pptx abbastanza piccolo da inviare via email ricomprimendo le foto troppo pesanti al suo interno. Testo, formattazione e tutto il resto restano esattamente uguali.",
       "steps": [
@@ -1789,15 +2130,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "ridurre il peso di un powerpoint",
+        "comprimere un pptx con immagini",
+        "rendere una presentazione più leggera per l'email",
+        "rimpicciolire un pptx",
+        "comprimere powerpoint gratis"
       ]
     },
     "split-audio": {
       "name": "Tagliare audio",
       "summary": "Ritaglia un MP3 o M4A, o dividilo in parti. Ascolta prima di salvare.",
       "action": "Salva audio",
-      "title": "Tagliare MP3 o M4A Online — Ritagliare Audio Senza Upload | Fizzdoc",
+      "title": "Tagliare MP3 Gratis — Ritagliare Audio Senza Upload | Fizzdoc",
       "description": "Ritaglia un MP3 o M4A, o dividilo in parti a tempi esatti. Guarda la forma d’onda, ascolta ogni parte, poi salva. Senza ricodifica, senza upload. Gratis.",
       "h1": "Taglia, ritaglia e dividi audio nel browser",
       "lede": "Trascina le maniglie sulla forma d’onda o digita tempi esatti, ascolta ciò che hai scelto e salva. I tagli vengono fatti senza ricodifica, quindi la qualità del suono resta esattamente la stessa.",
@@ -1821,15 +2169,22 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "tagliare mp3 online gratis",
+        "ritagliare un file audio",
+        "dividere un mp3 in più parti",
+        "creare una suoneria da una canzone",
+        "tagliare m4a senza ricodifica"
       ]
     },
     "merge-audio": {
       "name": "Unire audio",
       "summary": "Unisci file MP3 o M4A in uno solo, nell’ordine che preferisci.",
       "action": "Unisci audio",
-      "title": "Unire File MP3 o M4A Online — Senza Upload | Fizzdoc",
+      "title": "Unire MP3 e M4A Gratis — Audio Online, Senza Upload | Fizzdoc",
       "description": "Unisci file MP3 o M4A in un’unica traccia nell’ordine scelto, poi ascolta prima di scaricare. Senza ricodifica, senza upload, senza registrazione. Gratis.",
       "h1": "Unisci file audio in uno solo",
       "lede": "Aggiungi i tuoi file MP3 o M4A, mettili in ordine e uniscili in un’unica traccia. Ascolta il risultato prima di scaricarlo; niente viene ricodificato o caricato.",
@@ -1853,8 +2208,15 @@
         ],
         [
           "Fizzdoc è gratuito?",
-          "Sì. Non serve registrarsi, non c'è filigrana e non c'è alcun limite giornaliero. Fizzdoc è open source con licenza Apache-2.0."
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
         ]
+      ],
+      "keywords": [
+        "unire file mp3 in uno solo",
+        "combinare file audio online",
+        "unire canzoni senza perdere qualità",
+        "unire note vocali",
+        "unire file m4a gratis"
       ]
     }
   }

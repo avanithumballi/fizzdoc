@@ -24,7 +24,7 @@
     "format.powerpoint": "PowerPoint",
     "format.image": "Hình ảnh",
     "group.title": "Công cụ {format}",
-    "home.eyebrow": "0 byte được tải lên · Mã nguồn mở · Miễn phí",
+    "home.eyebrow": "0 byte tải lên · Mã nguồn mở · Miễn phí mãi mãi",
     "home.cta": "Ghép PDF",
     "home.browse": "Xem tất cả {n} công cụ",
     "home.formats": "Định dạng hỗ trợ",
@@ -37,7 +37,8 @@
     "home.toolsTitle": "Mọi công cụ đều riêng tư theo mặc định",
     "home.toolsLede": "Chọn một công cụ. Tệp của bạn được xử lý ngay trên thiết bị này và không bao giờ chạm tới máy chủ.",
     "home.whatTitle": "{name} là gì?",
-    "tool.eyebrow": "Chạy trên thiết bị của bạn · 0 byte được tải lên",
+    "tool.eyebrow": "Miễn phí mãi mãi · Chạy trên thiết bị của bạn · 0 byte tải lên",
+    "tool.uses": "Cũng hữu ích cho",
     "tool.how": "Cách sử dụng {tool}",
     "tool.more": "Thêm các công cụ riêng tư khác",
     "crumbs.label": "Đường dẫn điều hướng",
@@ -244,8 +245,8 @@
     "au.download": "Tải xuống"
   },
   "home": {
-    "title": "Fizzdoc — Công cụ PDF, Word, Excel & Ảnh riêng tư, không tải lên",
-    "description": "Chỉnh sửa, nén, chuyển đổi, OCR và ghép PDF; chuyển đổi Word, Excel và ảnh — ngay trong trình duyệt. Không tải lên, không đăng ký, miễn phí và mã nguồn mở.",
+    "title": "Fizzdoc — Công Cụ PDF, Ảnh, Âm Thanh & Office Miễn Phí",
+    "description": "Miễn phí mãi mãi: công cụ riêng tư để chỉnh sửa, nén, chuyển đổi, OCR tệp PDF, ảnh, âm thanh và Office. Không tải lên, không đăng ký, 16 ngôn ngữ.",
     "h1": "Công cụ tài liệu không bao giờ nhìn thấy tài liệu của bạn",
     "lede": "Chỉnh sửa, nén, chuyển đổi và OCR PDF. Chuyển đổi Word, Excel, PowerPoint và ảnh, và cắt hoặc ghép âm thanh. Mọi thứ chạy ngay trong trình duyệt — tệp của bạn không bao giờ rời khỏi thiết bị.",
     "what": "Fizzdoc là bộ công cụ xử lý tài liệu miễn phí, mã nguồn mở, chạy hoàn toàn trong trình duyệt web của bạn. Tệp PDF được xử lý bằng các engine qpdf, pdf.js và pdf-lib, nhận dạng văn bản dùng Tesseract, còn tệp Office và hình ảnh cũng được xử lý ngay tại chỗ — nên không có gì bao giờ được tải lên máy chủ.",
@@ -253,6 +254,10 @@
       [
         "Tệp của tôi có được tải lên đâu không?",
         "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, bằng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, và kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+      ],
+      [
+        "Có an toàn với sao kê ngân hàng, giấy tờ tùy thân hay hồ sơ y tế không?",
+        "Có. Tệp được mở và xử lý ngay trong tab trình duyệt của bạn và không bao giờ được gửi đi đâu cả, nên không có bản sao nào trên máy chủ có thể bị rò rỉ, bị bán hay bị hack. Trình duyệt của bạn đảm bảo điều này, bạn có thể tự kiểm tra trong tab Network, và đóng tab sẽ xóa sạch mọi thứ."
       ],
       [
         "Fizzdoc khác gì so với iLovePDF, Smallpdf hay các công cụ trực tuyến của Adobe?",
@@ -268,7 +273,7 @@
       ],
       [
         "Fizzdoc có miễn phí không?",
-        "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
       ]
     ]
   },
@@ -277,7 +282,7 @@
       "name": "Ghép PDF",
       "summary": "Gộp nhiều tệp PDF thành một, theo thứ tự bạn chọn.",
       "action": "Ghép PDF",
-      "title": "Ghép PDF Trực Tuyến, Riêng Tư — Không Tải Lên, Miễn Phí | Fizzdoc",
+      "title": "Ghép PDF Miễn Phí — Gộp File PDF, Không Tải Lên | Fizzdoc",
       "description": "Gộp các tệp PDF ngay trong trình duyệt. Không gì được tải lên, trường biểu mẫu và liên kết vẫn giữ nguyên. Miễn phí, không đăng ký, mã nguồn mở.",
       "h1": "Ghép các tệp PDF mà không cần tải lên",
       "lede": "Gộp nhiều tệp PDF thành một tài liệu ngay trong trình duyệt. Không có gì được gửi tới máy chủ, và các trường biểu mẫu cùng liên kết nội bộ vẫn còn nguyên sau khi ghép.",
@@ -305,15 +310,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "ghép nhiều file pdf thành một",
+        "ghép pdf không cần tải lên",
+        "gộp file pdf online miễn phí",
+        "ghép pdf bản scan",
+        "ghép pdf trên điện thoại"
       ]
     },
     "split-pdf": {
       "name": "Tách PDF",
       "summary": "Trích xuất các trang bạn cần thành một tệp PDF mới.",
       "action": "Trích xuất trang",
-      "title": "Tách PDF & Trích Xuất Trang Riêng Tư — Không Tải Lên | Fizzdoc",
+      "title": "Tách PDF Miễn Phí — Tách Trang, Không Tải Lên | Fizzdoc",
       "description": "Trích xuất trang từ PDF ngay trong trình duyệt. Chọn khoảng trang như 1-3, 8 — tệp của bạn không rời khỏi thiết bị. Miễn phí, không đăng ký, mã nguồn mở.",
       "h1": "Tách PDF và trích xuất trang — hoàn toàn riêng tư",
       "lede": "Lấy ra đúng những trang bạn cần thành một tệp PDF mới. Nhập khoảng trang như “1-3, 8”; thứ tự bạn nhập chính là thứ tự bạn nhận được.",
@@ -337,16 +349,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "tách pdf thành từng trang",
+        "lấy một trang ra khỏi pdf",
+        "chia file pdf lớn thành nhiều phần",
+        "cắt trang pdf online miễn phí",
+        "tách pdf không cần adobe"
       ]
     },
     "rotate-pdf": {
       "name": "Xoay PDF",
       "summary": "Xoay các trang bị lệch về đúng chiều, vĩnh viễn.",
       "action": "Xoay trang",
-      "title": "Xoay Trang PDF Vĩnh Viễn — Không Tải Lên | Fizzdoc",
-      "description": "Xoay tất cả hoặc một số trang PDF theo góc 90°, 180° hoặc 270° và lưu kết quả. Chạy trong trình duyệt; tệp không bao giờ được tải lên.",
+      "title": "Xoay PDF Miễn Phí — Xoay Trang, Không Tải Lên | Fizzdoc",
+      "description": "Xoay tất cả hoặc một số trang PDF theo góc 90°, 180° hoặc 270° và lưu kết quả. Chạy trong trình duyệt; tệp không bao giờ được tải lên. Miễn phí.",
       "h1": "Xoay trang PDF và lưu lại đúng chiều",
       "lede": "Sửa các bản quét bị lệch chiều vĩnh viễn. Xoay toàn bộ hoặc chỉ những trang bạn chọn — không cần vẽ lại nội dung, nên chất lượng không đổi.",
       "steps": [
@@ -369,15 +388,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xoay pdf rồi lưu lại",
+        "sửa file pdf scan bị nghiêng",
+        "xoay một trang trong pdf",
+        "xoay trang pdf 90 độ",
+        "xoay pdf online miễn phí"
       ]
     },
     "delete-pdf-pages": {
       "name": "Xóa trang PDF",
       "summary": "Loại bỏ những trang bạn không muốn chia sẻ.",
       "action": "Xóa trang",
-      "title": "Xóa Trang Khỏi PDF — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "Xóa Trang PDF Miễn Phí — Online, Không Tải Lên | Fizzdoc",
       "description": "Loại bỏ các trang không cần thiết khỏi PDF ngay trong trình duyệt. Nhập các trang cần xóa; tệp không bao giờ rời khỏi thiết bị. Miễn phí và mã nguồn mở.",
       "h1": "Xóa trang khỏi PDF — hoàn toàn riêng tư",
       "lede": "Loại bỏ các trang trắng, trùng lặp hoặc chứa nội dung nhạy cảm trước khi chia sẻ tài liệu, mà không cần đưa cho ai xử lý.",
@@ -397,15 +423,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xóa trang khỏi pdf",
+        "xóa trang trắng trong pdf",
+        "xóa trang pdf không cần acrobat",
+        "xóa trang cuối của pdf",
+        "xóa trang pdf miễn phí"
       ]
     },
     "unlock-pdf": {
       "name": "Mở khóa PDF",
       "summary": "Lưu một bản không còn mật khẩu bạn đang biết.",
       "action": "Xóa mật khẩu",
-      "title": "Xóa Mật Khẩu PDF (Mở Khóa PDF) — Không Tải Lên | Fizzdoc",
+      "title": "Mở Khóa PDF Miễn Phí — Xóa Mật Khẩu PDF | Fizzdoc",
       "description": "Xóa mật khẩu khỏi một tệp PDF mà bạn có quyền mở. Quá trình giải mã diễn ra ngay trên thiết bị, không có gì được tải lên. Miễn phí, không đăng ký.",
       "h1": "Xóa mật khẩu PDF — ngay trên thiết bị của bạn",
       "lede": "Lưu một bản không còn khóa của tệp PDF được bảo vệ mà bạn đã có thể mở. Mật khẩu và tài liệu đều chỉ ở lại trên thiết bị của bạn.",
@@ -429,15 +462,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xóa mật khẩu khỏi pdf",
+        "mở khóa pdf sao kê ngân hàng",
+        "pdf cứ hỏi mật khẩu",
+        "gỡ hạn chế của pdf",
+        "mở khóa pdf online miễn phí"
       ]
     },
     "protect-pdf": {
       "name": "Đặt mật khẩu PDF",
       "summary": "Khóa một PDF bằng mật khẩu và mã hóa AES-256.",
       "action": "Đặt mật khẩu PDF",
-      "title": "Đặt Mật Khẩu Cho PDF Với AES-256 — Không Tải Lên | Fizzdoc",
+      "title": "Đặt Mật Khẩu PDF Miễn Phí — Mã Hóa AES-256 | Fizzdoc",
       "description": "Thêm mật khẩu cho PDF với mã hóa AES-256, ngay trong trình duyệt. Tệp và mật khẩu không bao giờ rời khỏi thiết bị. Miễn phí, không đăng ký.",
       "h1": "Đặt mật khẩu cho PDF — ngay trên thiết bị của bạn",
       "lede": "Mã hóa một PDF bằng AES-256 để chỉ mở được bằng mật khẩu của bạn. Mã hóa diễn ra ngay trong tab này; cả tệp lẫn mật khẩu đều không được gửi đi đâu.",
@@ -461,16 +501,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "thêm mật khẩu vào pdf",
+        "mã hóa pdf aes-256",
+        "khóa file pdf bằng mật khẩu",
+        "đặt mật khẩu pdf không cần acrobat",
+        "bảo mật pdf trước khi gửi email"
       ]
     },
     "remove-pdf-metadata": {
       "name": "Xóa Metadata PDF",
       "summary": "Xóa tác giả, tiêu đề, phần mềm tạo và thông tin XMP.",
       "action": "Xóa metadata",
-      "title": "Xóa Metadata PDF (Tác Giả, Tiêu Đề, XMP) — Không Tải Lên | Fizzdoc",
-      "description": "Xóa metadata ẩn của PDF như tác giả, tiêu đề, ứng dụng tạo và dữ liệu XMP trước khi chia sẻ tệp. Chạy trong trình duyệt; không có gì được tải lên.",
+      "title": "Xóa Metadata PDF Miễn Phí — Tác Giả, XMP | Fizzdoc",
+      "description": "Xóa metadata ẩn của PDF như tác giả, tiêu đề, ứng dụng tạo và dữ liệu XMP trước khi chia sẻ tệp. Chạy trong trình duyệt; không có gì được tải lên. Miễn phí.",
       "h1": "Xóa metadata ẩn khỏi một tệp PDF",
       "lede": "PDF âm thầm ghi lại ai đã tạo ra nó, bằng ứng dụng nào, và khi nào. Hãy xóa tác giả, tiêu đề, chủ đề, từ khóa, phần mềm tạo và metadata XMP trước khi chia sẻ.",
       "steps": [
@@ -489,16 +536,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xóa tên tác giả khỏi pdf",
+        "làm sạch metadata pdf trước khi chia sẻ",
+        "xóa dữ liệu ẩn trong pdf",
+        "xóa dữ liệu xmp trong pdf",
+        "ẩn danh file pdf"
       ]
     },
     "jpg-to-pdf": {
       "name": "JPG sang PDF",
       "summary": "Biến ảnh chụp và bản quét thành một tệp PDF.",
       "action": "Tạo PDF",
-      "title": "Chuyển JPG sang PDF — Riêng Tư, Không Tải Lên, Miễn Phí | Fizzdoc",
-      "description": "Chuyển JPG, PNG, WebP và các ảnh khác thành một tệp PDF ngay trong trình duyệt. Ảnh không bao giờ rời khỏi thiết bị. Không watermark, không đăng ký.",
+      "title": "JPG sang PDF Miễn Phí — Ảnh Thành PDF | Fizzdoc",
+      "description": "Chuyển JPG, PNG, WebP và các ảnh khác thành một tệp PDF ngay trong trình duyệt. Ảnh không bao giờ rời khỏi thiết bị. Không watermark, không đăng ký. Miễn phí.",
       "h1": "Chuyển ảnh JPG và PNG sang PDF — hoàn toàn riêng tư",
       "lede": "Gộp ảnh chụp, ảnh chụp màn hình và bản quét thành một tệp PDF, mỗi ảnh một trang, giữ nguyên độ phân giải. Ảnh của bạn luôn ở lại trên thiết bị.",
       "steps": [
@@ -521,16 +575,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển ảnh thành pdf",
+        "gộp nhiều ảnh thành một pdf",
+        "chuyển ảnh sang pdf miễn phí",
+        "jpg sang pdf trên điện thoại",
+        "tạo pdf từ ảnh chụp"
       ]
     },
     "pdf-to-jpg": {
       "name": "PDF sang JPG",
       "summary": "Lưu mỗi trang thành một ảnh JPG sắc nét.",
       "action": "Chuyển sang JPG",
-      "title": "Chuyển PDF sang JPG — Riêng Tư, Không Tải Lên, Miễn Phí | Fizzdoc",
-      "description": "Chuyển mỗi trang PDF thành một ảnh JPG chất lượng cao ngay trong trình duyệt. Không có gì được tải lên. Nhiều trang tải xuống dưới dạng một tệp ZIP.",
+      "title": "PDF sang JPG Miễn Phí — Chất Lượng Cao | Fizzdoc",
+      "description": "Chuyển mỗi trang PDF thành một ảnh JPG chất lượng cao ngay trong trình duyệt. Không có gì được tải lên. Nhiều trang tải xuống dưới dạng một tệp ZIP. Miễn phí.",
       "h1": "Chuyển trang PDF sang ảnh JPG — hoàn toàn riêng tư",
       "lede": "Kết xuất mỗi trang thành ảnh JPG sắc nét 150 DPI bằng pdf.js của Mozilla, ngay trong trình duyệt này. PDF nhiều trang tải xuống dưới dạng một tệp ZIP.",
       "steps": [
@@ -553,15 +614,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển trang pdf thành ảnh",
+        "lưu pdf thành jpg",
+        "chuyển pdf sang ảnh chất lượng cao",
+        "lấy một trang pdf thành ảnh",
+        "pdf sang jpg trên điện thoại"
       ]
     },
     "compress-pdf": {
       "name": "Nén PDF",
       "summary": "Giảm dung lượng PDF bằng cách tối ưu hình ảnh. Văn bản vẫn sắc nét.",
       "action": "Nén PDF",
-      "title": "Nén PDF Trực Tuyến Mà Không Cần Tải Lên — Miễn Phí | Fizzdoc",
+      "title": "Nén PDF Miễn Phí — Giảm Dung Lượng PDF | Fizzdoc",
       "description": "Giảm dung lượng PDF ngay trong trình duyệt bằng cách nén lại các ảnh quá lớn. Văn bản vẫn chọn được và sắc nét. Không tải lên; miễn phí và mã nguồn mở.",
       "h1": "Nén PDF — mà không cần tải lên",
       "lede": "Làm nhỏ một PDF đủ để gửi email hoặc tải lên một cổng thông tin. Fizzdoc nén lại ảnh chụp và bản quét quá lớn, giữ nguyên văn bản và hình vector.",
@@ -585,15 +653,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm dung lượng file pdf",
+        "nén pdf không giảm chất lượng",
+        "nén pdf để gửi email",
+        "nén pdf để nộp lên cổng thông tin",
+        "giảm dung lượng pdf bản scan"
       ]
     },
     "edit-pdf": {
       "name": "Chỉnh sửa PDF",
       "summary": "Sửa văn bản có sẵn, thêm văn bản mới và che trắng, ngay trên trang.",
       "action": "Lưu PDF",
-      "title": "Chỉnh Sửa Văn Bản PDF Trực Tuyến — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "Chỉnh Sửa PDF Miễn Phí — Sửa Văn Bản Online | Fizzdoc",
       "description": "Bấm vào bất kỳ đoạn văn bản nào trong PDF để sửa, thêm văn bản mới, hoặc che trắng — ngay trên trang, trong trình duyệt. Không tải lên. Miễn phí, không đăng ký.",
       "h1": "Chỉnh sửa văn bản PDF trực tiếp trên trang",
       "lede": "Sửa lỗi đánh máy, cập nhật ngày tháng hoặc điền vào chỗ trống mà không cần tệp gốc. Bấm vào văn bản muốn sửa rồi gõ — mọi thứ diễn ra trên thiết bị của bạn.",
@@ -617,15 +692,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chỉnh sửa văn bản trong pdf",
+        "sửa chữ trong pdf miễn phí",
+        "thêm văn bản vào pdf",
+        "che trắng văn bản trong pdf",
+        "công cụ sửa pdf không cần đăng ký"
       ]
     },
     "redact-pdf": {
       "name": "Che Đen PDF",
       "summary": "Che đen văn bản, chữ ký hoặc ảnh để chúng biến mất vĩnh viễn.",
       "action": "Lưu PDF đã che đen",
-      "title": "Che Đen PDF Trực Tuyến — Xóa Văn Bản Vĩnh Viễn | Fizzdoc",
+      "title": "Che Đen PDF Miễn Phí — Xóa Vĩnh Viễn | Fizzdoc",
       "description": "Che đen tên, số, chữ ký hoặc ảnh trong PDF và lưu một bản mà chúng thực sự biến mất. Chạy trong trình duyệt của bạn; không tải lên. Miễn phí.",
       "h1": "Che đen PDF: xóa vĩnh viễn bất cứ thứ gì",
       "lede": "Kéo lên phần cần biến mất, hoặc tìm một tên hay số rồi đánh dấu mọi kết quả khớp. Khi lưu, mỗi trang trở thành một hình ảnh, nên văn bản bị che không thể sao chép hay khôi phục.",
@@ -649,15 +731,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "che đen văn bản trong pdf",
+        "ẩn thông tin cá nhân trong pdf",
+        "che đen pdf không cần acrobat pro",
+        "xóa dữ liệu nhạy cảm khỏi pdf",
+        "che tên trong pdf"
       ]
     },
     "pdf-to-scanned-pdf": {
       "name": "Chuyển PDF Thành PDF Dạng Scan",
       "summary": "Biến mỗi trang thành hình ảnh, giống như một tài liệu đã scan.",
       "action": "Tạo PDF Dạng Scan",
-      "title": "Chuyển PDF Thành PDF Dạng Scan — Không Tải Lên | Fizzdoc",
+      "title": "Chuyển PDF Thành PDF Dạng Scan Miễn Phí | Fizzdoc",
       "description": "Chuyển một PDF thành PDF chỉ gồm hình ảnh, trông như đã scan: có màu, đen trắng, hoặc như scan thật. Chạy trong trình duyệt; không tải lên. Miễn phí.",
       "h1": "Chuyển đổi PDF thành PDF dạng scan",
       "lede": "Mỗi trang trở thành một hình ảnh, nên văn bản không thể chọn hay chỉnh sửa. Giữ nguyên màu sắc, chuyển sang đen trắng, hoặc thêm chút nghiêng và vân giấy để trông như đã scan.",
@@ -681,16 +770,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "làm cho pdf trông giống bản scan",
+        "chuyển pdf thành hình ảnh",
+        "chuyển pdf thành pdf chỉ toàn ảnh",
+        "hiệu ứng scan đen trắng cho pdf",
+        "ngăn sao chép văn bản từ pdf"
       ]
     },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Biến PDF dạng bản quét thành tài liệu có thể tìm kiếm và sao chép.",
       "action": "Nhận dạng văn bản",
-      "title": "OCR PDF — Biến PDF Quét Thành Có Thể Tìm Kiếm, Không Tải Lên | Fizzdoc",
-      "description": "Biến PDF quét thành tài liệu có thể tìm kiếm và sao chép bằng OCR tiếng Anh chạy trong trình duyệt. Trang giữ nguyên chất lượng gốc. Không tải lên.",
+      "title": "OCR PDF Miễn Phí — Cho PDF Scan Tìm Kiếm Được | Fizzdoc",
+      "description": "Biến PDF quét thành tài liệu có thể tìm kiếm và sao chép bằng OCR tiếng Anh chạy trong trình duyệt. Trang giữ nguyên chất lượng gốc. Không tải lên. Miễn phí.",
       "h1": "Biến PDF dạng bản quét thành có thể tìm kiếm bằng OCR",
       "lede": "Nhận dạng văn bản tiếng Anh trên các trang quét và thêm nó dưới dạng một lớp vô hình, để bạn có thể tìm kiếm, chọn và sao chép. Bản thân các trang không bị thay đổi.",
       "steps": [
@@ -713,15 +809,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "làm pdf bản scan tìm kiếm được",
+        "ocr pdf miễn phí",
+        "sao chép văn bản từ pdf scan",
+        "chuyển pdf scan thành văn bản",
+        "pdf tìm kiếm được không tải lên"
       ]
     },
     "pdf-to-word": {
       "name": "PDF sang Word",
       "summary": "Biến văn bản PDF thành tệp .docx có thể chỉnh sửa.",
       "action": "Chuyển sang Word",
-      "title": "Chuyển PDF Sang Word (DOCX) — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "PDF sang Word Miễn Phí — DOCX Chỉnh Sửa Được | Fizzdoc",
       "description": "Chuyển PDF thành tài liệu Word có thể chỉnh sửa ngay trong trình duyệt. Giữ nguyên tiêu đề, đoạn văn và ngắt trang. Không tải lên. Miễn phí, không đăng ký.",
       "h1": "Chuyển PDF thành tài liệu Word có thể chỉnh sửa",
       "lede": "Lấy văn bản từ PDF sang Word, với tiêu đề và đoạn văn được dựng lại, để bạn có thể chỉnh sửa. Việc chuyển đổi diễn ra ngay trên thiết bị của bạn.",
@@ -745,15 +848,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển pdf thành word chỉnh sửa được",
+        "pdf sang docx miễn phí",
+        "chỉnh sửa pdf trong word",
+        "pdf sang word giữ nguyên tiêu đề",
+        "pdf sang word trên điện thoại"
       ]
     },
     "pdf-to-powerpoint": {
       "name": "PDF sang PowerPoint",
       "summary": "Biến mỗi trang PDF thành một slide.",
       "action": "Chuyển sang PowerPoint",
-      "title": "Chuyển PDF Sang PowerPoint (PPTX) — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "PDF sang PowerPoint Miễn Phí — PDF sang PPTX | Fizzdoc",
       "description": "Chuyển PDF thành bản trình chiếu PowerPoint với mỗi trang là một slide sắc nét, ngay trong trình duyệt. Không tải lên. Miễn phí và mã nguồn mở.",
       "h1": "Chuyển PDF thành bản trình chiếu PowerPoint",
       "lede": "Trình bày một PDF dưới dạng slide. Mỗi trang trở thành một slide toàn khổ, độ phân giải cao trong tệp .pptx bạn có thể mở bằng PowerPoint, Keynote hoặc Google Slides.",
@@ -773,15 +883,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển pdf thành slide",
+        "pdf sang ppt miễn phí",
+        "trình chiếu pdf bằng powerpoint",
+        "pdf thành bản trình chiếu",
+        "pdf sang google slides"
       ]
     },
     "pdf-to-text": {
       "name": "PDF sang văn bản",
       "summary": "Trích xuất toàn bộ văn bản từ PDF thành một tệp .txt.",
       "action": "Trích xuất văn bản",
-      "title": "Chuyển PDF Sang Văn Bản (TXT) — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "PDF sang Văn Bản Miễn Phí — Trích Xuất Text | Fizzdoc",
       "description": "Trích xuất văn bản từ PDF thành một tệp .txt thuần túy ngay trong trình duyệt, đúng thứ tự đọc. Không tải lên. Miễn phí, không đăng ký, mã nguồn mở.",
       "h1": "Trích xuất văn bản từ PDF",
       "lede": "Lấy toàn bộ chữ trong PDF ra dưới dạng văn bản thuần túy, với các dòng và đoạn văn theo đúng thứ tự đọc. Hoàn hảo để sao chép, tìm kiếm hoặc đưa vào công cụ khác.",
@@ -801,15 +918,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "lấy văn bản từ pdf",
+        "sao chép toàn bộ văn bản từ pdf",
+        "pdf sang txt miễn phí",
+        "pdf sang văn bản thuần túy",
+        "trích xuất văn bản từ pdf online"
       ]
     },
     "pdf-to-markdown": {
       "name": "PDF sang Markdown",
       "summary": "Chuyển PDF thành Markdown gọn gàng với tiêu đề và danh sách.",
       "action": "Chuyển sang Markdown",
-      "title": "Chuyển PDF Sang Markdown — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "PDF sang Markdown Miễn Phí — Cho Ghi Chú & AI | Fizzdoc",
       "description": "Chuyển PDF sang Markdown với tiêu đề và danh sách được nhận diện, sẵn sàng cho tài liệu, ghi chú hay công cụ AI. Chạy trong trình duyệt, không tải lên.",
       "h1": "Chuyển PDF sang Markdown",
       "lede": "Biến một PDF thành Markdown gọn gàng — tiêu đề, đoạn văn và danh sách — dùng cho Notion, Obsidian, GitHub hay bất kỳ công cụ nào đọc Markdown.",
@@ -829,15 +953,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển pdf sang markdown cho chatgpt",
+        "pdf sang md miễn phí",
+        "pdf sang notion hoặc obsidian",
+        "trích xuất tiêu đề và danh sách từ pdf",
+        "chuẩn bị pdf cho công cụ ai"
       ]
     },
     "text-to-pdf": {
       "name": "Văn bản sang PDF",
       "summary": "Biến một tệp .txt thành PDF gọn gàng.",
       "action": "Tạo PDF",
-      "title": "Chuyển Văn Bản Sang PDF (TXT Sang PDF) — Không Tải Lên | Fizzdoc",
+      "title": "Văn Bản sang PDF Miễn Phí — TXT sang PDF | Fizzdoc",
       "description": "Chuyển tệp văn bản thuần túy thành PDF gọn gàng, dễ đọc ngay trong trình duyệt. Hỗ trợ mọi ngôn ngữ, kể cả tiếng Hindi và các chữ viết khác. Không tải lên.",
       "h1": "Chuyển tệp văn bản sang PDF",
       "lede": "Biến ghi chú, nhật ký hoặc bất kỳ tệp .txt nào thành một PDF khổ A4 trình bày gọn gàng. Hỗ trợ mọi ngôn ngữ và bảng chữ cái.",
@@ -857,15 +988,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển txt thành pdf",
+        "lưu ghi chú thành pdf",
+        "văn bản sang pdf miễn phí",
+        "văn bản thuần túy sang pdf",
+        "tạo pdf từ văn bản"
       ]
     },
     "markdown-to-pdf": {
       "name": "Markdown sang PDF",
       "summary": "Kết xuất một tệp .md thành PDF được định dạng đẹp mắt.",
       "action": "Tạo PDF",
-      "title": "Chuyển Markdown Sang PDF — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "Markdown sang PDF Miễn Phí — MD sang PDF | Fizzdoc",
       "description": "Chuyển Markdown thành PDF được định dạng đẹp với tiêu đề, danh sách, bảng và khối mã, ngay trong trình duyệt. Không tải lên. Miễn phí và mã nguồn mở.",
       "h1": "Chuyển Markdown sang PDF",
       "lede": "Kết xuất một README, ghi chú hay tài liệu viết bằng Markdown thành PDF gọn gàng, có thể in, với tiêu đề, danh sách, bảng và khối mã.",
@@ -889,15 +1027,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển readme thành pdf",
+        "md sang pdf miễn phí",
+        "in markdown thành pdf",
+        "markdown có bảng sang pdf",
+        "xuất ghi chú markdown thành pdf"
       ]
     },
     "word-to-pdf": {
       "name": "Word sang PDF",
       "summary": "Chuyển .docx sang PDF, hỗ trợ mọi ngôn ngữ.",
       "action": "Chuyển sang PDF",
-      "title": "Chuyển Word Sang PDF (DOCX Sang PDF) — Không Tải Lên | Fizzdoc",
+      "title": "Word sang PDF Miễn Phí — DOCX sang PDF | Fizzdoc",
       "description": "Chuyển tài liệu Word sang PDF ngay trong trình duyệt, giữ nguyên tiêu đề, danh sách, bảng và hình ảnh. Dùng được với tệp tải từ Google Docs. Không tải lên.",
       "h1": "Chuyển tài liệu Word sang PDF",
       "lede": "Biến một .docx thành PDF với tiêu đề, danh sách, bảng và hình ảnh, dùng công cụ ghi PDF sẵn có của trình duyệt. Tài liệu không bao giờ rời khỏi thiết bị của bạn.",
@@ -921,15 +1066,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển docx thành pdf",
+        "lưu word thành pdf miễn phí",
+        "google docs sang pdf",
+        "chuyển cv thành pdf",
+        "word sang pdf trên điện thoại"
       ]
     },
     "excel-to-csv": {
       "name": "Excel sang CSV",
       "summary": "Xuất mọi trang tính của một .xlsx ra CSV.",
       "action": "Chuyển sang CSV",
-      "title": "Chuyển Excel Sang CSV (XLSX Sang CSV) — Không Tải Lên | Fizzdoc",
+      "title": "Excel sang CSV Miễn Phí — XLSX sang CSV | Fizzdoc",
       "description": "Chuyển bảng tính Excel sang CSV ngay trong trình duyệt. Mọi trang tính được xuất, ngày tháng thành định dạng ISO, không tải lên. Dùng được với Google Sheets.",
       "h1": "Chuyển Excel sang CSV",
       "lede": "Xuất mỗi trang tính của một workbook .xlsx thành tệp CSV chuẩn UTF-8, mở đúng ở mọi nơi. Ngày tháng, số và văn bản được giữ nguyên như cũ.",
@@ -953,15 +1105,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển xlsx thành csv",
+        "xuất trang tính excel thành csv",
+        "google sheets sang csv",
+        "excel sang csv giữ mọi trang tính",
+        "xlsx sang csv miễn phí"
       ]
     },
     "csv-to-excel": {
       "name": "CSV sang Excel",
       "summary": "Biến một .csv thành workbook .xlsx thực thụ.",
       "action": "Chuyển sang Excel",
-      "title": "Chuyển CSV Sang Excel (CSV Sang XLSX) — Không Tải Lên | Fizzdoc",
+      "title": "CSV sang Excel Miễn Phí — CSV sang XLSX | Fizzdoc",
       "description": "Chuyển tệp CSV thành workbook Excel .xlsx ngay trong trình duyệt. Số vẫn là số, số 0 đứng đầu được giữ nguyên, không tải lên. Miễn phí.",
       "h1": "Chuyển CSV sang Excel",
       "lede": "Biến một CSV thành workbook Excel thực thụ. Số trở thành số, các mã như 007 giữ nguyên số 0 đứng đầu, và ký tự phân tách được tự động nhận diện.",
@@ -981,15 +1140,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "mở csv trong excel đúng cách",
+        "csv sang xlsx miễn phí",
+        "giữ số 0 đứng đầu trong csv",
+        "chuyển csv thành bảng tính",
+        "csv sang excel trên điện thoại"
       ]
     },
     "compress-image": {
       "name": "Nén ảnh",
       "summary": "Giảm dung lượng ảnh JPG, PNG và WebP.",
       "action": "Nén ảnh",
-      "title": "Nén Ảnh (JPG, PNG, WebP) — Không Tải Lên, Miễn Phí | Fizzdoc",
+      "title": "Nén Ảnh Miễn Phí — Giữ Nguyên Chất Lượng | Fizzdoc",
       "description": "Giảm dung lượng ảnh JPG, PNG, WebP ngay trong trình duyệt, hàng loạt. Chọn mức chất lượng hoặc giữ không mất chất lượng. Ảnh không bao giờ được tải lên.",
       "h1": "Nén ảnh mà không cần tải lên",
       "lede": "Giảm dung lượng ảnh chụp và ảnh chụp màn hình để gửi email, đăng web hoặc điền vào biểu mẫu. Chọn mức chất lượng, hoặc giữ không mất chất lượng — tất cả trên thiết bị của bạn, hàng loạt.",
@@ -1013,16 +1179,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "nén ảnh không giảm chất lượng",
+        "giảm dung lượng ảnh",
+        "nén hàng loạt ảnh jpg và png",
+        "giảm dung lượng ảnh cho website",
+        "giảm dung lượng ảnh theo kb"
       ]
     },
     "compress-image-to-20kb": {
       "name": "Nén Ảnh Xuống 20 KB",
       "summary": "Đưa ảnh hoặc chữ ký xuống dưới 20 KB cho biểu mẫu trực tuyến.",
       "action": "Nén ảnh",
-      "title": "Nén Ảnh Xuống 20 KB Online — JPG, Không Tải Lên | Fizzdoc",
-      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 20 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên.",
+      "title": "Nén Ảnh Xuống 20 KB Miễn Phí — Cho Hồ Sơ | Fizzdoc",
+      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 20 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên. Miễn phí.",
       "h1": "Nén một ảnh xuống dưới 20 KB",
       "lede": "Biểu mẫu thường yêu cầu ảnh hoặc chữ ký dưới 20 KB. Fizzdoc giữ ảnh lớn và rõ nhất có thể, chỉ giảm chất lượng JPG từng bước khi cần thiết, và không bao giờ tải ảnh của bạn lên.",
       "steps": [
@@ -1045,16 +1218,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm ảnh xuống 20 kb",
+        "ảnh chữ ký dưới 20 kb",
+        "nén ảnh cho hồ sơ thi tuyển",
+        "chỉnh ảnh về 20 kb cho hồ sơ tuyển sinh",
+        "jpg dưới 20 kb"
       ]
     },
     "compress-image-to-50kb": {
       "name": "Nén Ảnh Xuống 50 KB",
       "summary": "Đưa ảnh hoặc chữ ký xuống dưới 50 KB cho biểu mẫu trực tuyến.",
       "action": "Nén ảnh",
-      "title": "Nén Ảnh Xuống 50 KB Online — JPG, Không Tải Lên | Fizzdoc",
-      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 50 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên.",
+      "title": "Nén Ảnh Xuống 50 KB Miễn Phí — Cho Hồ Sơ | Fizzdoc",
+      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 50 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên. Miễn phí.",
       "h1": "Nén một ảnh xuống dưới 50 KB",
       "lede": "Biểu mẫu thường yêu cầu ảnh hoặc chữ ký dưới 50 KB. Fizzdoc giữ ảnh lớn và rõ nhất có thể, chỉ giảm chất lượng JPG từng bước khi cần thiết, và không bao giờ tải ảnh của bạn lên.",
       "steps": [
@@ -1077,16 +1257,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm ảnh xuống 50 kb",
+        "ảnh thẻ dưới 50 kb",
+        "nén ảnh cho hồ sơ nhà nước",
+        "chỉnh ảnh về 50 kb online",
+        "jpg dưới 50 kb"
       ]
     },
     "compress-image-to-100kb": {
       "name": "Nén Ảnh Xuống 100 KB",
       "summary": "Đưa ảnh hoặc chữ ký xuống dưới 100 KB cho biểu mẫu trực tuyến.",
       "action": "Nén ảnh",
-      "title": "Nén Ảnh Xuống 100 KB Online — JPG, Không Tải Lên | Fizzdoc",
-      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 100 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên.",
+      "title": "Nén Ảnh Xuống 100 KB Miễn Phí — Cho Hồ Sơ | Fizzdoc",
+      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 100 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên. Miễn phí.",
       "h1": "Nén một ảnh xuống dưới 100 KB",
       "lede": "Biểu mẫu thường yêu cầu ảnh hoặc chữ ký dưới 100 KB. Fizzdoc giữ ảnh lớn và rõ nhất có thể, chỉ giảm chất lượng JPG từng bước khi cần thiết, và không bao giờ tải ảnh của bạn lên.",
       "steps": [
@@ -1109,15 +1296,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm ảnh xuống 100 kb",
+        "nén ảnh cho hồ sơ xin việc",
+        "ảnh dưới 100 kb cho biểu mẫu online",
+        "chỉnh ảnh về 100 kb online",
+        "jpg dưới 100 kb"
       ]
     },
     "resize-image": {
       "name": "Đổi kích thước ảnh",
       "summary": "Phóng to hoặc thu nhỏ ảnh, theo pixel hoặc phần trăm.",
       "action": "Đổi kích thước ảnh",
-      "title": "Đổi Kích Thước Ảnh Trực Tuyến — Không Tải Lên, Miễn Phí | Fizzdoc",
+      "title": "Đổi Kích Thước Ảnh Miễn Phí — Theo Pixel | Fizzdoc",
       "description": "Đổi kích thước ảnh theo pixel hoặc phần trăm — nhỏ hơn hoặc lớn hơn — ngay trong trình duyệt, hàng loạt. Giữ tỷ lệ khung hình hoặc không. Không tải lên.",
       "h1": "Đổi kích thước ảnh — to hơn hoặc nhỏ hơn",
       "lede": "Đặt chiều rộng và chiều cao chính xác hoặc chỉnh tỷ lệ theo phần trăm, cho một ảnh hoặc nhiều ảnh. Tỷ lệ khung hình được giữ nguyên trừ khi bạn chỉ định khác.",
@@ -1137,16 +1331,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "đổi kích thước ảnh theo pixel chính xác",
+        "thay đổi kích thước ảnh",
+        "đổi kích thước ảnh cho hộ chiếu hoặc visa",
+        "đổi kích thước hàng loạt ảnh",
+        "phóng to hoặc thu nhỏ ảnh"
       ]
     },
     "convert-image": {
       "name": "Chuyển đổi ảnh",
       "summary": "Chuyển đổi qua lại giữa JPG, PNG và WebP.",
       "action": "Chuyển đổi ảnh",
-      "title": "Chuyển Đổi Ảnh Sang JPG, PNG Hoặc WebP — Không Tải Lên | Fizzdoc",
-      "description": "Chuyển đổi ảnh giữa JPG, PNG và WebP ngay trong trình duyệt, hàng loạt. Dùng được với GIF, BMP, AVIF và ảnh iPhone trình duyệt mở được. Không tải lên.",
+      "title": "Chuyển Đổi Ảnh Miễn Phí — JPG, PNG, WebP | Fizzdoc",
+      "description": "Chuyển đổi ảnh giữa JPG, PNG và WebP ngay trong trình duyệt, hàng loạt. Dùng được với GIF, BMP, AVIF và ảnh iPhone trình duyệt mở được. Không tải lên. Miễn phí.",
       "h1": "Chuyển đổi ảnh sang JPG, PNG hoặc WebP",
       "lede": "Đổi định dạng của một ảnh hoặc cả loạt ảnh — ví dụ WebP sang JPG hoặc PNG sang WebP — mà không cần gửi đi đâu cả.",
       "steps": [
@@ -1165,15 +1366,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển avif hoặc bmp sang jpg",
+        "đổi định dạng ảnh",
+        "chuyển gif hoặc bmp sang png",
+        "chuyển đổi hàng loạt ảnh",
+        "chuyển ảnh sang webp"
       ]
     },
     "image-to-text": {
       "name": "Ảnh sang văn bản (OCR)",
       "summary": "Chọn và sao chép văn bản từ bất kỳ ảnh chụp hay ảnh chụp màn hình nào.",
       "action": "Nhận dạng văn bản",
-      "title": "Ảnh Sang Văn Bản (OCR) — Sao Chép Chữ Từ Ảnh, Không Tải Lên | Fizzdoc",
+      "title": "Ảnh sang Văn Bản Miễn Phí — OCR từ Ảnh Chụp | Fizzdoc",
       "description": "Trích xuất văn bản từ ảnh chụp, ảnh chụp màn hình bằng OCR tiếng Anh trong trình duyệt, rồi chọn và sao chép ngay trên ảnh — giống Live Text. Không tải lên.",
       "h1": "Sao chép văn bản từ bất kỳ ảnh nào",
       "lede": "Nhận dạng văn bản tiếng Anh trong ảnh chụp, bản quét hoặc ảnh chụp màn hình, rồi chọn trực tiếp trên ảnh — giống hệt Live Text trên iPhone. Không có gì rời khỏi thiết bị của bạn.",
@@ -1197,15 +1405,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "sao chép văn bản từ ảnh",
+        "chuyển ảnh chụp màn hình thành văn bản",
+        "trích xuất văn bản từ ảnh miễn phí",
+        "ocr ảnh sang văn bản",
+        "sao chép văn bản từ ảnh chụp điện thoại"
       ]
     },
     "png-to-jpg": {
       "name": "PNG sang JPG",
       "summary": "Chuyển đổi ảnh PNG sang JPG hàng loạt.",
       "action": "Chuyển sang JPG",
-      "title": "Chuyển PNG Sang JPG — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "PNG sang JPG Miễn Phí — Chuyển Đổi Online | Fizzdoc",
       "description": "Chuyển ảnh PNG sang JPG ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
       "h1": "Chuyển PNG sang JPG — hoàn toàn riêng tư",
       "lede": "Tệp JPG nhỏ hơn nhiều so với ảnh chụp và mở được ở mọi nơi, kể cả phần mềm cũ và các biểu mẫu tải lên không nhận PNG. Fizzdoc chuyển đổi tệp PNG của bạn ngay trên thiết bị.",
@@ -1229,15 +1444,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển png sang jpg miễn phí",
+        "png sang jpeg",
+        "giảm dung lượng file png",
+        "ảnh chụp màn hình sang jpg",
+        "chuyển hàng loạt png sang jpg"
       ]
     },
     "jpg-to-png": {
       "name": "JPG sang PNG",
       "summary": "Chuyển đổi ảnh JPG sang PNG hàng loạt.",
       "action": "Chuyển sang PNG",
-      "title": "Chuyển JPG Sang PNG — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "JPG sang PNG Miễn Phí — Chuyển Đổi Online | Fizzdoc",
       "description": "Chuyển ảnh JPG sang PNG ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
       "h1": "Chuyển JPG sang PNG — hoàn toàn riêng tư",
       "lede": "PNG không mất chất lượng, nên ảnh sẽ không bị giảm chất lượng thêm khi bạn chỉnh sửa và lưu lại. Fizzdoc chuyển đổi tệp JPG của bạn ngay trên thiết bị.",
@@ -1261,15 +1483,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển jpg sang png miễn phí",
+        "jpeg sang png",
+        "lưu ảnh dưới dạng png",
+        "bản sao ảnh không mất chất lượng",
+        "chuyển hàng loạt jpg sang png"
       ]
     },
     "webp-to-jpg": {
       "name": "WebP sang JPG",
       "summary": "Chuyển đổi ảnh WebP sang JPG hàng loạt.",
       "action": "Chuyển sang JPG",
-      "title": "Chuyển WebP Sang JPG — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "WebP sang JPG Miễn Phí — Chuyển Đổi Online | Fizzdoc",
       "description": "Chuyển ảnh WebP sang JPG ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
       "h1": "Chuyển WebP sang JPG — hoàn toàn riêng tư",
       "lede": "Nhiều ứng dụng, máy in và biểu mẫu tải lên vẫn không mở được ảnh WebP tải từ các trang web. JPG thì mở được ở mọi nơi. Fizzdoc chuyển đổi tệp WebP của bạn ngay trên thiết bị.",
@@ -1293,15 +1522,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển webp sang jpg miễn phí",
+        "mở file ảnh webp",
+        "webp sang jpeg",
+        "lưu webp thành jpg",
+        "chuyển hàng loạt webp sang jpg"
       ]
     },
     "jpg-to-webp": {
       "name": "JPG sang WebP",
       "summary": "Chuyển đổi ảnh JPG sang WebP hàng loạt.",
       "action": "Chuyển sang WebP",
-      "title": "Chuyển JPG Sang WebP — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "JPG sang WebP Miễn Phí — Chuyển Đổi Online | Fizzdoc",
       "description": "Chuyển ảnh JPG sang WebP ngay trong trình duyệt, một ảnh hay nhiều ảnh cùng lúc. Nhanh, miễn phí, không watermark, ảnh của bạn không bao giờ được tải lên.",
       "h1": "Chuyển JPG sang WebP — hoàn toàn riêng tư",
       "lede": "Ảnh WebP thường nhỏ hơn JPG từ 25–35% ở cùng chất lượng hình ảnh, giúp trang web tải nhanh hơn. Fizzdoc chuyển đổi tệp JPG của bạn ngay trên thiết bị.",
@@ -1325,15 +1561,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển jpg sang webp miễn phí",
+        "giảm dung lượng ảnh cho website",
+        "jpeg sang webp",
+        "công cụ chuyển đổi webp",
+        "chuyển hàng loạt jpg sang webp"
       ]
     },
     "add-page-numbers-to-pdf": {
       "name": "Thêm số trang",
       "summary": "Đánh số cho mọi trang của một PDF.",
       "action": "Thêm số trang",
-      "title": "Thêm Số Trang Vào PDF — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "Thêm Số Trang PDF Miễn Phí — Online | Fizzdoc",
       "description": "Thêm số trang vào PDF ngay trong trình duyệt. Chọn vị trí, số bắt đầu và kiểu “Page 1 of 10”. Không tải lên. Miễn phí, không đăng ký.",
       "h1": "Thêm số trang vào một tệp PDF",
       "lede": "Đánh số trang cho báo cáo, luận văn hay hợp đồng chỉ trong vài giây. Chọn vị trí số trang và số bắt đầu — ngay trên thiết bị của bạn.",
@@ -1357,15 +1600,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "đánh số trang cho pdf",
+        "thêm dạng trang 1 trên 10 vào pdf",
+        "chèn số trang vào pdf miễn phí",
+        "số trang cho pdf luận văn",
+        "đánh số trang ở cuối pdf"
       ]
     },
     "watermark-pdf": {
       "name": "Thêm watermark PDF",
       "summary": "Đóng dấu chữ như CONFIDENTIAL lên mọi trang.",
       "action": "Thêm watermark",
-      "title": "Watermark PDF — Thêm Watermark Chữ, Không Tải Lên | Fizzdoc",
+      "title": "Thêm Watermark PDF Miễn Phí — Watermark Chữ | Fizzdoc",
       "description": "Thêm watermark dạng chữ như CONFIDENTIAL hoặc DRAFT lên mọi trang của PDF, ngay trong trình duyệt. Chọn độ mờ tùy ý. Không tải lên. Miễn phí.",
       "h1": "Thêm watermark vào một tệp PDF",
       "lede": "Đánh dấu tài liệu là CONFIDENTIAL, DRAFT hoặc với tên của bạn trước khi chia sẻ. Watermark được vẽ chéo trên mọi trang.",
@@ -1389,15 +1639,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "thêm chữ mật vào pdf",
+        "đóng dấu bản nháp lên trang pdf",
+        "thêm watermark pdf miễn phí",
+        "thêm watermark dạng chữ vào pdf",
+        "watermark tiếng việt trên pdf"
       ]
     },
     "pdf-to-png": {
       "name": "PDF sang PNG",
       "summary": "Lưu mỗi trang thành một ảnh PNG không mất chất lượng.",
       "action": "Chuyển sang PNG",
-      "title": "Chuyển PDF Sang PNG — Không Mất Chất Lượng, Không Tải Lên | Fizzdoc",
+      "title": "PDF sang PNG Miễn Phí — Ảnh Không Mất Chất Lượng | Fizzdoc",
       "description": "Chuyển mỗi trang PDF thành ảnh PNG sắc nét, không mất chất lượng ngay trong trình duyệt. Nhiều trang tải xuống dưới dạng một ZIP. Không tải lên. Miễn phí.",
       "h1": "Chuyển trang PDF sang ảnh PNG",
       "lede": "Kết xuất mỗi trang thành PNG sắc nét, không mất chất lượng — lý tưởng cho slide, tài liệu và ảnh chụp màn hình cần chữ sắc nét. Không có gì rời khỏi thiết bị của bạn.",
@@ -1417,15 +1674,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển pdf sang png",
+        "trang pdf sang ảnh không mất chất lượng",
+        "ảnh trang pdf sắc nét cho slide",
+        "lưu slide pdf thành png",
+        "pdf sang png miễn phí"
       ]
     },
     "extract-pdf-pages": {
       "name": "Trích xuất trang PDF",
       "summary": "Lưu các trang đã chọn thành một tệp PDF mới.",
       "action": "Trích xuất trang",
-      "title": "Trích Xuất Trang Từ PDF — Miễn Phí, Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "Trích Xuất Trang PDF Miễn Phí — File Mới | Fizzdoc",
       "description": "Lấy các trang cụ thể ra khỏi PDF thành một tệp mới, ngay trong trình duyệt. Nhập các trang như 2, 5-7. Liên kết và trường biểu mẫu được giữ lại. Không tải lên.",
       "h1": "Trích xuất trang từ một tệp PDF",
       "lede": "Chỉ cần trang chữ ký hay một chương? Nhập các trang bạn muốn và nhận chúng dưới dạng một PDF mới — bản gốc vẫn giữ nguyên.",
@@ -1445,15 +1709,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "lưu một trang từ pdf",
+        "trích xuất trang thành pdf mới",
+        "lấy trang ra khỏi pdf",
+        "sao chép trang từ pdf",
+        "trích xuất trang pdf miễn phí"
       ]
     },
     "reorder-pdf-pages": {
       "name": "Sắp xếp lại trang PDF",
       "summary": "Đặt các trang của một PDF theo thứ tự mới.",
       "action": "Sắp xếp lại trang",
-      "title": "Sắp Xếp Lại Trang PDF — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "Sắp Xếp Lại Trang PDF Miễn Phí | Fizzdoc",
       "description": "Sắp xếp lại các trang của PDF bằng cách nhập thứ tự bạn muốn, như 3, 1-2, 4-. Chạy trong trình duyệt; tệp không bao giờ được tải lên. Miễn phí, không đăng ký.",
       "h1": "Sắp xếp lại các trang của một PDF",
       "lede": "Sửa các trang bị quét sai thứ tự hoặc đưa phần phụ lục lên đầu. Nhập thứ tự mới và tải xuống PDF đã sắp xếp lại.",
@@ -1473,15 +1744,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "đổi thứ tự trang trong pdf",
+        "sắp xếp lại trang pdf",
+        "di chuyển trang trong pdf",
+        "sắp xếp trang pdf theo ý muốn",
+        "sắp xếp lại pdf miễn phí"
       ]
     },
     "png-to-pdf": {
       "name": "PNG sang PDF",
       "summary": "Biến ảnh chụp màn hình và hình ảnh PNG thành một tệp PDF.",
       "action": "Tạo PDF",
-      "title": "Chuyển PNG Sang PDF — Miễn Phí, Không Tải Lên | Fizzdoc",
+      "title": "PNG sang PDF Miễn Phí — Ảnh Chụp Màn Hình | Fizzdoc",
       "description": "Gộp ảnh chụp màn hình và hình ảnh PNG thành một tệp PDF ngay trong trình duyệt, mỗi ảnh một trang, giữ nguyên chất lượng. Không tải lên. Không watermark.",
       "h1": "Chuyển ảnh PNG sang PDF",
       "lede": "Đưa ảnh chụp màn hình, sơ đồ hoặc trang quét lưu dưới dạng PNG vào một PDF gọn gàng — sắc nét, không mất chất lượng và theo thứ tự bạn chọn.",
@@ -1501,15 +1779,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "chuyển ảnh chụp màn hình thành pdf",
+        "png sang pdf miễn phí",
+        "gộp ảnh png thành pdf",
+        "chuyển ảnh sang pdf không mất chất lượng",
+        "png sang pdf trên điện thoại"
       ]
     },
     "remove-word-metadata": {
       "name": "Xóa Metadata Word",
       "summary": "Xóa tên tác giả, công ty và người biên tập khỏi một .docx.",
       "action": "Xóa metadata",
-      "title": "Xóa Metadata Word — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "Xóa Metadata Word Miễn Phí — DOCX Sạch | Fizzdoc",
       "description": "Xóa tác giả, người biên tập, công ty, tiêu đề và ảnh thu nhỏ khỏi tệp Word ngay trong trình duyệt. Dùng được với tệp tải từ Google Docs. Không tải lên.",
       "h1": "Xóa metadata ẩn khỏi một tài liệu Word",
       "lede": "Mỗi tệp .docx đều ghi lại ai đã tạo ra nó, ai chỉnh sửa lần cuối và thuộc công ty nào. Hãy xóa các thông tin đó trước khi gửi đi — mà không cần tải tệp lên đâu cả.",
@@ -1533,16 +1818,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xóa tác giả khỏi tài liệu word",
+        "làm sạch docx trước khi chia sẻ",
+        "xóa thuộc tính tài liệu word",
+        "ẩn danh file word",
+        "xóa tên công ty khỏi docx"
       ]
     },
     "extract-images-from-word": {
       "name": "Trích xuất ảnh từ Word",
       "summary": "Lưu mọi hình ảnh trong một .docx ở chất lượng gốc.",
       "action": "Trích xuất ảnh",
-      "title": "Trích Xuất Ảnh Từ Word — Không Tải Lên | Fizzdoc",
-      "description": "Tải xuống mọi hình ảnh được nhúng trong tài liệu Word dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Docs. Chạy trong trình duyệt.",
+      "title": "Trích Xuất Ảnh từ Word Miễn Phí — DOCX sang ZIP | Fizzdoc",
+      "description": "Tải xuống mọi hình ảnh được nhúng trong tài liệu Word dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Docs. Chạy trong trình duyệt. Miễn phí.",
       "h1": "Trích xuất toàn bộ hình ảnh từ một tài liệu Word",
       "lede": "Lấy ra mọi ảnh chụp, logo và biểu đồ trong một .docx ở định dạng và độ phân giải gốc — không chụp màn hình, không nén lại, không tải lên.",
       "steps": [
@@ -1565,16 +1857,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "lưu toàn bộ ảnh từ file word",
+        "tải ảnh từ docx",
+        "lấy ảnh từ google docs",
+        "trích xuất ảnh từ docx miễn phí",
+        "ảnh word ở độ phân giải gốc"
       ]
     },
     "compress-word": {
       "name": "Nén Word",
       "summary": "Giảm dung lượng một .docx bằng cách tối ưu hình ảnh trong đó.",
       "action": "Nén Word",
-      "title": "Nén Tệp Word (.docx) — Không Tải Lên | Fizzdoc",
-      "description": "Giảm dung lượng tệp Word bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên.",
+      "title": "Nén Word Miễn Phí — Giảm Dung Lượng DOCX | Fizzdoc",
+      "description": "Giảm dung lượng tệp Word bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên. Miễn phí.",
       "h1": "Nén một tài liệu Word",
       "lede": "Làm nhỏ một .docx đủ để gửi email bằng cách nén lại các ảnh quá lớn bên trong. Văn bản, định dạng và mọi thứ khác đều giữ nguyên như cũ.",
       "steps": [
@@ -1597,15 +1896,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm dung lượng file word",
+        "nén docx chứa ảnh",
+        "giảm dung lượng tài liệu word để gửi email",
+        "giảm dung lượng docx",
+        "nén word miễn phí"
       ]
     },
     "remove-excel-metadata": {
       "name": "Xóa Metadata Excel",
       "summary": "Xóa tên tác giả, công ty và người biên tập khỏi một .xlsx.",
       "action": "Xóa metadata",
-      "title": "Xóa Metadata Excel — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "Xóa Metadata Excel Miễn Phí — XLSX Sạch | Fizzdoc",
       "description": "Xóa tác giả, người biên tập, công ty, tiêu đề và ảnh thu nhỏ khỏi tệp Excel ngay trong trình duyệt. Dùng được với tệp tải từ Google Sheets. Không tải lên.",
       "h1": "Xóa metadata ẩn khỏi một bảng tính Excel",
       "lede": "Mỗi tệp .xlsx đều ghi lại ai đã tạo ra nó, ai chỉnh sửa lần cuối và thuộc công ty nào. Hãy xóa các thông tin đó trước khi gửi đi — mà không cần tải tệp lên đâu cả.",
@@ -1629,15 +1935,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xóa tác giả khỏi file excel",
+        "làm sạch xlsx trước khi chia sẻ",
+        "xóa thuộc tính tài liệu excel",
+        "ẩn danh bảng tính",
+        "xóa tên công ty khỏi xlsx"
       ]
     },
     "extract-images-from-excel": {
       "name": "Trích xuất ảnh từ Excel",
       "summary": "Lưu mọi hình ảnh trong một .xlsx ở chất lượng gốc.",
       "action": "Trích xuất ảnh",
-      "title": "Trích Xuất Ảnh Từ Excel — Không Tải Lên | Fizzdoc",
+      "title": "Trích Xuất Ảnh từ Excel Miễn Phí — XLSX sang ZIP | Fizzdoc",
       "description": "Tải xuống mọi hình ảnh được nhúng trong bảng tính Excel dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Sheets. Chạy trong trình duyệt.",
       "h1": "Trích xuất toàn bộ hình ảnh từ một bảng tính Excel",
       "lede": "Lấy ra mọi ảnh chụp, logo và biểu đồ trong một .xlsx ở định dạng và độ phân giải gốc — không chụp màn hình, không nén lại, không tải lên.",
@@ -1661,16 +1974,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "lưu toàn bộ ảnh từ file excel",
+        "tải ảnh từ xlsx",
+        "lấy ảnh từ google sheets",
+        "trích xuất ảnh từ xlsx miễn phí",
+        "ảnh excel ở độ phân giải gốc"
       ]
     },
     "compress-excel": {
       "name": "Nén Excel",
       "summary": "Giảm dung lượng một .xlsx bằng cách tối ưu hình ảnh trong đó.",
       "action": "Nén Excel",
-      "title": "Nén Tệp Excel (.xlsx) — Không Tải Lên | Fizzdoc",
-      "description": "Giảm dung lượng tệp Excel bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên.",
+      "title": "Nén Excel Miễn Phí — Giảm Dung Lượng XLSX | Fizzdoc",
+      "description": "Giảm dung lượng tệp Excel bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên. Miễn phí.",
       "h1": "Nén một bảng tính Excel",
       "lede": "Làm nhỏ một .xlsx đủ để gửi email bằng cách nén lại các ảnh quá lớn bên trong. Văn bản, định dạng và mọi thứ khác đều giữ nguyên như cũ.",
       "steps": [
@@ -1693,15 +2013,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm dung lượng file excel",
+        "nén xlsx chứa ảnh",
+        "giảm dung lượng bảng tính để gửi email",
+        "giảm dung lượng xlsx",
+        "nén excel miễn phí"
       ]
     },
     "remove-powerpoint-metadata": {
       "name": "Xóa Metadata PowerPoint",
       "summary": "Xóa tên tác giả, công ty và người biên tập khỏi một .pptx.",
       "action": "Xóa metadata",
-      "title": "Xóa Metadata PowerPoint — Riêng Tư, Không Tải Lên | Fizzdoc",
+      "title": "Xóa Metadata PowerPoint Miễn Phí | Fizzdoc",
       "description": "Xóa tác giả, người biên tập, công ty, tiêu đề và ảnh thu nhỏ khỏi tệp PowerPoint ngay trong trình duyệt. Dùng được với tệp tải từ Google Slides. Không tải lên.",
       "h1": "Xóa metadata ẩn khỏi một bản trình chiếu PowerPoint",
       "lede": "Mỗi tệp .pptx đều ghi lại ai đã tạo ra nó, ai chỉnh sửa lần cuối và thuộc công ty nào. Hãy xóa các thông tin đó trước khi gửi đi — mà không cần tải tệp lên đâu cả.",
@@ -1725,16 +2052,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "xóa tác giả khỏi powerpoint",
+        "làm sạch pptx trước khi chia sẻ",
+        "xóa thuộc tính bản trình chiếu",
+        "ẩn danh bản trình chiếu",
+        "xóa tên công ty khỏi pptx"
       ]
     },
     "extract-images-from-powerpoint": {
       "name": "Trích xuất ảnh từ PowerPoint",
       "summary": "Lưu mọi hình ảnh trong một .pptx ở chất lượng gốc.",
       "action": "Trích xuất ảnh",
-      "title": "Trích Xuất Ảnh Từ PowerPoint — Không Tải Lên | Fizzdoc",
-      "description": "Tải xuống mọi hình ảnh nhúng trong PowerPoint dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Slides. Chạy trong trình duyệt.",
+      "title": "Trích Xuất Ảnh từ PowerPoint Miễn Phí — ZIP | Fizzdoc",
+      "description": "Tải xuống mọi hình ảnh nhúng trong PowerPoint dưới dạng ZIP, ở độ phân giải gốc. Dùng được với tệp tải từ Google Slides. Chạy trong trình duyệt. Miễn phí.",
       "h1": "Trích xuất toàn bộ hình ảnh từ một bản trình chiếu PowerPoint",
       "lede": "Lấy ra mọi ảnh chụp, logo và biểu đồ trong một .pptx ở định dạng và độ phân giải gốc — không chụp màn hình, không nén lại, không tải lên.",
       "steps": [
@@ -1757,16 +2091,23 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "lưu toàn bộ ảnh từ bản trình chiếu",
+        "tải ảnh từ pptx",
+        "lấy ảnh từ google slides",
+        "trích xuất ảnh từ pptx miễn phí",
+        "ảnh slide ở độ phân giải gốc"
       ]
     },
     "compress-powerpoint": {
       "name": "Nén PowerPoint",
       "summary": "Giảm dung lượng một .pptx bằng cách tối ưu hình ảnh trong đó.",
       "action": "Nén PowerPoint",
-      "title": "Nén Tệp PowerPoint (.pptx) — Không Tải Lên | Fizzdoc",
-      "description": "Giảm dung lượng tệp PowerPoint bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên.",
+      "title": "Nén PowerPoint Miễn Phí — Giảm Dung Lượng PPTX | Fizzdoc",
+      "description": "Giảm dung lượng tệp PowerPoint bằng cách nén lại ảnh trong đó, ngay trong trình duyệt. Nội dung và định dạng giữ nguyên. Không tải lên. Miễn phí.",
       "h1": "Nén một bản trình chiếu PowerPoint",
       "lede": "Làm nhỏ một .pptx đủ để gửi email bằng cách nén lại các ảnh quá lớn bên trong. Văn bản, định dạng và mọi thứ khác đều giữ nguyên như cũ.",
       "steps": [
@@ -1789,15 +2130,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "giảm dung lượng file powerpoint",
+        "nén pptx chứa ảnh",
+        "giảm dung lượng bản trình chiếu để gửi email",
+        "giảm dung lượng pptx",
+        "nén powerpoint miễn phí"
       ]
     },
     "split-audio": {
       "name": "Cắt âm thanh",
       "summary": "Cắt gọn một tệp MP3 hoặc M4A, hoặc chia thành nhiều đoạn. Nghe thử trước khi lưu.",
       "action": "Lưu âm thanh",
-      "title": "Cắt MP3 hoặc M4A Trực Tuyến — Cắt Âm Thanh, Không Tải Lên | Fizzdoc",
+      "title": "Cắt MP3 & Tách Âm Thanh Miễn Phí | Fizzdoc",
       "description": "Cắt gọn một tệp MP3 hoặc M4A, hoặc chia thành nhiều đoạn tại đúng thời điểm. Xem dạng sóng, nghe từng đoạn, rồi lưu. Không mã hóa lại, không tải lên. Miễn phí.",
       "h1": "Cắt, gọt và chia âm thanh ngay trong trình duyệt",
       "lede": "Kéo các tay cầm trên dạng sóng hoặc gõ đúng thời điểm, nghe thử đoạn đã chọn, rồi lưu lại. Việc cắt được thực hiện mà không mã hóa lại, nên chất lượng âm thanh giữ nguyên như cũ.",
@@ -1821,15 +2169,22 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "cắt mp3 online miễn phí",
+        "cắt gọn file âm thanh",
+        "tách mp3 thành nhiều đoạn",
+        "làm nhạc chuông từ bài hát",
+        "cắt m4a không mã hóa lại"
       ]
     },
     "merge-audio": {
       "name": "Ghép âm thanh",
       "summary": "Ghép các tệp MP3 hoặc M4A thành một, theo thứ tự bạn chọn.",
       "action": "Ghép âm thanh",
-      "title": "Ghép MP3 hoặc M4A Trực Tuyến — Không Tải Lên | Fizzdoc",
+      "title": "Ghép MP3 & M4A Miễn Phí — Nối Âm Thanh | Fizzdoc",
       "description": "Ghép các tệp MP3 hoặc M4A thành một bản theo thứ tự bạn chọn, rồi nghe thử trước khi tải xuống. Không mã hóa lại, không tải lên, không cần đăng ký. Miễn phí.",
       "h1": "Ghép các tệp âm thanh thành một",
       "lede": "Thêm các tệp MP3 hoặc M4A của bạn, sắp xếp thứ tự rồi ghép thành một bản. Nghe thử kết quả trước khi tải xuống; không có gì bị mã hóa lại hay tải lên.",
@@ -1853,8 +2208,15 @@
         ],
         [
           "Fizzdoc có miễn phí không?",
-          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
         ]
+      ],
+      "keywords": [
+        "ghép nhiều file mp3 thành một",
+        "gộp file âm thanh online",
+        "ghép nhạc không giảm chất lượng",
+        "ghép các đoạn ghi âm",
+        "ghép file m4a miễn phí"
       ]
     }
   }
