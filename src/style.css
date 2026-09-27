@@ -53,6 +53,11 @@
   --accent: #8b5cf6;
   --accent-2: #6d28d9;
 }
+.fmt-audio,
+[data-format='audio'] {
+  --accent: #db2777;
+  --accent-2: #be185d;
+}
 .fmt-powerpoint,
 [data-format='powerpoint'] {
   --accent: #ea6a3f;
@@ -846,6 +851,7 @@ main {
 }
 .options input,
 .options select,
+.viewer input:not([type='checkbox']),
 dialog input {
   width: 100%;
   height: 40px;
@@ -860,6 +866,7 @@ dialog input {
 }
 .options input:focus,
 .options select:focus,
+.viewer input:not([type='checkbox']):focus,
 dialog input:focus {
   outline: none;
   border-color: var(--accent);

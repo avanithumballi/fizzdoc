@@ -241,6 +241,52 @@ test('redacts marked areas for good and turns PDFs into scanned PDFs', async ({ 
   expect(seen.requests.filter((r) => !r.url.startsWith(page.url().split('/').slice(0, 3).join('/')))).toEqual([]);
 });
 
+test('trims, splits and merges audio without re-encoding, with a preview first', async ({ page }) => {
+  const { parseAudio } = await import('../src/engine/audio');
+  const seconds = (bytes: Buffer) => parseAudio(new Uint8Array(bytes)).duration;
+  const seen = watch(page);
+
+  await page.goto('/split-audio/');
+  await page.locator('#file-input').setInputFiles(file('tone.mp3'));
+  await expect(page.locator('#file-list')).toContainText('0:06');
+  await page.getByLabel('Start', { exact: true }).fill('1');
+  await page.getByLabel('Start', { exact: true }).press('Enter');
+  await page.getByLabel('End', { exact: true }).fill('0:04.0');
+  await page.getByLabel('End', { exact: true }).press('Enter');
+  await page.getByRole('button', { name: 'Save audio' }).click();
+  await expect(page.locator('#status')).toContainText('1 file · 0:03');
+  await expect(page.locator('#result audio')).toBeVisible();
+  const trimmed = await downloadBytes(page);
+  expect(trimmed.name).toBe('tone-trimmed.mp3');
+  expect(seconds(trimmed.bytes)).toBeCloseTo(3, 1);
+
+  await page.getByRole('tab', { name: 'Split into parts' }).click();
+  await page.getByLabel('Equal parts').fill('3');
+  await page.getByRole('button', { name: 'Apply' }).nth(1).click();
+  await expect(page.locator('.au-part')).toHaveCount(3);
+  await page.getByLabel('Keep: Part 2').uncheck();
+  await page.getByRole('button', { name: 'Save audio' }).click();
+  await expect(page.locator('#status')).toContainText('2 files · 0:04');
+  await expect(page.locator('.au-result audio')).toHaveCount(2);
+  expect((await downloadBytes(page)).name).toBe('tone-parts.zip');
+
+  await page.goto('/merge-audio/');
+  await page.locator('#file-input').setInputFiles([file('tone.m4a'), file('tone.m4a')]);
+  await page.getByRole('button', { name: 'Merge audio' }).click();
+  await expect(page.locator('#status')).toContainText('2 files · 0:12');
+  await expect(page.locator('#result audio')).toBeVisible();
+  const merged = await downloadBytes(page);
+  expect(merged.name).toBe('tone-merged.m4a');
+  expect(seconds(merged.bytes)).toBeCloseTo(12, 0);
+
+  await page.goto('/merge-audio/');
+  await page.locator('#file-input').setInputFiles([file('tone.mp3'), file('tone.m4a')]);
+  await page.getByRole('button', { name: 'Merge audio' }).click();
+  await expect(page.locator('#status')).toContainText('all MP3 or all M4A');
+  expect(seen.violations).toEqual([]);
+  expect(seen.requests.filter((r) => !/^(http:\/\/localhost[:/]|blob:|data:)/.test(r.url))).toEqual([]);
+});
+
 test('prepares Word and Markdown documents for Save as PDF without running their scripts', async ({ page }) => {
   const seen = watch(page);
   await page.goto('/word-to-pdf/');

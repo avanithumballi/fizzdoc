@@ -25,8 +25,10 @@ export type ToolOp =
   | 'image-convert'
   | 'image-ocr'
   | 'page-numbers'
-  | 'watermark-pdf';
-export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image';
+  | 'watermark-pdf'
+  | 'audio-split'
+  | 'audio-merge';
+export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image' | 'audio';
 
 export const SITE = {
   name: 'Fizzdoc',
@@ -315,6 +317,68 @@ export const TOOLS: Tool[] = [
       ],
       PRIVACY_FAQ[1],
     ],
+  },
+  {
+    op: 'audio-split',
+    format: 'audio',
+    slug: 'split-audio',
+    name: 'Cut & Split Audio',
+    summary: 'Trim an MP3 or M4A, or cut it into parts. Listen before you save.',
+    action: 'Save audio',
+    title: 'Cut & Split MP3 or M4A Online — Trim Audio, No Upload | Fizzdoc',
+    description:
+      'Trim an MP3 or M4A, or split it into parts at exact times. See the waveform, listen to each part, then save. No re-encoding, no upload. Free.',
+    h1: 'Cut, trim and split audio in your browser',
+    lede: 'Drag the handles on the waveform or type exact times, listen to what you picked, and save. Cuts are made without re-encoding, so the sound quality stays exactly the same.',
+    steps: [
+      'Add one MP3 or M4A file.',
+      'Choose Trim to keep one part, or Split to cut it into several. Drag the handles or type times like 1:30.5, and press Preview to listen.',
+      'Click “Save audio” and download your file, or all the parts in one ZIP.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Will cutting lower the sound quality?',
+        'No. Fizzdoc cuts between the small blocks the audio is already stored in, so nothing is re-encoded and each part sounds exactly like the original. Cuts land within a few hundredths of a second of the time you choose.',
+      ],
+      [
+        'Which audio formats work?',
+        'MP3 and M4A (including iPhone voice memos and most music files). WAV, OPUS, WebM and others are planned, and help is welcome on GitHub.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: '.mp3,.m4a,audio/mpeg,audio/mp4,audio/x-m4a,audio/aac' },
+  },
+  {
+    op: 'audio-merge',
+    format: 'audio',
+    slug: 'merge-audio',
+    name: 'Merge Audio',
+    summary: 'Join MP3 or M4A files into one, in the order you choose.',
+    action: 'Merge audio',
+    title: 'Merge MP3 or M4A Files Online — Join Audio, No Upload | Fizzdoc',
+    description:
+      'Join MP3 or M4A files into one track in the order you choose, then listen before you download. No re-encoding, no upload, no sign-up. Free.',
+    h1: 'Merge audio files into one',
+    lede: 'Add your MP3 or M4A files, put them in order and join them into one track. Listen to the result before you download it; nothing is re-encoded or uploaded.',
+    steps: [
+      'Add two or more MP3 files, or two or more M4A files.',
+      'Put them in order with the ↑ and ↓ buttons.',
+      'Click “Merge audio”, listen to the result and download it.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Can I merge an MP3 with an M4A?',
+        'Not yet. Join files of one type at a time. Converting between formats is planned, and help is welcome on GitHub.',
+      ],
+      [
+        'Why does it say my files use different audio settings?',
+        'Files recorded at different sample rates (for example 44.1 kHz and 48 kHz) cannot be joined without re-encoding, which Fizzdoc does not do yet. Files from the same phone, app or album almost always match.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: '.mp3,.m4a,audio/mpeg,audio/mp4,audio/x-m4a,audio/aac', multiple: true },
   },
 ];
 
@@ -980,6 +1044,7 @@ export const FORMATS: Record<Format, { label: string; badge: string; ext: string
   excel: { label: 'Excel', badge: 'XLS', ext: 'xlsx' },
   powerpoint: { label: 'PowerPoint', badge: 'PPT', ext: 'pptx' },
   image: { label: 'Image', badge: 'IMG', ext: 'jpg' },
+  audio: { label: 'Audio', badge: 'MP3', ext: 'mp3' },
 };
 
 export const HOME = {
