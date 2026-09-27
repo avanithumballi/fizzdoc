@@ -28,6 +28,30 @@ interface Line {
   list: boolean;
 }
 
+// Many PDFs store Indic text in visual order: a pre-base vowel sign such as ि is written before the
+// consonant it follows in speech, and half-letters (with ्) are often followed by a stray space.
+// Pre-base vowel signs, and the consonants they belong after, per script.
+const PRE_BASE = (
+  [
+    ['\\u093F\\u094E', '\\u0915-\\u0939\\u0958-\\u095F\\u0978-\\u097F'], // Devanagari
+    ['\\u09BF\\u09C7\\u09C8', '\\u0995-\\u09B9\\u09DC-\\u09DF'], // Bengali
+    ['\\u0BC6\\u0BC7\\u0BC8', '\\u0B95-\\u0BB9'], // Tamil
+  ] as const
+).map(([signs, consonants]) => ({
+  // A sign at the start of a word can only be visual order; then every sign in the text is.
+  visual: new RegExp(`(^|[^${consonants}\\u093C\\u09BC])[${signs}][${consonants}]`, 'u'),
+  swap: new RegExp(`([${signs}])([${consonants}])`, 'gu'),
+}));
+
+/** Puts Indic vowel signs back in reading order and removes the stray space after a half-letter. */
+export function fixIndic(text: string): string {
+  let out = text.normalize('NFC');
+  for (const { visual, swap } of PRE_BASE) if (visual.test(out)) out = out.replace(swap, '$2$1');
+  // Hindi and Bengali words almost never end in a half-letter, so a space right after one is an artefact.
+  // Two-part vowels (Bengali ে + া = ো) compose again once they sit after their consonant.
+  return out.replace(/([\u094D\u09CD]) (?=[\u0915-\u0939\u0995-\u09B9])/g, '$1').normalize('NFC');
+}
+
 const LIST_MARKER = /^[•◦▪–]\s+|^-\s+|^\d+\.\s+|^[a-zA-Z]\)\s+/;
 
 /** Groups words with near-identical baselines into one line, left to right. */
@@ -50,11 +74,12 @@ function toLines(words: Word[]): Line[] {
         const gap = word.x - (prev.x + prev.width);
         if (gap > 0.25 * prev.height && !/\s$/.test(text) && !/^\s/.test(word.text)) text += ' ';
       }
-      text += word.text;
+      if (word.text !== ' ' || !/\s$/.test(text)) text += word.text;
       prev = word;
     }
     const size = group.map((w) => w.height).sort((a, b) => a - b)[Math.floor(group.length / 2)];
-    return { text: text.trim(), y: group[0].y, size, heading: 0 as const, list: LIST_MARKER.test(text.trim()) };
+    text = fixIndic(text).trim();
+    return { text, y: group[0].y, size, heading: 0 as const, list: LIST_MARKER.test(text) };
   }).filter((line) => line.text);
 }
 
@@ -151,8 +176,9 @@ export async function pdfToText(file: File, options: { format: 'txt' | 'md' }): 
     const page = await doc.getPage(number);
     const content = await page.getTextContent();
     const items: Word[] = (content.items as { str: string; transform: number[]; width: number; height: number }[])
-      .filter((item) => item.str.trim())
-      .map((item) => ({ text: item.str, x: item.transform[4], y: item.transform[5], width: item.width, height: item.height || 1 }));
+      // Space items are kept: in complex scripts (Hindi, Tamil…) glyph widths overlap, so they are the only word breaks.
+      .filter((item) => item.str)
+      .map((item) => ({ text: item.str.trim() ? item.str : ' ', x: item.transform[4], y: item.transform[5], width: item.width, height: item.height || 1 }));
     const lines = toLines(items);
     markHeadings(lines);
     const blocks = toBlocks(lines);
@@ -226,6 +252,13 @@ function renderLinks(text: string): string {
   let result = '';
   let i = 0;
   while (i < text.length) {
+    // Images would need fetching from the web, which the page never does: show their description.
+    const image = text[i] === '!' && text[i + 1] === '[' ? /^!\[([^\]]*)\]\([^)]*\)/.exec(text.slice(i)) : null;
+    if (image) {
+      result += image[1] ? `<em>[${image[1]}]</em>` : '';
+      i += image[0].length;
+      continue;
+    }
     if (text[i] === '[') {
       const close = text.indexOf(']', i);
       if (close !== -1 && text[close + 1] === '(') {

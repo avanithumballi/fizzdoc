@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
+import { PDFDocument, PDFName } from 'pdf-lib';
 import { PAGES, SITE_LANGS } from '../src/seo';
 import { SITE } from '../src/site';
 
@@ -155,6 +156,15 @@ test('resizes and converts images with the chosen options', async ({ page }) => 
   await page.getByRole('button', { name: 'Resize images' }).click();
   await expect(page.locator('#status')).toContainText('60 × 40');
   expect((await downloadBytes(page)).name).toBe('photo-60x40.png');
+
+  // A scale outside 1–1000 % is refused up front instead of making a 1×1 image or exhausting memory.
+  await page.locator('input[name="width"]').fill('');
+  for (const scale of ['0', '-50', '99999']) {
+    await page.locator('input[name="scale"]').fill(scale);
+    await page.getByRole('button', { name: 'Resize images' }).click();
+    await expect(page.locator('#status')).toHaveText('The scale must be between 1% and 1000%.');
+  }
+  await page.locator('input[name="scale"]').fill('');
 
   await page.goto('/convert-image/');
   await page.locator('#file-input').setInputFiles([file('photo.png'), file('photo.jpg')]);
@@ -377,6 +387,13 @@ test('numbers and watermarks PDF pages, and converts between image formats', asy
   await page.getByRole('button', { name: 'Add watermark' }).click();
   await expect(page.locator('#status')).toContainText('3 pages watermarked');
 
+  // Any script works: text the standard PDF fonts can't show is drawn by the browser, never dropped.
+  await page.locator('input[name="text"]').fill('गोपनीय CONFIDENTIAL');
+  await page.getByRole('button', { name: 'Add watermark' }).click();
+  await expect(page.locator('#status')).toContainText('3 pages watermarked');
+  const stamped = await PDFDocument.load((await downloadBytes(page)).bytes);
+  for (const p of stamped.getPages()) expect(p.node.Resources()!.lookup(PDFName.of('XObject'))).toBeTruthy();
+
   await page.goto('/pdf-to-png/');
   await page.locator('#file-input').setInputFiles(fixture('text-only'));
   await page.getByRole('button', { name: 'Convert to PNG' }).click();
@@ -470,6 +487,43 @@ for (const { path, tool } of PAGES) {
     if (tool) expect(html).toContain(`data-tool="${tool.op}"`);
   });
 }
+
+test('answers unknown links with a not-found page that search engines skip', async ({ request }) => {
+  const html = await (await request.get('/404.html')).text();
+  expect(html).toContain('<h1>Page not found</h1>');
+  expect(html).toContain('<meta name="robots" content="noindex, follow">');
+  expect(html).not.toContain('rel="canonical"');
+  expect(html).toContain('href="/merge-pdf/"');
+});
+
+test('explains extra dropped files, lets any job be canceled and keeps qpdf chatter out of the console', async ({ page }) => {
+  const logged: string[] = [];
+  page.on('console', (m) => m.type() === 'error' && logged.push(m.text()));
+  await page.goto('/compress-pdf/');
+  const drop = await page.evaluateHandle(() => {
+    const data = new DataTransfer();
+    for (const name of ['a.pdf', 'b.pdf']) data.items.add(new File(['%PDF-1.4'], name, { type: 'application/pdf' }));
+    return data;
+  });
+  await page.locator('#drop').dispatchEvent('drop', { dataTransfer: drop });
+  await expect(page.locator('#status')).toHaveText('This tool works on one file at a time, so the first file was added.');
+  await expect(page.locator('#file-list li')).toHaveCount(1);
+
+  await page.goto('/ocr-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('blank'));
+  await page.getByRole('button', { name: 'Recognize text' }).click();
+  await page.getByRole('button', { name: 'Cancel' }).click();
+  await expect(page.locator('#status')).toContainText('Canceled');
+  await expect(page.getByRole('button', { name: 'Recognize text' })).toBeEnabled();
+
+  await page.goto('/unlock-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('user-password'));
+  await page.getByRole('button', { name: 'Remove password' }).click();
+  await page.locator('#password').fill('wrong');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#password-hint')).toContainText('2');
+  expect(logged.filter((line) => line.includes('this.program'))).toEqual([]);
+});
 
 test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   const licenses = await (await request.get('/third-party-licenses.txt')).text();

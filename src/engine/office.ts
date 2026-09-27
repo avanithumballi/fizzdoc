@@ -2,6 +2,7 @@
 // docx/pptx are ZIP packages of XML parts (OOXML); Node has no DOMParser, so a small
 // tolerant tokenizer stands in for one below instead of pulling in a real XML library.
 import { strFromU8, strToU8, unzipSync, zipSync, type Zippable } from 'fflate';
+import { fixIndic } from './convert';
 import { LocalError, type Output } from './local';
 
 const baseName = (file: File) => file.name.replace(/\.[^.]+$/, '');
@@ -427,7 +428,7 @@ ${content}
 
 interface TextItem { str: string; transform: number[]; width: number; height: number; fontName?: string; hasEOL?: boolean }
 interface Line { text: string; y: number; fontSize: number; bold: boolean; italic: boolean }
-export interface DocParagraph { text: string; fontSize: number; bold: boolean; italic: boolean; bullet: boolean }
+export interface DocParagraph { text: string; fontSize: number; bold: boolean; italic: boolean; bullet: boolean; numbered?: boolean }
 
 /** Groups raw pdf.js text items (already in reading order) into visual lines. */
 export function linesFromItems(items: TextItem[]): Line[] {
@@ -454,12 +455,18 @@ export function linesFromItems(items: TextItem[]): Line[] {
     }
   }
   if (current) lines.push(current);
-  return lines.filter((l) => l.text.trim());
+  return lines.map((l) => ({ ...l, text: fixIndic(l.text) })).filter((l) => l.text.trim());
 }
 
-const BULLET_RE = /^[••●▪‣⁃*-]\s+/;
+const BULLET_RE = /^[••●▪‣⁃*–-]\s+/;
+// Numbered items keep their own number ("1.", "2)", "a.") so the order reads the same in Word.
+const NUMBER_RE = /^(?:\d{1,3}|[a-z])[.)]\s+/i;
+const isItem = (text: string) => BULLET_RE.test(text) || NUMBER_RE.test(text);
 
-/** Joins lines into paragraphs (a big vertical gap starts a new one) and derives style hints. */
+/**
+ * Joins lines into paragraphs and derives style hints. A big vertical gap, a size change or a new
+ * list item starts a new paragraph; the wrapped lines of one item stay together.
+ */
 export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
   const paragraphs: DocParagraph[] = [];
   let buffer: Line[] = [];
@@ -467,12 +474,14 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
     if (!buffer.length) return;
     const text = buffer.map((l) => l.text).join(' ').trim();
     const bullet = BULLET_RE.test(buffer[0].text);
+    const numbered = NUMBER_RE.test(buffer[0].text);
     paragraphs.push({
       text: bullet ? text.replace(BULLET_RE, '') : text,
       fontSize: buffer[0].fontSize,
       bold: buffer.every((l) => l.bold),
       italic: buffer.every((l) => l.italic),
       bullet,
+      numbered,
     });
     buffer = [];
   };
@@ -482,7 +491,8 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
     if (prev) {
       const gap = prev.y - line.y; // PDF y grows upward
       const lineHeight = prev.fontSize * 1.15;
-      if (gap > lineHeight * 1.5 || prev.fontSize !== line.fontSize || BULLET_RE.test(line.text) !== BULLET_RE.test(buffer[0].text)) flush();
+      const endsList = isItem(buffer[0].text) && !isItem(line.text) && gap > lineHeight * 1.2;
+      if (gap > lineHeight * 1.5 || prev.fontSize !== line.fontSize || isItem(line.text) || endsList) flush();
     }
     buffer.push(line);
   }
@@ -493,12 +503,20 @@ export function paragraphsFromLines(lines: Line[]): DocParagraph[] {
 // Control characters are legal in PDF text but not in XML 1.0; Word refuses files that contain them.
 const XML_ESCAPE = (s: string) => escapeHtml(s.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\uFFFE\uFFFF]/g, '')).replace(/\n/g, '</w:t></w:r><w:r><w:br/><w:r><w:t xml:space="preserve">');
 
-function headingStyle(fontSize: number, bodySize: number): 'Title' | 'Heading1' | 'Heading2' | 'Heading3' | null {
-  if (fontSize >= bodySize * 1.7) return 'Title';
-  if (fontSize >= bodySize * 1.4) return 'Heading1';
-  if (fontSize >= bodySize * 1.2) return 'Heading2';
-  if (fontSize >= bodySize * 1.08) return 'Heading3';
-  return null;
+type Style = 'Title' | 'Heading1' | 'Heading2' | 'Heading3';
+
+/**
+ * Heading levels by rank: the largest size above body text is Heading 1, the next Heading 2, and so
+ * on. A size used for a single line at the very start (a document title) becomes Title instead.
+ */
+export function headingStyles(paragraphs: DocParagraph[], bodySize: number): Map<number, Style> {
+  const sizes = [...new Set(paragraphs.map((p) => p.fontSize).filter((size) => size >= bodySize * 1.08))].sort((a, b) => b - a);
+  const styles = new Map<number, Style>();
+  const top = sizes[0];
+  const titled = top !== undefined && paragraphs[0]?.fontSize === top && paragraphs.filter((p) => p.fontSize === top).length === 1;
+  if (titled) styles.set(sizes.shift()!, 'Title');
+  sizes.slice(0, 3).forEach((size, i) => styles.set(size, (['Heading1', 'Heading2', 'Heading3'] as const)[i]));
+  return styles;
 }
 
 const DOCX_STYLES_XML = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -540,19 +558,21 @@ const appXml = (words: number, pages: number) => `<?xml version="1.0" encoding="
 
 /** Builds a minimal, valid .docx from already-extracted paragraphs. Pure and Node-testable. */
 export function buildDocxPackage(pages: DocParagraph[][], pageSize: { widthPt: number; heightPt: number }, title: string): { zipped: Uint8Array; words: number } {
+  // Body text is the size most of the characters are set in (a few short headings mustn't win).
   const bodySize = (() => {
-    const sizes = pages.flat().map((p) => p.fontSize);
-    if (!sizes.length) return 12;
-    sizes.sort((a, b) => a - b);
-    return sizes[Math.floor(sizes.length / 2)];
+    const chars = new Map<number, number>();
+    for (const p of pages.flat()) chars.set(p.fontSize, (chars.get(p.fontSize) ?? 0) + p.text.length);
+    return [...chars].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 12;
   })();
+
+  const styles = headingStyles(pages.flat(), bodySize);
 
   let words = 0;
   const paragraphXml = (p: DocParagraph, pageBreakBefore: boolean) => {
     words += p.text.split(/\s+/).filter(Boolean).length;
-    const style = headingStyle(p.fontSize, bodySize);
+    const style = p.bullet || p.numbered ? undefined : styles.get(p.fontSize);
     const pPr = [
-      style ? `<w:pStyle w:val="${style}"/>` : p.bullet ? '<w:pStyle w:val="ListParagraph"/>' : '',
+      style ? `<w:pStyle w:val="${style}"/>` : p.bullet || p.numbered ? '<w:pStyle w:val="ListParagraph"/>' : '',
       pageBreakBefore ? '<w:pageBreakBefore/>' : '',
     ].join('');
     const text = XML_ESCAPE((p.bullet ? '• ' : '') + p.text);

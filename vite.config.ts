@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite';
-import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, renderPage, robots, sitemap } from './src/seo.ts';
+import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, notFoundPage, renderPage, robots, sitemap } from './src/seo.ts';
 import { SITE } from './src/site.ts';
 import { ocrAssets } from './vite-plugins/ocr-assets.ts';
 
@@ -42,6 +42,8 @@ function pages(): Plugin {
         if (page.path === '/') index.source = source;
         else this.emitFile({ type: 'asset', fileName: fileName(page), source });
       }
+      // Cloudflare Pages answers unknown paths with this page and a real 404 status.
+      this.emitFile({ type: 'asset', fileName: '404.html', source: notFoundPage(template, stars) });
       const today = new Date().toISOString().slice(0, 10);
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(today) });
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots() });

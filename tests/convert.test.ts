@@ -95,6 +95,12 @@ describe('textToHtml', () => {
     expect(html).toContain('<td>1</td>');
   });
 
+  it('shows an image’s description instead of a stray “!” and link', async () => {
+    const { html } = await textToHtml(textFile('doc.md', 'See ![A diagram](https://example.com/d.png) and [docs](https://example.com).'));
+    expect(html).toContain('See <em>[A diagram]</em> and <a href="https://example.com">docs</a>.');
+    expect(html).not.toContain('<img');
+  });
+
   it('never lets markdown carry raw HTML or unsafe link schemes through', async () => {
     const md = [
       '<script>alert(1)</script>',

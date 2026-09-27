@@ -61,11 +61,11 @@ describe('watermarkPdf', () => {
     expect(out.summary).toBe('3 pages watermarked');
     expect((await contents(out.blob)).pages).toBe(3);
   });
-  it('refuses empty or undrawable text instead of producing a blank stamp', async () => {
+  it('refuses empty text instead of producing a blank stamp', async () => {
     await expect(watermarkPdf(file('mixed.pdf'), { text: '  ' })).rejects.toMatchObject({ code: 'NO_WATERMARK' });
-    await expect(watermarkPdf(file('mixed.pdf'), { text: 'गोपनीय' })).rejects.toMatchObject({ code: 'NO_WATERMARK' });
   });
-  it('keeps Latin-1 text and drops what the standard fonts cannot draw', () => {
+  // Text outside Latin-1 is drawn by the browser instead (covered in the e2e suite).
+  it('knows which text the standard fonts can draw', () => {
     expect(winAnsiSafe('Café ✓ 2026')).toBe('Café  2026');
   });
 });
