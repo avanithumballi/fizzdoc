@@ -119,7 +119,7 @@ export async function pdfToImages(file: File, format: 'jpg' | 'png' = 'jpg'): Pr
   } catch (error) {
     throw new LocalError((error as { name?: string }).name === 'PasswordException' ? 'PDF_PASSWORD' : 'INVALID_PDF');
   }
-  // ponytail: every page's JPEG is held in memory until the ZIP is built; stream the ZIP if
+  // Every page's JPEG is held in memory until the ZIP is built; stream the ZIP if
   // 1000-page PDFs on phones become a real use case.
   const images: Zippable = {};
   const name = baseName(file);

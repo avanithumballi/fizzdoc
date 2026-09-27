@@ -174,7 +174,7 @@ export async function compressOffice(file: File, options: Level, codec: ImageCod
   const maxSide = LONG_SIDE[options.level];
   const quality = QUALITY[options.level];
   for (const path of Object.keys(entries)) {
-    if (!/^(?:word|xl|ppt)\/media\/.+\.jpe?g$/i.test(path)) continue; // ponytail: PNG/GIF/EMF would need relationship rewrites to change format, so they're left alone
+    if (!/^(?:word|xl|ppt)\/media\/.+\.jpe?g$/i.test(path)) continue; // PNG/GIF/EMF would need relationship rewrites to change format, so they're left alone
     try {
       const result = await codec.recompressJpeg(entries[path], maxSide, quality);
       if (result.data.length < entries[path].length) entries[path] = result.data as Uint8Array<ArrayBuffer>;
