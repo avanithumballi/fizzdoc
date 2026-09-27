@@ -408,7 +408,7 @@ function jsonLd(c: Copy, page: Page) {
             '@type': 'SoftwareSourceCode',
             name: SITE.name,
             codeRepository: SITE.repo,
-            license: 'https://opensource.org/licenses/MIT',
+            license: 'https://www.apache.org/licenses/LICENSE-2.0',
             programmingLanguage: ['TypeScript', 'WebAssembly'],
             author,
           },
@@ -565,7 +565,7 @@ The site is available in ${SITE_LANGS.map((lang) => `${LANGS[lang]} (${SITE.url}
 
 ## Source
 
-- [GitHub repository](${SITE.repo}) — MIT license, by [Rishab Dugar](https://rishabdugarjain.in)
+- [GitHub repository](${SITE.repo}) — Apache-2.0 license, by [Rishab Dugar](https://rishabdugarjain.in)
 - [Full tool guide with FAQs](${SITE.url}/llms-full.txt)
 ${SITE_LANGS.filter((lang) => lang !== 'en')
   .map((lang) => `- [${LANGS[lang]}](${SITE.url}${pathOf(lang)}llms.txt)`)
@@ -597,7 +597,7 @@ ${c.home.faq.map(([q, a]) => `Q: ${q}\nA: ${a}`).join('\n\n')}
 
 ## Source
 
-- ${SITE.repo} — MIT, Rishab Dugar (https://rishabdugarjain.in)
+- ${SITE.repo} — Apache-2.0, Rishab Dugar (https://rishabdugarjain.in)
 - English: ${SITE.url}/llms.txt
 `;
 }

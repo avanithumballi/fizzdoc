@@ -81,3 +81,7 @@ Look at `src/engine/stamp.ts` (page numbers and watermark) for a small, complete
 Open a [bug report](https://github.com/kingrishabdugar/fizzdoc/issues/new?template=bug_report.yml) with the tool, browser, and what happened. If a specific file triggers it, a small sample that contains nothing private is gold. **Never attach a private document.**
 
 Security issue? Please follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
+
+## License
+
+By contributing, you agree that your contributions are licensed under the [Apache License 2.0](LICENSE), the same license as the rest of the project.
