@@ -24,7 +24,7 @@
     "format.powerpoint": "PowerPoint",
     "format.image": "Görseller",
     "group.title": "{format} araçları",
-    "home.eyebrow": "0 bayt yüklenir · Açık kaynak · Ücretsiz",
+    "home.eyebrow": "0 bayt yüklenir · Açık kaynak · Sonsuza dek ücretsiz",
     "home.cta": "PDF Birleştir",
     "home.browse": "Tüm {n} aracına göz atın",
     "home.formats": "Desteklenen formatlar",
@@ -37,7 +37,8 @@
     "home.toolsTitle": "Her araç, varsayılan olarak gizli",
     "home.toolsLede": "Bir araç seçin. Dosyanız bu cihazda işlenir ve hiçbir sunucuya dokunmaz.",
     "home.whatTitle": "{name} nedir?",
-    "tool.eyebrow": "Cihazınızda çalışır · 0 bayt yüklenir",
+    "tool.eyebrow": "Sonsuza dek ücretsiz · Cihazınızda çalışır · 0 bayt yüklenir",
+    "tool.uses": "Şunlar için de kullanışlı",
     "tool.how": "{tool} nasıl kullanılır",
     "tool.more": "Daha fazla gizli araç",
     "crumbs.label": "Sayfa yolu",
@@ -244,8 +245,8 @@
     "au.download": "İndir"
   },
   "home": {
-    "title": "Fizzdoc — Gizli PDF, Word, Excel ve Görsel Araçları. Yükleme Yok.",
-    "description": "PDF düzenleyin, sıkıştırın, dönüştürün, OCR uygulayın; Word, Excel ve görselleri dönüştürün — tarayıcınızda. Sıfır yükleme, kayıt yok, ücretsiz ve açık kaynak.",
+    "title": "Fizzdoc — Ücretsiz PDF, Görsel, Ses ve Office. Yüklemesiz.",
+    "description": "Sonsuza dek ücretsiz: PDF, görsel, ses ve Office dosyalarını düzenleyen, sıkıştıran, dönüştüren, OCR yapan özel araçlar. Yükleme yok, kayıt yok, 16 dil.",
     "h1": "Belgelerinizi hiç görmeyen belge araçları",
     "lede": "PDF düzenleyin, sıkıştırın, dönüştürün ve OCR uygulayın. Word, Excel, PowerPoint ve görselleri dönüştürün, sesi kesin veya birleştirin. Her şey tarayıcınızda çalışır — dosyalarınız cihazınızdan asla çıkmaz.",
     "what": "Fizzdoc, tamamen web tarayıcınızın içinde çalışan ücretsiz, açık kaynaklı bir belge araçları setidir. PDF'ler qpdf, pdf.js ve pdf-lib motorlarıyla işlenir, metin tanıma Tesseract kullanır ve Office dosyaları ile görseller de yerel olarak işlenir — böylece hiçbir şey bir sunucuya yüklenmez.",
@@ -253,6 +254,10 @@
       [
         "Dosyalarım herhangi bir yere yükleniyor mu?",
         "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+      ],
+      [
+        "Banka ekstreleri, kimlik kartları veya tıbbi kayıtlar için güvenli mi?",
+        "Evet. Dosya tarayıcı sekmenizde açılır ve işlenir, hiçbir yere gönderilmez; bu yüzden sızabilecek, satılabilecek veya hacklenebilecek bir sunucu kopyası yoktur. Bunu tarayıcınız zorunlu kılar, Ağ sekmesinde kendiniz doğrulayabilirsiniz ve sekmeyi kapatmak her şeyi temizler."
       ],
       [
         "Fizzdoc, iLovePDF, Smallpdf veya Adobe'nin çevrimiçi araçlarından farkı nedir?",
@@ -268,7 +273,7 @@
       ],
       [
         "Fizzdoc ücretsiz mi?",
-        "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+        "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
       ]
     ]
   },
@@ -277,7 +282,7 @@
       "name": "PDF Birleştir",
       "summary": "Birden çok PDF'yi seçtiğiniz sırayla tek dosyada birleştirin.",
       "action": "PDF'leri Birleştir",
-      "title": "PDF Dosyalarını Gizlice Birleştir — Ücretsiz | Fizzdoc",
+      "title": "PDF Birleştir Ücretsiz — Dosyaları Birleştir | Fizzdoc",
       "description": "PDF dosyalarını tarayıcınızda birleştirin. Hiçbir şey yüklenmez, form alanları ve bağlantılar korunur. Ücretsiz, kayıtsız, açık kaynak.",
       "h1": "PDF dosyalarını yüklemeden birleştirin",
       "lede": "PDF'leri tarayıcınızda tek bir belgede birleştirin. Hiçbir şey sunucuya gönderilmez; form alanları ve iç bağlantılar birleştirmeden sağ çıkar.",
@@ -305,15 +310,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf dosyalarını birleştirme",
+        "pdf birleştir ücretsiz online",
+        "yüklemeden pdf birleştir",
+        "taranmış pdf birleştir",
+        "telefonda pdf birleştir"
       ]
     },
     "split-pdf": {
       "name": "PDF Böl",
       "summary": "İhtiyacınız olan sayfaları yeni bir PDF'e çıkarın.",
       "action": "Sayfaları Çıkar",
-      "title": "PDF Bölme ve Sayfa Çıkarma — Gizli, Ücretsiz | Fizzdoc",
+      "title": "PDF Böl Ücretsiz — Sayfaları Ayır, Yüklemesiz | Fizzdoc",
       "description": "Tarayıcınızda bir PDF'den sayfa çıkarın. 1-3, 8 gibi aralıklar seçin — dosyanız cihazınızdan hiç çıkmaz. Ücretsiz, kayıtsız, açık kaynak.",
       "h1": "Bir PDF'i bölün ve sayfaları gizlice çıkarın",
       "lede": "İhtiyacınız olan sayfaları yeni bir PDF'e aktarın. “1-3, 8” gibi aralıklar yazın; yazdığınız sıra, aldığınız sıradır.",
@@ -337,16 +349,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf sayfalarına bölme",
+        "pdf'den tek sayfa çıkarma",
+        "büyük pdf'i parçalara bölme",
+        "pdf sayfa kesme ücretsiz",
+        "adobesiz pdf bölme"
       ]
     },
     "rotate-pdf": {
       "name": "PDF Döndür",
       "summary": "Yan duran sayfaları kalıcı olarak düzeltin.",
       "action": "Sayfaları Döndür",
-      "title": "PDF Sayfalarını Kalıcı Olarak Döndür — Ücretsiz | Fizzdoc",
-      "description": "PDF sayfalarının tümünü veya seçtiklerinizi 90°, 180° ya da 270° döndürüp kaydedin. Tarayıcınızda çalışır; dosyanız asla yüklenmez.",
+      "title": "PDF Döndür Ücretsiz — Sayfaları Döndür | Fizzdoc",
+      "description": "PDF sayfalarının tümünü veya seçtiklerinizi 90°, 180° ya da 270° döndürüp kaydedin. Tarayıcınızda çalışır; dosyanız asla yüklenmez. Ücretsiz.",
       "h1": "PDF sayfalarını döndürün ve öyle kaydedin",
       "lede": "Yan taranmış sayfaları kalıcı olarak düzeltin. Tüm sayfaları ya da yalnızca seçtiklerinizi döndürün — yeniden oluşturma olmadığı için kalite bozulmaz.",
       "steps": [
@@ -369,15 +388,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf döndürüp kaydetme",
+        "yan taranmış pdf düzeltme",
+        "pdf'de tek sayfa döndürme",
+        "pdf sayfalarını 90 derece döndürme",
+        "pdf döndürme ücretsiz online"
       ]
     },
     "delete-pdf-pages": {
       "name": "PDF Sayfası Sil",
       "summary": "Paylaşmak istemediğiniz sayfaları kaldırın.",
       "action": "Sayfaları Sil",
-      "title": "Bir PDF'den Sayfa Silme — Gizli, Ücretsiz | Fizzdoc",
+      "title": "PDF Sayfası Sil Ücretsiz — Online, Yüklemesiz | Fizzdoc",
       "description": "Tarayıcınızda bir PDF'den istenmeyen sayfaları kaldırın. Silinecek sayfaları yazın; dosyanız cihazınızdan hiç çıkmaz. Ücretsiz ve açık kaynak.",
       "h1": "Bir PDF'den sayfaları gizlice silin",
       "lede": "Bir belgeyi paylaşmadan önce boş, tekrarlanan veya gizli sayfaları kaldırın, kimseye teslim etmeden.",
@@ -397,15 +423,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'den sayfa silme",
+        "pdf'de boş sayfa silme",
+        "acrobatsız pdf sayfa silme",
+        "pdf'in son sayfasını silme",
+        "pdf sayfa silme ücretsiz"
       ]
     },
     "unlock-pdf": {
       "name": "PDF Kilidini Aç",
       "summary": "Bildiğiniz parola olmadan bir kopya kaydedin.",
       "action": "Parolayı Kaldır",
-      "title": "PDF Parolasını Kaldır (Kilidi Aç) — Ücretsiz | Fizzdoc",
+      "title": "PDF Kilidini Aç Ücretsiz — Parolayı Kaldır | Fizzdoc",
       "description": "Açma hakkınız olan bir PDF'in parolasını kaldırın. Şifre çözme cihazınızda gerçekleşir, hiçbir şey yüklenmez. Ücretsiz, kayıtsız.",
       "h1": "Bir PDF parolasını cihazınızda kaldırın",
       "lede": "Zaten açabildiğiniz korumalı bir PDF'in kilitsiz bir kopyasını kaydedin. Parola ve belge cihazınızda kalır.",
@@ -429,15 +462,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'den parola kaldırma",
+        "banka ekstresi pdf kilidini açma",
+        "pdf sürekli parola soruyor",
+        "pdf kısıtlamalarını kaldırma",
+        "pdf kilit açma ücretsiz online"
       ]
     },
     "protect-pdf": {
       "name": "PDF Parola Koru",
       "summary": "Bir PDF'i parola ve AES-256 şifrelemesiyle kilitleyin.",
       "action": "PDF'i Koru",
-      "title": "AES-256 ile PDF'e Parola Koyma — Ücretsiz | Fizzdoc",
+      "title": "PDF Parola Koru Ücretsiz — AES-256 | Fizzdoc",
       "description": "Tarayıcınızda bir PDF'e AES-256 şifrelemesiyle parola ekleyin. Dosya ve parola cihazınızdan hiç çıkmaz. Ücretsiz, kayıtsız.",
       "h1": "Bir PDF'i cihazınızda parola ile koruyun",
       "lede": "Bir PDF'i yalnızca parolanızla açılacak şekilde AES-256 ile şifreleyin. Şifreleme bu sekmede gerçekleşir; ne dosya ne de parola bir yere gönderilir.",
@@ -461,16 +501,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'e parola ekleme",
+        "pdf aes-256 ile şifreleme",
+        "pdf dosyasını kilitleme",
+        "acrobatsız pdf parola koruma",
+        "e-posta öncesi pdf koruma"
       ]
     },
     "remove-pdf-metadata": {
       "name": "PDF Meta Verisini Kaldır",
       "summary": "Yazar, başlık, yazılım ve XMP bilgilerini temizleyin.",
       "action": "Meta Veriyi Kaldır",
-      "title": "PDF Meta Verisini Kaldır (Yazar, Başlık, XMP) | Fizzdoc",
-      "description": "Bir dosyayı paylaşmadan önce yazar, başlık, oluşturan uygulama gibi gizli PDF meta verilerini silin. Tarayıcınızda çalışır; hiçbir şey yüklenmez.",
+      "title": "PDF Meta Verisini Kaldır Ücretsiz — Yazar, XMP | Fizzdoc",
+      "description": "Bir dosyayı paylaşmadan önce yazar, başlık, oluşturan uygulama gibi gizli PDF meta verilerini silin. Tarayıcınızda çalışır; hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir PDF'den gizli meta verileri kaldırın",
       "lede": "PDF'ler kimin, hangi uygulamayla ve ne zaman oluşturduğunu sessizce kaydeder. Paylaşmadan önce yazar, başlık, konu, anahtar kelime, üretici ve XMP meta verilerini silin.",
       "steps": [
@@ -489,16 +536,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'den yazar adını kaldırma",
+        "paylaşmadan önce pdf meta verisini temizleme",
+        "pdf'deki gizli verileri silme",
+        "xmp meta verisini kaldırma",
+        "pdf'i anonimleştirme"
       ]
     },
     "jpg-to-pdf": {
       "name": "JPG'den PDF'e",
       "summary": "Fotoğraf ve taramaları tek bir PDF'e dönüştürün.",
       "action": "PDF Oluştur",
-      "title": "JPG'den PDF'e Dönüştürücü — Gizli, Ücretsiz | Fizzdoc",
-      "description": "JPG, PNG, WebP ve diğer görselleri tarayıcınızda tek bir PDF'e dönüştürün. Fotoğraflarınız cihazınızdan çıkmaz. Filigransız, kayıtsız.",
+      "title": "JPG'den PDF'e Ücretsiz — Fotoğraftan PDF | Fizzdoc",
+      "description": "JPG, PNG, WebP ve diğer görselleri tarayıcınızda tek bir PDF'e dönüştürün. Fotoğraflarınız cihazınızdan çıkmaz. Filigransız, kayıtsız. Ücretsiz.",
       "h1": "JPG ve PNG görsellerini gizlice PDF'e dönüştürün",
       "lede": "Fotoğrafları, ekran görüntülerini ve taramaları görsel başına bir sayfa olacak şekilde ve tam çözünürlükte tek bir PDF'de birleştirin. Fotoğraflarınız cihazınızda kalır.",
       "steps": [
@@ -521,15 +575,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "fotoğrafları pdf'e çevirme",
+        "birden fazla görseli tek pdf yapma",
+        "görselden pdf'e dönüştürücü ücretsiz",
+        "telefonda jpg'den pdf'e",
+        "fotoğraflardan pdf oluşturma"
       ]
     },
     "pdf-to-jpg": {
       "name": "PDF'den JPG'e",
       "summary": "Her sayfayı net bir JPG görseli olarak kaydedin.",
       "action": "JPG'e Dönüştür",
-      "title": "PDF'den JPG'e Dönüştürücü — Gizli, Ücretsiz | Fizzdoc",
+      "title": "PDF'den JPG'e Ücretsiz — Yüksek Kalite | Fizzdoc",
       "description": "Bir PDF'in her sayfasını tarayıcınızda yüksek kaliteli bir JPG görseline dönüştürün. Hiçbir şey yüklenmez. Çok sayfalı dosyalar tek bir ZIP olarak iner.",
       "h1": "PDF sayfalarını gizlice JPG görsellerine dönüştürün",
       "lede": "Mozilla'nın pdf.js'i kullanılarak her sayfa 150 DPI net bir JPG'e dönüştürülür, tamamı tarayıcınızda. Çok sayfalı bir PDF tek bir ZIP olarak iner.",
@@ -553,16 +614,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf sayfalarını görsele çevirme",
+        "pdf'i jpg olarak kaydetme",
+        "pdf'den yüksek kaliteli görsel",
+        "pdf'den sayfayı fotoğraf olarak alma",
+        "telefonda pdf'den jpg'e"
       ]
     },
     "compress-pdf": {
       "name": "PDF Sıkıştır",
       "summary": "Görselleri optimize ederek bir PDF'i küçültün. Metin keskin kalır.",
       "action": "PDF'i Sıkıştır",
-      "title": "PDF Sıkıştırma — Yüklemeden, Çevrimiçi ve Ücretsiz | Fizzdoc",
-      "description": "Aşırı büyük görselleri yeniden sıkıştırarak PDF dosya boyutunu tarayıcınızda küçültün. Metin seçilebilir ve keskin kalır. Hiçbir şey yüklenmez.",
+      "title": "PDF Sıkıştır Ücretsiz — Boyutu Küçült | Fizzdoc",
+      "description": "Aşırı büyük görselleri yeniden sıkıştırarak PDF dosya boyutunu tarayıcınızda küçültün. Metin seçilebilir ve keskin kalır. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir PDF'i yüklemeden sıkıştırın",
       "lede": "Bir PDF'i e-postayla göndermeye ya da bir portale yüklemeye yetecek kadar küçültün. Fizzdoc aşırı büyük fotoğraf ve taramaları yeniden sıkıştırır, metne ve vektör grafiklere dokunmaz.",
       "steps": [
@@ -585,15 +653,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf dosya boyutunu küçültme",
+        "kaliteyi bozmadan pdf sıkıştırma",
+        "e-posta için pdf küçültme",
+        "portala yüklemek için pdf sıkıştırma",
+        "taranmış pdf boyutunu küçültme"
       ]
     },
     "edit-pdf": {
       "name": "PDF Düzenle",
       "summary": "Mevcut metni değiştirin, metin ekleyin ve doğrudan sayfada beyazlatın.",
       "action": "PDF'i Kaydet",
-      "title": "PDF Metnini Çevrimiçi Düzenle — Ücretsiz, Yüklemesiz | Fizzdoc",
+      "title": "PDF Düzenle Ücretsiz — Metni Değiştir | Fizzdoc",
       "description": "Bir PDF'deki herhangi bir metne tıklayıp değiştirin, yeni metin ekleyin veya alanları beyazlatın — doğrudan sayfada, tarayıcınızda. Hiçbir şey yüklenmez.",
       "h1": "PDF metnini doğrudan sayfada düzenleyin",
       "lede": "Orijinal dosya olmadan bir yazım hatasını düzeltin, bir tarihi güncelleyin veya boş bir alanı doldurun. Değiştirmek istediğiniz metne tıklayıp yazın — hepsi cihazınızda olur.",
@@ -617,16 +692,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'de metin düzenleme",
+        "pdf'de kelime değiştirme ücretsiz",
+        "pdf'e metin ekleme",
+        "pdf'de metni beyazlatma",
+        "kayıtsız pdf düzenleyici"
       ]
     },
     "redact-pdf": {
       "name": "PDF Karart",
       "summary": "Metni, imzaları veya fotoğrafları temelli kaybolacak şekilde karartın.",
       "action": "Karartılmış PDF'i Kaydet",
-      "title": "PDF Karartma Çevrimiçi — Metni Kalıcı Olarak Sil | Fizzdoc",
-      "description": "Bir PDF'deki adları, numaraları, imzaları veya fotoğrafları karartıp gerçekten kaybolduğu bir kopya kaydedin. Tarayıcıda çalışır; yükleme yok.",
+      "title": "PDF Karart Ücretsiz — Kalıcı Karartma | Fizzdoc",
+      "description": "Bir PDF'deki adları, numaraları, imzaları veya fotoğrafları karartıp gerçekten kaybolduğu bir kopya kaydedin. Tarayıcıda çalışır; yükleme yok. Ücretsiz.",
       "h1": "PDF Karart: her şeyi kalıcı olarak karartın",
       "lede": "Kaybolması gerekeni sürükleyerek örtün, ya da bir ad veya numara arayıp her eşleşmeyi işaretleyin. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece gizlenen metin kopyalanamaz veya geri getirilemez.",
       "steps": [
@@ -649,15 +731,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'de metin karartma",
+        "pdf'de kişisel bilgi gizleme",
+        "acrobat pro olmadan pdf karartma",
+        "pdf'den hassas veri kaldırma",
+        "pdf'de isim sansürleme"
       ]
     },
     "pdf-to-scanned-pdf": {
       "name": "PDF'i Taranmış PDF'e Dönüştür",
       "summary": "Her sayfayı, taranmış bir belge gibi görsele dönüştürün.",
       "action": "Taranmış PDF Oluştur",
-      "title": "PDF'i Taranmış PDF'e Dönüştür — Yüklemesiz | Fizzdoc",
+      "title": "PDF'i Taranmış PDF'e Çevir Ücretsiz | Fizzdoc",
       "description": "Bir PDF'i yalnızca görsellerden oluşan taranmış bir PDF'e dönüştürün: renkli, siyah beyaz, ya da tarayıcı görünümüyle. Tarayıcıda çalışır; yükleme yok.",
       "h1": "Bir PDF'i taranmış PDF'e dönüştürün",
       "lede": "Her sayfa bir görsele dönüşür, bu yüzden metin seçilemez veya düzenlenemez. Renkleri koruyun, siyah beyaza geçin, ya da taranmış görünüm için hafif bir eğiklik ve kağıt dokusu ekleyin.",
@@ -681,16 +770,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'i taranmış gibi gösterme",
+        "pdf'i görsele dönüştürme",
+        "pdf'i sadece görsellerden oluşan pdf'e çevirme",
+        "siyah beyaz tarayıcı efekti pdf",
+        "pdf'den metin kopyalamayı engelleme"
       ]
     },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Taranmış bir PDF'i aranabilir ve kopyalanabilir hale getirin.",
       "action": "Metni Tanı",
-      "title": "OCR PDF — Taranmış PDF'leri Aranabilir Yap | Fizzdoc",
-      "description": "Taranmış PDF'leri tarayıcınızda İngilizce OCR ile aranabilir, kopyalanabilir hale getirin. Sayfalar orijinal kalitesini korur. Hiçbir şey yüklenmez.",
+      "title": "OCR PDF Ücretsiz — Taranmış PDF'i Aranabilir Yap | Fizzdoc",
+      "description": "Taranmış PDF'leri tarayıcınızda İngilizce OCR ile aranabilir, kopyalanabilir hale getirin. Sayfalar orijinal kalitesini korur. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "OCR ile taranmış bir PDF'i aranabilir yapın",
       "lede": "Taranmış sayfalardaki İngilizce metni tanıyıp görünmez bir katman olarak ekleyin, böylece arayabilir, seçebilir ve kopyalayabilirsiniz. Sayfaların kendisi değişmez.",
       "steps": [
@@ -713,15 +809,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "taranmış pdf'i aranabilir yapma",
+        "ocr pdf ücretsiz",
+        "taranmış pdf'den metin kopyalama",
+        "taranmış pdf'i metne çevirme",
+        "yüklemesiz aranabilir pdf"
       ]
     },
     "pdf-to-word": {
       "name": "PDF'den Word'e",
       "summary": "PDF metnini düzenlenebilir bir .docx'e dönüştürün.",
       "action": "Word'e Dönüştür",
-      "title": "PDF'den Word'e (DOCX) Dönüştürücü — Gizli | Fizzdoc",
+      "title": "PDF'den Word'e Ücretsiz — Düzenlenebilir DOCX | Fizzdoc",
       "description": "Bir PDF'i tarayıcınızda düzenlenebilir bir Word belgesine dönüştürün. Başlıklar, paragraflar ve sayfa sonları korunur. Hiçbir şey yüklenmez, kayıt gerekmez.",
       "h1": "PDF'i düzenlenebilir bir Word belgesine dönüştürün",
       "lede": "Bir PDF'in metnini, başlıkları ve paragrafları yeniden oluşturarak Word'e aktarın, böylece düzenleyebilirsiniz. Dönüştürme cihazınızda gerçekleşir.",
@@ -745,16 +848,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'i düzenlenebilir word'e çevirme",
+        "pdf'den docx'e ücretsiz",
+        "pdf'i word'de düzenleme",
+        "başlıkları korunan pdf'den word'e",
+        "telefonda pdf'den word'e"
       ]
     },
     "pdf-to-powerpoint": {
       "name": "PDF'den PowerPoint'e",
       "summary": "Her PDF sayfasını bir slayda dönüştürün.",
       "action": "PowerPoint'e Dönüştür",
-      "title": "PDF'den PowerPoint'e (PPTX) — Gizli, Ücretsiz | Fizzdoc",
-      "description": "Bir PDF'i, sayfa başına bir net slayt olacak şekilde tarayıcınızda bir PowerPoint sunumuna dönüştürün. Hiçbir şey yüklenmez, açık kaynak.",
+      "title": "PDF'den PowerPoint'e Ücretsiz — PPTX | Fizzdoc",
+      "description": "Bir PDF'i, sayfa başına bir net slayt olacak şekilde tarayıcınızda bir PowerPoint sunumuna dönüştürün. Hiçbir şey yüklenmez, açık kaynak. Ücretsiz.",
       "h1": "Bir PDF'i PowerPoint sunumuna dönüştürün",
       "lede": "Bir PDF'i slayt olarak sunun. Her sayfa, PowerPoint, Keynote veya Google Slaytlar'da açabileceğiniz bir .pptx içinde tam boyutlu, yüksek çözünürlüklü bir slayt olur.",
       "steps": [
@@ -773,15 +883,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'i slaytlara çevirme",
+        "pdf'den ppt'ye ücretsiz",
+        "pdf'i powerpoint'te sunma",
+        "pdf'i sunuma çevirme",
+        "pdf'den google slides'a"
       ]
     },
     "pdf-to-text": {
       "name": "PDF'den Metne",
       "summary": "Bir PDF'deki tüm metni .txt dosyası olarak çıkarın.",
       "action": "Metni Çıkar",
-      "title": "PDF'den Metne (TXT) Dönüştürücü — Gizli | Fizzdoc",
+      "title": "PDF'den Metne Ücretsiz — Metni Çıkar | Fizzdoc",
       "description": "Bir PDF'in metnini tarayıcınızda doğru okuma sırasıyla düz bir .txt dosyasına çıkarın. Hiçbir şey yüklenmez. Ücretsiz, kayıtsız, açık kaynak.",
       "h1": "Bir PDF'den metin çıkarın",
       "lede": "Bir PDF'deki her kelimeyi, satır ve paragrafları okuma sırasında koruyarak düz metin olarak alın. Kopyalamak, aramak veya başka araçlara aktarmak için ideal.",
@@ -801,15 +918,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'den metin çıkarma",
+        "pdf'deki tüm metni kopyalama",
+        "pdf'den txt'ye ücretsiz",
+        "pdf'i düz metne çevirme",
+        "pdf'den metin alma online"
       ]
     },
     "pdf-to-markdown": {
       "name": "PDF'den Markdown'a",
       "summary": "Bir PDF'i başlık ve listeleriyle temiz Markdown'a dönüştürün.",
       "action": "Markdown'a Dönüştür",
-      "title": "PDF'den Markdown'a Dönüştürücü — Gizli | Fizzdoc",
+      "title": "PDF'den Markdown'a Ücretsiz — Notlar ve AI İçin | Fizzdoc",
       "description": "Bir PDF'i, başlık ve listeleri algılanmış, notlar veya yapay zeka araçları için hazır Markdown'a dönüştürün. Tarayıcınızda çalışır, hiçbir şey yüklenmez.",
       "h1": "Bir PDF'i Markdown'a dönüştürün",
       "lede": "Bir PDF'i Notion, Obsidian, GitHub veya Markdown okuyan herhangi bir araç için temiz Markdown'a — başlıklar, paragraflar ve listeler halinde — dönüştürün.",
@@ -829,16 +953,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'i chatgpt için markdown'a çevirme",
+        "pdf'den md'ye ücretsiz",
+        "pdf'i notion veya obsidian'a çevirme",
+        "pdf başlık ve listeleri çıkarma",
+        "pdf'i yapay zeka aracı için hazırlama"
       ]
     },
     "text-to-pdf": {
       "name": "Metinden PDF'e",
       "summary": "Bir .txt dosyasını temiz bir PDF'e dönüştürün.",
       "action": "PDF Oluştur",
-      "title": "Metinden PDF'e (TXT'den PDF'e) Dönüştürücü | Fizzdoc",
-      "description": "Düz bir metin dosyasını tarayıcınızda temiz, okunaklı bir PDF'e dönüştürün. Hintçe dahil her dili ve alfabeyi destekler. Hiçbir şey yüklenmez.",
+      "title": "Metinden PDF'e Ücretsiz — TXT'den PDF'e | Fizzdoc",
+      "description": "Düz bir metin dosyasını tarayıcınızda temiz, okunaklı bir PDF'e dönüştürün. Hintçe dahil her dili ve alfabeyi destekler. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir metin dosyasını PDF'e dönüştürün",
       "lede": "Notlarınızı, kayıtlarınızı veya herhangi bir .txt dosyasını düzgün biçimlendirilmiş bir A4 PDF'e dönüştürün. Her dil ve alfabe desteklenir.",
       "steps": [
@@ -857,16 +988,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "txt'yi pdf'e çevirme",
+        "notları pdf olarak kaydetme",
+        "metinden pdf'e ücretsiz",
+        "düz metni pdf'e çevirme",
+        "metinden pdf oluşturma"
       ]
     },
     "markdown-to-pdf": {
       "name": "Markdown'dan PDF'e",
       "summary": "Bir .md dosyasını biçimlendirilmiş bir PDF olarak oluşturun.",
       "action": "PDF Oluştur",
-      "title": "Markdown'dan PDF'e Dönüştürücü — Gizli | Fizzdoc",
-      "description": "Markdown'ı tarayıcınızda başlıklar, listeler, tablolar ve kod bloklarıyla biçimlendirilmiş bir PDF'e dönüştürün. Hiçbir şey yüklenmez, açık kaynak.",
+      "title": "Markdown'dan PDF'e Ücretsiz — MD'den PDF'e | Fizzdoc",
+      "description": "Markdown'ı tarayıcınızda başlıklar, listeler, tablolar ve kod bloklarıyla biçimlendirilmiş bir PDF'e dönüştürün. Hiçbir şey yüklenmez, açık kaynak. Ücretsiz.",
       "h1": "Markdown'ı PDF'e dönüştürün",
       "lede": "Markdown ile yazılmış bir README, notlar veya dokümantasyonu; başlıklar, listeler, tablolar ve kod bloklarıyla temiz, yazdırılabilir bir PDF'e dönüştürün.",
       "steps": [
@@ -889,15 +1027,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "readme'yi pdf'e çevirme",
+        "md'den pdf'e ücretsiz",
+        "markdown'ı pdf olarak yazdırma",
+        "tablolu markdown'ı pdf'e çevirme",
+        "markdown notlarını pdf olarak dışa aktarma"
       ]
     },
     "word-to-pdf": {
       "name": "Word'den PDF'e",
       "summary": "Bir .docx'i PDF'e dönüştürün, tüm diller desteklenir.",
       "action": "PDF'e Dönüştür",
-      "title": "Word'den PDF'e (DOCX'ten PDF'e) Dönüştürücü | Fizzdoc",
+      "title": "Word'den PDF'e Ücretsiz — DOCX'ten PDF'e | Fizzdoc",
       "description": "Bir Word belgesini tarayıcınızda başlıkları, listeleri ve görselleri koruyarak PDF'e dönüştürün. Google Dokümanlar dosyalarıyla çalışır. Hiçbir şey yüklenmez.",
       "h1": "Bir Word belgesini PDF'e dönüştürün",
       "lede": "Bir .docx'i başlıkları, listeleri, tabloları ve görselleriyle, tarayıcınızın kendi PDF yazıcısını kullanarak PDF'e dönüştürün. Belge cihazınızdan hiç çıkmaz.",
@@ -921,15 +1066,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "docx'i pdf'e çevirme",
+        "word'ü pdf olarak kaydetme ücretsiz",
+        "google dokümanlar'ı pdf'e çevirme",
+        "cv'yi pdf'e çevirme",
+        "telefonda word'den pdf'e"
       ]
     },
     "excel-to-csv": {
       "name": "Excel'den CSV'ye",
       "summary": "Bir .xlsx'in her sayfasını CSV olarak dışa aktarın.",
       "action": "CSV'ye Dönüştür",
-      "title": "Excel'den CSV'ye (XLSX'ten CSV'ye) Dönüştürücü | Fizzdoc",
+      "title": "Excel'den CSV'ye Ücretsiz — XLSX'ten CSV'ye | Fizzdoc",
       "description": "Excel tablolarını tarayıcınızda CSV'ye dönüştürün. Her sayfa dışa aktarılır, tarihler ISO tarihine döner, hiçbir şey yüklenmez. Google E-Tablolar ile çalışır.",
       "h1": "Excel'i CSV'ye dönüştürün",
       "lede": "Bir .xlsx çalışma kitabının her sayfasını, her yerde doğru açılan UTF-8 bir CSV dosyasına aktarın. Tarihler, sayılar ve metinler olduğu gibi korunur.",
@@ -953,16 +1105,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "xlsx'i csv'ye çevirme",
+        "excel sayfasını csv olarak dışa aktarma",
+        "google e-tablolar'ı csv'ye çevirme",
+        "tüm sayfalarıyla excel'den csv'ye",
+        "xlsx'ten csv'ye ücretsiz"
       ]
     },
     "csv-to-excel": {
       "name": "CSV'den Excel'e",
       "summary": "Bir .csv'yi gerçek bir .xlsx çalışma kitabına dönüştürün.",
       "action": "Excel'e Dönüştür",
-      "title": "CSV'den Excel'e (CSV'den XLSX'e) Dönüştürücü | Fizzdoc",
-      "description": "Bir CSV dosyasını tarayıcınızda bir Excel .xlsx çalışma kitabına dönüştürün. Sayılar sayı kalır, başındaki sıfırlar korunur, hiçbir şey yüklenmez.",
+      "title": "CSV'den Excel'e Ücretsiz — CSV'den XLSX'e | Fizzdoc",
+      "description": "Bir CSV dosyasını tarayıcınızda bir Excel .xlsx çalışma kitabına dönüştürün. Sayılar sayı kalır, başındaki sıfırlar korunur, hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "CSV'yi Excel'e dönüştürün",
       "lede": "Bir CSV'yi gerçek bir Excel çalışma kitabına dönüştürün. Sayılar sayı olur, 007 gibi kodlar baştaki sıfırlarını korur ve ayraç sizin için otomatik algılanır.",
       "steps": [
@@ -981,15 +1140,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "csv'yi excel'de doğru açma",
+        "csv'den xlsx'e ücretsiz",
+        "csv'de baştaki sıfırları koruma",
+        "csv'yi tabloya çevirme",
+        "telefonda csv'den excel'e"
       ]
     },
     "compress-image": {
       "name": "Görsel Sıkıştır",
       "summary": "JPG, PNG ve WebP görsellerini küçültün.",
       "action": "Görselleri Sıkıştır",
-      "title": "Görsel Sıkıştırma (JPG, PNG, WebP) — Ücretsiz | Fizzdoc",
+      "title": "Görsel Sıkıştır Ücretsiz — Kaliteyi Koru | Fizzdoc",
       "description": "Görsel dosya boyutunu tarayıcınızda küçültün — JPG, PNG, WebP ve daha fazlası, toplu olarak. Kaliteyi seçin veya kayıpsız tutun. Fotoğraflar asla yüklenmez.",
       "h1": "Görselleri yüklemeden sıkıştırın",
       "lede": "Fotoğrafları ve ekran görüntülerini e-posta, web siteleri ve formlar için küçültün. Bir kalite düzeyi seçin ya da kayıpsız tutun — hepsi cihazınızda, toplu olarak.",
@@ -1013,16 +1179,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "kaliteyi bozmadan görsel sıkıştırma",
+        "fotoğraf boyutunu küçültme",
+        "jpg ve png'yi toplu sıkıştırma",
+        "web sitesi için görselleri küçültme",
+        "görsel boyutunu kb olarak küçültme"
       ]
     },
     "compress-image-to-20kb": {
       "name": "Görseli 20 KB'a Sıkıştır",
       "summary": "Bir fotoğrafı veya imzayı çevrimiçi form için 20 KB'ın altına indirin.",
       "action": "Görselleri Sıkıştır",
-      "title": "Görseli 20 KB'a Sıkıştır — JPG, Yükleme Yok | Fizzdoc",
-      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 20 KB'ın altına indirin. Hiçbir şey yüklenmez.",
+      "title": "Görseli 20 KB'a Sıkıştır Ücretsiz | Fizzdoc",
+      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 20 KB'ın altına indirin. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir görseli 20 KB'ın altına sıkıştırma",
       "lede": "Formlar genellikle 20 KB'ın altında bir fotoğraf veya imza ister. Fizzdoc fotoğrafı olabildiğince büyük ve net tutar, JPG kalitesini yalnızca gerektiği kadar kademeli olarak düşürür ve fotoğrafınızı asla yüklemez.",
       "steps": [
@@ -1045,16 +1218,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "fotoğrafı 20 kb'a küçültme",
+        "20 kb altında imza görseli",
+        "sınav formu için fotoğraf sıkıştırma",
+        "ssc veya upsc formu için 20 kb'a boyutlandırma",
+        "20 kb altında jpg"
       ]
     },
     "compress-image-to-50kb": {
       "name": "Görseli 50 KB'a Sıkıştır",
       "summary": "Bir fotoğrafı veya imzayı çevrimiçi form için 50 KB'ın altına indirin.",
       "action": "Görselleri Sıkıştır",
-      "title": "Görseli 50 KB'a Sıkıştır — JPG, Yükleme Yok | Fizzdoc",
-      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 50 KB'ın altına indirin. Hiçbir şey yüklenmez.",
+      "title": "Görseli 50 KB'a Sıkıştır Ücretsiz | Fizzdoc",
+      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 50 KB'ın altına indirin. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir görseli 50 KB'ın altına sıkıştırma",
       "lede": "Formlar genellikle 50 KB'ın altında bir fotoğraf veya imza ister. Fizzdoc fotoğrafı olabildiğince büyük ve net tutar, JPG kalitesini yalnızca gerektiği kadar kademeli olarak düşürür ve fotoğrafınızı asla yüklemez.",
       "steps": [
@@ -1077,16 +1257,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "fotoğrafı 50 kb'a küçültme",
+        "50 kb altında vesikalık fotoğraf",
+        "resmi form için görsel sıkıştırma",
+        "50 kb'a online boyutlandırma",
+        "50 kb altında jpg"
       ]
     },
     "compress-image-to-100kb": {
       "name": "Görseli 100 KB'a Sıkıştır",
       "summary": "Bir fotoğrafı veya imzayı çevrimiçi form için 100 KB'ın altına indirin.",
       "action": "Görselleri Sıkıştır",
-      "title": "Görseli 100 KB'a Sıkıştır — JPG, Yükleme Yok | Fizzdoc",
-      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 100 KB'ın altına indirin. Hiçbir şey yüklenmez.",
+      "title": "Görseli 100 KB'a Sıkıştır Ücretsiz | Fizzdoc",
+      "description": "Sınav, iş başvurusu ve resmi formlar için JPG, PNG veya WebP fotoğrafı mümkün olduğunca net tutarak 100 KB'ın altına indirin. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir görseli 100 KB'ın altına sıkıştırma",
       "lede": "Formlar genellikle 100 KB'ın altında bir fotoğraf veya imza ister. Fizzdoc fotoğrafı olabildiğince büyük ve net tutar, JPG kalitesini yalnızca gerektiği kadar kademeli olarak düşürür ve fotoğrafınızı asla yüklemez.",
       "steps": [
@@ -1109,15 +1296,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "fotoğrafı 100 kb'a küçültme",
+        "iş başvurusu için görsel sıkıştırma",
+        "online form için 100 kb altında fotoğraf",
+        "100 kb'a online boyutlandırma",
+        "100 kb altında jpg"
       ]
     },
     "resize-image": {
       "name": "Görsel Boyutlandır",
       "summary": "Görselleri piksel veya yüzde olarak büyütün ya da küçültün.",
       "action": "Görselleri Boyutlandır",
-      "title": "Görselleri Çevrimiçi Boyutlandır (Büyüt/Küçült) | Fizzdoc",
+      "title": "Görsel Boyutlandır Ücretsiz — Piksel Cinsinden | Fizzdoc",
       "description": "Görselleri tam piksele veya bir yüzdeye göre tarayıcınızda, toplu olarak boyutlandırın — küçültün ya da büyütün. En boy oranını koruyun veya korumayın.",
       "h1": "Görselleri boyutlandırın — büyüt veya küçült",
       "lede": "Tek bir görsel ya da birçoğu için tam bir genişlik ve yükseklik belirleyin ya da yüzdeyle ölçeklendirin. Aksini söylemediğiniz sürece en boy oranı korunur.",
@@ -1137,15 +1331,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "görseli tam piksele boyutlandırma",
+        "fotoğraf boyutlarını değiştirme",
+        "pasaport veya vize için fotoğraf boyutlandırma",
+        "toplu görsel boyutlandırma",
+        "görseli büyütme veya küçültme"
       ]
     },
     "convert-image": {
       "name": "Görsel Dönüştür",
       "summary": "JPG, PNG ve WebP arasında dönüştürün.",
       "action": "Görselleri Dönüştür",
-      "title": "Görselleri JPG, PNG veya WebP'e Dönüştür — Ücretsiz | Fizzdoc",
+      "title": "Görsel Dönüştür Ücretsiz — JPG, PNG, WebP | Fizzdoc",
       "description": "Görselleri tarayıcınızda, toplu olarak JPG, PNG ve WebP arasında dönüştürün. GIF, BMP, AVIF ve tarayıcınızın açabildiği iPhone fotoğraflarıyla çalışır.",
       "h1": "Görselleri JPG, PNG veya WebP'e dönüştürün",
       "lede": "Tek bir görselin ya da bütün bir grubun formatını değiştirin — örneğin WebP'den JPG'e ya da PNG'den WebP'e — hiçbir yere göndermeden.",
@@ -1165,15 +1366,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "avif veya bmp'yi jpg'ye çevirme",
+        "görsel formatını değiştirme",
+        "gif veya bmp'yi png'ye çevirme",
+        "toplu görsel dönüştürücü",
+        "görseli webp'ye çevirme"
       ]
     },
     "image-to-text": {
       "name": "Görselden Metne (OCR)",
       "summary": "Herhangi bir fotoğraf veya ekran görüntüsündeki metni seçip kopyalayın.",
       "action": "Metni Tanı",
-      "title": "Görselden Metne (OCR) — Fotoğraftan Metin Kopyala | Fizzdoc",
+      "title": "Görselden Metne Ücretsiz — Fotoğraftan OCR | Fizzdoc",
       "description": "Fotoğraf ve ekran görüntülerinden İngilizce OCR ile tarayıcınızda metin çıkarın, görsel üzerinde seçip kopyalayın — Live Text gibi. Hiçbir şey yüklenmez.",
       "h1": "Herhangi bir görselden metin kopyalayın",
       "lede": "Bir fotoğraf, tarama veya ekran görüntüsündeki İngilizce metni tanıyın, sonra tıpkı iPhone'daki Live Text gibi doğrudan resmin üzerinde seçin. Hiçbir şey cihazınızdan çıkmaz.",
@@ -1197,15 +1405,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "fotoğraftan metin kopyalama",
+        "ekran görüntüsünü metne çevirme",
+        "görselden metin çıkarma ücretsiz",
+        "ocr görselden metne",
+        "telefon fotoğrafından metin kopyalama"
       ]
     },
     "png-to-jpg": {
       "name": "PNG'den JPG'e",
       "summary": "PNG görsellerini toplu olarak JPG'e dönüştürün.",
       "action": "JPG'e Dönüştür",
-      "title": "PNG'den JPG'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "title": "PNG'den JPG'e Ücretsiz — Online Dönüştürme | Fizzdoc",
       "description": "PNG görsellerini tarayıcınızda, tek tek veya toplu olarak JPG'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
       "h1": "PNG'i JPG'e gizlice dönüştürün",
       "lede": "JPG dosyaları fotoğraflar için çok daha küçüktür ve eski yazılımlar ile PNG'i reddeden yükleme formları dahil her yerde açılır. Fizzdoc PNG dosyalarınızı doğrudan cihazınızda dönüştürür.",
@@ -1229,15 +1444,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "png'yi jpg'ye çevirme ücretsiz",
+        "png'den jpeg'e",
+        "png dosyasını küçültme",
+        "ekran görüntüsünü jpg'ye çevirme",
+        "toplu png'den jpg'e"
       ]
     },
     "jpg-to-png": {
       "name": "JPG'den PNG'e",
       "summary": "JPG görsellerini toplu olarak PNG'e dönüştürün.",
       "action": "PNG'e Dönüştür",
-      "title": "JPG'den PNG'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "title": "JPG'den PNG'e Ücretsiz — Online Dönüştürme | Fizzdoc",
       "description": "JPG görsellerini tarayıcınızda, tek tek veya toplu olarak PNG'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
       "h1": "JPG'i PNG'e gizlice dönüştürün",
       "lede": "PNG kayıpsızdır, bu yüzden resmi tekrar düzenleyip kaydettiğinizde daha fazla kalite kaybetmez. Fizzdoc JPG dosyalarınızı doğrudan cihazınızda dönüştürür.",
@@ -1261,15 +1483,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "jpg'yi png'ye çevirme ücretsiz",
+        "jpeg'den png'ye",
+        "fotoğrafı png olarak kaydetme",
+        "kayıpsız görsel kopyası",
+        "toplu jpg'den png'e"
       ]
     },
     "webp-to-jpg": {
       "name": "WebP'den JPG'e",
       "summary": "WebP görsellerini toplu olarak JPG'e dönüştürün.",
       "action": "JPG'e Dönüştür",
-      "title": "WebP'den JPG'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "title": "WebP'den JPG'e Ücretsiz — Online Dönüştürme | Fizzdoc",
       "description": "WebP görsellerini tarayıcınızda, tek tek veya toplu olarak JPG'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
       "h1": "WebP'i JPG'e gizlice dönüştürün",
       "lede": "Birçok uygulama, yazıcı ve yükleme formu, web sitelerinden kaydedilen WebP görsellerini hâlâ açamıyor. JPG her yerde çalışır. Fizzdoc WebP dosyalarınızı doğrudan cihazınızda dönüştürür.",
@@ -1293,15 +1522,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "webp'yi jpg'ye çevirme ücretsiz",
+        "webp görselini açma",
+        "webp'den jpeg'e",
+        "webp'yi jpg olarak kaydetme",
+        "toplu webp'den jpg'e"
       ]
     },
     "jpg-to-webp": {
       "name": "JPG'den WebP'e",
       "summary": "JPG görsellerini toplu olarak WebP'e dönüştürün.",
       "action": "WebP'e Dönüştür",
-      "title": "JPG'den WebP'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "title": "JPG'den WebP'e Ücretsiz — Online Dönüştürme | Fizzdoc",
       "description": "JPG görsellerini tarayıcınızda, tek tek veya toplu olarak WebP'e dönüştürün. Hızlı, ücretsiz, filigransız; resimleriniz asla yüklenmez.",
       "h1": "JPG'i WebP'e gizlice dönüştürün",
       "lede": "WebP görselleri aynı görsel kalitede JPG'den genellikle %25-35 daha küçüktür, bu da web sitelerinin daha hızlı yüklenmesini sağlar. Fizzdoc JPG dosyalarınızı doğrudan cihazınızda dönüştürür.",
@@ -1325,16 +1561,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "jpg'yi webp'ye çevirme ücretsiz",
+        "web sitesi için görselleri küçültme",
+        "jpeg'den webp'ye",
+        "webp dönüştürücü",
+        "toplu jpg'den webp'e"
       ]
     },
     "add-page-numbers-to-pdf": {
       "name": "Sayfa Numarası Ekle",
       "summary": "Bir PDF'in her sayfasını numaralandırın.",
       "action": "Sayfa Numarası Ekle",
-      "title": "PDF'e Sayfa Numarası Ekle — Ücretsiz | Fizzdoc",
-      "description": "Tarayıcınızda bir PDF'e sayfa numarası ekleyin. Konumu, başlangıç numarasını ve “Sayfa 1 / 10” stilini seçin. Hiçbir şey yüklenmez, kayıtsız.",
+      "title": "PDF'e Sayfa Numarası Ekle Ücretsiz | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'e sayfa numarası ekleyin. Konumu, başlangıç numarasını ve “Sayfa 1 / 10” stilini seçin. Hiçbir şey yüklenmez, kayıtsız. Ücretsiz.",
       "h1": "Bir PDF'e sayfa numarası ekleyin",
       "lede": "Bir raporun, tezin veya sözleşmenin sayfalarını saniyeler içinde numaralandırın. Numaraların nereye gideceğini ve hangi numaradan başlayacağını seçin — cihazınızda.",
       "steps": [
@@ -1357,16 +1600,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf sayfalarını numaralandırma",
+        "pdf'e sayfa 1 / 10 ekleme",
+        "pdf'e sayfa numarası ekleme ücretsiz",
+        "tez pdf'i için sayfa numarası",
+        "pdf altına sayfa numarası ekleme"
       ]
     },
     "watermark-pdf": {
       "name": "PDF'e Filigran Ekle",
       "summary": "Her sayfaya CONFIDENTIAL gibi bir metin damgalayın.",
       "action": "Filigran Ekle",
-      "title": "PDF'e Filigran Ekle — Metin Filigranı, Yüklemesiz | Fizzdoc",
-      "description": "Tarayıcınızda bir PDF'in her sayfasına CONFIDENTIAL veya DRAFT gibi bir metin filigranı ekleyin. Saydamlığı seçin. Hiçbir şey yüklenmez.",
+      "title": "PDF'e Filigran Ekle Ücretsiz — Metin Filigranı | Fizzdoc",
+      "description": "Tarayıcınızda bir PDF'in her sayfasına CONFIDENTIAL veya DRAFT gibi bir metin filigranı ekleyin. Saydamlığı seçin. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir PDF'e filigran ekleyin",
       "lede": "Paylaşmadan önce bir belgeyi CONFIDENTIAL, DRAFT ya da adınızla işaretleyin. Filigran her sayfaya çapraz olarak çizilir.",
       "steps": [
@@ -1389,16 +1639,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'e gizli ibaresi ekleme",
+        "pdf sayfalarına taslak damgası vurma",
+        "pdf'e filigran ekleme ücretsiz",
+        "pdf'e metin filigranı ekleme",
+        "pdf'e türkçe filigran ekleme"
       ]
     },
     "pdf-to-png": {
       "name": "PDF'den PNG'e",
       "summary": "Her sayfayı kayıpsız bir PNG görseli olarak kaydedin.",
       "action": "PNG'e Dönüştür",
-      "title": "PDF'den PNG'e Dönüştürücü — Kayıpsız, Ücretsiz | Fizzdoc",
-      "description": "Bir PDF'in her sayfasını tarayıcınızda net, kayıpsız bir PNG görseline dönüştürün. Çok sayfalı dosyalar tek bir ZIP olarak iner. Hiçbir şey yüklenmez.",
+      "title": "PDF'den PNG'e Ücretsiz — Kayıpsız Görseller | Fizzdoc",
+      "description": "Bir PDF'in her sayfasını tarayıcınızda net, kayıpsız bir PNG görseline dönüştürün. Çok sayfalı dosyalar tek bir ZIP olarak iner. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "PDF sayfalarını PNG görsellerine dönüştürün",
       "lede": "Her sayfayı net, kayıpsız bir PNG'e dönüştürün — sunumlar, dokümantasyon ve keskin metinli ekran görüntüleri için ideal. Hiçbir şey cihazınızdan çıkmaz.",
       "steps": [
@@ -1417,15 +1674,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'i png'ye çevirme",
+        "pdf sayfasını kayıpsız görsele çevirme",
+        "sunum için net pdf sayfa görselleri",
+        "pdf slaytlarını png olarak kaydetme",
+        "pdf'den png'ye ücretsiz"
       ]
     },
     "extract-pdf-pages": {
       "name": "PDF Sayfalarını Çıkar",
       "summary": "Seçilen sayfaları yeni bir PDF olarak kaydedin.",
       "action": "Sayfaları Çıkar",
-      "title": "PDF'den Sayfa Çıkarma — Ücretsiz, Gizli | Fizzdoc",
+      "title": "PDF Sayfalarını Çıkar Ücretsiz — Yeni PDF | Fizzdoc",
       "description": "Bir PDF'den belirli sayfaları tarayıcınızda yeni bir dosyaya aktarın. 2, 5-7 gibi sayfalar yazın. Bağlantılar ve form alanları korunur. Hiçbir şey yüklenmez.",
       "h1": "Bir PDF'den sayfaları çıkarın",
       "lede": "Yalnızca imza sayfasına veya bir bölüme mi ihtiyacınız var? İstediğiniz sayfaları yazın ve onları yeni bir PDF olarak alın — orijinal dosya dokunulmadan kalır.",
@@ -1445,16 +1709,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'in bir sayfasını kaydetme",
+        "sayfaları yeni pdf olarak çıkarma",
+        "pdf'den sayfa alma",
+        "pdf'den sayfa kopyalama",
+        "pdf sayfalarını çıkarma ücretsiz"
       ]
     },
     "reorder-pdf-pages": {
       "name": "PDF Sayfalarını Yeniden Sırala",
       "summary": "Bir PDF'in sayfalarını yeni bir sıraya koyun.",
       "action": "Sayfaları Yeniden Sırala",
-      "title": "PDF Sayfalarını Yeniden Sırala — Ücretsiz, Yüklemesiz | Fizzdoc",
-      "description": "Bir PDF'in sayfalarını istediğiniz sırayı yazarak, örneğin 3, 1-2, 4- şeklinde yeniden düzenleyin. Tarayıcınızda çalışır; dosyanız asla yüklenmez.",
+      "title": "PDF Sayfalarını Yeniden Sırala Ücretsiz | Fizzdoc",
+      "description": "Bir PDF'in sayfalarını istediğiniz sırayı yazarak, örneğin 3, 1-2, 4- şeklinde yeniden düzenleyin. Tarayıcınızda çalışır; dosyanız asla yüklenmez. Ücretsiz.",
       "h1": "Bir PDF'in sayfalarını yeniden sıralayın",
       "lede": "Sırası bozuk taranmış sayfaları düzeltin ya da bir eki en başa taşıyın. Yeni sırayı yazın ve yeniden düzenlenmiş PDF'i indirin.",
       "steps": [
@@ -1473,15 +1744,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "pdf'de sayfa sırasını değiştirme",
+        "pdf sayfalarını yeniden düzenleme",
+        "pdf'de sayfaları taşıma",
+        "pdf sayfalarını sıralama",
+        "pdf'i ücretsiz yeniden sıralama"
       ]
     },
     "png-to-pdf": {
       "name": "PNG'den PDF'e",
       "summary": "PNG ekran görüntülerini ve görselleri tek bir PDF'e dönüştürün.",
       "action": "PDF Oluştur",
-      "title": "PNG'den PDF'e Dönüştürücü — Ücretsiz | Fizzdoc",
+      "title": "PNG'den PDF'e Ücretsiz — Ekran Görüntüsü | Fizzdoc",
       "description": "PNG ekran görüntülerini ve görselleri tarayıcınızda tek bir PDF'de, görsel başına bir sayfa ve tam kalitede birleştirin. Hiçbir şey yüklenmez, filigransız.",
       "h1": "PNG görsellerini PDF'e dönüştürün",
       "lede": "PNG olarak kaydedilmiş ekran görüntülerini, diyagramları veya taranmış sayfaları tek, düzenli bir PDF'de toplayın — keskin, kayıpsız ve seçtiğiniz sırada.",
@@ -1501,16 +1779,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "ekran görüntülerini pdf'e çevirme",
+        "png'den pdf'e ücretsiz",
+        "png görsellerini pdf'de birleştirme",
+        "kalite kaybı olmadan görselden pdf'e",
+        "telefonda png'den pdf'e"
       ]
     },
     "remove-word-metadata": {
       "name": "Word Meta Verisini Kaldır",
       "summary": "Bir .docx'ten yazar, şirket ve editör adlarını silin.",
       "action": "Meta Veriyi Kaldır",
-      "title": "Word Meta Verisini Kaldır — Gizli, Yüklemesiz | Fizzdoc",
-      "description": "Bir Word dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google Dokümanlar indirmeleriyle çalışır. Hiçbir şey yüklenmez.",
+      "title": "Word Meta Verisini Kaldır Ücretsiz — Temiz DOCX | Fizzdoc",
+      "description": "Bir Word dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google Dokümanlar indirmeleriyle çalışır. Hiçbir şey yüklenmez. Ücretsiz.",
       "h1": "Bir Word belgesinden gizli meta verileri kaldırın",
       "lede": "Her .docx, onu kimin oluşturduğunu, en son kimin düzenlediğini ve hangi şirkete ait olduğunu kaydeder. Göndermeden önce bu bilgileri, dosyayı hiçbir yere yüklemeden silin.",
       "steps": [
@@ -1533,16 +1818,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "word belgesinden yazar kaldırma",
+        "paylaşmadan önce docx temizleme",
+        "word belge özelliklerini silme",
+        "word dosyasını anonimleştirme",
+        "docx'ten şirket adını kaldırma"
       ]
     },
     "extract-images-from-word": {
       "name": "Word'den Görsel Çıkar",
       "summary": "Bir .docx'teki her görseli orijinal kalitesinde kaydedin.",
       "action": "Görselleri Çıkar",
-      "title": "Word'den Görsel Çıkarma — Yüklemesiz | Fizzdoc",
-      "description": "Bir Word belgesine gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google Dokümanlar indirmeleriyle çalışır. Tarayıcınızda çalışır.",
+      "title": "Word'den Görsel Çıkar Ücretsiz — DOCX'ten ZIP'e | Fizzdoc",
+      "description": "Bir Word belgesine gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google Dokümanlar indirmeleriyle çalışır. Tarayıcınızda çalışır. Ücretsiz.",
       "h1": "Bir Word belgesinden tüm görselleri çıkarın",
       "lede": "Bir .docx'teki her fotoğrafı, logoyu ve grafik görselini orijinal formatında ve çözünürlüğünde alın — ekran görüntüsü yok, yeniden sıkıştırma yok, yükleme yok.",
       "steps": [
@@ -1565,15 +1857,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "word dosyasındaki tüm görselleri kaydetme",
+        "docx'ten görsel indirme",
+        "google dokümanlar'dan fotoğraf alma",
+        "docx'ten görsel çıkarma ücretsiz",
+        "word görsellerini tam çözünürlükte alma"
       ]
     },
     "compress-word": {
       "name": "Word Sıkıştır",
       "summary": "Görsellerini optimize ederek bir .docx'i küçültün.",
       "action": "Word'ü Sıkıştır",
-      "title": "Word Dosyalarını Sıkıştır (.docx) — Yüklemesiz | Fizzdoc",
+      "title": "Word Sıkıştır Ücretsiz — DOCX Boyutunu Küçült | Fizzdoc",
       "description": "Tarayıcınızda içindeki fotoğrafları yeniden sıkıştırarak bir Word dosyasının boyutunu küçültün. İçerik ve biçimlendirme aynı kalır. Hiçbir şey yüklenmez.",
       "h1": "Bir Word belgesini sıkıştırın",
       "lede": "İçindeki aşırı büyük fotoğrafları yeniden sıkıştırarak bir .docx'i e-postayla göndermeye yetecek kadar küçültün. Metin, biçimlendirme ve geri kalan her şey aynen kalır.",
@@ -1597,15 +1896,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "word dosya boyutunu küçültme",
+        "görselli docx'i sıkıştırma",
+        "e-posta için word belgesini küçültme",
+        "docx'i küçültme",
+        "word sıkıştırma ücretsiz"
       ]
     },
     "remove-excel-metadata": {
       "name": "Excel Meta Verisini Kaldır",
       "summary": "Bir .xlsx'ten yazar, şirket ve editör adlarını silin.",
       "action": "Meta Veriyi Kaldır",
-      "title": "Excel Meta Verisini Kaldır — Gizli, Yüklemesiz | Fizzdoc",
+      "title": "Excel Meta Verisini Kaldır Ücretsiz — Temiz XLSX | Fizzdoc",
       "description": "Bir Excel dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google E-Tablolar indirmeleriyle çalışır. Hiçbir şey yüklenmez.",
       "h1": "Bir Excel tablosundan gizli meta verileri kaldırın",
       "lede": "Her .xlsx, onu kimin oluşturduğunu, en son kimin düzenlediğini ve hangi şirkete ait olduğunu kaydeder. Göndermeden önce bu bilgileri, dosyayı hiçbir yere yüklemeden silin.",
@@ -1629,16 +1935,23 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "excel dosyasından yazar kaldırma",
+        "paylaşmadan önce xlsx temizleme",
+        "excel belge özelliklerini silme",
+        "tabloyu anonimleştirme",
+        "xlsx'ten şirket adını kaldırma"
       ]
     },
     "extract-images-from-excel": {
       "name": "Excel'den Görsel Çıkar",
       "summary": "Bir .xlsx'teki her görseli orijinal kalitesinde kaydedin.",
       "action": "Görselleri Çıkar",
-      "title": "Excel'den Görsel Çıkarma — Yüklemesiz | Fizzdoc",
-      "description": "Bir Excel tablosuna gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google E-Tablolar indirmeleriyle çalışır. Tarayıcınızda çalışır.",
+      "title": "Excel'den Görsel Çıkar Ücretsiz — XLSX'ten ZIP'e | Fizzdoc",
+      "description": "Bir Excel tablosuna gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google E-Tablolar indirmeleriyle çalışır. Tarayıcınızda çalışır. Ücretsiz.",
       "h1": "Bir Excel tablosundan tüm görselleri çıkarın",
       "lede": "Bir .xlsx'teki her fotoğrafı, logoyu ve grafik görselini orijinal formatında ve çözünürlüğünde alın — ekran görüntüsü yok, yeniden sıkıştırma yok, yükleme yok.",
       "steps": [
@@ -1661,15 +1974,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "excel dosyasındaki tüm görselleri kaydetme",
+        "xlsx'ten görsel indirme",
+        "google e-tablolar'dan görsel alma",
+        "xlsx'ten görsel çıkarma ücretsiz",
+        "excel görsellerini tam çözünürlükte alma"
       ]
     },
     "compress-excel": {
       "name": "Excel Sıkıştır",
       "summary": "Görsellerini optimize ederek bir .xlsx'i küçültün.",
       "action": "Excel'i Sıkıştır",
-      "title": "Excel Dosyalarını Sıkıştır (.xlsx) — Yüklemesiz | Fizzdoc",
+      "title": "Excel Sıkıştır Ücretsiz — XLSX Boyutunu Küçült | Fizzdoc",
       "description": "Tarayıcınızda içindeki fotoğrafları yeniden sıkıştırarak bir Excel dosyasının boyutunu küçültün. İçerik ve biçimlendirme aynı kalır. Hiçbir şey yüklenmez.",
       "h1": "Bir Excel tablosunu sıkıştırın",
       "lede": "İçindeki aşırı büyük fotoğrafları yeniden sıkıştırarak bir .xlsx'i e-postayla göndermeye yetecek kadar küçültün. Metin, biçimlendirme ve geri kalan her şey aynen kalır.",
@@ -1693,15 +2013,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "excel dosya boyutunu küçültme",
+        "görselli xlsx'i sıkıştırma",
+        "e-posta için tabloyu küçültme",
+        "xlsx'i küçültme",
+        "excel sıkıştırma ücretsiz"
       ]
     },
     "remove-powerpoint-metadata": {
       "name": "PowerPoint Meta Verisini Kaldır",
       "summary": "Bir .pptx'ten yazar, şirket ve editör adlarını silin.",
       "action": "Meta Veriyi Kaldır",
-      "title": "PowerPoint Meta Verisini Kaldır — Gizli | Fizzdoc",
+      "title": "PowerPoint Meta Verisi Kaldır Ücretsiz | Fizzdoc",
       "description": "Bir PowerPoint dosyasından yazar, editör, şirket, başlık ve küçük resmi tarayıcınızda silin. Google Slaytlar indirmeleriyle çalışır. Hiçbir şey yüklenmez.",
       "h1": "Bir PowerPoint sunumundan gizli meta verileri kaldırın",
       "lede": "Her .pptx, onu kimin oluşturduğunu, en son kimin düzenlediğini ve hangi şirkete ait olduğunu kaydeder. Göndermeden önce bu bilgileri, dosyayı hiçbir yere yüklemeden silin.",
@@ -1725,15 +2052,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "powerpoint'ten yazar kaldırma",
+        "paylaşmadan önce pptx temizleme",
+        "sunum özelliklerini silme",
+        "sunumu anonimleştirme",
+        "pptx'ten şirket adını kaldırma"
       ]
     },
     "extract-images-from-powerpoint": {
       "name": "PowerPoint'ten Görsel Çıkar",
       "summary": "Bir .pptx'teki her görseli orijinal kalitesinde kaydedin.",
       "action": "Görselleri Çıkar",
-      "title": "PowerPoint'ten Görsel Çıkarma — Yüklemesiz | Fizzdoc",
+      "title": "PowerPoint'ten Görsel Çıkar Ücretsiz — ZIP | Fizzdoc",
       "description": "Bir PowerPoint sunumuna gömülü her görseli orijinal çözünürlükte bir ZIP olarak indirin. Google Slaytlar indirmeleriyle çalışır. Tarayıcınızda çalışır.",
       "h1": "Bir PowerPoint sunumundan tüm görselleri çıkarın",
       "lede": "Bir .pptx'teki her fotoğrafı, logoyu ve grafik görselini orijinal formatında ve çözünürlüğünde alın — ekran görüntüsü yok, yeniden sıkıştırma yok, yükleme yok.",
@@ -1757,15 +2091,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "sunumdaki tüm görselleri kaydetme",
+        "pptx'ten görsel indirme",
+        "google slaytlar'dan görsel alma",
+        "pptx'ten görsel çıkarma ücretsiz",
+        "slayt görsellerini tam çözünürlükte alma"
       ]
     },
     "compress-powerpoint": {
       "name": "PowerPoint Sıkıştır",
       "summary": "Görsellerini optimize ederek bir .pptx'i küçültün.",
       "action": "PowerPoint'i Sıkıştır",
-      "title": "PowerPoint Dosyalarını Sıkıştır (.pptx) — Yüklemesiz | Fizzdoc",
+      "title": "PowerPoint Sıkıştır Ücretsiz — PPTX Küçült | Fizzdoc",
       "description": "Tarayıcınızda içindeki fotoğrafları yeniden sıkıştırarak bir PowerPoint dosyasının boyutunu küçültün. İçerik ve biçimlendirme aynı kalır. Hiçbir şey yüklenmez.",
       "h1": "Bir PowerPoint sunumunu sıkıştırın",
       "lede": "İçindeki aşırı büyük fotoğrafları yeniden sıkıştırarak bir .pptx'i e-postayla göndermeye yetecek kadar küçültün. Metin, biçimlendirme ve geri kalan her şey aynen kalır.",
@@ -1789,15 +2130,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "powerpoint dosya boyutunu küçültme",
+        "görselli pptx'i sıkıştırma",
+        "e-posta için sunumu küçültme",
+        "pptx'i küçültme",
+        "powerpoint sıkıştırma ücretsiz"
       ]
     },
     "split-audio": {
       "name": "Ses kes",
       "summary": "Bir MP3 veya M4A'yı kırpın ya da parçalara bölün. Kaydetmeden önce dinleyin.",
       "action": "Sesi Kaydet",
-      "title": "MP3 veya M4A Çevrimiçi Kes — Ses Kırp, Yükleme Yok | Fizzdoc",
+      "title": "MP3 Kes ve Böl Ücretsiz — Online, Yüklemesiz | Fizzdoc",
       "description": "Bir MP3 veya M4A'yı kırpın ya da tam zamanlarda parçalara bölün. Dalga formunu görün, dinleyin, sonra kaydedin. Yeniden kodlama yok, yükleme yok. Ücretsiz.",
       "h1": "Tarayıcınızda ses kesin, kırpın ve bölün",
       "lede": "Dalga formundaki tutamaçları sürükleyin ya da tam zamanlar yazın, seçtiğinizi dinleyin ve kaydedin. Kesimler yeniden kodlama yapılmadan gerçekleştirilir, bu yüzden ses kalitesi tıpatıp aynı kalır.",
@@ -1821,15 +2169,22 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "mp3 kesme ücretsiz online",
+        "ses dosyası kırpma",
+        "mp3'ü parçalara bölme",
+        "şarkıdan zil sesi yapma",
+        "m4a yeniden kodlamadan kesme"
       ]
     },
     "merge-audio": {
       "name": "Ses birleştir",
       "summary": "MP3 veya M4A dosyalarını seçtiğiniz sırayla tek dosyada birleştirin.",
       "action": "Sesi Birleştir",
-      "title": "MP3 veya M4A Dosyalarını Çevrimiçi Birleştir — Yükleme Yok | Fizzdoc",
+      "title": "MP3 ve M4A Birleştir Ücretsiz — Ses Birleştir | Fizzdoc",
       "description": "MP3 veya M4A dosyalarını seçtiğiniz sırayla tek bir parçada birleştirin, indirmeden önce dinleyin. Yeniden kodlama yok, yükleme yok, kayıt yok. Ücretsiz.",
       "h1": "Ses dosyalarını tek dosyada birleştirin",
       "lede": "MP3 veya M4A dosyalarınızı ekleyin, sıraya koyun ve tek bir parçada birleştirin. İndirmeden önce sonucu dinleyin; hiçbir şey yeniden kodlanmaz veya yüklenmez.",
@@ -1853,8 +2208,15 @@
         ],
         [
           "Fizzdoc ücretsiz mi?",
-          "Evet. Kayıt gerekmez, filigran yoktur ve günlük limit yoktur. Fizzdoc, Apache-2.0 lisansı altında açık kaynaklıdır."
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
         ]
+      ],
+      "keywords": [
+        "mp3 dosyalarını tek dosyada birleştirme",
+        "ses dosyalarını online birleştirme",
+        "kaliteden ödün vermeden şarkı birleştirme",
+        "sesli notları birleştirme",
+        "m4a dosyalarını birleştirme ücretsiz"
       ]
     }
   }

@@ -56,6 +56,8 @@ export interface Tool {
   input?: { accept: string; multiple?: boolean };
   /** Fixed engine options for this page, e.g. { format: 'md' } for PDF to Markdown. */
   preset?: Record<string, string>;
+  /** Phrases people search for that this tool answers; shown on the page and in structured data. */
+  keywords?: string[];
 }
 
 const PRIVACY_FAQ: [string, string][] = [
@@ -65,7 +67,7 @@ const PRIVACY_FAQ: [string, string][] = [
   ],
   [
     'Is Fizzdoc free?',
-    'Yes. There is no sign-up, no watermark and no daily limit. Fizzdoc is open source under the Apache-2.0 license.',
+    'Yes, and it stays free: no sign-up, no watermark, no daily limit and no premium tier. Fizzdoc is open source under the Apache-2.0 license, so anyone can run their own copy.',
   ],
 ];
 
@@ -77,7 +79,7 @@ export const TOOLS: Tool[] = [
     name: 'Merge PDF',
     summary: 'Combine several PDFs into one, in the order you choose.',
     action: 'Merge PDFs',
-    title: 'Merge PDF Files Privately — No Upload, Free | Fizzdoc',
+    title: 'Merge PDF Free — Combine PDF Files Online, No Upload | Fizzdoc',
     description:
       'Combine PDF files in your browser. Nothing is uploaded, and form fields and links are kept. Free, no sign-up, open source.',
     h1: 'Merge PDF files without uploading them',
@@ -111,7 +113,7 @@ export const TOOLS: Tool[] = [
     name: 'Split PDF',
     summary: 'Extract the pages you need into a new PDF.',
     action: 'Extract pages',
-    title: 'Split PDF & Extract Pages Privately — No Upload | Fizzdoc',
+    title: 'Split PDF Free — Separate PDF Pages Online, No Upload | Fizzdoc',
     description:
       'Extract pages from a PDF in your browser. Pick ranges like 1-3, 8 — your file never leaves your device. Free, no sign-up, open source.',
     h1: 'Split a PDF and extract pages — privately',
@@ -141,9 +143,9 @@ export const TOOLS: Tool[] = [
     name: 'Rotate PDF',
     summary: 'Turn sideways pages the right way, permanently.',
     action: 'Rotate pages',
-    title: 'Rotate PDF Pages Permanently — No Upload | Fizzdoc',
+    title: 'Rotate PDF Free — Rotate Pages Permanently, No Upload | Fizzdoc',
     description:
-      'Rotate all or selected PDF pages by 90°, 180° or 270° and save the result. Runs in your browser; your file is never uploaded.',
+      'Rotate all or selected PDF pages by 90°, 180° or 270° and save the result. Runs in your browser; your file is never uploaded. Free.',
     h1: 'Rotate PDF pages and save them that way',
     lede: 'Fix sideways scans for good. Rotate every page or just the ones you choose — without re-rendering, so quality is untouched.',
     steps: [
@@ -168,7 +170,7 @@ export const TOOLS: Tool[] = [
     name: 'Delete PDF Pages',
     summary: 'Remove pages you don’t want to share.',
     action: 'Delete pages',
-    title: 'Delete Pages from a PDF — Private, No Upload | Fizzdoc',
+    title: 'Delete PDF Pages Free — Remove Pages Online, No Upload | Fizzdoc',
     description:
       'Remove unwanted pages from a PDF in your browser. Type the pages to delete; your file never leaves your device. Free and open source.',
     h1: 'Delete pages from a PDF — privately',
@@ -194,7 +196,7 @@ export const TOOLS: Tool[] = [
     name: 'Unlock PDF',
     summary: 'Save a copy without the password you know.',
     action: 'Remove password',
-    title: 'Remove a PDF Password (Unlock PDF) — No Upload | Fizzdoc',
+    title: 'Unlock PDF Free — Remove PDF Password, No Upload | Fizzdoc',
     description:
       'Remove the password from a PDF you are allowed to open. Decryption happens on your device and nothing is uploaded. Free, no sign-up.',
     h1: 'Remove a PDF password — on your device',
@@ -224,7 +226,7 @@ export const TOOLS: Tool[] = [
     name: 'Protect PDF',
     summary: 'Lock a PDF with a password and AES-256 encryption.',
     action: 'Protect PDF',
-    title: 'Password Protect a PDF with AES-256 — No Upload | Fizzdoc',
+    title: 'Password Protect PDF Free — AES-256, No Upload | Fizzdoc',
     description:
       'Add a password to a PDF with AES-256 encryption, right in your browser. The file and the password never leave your device. Free, no sign-up.',
     h1: 'Password-protect a PDF — on your device',
@@ -250,9 +252,9 @@ export const TOOLS: Tool[] = [
     name: 'Remove PDF Metadata',
     summary: 'Strip author, title, software and XMP details.',
     action: 'Remove metadata',
-    title: 'Remove PDF Metadata (Author, Title, XMP) — No Upload | Fizzdoc',
+    title: 'Remove PDF Metadata Free — Author, Title, XMP, No Upload | Fizzdoc',
     description:
-      'Delete hidden PDF metadata such as author, title, creator app and XMP data before you share a file. Runs in your browser; nothing is uploaded.',
+      'Delete hidden PDF metadata such as author, title, creator app and XMP data before you share a file. Runs in your browser; nothing is uploaded. Free.',
     h1: 'Remove hidden metadata from a PDF',
     lede: 'PDFs quietly record who wrote them, with which app, and when. Strip the author, title, subject, keywords, producer and XMP metadata before you share.',
     steps: ['Add one PDF file.', 'Click “Remove metadata”.', 'Download the clean copy.'],
@@ -272,9 +274,9 @@ export const TOOLS: Tool[] = [
     name: 'JPG to PDF',
     summary: 'Turn photos and scans into one PDF.',
     action: 'Create PDF',
-    title: 'JPG to PDF Converter — Private, No Upload, Free | Fizzdoc',
+    title: 'JPG to PDF Free — Convert Photos to PDF, No Upload | Fizzdoc',
     description:
-      'Convert JPG, PNG, WebP and other images to a single PDF in your browser. Photos never leave your device. No watermark, no sign-up.',
+      'Convert JPG, PNG, WebP and other images to a single PDF in your browser. Photos never leave your device. Free, no watermark, no sign-up.',
     h1: 'Convert JPG and PNG images to PDF — privately',
     lede: 'Combine photos, screenshots and scans into one PDF, one page per image, at full resolution. Your pictures stay on your device.',
     steps: [
@@ -299,9 +301,9 @@ export const TOOLS: Tool[] = [
     name: 'PDF to JPG',
     summary: 'Save every page as a sharp JPG image.',
     action: 'Convert to JPG',
-    title: 'PDF to JPG Converter — Private, No Upload, Free | Fizzdoc',
+    title: 'PDF to JPG Free — High-Quality Images, No Upload | Fizzdoc',
     description:
-      'Convert each page of a PDF to a high-quality JPG image in your browser. Nothing is uploaded. Many pages download as one ZIP.',
+      'Convert each page of a PDF to a high-quality JPG image in your browser. Nothing is uploaded. Many pages download as one ZIP. Free.',
     h1: 'Convert PDF pages to JPG images — privately',
     lede: 'Render every page to a crisp 150 DPI JPG using Mozilla’s pdf.js, right here in your browser. A multi-page PDF downloads as one ZIP.',
     steps: ['Add one PDF file.', 'Click “Convert to JPG”.', 'Download the image, or a ZIP with one image per page.'],
@@ -325,7 +327,7 @@ export const TOOLS: Tool[] = [
     name: 'Cut & Split Audio',
     summary: 'Trim an MP3 or M4A, or cut it into parts. Listen before you save.',
     action: 'Save audio',
-    title: 'Cut & Split MP3 or M4A Online — Trim Audio, No Upload | Fizzdoc',
+    title: 'Cut MP3 & Split Audio Free — Trim Online, No Upload | Fizzdoc',
     description:
       'Trim an MP3 or M4A, or split it into parts at exact times. See the waveform, listen to each part, then save. No re-encoding, no upload. Free.',
     h1: 'Cut, trim and split audio in your browser',
@@ -356,7 +358,7 @@ export const TOOLS: Tool[] = [
     name: 'Merge Audio',
     summary: 'Join MP3 or M4A files into one, in the order you choose.',
     action: 'Merge audio',
-    title: 'Merge MP3 or M4A Files Online — Join Audio, No Upload | Fizzdoc',
+    title: 'Merge MP3 & M4A Free — Join Audio Online, No Upload | Fizzdoc',
     description:
       'Join MP3 or M4A files into one track in the order you choose, then listen before you download. No re-encoding, no upload, no sign-up. Free.',
     h1: 'Merge audio files into one',
@@ -397,7 +399,7 @@ TOOLS.push(
     name: 'Compress PDF',
     summary: 'Shrink a PDF by optimizing its images. Text stays sharp.',
     action: 'Compress PDF',
-    title: 'Compress PDF Online Without Uploading — Free | Fizzdoc',
+    title: 'Compress PDF Free — Reduce PDF Size, No Upload | Fizzdoc',
     description:
       'Reduce PDF file size in your browser by recompressing oversized images. Text stays selectable and sharp. Nothing is uploaded; free and open source.',
     h1: 'Compress a PDF — without uploading it',
@@ -420,7 +422,7 @@ TOOLS.push(
     name: 'Edit PDF',
     summary: 'Change existing text, add text and white-out, right on the page.',
     action: 'Save PDF',
-    title: 'Edit PDF Text Online — Free, No Upload | Fizzdoc',
+    title: 'Edit PDF Free — Change PDF Text Online, No Upload | Fizzdoc',
     description:
       'Click any text in a PDF to change it, add new text, or white-out areas — directly on the page, in your browser. Nothing is uploaded. Free, no sign-up.',
     h1: 'Edit PDF text directly on the page',
@@ -450,7 +452,7 @@ TOOLS.push(
     name: 'Redact PDF',
     summary: 'Black out text, signatures or photos so they’re gone for good.',
     action: 'Save redacted PDF',
-    title: 'Redact PDF Online — Black Out Text for Good, No Upload | Fizzdoc',
+    title: 'Redact PDF Free — Black Out Text for Good, No Upload | Fizzdoc',
     description:
       'Black out names, numbers, signatures or photos in a PDF and save a copy where they are really gone. Runs in your browser; nothing is uploaded. Free.',
     h1: 'Redact a PDF: black out anything, for good',
@@ -480,7 +482,7 @@ TOOLS.push(
     name: 'PDF to Scanned PDF',
     summary: 'Turn every page into an image, like a scanned document.',
     action: 'Make scanned PDF',
-    title: 'PDF to Scanned PDF — Make a PDF Look Scanned, No Upload | Fizzdoc',
+    title: 'PDF to Scanned PDF Free — Make It Look Scanned, No Upload | Fizzdoc',
     description:
       'Turn a PDF into an image-only scanned PDF: in colour, black and white, or with a real scanner look. Runs in your browser; nothing is uploaded. Free.',
     h1: 'Convert a PDF into a scanned PDF',
@@ -510,9 +512,9 @@ TOOLS.push(
     name: 'OCR PDF',
     summary: 'Make a scanned PDF searchable and copyable.',
     action: 'Recognize text',
-    title: 'OCR PDF — Make Scanned PDFs Searchable, No Upload | Fizzdoc',
+    title: 'OCR PDF Free — Make Scanned PDFs Searchable, No Upload | Fizzdoc',
     description:
-      'Turn scanned PDFs into searchable, copyable documents with English OCR that runs in your browser. Pages keep their original quality. Nothing is uploaded.',
+      'Turn scanned PDFs into searchable, copyable documents with English OCR that runs in your browser. Free; pages keep their quality and nothing is uploaded.',
     h1: 'Make a scanned PDF searchable with OCR',
     lede: 'Recognize the English text in scanned pages and add it as an invisible layer, so you can search, select and copy it. The pages themselves are not changed.',
     steps: ['Add one scanned PDF.', 'Click “Recognize text” and wait while each page is read.', 'Download the searchable PDF.'],
@@ -534,7 +536,7 @@ TOOLS.push(
     name: 'PDF to Word',
     summary: 'Turn PDF text into an editable .docx.',
     action: 'Convert to Word',
-    title: 'PDF to Word (DOCX) Converter — Private, No Upload | Fizzdoc',
+    title: 'PDF to Word Free — Editable DOCX Converter, No Upload | Fizzdoc',
     description:
       'Convert a PDF to an editable Word document in your browser. Headings, paragraphs and page breaks are kept. Nothing is uploaded. Free, no sign-up.',
     h1: 'Convert PDF to an editable Word document',
@@ -557,7 +559,7 @@ TOOLS.push(
     name: 'PDF to PowerPoint',
     summary: 'Turn each PDF page into a slide.',
     action: 'Convert to PowerPoint',
-    title: 'PDF to PowerPoint (PPTX) — Private, No Upload | Fizzdoc',
+    title: 'PDF to PowerPoint Free — PDF to PPTX, No Upload | Fizzdoc',
     description:
       'Convert a PDF into a PowerPoint presentation with one sharp slide per page, right in your browser. Nothing is uploaded. Free and open source.',
     h1: 'Convert a PDF to a PowerPoint presentation',
@@ -579,7 +581,7 @@ TOOLS.push(
     name: 'PDF to Text',
     summary: 'Extract all text from a PDF as a .txt file.',
     action: 'Extract text',
-    title: 'PDF to Text (TXT) Converter — Private, No Upload | Fizzdoc',
+    title: 'PDF to Text Free — Extract Text from PDF, No Upload | Fizzdoc',
     description:
       'Extract the text from a PDF into a plain .txt file in your browser, in the right reading order. Nothing is uploaded. Free, no sign-up, open source.',
     h1: 'Extract text from a PDF',
@@ -599,7 +601,7 @@ TOOLS.push(
     name: 'PDF to Markdown',
     summary: 'Convert a PDF to clean Markdown with headings and lists.',
     action: 'Convert to Markdown',
-    title: 'PDF to Markdown Converter — Private, No Upload | Fizzdoc',
+    title: 'PDF to Markdown Free — For Docs, Notes & AI, No Upload | Fizzdoc',
     description:
       'Convert a PDF to Markdown with headings and lists detected, ready for docs, notes or AI tools. Runs in your browser; nothing is uploaded. Free.',
     h1: 'Convert a PDF to Markdown',
@@ -619,9 +621,9 @@ TOOLS.push(
     name: 'Text to PDF',
     summary: 'Turn a .txt file into a clean PDF.',
     action: 'Create PDF',
-    title: 'Text to PDF (TXT to PDF) Converter — No Upload | Fizzdoc',
+    title: 'Text to PDF Free — TXT to PDF in Any Language, No Upload | Fizzdoc',
     description:
-      'Convert a plain text file to a clean, readable PDF in your browser. Supports every language, including Hindi and other scripts. Nothing is uploaded.',
+      'Convert a plain text file to a clean, readable PDF in your browser. Supports every language, including Hindi and other scripts. Free; nothing is uploaded.',
     h1: 'Convert a text file to PDF',
     lede: 'Turn notes, logs or any .txt file into a neatly formatted A4 PDF. Every language and script is supported.',
     steps: ['Add one .txt file.', 'Click “Create PDF”.', 'Choose “Save as PDF” in the window that opens and click Save.'],
@@ -635,7 +637,7 @@ TOOLS.push(
     name: 'Markdown to PDF',
     summary: 'Render a .md file as a formatted PDF.',
     action: 'Create PDF',
-    title: 'Markdown to PDF Converter — Private, No Upload | Fizzdoc',
+    title: 'Markdown to PDF Free — MD to PDF Converter, No Upload | Fizzdoc',
     description:
       'Convert Markdown to a formatted PDF with headings, lists, tables and code blocks, right in your browser. Nothing is uploaded. Free and open source.',
     h1: 'Convert Markdown to PDF',
@@ -656,9 +658,9 @@ TOOLS.push(
     name: 'Word to PDF',
     summary: 'Convert a .docx to PDF, all languages supported.',
     action: 'Convert to PDF',
-    title: 'Word to PDF (DOCX to PDF) Converter — No Upload | Fizzdoc',
+    title: 'Word to PDF Free — DOCX to PDF Converter, No Upload | Fizzdoc',
     description:
-      'Convert a Word document to PDF in your browser, keeping headings, lists, tables and images. Works with Google Docs downloads. Nothing is uploaded.',
+      'Convert a Word document to PDF in your browser, keeping headings, lists, tables and images. Works with Google Docs downloads. Free; nothing is uploaded.',
     h1: 'Convert a Word document to PDF',
     lede: 'Turn a .docx into a PDF with its headings, lists, tables and pictures, using your browser’s own PDF writer. The document never leaves your device.',
     steps: ['Add one .docx file (from Word or Google Docs).', 'Click “Convert to PDF”.', 'Choose “Save as PDF” in the window that opens and click Save.'],
@@ -679,9 +681,9 @@ TOOLS.push(
     name: 'Excel to CSV',
     summary: 'Export every sheet of an .xlsx to CSV.',
     action: 'Convert to CSV',
-    title: 'Excel to CSV (XLSX to CSV) Converter — No Upload | Fizzdoc',
+    title: 'Excel to CSV Free — XLSX to CSV Converter, No Upload | Fizzdoc',
     description:
-      'Convert Excel spreadsheets to CSV in your browser. Every sheet is exported, dates become ISO dates, and nothing is uploaded. Works with Google Sheets.',
+      'Convert Excel spreadsheets to CSV for free in your browser. Every sheet is exported, dates become ISO dates, and nothing is uploaded. Works with Google Sheets.',
     h1: 'Convert Excel to CSV',
     lede: 'Export each sheet of an .xlsx workbook to a UTF-8 CSV file that opens correctly everywhere. Dates, numbers and text are kept as they are.',
     steps: ['Add one .xlsx file (from Excel or Google Sheets).', 'Click “Convert to CSV”.', 'Download the CSV, or a ZIP with one CSV per sheet.'],
@@ -699,7 +701,7 @@ TOOLS.push(
     name: 'CSV to Excel',
     summary: 'Turn a .csv into a proper .xlsx workbook.',
     action: 'Convert to Excel',
-    title: 'CSV to Excel (CSV to XLSX) Converter — No Upload | Fizzdoc',
+    title: 'CSV to Excel Free — CSV to XLSX Converter, No Upload | Fizzdoc',
     description:
       'Convert a CSV file to an Excel .xlsx workbook in your browser. Numbers stay numbers, leading zeros are kept, and nothing is uploaded. Free.',
     h1: 'Convert CSV to Excel',
@@ -719,9 +721,9 @@ TOOLS.push(
     name: 'Compress Image',
     summary: 'Make JPG, PNG and WebP images smaller.',
     action: 'Compress images',
-    title: 'Compress Images (JPG, PNG, WebP) — No Upload, Free | Fizzdoc',
+    title: 'Compress Image Free — Reduce Size, Keep Quality, No Upload | Fizzdoc',
     description:
-      'Reduce image file size in your browser — JPG, PNG, WebP and more, in bulk. Choose the quality or keep it lossless. Photos are never uploaded.',
+      'Reduce image file size in your browser — JPG, PNG, WebP and more, in bulk. Choose the quality or keep it lossless. Free; photos are never uploaded.',
     h1: 'Compress images without uploading them',
     lede: 'Shrink photos and screenshots for email, websites and forms. Pick a quality level, or keep them lossless — all on your device, in bulk.',
     steps: ['Add one or more images.', 'Choose the output format and quality.', 'Click “Compress images” and download the result.'],
@@ -746,8 +748,8 @@ TOOLS.push(
       name: `Compress Image to ${kb} KB`,
       summary: `Get a photo or signature under ${kb} KB for an online form.`,
       action: 'Compress images',
-      title: `Compress Image to ${kb} KB Online — JPG, No Upload | Fizzdoc`,
-      description: `Make a JPG, PNG or WebP photo smaller than ${kb} KB for exam, job and government forms, keeping it as sharp as possible. Nothing is uploaded.`,
+      title: `Compress Image to ${kb} KB Free — For Forms, No Upload | Fizzdoc`,
+      description: `Make a JPG, PNG or WebP photo smaller than ${kb} KB for exam, job and government forms, keeping it as sharp as possible. Free; nothing is uploaded.`,
       h1: `Compress an image to under ${kb} KB`,
       lede: `Forms often want a photo or signature under ${kb} KB. Fizzdoc keeps the picture as large and sharp as it can, lowers the JPG quality only as far as needed, and never uploads your photo.`,
       steps: [
@@ -778,9 +780,9 @@ TOOLS.push(
     name: 'Resize Image',
     summary: 'Make images larger or smaller, by pixels or percent.',
     action: 'Resize images',
-    title: 'Resize Images Online (Enlarge or Shrink) — No Upload | Fizzdoc',
+    title: 'Resize Image Free — Change Photo Size in Pixels, No Upload | Fizzdoc',
     description:
-      'Resize images to exact pixels or a percentage — smaller or larger — in your browser, in bulk. Keep the aspect ratio or not. Nothing is uploaded.',
+      'Resize images to exact pixels or a percentage — smaller or larger — in your browser, in bulk. Keep the aspect ratio or not. Free; nothing is uploaded.',
     h1: 'Resize images — bigger or smaller',
     lede: 'Set an exact width and height or scale by percent, for one picture or many. Aspect ratio is kept unless you say otherwise.',
     steps: ['Add one or more images.', 'Enter a new size or a percentage.', 'Click “Resize images” and download the result.'],
@@ -802,9 +804,9 @@ TOOLS.push(
     name: 'Convert Image',
     summary: 'Convert between JPG, PNG and WebP.',
     action: 'Convert images',
-    title: 'Convert Images to JPG, PNG or WebP — No Upload | Fizzdoc',
+    title: 'Convert Image Free — JPG, PNG, WebP Converter, No Upload | Fizzdoc',
     description:
-      'Convert images between JPG, PNG and WebP in your browser, in bulk. Works with GIF, BMP, AVIF and iPhone photos your browser can open. Nothing is uploaded.',
+      'Convert images between JPG, PNG and WebP for free in your browser. Works with GIF, BMP, AVIF and iPhone photos your browser can open. Nothing is uploaded.',
     h1: 'Convert images to JPG, PNG or WebP',
     lede: 'Change the format of one image or a whole batch — for example WebP to JPG or PNG to WebP — without sending them anywhere.',
     steps: ['Add one or more images.', 'Choose the format you need.', 'Click “Convert images” and download the result.'],
@@ -819,9 +821,9 @@ TOOLS.push(
     name: 'Image to Text (OCR)',
     summary: 'Select and copy text from any photo or screenshot.',
     action: 'Recognize text',
-    title: 'Image to Text (OCR) — Copy Text from Photos, No Upload | Fizzdoc',
+    title: 'Image to Text Free — Copy Text from Photos (OCR), No Upload | Fizzdoc',
     description:
-      'Extract text from photos and screenshots with English OCR in your browser, then select and copy it right on the image — like Live Text. Nothing is uploaded.',
+      'Extract text from photos and screenshots for free with English OCR in your browser, then select and copy it on the image, like Live Text. Nothing is uploaded.',
     h1: 'Copy text from any image',
     lede: 'Recognize the English text in a photo, scan or screenshot, then select it directly on the picture — just like Live Text on iPhone. Nothing leaves your device.',
     steps: ['Add one image.', 'Click “Recognize text”.', 'Select text right on the image, copy it all, or download it as a .txt file.'],
@@ -851,7 +853,7 @@ for (const c of IMAGE_CONVERSIONS) {
     name: `${c.from} to ${c.to}`,
     summary: `Convert ${c.from} images to ${c.to} in bulk.`,
     action: `Convert to ${c.to}`,
-    title: `${c.from} to ${c.to} Converter — Free, No Upload | Fizzdoc`,
+    title: `${c.from} to ${c.to} Free — Convert Images Online, No Upload | Fizzdoc`,
     description: `Convert ${c.from} images to ${c.to} in your browser, one or many at once. Fast, free, no watermark, and your pictures are never uploaded.`,
     h1: `Convert ${c.from} to ${c.to} — privately`,
     lede: `${c.why} Fizzdoc converts your ${c.from} files right on your device.`,
@@ -875,7 +877,7 @@ TOOLS.push(
     name: 'Add Page Numbers',
     summary: 'Number every page of a PDF.',
     action: 'Add page numbers',
-    title: 'Add Page Numbers to PDF — Free, No Upload | Fizzdoc',
+    title: 'Add Page Numbers to PDF Free — Online, No Upload | Fizzdoc',
     description:
       'Add page numbers to a PDF in your browser. Choose the position, the starting number and “Page 1 of 10” style. Nothing is uploaded. Free, no sign-up.',
     h1: 'Add page numbers to a PDF',
@@ -895,7 +897,7 @@ TOOLS.push(
     name: 'Watermark PDF',
     summary: 'Stamp text like CONFIDENTIAL across every page.',
     action: 'Add watermark',
-    title: 'Watermark PDF — Add Text Watermark, No Upload | Fizzdoc',
+    title: 'Watermark PDF Free — Add Text Watermark, No Upload | Fizzdoc',
     description:
       'Add a text watermark such as CONFIDENTIAL or DRAFT across every page of a PDF, in your browser. Choose the opacity. Nothing is uploaded. Free.',
     h1: 'Add a watermark to a PDF',
@@ -915,7 +917,7 @@ TOOLS.push(
     name: 'PDF to PNG',
     summary: 'Save every page as a lossless PNG image.',
     action: 'Convert to PNG',
-    title: 'PDF to PNG Converter — Lossless, No Upload | Fizzdoc',
+    title: 'PDF to PNG Free — Lossless Page Images, No Upload | Fizzdoc',
     description:
       'Convert each page of a PDF to a sharp, lossless PNG image in your browser. Many pages download as one ZIP. Nothing is uploaded. Free.',
     h1: 'Convert PDF pages to PNG images',
@@ -935,9 +937,9 @@ TOOLS.push(
     name: 'Extract PDF Pages',
     summary: 'Save selected pages as a new PDF.',
     action: 'Extract pages',
-    title: 'Extract Pages from PDF — Free, Private, No Upload | Fizzdoc',
+    title: 'Extract PDF Pages Free — Save Pages as New PDF, No Upload | Fizzdoc',
     description:
-      'Pull specific pages out of a PDF into a new file, in your browser. Type pages like 2, 5-7. Links and form fields are kept. Nothing is uploaded.',
+      'Pull specific pages out of a PDF into a new file, in your browser. Type pages like 2, 5-7. Links and form fields are kept. Nothing is uploaded. Free.',
     h1: 'Extract pages from a PDF',
     lede: 'Need just the signature page or one chapter? Type the pages you want and get them as a new PDF — the original stays untouched.',
     steps: ['Add one PDF file.', 'Type the pages to extract, for example “2, 5-7”.', 'Click “Extract pages” and download the new PDF.'],
@@ -954,7 +956,7 @@ TOOLS.push(
     name: 'Reorder PDF Pages',
     summary: 'Put the pages of a PDF in a new order.',
     action: 'Reorder pages',
-    title: 'Reorder PDF Pages (Rearrange) — Free, No Upload | Fizzdoc',
+    title: 'Reorder PDF Pages Free — Rearrange Pages, No Upload | Fizzdoc',
     description:
       'Rearrange the pages of a PDF by typing the order you want, like 3, 1-2, 4-. Runs in your browser; your file is never uploaded. Free, no sign-up.',
     h1: 'Reorder the pages of a PDF',
@@ -973,9 +975,9 @@ TOOLS.push(
     name: 'PNG to PDF',
     summary: 'Turn PNG screenshots and images into one PDF.',
     action: 'Create PDF',
-    title: 'PNG to PDF Converter — Free, No Upload | Fizzdoc',
+    title: 'PNG to PDF Free — Screenshots to One PDF, No Upload | Fizzdoc',
     description:
-      'Combine PNG screenshots and images into a single PDF in your browser, one page per image, at full quality. Nothing is uploaded. No watermark.',
+      'Combine PNG screenshots and images into a single PDF in your browser, one page per image, at full quality. Nothing is uploaded. Free, no watermark.',
     h1: 'Convert PNG images to PDF',
     lede: 'Put screenshots, diagrams or scanned pages saved as PNG into one tidy PDF — sharp, lossless and in the order you choose.',
     steps: ['Add one or more PNG images.', 'Put them in order with the ↑ and ↓ buttons.', 'Click “Create PDF” and download it.'],
@@ -1010,8 +1012,8 @@ for (const o of OFFICE) {
       name: `Remove ${o.app} Metadata`,
       summary: `Erase author, company and editor names from a .${o.ext}.`,
       action: 'Remove metadata',
-      title: `Remove ${o.app} Metadata — Private, No Upload | Fizzdoc`,
-      description: `Delete author, editor, company, title and thumbnail from ${o.a} ${o.app} file in your browser. Works with ${o.google} downloads. Nothing is uploaded.`,
+      title: `Remove ${o.app} Metadata Free — Clean ${o.ext.toUpperCase()}, No Upload | Fizzdoc`,
+      description: `Delete author, editor, company, title and thumbnail from ${o.a} ${o.app} file in your browser. Works with ${o.google} downloads. Free; nothing is uploaded.`,
       h1: `Remove hidden metadata from ${o.a} ${o.app} ${o.thing}`,
       lede: `Every .${o.ext} records who created it, who edited it last and which company it belongs to. Erase those details before you send it — without uploading the file anywhere.`,
       steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Click “Remove metadata”.', `Download the clean .${o.ext}.`],
@@ -1032,8 +1034,8 @@ for (const o of OFFICE) {
       name: `Extract Images from ${o.app}`,
       summary: `Save every picture in a .${o.ext} at original quality.`,
       action: 'Extract images',
-      title: `Extract Images from ${o.app} — No Upload | Fizzdoc`,
-      description: `Download every picture embedded in ${o.a} ${o.app} ${o.thing} as a ZIP, at original resolution. Works with ${o.google} downloads. Runs in your browser.`,
+      title: `Extract Images from ${o.app} Free — ${o.ext.toUpperCase()} to ZIP, No Upload | Fizzdoc`,
+      description: `Download every picture embedded in ${o.a} ${o.app} ${o.thing} as a ZIP, at original resolution. Works with ${o.google} downloads. Free; runs in your browser.`,
       h1: `Extract all images from ${o.a} ${o.app} ${o.thing}`,
       lede: `Get every photo, logo and chart image out of a .${o.ext} in its original format and resolution — no screenshots, no re-compression, no upload.`,
       steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Click “Extract images”.', 'Download the ZIP of images.'],
@@ -1054,8 +1056,8 @@ for (const o of OFFICE) {
       name: `Compress ${o.app}`,
       summary: `Shrink a .${o.ext} by optimizing its pictures.`,
       action: `Compress ${o.app}`,
-      title: `Compress ${o.app} Files (.${o.ext}) — No Upload | Fizzdoc`,
-      description: `Reduce the size of ${o.a} ${o.app} file by recompressing its photos, in your browser. Content and formatting stay the same. Nothing is uploaded.`,
+      title: `Compress ${o.app} File Free — Reduce ${o.ext.toUpperCase()} Size, No Upload | Fizzdoc`,
+      description: `Reduce the size of ${o.a} ${o.app} file by recompressing its photos, in your browser. Content and formatting stay the same. Free; nothing is uploaded.`,
       h1: `Compress ${o.a} ${o.app} ${o.thing}`,
       lede: `Make a .${o.ext} small enough to email by recompressing oversized photos inside it. Text, formatting and everything else stay exactly the same.`,
       steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Choose Balanced or Strong compression.', `Click “Compress ${o.app}” and download the smaller file.`],
@@ -1072,6 +1074,368 @@ for (const o of OFFICE) {
   );
 }
 
+/** Real search phrases per tool, English; translations carry their own. */
+const KEYWORDS: Record<string, string[]> = {
+  'merge-pdf': [
+    'combine PDF files into one',
+    'merge PDF without uploading',
+    'join PDF files online free',
+    'merge scanned PDFs',
+    'merge PDF on phone'
+  ],
+  'split-pdf': [
+    'split PDF into separate pages',
+    'separate one page from a PDF',
+    'split a large PDF into parts',
+    'cut PDF pages online free',
+    'split PDF without Adobe'
+  ],
+  'rotate-pdf': [
+    'rotate PDF and save',
+    'fix a sideways scanned PDF',
+    'rotate one page in a PDF',
+    'turn PDF pages 90 degrees',
+    'rotate PDF online free'
+  ],
+  'delete-pdf-pages': [
+    'remove pages from a PDF',
+    'delete a blank page in a PDF',
+    'delete PDF pages without Acrobat',
+    'remove the last page of a PDF',
+    'delete pages from PDF free'
+  ],
+  'unlock-pdf': [
+    'remove password from PDF',
+    'unlock a bank statement PDF',
+    'stop a PDF asking for its password',
+    'remove PDF restrictions',
+    'unlock PDF free online'
+  ],
+  'protect-pdf': [
+    'add a password to a PDF',
+    'encrypt PDF with AES-256',
+    'lock a PDF file',
+    'password protect PDF without Acrobat',
+    'secure PDF before emailing'
+  ],
+  'remove-pdf-metadata': [
+    'remove author name from PDF',
+    'clean PDF metadata before sharing',
+    'delete hidden data in a PDF',
+    'strip XMP metadata',
+    'anonymise a PDF'
+  ],
+  'jpg-to-pdf': [
+    'convert photos to PDF',
+    'combine images into one PDF',
+    'image to PDF converter free',
+    'JPG to PDF on phone',
+    'make a PDF from pictures'
+  ],
+  'pdf-to-jpg': [
+    'convert PDF pages to images',
+    'save PDF as JPG',
+    'PDF to image high quality',
+    'extract a page from PDF as a picture',
+    'PDF to JPG on phone'
+  ],
+  'split-audio': [
+    'cut MP3 online free',
+    'trim audio file',
+    'split MP3 into parts',
+    'make a ringtone from a song',
+    'cut M4A without re-encoding'
+  ],
+  'merge-audio': [
+    'join MP3 files into one',
+    'combine audio files online',
+    'merge songs without losing quality',
+    'join voice notes',
+    'merge M4A files free'
+  ],
+  'compress-pdf': [
+    'reduce PDF file size',
+    'compress PDF without losing quality',
+    'make PDF smaller for email',
+    'compress PDF to upload on a portal',
+    'shrink scanned PDF size'
+  ],
+  'edit-pdf': [
+    'edit text in a PDF',
+    'change words in a PDF free',
+    'add text to a PDF',
+    'white out text in a PDF',
+    'PDF editor without sign-up'
+  ],
+  'redact-pdf': [
+    'black out text in a PDF',
+    'hide personal information in a PDF',
+    'redact PDF without Acrobat Pro',
+    'remove sensitive data from PDF',
+    'censor names in a PDF'
+  ],
+  'pdf-to-scanned-pdf': [
+    'make a PDF look scanned',
+    'flatten PDF to images',
+    'convert PDF to image-only PDF',
+    'black and white scan effect',
+    'stop text copying from a PDF'
+  ],
+  'ocr-pdf': [
+    'make scanned PDF searchable',
+    'OCR PDF free',
+    'copy text from scanned PDF',
+    'convert scanned PDF to text',
+    'searchable PDF without upload'
+  ],
+  'pdf-to-word': [
+    'convert PDF to editable Word',
+    'PDF to DOCX free',
+    'edit a PDF in Word',
+    'PDF to Word with headings kept',
+    'PDF to Word on phone'
+  ],
+  'pdf-to-powerpoint': [
+    'convert PDF to slides',
+    'PDF to PPT free',
+    'present a PDF in PowerPoint',
+    'PDF to presentation',
+    'PDF to Google Slides'
+  ],
+  'pdf-to-text': [
+    'extract text from PDF',
+    'copy all text from a PDF',
+    'PDF to TXT free',
+    'PDF to plain text',
+    'get text out of a PDF'
+  ],
+  'pdf-to-markdown': [
+    'convert PDF to Markdown for ChatGPT',
+    'PDF to MD free',
+    'PDF to Notion or Obsidian',
+    'extract PDF headings and lists',
+    'prepare a PDF for an AI tool'
+  ],
+  'text-to-pdf': [
+    'convert TXT to PDF',
+    'save notes as PDF',
+    'Hindi text to PDF',
+    'plain text to PDF free',
+    'make a PDF from text'
+  ],
+  'markdown-to-pdf': [
+    'convert README to PDF',
+    'MD to PDF free',
+    'print Markdown as PDF',
+    'Markdown with tables to PDF',
+    'export Markdown notes as PDF'
+  ],
+  'word-to-pdf': [
+    'convert DOCX to PDF',
+    'save Word as PDF free',
+    'Google Docs to PDF',
+    'resume to PDF',
+    'Word to PDF on phone'
+  ],
+  'excel-to-csv': [
+    'convert XLSX to CSV',
+    'export Excel sheet as CSV',
+    'Google Sheets to CSV',
+    'Excel to CSV with all sheets',
+    'XLSX to CSV free'
+  ],
+  'csv-to-excel': [
+    'open CSV in Excel correctly',
+    'CSV to XLSX free',
+    'keep leading zeros in CSV',
+    'convert CSV to spreadsheet',
+    'CSV to Excel on phone'
+  ],
+  'compress-image': [
+    'compress image without losing quality',
+    'reduce photo size',
+    'compress JPG and PNG in bulk',
+    'make images smaller for a website',
+    'reduce image size in KB'
+  ],
+  'compress-image-to-20kb': [
+    'reduce photo size to 20 KB',
+    'signature image under 20 KB',
+    'compress photo for exam form',
+    'resize image to 20 KB for SSC or UPSC form',
+    'JPG under 20 KB'
+  ],
+  'compress-image-to-50kb': [
+    'reduce photo size to 50 KB',
+    'passport photo under 50 KB',
+    'compress image for government form',
+    'resize image to 50 KB online',
+    'JPG under 50 KB'
+  ],
+  'compress-image-to-100kb': [
+    'reduce photo size to 100 KB',
+    'compress image for job application',
+    'photo under 100 KB for online form',
+    'resize image to 100 KB online',
+    'JPG under 100 KB'
+  ],
+  'resize-image': [
+    'resize image to exact pixels',
+    'change photo dimensions',
+    'resize photo for passport or visa',
+    'bulk resize images',
+    'enlarge or shrink an image'
+  ],
+  'convert-image': [
+    'convert AVIF or BMP to JPG',
+    'change image format',
+    'convert GIF or BMP to PNG',
+    'bulk image converter',
+    'image to WebP'
+  ],
+  'image-to-text': [
+    'copy text from a photo',
+    'screenshot to text',
+    'extract text from image free',
+    'OCR image to text',
+    'copy text from a phone photo'
+  ],
+  'png-to-jpg': [
+    'convert PNG to JPG free',
+    'PNG to JPEG',
+    'make PNG smaller',
+    'screenshot to JPG',
+    'bulk PNG to JPG'
+  ],
+  'jpg-to-png': [
+    'convert JPG to PNG free',
+    'JPEG to PNG',
+    'save photo as PNG',
+    'lossless image copy',
+    'bulk JPG to PNG'
+  ],
+  'webp-to-jpg': [
+    'convert WebP to JPG free',
+    'open WebP image',
+    'WebP to JPEG',
+    'save WebP as JPG',
+    'bulk WebP to JPG'
+  ],
+  'jpg-to-webp': [
+    'convert JPG to WebP free',
+    'make images smaller for a website',
+    'JPEG to WebP',
+    'WebP converter',
+    'bulk JPG to WebP'
+  ],
+  'add-page-numbers-to-pdf': [
+    'number PDF pages',
+    'add Page 1 of 10 to a PDF',
+    'insert page numbers in PDF free',
+    'page numbers for a thesis PDF',
+    'page numbers at the bottom of a PDF'
+  ],
+  'watermark-pdf': [
+    'add CONFIDENTIAL to a PDF',
+    'stamp DRAFT on PDF pages',
+    'watermark PDF free',
+    'add text watermark to PDF',
+    'watermark in Hindi or any language'
+  ],
+  'pdf-to-png': [
+    'convert PDF to PNG',
+    'PDF page to image lossless',
+    'sharp PDF page images for slides',
+    'save PDF slides as PNG',
+    'PDF to PNG free'
+  ],
+  'extract-pdf-pages': [
+    'save one page of a PDF',
+    'extract pages as new PDF',
+    'take pages out of a PDF',
+    'copy pages from a PDF',
+    'extract PDF pages free'
+  ],
+  'reorder-pdf-pages': [
+    'rearrange PDF pages',
+    'change page order in PDF',
+    'move pages in a PDF',
+    'sort PDF pages',
+    'reorder PDF free'
+  ],
+  'png-to-pdf': [
+    'convert screenshots to PDF',
+    'PNG to PDF free',
+    'combine PNG images into PDF',
+    'image to PDF without quality loss',
+    'PNG to PDF on phone'
+  ],
+  'remove-word-metadata': [
+    'remove author from Word document',
+    'clean DOCX before sharing',
+    'delete Word document properties',
+    'anonymise a Word file',
+    'remove company name from DOCX'
+  ],
+  'extract-images-from-word': [
+    'save all images from a Word file',
+    'download pictures from DOCX',
+    'get photos out of Google Docs',
+    'extract images from DOCX free',
+    'Word images at full resolution'
+  ],
+  'compress-word': [
+    'reduce Word file size',
+    'compress DOCX with images',
+    'make Word document smaller for email',
+    'shrink DOCX',
+    'compress Word free'
+  ],
+  'remove-excel-metadata': [
+    'remove author from Excel file',
+    'clean XLSX before sharing',
+    'delete Excel document properties',
+    'anonymise a spreadsheet',
+    'remove company name from XLSX'
+  ],
+  'extract-images-from-excel': [
+    'save all images from an Excel file',
+    'download pictures from XLSX',
+    'get images out of Google Sheets',
+    'extract images from XLSX free',
+    'Excel images at full resolution'
+  ],
+  'compress-excel': [
+    'reduce Excel file size',
+    'compress XLSX with images',
+    'make spreadsheet smaller for email',
+    'shrink XLSX',
+    'compress Excel free'
+  ],
+  'remove-powerpoint-metadata': [
+    'remove author from PowerPoint',
+    'clean PPTX before sharing',
+    'delete presentation properties',
+    'anonymise a presentation',
+    'remove company name from PPTX'
+  ],
+  'extract-images-from-powerpoint': [
+    'save all images from a presentation',
+    'download pictures from PPTX',
+    'get images out of Google Slides',
+    'extract images from PPTX free',
+    'slides images at full resolution'
+  ],
+  'compress-powerpoint': [
+    'reduce PowerPoint file size',
+    'compress PPTX with images',
+    'make presentation smaller for email',
+    'shrink PPTX',
+    'compress PowerPoint free'
+  ]
+};
+for (const tool of TOOLS) tool.keywords = KEYWORDS[tool.slug];
+
 export const FORMATS: Record<Format, { label: string; badge: string; ext: string }> = {
   pdf: { label: 'PDF', badge: 'PDF', ext: 'pdf' },
   word: { label: 'Word', badge: 'DOC', ext: 'docx' },
@@ -1082,14 +1446,18 @@ export const FORMATS: Record<Format, { label: string; badge: string; ext: string
 };
 
 export const HOME = {
-  title: 'Fizzdoc — Private PDF, Word, Excel & Image Tools. No Uploads.',
+  title: 'Fizzdoc — Free PDF, Image, Audio & Office Tools. No Uploads.',
   description:
-    'Edit, compress, convert, OCR and merge PDFs; convert Word, Excel and images — right in your browser. Zero uploads, no sign-up, free and open source.',
+    'Free forever: private tools to edit, compress, convert and OCR PDFs, images, audio and Office files in your browser. No uploads, no sign-up, 16 languages.',
   h1: 'Document tools that never see your documents',
   lede: 'Edit, compress, convert and OCR PDFs. Convert Word, Excel, PowerPoint and images, and cut or join audio. Everything runs in your browser — your files never leave your device.',
   what: 'Fizzdoc is a free, open-source set of document tools that runs entirely in your web browser. PDFs are processed with the qpdf, pdf.js and pdf-lib engines, text recognition uses Tesseract, and Office files and images are handled locally too — so nothing is ever uploaded to a server.',
   faq: [
     PRIVACY_FAQ[0],
+    [
+      'Is it safe to use for bank statements, ID cards or medical records?',
+      'Yes. The file is opened and processed inside your browser tab and is never sent anywhere, so there is no copy on a server that could leak, be sold or be hacked. Your browser enforces this, you can confirm it in the Network tab, and closing the tab clears everything.',
+    ],
     [
       'How is Fizzdoc different from iLovePDF, Smallpdf or Adobe’s online tools?',
       'Those services upload your document to their servers to process it. Fizzdoc does the work in your browser tab instead, so there is nothing to upload, store or delete afterwards. It is also open source, and it warns you whenever something such as a bookmark cannot be carried over instead of silently dropping it.',

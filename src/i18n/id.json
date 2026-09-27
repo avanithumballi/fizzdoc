@@ -24,7 +24,7 @@
     "format.powerpoint": "PowerPoint",
     "format.image": "Gambar",
     "group.title": "Alat {format}",
-    "home.eyebrow": "0 byte diunggah · Open source · Gratis",
+    "home.eyebrow": "0 byte diunggah · Open source · Gratis selamanya",
     "home.cta": "Gabung PDF",
     "home.browse": "Jelajahi semua {n} alat",
     "home.formats": "Format yang didukung",
@@ -37,7 +37,8 @@
     "home.toolsTitle": "Semua alat, privat secara default",
     "home.toolsLede": "Pilih alat. File Anda diproses di perangkat ini dan tidak pernah menyentuh server.",
     "home.whatTitle": "Apa itu {name}?",
-    "tool.eyebrow": "Berjalan di perangkat Anda · 0 byte diunggah",
+    "tool.eyebrow": "Gratis selamanya · Jalan di perangkat Anda · 0 byte diunggah",
+    "tool.uses": "Cocok juga untuk",
     "tool.how": "Cara menggunakan {tool}",
     "tool.more": "Alat privat lainnya",
     "crumbs.label": "Navigasi breadcrumb",
@@ -244,8 +245,8 @@
     "au.download": "Unduh"
   },
   "home": {
-    "title": "Fizzdoc — Alat PDF, Word, Excel & Gambar Privat, Tanpa Upload",
-    "description": "Edit, kompres, konversi, OCR, dan gabungkan PDF; konversi Word, Excel, dan gambar — di browser Anda. Tanpa upload, tanpa daftar, gratis, open source.",
+    "title": "Fizzdoc — Alat PDF, Gambar, Audio & Office Gratis. Tanpa Upload.",
+    "description": "Gratis selamanya: alat privat untuk edit, kompres, konversi, dan OCR file PDF, gambar, audio, dan Office di browser. Tanpa upload, tanpa daftar, 16 bahasa.",
     "h1": "Alat dokumen yang tidak pernah melihat dokumen Anda",
     "lede": "Edit, kompres, konversi, dan OCR PDF. Konversi Word, Excel, PowerPoint, dan gambar, serta potong atau gabungkan audio. Semuanya berjalan di browser Anda — file Anda tidak pernah meninggalkan perangkat Anda.",
     "what": "Fizzdoc adalah kumpulan alat dokumen gratis dan open source yang berjalan sepenuhnya di browser web Anda. PDF diproses dengan mesin qpdf, pdf.js, dan pdf-lib, pengenalan teks memakai Tesseract, dan file Office serta gambar juga ditangani secara lokal — jadi tidak ada yang pernah diunggah ke server.",
@@ -253,6 +254,10 @@
       [
         "Apakah file saya diunggah ke suatu tempat?",
         "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+      ],
+      [
+        "Amankah untuk rekening koran, KTP, atau rekam medis?",
+        "Ya. File dibuka dan diproses di tab browser Anda dan tidak pernah dikirim ke mana pun, jadi tidak ada salinan di server yang bisa bocor, dijual, atau diretas. Browser Anda yang memastikan ini, Anda bisa memeriksanya sendiri di tab Network, dan menutup tab akan menghapus semuanya."
       ],
       [
         "Apa bedanya Fizzdoc dengan iLovePDF, Smallpdf, atau alat online Adobe?",
@@ -268,7 +273,7 @@
       ],
       [
         "Apakah Fizzdoc gratis?",
-        "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+        "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
       ]
     ]
   },
@@ -277,7 +282,7 @@
       "name": "Gabung PDF",
       "summary": "Gabungkan beberapa PDF menjadi satu, sesuai urutan pilihan Anda.",
       "action": "Gabungkan PDF",
-      "title": "Gabung PDF Online Secara Privat — Tanpa Upload, Gratis | Fizzdoc",
+      "title": "Gabung PDF Gratis — Satukan File PDF, Tanpa Upload | Fizzdoc",
       "description": "Gabungkan file PDF langsung di browser Anda. Tidak ada yang diunggah, dan form field serta link tetap utuh. Gratis, tanpa daftar, open source.",
       "h1": "Gabung file PDF tanpa mengunggahnya",
       "lede": "Gabungkan beberapa PDF menjadi satu dokumen langsung di browser Anda. Tidak ada yang dikirim ke server, dan form field serta link internal tetap utuh setelah digabung.",
@@ -305,15 +310,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "gabung file pdf jadi satu",
+        "gabung pdf tanpa upload",
+        "satukan pdf online gratis",
+        "gabung pdf hasil scan",
+        "gabung pdf di hp"
       ]
     },
     "split-pdf": {
       "name": "Pisah PDF",
       "summary": "Ambil halaman yang Anda butuhkan menjadi PDF baru.",
       "action": "Ekstrak halaman",
-      "title": "Pisah PDF & Ekstrak Halaman Secara Privat — Tanpa Upload | Fizzdoc",
+      "title": "Pisah PDF Gratis — Pisahkan Halaman, Tanpa Upload | Fizzdoc",
       "description": "Ekstrak halaman dari PDF di browser Anda. Pilih rentang seperti 1-3, 8 — file Anda tidak pernah meninggalkan perangkat. Gratis, tanpa daftar, open source.",
       "h1": "Pisah PDF dan ekstrak halaman — secara privat",
       "lede": "Ambil halaman yang Anda butuhkan ke dalam PDF baru. Ketik rentang seperti “1-3, 8”; urutan yang Anda ketik adalah urutan hasilnya.",
@@ -337,16 +349,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "pisah pdf jadi per halaman",
+        "ambil satu halaman dari pdf",
+        "pisah pdf besar jadi bagian",
+        "potong halaman pdf online gratis",
+        "pisah pdf tanpa adobe"
       ]
     },
     "rotate-pdf": {
       "name": "Putar PDF",
       "summary": "Luruskan halaman yang miring, secara permanen.",
       "action": "Putar halaman",
-      "title": "Putar Halaman PDF Secara Permanen — Tanpa Upload | Fizzdoc",
-      "description": "Putar semua atau sebagian halaman PDF sebesar 90°, 180°, atau 270° dan simpan hasilnya. Berjalan di browser Anda; file tidak pernah diunggah.",
+      "title": "Putar PDF Gratis — Putar Halaman, Tanpa Upload | Fizzdoc",
+      "description": "Putar semua atau sebagian halaman PDF sebesar 90°, 180°, atau 270° dan simpan hasilnya. Berjalan di browser Anda; file tidak pernah diunggah. Gratis.",
       "h1": "Putar halaman PDF dan simpan hasilnya",
       "lede": "Perbaiki hasil scan yang miring untuk selamanya. Putar semua halaman atau hanya yang Anda pilih — tanpa render ulang, jadi kualitas tetap terjaga.",
       "steps": [
@@ -369,15 +388,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "putar pdf lalu simpan",
+        "perbaiki hasil scan pdf yang miring",
+        "putar satu halaman di pdf",
+        "putar halaman pdf 90 derajat",
+        "putar pdf online gratis"
       ]
     },
     "delete-pdf-pages": {
       "name": "Hapus Halaman PDF",
       "summary": "Hapus halaman yang tidak ingin Anda bagikan.",
       "action": "Hapus halaman",
-      "title": "Hapus Halaman dari PDF — Privat, Tanpa Upload | Fizzdoc",
+      "title": "Hapus Halaman PDF Gratis — Online, Tanpa Upload | Fizzdoc",
       "description": "Hapus halaman yang tidak diinginkan dari PDF di browser Anda. Ketik halaman yang ingin dihapus; file tidak pernah meninggalkan perangkat. Gratis, open source.",
       "h1": "Hapus halaman dari PDF — secara privat",
       "lede": "Hapus halaman kosong, duplikat, atau rahasia sebelum membagikan dokumen, tanpa menyerahkannya ke siapa pun.",
@@ -397,15 +423,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hapus halaman dari pdf",
+        "hapus halaman kosong di pdf",
+        "hapus halaman pdf tanpa acrobat",
+        "hapus halaman terakhir pdf",
+        "hapus halaman pdf gratis"
       ]
     },
     "unlock-pdf": {
       "name": "Buka Kunci PDF",
       "summary": "Simpan salinan PDF tanpa kata sandi yang Anda ketahui.",
       "action": "Hapus kata sandi",
-      "title": "Hapus Kata Sandi PDF (Unlock PDF) — Tanpa Upload | Fizzdoc",
+      "title": "Buka Kunci PDF Gratis — Hapus Kata Sandi | Fizzdoc",
       "description": "Hapus kata sandi dari PDF yang berhak Anda buka. Proses dekripsi terjadi di perangkat Anda, tidak ada yang diunggah. Gratis, tanpa daftar.",
       "h1": "Hapus kata sandi PDF — di perangkat Anda",
       "lede": "Simpan salinan PDF terproteksi yang sudah bisa Anda buka, tanpa kata sandi. Kata sandi dan dokumennya tetap ada di perangkat Anda.",
@@ -429,15 +462,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hapus kata sandi dari pdf",
+        "buka kunci pdf rekening koran",
+        "pdf selalu minta kata sandi",
+        "hapus proteksi pdf",
+        "buka kunci pdf online gratis"
       ]
     },
     "protect-pdf": {
       "name": "Proteksi PDF",
       "summary": "Kunci PDF dengan kata sandi dan enkripsi AES-256.",
       "action": "Proteksi PDF",
-      "title": "Beri Kata Sandi PDF dengan AES-256 — Tanpa Upload | Fizzdoc",
+      "title": "Proteksi PDF Gratis — Kata Sandi AES-256 | Fizzdoc",
       "description": "Tambahkan kata sandi ke PDF dengan enkripsi AES-256, langsung di browser Anda. File dan kata sandinya tidak pernah meninggalkan perangkat. Gratis.",
       "h1": "Beri kata sandi pada PDF — di perangkat Anda",
       "lede": "Enkripsi PDF dengan AES-256 agar hanya terbuka dengan kata sandi Anda. Enkripsi terjadi di tab ini; file maupun kata sandinya tidak dikirim ke mana pun.",
@@ -461,15 +501,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "tambah kata sandi ke pdf",
+        "enkripsi pdf aes-256",
+        "kunci file pdf dengan kata sandi",
+        "proteksi pdf tanpa acrobat",
+        "amankan pdf sebelum dikirim email"
       ]
     },
     "remove-pdf-metadata": {
       "name": "Hapus Metadata PDF",
       "summary": "Bersihkan penulis, judul, aplikasi pembuat, dan data XMP.",
       "action": "Hapus metadata",
-      "title": "Hapus Metadata PDF (Penulis, Judul, XMP) — Tanpa Upload | Fizzdoc",
+      "title": "Hapus Metadata PDF Gratis — Penulis, XMP | Fizzdoc",
       "description": "Hapus metadata tersembunyi di PDF seperti penulis, judul, aplikasi pembuat, dan data XMP sebelum dibagikan. Berjalan di browser; tidak ada yang diunggah.",
       "h1": "Hapus metadata tersembunyi dari PDF",
       "lede": "PDF diam-diam mencatat siapa penulisnya, dengan aplikasi apa, dan kapan. Bersihkan penulis, judul, subjek, kata kunci, producer, dan metadata XMP sebelum berbagi.",
@@ -489,16 +536,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hapus nama penulis dari pdf",
+        "bersihkan metadata pdf sebelum dibagikan",
+        "hapus data tersembunyi di pdf",
+        "hapus data xmp pdf",
+        "anonimkan file pdf"
       ]
     },
     "jpg-to-pdf": {
       "name": "JPG ke PDF",
       "summary": "Ubah foto dan hasil scan menjadi satu PDF.",
       "action": "Buat PDF",
-      "title": "Konverter JPG ke PDF — Privat, Tanpa Upload, Gratis | Fizzdoc",
-      "description": "Konversi JPG, PNG, WebP, dan gambar lain menjadi satu PDF di browser Anda. Foto tidak pernah meninggalkan perangkat. Tanpa watermark, tanpa daftar.",
+      "title": "JPG ke PDF Gratis — Foto Jadi PDF, Tanpa Upload | Fizzdoc",
+      "description": "Konversi JPG, PNG, WebP, dan gambar lain menjadi satu PDF di browser Anda. Foto tidak pernah meninggalkan perangkat. Tanpa watermark, tanpa daftar. Gratis.",
       "h1": "Konversi gambar JPG dan PNG ke PDF — secara privat",
       "lede": "Gabungkan foto, tangkapan layar, dan hasil scan menjadi satu PDF, satu halaman per gambar, dengan resolusi penuh. Foto Anda tetap di perangkat Anda.",
       "steps": [
@@ -521,16 +575,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah foto jadi pdf",
+        "gabung beberapa gambar jadi satu pdf",
+        "konversi gambar ke pdf gratis",
+        "jpg ke pdf di hp",
+        "buat pdf dari foto"
       ]
     },
     "pdf-to-jpg": {
       "name": "PDF ke JPG",
       "summary": "Simpan setiap halaman sebagai gambar JPG yang tajam.",
       "action": "Konversi ke JPG",
-      "title": "Konverter PDF ke JPG — Privat, Tanpa Upload, Gratis | Fizzdoc",
-      "description": "Konversi setiap halaman PDF menjadi gambar JPG berkualitas tinggi di browser Anda. Tidak ada yang diunggah. Banyak halaman diunduh sebagai satu ZIP.",
+      "title": "PDF ke JPG Gratis — Kualitas Tinggi, Tanpa Upload | Fizzdoc",
+      "description": "Konversi setiap halaman PDF menjadi gambar JPG berkualitas tinggi di browser Anda. Tidak ada yang diunggah. Banyak halaman diunduh sebagai satu ZIP. Gratis.",
       "h1": "Konversi halaman PDF ke gambar JPG — secara privat",
       "lede": "Render setiap halaman menjadi JPG 150 DPI yang tajam memakai pdf.js milik Mozilla, langsung di browser Anda. PDF banyak halaman diunduh sebagai satu ZIP.",
       "steps": [
@@ -553,15 +614,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah halaman pdf jadi gambar",
+        "simpan pdf sebagai jpg",
+        "pdf ke gambar kualitas tinggi",
+        "ambil halaman pdf jadi foto",
+        "pdf ke jpg di hp"
       ]
     },
     "compress-pdf": {
       "name": "Kompres PDF",
       "summary": "Perkecil ukuran PDF dengan mengoptimalkan gambarnya. Teks tetap tajam.",
       "action": "Kompres PDF",
-      "title": "Kompres PDF Online Tanpa Upload — Gratis | Fizzdoc",
+      "title": "Kompres PDF Gratis — Perkecil Ukuran PDF | Fizzdoc",
       "description": "Perkecil ukuran file PDF di browser Anda dengan mengompresi ulang gambar yang terlalu besar. Teks tetap tajam dan bisa diseleksi. Tanpa upload, open source.",
       "h1": "Kompres PDF — tanpa mengunggahnya",
       "lede": "Perkecil PDF agar cukup ringan untuk dikirim lewat email atau diunggah ke portal. Fizzdoc mengompresi ulang foto dan scan yang terlalu besar, tanpa menyentuh teks dan grafik vektor.",
@@ -585,16 +653,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil ukuran file pdf",
+        "kompres pdf tanpa turun kualitas",
+        "perkecil pdf untuk email",
+        "kompres pdf untuk upload ke portal",
+        "perkecil ukuran pdf hasil scan"
       ]
     },
     "edit-pdf": {
       "name": "Edit PDF",
       "summary": "Ubah teks yang ada, tambah teks baru, dan blok putih, langsung di halaman.",
       "action": "Simpan PDF",
-      "title": "Edit Teks PDF Online — Gratis, Tanpa Upload | Fizzdoc",
-      "description": "Klik teks di PDF untuk mengubahnya, tambahkan teks baru, atau blok area tertentu — langsung di halaman, di browser Anda. Tanpa upload, tanpa daftar.",
+      "title": "Edit PDF Gratis — Ubah Teks Online | Fizzdoc",
+      "description": "Klik teks di PDF untuk mengubahnya, tambahkan teks baru, atau blok area tertentu — langsung di halaman, di browser Anda. Tanpa upload, tanpa daftar. Gratis.",
       "h1": "Edit teks PDF langsung di halaman",
       "lede": "Perbaiki salah ketik, ubah tanggal, atau isi bagian kosong tanpa file aslinya. Klik teks yang ingin diubah lalu ketik — semuanya terjadi di perangkat Anda.",
       "steps": [
@@ -617,15 +692,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "edit teks di pdf",
+        "ubah kata di pdf gratis",
+        "tambah teks ke pdf",
+        "hapus teks jadi putih di pdf",
+        "editor pdf tanpa daftar"
       ]
     },
     "redact-pdf": {
       "name": "Sensor PDF",
       "summary": "Hitamkan teks, tanda tangan, atau foto agar hilang selamanya.",
       "action": "Simpan PDF yang Disensor",
-      "title": "Sensor PDF Online — Hapus Teks Selamanya, Tanpa Upload | Fizzdoc",
+      "title": "Sensor PDF Gratis — Hitamkan Permanen | Fizzdoc",
       "description": "Hitamkan nama, nomor, tanda tangan, atau foto di PDF dan simpan salinan yang benar-benar menghilangkannya. Berjalan di browser Anda; tanpa upload. Gratis.",
       "h1": "Sensor PDF: hitamkan apa saja selamanya",
       "lede": "Seret area yang harus hilang, atau cari nama atau nomor lalu tandai setiap kecocokan. Saat disimpan, setiap halaman menjadi gambar, jadi teks yang disembunyikan tidak bisa disalin atau dipulihkan.",
@@ -649,15 +731,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hitamkan teks di pdf",
+        "sembunyikan info pribadi di pdf",
+        "sensor pdf tanpa acrobat pro",
+        "hapus data sensitif dari pdf",
+        "sensor nama di pdf"
       ]
     },
     "pdf-to-scanned-pdf": {
       "name": "PDF ke PDF Hasil Scan",
       "summary": "Ubah setiap halaman menjadi gambar, seperti dokumen hasil scan.",
       "action": "Buat PDF Hasil Scan",
-      "title": "PDF ke PDF Hasil Scan — Tampilan Scan, Tanpa Upload | Fizzdoc",
+      "title": "PDF ke PDF Hasil Scan Gratis — Tampilan Scan | Fizzdoc",
       "description": "Ubah PDF menjadi PDF berbasis gambar bertampilan scan: berwarna, hitam putih, atau tampilan scanner asli. Berjalan di browser Anda; tanpa upload. Gratis.",
       "h1": "Ubah PDF menjadi PDF hasil scan",
       "lede": "Setiap halaman menjadi gambar, jadi teksnya tidak bisa dipilih atau diedit. Pertahankan warnanya, ubah jadi hitam putih, atau tambahkan sedikit kemiringan dan tekstur kertas agar terlihat seperti hasil scan.",
@@ -681,16 +770,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "buat pdf terlihat seperti hasil scan",
+        "ubah pdf jadi gambar",
+        "ubah pdf jadi pdf berbasis gambar",
+        "efek scan hitam putih pdf",
+        "cegah teks pdf disalin"
       ]
     },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Buat PDF hasil scan bisa dicari dan disalin.",
       "action": "Kenali teks",
-      "title": "OCR PDF — Buat PDF Scan Bisa Dicari, Tanpa Upload | Fizzdoc",
-      "description": "Ubah PDF hasil scan menjadi dokumen bisa dicari dan disalin dengan OCR bahasa Inggris di browser. Kualitas halaman terjaga. Tanpa upload.",
+      "title": "OCR PDF Gratis — Bikin PDF Scan Bisa Dicari | Fizzdoc",
+      "description": "Ubah PDF hasil scan menjadi dokumen bisa dicari dan disalin dengan OCR bahasa Inggris di browser. Kualitas halaman terjaga. Tanpa upload. Gratis.",
       "h1": "Buat PDF hasil scan bisa dicari dengan OCR",
       "lede": "Kenali teks bahasa Inggris pada halaman hasil scan dan tambahkan sebagai lapisan tak terlihat, sehingga Anda bisa mencari, menyeleksi, dan menyalinnya. Halamannya sendiri tidak berubah.",
       "steps": [
@@ -713,16 +809,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "bikin pdf hasil scan bisa dicari",
+        "ocr pdf gratis",
+        "salin teks dari pdf hasil scan",
+        "ubah pdf scan jadi teks",
+        "pdf bisa dicari tanpa upload"
       ]
     },
     "pdf-to-word": {
       "name": "PDF ke Word",
       "summary": "Ubah teks PDF menjadi .docx yang bisa diedit.",
       "action": "Konversi ke Word",
-      "title": "Konverter PDF ke Word (DOCX) — Privat, Tanpa Upload | Fizzdoc",
-      "description": "Konversi PDF menjadi dokumen Word yang bisa diedit di browser Anda. Heading, paragraf, dan page break tetap dipertahankan. Tanpa upload, tanpa daftar.",
+      "title": "PDF ke Word Gratis — DOCX Bisa Diedit | Fizzdoc",
+      "description": "Konversi PDF menjadi dokumen Word yang bisa diedit di browser Anda. Heading, paragraf, dan page break tetap dipertahankan. Tanpa upload, tanpa daftar. Gratis.",
       "h1": "Konversi PDF menjadi dokumen Word yang bisa diedit",
       "lede": "Pindahkan teks PDF ke Word, dengan heading dan paragraf yang disusun ulang, sehingga bisa Anda edit. Konversi terjadi di perangkat Anda.",
       "steps": [
@@ -745,15 +848,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah pdf jadi word bisa diedit",
+        "pdf ke docx gratis",
+        "edit pdf di word",
+        "pdf ke word dengan heading tetap",
+        "pdf ke word di hp"
       ]
     },
     "pdf-to-powerpoint": {
       "name": "PDF ke PowerPoint",
       "summary": "Ubah setiap halaman PDF menjadi slide.",
       "action": "Konversi ke PowerPoint",
-      "title": "Konverter PDF ke PowerPoint (PPTX) — Tanpa Upload | Fizzdoc",
+      "title": "PDF ke PowerPoint Gratis — PDF ke PPTX | Fizzdoc",
       "description": "Konversi PDF menjadi presentasi PowerPoint dengan satu slide tajam per halaman, langsung di browser Anda. Tanpa upload, gratis dan open source.",
       "h1": "Konversi PDF menjadi presentasi PowerPoint",
       "lede": "Presentasikan PDF sebagai slide. Setiap halaman menjadi slide beresolusi tinggi berukuran penuh dalam file .pptx yang bisa dibuka di PowerPoint, Keynote, atau Google Slides.",
@@ -773,15 +883,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah pdf jadi slide",
+        "pdf ke ppt gratis",
+        "presentasikan pdf di powerpoint",
+        "pdf jadi presentasi",
+        "pdf ke google slides"
       ]
     },
     "pdf-to-text": {
       "name": "PDF ke Teks",
       "summary": "Ekstrak semua teks dari PDF menjadi file .txt.",
       "action": "Ekstrak teks",
-      "title": "Konverter PDF ke Teks (TXT) — Privat, Tanpa Upload | Fizzdoc",
+      "title": "PDF ke Teks Gratis — Ekstrak Teks dari PDF | Fizzdoc",
       "description": "Ekstrak teks dari PDF menjadi file .txt biasa di browser Anda, sesuai urutan baca. Tanpa upload, tanpa daftar, gratis dan open source.",
       "h1": "Ekstrak teks dari PDF",
       "lede": "Ambil setiap kata dari PDF sebagai teks biasa, dengan baris dan paragraf sesuai urutan bacanya. Cocok untuk disalin, dicari, atau dimasukkan ke alat lain.",
@@ -801,15 +918,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ambil teks dari pdf",
+        "salin semua teks dari pdf",
+        "pdf ke txt gratis",
+        "pdf ke teks polos",
+        "ambil teks dari pdf online"
       ]
     },
     "pdf-to-markdown": {
       "name": "PDF ke Markdown",
       "summary": "Konversi PDF menjadi Markdown bersih dengan heading dan daftar.",
       "action": "Konversi ke Markdown",
-      "title": "Konverter PDF ke Markdown — Privat, Tanpa Upload | Fizzdoc",
+      "title": "PDF ke Markdown Gratis — Untuk Catatan & AI | Fizzdoc",
       "description": "Konversi PDF ke Markdown dengan heading dan daftar terdeteksi otomatis, siap untuk dokumentasi, catatan, atau alat AI. Berjalan di browser; tanpa upload.",
       "h1": "Konversi PDF menjadi Markdown",
       "lede": "Ubah PDF menjadi Markdown yang bersih — heading, paragraf, dan daftar — untuk Notion, Obsidian, GitHub, atau alat apa pun yang membaca Markdown.",
@@ -829,15 +953,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah pdf jadi markdown untuk chatgpt",
+        "pdf ke md gratis",
+        "pdf ke notion atau obsidian",
+        "ambil heading dan daftar dari pdf",
+        "siapkan pdf untuk alat ai"
       ]
     },
     "text-to-pdf": {
       "name": "Teks ke PDF",
       "summary": "Ubah file .txt menjadi PDF yang rapi.",
       "action": "Buat PDF",
-      "title": "Konverter Teks ke PDF (TXT ke PDF) — Tanpa Upload | Fizzdoc",
+      "title": "Teks ke PDF Gratis — TXT ke PDF Semua Bahasa | Fizzdoc",
       "description": "Konversi file teks biasa menjadi PDF yang rapi dan mudah dibaca di browser Anda. Mendukung semua bahasa, termasuk Hindi dan aksara lainnya. Tanpa upload.",
       "h1": "Konversi file teks menjadi PDF",
       "lede": "Ubah catatan, log, atau file .txt apa pun menjadi PDF A4 yang tersusun rapi. Semua bahasa dan aksara didukung.",
@@ -857,15 +988,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah txt jadi pdf",
+        "simpan catatan sebagai pdf",
+        "teks ke pdf gratis",
+        "teks polos ke pdf",
+        "buat pdf dari teks"
       ]
     },
     "markdown-to-pdf": {
       "name": "Markdown ke PDF",
       "summary": "Render file .md menjadi PDF yang sudah diformat.",
       "action": "Buat PDF",
-      "title": "Konverter Markdown ke PDF — Privat, Tanpa Upload | Fizzdoc",
+      "title": "Markdown ke PDF Gratis — MD ke PDF | Fizzdoc",
       "description": "Konversi Markdown menjadi PDF yang rapi dengan heading, daftar, tabel, dan blok kode, langsung di browser Anda. Tanpa upload, gratis dan open source.",
       "h1": "Konversi Markdown menjadi PDF",
       "lede": "Render README, catatan, atau dokumentasi yang ditulis dalam Markdown menjadi PDF bersih dan siap cetak lengkap dengan heading, daftar, tabel, dan blok kode.",
@@ -889,15 +1027,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah readme jadi pdf",
+        "md ke pdf gratis",
+        "cetak markdown sebagai pdf",
+        "markdown dengan tabel ke pdf",
+        "ekspor catatan markdown jadi pdf"
       ]
     },
     "word-to-pdf": {
       "name": "Word ke PDF",
       "summary": "Konversi .docx ke PDF, semua bahasa didukung.",
       "action": "Konversi ke PDF",
-      "title": "Konverter Word ke PDF (DOCX ke PDF) — Tanpa Upload | Fizzdoc",
+      "title": "Word ke PDF Gratis — DOCX ke PDF | Fizzdoc",
       "description": "Konversi dokumen Word ke PDF di browser Anda, dengan heading, daftar, tabel, dan gambar tetap terjaga. Kompatibel dengan unduhan Google Docs. Tanpa upload.",
       "h1": "Konversi dokumen Word menjadi PDF",
       "lede": "Ubah .docx menjadi PDF lengkap dengan heading, daftar, tabel, dan gambarnya, memakai penulis PDF bawaan browser Anda. Dokumen tidak pernah meninggalkan perangkat Anda.",
@@ -921,16 +1066,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah docx jadi pdf",
+        "simpan word sebagai pdf gratis",
+        "google docs ke pdf",
+        "cv jadi pdf",
+        "word ke pdf di hp"
       ]
     },
     "excel-to-csv": {
       "name": "Excel ke CSV",
       "summary": "Ekspor setiap sheet dari .xlsx ke CSV.",
       "action": "Konversi ke CSV",
-      "title": "Konverter Excel ke CSV (XLSX ke CSV) — Tanpa Upload | Fizzdoc",
-      "description": "Konversi spreadsheet Excel ke CSV di browser Anda. Setiap sheet diekspor, tanggal menjadi format ISO, tanpa upload. Kompatibel dengan Google Sheets.",
+      "title": "Excel ke CSV Gratis — XLSX ke CSV | Fizzdoc",
+      "description": "Konversi spreadsheet Excel ke CSV di browser Anda. Setiap sheet diekspor, tanggal menjadi format ISO, tanpa upload. Kompatibel dengan Google Sheets. Gratis.",
       "h1": "Konversi Excel menjadi CSV",
       "lede": "Ekspor setiap sheet dari workbook .xlsx menjadi file CSV UTF-8 yang terbuka dengan benar di mana saja. Tanggal, angka, dan teks tetap seperti aslinya.",
       "steps": [
@@ -953,15 +1105,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah xlsx jadi csv",
+        "ekspor sheet excel jadi csv",
+        "google sheets ke csv",
+        "excel ke csv semua sheet",
+        "xlsx ke csv gratis"
       ]
     },
     "csv-to-excel": {
       "name": "CSV ke Excel",
       "summary": "Ubah .csv menjadi workbook .xlsx yang sesungguhnya.",
       "action": "Konversi ke Excel",
-      "title": "Konverter CSV ke Excel (CSV ke XLSX) — Tanpa Upload | Fizzdoc",
+      "title": "CSV ke Excel Gratis — CSV ke XLSX | Fizzdoc",
       "description": "Konversi file CSV menjadi workbook Excel .xlsx di browser Anda. Angka tetap angka, nol di depan tetap terjaga, tanpa upload. Gratis.",
       "h1": "Konversi CSV menjadi Excel",
       "lede": "Ubah CSV menjadi workbook Excel sesungguhnya. Angka menjadi angka, kode seperti 007 tetap mempertahankan nol di depan, dan pemisahnya terdeteksi otomatis.",
@@ -981,15 +1140,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "buka csv di excel dengan benar",
+        "csv ke xlsx gratis",
+        "pertahankan angka nol di depan csv",
+        "ubah csv jadi spreadsheet",
+        "csv ke excel di hp"
       ]
     },
     "compress-image": {
       "name": "Kompres Gambar",
       "summary": "Perkecil ukuran gambar JPG, PNG, dan WebP.",
       "action": "Kompres gambar",
-      "title": "Kompres Gambar (JPG, PNG, WebP) — Tanpa Upload, Gratis | Fizzdoc",
+      "title": "Kompres Gambar Gratis — Kualitas Tetap Terjaga | Fizzdoc",
       "description": "Perkecil ukuran file gambar di browser Anda — JPG, PNG, WebP, dan lainnya, sekaligus banyak. Pilih kualitasnya atau tetap lossless. Foto tidak pernah diunggah.",
       "h1": "Kompres gambar tanpa mengunggahnya",
       "lede": "Perkecil foto dan tangkapan layar untuk email, situs web, dan formulir. Pilih tingkat kualitas, atau tetap lossless — semuanya di perangkat Anda, sekaligus banyak file.",
@@ -1013,16 +1179,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "kompres gambar tanpa turun kualitas",
+        "perkecil ukuran foto",
+        "kompres jpg dan png sekaligus banyak",
+        "perkecil gambar untuk website",
+        "perkecil ukuran gambar dalam kb"
       ]
     },
     "compress-image-to-20kb": {
       "name": "Kompres Gambar ke 20 KB",
       "summary": "Buat foto atau tanda tangan di bawah 20 KB untuk formulir online.",
       "action": "Kompres gambar",
-      "title": "Kompres Gambar ke 20 KB Online — JPG, Tanpa Unggah | Fizzdoc",
-      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 20 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah.",
+      "title": "Kompres Gambar ke 20 KB Gratis — Untuk Formulir | Fizzdoc",
+      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 20 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah. Gratis.",
       "h1": "Kompres gambar menjadi di bawah 20 KB",
       "lede": "Formulir sering meminta foto atau tanda tangan di bawah 20 KB. Fizzdoc menjaga foto sebesar dan setajam mungkin, menurunkan kualitas JPG hanya sebatas yang diperlukan, dan tidak pernah mengunggah foto Anda.",
       "steps": [
@@ -1045,16 +1218,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil foto jadi 20 kb",
+        "foto tanda tangan di bawah 20 kb",
+        "kompres foto untuk formulir ujian",
+        "ubah ukuran gambar ke 20 kb untuk formulir ssc atau upsc",
+        "jpg di bawah 20 kb"
       ]
     },
     "compress-image-to-50kb": {
       "name": "Kompres Gambar ke 50 KB",
       "summary": "Buat foto atau tanda tangan di bawah 50 KB untuk formulir online.",
       "action": "Kompres gambar",
-      "title": "Kompres Gambar ke 50 KB Online — JPG, Tanpa Unggah | Fizzdoc",
-      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 50 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah.",
+      "title": "Kompres Gambar ke 50 KB Gratis — Untuk Formulir | Fizzdoc",
+      "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 50 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah. Gratis.",
       "h1": "Kompres gambar menjadi di bawah 50 KB",
       "lede": "Formulir sering meminta foto atau tanda tangan di bawah 50 KB. Fizzdoc menjaga foto sebesar dan setajam mungkin, menurunkan kualitas JPG hanya sebatas yang diperlukan, dan tidak pernah mengunggah foto Anda.",
       "steps": [
@@ -1077,15 +1257,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil foto jadi 50 kb",
+        "pas foto di bawah 50 kb",
+        "kompres gambar untuk formulir pemerintah",
+        "ubah ukuran gambar ke 50 kb online",
+        "jpg di bawah 50 kb"
       ]
     },
     "compress-image-to-100kb": {
       "name": "Kompres Gambar ke 100 KB",
       "summary": "Buat foto atau tanda tangan di bawah 100 KB untuk formulir online.",
       "action": "Kompres gambar",
-      "title": "Kompres Gambar ke 100 KB Online — JPG, Tanpa Unggah | Fizzdoc",
+      "title": "Kompres Gambar ke 100 KB Gratis — Untuk Formulir | Fizzdoc",
       "description": "Perkecil foto JPG, PNG atau WebP menjadi di bawah 100 KB untuk ujian dan formulir pemerintah, sambil menjaganya setajam mungkin. Tidak ada yang diunggah.",
       "h1": "Kompres gambar menjadi di bawah 100 KB",
       "lede": "Formulir sering meminta foto atau tanda tangan di bawah 100 KB. Fizzdoc menjaga foto sebesar dan setajam mungkin, menurunkan kualitas JPG hanya sebatas yang diperlukan, dan tidak pernah mengunggah foto Anda.",
@@ -1109,15 +1296,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil foto jadi 100 kb",
+        "kompres gambar untuk lamaran kerja",
+        "foto di bawah 100 kb untuk formulir online",
+        "ubah ukuran gambar ke 100 kb online",
+        "jpg di bawah 100 kb"
       ]
     },
     "resize-image": {
       "name": "Ubah Ukuran Gambar",
       "summary": "Perbesar atau perkecil gambar, dalam piksel atau persen.",
       "action": "Ubah ukuran",
-      "title": "Ubah Ukuran Gambar Online (Perbesar/Perkecil) — Tanpa Upload | Fizzdoc",
+      "title": "Ubah Ukuran Gambar Gratis — Sesuai Piksel | Fizzdoc",
       "description": "Ubah ukuran gambar ke piksel atau persentase tertentu — lebih kecil atau lebih besar — di browser Anda, sekaligus banyak. Rasio aspek opsional. Tanpa upload.",
       "h1": "Ubah ukuran gambar — perbesar atau perkecil",
       "lede": "Tentukan lebar dan tinggi yang pasti atau skala dalam persen, untuk satu gambar atau banyak sekaligus. Rasio aspek dipertahankan kecuali Anda menonaktifkannya.",
@@ -1137,15 +1331,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah ukuran gambar sesuai piksel",
+        "ubah dimensi foto",
+        "ubah ukuran foto untuk paspor atau visa",
+        "ubah ukuran gambar sekaligus banyak",
+        "perbesar atau perkecil gambar"
       ]
     },
     "convert-image": {
       "name": "Konversi Gambar",
       "summary": "Konversi antara JPG, PNG, dan WebP.",
       "action": "Konversi gambar",
-      "title": "Konversi Gambar ke JPG, PNG, atau WebP — Tanpa Upload | Fizzdoc",
+      "title": "Konversi Gambar Gratis — JPG, PNG, WebP | Fizzdoc",
       "description": "Konversi gambar antara JPG, PNG, dan WebP di browser Anda, sekaligus banyak. Kompatibel dengan GIF, BMP, AVIF, dan foto iPhone yang bisa dibuka browser Anda.",
       "h1": "Konversi gambar ke JPG, PNG, atau WebP",
       "lede": "Ubah format satu gambar atau sekumpulan gambar sekaligus — misalnya WebP ke JPG atau PNG ke WebP — tanpa mengirimkannya ke mana pun.",
@@ -1165,16 +1366,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah avif atau bmp jadi jpg",
+        "ubah format gambar",
+        "ubah gif atau bmp jadi png",
+        "konversi gambar sekaligus banyak",
+        "gambar ke webp"
       ]
     },
     "image-to-text": {
       "name": "Gambar ke Teks (OCR)",
       "summary": "Seleksi dan salin teks dari foto atau tangkapan layar apa pun.",
       "action": "Kenali teks",
-      "title": "Gambar ke Teks (OCR) — Salin Teks dari Foto, Tanpa Upload | Fizzdoc",
-      "description": "Ekstrak teks dari foto dan tangkapan layar dengan OCR bahasa Inggris di browser, lalu seleksi dan salin di gambarnya — mirip Live Text. Tanpa upload.",
+      "title": "Gambar ke Teks Gratis — OCR dari Foto | Fizzdoc",
+      "description": "Ekstrak teks dari foto dan tangkapan layar dengan OCR bahasa Inggris di browser, lalu seleksi dan salin di gambarnya — mirip Live Text. Tanpa upload. Gratis.",
       "h1": "Salin teks dari gambar apa pun",
       "lede": "Kenali teks bahasa Inggris dalam foto, scan, atau tangkapan layar, lalu seleksi langsung di gambarnya — persis seperti Live Text di iPhone. Tidak ada yang meninggalkan perangkat Anda.",
       "steps": [
@@ -1197,15 +1405,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "salin teks dari foto",
+        "screenshot jadi teks",
+        "ambil teks dari gambar gratis",
+        "ocr gambar ke teks",
+        "salin teks dari foto hp"
       ]
     },
     "png-to-jpg": {
       "name": "PNG ke JPG",
       "summary": "Konversi gambar PNG ke JPG sekaligus banyak.",
       "action": "Konversi ke JPG",
-      "title": "Konverter PNG ke JPG — Gratis, Tanpa Upload | Fizzdoc",
+      "title": "PNG ke JPG Gratis — Konversi Online | Fizzdoc",
       "description": "Konversi gambar PNG ke JPG di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
       "h1": "Konversi PNG ke JPG — secara privat",
       "lede": "File JPG jauh lebih kecil untuk foto dan bisa dibuka di mana saja, termasuk software lama dan formulir unggah yang menolak PNG. Fizzdoc mengonversi file PNG Anda langsung di perangkat Anda.",
@@ -1229,15 +1444,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah png jadi jpg gratis",
+        "png ke jpeg",
+        "perkecil ukuran png",
+        "screenshot jadi jpg",
+        "png ke jpg sekaligus banyak"
       ]
     },
     "jpg-to-png": {
       "name": "JPG ke PNG",
       "summary": "Konversi gambar JPG ke PNG sekaligus banyak.",
       "action": "Konversi ke PNG",
-      "title": "Konverter JPG ke PNG — Gratis, Tanpa Upload | Fizzdoc",
+      "title": "JPG ke PNG Gratis — Konversi Online | Fizzdoc",
       "description": "Konversi gambar JPG ke PNG di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
       "h1": "Konversi JPG ke PNG — secara privat",
       "lede": "PNG bersifat lossless, jadi gambarnya tidak akan kehilangan kualitas lagi saat diedit dan disimpan ulang. Fizzdoc mengonversi file JPG Anda langsung di perangkat Anda.",
@@ -1261,15 +1483,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah jpg jadi png gratis",
+        "jpeg ke png",
+        "simpan foto sebagai png",
+        "salinan gambar tanpa turun kualitas",
+        "jpg ke png sekaligus banyak"
       ]
     },
     "webp-to-jpg": {
       "name": "WebP ke JPG",
       "summary": "Konversi gambar WebP ke JPG sekaligus banyak.",
       "action": "Konversi ke JPG",
-      "title": "Konverter WebP ke JPG — Gratis, Tanpa Upload | Fizzdoc",
+      "title": "WebP ke JPG Gratis — Konversi Online | Fizzdoc",
       "description": "Konversi gambar WebP ke JPG di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
       "h1": "Konversi WebP ke JPG — secara privat",
       "lede": "Banyak aplikasi, printer, dan formulir unggah masih tidak bisa membuka gambar WebP yang disimpan dari situs web. JPG bisa dibuka di mana saja. Fizzdoc mengonversi file WebP Anda langsung di perangkat Anda.",
@@ -1293,15 +1522,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah webp jadi jpg gratis",
+        "buka gambar webp",
+        "webp ke jpeg",
+        "simpan webp sebagai jpg",
+        "webp ke jpg sekaligus banyak"
       ]
     },
     "jpg-to-webp": {
       "name": "JPG ke WebP",
       "summary": "Konversi gambar JPG ke WebP sekaligus banyak.",
       "action": "Konversi ke WebP",
-      "title": "Konverter JPG ke WebP — Gratis, Tanpa Upload | Fizzdoc",
+      "title": "JPG ke WebP Gratis — Konversi Online | Fizzdoc",
       "description": "Konversi gambar JPG ke WebP di browser Anda, satu atau banyak sekaligus. Cepat, gratis, tanpa watermark, dan foto Anda tidak pernah diunggah.",
       "h1": "Konversi JPG ke WebP — secara privat",
       "lede": "Gambar WebP biasanya 25–35% lebih kecil dari JPG dengan kualitas visual yang sama, sehingga situs web memuat lebih cepat. Fizzdoc mengonversi file JPG Anda langsung di perangkat Anda.",
@@ -1325,15 +1561,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah jpg jadi webp gratis",
+        "perkecil gambar untuk website",
+        "jpeg ke webp",
+        "konverter webp",
+        "jpg ke webp sekaligus banyak"
       ]
     },
     "add-page-numbers-to-pdf": {
       "name": "Tambah Nomor Halaman",
       "summary": "Beri nomor pada setiap halaman PDF.",
       "action": "Tambah nomor halaman",
-      "title": "Tambah Nomor Halaman ke PDF — Gratis, Tanpa Upload | Fizzdoc",
+      "title": "Tambah Nomor Halaman PDF Gratis, Online | Fizzdoc",
       "description": "Tambahkan nomor halaman ke PDF di browser Anda. Pilih posisinya, nomor awal, dan gaya “Halaman 1 dari 10”. Tanpa upload. Gratis, tanpa daftar.",
       "h1": "Tambah nomor halaman ke PDF",
       "lede": "Beri nomor halaman pada laporan, skripsi, atau kontrak dalam hitungan detik. Pilih posisi nomornya dan mulai dari angka berapa — langsung di perangkat Anda.",
@@ -1357,15 +1600,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "beri nomor halaman pdf",
+        "tambah halaman 1 dari 10 ke pdf",
+        "sisipkan nomor halaman di pdf gratis",
+        "nomor halaman untuk pdf skripsi",
+        "nomor halaman di bawah pdf"
       ]
     },
     "watermark-pdf": {
       "name": "Watermark PDF",
       "summary": "Bubuhkan teks seperti RAHASIA di setiap halaman.",
       "action": "Tambah watermark",
-      "title": "Watermark PDF — Tambah Teks Watermark, Tanpa Upload | Fizzdoc",
+      "title": "Watermark PDF Gratis — Tambah Watermark Teks | Fizzdoc",
       "description": "Tambahkan watermark teks seperti RAHASIA atau DRAFT ke setiap halaman PDF, di browser Anda. Atur opasitasnya. Tanpa upload. Gratis.",
       "h1": "Tambahkan watermark ke PDF",
       "lede": "Tandai dokumen sebagai RAHASIA, DRAFT, atau dengan nama Anda sebelum dibagikan. Watermark digambar diagonal di setiap halaman.",
@@ -1389,15 +1639,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "tambah watermark rahasia ke pdf",
+        "beri cap draft di halaman pdf",
+        "watermark pdf gratis",
+        "tambah watermark teks ke pdf",
+        "watermark bahasa indonesia di pdf"
       ]
     },
     "pdf-to-png": {
       "name": "PDF ke PNG",
       "summary": "Simpan setiap halaman sebagai gambar PNG lossless.",
       "action": "Konversi ke PNG",
-      "title": "Konverter PDF ke PNG — Lossless, Tanpa Upload | Fizzdoc",
+      "title": "PDF ke PNG Gratis — Gambar Tanpa Kompresi | Fizzdoc",
       "description": "Konversi setiap halaman PDF menjadi gambar PNG lossless yang tajam di browser Anda. Banyak halaman diunduh sebagai satu ZIP. Tanpa upload. Gratis.",
       "h1": "Konversi halaman PDF ke gambar PNG",
       "lede": "Render setiap halaman menjadi PNG lossless yang tajam — ideal untuk slide, dokumentasi, dan tangkapan layar dengan teks yang jelas. Tidak ada yang meninggalkan perangkat Anda.",
@@ -1417,16 +1674,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah pdf jadi png",
+        "halaman pdf ke gambar tanpa turun kualitas",
+        "gambar halaman pdf tajam untuk slide",
+        "simpan slide pdf sebagai png",
+        "pdf ke png gratis"
       ]
     },
     "extract-pdf-pages": {
       "name": "Ekstrak Halaman PDF",
       "summary": "Simpan halaman terpilih sebagai PDF baru.",
       "action": "Ekstrak halaman",
-      "title": "Ekstrak Halaman dari PDF — Gratis, Privat, Tanpa Upload | Fizzdoc",
-      "description": "Ambil halaman tertentu dari PDF ke file baru, di browser Anda. Ketik halaman seperti 2, 5-7. Link dan form field tetap terjaga. Tanpa upload.",
+      "title": "Ekstrak Halaman PDF Gratis — Jadi File Baru | Fizzdoc",
+      "description": "Ambil halaman tertentu dari PDF ke file baru, di browser Anda. Ketik halaman seperti 2, 5-7. Link dan form field tetap terjaga. Tanpa upload. Gratis.",
       "h1": "Ekstrak halaman dari PDF",
       "lede": "Butuh halaman tanda tangan atau satu bab saja? Ketik halaman yang Anda inginkan dan dapatkan sebagai PDF baru — file aslinya tetap tidak tersentuh.",
       "steps": [
@@ -1445,15 +1709,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "simpan satu halaman dari pdf",
+        "ekstrak halaman jadi pdf baru",
+        "ambil halaman dari pdf",
+        "salin halaman dari pdf",
+        "ekstrak halaman pdf gratis"
       ]
     },
     "reorder-pdf-pages": {
       "name": "Urutkan Ulang Halaman PDF",
       "summary": "Susun ulang urutan halaman PDF sesuai keinginan Anda.",
       "action": "Urutkan ulang",
-      "title": "Urutkan Ulang Halaman PDF — Gratis, Tanpa Upload | Fizzdoc",
+      "title": "Urutkan Ulang Halaman PDF Gratis | Fizzdoc",
       "description": "Susun ulang halaman PDF dengan mengetik urutan yang Anda mau, seperti 3, 1-2, 4-. Berjalan di browser; file tidak pernah diunggah. Gratis, tanpa daftar.",
       "h1": "Susun ulang urutan halaman PDF",
       "lede": "Perbaiki halaman yang terpindai tidak berurutan atau pindahkan lampiran ke depan. Ketik urutan barunya dan unduh PDF yang sudah disusun ulang.",
@@ -1473,16 +1744,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah urutan halaman pdf",
+        "susun ulang halaman pdf",
+        "pindahkan halaman di pdf",
+        "urutkan halaman pdf",
+        "urutkan ulang pdf gratis"
       ]
     },
     "png-to-pdf": {
       "name": "PNG ke PDF",
       "summary": "Ubah tangkapan layar dan gambar PNG menjadi satu PDF.",
       "action": "Buat PDF",
-      "title": "Konverter PNG ke PDF — Gratis, Tanpa Upload | Fizzdoc",
-      "description": "Gabungkan tangkapan layar dan gambar PNG menjadi satu PDF di browser Anda, satu halaman per gambar, kualitas penuh. Tanpa upload. Tanpa watermark.",
+      "title": "PNG ke PDF Gratis — Screenshot Jadi PDF | Fizzdoc",
+      "description": "Gabungkan tangkapan layar dan gambar PNG menjadi satu PDF di browser Anda, satu halaman per gambar, kualitas penuh. Tanpa upload. Tanpa watermark. Gratis.",
       "h1": "Konversi gambar PNG menjadi PDF",
       "lede": "Masukkan tangkapan layar, diagram, atau halaman hasil scan berformat PNG ke dalam satu PDF yang rapi — tajam, lossless, dan sesuai urutan pilihan Anda.",
       "steps": [
@@ -1501,16 +1779,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "ubah screenshot jadi pdf",
+        "png ke pdf gratis",
+        "gabung gambar png jadi pdf",
+        "gambar ke pdf tanpa turun kualitas",
+        "png ke pdf di hp"
       ]
     },
     "remove-word-metadata": {
       "name": "Hapus Metadata Word",
       "summary": "Bersihkan nama penulis, perusahaan, dan editor dari .docx.",
       "action": "Hapus metadata",
-      "title": "Hapus Metadata Word — Privat, Tanpa Upload | Fizzdoc",
-      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file Word di browser Anda. Kompatibel dengan unduhan Google Docs. Tanpa upload.",
+      "title": "Hapus Metadata Word Gratis — DOCX Bersih | Fizzdoc",
+      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file Word di browser Anda. Kompatibel dengan unduhan Google Docs. Tanpa upload. Gratis.",
       "h1": "Hapus metadata tersembunyi dari dokumen Word",
       "lede": "Setiap .docx mencatat siapa pembuatnya, siapa pengedit terakhirnya, dan perusahaan mana pemiliknya. Bersihkan detail itu sebelum dikirim — tanpa mengunggah filenya ke mana pun.",
       "steps": [
@@ -1533,16 +1818,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hapus penulis dari dokumen word",
+        "bersihkan docx sebelum dibagikan",
+        "hapus properti dokumen word",
+        "anonimkan file word",
+        "hapus nama perusahaan dari docx"
       ]
     },
     "extract-images-from-word": {
       "name": "Ekstrak Gambar dari Word",
       "summary": "Simpan setiap gambar di .docx dengan kualitas asli.",
       "action": "Ekstrak gambar",
-      "title": "Ekstrak Gambar dari Word — Tanpa Upload | Fizzdoc",
-      "description": "Unduh setiap gambar yang disematkan dalam dokumen Word sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Docs. Berjalan di browser.",
+      "title": "Ekstrak Gambar dari Word Gratis — DOCX ke ZIP | Fizzdoc",
+      "description": "Unduh setiap gambar yang disematkan dalam dokumen Word sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Docs. Berjalan di browser. Gratis.",
       "h1": "Ekstrak semua gambar dari dokumen Word",
       "lede": "Ambil setiap foto, logo, dan chart dari .docx dalam format dan resolusi aslinya — tanpa tangkapan layar, tanpa kompresi ulang, tanpa upload.",
       "steps": [
@@ -1565,16 +1857,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "simpan semua gambar dari file word",
+        "unduh gambar dari docx",
+        "ambil foto dari google docs",
+        "ekstrak gambar dari docx gratis",
+        "gambar word resolusi penuh"
       ]
     },
     "compress-word": {
       "name": "Kompres Word",
       "summary": "Perkecil ukuran .docx dengan mengoptimalkan gambarnya.",
       "action": "Kompres Word",
-      "title": "Kompres File Word (.docx) — Tanpa Upload | Fizzdoc",
-      "description": "Perkecil ukuran file Word dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload.",
+      "title": "Kompres Word Gratis — Perkecil Ukuran DOCX | Fizzdoc",
+      "description": "Perkecil ukuran file Word dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload. Gratis.",
       "h1": "Kompres dokumen Word",
       "lede": "Perkecil .docx agar cukup ringan untuk dikirim lewat email dengan mengompresi ulang foto yang terlalu besar di dalamnya. Teks, format, dan yang lainnya tetap persis sama.",
       "steps": [
@@ -1597,16 +1896,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil ukuran file word",
+        "kompres docx berisi gambar",
+        "perkecil dokumen word untuk email",
+        "perkecil ukuran docx",
+        "kompres word gratis"
       ]
     },
     "remove-excel-metadata": {
       "name": "Hapus Metadata Excel",
       "summary": "Bersihkan nama penulis, perusahaan, dan editor dari .xlsx.",
       "action": "Hapus metadata",
-      "title": "Hapus Metadata Excel — Privat, Tanpa Upload | Fizzdoc",
-      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file Excel di browser Anda. Kompatibel dengan unduhan Google Sheets. Tanpa upload.",
+      "title": "Hapus Metadata Excel Gratis — XLSX Bersih | Fizzdoc",
+      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file Excel di browser Anda. Kompatibel dengan unduhan Google Sheets. Tanpa upload. Gratis.",
       "h1": "Hapus metadata tersembunyi dari spreadsheet Excel",
       "lede": "Setiap .xlsx mencatat siapa pembuatnya, siapa pengedit terakhirnya, dan perusahaan mana pemiliknya. Bersihkan detail itu sebelum dikirim — tanpa mengunggah filenya ke mana pun.",
       "steps": [
@@ -1629,15 +1935,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hapus penulis dari file excel",
+        "bersihkan xlsx sebelum dibagikan",
+        "hapus properti dokumen excel",
+        "anonimkan spreadsheet",
+        "hapus nama perusahaan dari xlsx"
       ]
     },
     "extract-images-from-excel": {
       "name": "Ekstrak Gambar dari Excel",
       "summary": "Simpan setiap gambar di .xlsx dengan kualitas asli.",
       "action": "Ekstrak gambar",
-      "title": "Ekstrak Gambar dari Excel — Tanpa Upload | Fizzdoc",
+      "title": "Ekstrak Gambar dari Excel Gratis — XLSX ke ZIP | Fizzdoc",
       "description": "Unduh setiap gambar yang disematkan dalam spreadsheet Excel sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Sheets. Berjalan di browser.",
       "h1": "Ekstrak semua gambar dari spreadsheet Excel",
       "lede": "Ambil setiap foto, logo, dan chart dari .xlsx dalam format dan resolusi aslinya — tanpa tangkapan layar, tanpa kompresi ulang, tanpa upload.",
@@ -1661,16 +1974,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "simpan semua gambar dari file excel",
+        "unduh gambar dari xlsx",
+        "ambil gambar dari google sheets",
+        "ekstrak gambar dari xlsx gratis",
+        "gambar excel resolusi penuh"
       ]
     },
     "compress-excel": {
       "name": "Kompres Excel",
       "summary": "Perkecil ukuran .xlsx dengan mengoptimalkan gambarnya.",
       "action": "Kompres Excel",
-      "title": "Kompres File Excel (.xlsx) — Tanpa Upload | Fizzdoc",
-      "description": "Perkecil ukuran file Excel dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload.",
+      "title": "Kompres Excel Gratis — Perkecil Ukuran XLSX | Fizzdoc",
+      "description": "Perkecil ukuran file Excel dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload. Gratis.",
       "h1": "Kompres spreadsheet Excel",
       "lede": "Perkecil .xlsx agar cukup ringan untuk dikirim lewat email dengan mengompresi ulang foto yang terlalu besar di dalamnya. Teks, format, dan yang lainnya tetap persis sama.",
       "steps": [
@@ -1693,16 +2013,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil ukuran file excel",
+        "kompres xlsx berisi gambar",
+        "perkecil spreadsheet untuk email",
+        "perkecil ukuran xlsx",
+        "kompres excel gratis"
       ]
     },
     "remove-powerpoint-metadata": {
       "name": "Hapus Metadata PowerPoint",
       "summary": "Bersihkan nama penulis, perusahaan, dan editor dari .pptx.",
       "action": "Hapus metadata",
-      "title": "Hapus Metadata PowerPoint — Privat, Tanpa Upload | Fizzdoc",
-      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file PowerPoint di browser Anda. Kompatibel dengan unduhan Google Slides. Tanpa upload.",
+      "title": "Hapus Metadata PowerPoint Gratis | Fizzdoc",
+      "description": "Hapus penulis, editor, perusahaan, judul, dan thumbnail dari file PowerPoint di browser Anda. Kompatibel dengan unduhan Google Slides. Tanpa upload. Gratis.",
       "h1": "Hapus metadata tersembunyi dari presentasi PowerPoint",
       "lede": "Setiap .pptx mencatat siapa pembuatnya, siapa pengedit terakhirnya, dan perusahaan mana pemiliknya. Bersihkan detail itu sebelum dikirim — tanpa mengunggah filenya ke mana pun.",
       "steps": [
@@ -1725,15 +2052,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "hapus penulis dari powerpoint",
+        "bersihkan pptx sebelum dibagikan",
+        "hapus properti presentasi",
+        "anonimkan presentasi",
+        "hapus nama perusahaan dari pptx"
       ]
     },
     "extract-images-from-powerpoint": {
       "name": "Ekstrak Gambar dari PowerPoint",
       "summary": "Simpan setiap gambar di .pptx dengan kualitas asli.",
       "action": "Ekstrak gambar",
-      "title": "Ekstrak Gambar dari PowerPoint — Tanpa Upload | Fizzdoc",
+      "title": "Ekstrak Gambar dari PowerPoint Gratis — ZIP | Fizzdoc",
       "description": "Unduh setiap gambar yang disematkan dalam presentasi PowerPoint sebagai ZIP, dengan resolusi asli. Kompatibel dengan unduhan Google Slides. Berjalan di browser.",
       "h1": "Ekstrak semua gambar dari presentasi PowerPoint",
       "lede": "Ambil setiap foto, logo, dan chart dari .pptx dalam format dan resolusi aslinya — tanpa tangkapan layar, tanpa kompresi ulang, tanpa upload.",
@@ -1757,16 +2091,23 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "simpan semua gambar dari presentasi",
+        "unduh gambar dari pptx",
+        "ambil gambar dari google slides",
+        "ekstrak gambar dari pptx gratis",
+        "gambar slide resolusi penuh"
       ]
     },
     "compress-powerpoint": {
       "name": "Kompres PowerPoint",
       "summary": "Perkecil ukuran .pptx dengan mengoptimalkan gambarnya.",
       "action": "Kompres PowerPoint",
-      "title": "Kompres File PowerPoint (.pptx) — Tanpa Upload | Fizzdoc",
-      "description": "Perkecil ukuran file PowerPoint dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload.",
+      "title": "Kompres PowerPoint Gratis — Perkecil PPTX | Fizzdoc",
+      "description": "Perkecil ukuran file PowerPoint dengan mengompresi ulang fotonya, di browser Anda. Isi dan format tetap sama. Tanpa upload. Gratis.",
       "h1": "Kompres presentasi PowerPoint",
       "lede": "Perkecil .pptx agar cukup ringan untuk dikirim lewat email dengan mengompresi ulang foto yang terlalu besar di dalamnya. Teks, format, dan yang lainnya tetap persis sama.",
       "steps": [
@@ -1789,15 +2130,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "perkecil ukuran file powerpoint",
+        "kompres pptx berisi gambar",
+        "perkecil presentasi untuk email",
+        "perkecil ukuran pptx",
+        "kompres powerpoint gratis"
       ]
     },
     "split-audio": {
       "name": "Potong audio",
       "summary": "Potong MP3 atau M4A, atau bagi menjadi beberapa bagian. Dengarkan sebelum menyimpan.",
       "action": "Simpan Audio",
-      "title": "Potong MP3 atau M4A Online — Pangkas Audio, Tanpa Unggah | Fizzdoc",
+      "title": "Potong MP3 & Pisah Audio Gratis, Tanpa Upload | Fizzdoc",
       "description": "Pangkas MP3 atau M4A, atau bagi menjadi beberapa bagian pada waktu yang tepat. Lihat gelombang suara, lalu simpan. Tanpa re-encoding, tanpa unggah. Gratis.",
       "h1": "Potong, pangkas, dan bagi audio di browser Anda",
       "lede": "Seret gagang pada gelombang suara atau ketik waktu yang tepat, dengarkan bagian yang dipilih, lalu simpan. Pemotongan dilakukan tanpa re-encoding, sehingga kualitas suara tetap sama persis.",
@@ -1821,15 +2169,22 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "potong mp3 online gratis",
+        "potong file audio",
+        "pisah mp3 jadi beberapa bagian",
+        "buat nada dering dari lagu",
+        "potong m4a tanpa re-encoding"
       ]
     },
     "merge-audio": {
       "name": "Gabung audio",
       "summary": "Gabungkan file MP3 atau M4A menjadi satu, sesuai urutan yang Anda pilih.",
       "action": "Gabungkan Audio",
-      "title": "Gabungkan File MP3 atau M4A Online — Tanpa Unggah | Fizzdoc",
+      "title": "Gabung MP3 & M4A Gratis — Satukan Audio | Fizzdoc",
       "description": "Gabungkan file MP3 atau M4A menjadi satu trek sesuai urutan pilihan Anda, lalu dengarkan sebelum mengunduh. Tanpa re-encoding, tanpa unggah. Gratis.",
       "h1": "Gabungkan file audio menjadi satu",
       "lede": "Tambahkan file MP3 atau M4A Anda, urutkan, lalu gabungkan menjadi satu trek. Dengarkan hasilnya sebelum mengunduh; tidak ada yang di-encode ulang atau diunggah.",
@@ -1853,8 +2208,15 @@
         ],
         [
           "Apakah Fizzdoc gratis?",
-          "Ya. Tidak perlu mendaftar, tidak ada watermark, dan tidak ada batas harian. Fizzdoc adalah open source di bawah lisensi Apache-2.0."
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
         ]
+      ],
+      "keywords": [
+        "gabung file mp3 jadi satu",
+        "satukan file audio online",
+        "gabung lagu tanpa turun kualitas",
+        "gabung rekaman suara",
+        "gabung file m4a gratis"
       ]
     }
   }
