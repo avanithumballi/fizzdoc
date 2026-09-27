@@ -29,12 +29,26 @@ export function numberAt(position: NumberPosition, box: { x: number; y: number; 
   return { x, y };
 }
 
+/** Maps a point on a page as displayed (after its /Rotate, clockwise) back to the page's own coordinates. */
+export function fromDisplayed(rotation: number, box: { x: number; y: number; width: number; height: number }, u: number, v: number) {
+  switch (rotation) {
+    case 90:
+      return { x: box.x + box.width - v, y: box.y + u };
+    case 180:
+      return { x: box.x + box.width - u, y: box.y + box.height - v };
+    case 270:
+      return { x: box.x + v, y: box.y + box.height - u };
+    default:
+      return { x: box.x + u, y: box.y + v };
+  }
+}
+
 export async function addPageNumbers(
   file: File,
   options: { position?: NumberPosition; start?: number; style?: 'number' | 'page-of' } = {},
 ): Promise<Output> {
   const pdf = await load(file);
-  const { StandardFonts, rgb } = await import('pdf-lib');
+  const { StandardFonts, rgb, degrees } = await import('pdf-lib');
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const pages = pdf.getPages();
   const start = Number.isInteger(options.start) && options.start! > 0 ? options.start! : 1;
@@ -43,10 +57,14 @@ export async function addPageNumbers(
     const label = options.style === 'page-of' ? `Page ${start + i} of ${total}` : String(start + i);
     const box = page.getCropBox();
     const size = Math.max(8, Math.min(box.width, box.height) * 0.018);
-    const { x, y } = numberAt(options.position ?? 'bottom-center', box, font.widthOfTextAtSize(label, size), size);
-    // ponytail: labels follow the page's unrotated axes; a /Rotate'd page shows the number turned
-    // with its content. Counter-rotate per page if scanned-sideways PDFs complain.
-    page.drawText(label, { x, y, size, font, color: rgb(0.2, 0.2, 0.2) });
+    // Place the number on the page as it is displayed, then map it back into the page's own
+    // coordinates and turn the text with the page, so /Rotate'd pages read upright too.
+    const rotation = ((page.getRotation().angle % 360) + 360) % 360;
+    const sideways = rotation === 90 || rotation === 270;
+    const shown = { x: 0, y: 0, width: sideways ? box.height : box.width, height: sideways ? box.width : box.height };
+    const at = numberAt(options.position ?? 'bottom-center', shown, font.widthOfTextAtSize(label, size), size);
+    const { x, y } = fromDisplayed(rotation, box, at.x, at.y);
+    page.drawText(label, { x, y, size, font, color: rgb(0.2, 0.2, 0.2), rotate: degrees(rotation) });
   });
   return save(pdf, `${baseName(file)}-numbered.pdf`, `${pages.length} ${pages.length === 1 ? 'page' : 'pages'} numbered`);
 }
