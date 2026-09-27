@@ -63,9 +63,21 @@ test('unlocks a protected PDF after a wrong then a right password', async ({ pag
 test('explains bad page ranges and cancels cleanly', async ({ page }) => {
   await page.goto('/split-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('mixed'));
+  await expect(page.locator('#file-list')).toContainText('3 pages');
   await page.locator('#pages').fill('9');
   await page.getByRole('button', { name: 'Extract pages' }).click();
-  await expect(page.locator('#status')).toContainText('Check the page numbers');
+  await expect(page.locator('#status')).toContainText('This PDF has 3 pages. Use page numbers from 1 to 3');
+
+  // A range past the end keeps what exists: "1-5" on a one-page bill is just page 1.
+  await page.locator('#file-input').setInputFiles(fixture('blank'));
+  await expect(page.locator('#file-list')).toContainText('1 page');
+  await page.locator('#pages').fill('1-5');
+  await page.getByRole('button', { name: 'Extract pages' }).click();
+  await expect(page.locator('#status')).toContainText('1 page');
+  await expect(page.locator('#download')).toBeVisible();
+  await page.locator('#pages').fill('2');
+  await page.getByRole('button', { name: 'Extract pages' }).click();
+  await expect(page.locator('#status')).toContainText('This PDF has only 1 page');
 
   await page.goto('/unlock-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('user-password'));

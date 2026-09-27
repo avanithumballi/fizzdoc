@@ -154,6 +154,8 @@ export const UI = {
   'error.BAD_PASSWORD': 'That password did not work after three tries. Nothing was changed.',
   'error.PASSWORD_REQUIRED': 'This PDF needs its password to continue. Nothing was changed.',
   'error.BAD_RANGE': 'Check the page numbers. Use numbers and ranges like “1-3, 8” within the document’s page count.',
+  'error.onePage': 'This PDF has only 1 page, so page 1 is the only page you can choose.',
+  'error.pageCount': 'This PDF has {count} pages. Use page numbers from 1 to {count}, like “1-3, 8”.',
   'error.NOT_ENCRYPTED': 'This PDF is not password-protected, so there is nothing to unlock.',
   'error.UNSUPPORTED_XFA': 'This PDF uses a dynamic XFA form, which cannot be edited safely. Your file was not changed.',
   'error.NO_PAGES_LEFT': 'That would remove every page. Keep at least one.',

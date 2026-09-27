@@ -34,7 +34,11 @@ export type Warning =
   | 'PERMISSIONS_REMOVED';
 
 export class PdfError extends Error {
-  constructor(readonly code: ErrorCode) {
+  /** For BAD_RANGE: the document's page count, so the message can say what is valid. */
+  constructor(
+    readonly code: ErrorCode,
+    readonly pages?: number,
+  ) {
     super(code);
   }
 }
@@ -67,19 +71,23 @@ const TAIL_BYTES = 1024 * 1024;
 // qpdf exits 0 on success and 3 on success with warnings (e.g. a repaired xref).
 const ok = (status: number) => status === 0 || status === 3;
 
-/** Parses "1-3, 8, 5" into 1-based page numbers, keeping the typed order and dropping repeats. */
+/**
+ * Parses "1-3, 8, 5" into 1-based page numbers, keeping the typed order and dropping repeats.
+ * A range that runs past the last page stops there ("1-5" on a 2-page file is pages 1-2).
+ */
 export function parsePages(text: string, count: number): number[] {
   const pages = new Set<number>();
+  const bad = () => new PdfError('BAD_RANGE', count);
   for (const token of text.replaceAll('–', '-').split(',')) {
     if (!token.trim()) continue;
     const match = /^\s*(\d+)\s*(?:-\s*(\d*)\s*)?$/.exec(token);
-    if (!match) throw new PdfError('BAD_RANGE');
+    if (!match) throw bad();
     const start = Number(match[1]);
     const end = match[2] === undefined ? start : match[2] === '' ? count : Number(match[2]);
-    if (start < 1 || end > count || start > end) throw new PdfError('BAD_RANGE');
-    for (let page = start; page <= end; page++) pages.add(page);
+    if (start < 1 || start > count || start > end) throw bad();
+    for (let page = start; page <= Math.min(end, count); page++) pages.add(page);
   }
-  if (!pages.size) throw new PdfError('BAD_RANGE');
+  if (!pages.size) throw bad();
   return [...pages];
 }
 
@@ -185,6 +193,15 @@ const EXPECTED_FILES: Record<Op, (n: number) => boolean> = {
   protect: (n) => n === 1,
   clean: (n) => n === 1,
 };
+
+/** Page count for the file picker; null when the file needs a password or can't be read. */
+export async function countPages(q: Qpdf, path: string): Promise<number | null> {
+  try {
+    return (await open(q, path, 0, async () => null))[1].pages;
+  } catch {
+    return null;
+  }
+}
 
 export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: AskPassword): Promise<Result> {
   if (!EXPECTED_FILES[job.op](inputs.length)) throw new PdfError('WRONG_FILE_COUNT');

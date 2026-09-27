@@ -120,6 +120,8 @@
     "error.BAD_PASSWORD": "Kata sandi itu tidak berhasil setelah tiga kali percobaan. Tidak ada yang diubah.",
     "error.PASSWORD_REQUIRED": "PDF ini memerlukan kata sandinya untuk melanjutkan. Tidak ada yang diubah.",
     "error.BAD_RANGE": "Periksa nomor halamannya. Gunakan angka dan rentang seperti “1-3, 8” sesuai jumlah halaman dokumen.",
+    "error.onePage": "PDF ini hanya punya 1 halaman, jadi Anda hanya bisa memilih halaman 1.",
+    "error.pageCount": "PDF ini punya {count} halaman. Gunakan nomor halaman 1 sampai {count}, misalnya “1-3, 8”.",
     "error.NOT_ENCRYPTED": "PDF ini tidak dilindungi kata sandi, jadi tidak ada yang perlu dibuka kuncinya.",
     "error.UNSUPPORTED_XFA": "PDF ini menggunakan formulir XFA dinamis, yang tidak dapat diedit dengan aman. File Anda tidak diubah.",
     "error.NO_PAGES_LEFT": "Itu akan menghapus semua halaman. Sisakan setidaknya satu halaman.",
