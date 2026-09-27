@@ -145,6 +145,7 @@ export const UI = {
   'app.downloadExt': 'Download {ext}',
   'app.canceled': 'Canceled. Nothing was changed.',
   'app.wrongType': 'That file type can’t be used with this tool.',
+  'app.oneFile': 'This tool works on one file at a time, so the first file was added.',
   'app.tooBig': 'These files total {size}, more than this device can safely process ({max}).',
   'app.moveUp': 'Move up',
   'app.moveDown': 'Move down',

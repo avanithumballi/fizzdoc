@@ -112,6 +112,7 @@
     "app.downloadExt": "{ext} indir",
     "app.canceled": "İptal edildi. Hiçbir şey değişmedi.",
     "app.wrongType": "Bu dosya türü bu araçla kullanılamaz.",
+    "app.oneFile": "Bu araç aynı anda tek bir dosyayla çalışır, bu yüzden ilk dosya eklendi.",
     "app.tooBig": "Bu dosyaların toplamı {size}, bu cihazın güvenle işleyebileceğinden ({max}) daha fazla.",
     "app.moveUp": "Yukarı taşı",
     "app.moveDown": "Aşağı taşı",

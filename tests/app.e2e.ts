@@ -441,6 +441,43 @@ for (const { path, tool } of PAGES) {
   });
 }
 
+test('answers unknown links with a not-found page that search engines skip', async ({ request }) => {
+  const html = await (await request.get('/404.html')).text();
+  expect(html).toContain('<h1>Page not found</h1>');
+  expect(html).toContain('<meta name="robots" content="noindex, follow">');
+  expect(html).not.toContain('rel="canonical"');
+  expect(html).toContain('href="/merge-pdf/"');
+});
+
+test('explains extra dropped files, lets any job be canceled and keeps qpdf chatter out of the console', async ({ page }) => {
+  const logged: string[] = [];
+  page.on('console', (m) => m.type() === 'error' && logged.push(m.text()));
+  await page.goto('/compress-pdf/');
+  const drop = await page.evaluateHandle(() => {
+    const data = new DataTransfer();
+    for (const name of ['a.pdf', 'b.pdf']) data.items.add(new File(['%PDF-1.4'], name, { type: 'application/pdf' }));
+    return data;
+  });
+  await page.locator('#drop').dispatchEvent('drop', { dataTransfer: drop });
+  await expect(page.locator('#status')).toHaveText('This tool works on one file at a time, so the first file was added.');
+  await expect(page.locator('#file-list li')).toHaveCount(1);
+
+  await page.goto('/ocr-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('blank'));
+  await page.getByRole('button', { name: 'Recognize text' }).click();
+  await page.getByRole('button', { name: 'Cancel' }).click();
+  await expect(page.locator('#status')).toContainText('Canceled');
+  await expect(page.getByRole('button', { name: 'Recognize text' })).toBeEnabled();
+
+  await page.goto('/unlock-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('user-password'));
+  await page.getByRole('button', { name: 'Remove password' }).click();
+  await page.locator('#password').fill('wrong');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#password-hint')).toContainText('2');
+  expect(logged.filter((line) => line.includes('this.program'))).toEqual([]);
+});
+
 test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   const licenses = await (await request.get('/third-party-licenses.txt')).text();
   for (const part of ['Apache License', 'pdf-lib (MIT)', 'fflate (MIT)', 'Independent JPEG Group', 'Open Font License']) expect(licenses).toContain(part);

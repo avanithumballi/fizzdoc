@@ -252,6 +252,13 @@ function renderLinks(text: string): string {
   let result = '';
   let i = 0;
   while (i < text.length) {
+    // Images would need fetching from the web, which the page never does: show their description.
+    const image = text[i] === '!' && text[i + 1] === '[' ? /^!\[([^\]]*)\]\([^)]*\)/.exec(text.slice(i)) : null;
+    if (image) {
+      result += image[1] ? `<em>[${image[1]}]</em>` : '';
+      i += image[0].length;
+      continue;
+    }
     if (text[i] === '[') {
       const close = text.indexOf(']', i);
       if (close !== -1 && text[close + 1] === '(') {

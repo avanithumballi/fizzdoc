@@ -112,6 +112,7 @@
     "app.downloadExt": "Tải xuống {ext}",
     "app.canceled": "Đã hủy. Không có gì thay đổi.",
     "app.wrongType": "Loại tệp này không thể dùng với công cụ này.",
+    "app.oneFile": "Công cụ này xử lý từng tệp một, nên tệp đầu tiên đã được thêm vào.",
     "app.tooBig": "Các tệp này có tổng dung lượng {size}, vượt quá mức thiết bị này có thể xử lý an toàn ({max}).",
     "app.moveUp": "Di chuyển lên",
     "app.moveDown": "Di chuyển xuống",

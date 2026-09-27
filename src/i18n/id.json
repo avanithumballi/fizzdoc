@@ -112,6 +112,7 @@
     "app.downloadExt": "Unduh {ext}",
     "app.canceled": "Dibatalkan. Tidak ada yang diubah.",
     "app.wrongType": "Jenis file itu tidak bisa digunakan dengan alat ini.",
+    "app.oneFile": "Alat ini memproses satu file sekaligus, jadi file pertama yang ditambahkan.",
     "app.tooBig": "Total file ini {size}, lebih besar dari yang bisa diproses perangkat ini dengan aman ({max}).",
     "app.moveUp": "Naikkan",
     "app.moveDown": "Turunkan",

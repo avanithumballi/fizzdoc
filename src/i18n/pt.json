@@ -112,6 +112,7 @@
     "app.downloadExt": "Baixar {ext}",
     "app.canceled": "Cancelado. Nada foi alterado.",
     "app.wrongType": "Esse tipo de arquivo não pode ser usado com esta ferramenta.",
+    "app.oneFile": "Esta ferramenta trabalha com um arquivo por vez, então o primeiro foi adicionado.",
     "app.tooBig": "Esses arquivos somam {size}, mais do que este dispositivo consegue processar com segurança ({max}).",
     "app.moveUp": "Mover para cima",
     "app.moveDown": "Mover para baixo",

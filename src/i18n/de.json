@@ -112,6 +112,7 @@
     "app.downloadExt": "{ext} herunterladen",
     "app.canceled": "Abgebrochen. Es wurde nichts verändert.",
     "app.wrongType": "Dieser Dateityp kann mit diesem Tool nicht verwendet werden.",
+    "app.oneFile": "Dieses Werkzeug bearbeitet jeweils eine Datei, daher wurde die erste Datei hinzugefügt.",
     "app.tooBig": "Diese Dateien sind zusammen {size} groß, mehr als dieses Gerät sicher verarbeiten kann ({max}).",
     "app.moveUp": "Nach oben verschieben",
     "app.moveDown": "Nach unten verschieben",
