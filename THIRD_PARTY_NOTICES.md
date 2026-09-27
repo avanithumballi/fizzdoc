@@ -16,3 +16,7 @@ The deployed site ships these third-party components in `assets/`:
 | Inter typeface (@fontsource-variable/inter) | SIL Open Font License 1.1 | https://rsms.me/inter |
 
 No AGPL components are included. Keep this table in sync when adding an engine.
+
+## Trademarks
+
+PDF is an open standard (ISO 32000). Microsoft Word, Excel and PowerPoint are trademarks of Microsoft; Google Docs, Sheets and Slides are trademarks of Google; iPhone and Live Text are trademarks of Apple; iLovePDF, Smallpdf, Adobe Acrobat, PDF24 and Stirling-PDF belong to their respective owners. These names appear only to describe file formats and compatibility, or for comparison. Fizzdoc is an independent project and is not affiliated with, sponsored by or endorsed by any of them.

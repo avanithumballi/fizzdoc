@@ -247,6 +247,6 @@ Familiar interface patterns, such as a grid of tools per format, drag-and-drop u
 
 ## 📄 License
 
-[MIT](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). Fizzdoc stands on the shoulders of [qpdf](https://github.com/qpdf/qpdf), [pdf.js](https://github.com/mozilla/pdf.js), [pdf-lib](https://github.com/Hopding/pdf-lib), [Tesseract.js](https://github.com/naptha/tesseract.js) and [fflate](https://github.com/101arrowz/fflate) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[MIT](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). Fizzdoc stands on the shoulders of [qpdf](https://github.com/qpdf/qpdf), [pdf.js](https://github.com/mozilla/pdf.js), [pdf-lib](https://github.com/Hopding/pdf-lib), [Tesseract.js](https://github.com/naptha/tesseract.js) and [fflate](https://github.com/101arrowz/fflate) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Product names mentioned in this README are trademarks of their owners and are used only for comparison.
 
 <p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF offline, private PDF converter, PDF to Word, OCR, iLovePDF alternative, Smallpdf alternative, open-source PDF tools, WebAssembly PDF, client-side document converter.</sub></p>
