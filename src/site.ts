@@ -611,6 +611,40 @@ TOOLS.push(
     input: IMAGES_IN,
     preset: { mode: 'compress' },
   },
+  // Exam, job and government forms ask for photos and signatures "under 50 KB" and the like.
+  ...[20, 50, 100].map(
+    (kb): Tool => ({
+      op: 'image-convert',
+      format: 'image',
+      slug: `compress-image-to-${kb}kb`,
+      name: `Compress Image to ${kb} KB`,
+      summary: `Get a photo or signature under ${kb} KB for an online form.`,
+      action: 'Compress images',
+      title: `Compress Image to ${kb} KB Online — JPG, No Upload | Fizzdoc`,
+      description: `Make a JPG, PNG or WebP photo smaller than ${kb} KB for exam, job and government forms, keeping it as sharp as possible. Nothing is uploaded.`,
+      h1: `Compress an image to under ${kb} KB`,
+      lede: `Forms often want a photo or signature under ${kb} KB. Fizzdoc keeps the picture as large and sharp as it can, lowers the JPG quality only as far as needed, and never uploads your photo.`,
+      steps: [
+        'Add one or more images (JPG, PNG, WebP or a phone photo).',
+        `Check the limit (${kb} KB is filled in; change it if your form asks for a different size).`,
+        'Click “Compress images” and download the result.',
+      ],
+      faq: [
+        PRIVACY_FAQ[0],
+        [
+          'How does it keep the photo clear?',
+          'Like messaging apps, it first keeps the photo about 1600 pixels on its longest side and lowers the JPG quality step by step, never below 50% while the photo is 1000 pixels or larger. Only if that is still too big does it make the picture smaller.',
+        ],
+        [
+          'What if my form needs an exact pixel size too?',
+          'Use Resize Image first to set the width and height the form asks for, then compress the result here.',
+        ],
+        PRIVACY_FAQ[1],
+      ],
+      input: IMAGES_IN,
+      preset: { mode: 'compress', targetKb: String(kb) },
+    }),
+  ),
   {
     op: 'image-convert',
     format: 'image',

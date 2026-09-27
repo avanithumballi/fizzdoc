@@ -114,6 +114,7 @@ function setUp(op: ToolOp) {
         height: number(o.height),
         scale: number(o.scale),
         keepAspect: o.keepAspect !== 'false',
+        targetKb: number(o.targetKb),
       }),
     'pdf-to-text': async (f, o) => (await import('./engine/convert')).pdfToText(f[0], { format: o.format === 'md' ? 'md' : 'txt' }),
     'text-to-pdf': async (f) => (await import('./engine/convert')).textToHtml(f[0]),
