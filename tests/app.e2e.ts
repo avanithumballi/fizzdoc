@@ -633,6 +633,21 @@ test('finds a tool from the home page search without anything leaving the page',
   expect(seen.requests.filter((r) => !r.url.startsWith(baseURL!) && !r.url.startsWith('data:'))).toEqual([]);
 });
 
+test('wraps long file names instead of widening the page on phones', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto('/merge-audio/');
+  const long = 'Krish Theme Krishna Theme Shri Krishna Govinda Hare Murari Soulful Flute Cover by Kiran (Official Audio)';
+  const mp3 = readFileSync(file('tone.mp3'));
+  await page.locator('#file-input').setInputFiles([
+    { name: `${long} part 1.mp3`, mimeType: 'audio/mpeg', buffer: mp3 },
+    { name: `${long} part 2.mp3`, mimeType: 'audio/mpeg', buffer: mp3 },
+  ]);
+  await expect(page.locator('#file-list .file-name')).toHaveText([`${long} part 1.mp3`, `${long} part 2.mp3`]);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  const row = await page.locator('#file-list li').first().boundingBox();
+  expect(row!.x + row!.width).toBeLessThanOrEqual(390);
+});
+
 test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   const licenses = await (await request.get('/third-party-licenses.txt')).text();
   for (const part of ['Apache License', 'pdf-lib (MIT)', 'fflate (MIT)', 'Independent JPEG Group', 'Open Font License']) expect(licenses).toContain(part);

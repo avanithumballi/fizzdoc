@@ -24,7 +24,7 @@
     "format.powerpoint": "PowerPoint",
     "format.image": "Afbeeldingen",
     "group.title": "{format}-tools",
-    "home.eyebrow": "0 bytes geüpload · Open source · Gratis",
+    "home.eyebrow": "0 bytes geüpload · Open source · Voor altijd gratis",
     "home.cta": "PDF samenvoegen",
     "home.browse": "Bekijk alle {n} tools",
     "home.formats": "Ondersteunde formaten",
@@ -37,7 +37,8 @@
     "home.toolsTitle": "Elke tool, standaard privé",
     "home.toolsLede": "Kies een tool. Je bestand wordt op dit apparaat verwerkt en komt nooit bij een server terecht.",
     "home.whatTitle": "Wat is {name}?",
-    "tool.eyebrow": "Werkt op je eigen apparaat · 0 bytes geüpload",
+    "tool.eyebrow": "Voor altijd gratis · Werkt op je eigen apparaat · 0 bytes geüpload",
+    "tool.uses": "Ook handig voor",
     "tool.how": "Zo gebruik je {tool}",
     "tool.more": "Meer privétools",
     "crumbs.label": "Kruimelpad",
@@ -244,8 +245,8 @@
     "au.download": "Downloaden"
   },
   "home": {
-    "title": "Fizzdoc — privétools: PDF, Word, Excel en afbeeldingen. Geen upload.",
-    "description": "Bewerk, comprimeer, converteer en OCR PDF's; converteer Word, Excel en afbeeldingen — direct in je browser. Geen upload, geen account, gratis en open source.",
+    "title": "Fizzdoc — Gratis PDF-, Afbeeldings- & Audiotools. Geen Upload.",
+    "description": "Voor altijd gratis: privétools om PDF's, afbeeldingen, audio en Office te bewerken, comprimeren, converteren en OCR'en. Geen upload, 16 talen.",
     "h1": "Documenttools die je documenten nooit te zien krijgen",
     "lede": "Bewerk, comprimeer, converteer en OCR PDF's. Converteer Word, Excel, PowerPoint en afbeeldingen, en knip of voeg audio samen. Alles draait in je browser — je bestanden verlaten je apparaat nooit.",
     "what": "Fizzdoc is een gratis, open-source verzameling documenttools die volledig in je webbrowser draait. PDF's worden verwerkt met de engines qpdf, pdf.js en pdf-lib, tekstherkenning gebruikt Tesseract, en ook Office-bestanden en afbeeldingen worden lokaal verwerkt — zodat er nooit iets naar een server wordt geüpload.",
@@ -253,6 +254,10 @@
       [
         "Worden mijn bestanden ergens geüpload?",
         "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+      ],
+      [
+        "Is het veilig voor bankafschriften, ID-kaarten of medische dossiers?",
+        "Ja. Het bestand wordt geopend en verwerkt in je browsertab en nooit ergens naartoe verstuurd, dus er is geen kopie op een server die kan lekken, verkocht of gehackt worden. Je browser dwingt dit af, je kunt het zelf controleren in het tabblad Netwerk, en het sluiten van het tabblad wist alles."
       ],
       [
         "Hoe verschilt Fizzdoc van iLovePDF, Smallpdf of de online tools van Adobe?",
@@ -268,7 +273,7 @@
       ],
       [
         "Is Fizzdoc gratis?",
-        "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
       ]
     ]
   },
@@ -277,7 +282,7 @@
       "name": "PDF samenvoegen",
       "summary": "Combineer meerdere PDF's tot één, in de volgorde die jij kiest.",
       "action": "PDF's samenvoegen",
-      "title": "PDF samenvoegen zonder upload, privé en gratis | Fizzdoc",
+      "title": "PDF Samenvoegen Gratis — Combineer PDF's, Geen Upload | Fizzdoc",
       "description": "Combineer PDF-bestanden in je browser. Er wordt niets geüpload en formuliervelden en links blijven behouden. Gratis, geen account, open source.",
       "h1": "PDF's samenvoegen zonder ze te uploaden",
       "lede": "Combineer PDF's tot één document, rechtstreeks in je browser. Er wordt niets naar een server gestuurd en formuliervelden en interne links overleven het samenvoegen.",
@@ -305,15 +310,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf bestanden samenvoegen",
+        "pdf samenvoegen zonder upload",
+        "pdf's combineren online gratis",
+        "gescande pdf's samenvoegen",
+        "pdf samenvoegen op telefoon"
       ]
     },
     "split-pdf": {
       "name": "PDF splitsen",
       "summary": "Haal de pagina's die je nodig hebt uit een nieuwe PDF.",
       "action": "Pagina's extraheren",
-      "title": "PDF splitsen & pagina's extraheren, privé, geen upload | Fizzdoc",
+      "title": "PDF Splitsen Gratis — Pagina's Scheiden, Geen Upload | Fizzdoc",
       "description": "Haal pagina's uit een PDF in je browser. Kies reeksen zoals 1-3, 8 — je bestand verlaat je apparaat nooit. Gratis, geen account, open source.",
       "h1": "Een PDF splitsen en pagina's extraheren — privé",
       "lede": "Haal de pagina's die je nodig hebt uit een nieuwe PDF. Typ reeksen zoals “1-3, 8”; de volgorde die je typt is de volgorde die je krijgt.",
@@ -337,16 +349,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf splitsen in pagina's",
+        "één pagina uit pdf halen",
+        "grote pdf opsplitsen",
+        "pdf pagina's knippen gratis",
+        "pdf splitsen zonder adobe"
       ]
     },
     "rotate-pdf": {
       "name": "PDF roteren",
       "summary": "Zet scheve pagina's permanent recht.",
       "action": "Pagina's roteren",
-      "title": "PDF-pagina's permanent roteren, zonder upload | Fizzdoc",
-      "description": "Roteer alle of geselecteerde PDF-pagina's met 90°, 180° of 270° en sla het resultaat op. Werkt in je browser; je bestand wordt nooit geüpload.",
+      "title": "PDF Roteren Gratis — Pagina's Draaien, Geen Upload | Fizzdoc",
+      "description": "Roteer alle of geselecteerde PDF-pagina's met 90°, 180° of 270° en sla het resultaat op. Werkt in je browser; je bestand wordt nooit geüpload. Gratis.",
       "h1": "PDF-pagina's roteren en zo opslaan",
       "lede": "Corrigeer scheef gescande pagina's voorgoed. Roteer elke pagina of alleen de pagina's die je kiest — zonder opnieuw te renderen, dus de kwaliteit blijft ongewijzigd.",
       "steps": [
@@ -369,15 +388,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf roteren en opslaan",
+        "scheve gescande pdf rechtzetten",
+        "één pagina in pdf draaien",
+        "pdf pagina's 90 graden draaien",
+        "pdf roteren online gratis"
       ]
     },
     "delete-pdf-pages": {
       "name": "PDF-pagina's verwijderen",
       "summary": "Verwijder pagina's die je niet wilt delen.",
       "action": "Pagina's verwijderen",
-      "title": "Pagina's uit een PDF verwijderen, privé, geen upload | Fizzdoc",
+      "title": "PDF-pagina's Verwijderen Gratis — Online, Geen Upload | Fizzdoc",
       "description": "Verwijder ongewenste pagina's uit een PDF in je browser. Typ de pagina's om te verwijderen; je bestand verlaat je apparaat nooit. Gratis en open source.",
       "h1": "Pagina's uit een PDF verwijderen — privé",
       "lede": "Verwijder lege, dubbele of vertrouwelijke pagina's voordat je een document deelt, zonder het aan iemand af te geven.",
@@ -397,15 +423,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pagina's verwijderen uit pdf",
+        "lege pagina verwijderen pdf",
+        "pdf pagina's verwijderen zonder acrobat",
+        "laatste pagina pdf verwijderen",
+        "pdf pagina's verwijderen gratis"
       ]
     },
     "unlock-pdf": {
       "name": "PDF ontgrendelen",
       "summary": "Sla een kopie op zonder het wachtwoord dat je kent.",
       "action": "Wachtwoord verwijderen",
-      "title": "PDF-wachtwoord verwijderen (PDF ontgrendelen), geen upload | Fizzdoc",
+      "title": "PDF Ontgrendelen Gratis — Wachtwoord Verwijderen | Fizzdoc",
       "description": "Verwijder het wachtwoord van een PDF die je mag openen. Ontsleuteling gebeurt op je apparaat en er wordt niets geüpload. Gratis, geen account.",
       "h1": "Een PDF-wachtwoord verwijderen — op je eigen apparaat",
       "lede": "Sla een ontgrendelde kopie op van een beveiligde PDF die je al kunt openen. Het wachtwoord en het document blijven op je apparaat.",
@@ -429,15 +462,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "wachtwoord verwijderen uit pdf",
+        "bankafschrift pdf ontgrendelen",
+        "pdf vraagt steeds om wachtwoord",
+        "pdf beveiliging verwijderen",
+        "pdf ontgrendelen gratis online"
       ]
     },
     "protect-pdf": {
       "name": "PDF beveiligen",
       "summary": "Beveilig een PDF met een wachtwoord en AES-256-versleuteling.",
       "action": "PDF beveiligen",
-      "title": "PDF beveiligen met wachtwoord (AES-256), geen upload | Fizzdoc",
+      "title": "PDF Beveiligen Gratis — Wachtwoord met AES-256 | Fizzdoc",
       "description": "Voeg een wachtwoord toe aan een PDF met AES-256-versleuteling, rechtstreeks in je browser. Bestand en wachtwoord verlaten je apparaat nooit. Gratis.",
       "h1": "Een PDF met een wachtwoord beveiligen — op je eigen apparaat",
       "lede": "Versleutel een PDF met AES-256, zodat hij alleen opent met jouw wachtwoord. Versleuteling gebeurt in deze tab; noch het bestand, noch het wachtwoord wordt ergens naartoe gestuurd.",
@@ -461,15 +501,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "wachtwoord toevoegen aan pdf",
+        "pdf versleutelen aes-256",
+        "pdf bestand vergrendelen",
+        "pdf beveiligen zonder acrobat",
+        "pdf beveiligen voor e-mail"
       ]
     },
     "remove-pdf-metadata": {
       "name": "PDF-metadata verwijderen",
       "summary": "Verwijder auteur, titel, software en XMP-gegevens.",
       "action": "Metadata verwijderen",
-      "title": "PDF-metadata verwijderen (auteur, titel, XMP) | Fizzdoc",
+      "title": "PDF-metadata Verwijderen Gratis — Auteur, XMP | Fizzdoc",
       "description": "Verwijder verborgen PDF-metadata zoals auteur, titel, makende app en XMP-gegevens voordat je een bestand deelt. Werkt in je browser; niets wordt geüpload.",
       "h1": "Verborgen metadata uit een PDF verwijderen",
       "lede": "PDF's registreren stilletjes wie ze schreef, met welke app en wanneer. Verwijder auteur, titel, onderwerp, trefwoorden, producent en XMP-metadata voordat je deelt.",
@@ -489,16 +536,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "auteursnaam verwijderen uit pdf",
+        "pdf metadata opschonen voor delen",
+        "verborgen gegevens pdf verwijderen",
+        "xmp metadata verwijderen",
+        "pdf anonimiseren"
       ]
     },
     "jpg-to-pdf": {
       "name": "JPG naar PDF",
       "summary": "Zet foto's en scans om in één PDF.",
       "action": "PDF maken",
-      "title": "JPG naar PDF converteren, privé, gratis, geen upload | Fizzdoc",
-      "description": "Converteer JPG, PNG, WebP en andere afbeeldingen naar één PDF in je browser. Foto's verlaten je apparaat nooit. Geen watermerk, geen account.",
+      "title": "JPG naar PDF Gratis — Foto's naar PDF, Geen Upload | Fizzdoc",
+      "description": "Converteer JPG, PNG, WebP en andere afbeeldingen naar één PDF in je browser. Foto's verlaten je apparaat nooit. Geen watermerk, geen account. Gratis.",
       "h1": "JPG- en PNG-afbeeldingen converteren naar PDF — privé",
       "lede": "Combineer foto's, schermafbeeldingen en scans tot één PDF, één pagina per afbeelding, op volledige resolutie. Je foto's blijven op je apparaat.",
       "steps": [
@@ -521,15 +575,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "foto's omzetten naar pdf",
+        "meerdere afbeeldingen in één pdf",
+        "afbeelding naar pdf converteren gratis",
+        "jpg naar pdf op telefoon",
+        "pdf maken van foto's"
       ]
     },
     "pdf-to-jpg": {
       "name": "PDF naar JPG",
       "summary": "Sla elke pagina op als een scherpe JPG-afbeelding.",
       "action": "Naar JPG converteren",
-      "title": "PDF naar JPG converteren, privé, gratis, geen upload | Fizzdoc",
+      "title": "PDF naar JPG Gratis — Hoge Kwaliteit, Geen Upload | Fizzdoc",
       "description": "Converteer elke pagina van een PDF naar een JPG-afbeelding van hoge kwaliteit, in je browser. Niets wordt geüpload. Meerdere pagina's downloaden als één ZIP.",
       "h1": "PDF-pagina's converteren naar JPG-afbeeldingen — privé",
       "lede": "Render elke pagina naar een scherpe JPG op 150 DPI met de pdf.js-engine van Mozilla, hier in je browser. Een PDF met meerdere pagina's download je als één ZIP.",
@@ -553,16 +614,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf pagina's omzetten naar afbeelding",
+        "pdf opslaan als jpg",
+        "pdf naar afbeelding hoge kwaliteit",
+        "pagina uit pdf als foto",
+        "pdf naar jpg op telefoon"
       ]
     },
     "compress-pdf": {
       "name": "PDF comprimeren",
       "summary": "Verklein een PDF door de afbeeldingen te optimaliseren. Tekst blijft scherp.",
       "action": "PDF comprimeren",
-      "title": "PDF comprimeren online zonder upload — gratis | Fizzdoc",
-      "description": "Verklein een PDF-bestand in je browser door te grote afbeeldingen opnieuw te comprimeren. Tekst blijft selecteerbaar en scherp. Niets wordt geüpload.",
+      "title": "PDF Comprimeren Gratis — Bestandsgrootte Verkleinen | Fizzdoc",
+      "description": "Verklein een PDF-bestand in je browser door te grote afbeeldingen opnieuw te comprimeren. Tekst blijft selecteerbaar en scherp. Niets wordt geüpload. Gratis.",
       "h1": "Een PDF comprimeren — zonder hem te uploaden",
       "lede": "Maak een PDF klein genoeg om te e-mailen of naar een portaal te uploaden. Fizzdoc comprimeert te grote foto's en scans opnieuw en laat tekst en vectorafbeeldingen ongemoeid.",
       "steps": [
@@ -585,15 +653,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf bestandsgrootte verkleinen",
+        "pdf comprimeren zonder kwaliteitsverlies",
+        "pdf kleiner maken voor e-mail",
+        "pdf comprimeren voor portaal upload",
+        "gescande pdf verkleinen"
       ]
     },
     "edit-pdf": {
       "name": "PDF bewerken",
       "summary": "Wijzig bestaande tekst, voeg tekst toe en overschilder, direct op de pagina.",
       "action": "PDF opslaan",
-      "title": "PDF-tekst online bewerken — gratis, geen upload | Fizzdoc",
+      "title": "PDF Bewerken Gratis — Tekst Wijzigen Online | Fizzdoc",
       "description": "Klik op tekst in een PDF om die te wijzigen, voeg nieuwe tekst toe, of overschilder delen — rechtstreeks op de pagina, in je browser. Niets wordt geüpload.",
       "h1": "PDF-tekst rechtstreeks op de pagina bewerken",
       "lede": "Herstel een typefout, werk een datum bij of vul een leeg vak in zonder het originele bestand. Klik op de tekst die je wilt wijzigen en typ — het gebeurt allemaal op je apparaat.",
@@ -617,15 +692,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "tekst in pdf wijzigen",
+        "woorden in pdf veranderen gratis",
+        "tekst toevoegen aan pdf",
+        "tekst wit maken in pdf",
+        "pdf editor zonder account"
       ]
     },
     "redact-pdf": {
       "name": "PDF zwart lakken",
       "summary": "Maak tekst, handtekeningen of foto's zwart zodat ze voorgoed weg zijn.",
       "action": "Zwart gelakt PDF opslaan",
-      "title": "PDF Zwart Lakken Online — Tekst Voorgoed Verwijderen | Fizzdoc",
+      "title": "PDF Zwart Lakken Gratis — Definitief, Geen Upload | Fizzdoc",
       "description": "Maak namen, nummers, handtekeningen of foto's in een PDF zwart en sla een kopie op waarin ze echt weg zijn. Werkt in je browser; niets wordt geüpload. Gratis.",
       "h1": "PDF zwart lakken: maak alles voorgoed onleesbaar",
       "lede": "Sleep over wat moet verdwijnen, of zoek een naam of nummer en markeer elke match. Bij het opslaan wordt elke pagina een afbeelding, dus de verborgen tekst kan niet worden gekopieerd of teruggehaald.",
@@ -649,15 +731,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "tekst zwart maken in pdf",
+        "persoonlijke gegevens verbergen in pdf",
+        "pdf lakken zonder acrobat pro",
+        "gevoelige data verwijderen uit pdf",
+        "namen censureren in pdf"
       ]
     },
     "pdf-to-scanned-pdf": {
       "name": "PDF naar Gescande PDF",
       "summary": "Maak van elke pagina een afbeelding, zoals een gescand document.",
       "action": "Gescande PDF maken",
-      "title": "PDF naar Gescande PDF — Look van een Scan, Geen Upload | Fizzdoc",
+      "title": "PDF naar Gescande PDF Gratis — Scanlook | Fizzdoc",
       "description": "Zet een PDF om in een gescande PDF met alleen afbeeldingen: in kleur, zwart-wit, of met scannerlook. Werkt in je browser; niets wordt geüpload. Gratis.",
       "h1": "Zet een PDF om in een gescande PDF",
       "lede": "Elke pagina wordt een afbeelding, dus de tekst kan niet worden geselecteerd of bewerkt. Behoud de kleuren, ga naar zwart-wit, of voeg een lichte kanteling en papierkorrel toe voor een gescande look.",
@@ -681,16 +770,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf laten lijken op scan",
+        "pdf platmaken naar afbeeldingen",
+        "pdf omzetten naar alleen-afbeelding pdf",
+        "zwart-wit scaneffect pdf",
+        "tekst kopiëren uit pdf voorkomen"
       ]
     },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Maak een gescande PDF doorzoekbaar en kopieerbaar.",
       "action": "Tekst herkennen",
-      "title": "OCR PDF — gescande PDF's doorzoekbaar maken, geen upload | Fizzdoc",
-      "description": "Zet gescande PDF's om in doorzoekbare, kopieerbare documenten met Engelse OCR die in je browser draait. Pagina's behouden hun originele kwaliteit.",
+      "title": "OCR PDF Gratis — Gescande PDF Doorzoekbaar Maken | Fizzdoc",
+      "description": "Zet gescande PDF's om in doorzoekbare, kopieerbare documenten met Engelse OCR die in je browser draait. Pagina's behouden hun originele kwaliteit. Gratis.",
       "h1": "Een gescande PDF doorzoekbaar maken met OCR",
       "lede": "Herken de Engelse tekst op gescande pagina's en voeg die toe als onzichtbare laag, zodat je kunt zoeken, selecteren en kopiëren. De pagina's zelf worden niet gewijzigd.",
       "steps": [
@@ -713,16 +809,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "gescande pdf doorzoekbaar maken",
+        "ocr pdf gratis",
+        "tekst kopiëren uit gescande pdf",
+        "gescande pdf omzetten naar tekst",
+        "doorzoekbare pdf zonder upload"
       ]
     },
     "pdf-to-word": {
       "name": "PDF naar Word",
       "summary": "Zet PDF-tekst om in een bewerkbaar .docx.",
       "action": "Naar Word converteren",
-      "title": "PDF naar Word (DOCX) converteren, privé, geen upload | Fizzdoc",
-      "description": "Converteer een PDF naar een bewerkbaar Word-document in je browser. Koppen, alinea's en pagina-einden blijven behouden. Niets wordt geüpload.",
+      "title": "PDF naar Word Gratis — Bewerkbaar DOCX | Fizzdoc",
+      "description": "Converteer een PDF naar een bewerkbaar Word-document in je browser. Koppen, alinea's en pagina-einden blijven behouden. Niets wordt geüpload. Gratis.",
       "h1": "PDF converteren naar een bewerkbaar Word-document",
       "lede": "Haal de tekst van een PDF naar Word, met heropgebouwde koppen en alinea's, zodat je hem kunt bewerken. Conversie gebeurt op je apparaat.",
       "steps": [
@@ -745,15 +848,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf omzetten naar bewerkbaar word",
+        "pdf naar docx gratis",
+        "pdf bewerken in word",
+        "pdf naar word met koppen behouden",
+        "pdf naar word op telefoon"
       ]
     },
     "pdf-to-powerpoint": {
       "name": "PDF naar PowerPoint",
       "summary": "Zet elke PDF-pagina om in een dia.",
       "action": "Naar PowerPoint converteren",
-      "title": "PDF naar PowerPoint (PPTX) converteren, geen upload | Fizzdoc",
+      "title": "PDF naar PowerPoint Gratis — PDF naar PPTX | Fizzdoc",
       "description": "Converteer een PDF naar een PowerPoint-presentatie met één scherpe dia per pagina, rechtstreeks in je browser. Niets wordt geüpload. Gratis en open source.",
       "h1": "Een PDF converteren naar een PowerPoint-presentatie",
       "lede": "Presenteer een PDF als dia's. Elke pagina wordt een dia op volledig formaat en hoge resolutie in een .pptx die je kunt openen in PowerPoint, Keynote of Google Slides.",
@@ -773,15 +883,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf omzetten naar dia's",
+        "pdf naar ppt gratis",
+        "pdf presenteren in powerpoint",
+        "pdf naar presentatie",
+        "pdf naar google slides"
       ]
     },
     "pdf-to-text": {
       "name": "PDF naar tekst",
       "summary": "Haal alle tekst uit een PDF als een .txt-bestand.",
       "action": "Tekst extraheren",
-      "title": "PDF naar tekst (TXT) converteren, privé, geen upload | Fizzdoc",
+      "title": "PDF naar Tekst Gratis — Tekst Extraheren | Fizzdoc",
       "description": "Haal de tekst uit een PDF in een gewoon .txt-bestand, in je browser, in de juiste leesvolgorde. Niets wordt geüpload. Gratis, geen account, open source.",
       "h1": "Tekst uit een PDF extraheren",
       "lede": "Haal elk woord uit een PDF als platte tekst, met regels en alinea's in leesvolgorde. Perfect om te kopiëren, te doorzoeken of in andere tools te gebruiken.",
@@ -801,15 +918,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "tekst uit pdf halen",
+        "alle tekst kopiëren uit pdf",
+        "pdf naar txt gratis",
+        "pdf naar platte tekst",
+        "tekst uit pdf halen online"
       ]
     },
     "pdf-to-markdown": {
       "name": "PDF naar Markdown",
       "summary": "Converteer een PDF naar nette Markdown met koppen en lijsten.",
       "action": "Naar Markdown converteren",
-      "title": "PDF naar Markdown converteren, privé, geen upload | Fizzdoc",
+      "title": "PDF naar Markdown Gratis — Voor Docs & AI | Fizzdoc",
       "description": "Converteer een PDF naar Markdown met herkende koppen en lijsten, klaar voor documentatie, notities of AI-tools. Werkt in je browser; niets wordt geüpload.",
       "h1": "Een PDF converteren naar Markdown",
       "lede": "Zet een PDF om in nette Markdown — koppen, alinea's en lijsten — voor Notion, Obsidian, GitHub of elke tool die Markdown leest.",
@@ -829,15 +953,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf omzetten naar markdown voor chatgpt",
+        "pdf naar md gratis",
+        "pdf naar notion of obsidian",
+        "pdf koppen en lijsten extraheren",
+        "pdf voorbereiden voor ai-tool"
       ]
     },
     "text-to-pdf": {
       "name": "Tekst naar PDF",
       "summary": "Zet een .txt-bestand om in een nette PDF.",
       "action": "PDF maken",
-      "title": "Tekst naar PDF (TXT naar PDF) converteren, geen upload | Fizzdoc",
+      "title": "Tekst naar PDF Gratis — TXT naar PDF | Fizzdoc",
       "description": "Converteer een platte tekstbestand naar een nette, leesbare PDF in je browser. Ondersteunt elke taal, ook Hindi en andere schriften. Niets wordt geüpload.",
       "h1": "Een tekstbestand converteren naar PDF",
       "lede": "Zet notities, logs of elk .txt-bestand om in een netjes opgemaakte A4-PDF. Elke taal en elk schrift wordt ondersteund.",
@@ -857,15 +988,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "txt omzetten naar pdf",
+        "notities opslaan als pdf",
+        "tekst naar pdf gratis",
+        "platte tekst naar pdf",
+        "pdf maken van tekst"
       ]
     },
     "markdown-to-pdf": {
       "name": "Markdown naar PDF",
       "summary": "Render een .md-bestand als een opgemaakte PDF.",
       "action": "PDF maken",
-      "title": "Markdown naar PDF converteren, privé, geen upload | Fizzdoc",
+      "title": "Markdown naar PDF Gratis — MD naar PDF | Fizzdoc",
       "description": "Converteer Markdown naar een opgemaakte PDF met koppen, lijsten, tabellen en codeblokken, rechtstreeks in je browser. Niets wordt geüpload. Gratis.",
       "h1": "Markdown converteren naar PDF",
       "lede": "Render een README, notities of documentatie geschreven in Markdown naar een nette, afdrukbare PDF met koppen, lijsten, tabellen en codeblokken.",
@@ -889,16 +1027,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "readme omzetten naar pdf",
+        "md naar pdf gratis",
+        "markdown afdrukken als pdf",
+        "markdown met tabellen naar pdf",
+        "markdown notities exporteren als pdf"
       ]
     },
     "word-to-pdf": {
       "name": "Word naar PDF",
       "summary": "Converteer een .docx naar PDF, alle talen ondersteund.",
       "action": "Naar PDF converteren",
-      "title": "Word naar PDF (DOCX naar PDF) converteren, geen upload | Fizzdoc",
-      "description": "Converteer een Word-document naar PDF in je browser, met behoud van koppen, lijsten, tabellen en afbeeldingen. Werkt met downloads uit Google Docs.",
+      "title": "Word naar PDF Gratis — DOCX naar PDF | Fizzdoc",
+      "description": "Converteer een Word-document naar PDF in je browser, met behoud van koppen, lijsten, tabellen en afbeeldingen. Werkt met downloads uit Google Docs. Gratis.",
       "h1": "Een Word-document converteren naar PDF",
       "lede": "Zet een .docx om in een PDF met koppen, lijsten, tabellen en afbeeldingen, met de eigen PDF-schrijver van je browser. Het document verlaat je apparaat nooit.",
       "steps": [
@@ -921,15 +1066,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "docx omzetten naar pdf",
+        "word opslaan als pdf gratis",
+        "google docs naar pdf",
+        "cv omzetten naar pdf",
+        "word naar pdf op telefoon"
       ]
     },
     "excel-to-csv": {
       "name": "Excel naar CSV",
       "summary": "Exporteer elk blad van een .xlsx naar CSV.",
       "action": "Naar CSV converteren",
-      "title": "Excel naar CSV (XLSX naar CSV) converteren, geen upload | Fizzdoc",
+      "title": "Excel naar CSV Gratis — XLSX naar CSV | Fizzdoc",
       "description": "Converteer Excel-spreadsheets naar CSV in je browser. Elk blad wordt geëxporteerd, datums worden ISO-datums, en niets wordt geüpload. Werkt met Google Sheets.",
       "h1": "Excel converteren naar CSV",
       "lede": "Exporteer elk blad van een .xlsx-werkmap naar een UTF-8 CSV-bestand dat overal correct opent. Datums, getallen en tekst blijven zoals ze zijn.",
@@ -953,16 +1105,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "xlsx omzetten naar csv",
+        "excel blad exporteren als csv",
+        "google sheets naar csv",
+        "excel naar csv met alle bladen",
+        "xlsx naar csv gratis"
       ]
     },
     "csv-to-excel": {
       "name": "CSV naar Excel",
       "summary": "Zet een .csv om in een echte .xlsx-werkmap.",
       "action": "Naar Excel converteren",
-      "title": "CSV naar Excel (CSV naar XLSX) converteren, geen upload | Fizzdoc",
-      "description": "Converteer een CSV-bestand naar een Excel .xlsx-werkmap in je browser. Getallen blijven getallen, voorloopnullen blijven staan, en niets wordt geüpload.",
+      "title": "CSV naar Excel Gratis — CSV naar XLSX | Fizzdoc",
+      "description": "Converteer een CSV-bestand naar een Excel .xlsx-werkmap in je browser. Getallen blijven getallen, voorloopnullen blijven staan, en niets wordt geüpload. Gratis.",
       "h1": "CSV converteren naar Excel",
       "lede": "Zet een CSV om in een echte Excel-werkmap. Getallen worden getallen, codes zoals 007 behouden hun voorloopnullen, en het scheidingsteken wordt automatisch herkend.",
       "steps": [
@@ -981,16 +1140,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "csv openen in excel correct",
+        "csv naar xlsx gratis",
+        "voorloopnullen behouden in csv",
+        "csv omzetten naar spreadsheet",
+        "csv naar excel op telefoon"
       ]
     },
     "compress-image": {
       "name": "Afbeelding comprimeren",
       "summary": "Maak JPG-, PNG- en WebP-afbeeldingen kleiner.",
       "action": "Afbeeldingen comprimeren",
-      "title": "Afbeeldingen comprimeren (JPG, PNG, WebP), gratis | Fizzdoc",
-      "description": "Verklein afbeeldingsbestanden in je browser — JPG, PNG, WebP en meer, in bulk. Kies de kwaliteit of blijf verliesvrij. Foto's worden nooit geüpload.",
+      "title": "Afbeelding Comprimeren Gratis — Kwaliteit Behouden | Fizzdoc",
+      "description": "Verklein afbeeldingsbestanden in je browser — JPG, PNG, WebP en meer, in bulk. Kies de kwaliteit of blijf verliesvrij. Foto's worden nooit geüpload. Gratis.",
       "h1": "Afbeeldingen comprimeren zonder ze te uploaden",
       "lede": "Verklein foto's en schermafbeeldingen voor e-mail, websites en formulieren. Kies een kwaliteitsniveau of blijf verliesvrij — allemaal op je apparaat, in bulk.",
       "steps": [
@@ -1013,16 +1179,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "afbeelding comprimeren zonder kwaliteitsverlies",
+        "fotogrootte verkleinen",
+        "jpg en png in bulk comprimeren",
+        "afbeeldingen kleiner maken voor website",
+        "afbeelding kb verkleinen"
       ]
     },
     "compress-image-to-20kb": {
       "name": "Afbeelding comprimeren naar 20 KB",
       "summary": "Breng een foto of handtekening onder de 20 KB voor een online formulier.",
       "action": "Afbeeldingen comprimeren",
-      "title": "Afbeelding Comprimeren naar 20 KB — JPG, Geen Upload | Fizzdoc",
-      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 20 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload.",
+      "title": "Afbeelding naar 20 KB Gratis — Voor Formulieren | Fizzdoc",
+      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 20 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload. Gratis.",
       "h1": "Een afbeelding comprimeren tot onder 20 KB",
       "lede": "Formulieren vragen vaak om een foto of handtekening onder de 20 KB. Fizzdoc houdt de foto zo groot en scherp mogelijk, verlaagt de JPG-kwaliteit alleen zo veel als nodig, en uploadt je foto nooit.",
       "steps": [
@@ -1045,16 +1218,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "foto verkleinen naar 20 kb",
+        "pasfoto onder 20 kb",
+        "foto comprimeren voor examenformulier",
+        "afbeelding naar 20 kb voor sollicitatie",
+        "jpg onder 20 kb"
       ]
     },
     "compress-image-to-50kb": {
       "name": "Afbeelding comprimeren naar 50 KB",
       "summary": "Breng een foto of handtekening onder de 50 KB voor een online formulier.",
       "action": "Afbeeldingen comprimeren",
-      "title": "Afbeelding Comprimeren naar 50 KB — JPG, Geen Upload | Fizzdoc",
-      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 50 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload.",
+      "title": "Afbeelding naar 50 KB Gratis — Voor Formulieren | Fizzdoc",
+      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 50 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload. Gratis.",
       "h1": "Een afbeelding comprimeren tot onder 50 KB",
       "lede": "Formulieren vragen vaak om een foto of handtekening onder de 50 KB. Fizzdoc houdt de foto zo groot en scherp mogelijk, verlaagt de JPG-kwaliteit alleen zo veel als nodig, en uploadt je foto nooit.",
       "steps": [
@@ -1077,16 +1257,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "foto verkleinen naar 50 kb",
+        "pasfoto onder 50 kb",
+        "afbeelding comprimeren voor overheidsformulier",
+        "foto naar 50 kb online",
+        "jpg onder 50 kb"
       ]
     },
     "compress-image-to-100kb": {
       "name": "Afbeelding comprimeren naar 100 KB",
       "summary": "Breng een foto of handtekening onder de 100 KB voor een online formulier.",
       "action": "Afbeeldingen comprimeren",
-      "title": "Afbeelding Comprimeren naar 100 KB — JPG, Geen Upload | Fizzdoc",
-      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 100 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload.",
+      "title": "Afbeelding naar 100 KB Gratis — Voor Formulieren | Fizzdoc",
+      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 100 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload. Gratis.",
       "h1": "Een afbeelding comprimeren tot onder 100 KB",
       "lede": "Formulieren vragen vaak om een foto of handtekening onder de 100 KB. Fizzdoc houdt de foto zo groot en scherp mogelijk, verlaagt de JPG-kwaliteit alleen zo veel als nodig, en uploadt je foto nooit.",
       "steps": [
@@ -1109,15 +1296,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "foto verkleinen naar 100 kb",
+        "afbeelding comprimeren voor sollicitatie",
+        "foto onder 100 kb voor online formulier",
+        "afbeelding naar 100 kb online",
+        "jpg onder 100 kb"
       ]
     },
     "resize-image": {
       "name": "Afbeelding formaat wijzigen",
       "summary": "Maak afbeeldingen groter of kleiner, in pixels of procenten.",
       "action": "Afbeeldingen aanpassen",
-      "title": "Afbeeldingen formaat wijzigen (groter/kleiner), geen upload | Fizzdoc",
+      "title": "Afbeelding Formaat Wijzigen Gratis — In Pixels | Fizzdoc",
       "description": "Wijzig het formaat van afbeeldingen naar exacte pixels of een percentage — kleiner of groter — in je browser, in bulk. Behoud de beeldverhouding of niet.",
       "h1": "Formaat van afbeeldingen wijzigen — groter of kleiner",
       "lede": "Stel een exacte breedte en hoogte in of schaal met een percentage, voor één afbeelding of veel tegelijk. De beeldverhouding blijft behouden, tenzij je anders aangeeft.",
@@ -1137,15 +1331,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "afbeelding formaat wijzigen naar exacte pixels",
+        "fotoafmetingen aanpassen",
+        "foto formaat wijzigen voor paspoort of visum",
+        "afbeeldingen in bulk formaat wijzigen",
+        "afbeelding vergroten of verkleinen"
       ]
     },
     "convert-image": {
       "name": "Afbeelding converteren",
       "summary": "Converteer tussen JPG, PNG en WebP.",
       "action": "Afbeeldingen converteren",
-      "title": "Afbeeldingen converteren naar JPG, PNG of WebP | Fizzdoc",
+      "title": "Afbeelding Converteren Gratis — JPG, PNG, WebP | Fizzdoc",
       "description": "Converteer afbeeldingen tussen JPG, PNG en WebP in je browser, in bulk. Werkt met GIF, BMP, AVIF en iPhone-foto's die je browser opent. Niets wordt geüpload.",
       "h1": "Afbeeldingen converteren naar JPG, PNG of WebP",
       "lede": "Wijzig het formaat van één afbeelding of een hele batch — bijvoorbeeld WebP naar JPG of PNG naar WebP — zonder ze ergens naartoe te sturen.",
@@ -1165,15 +1366,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "avif of bmp omzetten naar jpg",
+        "afbeeldingsformaat wijzigen",
+        "gif of bmp omzetten naar png",
+        "afbeeldingen in bulk converteren",
+        "afbeelding naar webp"
       ]
     },
     "image-to-text": {
       "name": "Afbeelding naar tekst (OCR)",
       "summary": "Selecteer en kopieer tekst uit elke foto of screenshot.",
       "action": "Tekst herkennen",
-      "title": "Afbeelding naar tekst (OCR) — tekst uit foto's, geen upload | Fizzdoc",
+      "title": "Afbeelding naar Tekst Gratis — OCR van Foto's | Fizzdoc",
       "description": "Haal tekst uit foto's en screenshots met Engelse OCR in je browser, en selecteer en kopieer die direct op de foto — net als Live Text. Niets wordt geüpload.",
       "h1": "Tekst uit elke afbeelding kopiëren",
       "lede": "Herken de Engelse tekst in een foto, scan of screenshot, en selecteer die direct op de afbeelding — net als Live Text op iPhone. Niets verlaat je apparaat.",
@@ -1197,15 +1405,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "tekst kopiëren uit een foto",
+        "screenshot naar tekst",
+        "tekst uit afbeelding halen gratis",
+        "ocr afbeelding naar tekst",
+        "tekst uit telefoonfoto kopiëren"
       ]
     },
     "png-to-jpg": {
       "name": "PNG naar JPG",
       "summary": "Converteer PNG-afbeeldingen in bulk naar JPG.",
       "action": "Naar JPG converteren",
-      "title": "PNG naar JPG converteren — gratis, geen upload | Fizzdoc",
+      "title": "PNG naar JPG Gratis — Online Converteren | Fizzdoc",
       "description": "Converteer PNG-afbeeldingen naar JPG in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
       "h1": "PNG converteren naar JPG — privé",
       "lede": "JPG-bestanden zijn voor foto's veel kleiner en openen overal, ook in oude software en uploadformulieren die PNG weigeren. Fizzdoc converteert je PNG-bestanden rechtstreeks op je apparaat.",
@@ -1229,15 +1444,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "png omzetten naar jpg gratis",
+        "png naar jpeg",
+        "png kleiner maken",
+        "screenshot naar jpg",
+        "png naar jpg in bulk"
       ]
     },
     "jpg-to-png": {
       "name": "JPG naar PNG",
       "summary": "Converteer JPG-afbeeldingen in bulk naar PNG.",
       "action": "Naar PNG converteren",
-      "title": "JPG naar PNG converteren — gratis, geen upload | Fizzdoc",
+      "title": "JPG naar PNG Gratis — Online Converteren | Fizzdoc",
       "description": "Converteer JPG-afbeeldingen naar PNG in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
       "h1": "JPG converteren naar PNG — privé",
       "lede": "PNG is verliesvrij, dus de afbeelding verliest geen verdere kwaliteit als je hem opnieuw bewerkt en opslaat. Fizzdoc converteert je JPG-bestanden rechtstreeks op je apparaat.",
@@ -1261,15 +1483,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "jpg omzetten naar png gratis",
+        "jpeg naar png",
+        "foto opslaan als png",
+        "verliesvrije afbeeldingskopie",
+        "jpg naar png in bulk"
       ]
     },
     "webp-to-jpg": {
       "name": "WebP naar JPG",
       "summary": "Converteer WebP-afbeeldingen in bulk naar JPG.",
       "action": "Naar JPG converteren",
-      "title": "WebP naar JPG converteren — gratis, geen upload | Fizzdoc",
+      "title": "WebP naar JPG Gratis — Online Converteren | Fizzdoc",
       "description": "Converteer WebP-afbeeldingen naar JPG in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
       "h1": "WebP converteren naar JPG — privé",
       "lede": "Veel apps, printers en uploadformulieren kunnen nog steeds geen WebP-afbeeldingen openen die van websites zijn opgeslagen. JPG werkt overal. Fizzdoc converteert je WebP-bestanden rechtstreeks op je apparaat.",
@@ -1293,15 +1522,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "webp omzetten naar jpg gratis",
+        "webp afbeelding openen",
+        "webp naar jpeg",
+        "webp opslaan als jpg",
+        "webp naar jpg in bulk"
       ]
     },
     "jpg-to-webp": {
       "name": "JPG naar WebP",
       "summary": "Converteer JPG-afbeeldingen in bulk naar WebP.",
       "action": "Naar WebP converteren",
-      "title": "JPG naar WebP converteren — gratis, geen upload | Fizzdoc",
+      "title": "JPG naar WebP Gratis — Online Converteren | Fizzdoc",
       "description": "Converteer JPG-afbeeldingen naar WebP in je browser, één of meerdere tegelijk. Snel, gratis, geen watermerk, en je foto's worden nooit geüpload.",
       "h1": "JPG converteren naar WebP — privé",
       "lede": "WebP-afbeeldingen zijn meestal 25–35% kleiner dan JPG bij dezelfde visuele kwaliteit, waardoor websites sneller laden. Fizzdoc converteert je JPG-bestanden rechtstreeks op je apparaat.",
@@ -1325,15 +1561,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "jpg omzetten naar webp gratis",
+        "afbeeldingen kleiner maken voor website",
+        "jpeg naar webp",
+        "webp converter",
+        "jpg naar webp in bulk"
       ]
     },
     "add-page-numbers-to-pdf": {
       "name": "Paginanummers toevoegen",
       "summary": "Nummer elke pagina van een PDF.",
       "action": "Paginanummers toevoegen",
-      "title": "Paginanummers toevoegen aan PDF — gratis, geen upload | Fizzdoc",
+      "title": "Paginanummers Toevoegen Gratis — PDF Online | Fizzdoc",
       "description": "Voeg paginanummers toe aan een PDF in je browser. Kies de positie, het beginnummer en de stijl “Pagina 1 van 10”. Niets wordt geüpload. Gratis.",
       "h1": "Paginanummers toevoegen aan een PDF",
       "lede": "Nummer in enkele seconden de pagina's van een rapport, scriptie of contract. Kies waar de nummers komen en bij welk nummer je begint — op je eigen apparaat.",
@@ -1357,15 +1600,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf pagina's nummeren",
+        "pagina 1 van 10 toevoegen aan pdf",
+        "paginanummers invoegen in pdf gratis",
+        "paginanummers voor scriptie pdf",
+        "paginanummer onderaan pdf"
       ]
     },
     "watermark-pdf": {
       "name": "PDF-watermerk",
       "summary": "Stempel tekst zoals VERTROUWELIJK op elke pagina.",
       "action": "Watermerk toevoegen",
-      "title": "PDF-watermerk toevoegen — tekstwatermerk, geen upload | Fizzdoc",
+      "title": "PDF Watermerk Toevoegen Gratis — Tekst | Fizzdoc",
       "description": "Voeg een tekstwatermerk zoals VERTROUWELIJK of CONCEPT toe aan elke pagina van een PDF, in je browser. Kies de dekking. Niets wordt geüpload. Gratis.",
       "h1": "Een watermerk toevoegen aan een PDF",
       "lede": "Markeer een document als VERTROUWELIJK, CONCEPT of met je naam voordat je het deelt. Het watermerk wordt diagonaal over elke pagina getekend.",
@@ -1389,15 +1639,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "vertrouwelijk toevoegen aan pdf",
+        "concept stempel op pdf pagina's",
+        "watermerk pdf gratis",
+        "tekstwatermerk toevoegen aan pdf",
+        "watermerk in het nederlands op pdf"
       ]
     },
     "pdf-to-png": {
       "name": "PDF naar PNG",
       "summary": "Sla elke pagina op als een verliesvrije PNG-afbeelding.",
       "action": "Naar PNG converteren",
-      "title": "PDF naar PNG converteren — verliesvrij, geen upload | Fizzdoc",
+      "title": "PDF naar PNG Gratis — Verliesvrije Afbeeldingen | Fizzdoc",
       "description": "Converteer elke pagina van een PDF naar een scherpe, verliesvrije PNG-afbeelding in je browser. Meerdere pagina's downloaden als één ZIP. Gratis.",
       "h1": "PDF-pagina's converteren naar PNG-afbeeldingen",
       "lede": "Render elke pagina naar een scherpe, verliesvrije PNG — ideaal voor dia's, documentatie en screenshots met scherpe tekst. Niets verlaat je apparaat.",
@@ -1417,16 +1674,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf omzetten naar png",
+        "pdf pagina naar afbeelding verliesvrij",
+        "scherpe pdf pagina afbeeldingen voor dia's",
+        "pdf dia's opslaan als png",
+        "pdf naar png gratis"
       ]
     },
     "extract-pdf-pages": {
       "name": "PDF-pagina's extraheren",
       "summary": "Sla geselecteerde pagina's op als een nieuwe PDF.",
       "action": "Pagina's extraheren",
-      "title": "Pagina's uit PDF extraheren — gratis, privé, geen upload | Fizzdoc",
-      "description": "Haal specifieke pagina's uit een PDF in een nieuw bestand, in je browser. Typ pagina's zoals 2, 5-7. Links en formuliervelden blijven behouden.",
+      "title": "PDF-pagina's Extraheren Gratis — Nieuw PDF | Fizzdoc",
+      "description": "Haal specifieke pagina's uit een PDF in een nieuw bestand, in je browser. Typ pagina's zoals 2, 5-7. Links en formuliervelden blijven behouden. Gratis.",
       "h1": "Pagina's uit een PDF extraheren",
       "lede": "Heb je alleen de handtekeningpagina of één hoofdstuk nodig? Typ de pagina's die je wilt en krijg ze als nieuwe PDF — het origineel blijft ongewijzigd.",
       "steps": [
@@ -1445,16 +1709,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "één pagina van pdf opslaan",
+        "pagina's extraheren als nieuw pdf",
+        "pagina's uit pdf halen",
+        "pagina's kopiëren uit pdf",
+        "pdf pagina's extraheren gratis"
       ]
     },
     "reorder-pdf-pages": {
       "name": "PDF-pagina's herschikken",
       "summary": "Zet de pagina's van een PDF in een nieuwe volgorde.",
       "action": "Pagina's herschikken",
-      "title": "PDF-pagina's herschikken — gratis, geen upload | Fizzdoc",
-      "description": "Herschik de pagina's van een PDF door de gewenste volgorde te typen, zoals 3, 1-2, 4-. Werkt in je browser; je bestand wordt nooit geüpload.",
+      "title": "PDF-pagina's Herschikken Gratis — Volgorde | Fizzdoc",
+      "description": "Herschik de pagina's van een PDF door de gewenste volgorde te typen, zoals 3, 1-2, 4-. Werkt in je browser; je bestand wordt nooit geüpload. Gratis.",
       "h1": "De pagina's van een PDF herschikken",
       "lede": "Corrigeer pagina's die in de verkeerde volgorde zijn gescand of verplaats een bijlage naar voren. Typ de nieuwe volgorde en download de herschikte PDF.",
       "steps": [
@@ -1473,16 +1744,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "pdf pagina's herschikken",
+        "paginavolgorde wijzigen in pdf",
+        "pagina's verplaatsen in een pdf",
+        "pdf pagina's sorteren",
+        "pdf herschikken gratis"
       ]
     },
     "png-to-pdf": {
       "name": "PNG naar PDF",
       "summary": "Zet PNG-schermafbeeldingen en -afbeeldingen om in één PDF.",
       "action": "PDF maken",
-      "title": "PNG naar PDF converteren — gratis, geen upload | Fizzdoc",
-      "description": "Combineer PNG-schermafbeeldingen en afbeeldingen tot één PDF in je browser, één pagina per afbeelding, op volledige kwaliteit. Geen watermerk.",
+      "title": "PNG naar PDF Gratis — Screenshots naar PDF | Fizzdoc",
+      "description": "Combineer PNG-schermafbeeldingen en afbeeldingen tot één PDF in je browser, één pagina per afbeelding, op volledige kwaliteit. Geen watermerk. Gratis.",
       "h1": "PNG-afbeeldingen converteren naar PDF",
       "lede": "Zet screenshots, diagrammen of gescande pagina's die als PNG zijn opgeslagen om in één nette PDF — scherp, verliesvrij en in de volgorde die jij kiest.",
       "steps": [
@@ -1501,16 +1779,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "screenshots omzetten naar pdf",
+        "png naar pdf gratis",
+        "png afbeeldingen combineren tot pdf",
+        "afbeelding naar pdf zonder kwaliteitsverlies",
+        "png naar pdf op telefoon"
       ]
     },
     "remove-word-metadata": {
       "name": "Word-metadata verwijderen",
       "summary": "Wis auteur, bedrijf en redacteurnamen uit een .docx.",
       "action": "Metadata verwijderen",
-      "title": "Word-metadata verwijderen — privé, geen upload | Fizzdoc",
-      "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een Word-bestand in je browser. Werkt met downloads uit Google Docs. Niets wordt geüpload.",
+      "title": "Word-metadata Verwijderen Gratis — Schone DOCX | Fizzdoc",
+      "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een Word-bestand in je browser. Werkt met downloads uit Google Docs. Niets wordt geüpload. Gratis.",
       "h1": "Verborgen metadata uit een Word-document verwijderen",
       "lede": "Elke .docx registreert wie het maakte, wie het laatst bewerkte en van welk bedrijf het is. Wis die gegevens voordat je het verstuurt — zonder het bestand ergens naartoe te uploaden.",
       "steps": [
@@ -1533,16 +1818,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "auteur verwijderen uit word document",
+        "docx opschonen voor delen",
+        "worddocument eigenschappen verwijderen",
+        "word bestand anonimiseren",
+        "bedrijfsnaam verwijderen uit docx"
       ]
     },
     "extract-images-from-word": {
       "name": "Afbeeldingen uit Word halen",
       "summary": "Sla elke afbeelding in een .docx op in originele kwaliteit.",
       "action": "Afbeeldingen extraheren",
-      "title": "Afbeeldingen uit Word halen — geen upload | Fizzdoc",
-      "description": "Download elke afbeelding uit een Word-document als ZIP, op originele resolutie. Werkt met downloads uit Google Docs. Werkt in je browser.",
+      "title": "Afbeeldingen uit Word Halen Gratis — DOCX-ZIP | Fizzdoc",
+      "description": "Download elke afbeelding uit een Word-document als ZIP, op originele resolutie. Werkt met downloads uit Google Docs. Werkt in je browser. Gratis.",
       "h1": "Alle afbeeldingen uit een Word-document halen",
       "lede": "Haal elke foto, elk logo en elke grafiekafbeelding uit een .docx in het originele formaat en de originele resolutie — geen screenshots, geen hercompressie, geen upload.",
       "steps": [
@@ -1565,16 +1857,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "alle afbeeldingen uit een word bestand opslaan",
+        "afbeeldingen downloaden uit docx",
+        "foto's uit google docs halen",
+        "afbeeldingen uit docx extraheren gratis",
+        "word afbeeldingen op volledige resolutie"
       ]
     },
     "compress-word": {
       "name": "Word comprimeren",
       "summary": "Verklein een .docx door de afbeeldingen te optimaliseren.",
       "action": "Word comprimeren",
-      "title": "Word-bestanden comprimeren (.docx) — geen upload | Fizzdoc",
-      "description": "Verklein een Word-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload.",
+      "title": "Word Comprimeren Gratis — DOCX Verkleinen | Fizzdoc",
+      "description": "Verklein een Word-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload. Gratis.",
       "h1": "Een Word-document comprimeren",
       "lede": "Maak een .docx klein genoeg om te e-mailen door te grote foto's erin opnieuw te comprimeren. Tekst, opmaak en al het andere blijven precies hetzelfde.",
       "steps": [
@@ -1597,15 +1896,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "word bestandsgrootte verkleinen",
+        "docx met afbeeldingen comprimeren",
+        "word document kleiner maken voor e-mail",
+        "docx verkleinen",
+        "word comprimeren gratis"
       ]
     },
     "remove-excel-metadata": {
       "name": "Excel-metadata verwijderen",
       "summary": "Wis auteur, bedrijf en redacteurnamen uit een .xlsx.",
       "action": "Metadata verwijderen",
-      "title": "Excel-metadata verwijderen — privé, geen upload | Fizzdoc",
+      "title": "Excel-metadata Verwijderen Gratis — Schone XLSX | Fizzdoc",
       "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een Excel-bestand in je browser. Werkt met downloads uit Google Sheets. Niets wordt geüpload.",
       "h1": "Verborgen metadata uit een Excel-spreadsheet verwijderen",
       "lede": "Elke .xlsx registreert wie het maakte, wie het laatst bewerkte en van welk bedrijf het is. Wis die gegevens voordat je het verstuurt — zonder het bestand ergens naartoe te uploaden.",
@@ -1629,16 +1935,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "auteur verwijderen uit excel bestand",
+        "xlsx opschonen voor delen",
+        "excel document eigenschappen verwijderen",
+        "spreadsheet anonimiseren",
+        "bedrijfsnaam verwijderen uit xlsx"
       ]
     },
     "extract-images-from-excel": {
       "name": "Afbeeldingen uit Excel halen",
       "summary": "Sla elke afbeelding in een .xlsx op in originele kwaliteit.",
       "action": "Afbeeldingen extraheren",
-      "title": "Afbeeldingen uit Excel halen — geen upload | Fizzdoc",
-      "description": "Download elke afbeelding uit een Excel-spreadsheet als ZIP, op originele resolutie. Werkt met downloads uit Google Sheets. Werkt in je browser.",
+      "title": "Afbeeldingen uit Excel Halen Gratis — XLSX-ZIP | Fizzdoc",
+      "description": "Download elke afbeelding uit een Excel-spreadsheet als ZIP, op originele resolutie. Werkt met downloads uit Google Sheets. Werkt in je browser. Gratis.",
       "h1": "Alle afbeeldingen uit een Excel-spreadsheet halen",
       "lede": "Haal elke foto, elk logo en elke grafiekafbeelding uit een .xlsx in het originele formaat en de originele resolutie — geen screenshots, geen hercompressie, geen upload.",
       "steps": [
@@ -1661,16 +1974,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "alle afbeeldingen uit een excel bestand opslaan",
+        "afbeeldingen downloaden uit xlsx",
+        "afbeeldingen uit google sheets halen",
+        "afbeeldingen uit xlsx extraheren gratis",
+        "excel afbeeldingen op volledige resolutie"
       ]
     },
     "compress-excel": {
       "name": "Excel comprimeren",
       "summary": "Verklein een .xlsx door de afbeeldingen te optimaliseren.",
       "action": "Excel comprimeren",
-      "title": "Excel-bestanden comprimeren (.xlsx) — geen upload | Fizzdoc",
-      "description": "Verklein een Excel-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload.",
+      "title": "Excel Comprimeren Gratis — XLSX Verkleinen | Fizzdoc",
+      "description": "Verklein een Excel-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload. Gratis.",
       "h1": "Een Excel-spreadsheet comprimeren",
       "lede": "Maak een .xlsx klein genoeg om te e-mailen door te grote foto's erin opnieuw te comprimeren. Tekst, opmaak en al het andere blijven precies hetzelfde.",
       "steps": [
@@ -1693,15 +2013,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "excel bestandsgrootte verkleinen",
+        "xlsx met afbeeldingen comprimeren",
+        "spreadsheet kleiner maken voor e-mail",
+        "xlsx verkleinen",
+        "excel comprimeren gratis"
       ]
     },
     "remove-powerpoint-metadata": {
       "name": "PowerPoint-metadata verwijderen",
       "summary": "Wis auteur, bedrijf en redacteurnamen uit een .pptx.",
       "action": "Metadata verwijderen",
-      "title": "PowerPoint-metadata verwijderen — privé, geen upload | Fizzdoc",
+      "title": "PowerPoint-metadata Verwijderen Gratis — Schoon | Fizzdoc",
       "description": "Verwijder auteur, redacteur, bedrijf, titel en miniatuur uit een PowerPoint-bestand in je browser. Werkt met downloads uit Google Slides. Niets wordt geüpload.",
       "h1": "Verborgen metadata uit een PowerPoint-presentatie verwijderen",
       "lede": "Elke .pptx registreert wie het maakte, wie het laatst bewerkte en van welk bedrijf het is. Wis die gegevens voordat je het verstuurt — zonder het bestand ergens naartoe te uploaden.",
@@ -1725,16 +2052,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "auteur verwijderen uit powerpoint",
+        "pptx opschonen voor delen",
+        "presentatie eigenschappen verwijderen",
+        "presentatie anonimiseren",
+        "bedrijfsnaam verwijderen uit pptx"
       ]
     },
     "extract-images-from-powerpoint": {
       "name": "Afbeeldingen uit PowerPoint halen",
       "summary": "Sla elke afbeelding in een .pptx op in originele kwaliteit.",
       "action": "Afbeeldingen extraheren",
-      "title": "Afbeeldingen uit PowerPoint halen — geen upload | Fizzdoc",
-      "description": "Download elke afbeelding uit een PowerPoint-presentatie als ZIP, op originele resolutie. Werkt met downloads uit Google Slides. Werkt in je browser.",
+      "title": "Afbeeldingen uit PowerPoint Halen Gratis — ZIP | Fizzdoc",
+      "description": "Download elke afbeelding uit een PowerPoint-presentatie als ZIP, op originele resolutie. Werkt met downloads uit Google Slides. Werkt in je browser. Gratis.",
       "h1": "Alle afbeeldingen uit een PowerPoint-presentatie halen",
       "lede": "Haal elke foto, elk logo en elke grafiekafbeelding uit een .pptx in het originele formaat en de originele resolutie — geen screenshots, geen hercompressie, geen upload.",
       "steps": [
@@ -1757,16 +2091,23 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "alle afbeeldingen uit een presentatie opslaan",
+        "afbeeldingen downloaden uit pptx",
+        "afbeeldingen uit google slides halen",
+        "afbeeldingen uit pptx extraheren gratis",
+        "dia afbeeldingen op volledige resolutie"
       ]
     },
     "compress-powerpoint": {
       "name": "PowerPoint comprimeren",
       "summary": "Verklein een .pptx door de afbeeldingen te optimaliseren.",
       "action": "PowerPoint comprimeren",
-      "title": "PowerPoint-bestanden comprimeren (.pptx) — geen upload | Fizzdoc",
-      "description": "Verklein een PowerPoint-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload.",
+      "title": "PowerPoint Comprimeren Gratis — PPTX Verkleinen | Fizzdoc",
+      "description": "Verklein een PowerPoint-bestand door de foto's erin opnieuw te comprimeren, in je browser. Inhoud en opmaak blijven hetzelfde. Niets wordt geüpload. Gratis.",
       "h1": "Een PowerPoint-presentatie comprimeren",
       "lede": "Maak een .pptx klein genoeg om te e-mailen door te grote foto's erin opnieuw te comprimeren. Tekst, opmaak en al het andere blijven precies hetzelfde.",
       "steps": [
@@ -1789,15 +2130,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "powerpoint bestandsgrootte verkleinen",
+        "pptx met afbeeldingen comprimeren",
+        "presentatie kleiner maken voor e-mail",
+        "pptx verkleinen",
+        "powerpoint comprimeren gratis"
       ]
     },
     "split-audio": {
       "name": "Audio knippen",
       "summary": "Knip een MP3 of M4A bij, of splits het in delen. Luister voordat je opslaat.",
       "action": "Audio opslaan",
-      "title": "MP3 of M4A knippen online — Audio bijsnijden, geen upload | Fizzdoc",
+      "title": "MP3 Knippen & Splitsen Gratis — Geen Upload | Fizzdoc",
       "description": "Snijd een MP3 of M4A bij, of splits het op exacte tijden in delen. Bekijk de golfvorm, luister elk deel, en sla op. Geen her-encoding, geen upload. Gratis.",
       "h1": "Audio knippen, bijsnijden en splitsen in je browser",
       "lede": "Sleep de handvatten op de golfvorm of typ exacte tijden, luister naar wat je koos, en sla op. Knippen gebeurt zonder her-encoding, dus de geluidskwaliteit blijft precies hetzelfde.",
@@ -1821,15 +2169,22 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "mp3 knippen gratis online",
+        "audio bestand bijsnijden",
+        "mp3 opsplitsen in delen",
+        "ringtone maken van een liedje",
+        "m4a knippen zonder heruitcoderen"
       ]
     },
     "merge-audio": {
       "name": "Audio samenvoegen",
       "summary": "Voeg MP3- of M4A-bestanden samen tot één, in de volgorde die je kiest.",
       "action": "Audio samenvoegen",
-      "title": "MP3 of M4A samenvoegen online — Audio koppelen | Fizzdoc",
+      "title": "MP3 & M4A Samenvoegen Gratis — Geen Upload | Fizzdoc",
       "description": "Voeg MP3- of M4A-bestanden samen tot één track, in de volgorde die je kiest, en luister voordat je downloadt. Geen her-encoding, geen upload. Gratis.",
       "h1": "Audiobestanden samenvoegen tot één",
       "lede": "Voeg je MP3- of M4A-bestanden toe, zet ze in de juiste volgorde en voeg ze samen tot één track. Luister naar het resultaat voordat je downloadt; er wordt niets opnieuw gecodeerd of geüpload.",
@@ -1853,8 +2208,15 @@
         ],
         [
           "Is Fizzdoc gratis?",
-          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
         ]
+      ],
+      "keywords": [
+        "mp3 bestanden samenvoegen",
+        "audio bestanden combineren online",
+        "nummers samenvoegen zonder kwaliteitsverlies",
+        "voice memos samenvoegen",
+        "m4a bestanden samenvoegen gratis"
       ]
     }
   }
