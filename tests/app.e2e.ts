@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
+import { PDFDocument, PDFName } from 'pdf-lib';
 import { PAGES, SITE_LANGS } from '../src/seo';
 import { SITE } from '../src/site';
 
@@ -329,6 +330,13 @@ test('numbers and watermarks PDF pages, and converts between image formats', asy
   await page.locator('input[name="text"]').fill('DRAFT');
   await page.getByRole('button', { name: 'Add watermark' }).click();
   await expect(page.locator('#status')).toContainText('3 pages watermarked');
+
+  // Any script works: text the standard PDF fonts can't show is drawn by the browser, never dropped.
+  await page.locator('input[name="text"]').fill('गोपनीय CONFIDENTIAL');
+  await page.getByRole('button', { name: 'Add watermark' }).click();
+  await expect(page.locator('#status')).toContainText('3 pages watermarked');
+  const stamped = await PDFDocument.load((await downloadBytes(page)).bytes);
+  for (const p of stamped.getPages()) expect(p.node.Resources()!.lookup(PDFName.of('XObject'))).toBeTruthy();
 
   await page.goto('/pdf-to-png/');
   await page.locator('#file-input').setInputFiles(fixture('text-only'));
