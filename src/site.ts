@@ -12,6 +12,8 @@ export type ToolOp =
   | 'office-compress'
   | 'compress-pdf'
   | 'edit-pdf'
+  | 'redact-pdf'
+  | 'scan-pdf'
   | 'ocr-pdf'
   | 'pdf-to-word'
   | 'pdf-to-powerpoint'
@@ -378,6 +380,66 @@ TOOLS.push(
     ],
   },
   {
+    op: 'redact-pdf',
+    format: 'pdf',
+    slug: 'redact-pdf',
+    name: 'Redact PDF',
+    summary: 'Black out text, signatures or photos so they’re gone for good.',
+    action: 'Save redacted PDF',
+    title: 'Redact PDF Online — Black Out Text for Good, No Upload | Fizzdoc',
+    description:
+      'Black out names, numbers, signatures or photos in a PDF and save a copy where they are really gone. Runs in your browser; nothing is uploaded. Free.',
+    h1: 'Redact a PDF: black out anything, for good',
+    lede: 'Drag over what should disappear, or search for a name or number and mark every match. When you save, each page becomes an image, so the hidden text can’t be copied or recovered.',
+    steps: [
+      'Add one PDF file.',
+      'Drag on a page to cover an area, or type a word and click “Mark all”.',
+      'Choose the quality and look, then click “Save redacted PDF” and download it.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Is the redacted text really gone?',
+        'Yes. Fizzdoc redraws every page as an image with your black marks burned in and builds a new PDF from those images. The original text, fonts and document metadata are not copied, so nothing under a mark can be selected, searched or recovered.',
+      ],
+      [
+        'Can I still search or copy the rest of the text?',
+        'No. Every page becomes an image, so the saved file has no selectable text. If you need searchable text again, run the redacted file through OCR PDF; the black marks stay black.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'scan-pdf',
+    format: 'pdf',
+    slug: 'pdf-to-scanned-pdf',
+    name: 'PDF to Scanned PDF',
+    summary: 'Turn every page into an image, like a scanned document.',
+    action: 'Make scanned PDF',
+    title: 'PDF to Scanned PDF — Make a PDF Look Scanned, No Upload | Fizzdoc',
+    description:
+      'Turn a PDF into an image-only scanned PDF: in colour, black and white, or with a real scanner look. Runs in your browser; nothing is uploaded. Free.',
+    h1: 'Convert a PDF into a scanned PDF',
+    lede: 'Every page becomes an image, so the text can’t be selected or edited. Keep the colours, go black and white, or add a slight tilt and paper grain so it looks scanned.',
+    steps: [
+      'Add one PDF file.',
+      'Pick the quality and the look: colour, black and white, or scanned.',
+      'Click “Make scanned PDF” and download it.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Why would I want a scanned PDF?',
+        'Some offices and portals ask for scanned copies, and an image-only PDF stops casual copying or editing of the text. It also flattens form fields and comments into what you see on the page.',
+      ],
+      [
+        'Will the file get bigger?',
+        'Usually, because pages are stored as pictures. Standard quality (150 DPI) keeps files small; High quality (300 DPI) keeps small print sharp.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
     op: 'ocr-pdf',
     format: 'pdf',
     slug: 'ocr-pdf',
@@ -611,6 +673,40 @@ TOOLS.push(
     input: IMAGES_IN,
     preset: { mode: 'compress' },
   },
+  // Exam, job and government forms ask for photos and signatures "under 50 KB" and the like.
+  ...[20, 50, 100].map(
+    (kb): Tool => ({
+      op: 'image-convert',
+      format: 'image',
+      slug: `compress-image-to-${kb}kb`,
+      name: `Compress Image to ${kb} KB`,
+      summary: `Get a photo or signature under ${kb} KB for an online form.`,
+      action: 'Compress images',
+      title: `Compress Image to ${kb} KB Online — JPG, No Upload | Fizzdoc`,
+      description: `Make a JPG, PNG or WebP photo smaller than ${kb} KB for exam, job and government forms, keeping it as sharp as possible. Nothing is uploaded.`,
+      h1: `Compress an image to under ${kb} KB`,
+      lede: `Forms often want a photo or signature under ${kb} KB. Fizzdoc keeps the picture as large and sharp as it can, lowers the JPG quality only as far as needed, and never uploads your photo.`,
+      steps: [
+        'Add one or more images (JPG, PNG, WebP or a phone photo).',
+        `Check the limit (${kb} KB is filled in; change it if your form asks for a different size).`,
+        'Click “Compress images” and download the result.',
+      ],
+      faq: [
+        PRIVACY_FAQ[0],
+        [
+          'How does it keep the photo clear?',
+          'Like messaging apps, it first keeps the photo about 1600 pixels on its longest side and lowers the JPG quality step by step, never below 50% while the photo is 1000 pixels or larger. Only if that is still too big does it make the picture smaller.',
+        ],
+        [
+          'What if my form needs an exact pixel size too?',
+          'Use Resize Image first to set the width and height the form asks for, then compress the result here.',
+        ],
+        PRIVACY_FAQ[1],
+      ],
+      input: IMAGES_IN,
+      preset: { mode: 'compress', targetKb: String(kb) },
+    }),
+  ),
   {
     op: 'image-convert',
     format: 'image',

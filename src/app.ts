@@ -84,11 +84,24 @@ function setUp(op: ToolOp) {
   let localBusy = false;
   const busy = () => !!worker || localBusy;
   let printFrame: HTMLIFrameElement | undefined;
-  let editor: { file: File; ready: Promise<{ save(): Promise<Output>; destroy(): void }> } | undefined;
+  // The on-page editors (Edit PDF, Redact PDF) follow the chosen file.
+  type Editor = { save(options: Options, onProgress: (fraction: number) => void): Promise<Output>; destroy(): void };
+  const EDITORS: Partial<Record<ToolOp, (file: File, viewer: HTMLElement) => Promise<Editor>>> = {
+    'edit-pdf': async (file, view) => (await import('./tools/edit-pdf')).openEditor(file, view),
+    'redact-pdf': async (file, view) => {
+      const redactor = await (await import('./tools/redact-pdf')).openRedactor(file, view);
+      return { save: (o, onProgress) => redactor.save(rasterOptions(o), onProgress), destroy: redactor.destroy };
+    },
+  };
+  let editor: { file: File; ready: Promise<Editor> } | undefined;
 
   const progressLabel = (fraction: number) => say(t('app.workingPct', { pct: Math.round(fraction * 100) }));
   const baseName = (file: File) => file.name.replace(/\.[^.]+$/, '');
   const number = (value: string | undefined) => (value ? Number(value) : undefined);
+  const rasterOptions = (o: Options) => ({
+    dpi: o.dpi === '300' ? 300 : 150,
+    look: (o.look === 'gray' || o.look === 'scanned' ? o.look : 'color') as 'color' | 'gray' | 'scanned',
+  });
 
   // Every tool that runs outside the qpdf worker. Engines load on first use.
   const LOCAL: Partial<Record<ToolOp, LocalJob>> = {
@@ -114,6 +127,7 @@ function setUp(op: ToolOp) {
         height: number(o.height),
         scale: number(o.scale),
         keepAspect: o.keepAspect !== 'false',
+        targetKb: number(o.targetKb),
       }),
     'pdf-to-text': async (f, o) => (await import('./engine/convert')).pdfToText(f[0], { format: o.format === 'md' ? 'md' : 'txt' }),
     'text-to-pdf': async (f) => (await import('./engine/convert')).textToHtml(f[0]),
@@ -135,18 +149,21 @@ function setUp(op: ToolOp) {
         notes: unsure(recognized.words) ? ['ocr.unsure'] : [],
       };
     },
-    'edit-pdf': async () => (await editor!.ready).save(),
+    'edit-pdf': async (_, o) => (await editor!.ready).save(o, progressLabel),
+    'redact-pdf': async (_, o) => (await editor!.ready).save(o, progressLabel),
+    'scan-pdf': async (f, o) => (await import('./engine/raster')).scanPdf(f[0], rasterOptions(o), progressLabel),
   };
 
   /** The editor follows the chosen file: opening a new one replaces it, removing it closes it. */
   function syncEditor() {
-    if (op !== 'edit-pdf' || editor?.file === files[0]) return;
+    const open = EDITORS[op];
+    if (!open || editor?.file === files[0]) return;
     editor?.ready.then((e) => e.destroy(), () => {});
     viewer!.replaceChildren();
     editor = undefined;
     if (!files[0]) return;
     const file = files[0];
-    const ready = import('./tools/edit-pdf').then((m) => m.openEditor(file, viewer!));
+    const ready = open(file, viewer!);
     editor = { file, ready };
     ready.catch((error) => {
       files = [];

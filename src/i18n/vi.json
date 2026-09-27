@@ -3,7 +3,7 @@
     "nav.label": "Chính",
     "nav.home": "Trang chủ Fizzdoc",
     "nav.theme": "Đổi giao diện màu",
-    "nav.star": "★ Gắn sao",
+    "nav.star": "Gắn sao",
     "nav.starAria": "Gắn sao cho Fizzdoc trên GitHub",
     "lang.label": "Ngôn ngữ",
     "lang.tip": "Muốn dùng ngôn ngữ khác? Chọn tại đây.",
@@ -96,6 +96,14 @@
     "ws.style": "Kiểu",
     "ws.pageOf": "Trang 1 / 10",
     "ws.startAt": "Bắt đầu từ",
+    "ws.targetKb": "Dung lượng tối đa (KB)",
+    "ws.targetAny": "Không giới hạn",
+    "ws.dpiStandard": "Tiêu chuẩn (tệp nhỏ hơn)",
+    "ws.dpiHigh": "Cao (chữ in nhỏ sắc nét hơn)",
+    "ws.look": "Kiểu hiển thị",
+    "ws.lookColor": "Có màu",
+    "ws.lookGray": "Đen trắng",
+    "ws.lookScanned": "Dạng scan (xám, hơi nghiêng)",
     "ws.wmText": "Nội dung watermark",
     "ws.wmDefault": "CONFIDENTIAL",
     "ws.opacity": "Độ mờ",
@@ -136,6 +144,8 @@
     "error.PDF_PASSWORD": "Tệp PDF này được bảo vệ bằng mật khẩu. Hãy xóa mật khẩu bằng công cụ Mở khóa PDF trước.",
     "error.BAD_SIZE": "Chiều rộng và chiều cao đều phải nằm trong khoảng từ 1 đến 16.384 pixel.",
     "error.BAD_SCALE": "Tỷ lệ phải nằm trong khoảng 1% đến 1000%.",
+    "error.BAD_TARGET": "Giới hạn dung lượng phải tối thiểu 5 KB.",
+    "error.TARGET_TOO_SMALL": "Giới hạn này quá nhỏ cho ảnh này nếu không muốn ảnh bị mờ khó đọc. Hãy thử giới hạn lớn hơn; hầu hết biểu mẫu chấp nhận 50–200 KB.",
     "error.TOO_LARGE": "Kích thước đó quá lớn để tạo trong trình duyệt (hơn 100 megapixel). Hãy chọn kích thước nhỏ hơn.",
     "error.NO_TEXT": "Tệp PDF này không có văn bản để trích xuất — có thể đây là bản quét dạng hình ảnh. Hãy chạy công cụ OCR PDF trước, rồi thử lại.",
     "error.NO_WATERMARK": "Nhập nội dung watermark (chữ cái, số và ký hiệu thông dụng).",
@@ -184,6 +194,14 @@
     "ocr.copyAll": "Sao chép toàn bộ văn bản",
     "ocr.copied": "Đã sao chép",
     "ocr.text": "Văn bản đã nhận dạng",
+    "rd.find": "Tìm một từ hoặc số để ẩn",
+    "rd.markAll": "Đánh dấu tất cả",
+    "rd.clear": "Xóa tất cả",
+    "rd.count": "Vùng đã đánh dấu: {n}",
+    "rd.found": "Kết quả khớp đã đánh dấu: {n}",
+    "rd.none": "Không có kết quả khớp cho “{text}”",
+    "rd.remove": "Xóa vết đánh dấu này",
+    "rd.hint": "Kéo trên một trang để che bất cứ thứ gì: văn bản, chữ ký, ảnh. Khi lưu, mỗi trang trở thành một hình ảnh, nên phần bạn che sẽ biến mất vĩnh viễn.",
     "footer.madeBy": "Thiết kế và phát triển bởi",
     "footer.feedback": "Báo lỗi hoặc đề xuất công cụ"
   },
@@ -565,6 +583,70 @@
         ]
       ]
     },
+    "redact-pdf": {
+      "name": "Che Đen PDF",
+      "summary": "Che đen văn bản, chữ ký hoặc ảnh để chúng biến mất vĩnh viễn.",
+      "action": "Lưu PDF đã che đen",
+      "title": "Che Đen PDF Trực Tuyến — Xóa Văn Bản Vĩnh Viễn | Fizzdoc",
+      "description": "Che đen tên, số, chữ ký hoặc ảnh trong PDF và lưu một bản mà chúng thực sự biến mất. Chạy trong trình duyệt của bạn; không tải lên. Miễn phí.",
+      "h1": "Che đen PDF: xóa vĩnh viễn bất cứ thứ gì",
+      "lede": "Kéo lên phần cần biến mất, hoặc tìm một tên hay số rồi đánh dấu mọi kết quả khớp. Khi lưu, mỗi trang trở thành một hình ảnh, nên văn bản bị che không thể sao chép hay khôi phục.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Kéo trên trang để che một vùng, hoặc gõ một từ rồi bấm “Đánh dấu tất cả”.",
+        "Chọn chất lượng và kiểu hiển thị, rồi bấm “Lưu PDF đã che đen” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Văn bản bị che đen có thực sự biến mất không?",
+          "Có. Fizzdoc vẽ lại mỗi trang thành một hình ảnh với các vết đen đã được in cố định vào, rồi tạo một PDF mới từ những hình ảnh đó. Văn bản, phông chữ và metadata gốc không được sao chép, nên không thể chọn, tìm kiếm hay khôi phục bất cứ thứ gì bên dưới vết che."
+        ],
+        [
+          "Tôi có còn tìm kiếm hoặc sao chép được phần văn bản còn lại không?",
+          "Không. Mỗi trang trở thành một hình ảnh, nên tệp đã lưu không còn văn bản có thể chọn được. Nếu cần văn bản có thể tìm kiếm lại, hãy chạy tệp đã che đen qua OCR PDF; các vết đen sẽ vẫn giữ nguyên màu đen."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "Chuyển PDF Thành PDF Dạng Scan",
+      "summary": "Biến mỗi trang thành hình ảnh, giống như một tài liệu đã scan.",
+      "action": "Tạo PDF Dạng Scan",
+      "title": "Chuyển PDF Thành PDF Dạng Scan — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển một PDF thành PDF chỉ gồm hình ảnh, trông như đã scan: có màu, đen trắng, hoặc như scan thật. Chạy trong trình duyệt; không tải lên. Miễn phí.",
+      "h1": "Chuyển đổi PDF thành PDF dạng scan",
+      "lede": "Mỗi trang trở thành một hình ảnh, nên văn bản không thể chọn hay chỉnh sửa. Giữ nguyên màu sắc, chuyển sang đen trắng, hoặc thêm chút nghiêng và vân giấy để trông như đã scan.",
+      "steps": [
+        "Thêm một tệp PDF.",
+        "Chọn chất lượng và kiểu hiển thị: có màu, đen trắng, hoặc dạng scan.",
+        "Bấm “Tạo PDF Dạng Scan” và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tại sao tôi lại cần một PDF dạng scan?",
+          "Một số cơ quan và cổng thông tin yêu cầu bản scan, và một PDF chỉ gồm hình ảnh giúp ngăn việc sao chép hay chỉnh sửa văn bản một cách dễ dàng. Nó cũng làm phẳng các trường biểu mẫu và ghi chú thành đúng những gì hiển thị trên trang."
+        ],
+        [
+          "Tệp có bị to hơn không?",
+          "Thường là có, vì các trang được lưu dưới dạng hình ảnh. Chất lượng tiêu chuẩn (150 DPI) giữ tệp nhỏ gọn; chất lượng cao (300 DPI) giữ chữ in nhỏ vẫn sắc nét."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
     "ocr-pdf": {
       "name": "OCR PDF",
       "summary": "Biến PDF dạng bản quét thành tài liệu có thể tìm kiếm và sao chép.",
@@ -890,6 +972,102 @@
         [
           "Dữ liệu vị trí có bị xóa không?",
           "Có. Việc mã hóa lại loại bỏ metadata EXIF ẩn như vị trí GPS và thông tin máy ảnh."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Nén Ảnh Xuống 20 KB",
+      "summary": "Đưa ảnh hoặc chữ ký xuống dưới 20 KB cho biểu mẫu trực tuyến.",
+      "action": "Nén ảnh",
+      "title": "Nén Ảnh Xuống 20 KB Online — JPG, Không Tải Lên | Fizzdoc",
+      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 20 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên.",
+      "h1": "Nén một ảnh xuống dưới 20 KB",
+      "lede": "Biểu mẫu thường yêu cầu ảnh hoặc chữ ký dưới 20 KB. Fizzdoc giữ ảnh lớn và rõ nhất có thể, chỉ giảm chất lượng JPG từng bước khi cần thiết, và không bao giờ tải ảnh của bạn lên.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh (JPG, PNG, WebP hoặc ảnh chụp từ điện thoại).",
+        "Kiểm tra giới hạn (20 KB đã được điền sẵn; đổi nếu biểu mẫu của bạn yêu cầu kích thước khác).",
+        "Bấm “Nén ảnh” và tải xuống kết quả."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Công cụ giữ ảnh rõ nét bằng cách nào?",
+          "Giống các ứng dụng nhắn tin, công cụ trước tiên giữ cạnh dài nhất của ảnh khoảng 1600 pixel, rồi giảm chất lượng JPG theo từng bước — không bao giờ xuống dưới 50% khi ảnh còn từ 1000 pixel trở lên. Chỉ khi vẫn còn quá lớn, nó mới thu nhỏ kích thước ảnh."
+        ],
+        [
+          "Nếu biểu mẫu của tôi cũng yêu cầu kích thước pixel chính xác thì sao?",
+          "Hãy dùng Resize Image trước để đặt chiều rộng và chiều cao mà biểu mẫu yêu cầu, sau đó nén kết quả ở đây."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Nén Ảnh Xuống 50 KB",
+      "summary": "Đưa ảnh hoặc chữ ký xuống dưới 50 KB cho biểu mẫu trực tuyến.",
+      "action": "Nén ảnh",
+      "title": "Nén Ảnh Xuống 50 KB Online — JPG, Không Tải Lên | Fizzdoc",
+      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 50 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên.",
+      "h1": "Nén một ảnh xuống dưới 50 KB",
+      "lede": "Biểu mẫu thường yêu cầu ảnh hoặc chữ ký dưới 50 KB. Fizzdoc giữ ảnh lớn và rõ nhất có thể, chỉ giảm chất lượng JPG từng bước khi cần thiết, và không bao giờ tải ảnh của bạn lên.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh (JPG, PNG, WebP hoặc ảnh chụp từ điện thoại).",
+        "Kiểm tra giới hạn (50 KB đã được điền sẵn; đổi nếu biểu mẫu của bạn yêu cầu kích thước khác).",
+        "Bấm “Nén ảnh” và tải xuống kết quả."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Công cụ giữ ảnh rõ nét bằng cách nào?",
+          "Giống các ứng dụng nhắn tin, công cụ trước tiên giữ cạnh dài nhất của ảnh khoảng 1600 pixel, rồi giảm chất lượng JPG theo từng bước — không bao giờ xuống dưới 50% khi ảnh còn từ 1000 pixel trở lên. Chỉ khi vẫn còn quá lớn, nó mới thu nhỏ kích thước ảnh."
+        ],
+        [
+          "Nếu biểu mẫu của tôi cũng yêu cầu kích thước pixel chính xác thì sao?",
+          "Hãy dùng Resize Image trước để đặt chiều rộng và chiều cao mà biểu mẫu yêu cầu, sau đó nén kết quả ở đây."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có. Không cần đăng ký, không có watermark và không giới hạn số lần dùng mỗi ngày. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Nén Ảnh Xuống 100 KB",
+      "summary": "Đưa ảnh hoặc chữ ký xuống dưới 100 KB cho biểu mẫu trực tuyến.",
+      "action": "Nén ảnh",
+      "title": "Nén Ảnh Xuống 100 KB Online — JPG, Không Tải Lên | Fizzdoc",
+      "description": "Giảm ảnh JPG, PNG hoặc WebP xuống dưới 100 KB cho thi tuyển và hồ sơ nhà nước, vẫn giữ ảnh rõ nhất có thể. Không có gì được tải lên.",
+      "h1": "Nén một ảnh xuống dưới 100 KB",
+      "lede": "Biểu mẫu thường yêu cầu ảnh hoặc chữ ký dưới 100 KB. Fizzdoc giữ ảnh lớn và rõ nhất có thể, chỉ giảm chất lượng JPG từng bước khi cần thiết, và không bao giờ tải ảnh của bạn lên.",
+      "steps": [
+        "Thêm một hoặc nhiều ảnh (JPG, PNG, WebP hoặc ảnh chụp từ điện thoại).",
+        "Kiểm tra giới hạn (100 KB đã được điền sẵn; đổi nếu biểu mẫu của bạn yêu cầu kích thước khác).",
+        "Bấm “Nén ảnh” và tải xuống kết quả."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Công cụ giữ ảnh rõ nét bằng cách nào?",
+          "Giống các ứng dụng nhắn tin, công cụ trước tiên giữ cạnh dài nhất của ảnh khoảng 1600 pixel, rồi giảm chất lượng JPG theo từng bước — không bao giờ xuống dưới 50% khi ảnh còn từ 1000 pixel trở lên. Chỉ khi vẫn còn quá lớn, nó mới thu nhỏ kích thước ảnh."
+        ],
+        [
+          "Nếu biểu mẫu của tôi cũng yêu cầu kích thước pixel chính xác thì sao?",
+          "Hãy dùng Resize Image trước để đặt chiều rộng và chiều cao mà biểu mẫu yêu cầu, sau đó nén kết quả ở đây."
         ],
         [
           "Fizzdoc có miễn phí không?",
