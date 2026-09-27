@@ -523,12 +523,16 @@ export function sitemap(date: string) {
 
 // Every crawler, search and AI answer engines alike, may read everything: Fizzdoc wants to be found.
 export const robots = () =>
-  `# Everyone is welcome to crawl. A plain-text guide for AI assistants: ${SITE.url}/llms.txt\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`;
+  `# Everyone is welcome to crawl. A plain-text guide for AI assistants: ${SITE.url}/llms.txt\n# Source code: ${SITE.repo}\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`;
 
 /** Plain-text summary for AI answer engines (https://llmstxt.org). */
 export const llms = () => `# ${SITE.name}
 
 > ${HOME.what}
+
+- Website: ${SITE.url}/
+- Source code: ${SITE.repo} (open source; issues and pull requests welcome)
+- Made by: Rishab Dugar
 
 ## Tools
 
@@ -580,6 +584,9 @@ export function llmsFor(lang: Lang) {
 > ${c.home.what}
 
 ${c.home.description}
+
+- ${SITE.url}${pathOf(lang)}
+- GitHub: ${SITE.repo}
 
 ## ${c.t('home.toolsTitle')}
 
