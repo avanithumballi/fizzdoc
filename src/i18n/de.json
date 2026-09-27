@@ -96,6 +96,8 @@
     "ws.style": "Stil",
     "ws.pageOf": "Seite 1 von 10",
     "ws.startAt": "Beginnen bei",
+    "ws.targetKb": "Maximale Dateigröße (KB)",
+    "ws.targetAny": "Kein Limit",
     "ws.dpiStandard": "Standard (kleinere Datei)",
     "ws.dpiHigh": "Hoch (schärfere Kleinschrift)",
     "ws.look": "Optik",
@@ -142,6 +144,8 @@
     "error.PDF_PASSWORD": "Dieses PDF ist passwortgeschützt. Entfernen Sie das Passwort zuerst mit PDF entsperren.",
     "error.BAD_SIZE": "Breite und Höhe müssen jeweils zwischen 1 und 16.384 Pixel liegen.",
     "error.BAD_SCALE": "Die Skalierung muss zwischen 1 % und 1000 % liegen.",
+    "error.BAD_TARGET": "Das Größenlimit muss mindestens 5 KB betragen.",
+    "error.TARGET_TOO_SMALL": "Dieses Limit ist für dieses Bild zu niedrig, ohne es unleserlich zu machen. Versuchen Sie ein höheres Limit; die meisten Formulare akzeptieren 50–200 KB.",
     "error.TOO_LARGE": "Diese Größe ist zu groß für den Browser (über 100 Megapixel). Wählen Sie eine kleinere Größe.",
     "error.NO_TEXT": "Dieses PDF enthält keinen extrahierbaren Text — es handelt sich wahrscheinlich um ein gescanntes Bild. Führen Sie zuerst PDF OCR aus und versuchen Sie es dann erneut.",
     "error.NO_WATERMARK": "Geben Sie den Wasserzeichentext ein (Buchstaben, Zahlen und gängige Symbole).",
@@ -967,6 +971,102 @@
         [
           "Werden Standortdaten entfernt?",
           "Ja. Beim erneuten Kodieren werden versteckte EXIF-Metadaten wie GPS-Standort und Kameradetails entfernt."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Bild auf 20 KB komprimieren",
+      "summary": "Foto oder Unterschrift für ein Online-Formular unter 20 KB bringen.",
+      "action": "Bilder komprimieren",
+      "title": "Bild auf 20 KB komprimieren — JPG, ohne Upload | Fizzdoc",
+      "description": "Verkleinern Sie ein JPG-, PNG- oder WebP-Foto für Prüfungen und Behördenformulare auf unter 20 KB, so scharf wie möglich. Nichts wird hochgeladen.",
+      "h1": "Ein Bild auf unter 20 KB komprimieren",
+      "lede": "Formulare verlangen oft ein Foto oder eine Unterschrift unter 20 KB. Fizzdoc hält das Foto so groß und scharf wie möglich, senkt die JPG-Qualität nur so weit wie nötig und lädt Ihr Foto nie hoch.",
+      "steps": [
+        "Ein oder mehrere Bilder hinzufügen (JPG, PNG, WebP oder ein Handyfoto).",
+        "Limit prüfen (20 KB ist schon eingetragen; bei Bedarf ändern, falls das Formular eine andere Größe verlangt).",
+        "Auf „Bilder komprimieren“ klicken und das Ergebnis herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie bleibt das Foto scharf?",
+          "Wie bei Messaging-Apps wird das Foto zunächst auf etwa 1600 Pixel an der längeren Seite gehalten, dann wird die JPG-Qualität schrittweise gesenkt — solange das Foto 1000 Pixel oder größer ist, nie unter 50 %. Erst wenn es dann immer noch zu groß ist, wird das Bild verkleinert."
+        ],
+        [
+          "Was, wenn mein Formular auch eine genaue Pixelgröße verlangt?",
+          "Stellen Sie zuerst mit Resize Image die vom Formular geforderte Breite und Höhe ein und komprimieren Sie danach das Ergebnis hier."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Bild auf 50 KB komprimieren",
+      "summary": "Foto oder Unterschrift für ein Online-Formular unter 50 KB bringen.",
+      "action": "Bilder komprimieren",
+      "title": "Bild auf 50 KB komprimieren — JPG, ohne Upload | Fizzdoc",
+      "description": "Verkleinern Sie ein JPG-, PNG- oder WebP-Foto für Prüfungen und Behördenformulare auf unter 50 KB, so scharf wie möglich. Nichts wird hochgeladen.",
+      "h1": "Ein Bild auf unter 50 KB komprimieren",
+      "lede": "Formulare verlangen oft ein Foto oder eine Unterschrift unter 50 KB. Fizzdoc hält das Foto so groß und scharf wie möglich, senkt die JPG-Qualität nur so weit wie nötig und lädt Ihr Foto nie hoch.",
+      "steps": [
+        "Ein oder mehrere Bilder hinzufügen (JPG, PNG, WebP oder ein Handyfoto).",
+        "Limit prüfen (50 KB ist schon eingetragen; bei Bedarf ändern, falls das Formular eine andere Größe verlangt).",
+        "Auf „Bilder komprimieren“ klicken und das Ergebnis herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie bleibt das Foto scharf?",
+          "Wie bei Messaging-Apps wird das Foto zunächst auf etwa 1600 Pixel an der längeren Seite gehalten, dann wird die JPG-Qualität schrittweise gesenkt — solange das Foto 1000 Pixel oder größer ist, nie unter 50 %. Erst wenn es dann immer noch zu groß ist, wird das Bild verkleinert."
+        ],
+        [
+          "Was, wenn mein Formular auch eine genaue Pixelgröße verlangt?",
+          "Stellen Sie zuerst mit Resize Image die vom Formular geforderte Breite und Höhe ein und komprimieren Sie danach das Ergebnis hier."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Bild auf 100 KB komprimieren",
+      "summary": "Foto oder Unterschrift für ein Online-Formular unter 100 KB bringen.",
+      "action": "Bilder komprimieren",
+      "title": "Bild auf 100 KB komprimieren — JPG, ohne Upload | Fizzdoc",
+      "description": "Verkleinern Sie ein JPG-, PNG- oder WebP-Foto für Prüfungen und Behördenformulare auf unter 100 KB, so scharf wie möglich. Nichts wird hochgeladen.",
+      "h1": "Ein Bild auf unter 100 KB komprimieren",
+      "lede": "Formulare verlangen oft ein Foto oder eine Unterschrift unter 100 KB. Fizzdoc hält das Foto so groß und scharf wie möglich, senkt die JPG-Qualität nur so weit wie nötig und lädt Ihr Foto nie hoch.",
+      "steps": [
+        "Ein oder mehrere Bilder hinzufügen (JPG, PNG, WebP oder ein Handyfoto).",
+        "Limit prüfen (100 KB ist schon eingetragen; bei Bedarf ändern, falls das Formular eine andere Größe verlangt).",
+        "Auf „Bilder komprimieren“ klicken und das Ergebnis herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie bleibt das Foto scharf?",
+          "Wie bei Messaging-Apps wird das Foto zunächst auf etwa 1600 Pixel an der längeren Seite gehalten, dann wird die JPG-Qualität schrittweise gesenkt — solange das Foto 1000 Pixel oder größer ist, nie unter 50 %. Erst wenn es dann immer noch zu groß ist, wird das Bild verkleinert."
+        ],
+        [
+          "Was, wenn mein Formular auch eine genaue Pixelgröße verlangt?",
+          "Stellen Sie zuerst mit Resize Image die vom Formular geforderte Breite und Höhe ein und komprimieren Sie danach das Ergebnis hier."
         ],
         [
           "Ist Fizzdoc kostenlos?",

@@ -96,6 +96,8 @@
     "ws.style": "Stijl",
     "ws.pageOf": "Pagina 1 van 10",
     "ws.startAt": "Begin bij",
+    "ws.targetKb": "Maximale bestandsgrootte (KB)",
+    "ws.targetAny": "Geen limiet",
     "ws.dpiStandard": "Standaard (kleiner bestand)",
     "ws.dpiHigh": "Hoog (scherpere kleine lettertjes)",
     "ws.look": "Look",
@@ -142,6 +144,8 @@
     "error.PDF_PASSWORD": "Deze PDF is met een wachtwoord beveiligd. Verwijder eerst het wachtwoord met PDF ontgrendelen.",
     "error.BAD_SIZE": "De breedte en hoogte moeten elk tussen 1 en 16.384 pixels liggen.",
     "error.BAD_SCALE": "De schaal moet tussen 1% en 1000% liggen.",
+    "error.BAD_TARGET": "De groottelimiet moet minstens 5 KB zijn.",
+    "error.TARGET_TOO_SMALL": "Die limiet is te klein voor deze afbeelding zonder hem onleesbaar te maken. Probeer een hogere limiet; de meeste formulieren accepteren 50–200 KB.",
     "error.TOO_LARGE": "Dat formaat is te groot om in een browser te maken (meer dan 100 megapixel). Kies een kleiner formaat.",
     "error.NO_TEXT": "Deze PDF bevat geen tekst om te extraheren — het is waarschijnlijk een gescande afbeelding. Voer eerst OCR PDF uit en probeer het opnieuw.",
     "error.NO_WATERMARK": "Voer de watermerktekst in (letters, cijfers en gangbare symbolen).",
@@ -967,6 +971,102 @@
         [
           "Wordt locatiegegevens verwijderd?",
           "Ja. Bij het opnieuw coderen verdwijnen verborgen EXIF-metagegevens zoals gps-locatie en cameragegevens."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Afbeelding comprimeren naar 20 KB",
+      "summary": "Breng een foto of handtekening onder de 20 KB voor een online formulier.",
+      "action": "Afbeeldingen comprimeren",
+      "title": "Afbeelding Comprimeren naar 20 KB — JPG, Geen Upload | Fizzdoc",
+      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 20 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload.",
+      "h1": "Een afbeelding comprimeren tot onder 20 KB",
+      "lede": "Formulieren vragen vaak om een foto of handtekening onder de 20 KB. Fizzdoc houdt de foto zo groot en scherp mogelijk, verlaagt de JPG-kwaliteit alleen zo veel als nodig, en uploadt je foto nooit.",
+      "steps": [
+        "Voeg een of meer afbeeldingen toe (JPG, PNG, WebP of een telefoonfoto).",
+        "Controleer de limiet (20 KB staat er al in; pas het aan als jouw formulier een andere grootte vraagt).",
+        "Klik op “Afbeeldingen comprimeren” en download het resultaat."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe blijft de foto scherp?",
+          "Net als in berichten-apps houdt het eerst de langste zijde van de foto op ongeveer 1600 pixels en verlaagt het de JPG-kwaliteit stap voor stap, nooit onder de 50% zolang de foto 1000 pixels of groter is. Alleen als het bestand dan nog te groot is, wordt de foto kleiner gemaakt."
+        ],
+        [
+          "Wat als mijn formulier ook een exacte pixelgrootte vraagt?",
+          "Gebruik eerst Resize Image om de breedte en hoogte in te stellen die het formulier vraagt, en comprimeer daarna het resultaat hier."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Afbeelding comprimeren naar 50 KB",
+      "summary": "Breng een foto of handtekening onder de 50 KB voor een online formulier.",
+      "action": "Afbeeldingen comprimeren",
+      "title": "Afbeelding Comprimeren naar 50 KB — JPG, Geen Upload | Fizzdoc",
+      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 50 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload.",
+      "h1": "Een afbeelding comprimeren tot onder 50 KB",
+      "lede": "Formulieren vragen vaak om een foto of handtekening onder de 50 KB. Fizzdoc houdt de foto zo groot en scherp mogelijk, verlaagt de JPG-kwaliteit alleen zo veel als nodig, en uploadt je foto nooit.",
+      "steps": [
+        "Voeg een of meer afbeeldingen toe (JPG, PNG, WebP of een telefoonfoto).",
+        "Controleer de limiet (50 KB staat er al in; pas het aan als jouw formulier een andere grootte vraagt).",
+        "Klik op “Afbeeldingen comprimeren” en download het resultaat."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe blijft de foto scherp?",
+          "Net als in berichten-apps houdt het eerst de langste zijde van de foto op ongeveer 1600 pixels en verlaagt het de JPG-kwaliteit stap voor stap, nooit onder de 50% zolang de foto 1000 pixels of groter is. Alleen als het bestand dan nog te groot is, wordt de foto kleiner gemaakt."
+        ],
+        [
+          "Wat als mijn formulier ook een exacte pixelgrootte vraagt?",
+          "Gebruik eerst Resize Image om de breedte en hoogte in te stellen die het formulier vraagt, en comprimeer daarna het resultaat hier."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja. Je hoeft je niet aan te melden, er is geen watermerk en geen dagelijkse limiet. Fizzdoc is open source onder de Apache-2.0-licentie."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Afbeelding comprimeren naar 100 KB",
+      "summary": "Breng een foto of handtekening onder de 100 KB voor een online formulier.",
+      "action": "Afbeeldingen comprimeren",
+      "title": "Afbeelding Comprimeren naar 100 KB — JPG, Geen Upload | Fizzdoc",
+      "description": "Maak een JPG-, PNG- of WebP-foto kleiner dan 100 KB voor examens en overheidsformulieren, en houd hem zo scherp mogelijk. Niets wordt geüpload.",
+      "h1": "Een afbeelding comprimeren tot onder 100 KB",
+      "lede": "Formulieren vragen vaak om een foto of handtekening onder de 100 KB. Fizzdoc houdt de foto zo groot en scherp mogelijk, verlaagt de JPG-kwaliteit alleen zo veel als nodig, en uploadt je foto nooit.",
+      "steps": [
+        "Voeg een of meer afbeeldingen toe (JPG, PNG, WebP of een telefoonfoto).",
+        "Controleer de limiet (100 KB staat er al in; pas het aan als jouw formulier een andere grootte vraagt).",
+        "Klik op “Afbeeldingen comprimeren” en download het resultaat."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe blijft de foto scherp?",
+          "Net als in berichten-apps houdt het eerst de langste zijde van de foto op ongeveer 1600 pixels en verlaagt het de JPG-kwaliteit stap voor stap, nooit onder de 50% zolang de foto 1000 pixels of groter is. Alleen als het bestand dan nog te groot is, wordt de foto kleiner gemaakt."
+        ],
+        [
+          "Wat als mijn formulier ook een exacte pixelgrootte vraagt?",
+          "Gebruik eerst Resize Image om de breedte en hoogte in te stellen die het formulier vraagt, en comprimeer daarna het resultaat hier."
         ],
         [
           "Is Fizzdoc gratis?",

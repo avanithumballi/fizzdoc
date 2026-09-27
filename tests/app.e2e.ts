@@ -182,6 +182,29 @@ test('resizes and converts images with the chosen options', async ({ page }) => 
   expect((await downloadBytes(page)).bytes.length).toBeLessThanOrEqual(readFileSync(file('photo.jpg')).length);
 });
 
+test('compresses a photo under a form’s size limit while keeping it as large as possible', async ({ page }) => {
+  await page.goto('/compress-image-to-50kb/');
+  await expect(page.locator('input[name="targetKb"]')).toHaveValue('50');
+  await page.locator('#file-input').setInputFiles(file('big-photo.jpg'));
+  await page.getByRole('button', { name: 'Compress images' }).click();
+  await expect(page.locator('#status')).toContainText('smaller');
+  const small = await downloadBytes(page);
+  expect(small.name).toBe('big-photo-50kb.jpg');
+  expect(small.bytes.length).toBeLessThanOrEqual(50 * 1024);
+  // It lowers the quality before it shrinks the picture, so the photo stays as large as it can.
+  const widthNow = async () => Number(/(\d+) × \d+/.exec((await page.locator('#status').textContent())!)![1]);
+  expect(await widthNow()).toBeGreaterThanOrEqual(800);
+  await page.locator('input[name="targetKb"]').fill('100');
+  await page.getByRole('button', { name: 'Compress images' }).click();
+  await expect(page.locator('#status')).toContainText('smaller');
+  expect(await widthNow()).toBeGreaterThanOrEqual(1000);
+  expect((await downloadBytes(page)).bytes.length).toBeLessThanOrEqual(100 * 1024);
+
+  await page.locator('input[name="targetKb"]').fill('5');
+  await page.getByRole('button', { name: 'Compress images' }).click();
+  await expect(page.locator('#status')).toContainText('too small for this image');
+});
+
 test('converts PDFs to text, Markdown, Word and PowerPoint', async ({ page }) => {
   const seen = watch(page);
   for (const [slug, button, name] of [

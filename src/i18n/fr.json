@@ -96,6 +96,8 @@
     "ws.style": "Style",
     "ws.pageOf": "Page 1 sur 10",
     "ws.startAt": "Commencer à",
+    "ws.targetKb": "Taille de fichier max. (KB)",
+    "ws.targetAny": "Aucune limite",
     "ws.dpiStandard": "Standard (fichier plus léger)",
     "ws.dpiHigh": "Haute (petits caractères plus nets)",
     "ws.look": "Apparence",
@@ -142,6 +144,8 @@
     "error.PDF_PASSWORD": "Ce PDF est protégé par un mot de passe. Retirez d'abord le mot de passe avec Déverrouiller un PDF.",
     "error.BAD_SIZE": "La largeur et la hauteur doivent chacune être comprises entre 1 et 16 384 pixels.",
     "error.BAD_SCALE": "L’échelle doit être comprise entre 1 % et 1000 %.",
+    "error.BAD_TARGET": "La limite de taille doit être d'au moins 5 KB.",
+    "error.TARGET_TOO_SMALL": "Cette limite est trop basse pour cette image sans la rendre illisible. Essayez une limite plus grande ; la plupart des formulaires acceptent 50–200 KB.",
     "error.TOO_LARGE": "Cette taille est trop grande pour être créée dans un navigateur (plus de 100 mégapixels). Choisissez une taille plus petite.",
     "error.NO_TEXT": "Ce PDF ne contient pas de texte à extraire — c'est probablement une image numérisée. Lancez d'abord OCR PDF, puis réessayez.",
     "error.NO_WATERMARK": "Saisissez le texte du filigrane (lettres, chiffres et symboles courants).",
@@ -967,6 +971,102 @@
         [
           "Les données de localisation sont-elles supprimées ?",
           "Oui. Le nouvel encodage supprime les métadonnées EXIF cachées comme la localisation GPS et les détails de l'appareil photo."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-20kb": {
+      "name": "Compresser une image à 20 KB",
+      "summary": "Ramenez une photo ou une signature à moins de 20 KB pour un formulaire en ligne.",
+      "action": "Compresser les images",
+      "title": "Compresser une Image à 20 KB — JPG, Sans Upload | Fizzdoc",
+      "description": "Réduisez une photo JPG, PNG ou WebP à moins de 20 KB pour un examen ou un formulaire administratif, en la gardant nette. Rien n'est envoyé, c'est gratuit.",
+      "h1": "Compresser une image à moins de 20 KB",
+      "lede": "Les formulaires demandent souvent une photo ou une signature de moins de 20 KB. Fizzdoc garde la photo aussi grande et nette que possible, réduit la qualité JPG juste ce qu'il faut, et n'envoie jamais votre photo.",
+      "steps": [
+        "Ajoutez une ou plusieurs images (JPG, PNG, WebP ou une photo de téléphone).",
+        "Vérifiez la limite (20 KB est déjà rempli ; changez-la si votre formulaire demande une autre taille).",
+        "Cliquez sur « Compresser les images » et téléchargez le résultat."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment la photo reste-t-elle nette ?",
+          "Comme les applications de messagerie, l'outil garde d'abord la photo à environ 1600 pixels sur son côté le plus long et réduit la qualité JPG par paliers, sans jamais descendre sous 50 % tant que la photo fait 1000 pixels ou plus. Ce n'est que si elle est encore trop lourde qu'il réduit la taille de l'image."
+        ],
+        [
+          "Et si mon formulaire demande aussi une taille exacte en pixels ?",
+          "Utilisez d'abord Resize Image pour régler la largeur et la hauteur demandées par le formulaire, puis compressez le résultat ici."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-50kb": {
+      "name": "Compresser une image à 50 KB",
+      "summary": "Ramenez une photo ou une signature à moins de 50 KB pour un formulaire en ligne.",
+      "action": "Compresser les images",
+      "title": "Compresser une Image à 50 KB — JPG, Sans Upload | Fizzdoc",
+      "description": "Réduisez une photo JPG, PNG ou WebP à moins de 50 KB pour un examen ou un formulaire administratif, en la gardant nette. Rien n'est envoyé, c'est gratuit.",
+      "h1": "Compresser une image à moins de 50 KB",
+      "lede": "Les formulaires demandent souvent une photo ou une signature de moins de 50 KB. Fizzdoc garde la photo aussi grande et nette que possible, réduit la qualité JPG juste ce qu'il faut, et n'envoie jamais votre photo.",
+      "steps": [
+        "Ajoutez une ou plusieurs images (JPG, PNG, WebP ou une photo de téléphone).",
+        "Vérifiez la limite (50 KB est déjà rempli ; changez-la si votre formulaire demande une autre taille).",
+        "Cliquez sur « Compresser les images » et téléchargez le résultat."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment la photo reste-t-elle nette ?",
+          "Comme les applications de messagerie, l'outil garde d'abord la photo à environ 1600 pixels sur son côté le plus long et réduit la qualité JPG par paliers, sans jamais descendre sous 50 % tant que la photo fait 1000 pixels ou plus. Ce n'est que si elle est encore trop lourde qu'il réduit la taille de l'image."
+        ],
+        [
+          "Et si mon formulaire demande aussi une taille exacte en pixels ?",
+          "Utilisez d'abord Resize Image pour régler la largeur et la hauteur demandées par le formulaire, puis compressez le résultat ici."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "compress-image-to-100kb": {
+      "name": "Compresser une image à 100 KB",
+      "summary": "Ramenez une photo ou une signature à moins de 100 KB pour un formulaire en ligne.",
+      "action": "Compresser les images",
+      "title": "Compresser une Image à 100 KB — JPG, Sans Upload | Fizzdoc",
+      "description": "Réduisez une photo JPG, PNG ou WebP à moins de 100 KB pour un examen ou un formulaire administratif, en la gardant nette. Rien n'est envoyé, c'est gratuit.",
+      "h1": "Compresser une image à moins de 100 KB",
+      "lede": "Les formulaires demandent souvent une photo ou une signature de moins de 100 KB. Fizzdoc garde la photo aussi grande et nette que possible, réduit la qualité JPG juste ce qu'il faut, et n'envoie jamais votre photo.",
+      "steps": [
+        "Ajoutez une ou plusieurs images (JPG, PNG, WebP ou une photo de téléphone).",
+        "Vérifiez la limite (100 KB est déjà rempli ; changez-la si votre formulaire demande une autre taille).",
+        "Cliquez sur « Compresser les images » et téléchargez le résultat."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment la photo reste-t-elle nette ?",
+          "Comme les applications de messagerie, l'outil garde d'abord la photo à environ 1600 pixels sur son côté le plus long et réduit la qualité JPG par paliers, sans jamais descendre sous 50 % tant que la photo fait 1000 pixels ou plus. Ce n'est que si elle est encore trop lourde qu'il réduit la taille de l'image."
+        ],
+        [
+          "Et si mon formulaire demande aussi une taille exacte en pixels ?",
+          "Utilisez d'abord Resize Image pour régler la largeur et la hauteur demandées par le formulaire, puis compressez le résultat ici."
         ],
         [
           "Est-ce que Fizzdoc est gratuit ?",

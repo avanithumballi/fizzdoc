@@ -202,7 +202,12 @@ function optionsHtml(c: Copy, tool: Tool) {
     <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
     return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
-  if (mode === 'compress') return FORMAT_SELECT(c, 'original') + quality(75);
+  if (mode === 'compress') {
+    // "Under 100 KB" as asked by exam, job and government forms; filled in on the fixed-size pages.
+    const target = tool.preset?.targetKb ?? '';
+    const sizes = ['20', '50', '100', '200', '500'].map((kb) => `<option value="${kb}"></option>`).join('');
+    return `<label>${esc(c.t('ws.targetKb'))}<input name="targetKb" type="number" min="5" step="1" inputmode="numeric" value="${target}" placeholder="${esc(c.t('ws.targetAny'))}" list="kb-sizes"><datalist id="kb-sizes">${sizes}</datalist></label>${FORMAT_SELECT(c, 'original')}${quality(75)}`;
+  }
   if (mode === 'convert') {
     const fixed = tool.preset?.format;
     return (fixed ? '' : FORMAT_SELECT(c, 'jpeg')) + (fixed === 'png' ? '' : quality(90));
@@ -257,6 +262,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
     }
     ${optionsHtml(c, tool)}
     ${Object.entries(tool.preset ?? {})
+      .filter(([name]) => name !== 'targetKb') // shown as an editable field instead
       .map(([name, value]) => `<input type="hidden" name="${name}" value="${esc(value)}">`)
       .join('')}
     ${pagesField ? `<label>${esc(pagesField.label)}<input id="pages" placeholder="${esc(pagesField.placeholder)}" autocomplete="off" spellcheck="false"></label>` : ''}
