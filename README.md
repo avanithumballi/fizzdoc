@@ -220,12 +220,30 @@ If Fizzdoc saved you from uploading something private, **[give it a star](https:
 ## 👋 About the author
 
 Fizzdoc is designed and built by **[Rishab Dugar](https://rishabdugarjain.in)**, a Senior Data Scientist in Bengaluru working on AI systems and production data platforms.
-It started from a simple frustration: why should a payslip or a passport scan travel to someone else's server just to be merged or compressed?
+It started from a simple frustration: why should a payslip or a passport scan travel to someone else's server just to be merged or compressed? (How it was built: [Independent work](#-independent-work).)
 
 <p>
   <a href="https://rishabdugarjain.in"><img src="https://img.shields.io/badge/Website-rishabdugarjain.in-111111?style=for-the-badge" alt="rishabdugarjain.in"></a>
   <a href="https://github.com/kingrishabdugar"><img src="https://img.shields.io/badge/GitHub-kingrishabdugar-181717?style=for-the-badge&logo=github" alt="GitHub @kingrishabdugar"></a>
 </p>
+
+## 🧭 Independent work
+
+Fizzdoc was designed and built independently by Rishab Dugar, from scratch, after researching how document processing can run entirely in a browser without a server. It is not affiliated with, endorsed by, or derived from any other PDF or document service.
+
+Any resemblance to other products is coincidental. Tools in this category solve the same everyday tasks (merge, split, compress, convert), and Fizzdoc deliberately builds on the best open technologies available for each job, so some overlap in features or wording is natural:
+
+- **PDF structure** (merge, split, rotate, encrypt): [qpdf](https://github.com/qpdf/qpdf) compiled to WebAssembly with Emscripten, run in a disposable Web Worker with files mounted through `WORKERFS`
+- **Rendering and text extraction:** Mozilla [pdf.js](https://github.com/mozilla/pdf.js)
+- **Writing and editing PDFs:** [pdf-lib](https://github.com/Hopding/pdf-lib)
+- **OCR:** Tesseract's LSTM engine via [tesseract.js](https://github.com/naptha/tesseract.js), self-hosted on the site's own origin
+- **Word, Excel and PowerPoint:** Office Open XML read and written directly, with [fflate](https://github.com/101arrowz/fflate) for the ZIP containers
+- **Images:** the browser's own codecs through `createImageBitmap` and `OffscreenCanvas`
+- **Word, text and Markdown → PDF:** the browser's native print-to-PDF pipeline
+- **Privacy guarantee:** a strict Content Security Policy (`connect-src 'self'`) enforced by the browser itself
+- **Build and tests:** TypeScript, Vite with static prerendering, Vitest and Playwright
+
+Familiar interface patterns, such as a grid of tools per format, drag-and-drop upload and one page per task, are common conventions in document tools rather than borrowed designs. The code in this repository was written for Fizzdoc; the libraries above are used under their own licenses, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## 📄 License
 
