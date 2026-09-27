@@ -126,14 +126,14 @@ When something genuinely can't be carried over (a digital signature, accessibili
 
 ## ⚙️ How it works
 
-```
-44 tools in src/site.ts ──▶ vite build ──▶ 720 static pages (16 languages) + sitemap + llms.txt ──▶ any static host
-                                                   │
-                                     your browser tab (nothing leaves it)
-         ┌─────────────────────┬──────────────────┼──────────────────┬──────────────────┐
-   qpdf (WebAssembly)      pdf.js            pdf-lib             Tesseract OCR        fflate
-   merge · split · lock    render · text     edit · stamp        image & PDF OCR      Word/Excel/PPT
-```
+<p align="center">
+  <a href="https://fizzdoc.com/architecture.html">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/architecture-dark.png">
+      <img src="docs/assets/architecture-light.png" width="900" alt="Fizzdoc architecture: a build step prerenders static pages to Cloudflare Pages; in the browser tab, the page controller hands files to the qpdf worker, pdf.js / pdf-lib / fflate and the OCR engine, and the result is saved straight back to the visitor's device">
+    </picture>
+  </a>
+</p>
 
 - **Static site, zero backend.** Nothing to scale, nothing to breach, nothing to pay for.
 - **Lazy engines.** First load is about 9 KB of gzipped app code; each engine downloads only when a tool needs it.
@@ -227,6 +227,22 @@ If Fizzdoc saved you from uploading something private, **[give it a star](https:
 <a href="https://github.com/kingrishabdugar/fizzdoc/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=kingrishabdugar/fizzdoc" alt="Contributors">
 </a>
+
+## 🙏 Credits
+
+Fizzdoc would not exist without these open-source projects and the people who maintain them:
+
+| Project | What it does in Fizzdoc | By |
+|---|---|---|
+| [qpdf](https://github.com/qpdf/qpdf) | Merge, split, rotate, encrypt and decrypt PDFs losslessly | [@jberkenbilt](https://github.com/jberkenbilt) and the qpdf contributors |
+| [qpdf-wasm](https://github.com/neslinesli93/qpdf-wasm) | qpdf compiled to WebAssembly | [@neslinesli93](https://github.com/neslinesli93) |
+| [pdf.js](https://github.com/mozilla/pdf.js) | Renders pages, extracts text, powers the editor | [Mozilla](https://github.com/mozilla) and contributors |
+| [pdf-lib](https://github.com/Hopding/pdf-lib) | Writes and edits PDFs, stamps, the OCR text layer | [@Hopding](https://github.com/Hopding) |
+| [Tesseract](https://github.com/tesseract-ocr/tesseract) and [tesseract.js](https://github.com/naptha/tesseract.js) | Text recognition, compiled to WebAssembly | [tesseract-ocr](https://github.com/tesseract-ocr) and [naptha](https://github.com/naptha) |
+| [fflate](https://github.com/101arrowz/fflate) | Reads and writes Word, Excel, PowerPoint and ZIP files | [@101arrowz](https://github.com/101arrowz) |
+| [Inter](https://github.com/rsms/inter) | The typeface | [@rsms](https://github.com/rsms) |
+
+Built and tested with [Vite](https://github.com/vitejs/vite), [TypeScript](https://github.com/microsoft/TypeScript), [Vitest](https://github.com/vitest-dev/vitest) and [Playwright](https://github.com/microsoft/playwright). Full license details are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## 👋 About the author
 
