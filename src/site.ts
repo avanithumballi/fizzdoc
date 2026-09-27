@@ -61,7 +61,7 @@ const PRIVACY_FAQ: [string, string][] = [
   ],
   [
     'Is Fizzdoc free?',
-    'Yes. There is no sign-up, no watermark and no daily limit. Fizzdoc is open source under the MIT license.',
+    'Yes. There is no sign-up, no watermark and no daily limit. Fizzdoc is open source under the Apache-2.0 license.',
   ],
 ];
 

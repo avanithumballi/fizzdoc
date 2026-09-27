@@ -22,7 +22,7 @@
 <p align="center">
   <a href="https://github.com/kingrishabdugar/fizzdoc/stargazers"><img src="https://img.shields.io/github/stars/kingrishabdugar/fizzdoc?style=flat-square&logo=github&label=stars&color=e3b341" alt="GitHub stars"></a>
   <a href="https://github.com/kingrishabdugar/fizzdoc/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/kingrishabdugar/fizzdoc/ci.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22c55e?style=flat-square" alt="MIT license"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-22c55e?style=flat-square" alt="Apache-2.0 license"></a>
   <img src="https://img.shields.io/badge/bytes%20uploaded-0-16a34a?style=flat-square" alt="0 bytes uploaded">
   <img src="https://img.shields.io/badge/tools-44-e5322d?style=flat-square" alt="44 tools">
   <img src="https://img.shields.io/badge/languages-16-2f6fdb?style=flat-square" alt="16 languages">
@@ -49,7 +49,7 @@ Every "free online PDF tool" asks you to upload your contract, payslip, bank sta
 | | **Fizzdoc** | iLovePDF | Smallpdf | Adobe online | Stirling-PDF |
 |---|:---:|:---:|:---:|:---:|:---:|
 | Your file stays on your device | ✅ | ❌ uploaded | ❌ uploaded | ❌ uploaded | ⚠️ goes to your own server |
-| Open source | ✅ MIT | ❌ | ❌ | ❌ | ✅ |
+| Open source | ✅ Apache-2.0 | ❌ | ❌ | ❌ | ✅ |
 | No account, no daily limits, no watermark | ✅ | ⚠️ free tier limits | ⚠️ free tier limits | ⚠️ sign-in for many tools | ✅ |
 | Nothing to install or host | ✅ | ✅ | ✅ | ✅ | ❌ needs Docker / a server |
 | Works on phones | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -274,6 +274,6 @@ Familiar interface patterns, such as a grid of tools per format, drag-and-drop u
 
 ## 📄 License
 
-[MIT](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). Fizzdoc stands on the shoulders of [qpdf](https://github.com/qpdf/qpdf), [pdf.js](https://github.com/mozilla/pdf.js), [pdf-lib](https://github.com/Hopding/pdf-lib), [Tesseract.js](https://github.com/naptha/tesseract.js) and [fflate](https://github.com/101arrowz/fflate) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Product names mentioned in this README are trademarks of their owners and are used only for comparison.
+[Apache-2.0](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). You're free to use, modify and share Fizzdoc, including commercially, as long as you keep the copyright and the [NOTICE](NOTICE) file crediting the original project in every copy or derivative. Fizzdoc stands on the shoulders of the projects listed in [Credits](#-credits) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Product names mentioned in this README are trademarks of their owners and are used only for comparison.
 
 <p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF offline, private PDF converter, PDF to Word, OCR, iLovePDF alternative, Smallpdf alternative, open-source PDF tools, WebAssembly PDF, client-side document converter.</sub></p>
