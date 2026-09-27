@@ -900,6 +900,8 @@ main {
 
 .file-list {
   display: grid;
+  /* minmax(0, …) keeps the column as wide as the card, so long file names wrap instead of widening the page. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 6px;
   margin: 12px 0 0;
   padding: 0;
@@ -909,9 +911,12 @@ main {
   display: none;
 }
 .file-list li {
-  display: flex;
+  /* Name on top, size under it, buttons on the right: long names get the full width. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-columns: auto;
   align-items: center;
-  gap: 8px;
+  gap: 2px 4px;
   padding: 8px 8px 8px 14px;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -929,17 +934,19 @@ main {
   border-color: var(--accent);
 }
 .file-name {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  grid-area: 1 / 1;
+  overflow-wrap: anywhere; /* long names wrap onto more lines instead of widening the page */
+  line-height: 1.35;
   font-weight: 500;
 }
 .file-size {
+  grid-area: 2 / 1;
   color: var(--faint);
   font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
+}
+.file-list li > .icon-button {
+  grid-row: 1 / span 2;
 }
 .icon-button {
   display: grid;
