@@ -8,13 +8,13 @@
 <h3 align="center">The open-source iLovePDF alternative that never sees your files.</h3>
 
 <p align="center">
-  44 PDF, Word, Excel, PowerPoint and image tools — edit, compress, merge, convert, OCR —<br>
+  51 PDF, Word, Excel, PowerPoint, image and audio tools — edit, redact, compress, merge, convert, OCR —<br>
   running <strong>100% in your browser</strong>. No uploads. No sign-up. No watermark. 16 languages.
 </p>
 
 <p align="center">
   <a href="https://fizzdoc.com"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
-  <a href="#-all-44-tools"><strong>All tools</strong></a> &nbsp;·&nbsp;
+  <a href="#-all-51-tools"><strong>All tools</strong></a> &nbsp;·&nbsp;
   <a href="#-how-it-works"><strong>How it works</strong></a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
 </p>
@@ -24,7 +24,7 @@
   <a href="https://github.com/kingrishabdugar/fizzdoc/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/kingrishabdugar/fizzdoc/ci.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-22c55e?style=flat-square" alt="Apache-2.0 license"></a>
   <img src="https://img.shields.io/badge/bytes%20uploaded-0-16a34a?style=flat-square" alt="0 bytes uploaded">
-  <img src="https://img.shields.io/badge/tools-44-e5322d?style=flat-square" alt="44 tools">
+  <img src="https://img.shields.io/badge/tools-51-e5322d?style=flat-square" alt="51 tools">
   <img src="https://img.shields.io/badge/languages-16-2f6fdb?style=flat-square" alt="16 languages">
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-8b5cf6?style=flat-square" alt="PRs welcome"></a>
 </p>
@@ -88,16 +88,17 @@ Most free online PDF tools ask you to upload your contract, payslip, bank statem
   </tr>
 </table>
 
-## 🧰 All 44 tools
+## 🧰 All 51 tools
 
 | Format | Tools |
 |---|---|
-| **PDF** | [Edit PDF](https://fizzdoc.com/edit-pdf/) (change text in place) · [Compress](https://fizzdoc.com/compress-pdf/) · [Merge](https://fizzdoc.com/merge-pdf/) · [Split](https://fizzdoc.com/split-pdf/) · [Extract pages](https://fizzdoc.com/extract-pdf-pages/) · [Reorder pages](https://fizzdoc.com/reorder-pdf-pages/) · [Rotate](https://fizzdoc.com/rotate-pdf/) · [Delete pages](https://fizzdoc.com/delete-pdf-pages/) · [Page numbers](https://fizzdoc.com/add-page-numbers-to-pdf/) · [Watermark](https://fizzdoc.com/watermark-pdf/) · [Unlock](https://fizzdoc.com/unlock-pdf/) · [Protect (AES-256)](https://fizzdoc.com/protect-pdf/) · [Remove metadata](https://fizzdoc.com/remove-pdf-metadata/) · [OCR](https://fizzdoc.com/ocr-pdf/) |
+| **PDF** | [Edit PDF](https://fizzdoc.com/edit-pdf/) (change text in place) · [Redact](https://fizzdoc.com/redact-pdf/) (black out text for good) · [Compress](https://fizzdoc.com/compress-pdf/) · [Merge](https://fizzdoc.com/merge-pdf/) · [Split](https://fizzdoc.com/split-pdf/) · [Extract pages](https://fizzdoc.com/extract-pdf-pages/) · [Reorder pages](https://fizzdoc.com/reorder-pdf-pages/) · [Rotate](https://fizzdoc.com/rotate-pdf/) · [Delete pages](https://fizzdoc.com/delete-pdf-pages/) · [Page numbers](https://fizzdoc.com/add-page-numbers-to-pdf/) · [Watermark](https://fizzdoc.com/watermark-pdf/) · [Unlock](https://fizzdoc.com/unlock-pdf/) · [Protect (AES-256)](https://fizzdoc.com/protect-pdf/) · [Remove metadata](https://fizzdoc.com/remove-pdf-metadata/) · [OCR](https://fizzdoc.com/ocr-pdf/) · [PDF → Scanned PDF](https://fizzdoc.com/pdf-to-scanned-pdf/) |
 | **PDF conversions** | [PDF → Word](https://fizzdoc.com/pdf-to-word/) · [PDF → PowerPoint](https://fizzdoc.com/pdf-to-powerpoint/) · [PDF → JPG](https://fizzdoc.com/pdf-to-jpg/) · [PDF → PNG](https://fizzdoc.com/pdf-to-png/) · [PDF → Text](https://fizzdoc.com/pdf-to-text/) · [PDF → Markdown](https://fizzdoc.com/pdf-to-markdown/) · [JPG → PDF](https://fizzdoc.com/jpg-to-pdf/) · [PNG → PDF](https://fizzdoc.com/png-to-pdf/) · [Text → PDF](https://fizzdoc.com/text-to-pdf/) · [Markdown → PDF](https://fizzdoc.com/markdown-to-pdf/) |
 | **Word** | [Word → PDF](https://fizzdoc.com/word-to-pdf/) · [Compress](https://fizzdoc.com/compress-word/) · [Remove metadata](https://fizzdoc.com/remove-word-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-word/) |
 | **Excel** | [Excel → CSV](https://fizzdoc.com/excel-to-csv/) · [CSV → Excel](https://fizzdoc.com/csv-to-excel/) · [Compress](https://fizzdoc.com/compress-excel/) · [Remove metadata](https://fizzdoc.com/remove-excel-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-excel/) |
 | **PowerPoint** | [Compress](https://fizzdoc.com/compress-powerpoint/) · [Remove metadata](https://fizzdoc.com/remove-powerpoint-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-powerpoint/) |
-| **Images** | [Compress](https://fizzdoc.com/compress-image/) · [Resize](https://fizzdoc.com/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.com/convert-image/) · [PNG → JPG](https://fizzdoc.com/png-to-jpg/) · [JPG → PNG](https://fizzdoc.com/jpg-to-png/) · [WebP → JPG](https://fizzdoc.com/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.com/jpg-to-webp/) · [Image → Text](https://fizzdoc.com/image-to-text/) (select text right on the photo, like Live Text) |
+| **Images** | [Compress](https://fizzdoc.com/compress-image/) (to [20 KB](https://fizzdoc.com/compress-image-to-20kb/), [50 KB](https://fizzdoc.com/compress-image-to-50kb/), [100 KB](https://fizzdoc.com/compress-image-to-100kb/) for forms) · [Resize](https://fizzdoc.com/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.com/convert-image/) · [PNG → JPG](https://fizzdoc.com/png-to-jpg/) · [JPG → PNG](https://fizzdoc.com/jpg-to-png/) · [WebP → JPG](https://fizzdoc.com/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.com/jpg-to-webp/) · [Image → Text](https://fizzdoc.com/image-to-text/) (select text right on the photo, like Live Text) |
+| **Audio** | [Cut & Split Audio](https://fizzdoc.com/split-audio/) (trim or split an MP3/M4A on a waveform, preview every part) · [Merge Audio](https://fizzdoc.com/merge-audio/) (listen before you download) — no re-encoding, so no quality loss |
 
 **Google Docs, Sheets and Slides** work too: download as .docx / .xlsx / .pptx and use the matching tool. Nothing is sent to Google.
 
