@@ -1,0 +1,10 @@
+{
+  "name": "Fizzdoc",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+  "postCreateCommand": "npm ci",
+  "forwardPorts": [5173],
+  "portsAttributes": { "5173": { "label": "Fizzdoc dev server", "onAutoForward": "openPreview" } },
+  "customizations": {
+    "vscode": { "extensions": ["vitest.explorer", "ms-playwright.playwright"] }
+  }
+}
