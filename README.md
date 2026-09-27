@@ -218,8 +218,8 @@ If Fizzdoc saved you from uploading something private, **[give it a star](https:
 
 <a href="https://star-history.com/#kingrishabdugar/fizzdoc&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kingrishabdugar/fizzdoc&type=Date&theme=dark">
-    <img alt="Star history" src="https://api.star-history.com/svg?repos=kingrishabdugar/fizzdoc&type=Date" width="600">
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kingrishabdugar/fizzdoc&type=Date&theme=dark&v=2">
+    <img alt="Star history" src="https://api.star-history.com/svg?repos=kingrishabdugar/fizzdoc&type=Date&v=2" width="600">
   </picture>
 </a>
 
