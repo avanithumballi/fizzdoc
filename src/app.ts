@@ -1,6 +1,7 @@
 import './style.css';
 import '@fontsource-variable/inter';
 import { setUpEffects } from './effects';
+import { setUpSearch } from './search';
 import type { ErrorCode, Job, Op } from './engine/pdf';
 import type { LocalError, Output } from './engine/local';
 import type { FromWorker, ToWorker } from './engine/worker';
@@ -519,5 +520,6 @@ function setUp(op: ToolOp) {
 }
 
 setUpEffects();
+setUpSearch();
 const op = document.body.dataset.tool as ToolOp | '';
 if (op) setUp(op);

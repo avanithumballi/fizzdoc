@@ -29,6 +29,10 @@
     "home.browse": "Sfoglia tutti i {n} strumenti",
     "home.formats": "Formati supportati",
     "home.google": "+ Google Docs, Sheets e Slides",
+    "search.label": "Cerca strumenti",
+    "search.placeholder": "Cerca {n} strumenti, es. comprimi pdf",
+    "search.count": "{n} strumenti corrispondenti",
+    "search.none": "Nessuno strumento corrisponde. Prova “pdf”, “immagini” o “audio”.",
     "home.chip": "Elaborato su questo dispositivo",
     "home.toolsTitle": "Ogni strumento, privato per natura",
     "home.toolsLede": "Scegli uno strumento. Il tuo file viene elaborato su questo dispositivo e non tocca mai un server.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — PDF, Word, Excel e Immagini Senza Upload",
     "description": "Modifica, comprimi, converti, esegui OCR e unisci PDF; converti Word, Excel e immagini — nel browser. Zero upload, senza registrazione, gratis e open source.",
     "h1": "Strumenti per documenti che non vedono mai i tuoi documenti",
-    "lede": "Modifica, comprimi, converti ed esegui OCR sui PDF. Converti Word, Excel, PowerPoint e immagini. Tutto funziona nel tuo browser — i tuoi file non lasciano mai il tuo dispositivo.",
+    "lede": "Modifica, comprimi, converti ed esegui OCR sui PDF. Converti Word, Excel, PowerPoint e immagini, e taglia o unisci audio. Tutto funziona nel tuo browser — i tuoi file non lasciano mai il tuo dispositivo.",
     "what": "Fizzdoc è un insieme gratuito e open source di strumenti per documenti che funziona interamente nel tuo browser. I PDF vengono elaborati con i motori qpdf, pdf.js e pdf-lib, il riconoscimento del testo usa Tesseract, e anche i file Office e le immagini vengono gestiti in locale — così niente viene mai caricato su un server.",
     "faq": [
       [

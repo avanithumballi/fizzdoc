@@ -438,8 +438,121 @@ main {
   align-items: center;
   gap: 8px;
 }
+.formats-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -4px -6px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.formats-row a:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
 .formats-row .google {
   color: var(--faint);
+}
+
+/* ---------- Tool search ---------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.tool-search {
+  position: relative;
+  max-width: 480px;
+  margin-top: 28px;
+}
+.tool-search > svg {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--faint);
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+.tool-search input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px 0 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.tool-search input::placeholder {
+  color: var(--faint);
+}
+.tool-search input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.tool-results {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-height: min(360px, 60vh);
+  overflow-y: auto;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+.tool-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+.tool-result .tool-icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+.tool-result .tool-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.tool-result:hover,
+.tool-result[aria-selected='true'] {
+  background: var(--surface-2);
+}
+.search-status:not(.none) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.search-status.none {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
 .hero-art {

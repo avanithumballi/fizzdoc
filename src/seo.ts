@@ -120,13 +120,17 @@ const icon = (op: ToolOp) =>
 const badge = (format: Format) => `<span class="badge fmt-${format}" aria-hidden="true">${FORMATS[format].badge}</span>`;
 
 // Cards can be tossed around with the mouse; effects.ts springs them back into place.
+// data-name/data-k carry English words so the home-page search finds tools in any language.
+const searchWords = (t: Tool) =>
+  [t.summary, t.slug.replaceAll('-', ' '), FORMATS[t.format].label, FORMATS[t.format].ext, t.input?.accept.replace(/[.,/*]/g, ' ') ?? ''].join(' ');
+
 const toolCards = (c: Copy, tools: Tool[]) => `
 <ul class="tool-grid">
   ${tools
-    .map(c.tool)
+    .map((english) => [english, c.tool(english)] as const)
     .map(
-      (t) =>
-        `<li><a class="tool-card fmt-${t.format}" data-spring href="${c.link(t)}" draggable="false"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
+      ([english, t]) =>
+        `<li><a class="tool-card fmt-${t.format}" data-spring href="${c.link(t)}" draggable="false" data-name="${esc(english.name)}" data-k="${esc(searchWords(english))}"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
     )
     .join('\n  ')}
 </ul>`;
@@ -319,7 +323,14 @@ function mainHtml(c: Copy, page: Page) {
     <h1>${esc(home.h1)}</h1>
     <p class="lede">${esc(home.lede)}</p>
     <div class="actions"><a class="button primary" href="${c.link(merge)}">${esc(c.t('home.cta'))}</a><a class="button" href="#tools">${esc(c.t('home.browse', { n: TOOLS.length }))}</a><a class="button star-hero" href="${SITE.repo}" target="_blank" rel="noopener"><span aria-hidden="true">★</span> ${esc(c.t('star.hero'))}<!--stars--></a></div>
-    <ul class="formats-row" aria-label="${esc(c.t('home.formats'))}">${FORMAT_ORDER.map((f) => `<li>${badge(f)}${esc(c.t(`format.${f}`))}</li>`).join('')}<li class="google">${esc(c.t('home.google'))}</li></ul>
+    <div class="tool-search" role="search">
+      <label class="visually-hidden" for="tool-search">${esc(c.t('search.label'))}</label>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="tool-search" type="search" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="${esc(c.t('search.placeholder', { n: TOOLS.length }))}" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="tool-results">
+      <ul id="tool-results" class="tool-results" role="listbox" aria-label="${esc(c.t('search.label'))}" hidden></ul>
+      <p id="tool-search-status" class="search-status" aria-live="polite" data-count="${esc(c.t('search.count'))}" data-none="${esc(c.t('search.none'))}"></p>
+    </div>
+    <ul class="formats-row" aria-label="${esc(c.t('home.formats'))}">${FORMAT_ORDER.map((f) => `<li><a href="#${f}">${badge(f)}${esc(c.t(`format.${f}`))}</a></li>`).join('')}<li class="google">${esc(c.t('home.google'))}</li></ul>
   </div>
   ${heroArt(c)}
 </section>

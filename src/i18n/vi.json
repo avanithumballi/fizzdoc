@@ -29,6 +29,10 @@
     "home.browse": "Xem tất cả {n} công cụ",
     "home.formats": "Định dạng hỗ trợ",
     "home.google": "+ Google Docs, Sheets và Slides",
+    "search.label": "Tìm công cụ",
+    "search.placeholder": "Tìm trong {n} công cụ, vd. nén pdf",
+    "search.count": "{n} công cụ phù hợp",
+    "search.none": "Không có công cụ nào phù hợp. Hãy thử “pdf”, “hình ảnh” hoặc “âm thanh”.",
     "home.chip": "Xử lý ngay trên thiết bị này",
     "home.toolsTitle": "Mọi công cụ đều riêng tư theo mặc định",
     "home.toolsLede": "Chọn một công cụ. Tệp của bạn được xử lý ngay trên thiết bị này và không bao giờ chạm tới máy chủ.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — Công cụ PDF, Word, Excel & Ảnh riêng tư, không tải lên",
     "description": "Chỉnh sửa, nén, chuyển đổi, OCR và ghép PDF; chuyển đổi Word, Excel và ảnh — ngay trong trình duyệt. Không tải lên, không đăng ký, miễn phí và mã nguồn mở.",
     "h1": "Công cụ tài liệu không bao giờ nhìn thấy tài liệu của bạn",
-    "lede": "Chỉnh sửa, nén, chuyển đổi và OCR PDF. Chuyển đổi Word, Excel, PowerPoint và ảnh. Mọi thứ chạy ngay trong trình duyệt — tệp của bạn không bao giờ rời khỏi thiết bị.",
+    "lede": "Chỉnh sửa, nén, chuyển đổi và OCR PDF. Chuyển đổi Word, Excel, PowerPoint và ảnh, và cắt hoặc ghép âm thanh. Mọi thứ chạy ngay trong trình duyệt — tệp của bạn không bao giờ rời khỏi thiết bị.",
     "what": "Fizzdoc là bộ công cụ xử lý tài liệu miễn phí, mã nguồn mở, chạy hoàn toàn trong trình duyệt web của bạn. Tệp PDF được xử lý bằng các engine qpdf, pdf.js và pdf-lib, nhận dạng văn bản dùng Tesseract, còn tệp Office và hình ảnh cũng được xử lý ngay tại chỗ — nên không có gì bao giờ được tải lên máy chủ.",
     "faq": [
       [

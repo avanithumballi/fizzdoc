@@ -1086,7 +1086,7 @@ export const HOME = {
   description:
     'Edit, compress, convert, OCR and merge PDFs; convert Word, Excel and images — right in your browser. Zero uploads, no sign-up, free and open source.',
   h1: 'Document tools that never see your documents',
-  lede: 'Edit, compress, convert and OCR PDFs. Convert Word, Excel, PowerPoint and images. Everything runs in your browser — your files never leave your device.',
+  lede: 'Edit, compress, convert and OCR PDFs. Convert Word, Excel, PowerPoint and images, and cut or join audio. Everything runs in your browser — your files never leave your device.',
   what: 'Fizzdoc is a free, open-source set of document tools that runs entirely in your web browser. PDFs are processed with the qpdf, pdf.js and pdf-lib engines, text recognition uses Tesseract, and Office files and images are handled locally too — so nothing is ever uploaded to a server.',
   faq: [
     PRIVACY_FAQ[0],
