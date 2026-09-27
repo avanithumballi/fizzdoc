@@ -4,17 +4,28 @@ import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, notFoundPage, ren
 import { SITE } from './src/site.ts';
 import { ocrAssets } from './vite-plugins/ocr-assets.ts';
 
-/** The repo's star count, baked into the pages at build time so visitors' browsers never call GitHub. */
+/**
+ * The repo's star count, baked into the pages at build time so visitors' browsers never call GitHub.
+ * GitHub's API rate-limits shared build machines (Cloudflare Pages), so two public mirrors back it up.
+ */
 async function fetchStars(): Promise<number | undefined> {
-  try {
-    const response = await fetch(`https://api.github.com/repos/${new URL(SITE.repo).pathname.slice(1)}`, {
-      headers: process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {},
-      signal: AbortSignal.timeout(5000),
-    });
-    return response.ok ? ((await response.json()) as { stargazers_count: number }).stargazers_count : undefined;
-  } catch {
-    return undefined; // offline build: the buttons simply show no count
+  const repo = new URL(SITE.repo).pathname.slice(1);
+  const sources: [string, (json: any) => unknown, Record<string, string>?][] = [
+    [`https://api.github.com/repos/${repo}`, (j) => j.stargazers_count, process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}],
+    [`https://ungh.cc/repos/${repo}`, (j) => j.repo?.stars],
+    [`https://img.shields.io/github/stars/${repo}.json`, (j) => Number(j.value)],
+  ];
+  for (const [url, pick, headers] of sources) {
+    try {
+      const response = await fetch(url, { headers: { 'user-agent': 'fizzdoc-build', ...headers }, signal: AbortSignal.timeout(5000) });
+      const stars = response.ok ? pick(await response.json()) : undefined;
+      if (typeof stars === 'number' && Number.isInteger(stars) && stars >= 0) return stars;
+      console.warn(`star count: ${url} answered ${response.status}`);
+    } catch {
+      console.warn(`star count: ${url} unreachable`);
+    }
   }
+  return undefined; // offline build: the buttons simply show no count
 }
 
 /** Serves each tool page in dev and writes one prerendered HTML file per page at build. */

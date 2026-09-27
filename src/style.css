@@ -344,7 +344,7 @@ main {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .site-header nav a:not(.star-btn) {
     display: none;
   }
@@ -446,6 +446,10 @@ main {
   position: relative;
   height: 380px;
   user-select: none;
+}
+/* The tilted cards can poke past a narrow viewport; never let them add a sideways scroll. */
+.hero-home {
+  overflow-x: clip;
 }
 
 .file-card {
