@@ -96,6 +96,12 @@
     "ws.style": "Stil",
     "ws.pageOf": "Seite 1 von 10",
     "ws.startAt": "Beginnen bei",
+    "ws.dpiStandard": "Standard (kleinere Datei)",
+    "ws.dpiHigh": "Hoch (schärfere Kleinschrift)",
+    "ws.look": "Optik",
+    "ws.lookColor": "Farbe",
+    "ws.lookGray": "Schwarz-Weiß",
+    "ws.lookScanned": "Gescannt (grau, leicht geneigt)",
     "ws.wmText": "Wasserzeichentext",
     "ws.wmDefault": "VERTRAULICH",
     "ws.opacity": "Deckkraft",
@@ -183,6 +189,14 @@
     "ocr.copyAll": "Gesamten Text kopieren",
     "ocr.copied": "Kopiert",
     "ocr.text": "Erkannter Text",
+    "rd.find": "Wort oder Nummer zum Verbergen suchen",
+    "rd.markAll": "Alle markieren",
+    "rd.clear": "Alle löschen",
+    "rd.count": "Markierte Bereiche: {n}",
+    "rd.found": "Markierte Treffer: {n}",
+    "rd.none": "Keine Treffer für „{text}“",
+    "rd.remove": "Diese Markierung entfernen",
+    "rd.hint": "Ziehen Sie über eine Seite, um etwas zu bedecken: Text, eine Unterschrift, ein Foto. Beim Speichern wird jede Seite zu einem Bild, sodass das Bedeckte für immer verschwindet.",
     "footer.madeBy": "Entworfen und entwickelt von",
     "footer.feedback": "Fehler melden oder Tool vorschlagen"
   },
@@ -557,6 +571,70 @@
         [
           "Wird der Originaltext entfernt?",
           "Der Originaltext wird auf der Seite überdeckt, und Ihr neuer Text wird darübergelegt. Löschen Sie für sensible Informationen, die wirklich aus der Datei verschwinden müssen, stattdessen die Seite oder erstellen Sie das Dokument neu."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "PDF schwärzen",
+      "summary": "Text, Unterschriften oder Fotos schwärzen, damit sie für immer verschwinden.",
+      "action": "Geschwärztes PDF speichern",
+      "title": "PDF online schwärzen — Text dauerhaft entfernen, kein Upload | Fizzdoc",
+      "description": "Schwärzen Sie Namen, Nummern, Unterschriften oder Fotos in einem PDF und speichern Sie eine Kopie, in der sie wirklich weg sind. Im Browser; kein Upload.",
+      "h1": "PDF schwärzen: alles dauerhaft unkenntlich machen",
+      "lede": "Ziehen Sie über das, was verschwinden soll, oder suchen Sie nach einem Namen oder einer Nummer und markieren Sie jeden Treffer. Beim Speichern wird jede Seite zu einem Bild, sodass der verdeckte Text nicht kopiert oder wiederhergestellt werden kann.",
+      "steps": [
+        "Eine PDF-Datei hinzufügen.",
+        "Über die Seite ziehen, um einen Bereich zu bedecken, oder ein Wort eingeben und auf „Alle markieren“ klicken.",
+        "Qualität und Optik wählen, dann auf „Geschwärztes PDF speichern“ klicken und herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Ist der geschwärzte Text wirklich weg?",
+          "Ja. Fizzdoc zeichnet jede Seite mit Ihren eingebrannten schwarzen Markierungen als Bild neu und baut aus diesen Bildern ein neues PDF. Der ursprüngliche Text, die Schriften und die Dokument-Metadaten werden nicht übernommen, sodass nichts unter einer Markierung ausgewählt, gesucht oder wiederhergestellt werden kann."
+        ],
+        [
+          "Kann ich den restlichen Text noch durchsuchen oder kopieren?",
+          "Nein. Jede Seite wird zu einem Bild, sodass die gespeicherte Datei keinen auswählbaren Text mehr hat. Wenn Sie wieder durchsuchbaren Text brauchen, lassen Sie die geschwärzte Datei durch PDF OCR laufen; die schwarzen Markierungen bleiben schwarz."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja. Es gibt keine Anmeldung, kein Wasserzeichen und kein Tageslimit. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF in gescanntes PDF umwandeln",
+      "summary": "Jede Seite in ein Bild verwandeln, wie ein gescanntes Dokument.",
+      "action": "Gescanntes PDF erstellen",
+      "title": "PDF in gescanntes PDF umwandeln — kein Upload | Fizzdoc",
+      "description": "Verwandeln Sie ein PDF in ein Bild-PDF im Scan-Look: in Farbe, Schwarz-Weiß oder mit Scanner-Look. Läuft im Browser; nichts wird hochgeladen.",
+      "h1": "PDF in ein gescanntes PDF umwandeln",
+      "lede": "Jede Seite wird zu einem Bild, sodass der Text nicht ausgewählt oder bearbeitet werden kann. Behalten Sie die Farben, wechseln Sie zu Schwarz-Weiß, oder fügen Sie eine leichte Neigung und Papierkörnung für den Scan-Look hinzu.",
+      "steps": [
+        "Eine PDF-Datei hinzufügen.",
+        "Qualität und Optik wählen: Farbe, Schwarz-Weiß oder gescannt.",
+        "Auf „Gescanntes PDF erstellen“ klicken und herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wozu brauche ich ein gescanntes PDF?",
+          "Manche Ämter und Portale verlangen gescannte Kopien, und ein reines Bild-PDF erschwert das versehentliche Kopieren oder Bearbeiten des Texts. Es reduziert außerdem Formularfelder und Kommentare auf das, was auf der Seite sichtbar ist."
+        ],
+        [
+          "Wird die Datei größer?",
+          "Meist ja, weil die Seiten als Bilder gespeichert werden. Standardqualität (150 DPI) hält die Datei klein; hohe Qualität (300 DPI) hält auch kleine Schrift scharf."
         ],
         [
           "Ist Fizzdoc kostenlos?",

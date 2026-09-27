@@ -12,6 +12,8 @@ export type ToolOp =
   | 'office-compress'
   | 'compress-pdf'
   | 'edit-pdf'
+  | 'redact-pdf'
+  | 'scan-pdf'
   | 'ocr-pdf'
   | 'pdf-to-word'
   | 'pdf-to-powerpoint'
@@ -373,6 +375,66 @@ TOOLS.push(
       [
         'Is the original text removed?',
         'The original text is covered on the page and your new text is drawn on top. For sensitive information that must be gone from the file, delete the page or re-create the document instead.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'redact-pdf',
+    format: 'pdf',
+    slug: 'redact-pdf',
+    name: 'Redact PDF',
+    summary: 'Black out text, signatures or photos so they’re gone for good.',
+    action: 'Save redacted PDF',
+    title: 'Redact PDF Online — Black Out Text for Good, No Upload | Fizzdoc',
+    description:
+      'Black out names, numbers, signatures or photos in a PDF and save a copy where they are really gone. Runs in your browser; nothing is uploaded. Free.',
+    h1: 'Redact a PDF: black out anything, for good',
+    lede: 'Drag over what should disappear, or search for a name or number and mark every match. When you save, each page becomes an image, so the hidden text can’t be copied or recovered.',
+    steps: [
+      'Add one PDF file.',
+      'Drag on a page to cover an area, or type a word and click “Mark all”.',
+      'Choose the quality and look, then click “Save redacted PDF” and download it.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Is the redacted text really gone?',
+        'Yes. Fizzdoc redraws every page as an image with your black marks burned in and builds a new PDF from those images. The original text, fonts and document metadata are not copied, so nothing under a mark can be selected, searched or recovered.',
+      ],
+      [
+        'Can I still search or copy the rest of the text?',
+        'No. Every page becomes an image, so the saved file has no selectable text. If you need searchable text again, run the redacted file through OCR PDF; the black marks stay black.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'scan-pdf',
+    format: 'pdf',
+    slug: 'pdf-to-scanned-pdf',
+    name: 'PDF to Scanned PDF',
+    summary: 'Turn every page into an image, like a scanned document.',
+    action: 'Make scanned PDF',
+    title: 'PDF to Scanned PDF — Make a PDF Look Scanned, No Upload | Fizzdoc',
+    description:
+      'Turn a PDF into an image-only scanned PDF: in colour, black and white, or with a real scanner look. Runs in your browser; nothing is uploaded. Free.',
+    h1: 'Convert a PDF into a scanned PDF',
+    lede: 'Every page becomes an image, so the text can’t be selected or edited. Keep the colours, go black and white, or add a slight tilt and paper grain so it looks scanned.',
+    steps: [
+      'Add one PDF file.',
+      'Pick the quality and the look: colour, black and white, or scanned.',
+      'Click “Make scanned PDF” and download it.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Why would I want a scanned PDF?',
+        'Some offices and portals ask for scanned copies, and an image-only PDF stops casual copying or editing of the text. It also flattens form fields and comments into what you see on the page.',
+      ],
+      [
+        'Will the file get bigger?',
+        'Usually, because pages are stored as pictures. Standard quality (150 DPI) keeps files small; High quality (300 DPI) keeps small print sharp.',
       ],
       PRIVACY_FAQ[1],
     ],

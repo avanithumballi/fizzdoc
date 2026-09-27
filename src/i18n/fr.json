@@ -96,6 +96,12 @@
     "ws.style": "Style",
     "ws.pageOf": "Page 1 sur 10",
     "ws.startAt": "Commencer à",
+    "ws.dpiStandard": "Standard (fichier plus léger)",
+    "ws.dpiHigh": "Haute (petits caractères plus nets)",
+    "ws.look": "Apparence",
+    "ws.lookColor": "Couleur",
+    "ws.lookGray": "Noir et blanc",
+    "ws.lookScanned": "Scanné (gris, légèrement incliné)",
     "ws.wmText": "Texte du filigrane",
     "ws.wmDefault": "CONFIDENTIEL",
     "ws.opacity": "Opacité",
@@ -183,6 +189,14 @@
     "ocr.copyAll": "Copier tout le texte",
     "ocr.copied": "Copié",
     "ocr.text": "Texte reconnu",
+    "rd.find": "Recherchez un mot ou un numéro à masquer",
+    "rd.markAll": "Tout marquer",
+    "rd.clear": "Tout effacer",
+    "rd.count": "Zones marquées : {n}",
+    "rd.found": "Occurrences marquées : {n}",
+    "rd.none": "Aucune occurrence de « {text} »",
+    "rd.remove": "Supprimer cette marque",
+    "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon.",
     "footer.madeBy": "Conçu et développé par",
     "footer.feedback": "Signaler un bug ou proposer un outil"
   },
@@ -557,6 +571,70 @@
         [
           "Le texte d'origine est-il supprimé ?",
           "Le texte d'origine est recouvert sur la page et votre nouveau texte est dessiné par-dessus. Pour des informations sensibles qui doivent disparaître du fichier, supprimez plutôt la page ou recréez le document."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "redact-pdf": {
+      "name": "Caviarder un PDF",
+      "summary": "Noircissez du texte, une signature ou une photo pour qu'ils disparaissent pour de bon.",
+      "action": "Enregistrer le PDF caviardé",
+      "title": "Caviarder un PDF en Ligne — Effacer du Texte Définitivement | Fizzdoc",
+      "description": "Noircissez des noms, numéros, signatures ou photos dans un PDF et gardez une copie où ils ont vraiment disparu. Dans votre navigateur ; rien n'est envoyé.",
+      "h1": "Caviarder un PDF : noircir n'importe quoi pour de bon",
+      "lede": "Faites glisser sur ce qui doit disparaître, ou recherchez un nom ou un numéro et marquez chaque occurrence. À l'enregistrement, chaque page devient une image, si bien que le texte masqué ne peut plus être copié ni récupéré.",
+      "steps": [
+        "Ajoutez un fichier PDF.",
+        "Faites glisser sur la page pour couvrir une zone, ou tapez un mot et cliquez sur « Tout marquer ».",
+        "Choisissez la qualité et l'apparence, puis cliquez sur « Enregistrer le PDF caviardé » et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Le texte caviardé a-t-il vraiment disparu ?",
+          "Oui. Fizzdoc redessine chaque page en image avec vos marques noires intégrées et construit un nouveau PDF à partir de ces images. Le texte, les polices et les métadonnées d'origine ne sont pas copiés, donc rien sous une marque ne peut être sélectionné, recherché ou récupéré."
+        ],
+        [
+          "Puis-je encore rechercher ou copier le reste du texte ?",
+          "Non. Chaque page devient une image, donc le fichier enregistré n'a aucun texte sélectionnable. Si vous avez besoin de texte à nouveau consultable, passez le fichier caviardé dans OCR PDF ; les marques noires resteront noires."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui. Pas d'inscription, pas de filigrane et pas de limite quotidienne. Fizzdoc est open source sous licence Apache-2.0."
+        ]
+      ]
+    },
+    "pdf-to-scanned-pdf": {
+      "name": "PDF vers PDF Scanné",
+      "summary": "Transformez chaque page en image, comme un document scanné.",
+      "action": "Créer le PDF scanné",
+      "title": "PDF vers PDF Scanné — Aspect Numérisé, Sans Envoi | Fizzdoc",
+      "description": "Transformez un PDF en PDF scanné composé d'images : en couleur, en noir et blanc, ou avec un rendu de scanner. Dans votre navigateur ; rien n'est envoyé.",
+      "h1": "Convertir un PDF en PDF scanné",
+      "lede": "Chaque page devient une image, si bien que le texte ne peut plus être sélectionné ni modifié. Gardez les couleurs, passez en noir et blanc, ou ajoutez une légère inclinaison et un grain de papier pour un rendu scanné.",
+      "steps": [
+        "Ajoutez un fichier PDF.",
+        "Choisissez la qualité et l'apparence : couleur, noir et blanc, ou scanné.",
+        "Cliquez sur « Créer le PDF scanné » et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Pourquoi voudrais-je un PDF scanné ?",
+          "Certains bureaux et portails demandent des copies scannées, et un PDF composé uniquement d'images empêche de copier ou modifier le texte facilement. Cela aplatit aussi les champs de formulaire et les commentaires en ce qui est visible sur la page."
+        ],
+        [
+          "Le fichier sera-t-il plus lourd ?",
+          "Généralement oui, car les pages sont stockées comme des images. La qualité standard (150 DPI) garde le fichier léger ; la qualité haute (300 DPI) garde les petits caractères nets."
         ],
         [
           "Est-ce que Fizzdoc est gratuit ?",
