@@ -112,6 +112,7 @@
     "app.downloadExt": "Download {ext}",
     "app.canceled": "Geannuleerd. Er is niets gewijzigd.",
     "app.wrongType": "Dat bestandstype kan niet met deze tool worden gebruikt.",
+    "app.oneFile": "Deze tool werkt met één bestand tegelijk, dus het eerste bestand is toegevoegd.",
     "app.tooBig": "Deze bestanden zijn samen {size}, meer dan dit apparaat veilig kan verwerken ({max}).",
     "app.moveUp": "Omhoog verplaatsen",
     "app.moveDown": "Omlaag verplaatsen",

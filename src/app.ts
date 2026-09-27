@@ -224,7 +224,7 @@ function setUp(op: ToolOp) {
       }),
     );
     runButton.disabled = busy() || files.length < (op === 'merge' ? 2 : 1);
-    cancelButton.hidden = !worker;
+    cancelButton.hidden = !busy();
     progress.hidden = !busy();
     if (reorderHint) reorderHint.hidden = files.length < 2 || busy();
     input.disabled = busy();
@@ -265,6 +265,7 @@ function setUp(op: ToolOp) {
     if (busy()) return;
     const usable = incoming.filter(accepted);
     if (usable.length < incoming.length) say(t('app.wrongType'), 'error');
+    else if (!multiple && usable.length > 1) say(t('app.oneFile'));
     else say('');
     if (!usable.length) return;
     files = multiple ? [...files, ...usable] : [usable[0]];
@@ -370,19 +371,25 @@ function setUp(op: ToolOp) {
     result.hidden = false;
   }
 
+  // Local jobs can't be interrupted mid-way, so Cancel lets go of them and ignores their result.
+  let localJob = 0;
   async function runLocal(job: LocalJob) {
     say(t('app.working'));
     localBusy = true;
+    const id = ++localJob;
     render();
     try {
       const output = await job(files, options());
+      if (id !== localJob) return;
       if ('html' in output) printDocument(output);
       else show(output.blob, output.name, output.summary);
     } catch (error) {
-      fail(error);
+      if (id === localJob) fail(error);
     } finally {
-      localBusy = false;
-      render();
+      if (id === localJob) {
+        localBusy = false;
+        render();
+      }
     }
   }
 
@@ -443,6 +450,8 @@ function setUp(op: ToolOp) {
   });
   runButton.onclick = run;
   cancelButton.onclick = () => {
+    localJob++;
+    localBusy = false;
     stop();
     say(t('app.canceled'));
   };

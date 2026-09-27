@@ -873,7 +873,7 @@ for (const o of OFFICE) {
       summary: `Save every picture in a .${o.ext} at original quality.`,
       action: 'Extract images',
       title: `Extract Images from ${o.app} — No Upload | Fizzdoc`,
-      description: `Download every picture embedded in a ${o.app} ${o.thing} as a ZIP, at original resolution. Works with ${o.google} downloads. Runs in your browser.`,
+      description: `Download every picture embedded in ${o.a} ${o.app} ${o.thing} as a ZIP, at original resolution. Works with ${o.google} downloads. Runs in your browser.`,
       h1: `Extract all images from ${o.a} ${o.app} ${o.thing}`,
       lede: `Get every photo, logo and chart image out of a .${o.ext} in its original format and resolution — no screenshots, no re-compression, no upload.`,
       steps: [`Add one .${o.ext} file (from ${o.app} or ${o.google}).`, 'Click “Extract images”.', 'Download the ZIP of images.'],

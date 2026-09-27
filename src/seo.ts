@@ -463,6 +463,19 @@ function langSelect(c: Copy, page: Page) {
         </div>`;
 }
 
+/** /404.html: the English home page with a "not found" heading, kept out of search results. */
+export function notFoundPage(template: string, stars?: number) {
+  const c = copy('en');
+  return renderPage(template, PAGES[0], true, stars)
+    .replace(/<title>[^<]*<\/title>/, '<title>Page not found | Fizzdoc</title>')
+    .replace(/\n\s*<link rel="(canonical|alternate)"[^>]*>/g, '')
+    .replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex, follow">')
+    .replace(
+      `<h1>${esc(c.home.h1)}</h1>\n    <p class="lede">${esc(c.home.lede)}</p>`,
+      '<h1>Page not found</h1>\n    <p class="lede">This link may be old or mistyped. Every Fizzdoc tool is listed below, and none of them upload your files.</p>',
+    );
+}
+
 export function renderPage(template: string, page: Page, withCsp: boolean, stars?: number) {
   const c = copy(page.lang);
   const tool = page.tool && c.tool(page.tool);

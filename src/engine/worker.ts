@@ -15,6 +15,15 @@ export type FromWorker =
   | { type: 'count'; pages: number | null }
   | { type: 'error'; code: ErrorCode; pages?: number };
 
+// qpdf writes the problems it hits (a wrong password, a damaged file) to stderr. The page already
+// explains them in plain words, so only qpdf's own diagnostic lines are kept out of the console.
+const quiet =
+  (write: typeof console.error) =>
+  (...args: unknown[]) =>
+    /^(this\.program|WARNING): /.test(String(args[0])) || write(...args);
+console.error = quiet(console.error);
+console.warn = quiet(console.warn);
+
 const post = (message: FromWorker) => (self as unknown as Worker).postMessage(message);
 let answer: ((password: string | null) => void) | undefined;
 
