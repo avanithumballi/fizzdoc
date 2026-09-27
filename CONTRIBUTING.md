@@ -82,6 +82,17 @@ Open a [bug report](https://github.com/kingrishabdugar/fizzdoc/issues/new?templa
 
 Security issue? Please follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
 
+## 🎃 Hacktoberfest
+
+Fizzdoc takes part in [Hacktoberfest](https://hacktoberfest.com). Every issue labelled [`hacktoberfest`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest) is scoped and ready to pick up, including new tools, translations and improvements.
+
+- **Claim first.** Comment on the issue so two people don't build the same thing. If a claimed issue sees no progress for 7 days, it's open again.
+- **One focused change per pull request**, with a test, following the pull request template.
+- Pull requests count once they're merged or labelled `hacktoberfest-accepted`.
+- Low-effort pull requests (whitespace or typo churn in unrelated files, generated content, README edits that don't help users) are labelled `invalid` and closed.
+
+Stuck? Ask on the issue; questions are welcome.
+
 ## License
 
 By contributing, you agree that your contributions are licensed under the [Apache License 2.0](LICENSE), the same license as the rest of the project.
