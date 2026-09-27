@@ -54,7 +54,7 @@ export const UI = {
   'group.title': '{format} tools',
 
   // Home and shared sections
-  'home.eyebrow': '0 bytes uploaded · Open source · Free',
+  'home.eyebrow': '0 bytes uploaded · Open source · Free forever',
   'home.cta': 'Merge PDF',
   'home.browse': 'Browse all {n} tools',
   'home.formats': 'Supported formats',
@@ -67,7 +67,8 @@ export const UI = {
   'home.toolsTitle': 'Every tool, private by default',
   'home.toolsLede': 'Pick a tool. Your file is processed on this device and never touches a server.',
   'home.whatTitle': 'What is {name}?',
-  'tool.eyebrow': 'Runs on your device · 0 bytes uploaded',
+  'tool.eyebrow': 'Free forever · Runs on your device · 0 bytes uploaded',
+  'tool.uses': 'Also good for',
   'tool.how': 'How to use {tool}',
   'tool.more': 'More private tools',
   'crumbs.label': 'Breadcrumb',

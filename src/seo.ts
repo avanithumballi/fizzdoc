@@ -121,8 +121,8 @@ const badge = (format: Format) => `<span class="badge fmt-${format}" aria-hidden
 
 // Cards can be tossed around with the mouse; effects.ts springs them back into place.
 // data-name/data-k carry English words so the home-page search finds tools in any language.
-const searchWords = (t: Tool) =>
-  [t.summary, t.slug.replaceAll('-', ' '), FORMATS[t.format].label, FORMATS[t.format].ext, t.input?.accept.replace(/[.,/*]/g, ' ') ?? ''].join(' ');
+const searchWords = (t: Tool, local: Tool) =>
+  [t.summary, t.slug.replaceAll('-', ' '), FORMATS[t.format].label, FORMATS[t.format].ext, t.input?.accept.replace(/[.,/*]/g, ' ') ?? '', ...(t.keywords ?? []), ...(local.keywords === t.keywords ? [] : local.keywords ?? [])].join(' ');
 
 const toolCards = (c: Copy, tools: Tool[]) => `
 <ul class="tool-grid">
@@ -130,7 +130,7 @@ const toolCards = (c: Copy, tools: Tool[]) => `
     .map((english) => [english, c.tool(english)] as const)
     .map(
       ([english, t]) =>
-        `<li><a class="tool-card fmt-${t.format}" data-spring href="${c.link(t)}" draggable="false" data-name="${esc(english.name)}" data-k="${esc(searchWords(english))}"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
+        `<li><a class="tool-card fmt-${t.format}" data-spring href="${c.link(t)}" draggable="false" data-name="${esc(english.name)}" data-k="${esc(searchWords(english, t))}"><span class="tool-icon">${icon(t.op)}</span><strong>${esc(t.name)}</strong><span>${esc(t.summary)}</span></a></li>`,
     )
     .join('\n  ')}
 </ul>`;
@@ -359,6 +359,7 @@ ${workspaceHtml(c, tool)}
 <section class="section" aria-labelledby="how">
   <div class="section-head"><h2 id="how">${esc(howTo(c, tool))}</h2></div>
   <ol class="steps">${tool.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
+  ${tool.keywords?.length ? `<div class="uses"><h3>${esc(c.t('tool.uses'))}</h3><ul>${tool.keywords.map((k) => `<li>${esc(k)}</li>`).join('')}</ul></div>` : ''}
 </section>
 ${proofHtml(c)}
 ${faqHtml(c, tool.faq)}
@@ -407,6 +408,7 @@ function jsonLd(c: Copy, page: Page) {
     publisher: org,
     inLanguage: c.lang,
     image: `${SITE.url}${ogImage(c.lang)}`,
+    keywords: (tool ? tool.keywords ?? [] : TOOLS.flatMap((t) => c.tool(t).keywords?.slice(0, 1) ?? [])).join(', '),
     ...(tool ? {} : { featureList: TOOLS.map((t) => c.tool(t).name) }),
   };
   const graph: object[] = [
