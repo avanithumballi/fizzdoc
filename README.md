@@ -44,16 +44,15 @@
 
 ## ✨ Why Fizzdoc
 
-Every "free online PDF tool" asks you to upload your contract, payslip, bank statement or passport scan to someone else's server. **Fizzdoc doesn't have a server to upload to.** Everything runs inside your browser tab with WebAssembly and JavaScript, and the page's Content Security Policy makes it impossible for the site to send your file anywhere — you can check it yourself in the Network tab.
+Most free online PDF tools ask you to upload your contract, payslip, bank statement or passport scan to someone else's server. **Fizzdoc doesn't have a server to upload to.** Everything runs inside your browser tab with WebAssembly and JavaScript, and the page's Content Security Policy blocks it from connecting to any other site — you can check it yourself in the Network tab.
 
 | | **Fizzdoc** | iLovePDF | Smallpdf | Adobe online | Stirling-PDF |
 |---|:---:|:---:|:---:|:---:|:---:|
-| Your file stays on your device | ✅ | ❌ uploaded | ❌ uploaded | ❌ uploaded | ⚠️ goes to your own server |
+| Your file stays on your device (web version) | ✅ | ❌ uploaded | ❌ uploaded | ❌ uploaded | ⚠️ goes to the server you host |
 | Open source | ✅ Apache-2.0 | ❌ | ❌ | ❌ | ✅ |
 | No account, no daily limits, no watermark | ✅ | ⚠️ free tier limits | ⚠️ free tier limits | ⚠️ sign-in for many tools | ✅ |
-| Nothing to install or host | ✅ | ✅ | ✅ | ✅ | ❌ needs Docker / a server |
+| Nothing to install or host | ✅ | ✅ | ✅ | ✅ | ⚠️ self-host or install the desktop app |
 | Works on phones | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 16 languages incl. Hindi, Tamil, Telugu, Bengali, Marathi | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 <p align="center">
   <img src="docs/assets/demo.gif" width="860" alt="Fizzdoc demo: compress, edit PDF text, select text in a photo with OCR, Hindi interface, dark mode">
@@ -109,7 +108,7 @@ Every "free online PDF tool" asks you to upload your contract, payslip, bank sta
 2. Run a job.
 3. You'll see the app's own files load, and **no request carrying your document**.
 
-The test suite does exactly this in real Chromium on every commit: it fails if any request goes to another origin, uses a method other than `GET`, or carries a body. Each job's engine runs in a disposable Web Worker that is terminated afterwards, taking your file, passwords and memory with it.
+The test suite does the same in real Chromium on every commit: it runs real jobs (merge, edit, OCR and more) and fails if any request goes to another origin; the merge test also fails on any request that isn't a plain `GET` or that carries a body. The core PDF jobs (merge, split, rotate, delete, protect, unlock) run qpdf in a disposable Web Worker that is terminated afterwards, taking your file, passwords and memory with it.
 
 ### Your PDF stays intact
 
@@ -267,7 +266,7 @@ Any resemblance to other products is coincidental. Tools in this category solve 
 - **Word, Excel and PowerPoint:** Office Open XML read and written directly, with [fflate](https://github.com/101arrowz/fflate) for the ZIP containers
 - **Images:** the browser's own codecs through `createImageBitmap` and `OffscreenCanvas`
 - **Word, text and Markdown → PDF:** the browser's native print-to-PDF pipeline
-- **Privacy guarantee:** a strict Content Security Policy (`connect-src 'self'`) enforced by the browser itself
+- **Privacy by construction:** no upload endpoint at all, plus a strict Content Security Policy (`connect-src 'self'`) that the browser enforces
 - **Build and tests:** TypeScript, Vite with static prerendering, Vitest and Playwright
 
 Familiar interface patterns, such as a grid of tools per format, drag-and-drop upload and one page per task, are common conventions in document tools rather than borrowed designs. The code in this repository was written for Fizzdoc; the libraries above are used under their own licenses, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
