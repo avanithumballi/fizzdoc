@@ -33,6 +33,7 @@ export const UI = {
   'lang.tipClose': 'Dismiss',
   'footer.about': 'Private document tools. Your files are processed on your device and never uploaded.',
   'footer.license': 'Open source (Apache-2.0)',
+  'footer.licenses': 'Third-party licenses',
   'footer.builtOn': 'Built on qpdf, pdf.js and pdf-lib',
   'footer.madeBy': 'Designed and built by',
   'footer.feedback': 'Report a bug or suggest a tool',

@@ -14,8 +14,12 @@ The deployed site ships these third-party components in `assets/`:
 | Tesseract OCR engine (tesseract.js, tesseract.js-core) | Apache-2.0 | https://github.com/naptha/tesseract.js |
 | English language data (@tesseract.js-data/eng, tessdata 4.0.0 best_int) | Apache-2.0 data, MIT package | https://github.com/tesseract-ocr/tessdata |
 | Inter typeface (@fontsource-variable/inter) | SIL Open Font License 1.1 | https://rsms.me/inter |
+| Archify (generator and runtime of `public/architecture.html`) | MIT | https://github.com/tt-a1i/archify |
+| JetBrains Mono typeface (embedded in `public/architecture.html`) | SIL Open Font License 1.1 | https://github.com/JetBrains/JetBrainsMono |
 
-No AGPL components are included. Keep this table in sync when adding an engine.
+The full copyright notices and license texts ship with the site at [`/third-party-licenses.txt`](public/third-party-licenses.txt).
+
+No AGPL components are included. Keep this table and that file in sync when adding an engine.
 
 ## Trademarks
 

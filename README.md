@@ -240,6 +240,7 @@ Fizzdoc would not exist without these open-source projects and the people who ma
 | [Tesseract](https://github.com/tesseract-ocr/tesseract) and [tesseract.js](https://github.com/naptha/tesseract.js) | Text recognition, compiled to WebAssembly | [tesseract-ocr](https://github.com/tesseract-ocr) and [naptha](https://github.com/naptha) |
 | [fflate](https://github.com/101arrowz/fflate) | Reads and writes Word, Excel, PowerPoint and ZIP files | [@101arrowz](https://github.com/101arrowz) |
 | [Inter](https://github.com/rsms/inter) | The typeface | [@rsms](https://github.com/rsms) |
+| [Archify](https://github.com/tt-a1i/archify) | Generates the interactive architecture map | [@tt-a1i](https://github.com/tt-a1i) |
 
 Built and tested with [Vite](https://github.com/vitejs/vite), [TypeScript](https://github.com/microsoft/TypeScript), [Vitest](https://github.com/vitest-dev/vitest) and [Playwright](https://github.com/microsoft/playwright). Full license details are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 

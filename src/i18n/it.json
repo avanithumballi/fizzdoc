@@ -10,6 +10,7 @@
     "lang.tipClose": "Chiudi",
     "footer.about": "Strumenti privati per documenti. I tuoi file vengono elaborati sul tuo dispositivo e non vengono mai caricati.",
     "footer.license": "Open source (Apache-2.0)",
+    "footer.licenses": "Licenze di terze parti",
     "footer.builtOn": "Realizzato con qpdf, pdf.js e pdf-lib",
     "star.title": "Gratuito e open source. Per sempre.",
     "star.text": "Niente pubblicità, niente account, nessun server che guarda i tuoi file. Se Fizzdoc ti ha fatto risparmiare tempo, una stella su GitHub aiuta altri a scoprirlo.",
