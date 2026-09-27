@@ -29,6 +29,10 @@
     "home.browse": "Przeglądaj wszystkie {n} narzędzi",
     "home.formats": "Obsługiwane formaty",
     "home.google": "+ Google Docs, Sheets i Slides",
+    "search.label": "Szukaj narzędzi",
+    "search.placeholder": "Przeszukaj {n} narzędzi, np. kompresuj pdf",
+    "search.count": "{n} pasujących narzędzi",
+    "search.none": "Brak pasującego narzędzia. Spróbuj „pdf”, „obraz” lub „audio”.",
     "home.chip": "Przetwarzane na tym urządzeniu",
     "home.toolsTitle": "Każde narzędzie domyślnie prywatne",
     "home.toolsLede": "Wybierz narzędzie. Twój plik jest przetwarzany na tym urządzeniu i nigdy nie trafia na serwer.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — prywatne narzędzia PDF, Word, Excel i obrazy. Bez wysyłania.",
     "description": "Edytuj, kompresuj, konwertuj, rób OCR i scalaj PDF; konwertuj Word, Excel i obrazy — prosto w przeglądarce. Zero przesyłania, za darmo, open source.",
     "h1": "Narzędzia do dokumentów, które nigdy nie widzą Twoich dokumentów",
-    "lede": "Edytuj, kompresuj, konwertuj i rób OCR plików PDF. Konwertuj Word, Excel, PowerPoint i obrazy. Wszystko działa w przeglądarce — Twoje pliki nigdy nie opuszczają urządzenia.",
+    "lede": "Edytuj, kompresuj, konwertuj i rób OCR plików PDF. Konwertuj Word, Excel, PowerPoint i obrazy, a także przycinaj lub łącz audio. Wszystko działa w przeglądarce — Twoje pliki nigdy nie opuszczają urządzenia.",
     "what": "Fizzdoc to darmowy, otwartoźródłowy zestaw narzędzi do dokumentów, który działa w całości w Twojej przeglądarce internetowej. Pliki PDF są przetwarzane silnikami qpdf, pdf.js i pdf-lib, rozpoznawanie tekstu korzysta z Tesseract, a pliki Office i obrazy również są obsługiwane lokalnie — dzięki temu nic nigdy nie trafia na serwer.",
     "faq": [
       [

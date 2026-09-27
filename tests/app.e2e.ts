@@ -602,6 +602,37 @@ test('explains extra dropped files, lets any job be canceled and keeps qpdf chat
   expect(logged.filter((line) => line.includes('this.program'))).toEqual([]);
 });
 
+test('finds a tool from the home page search without anything leaving the page', async ({ page, baseURL }) => {
+  const seen = watch(page);
+  await page.goto('/');
+  const search = page.getByRole('combobox', { name: 'Search tools' });
+  const results = page.locator('#tool-results');
+  await search.fill('pdf to word');
+  await expect(results.getByRole('option').first()).toHaveText('PDF to Word');
+  await search.press('ArrowDown');
+  await expect(results.getByRole('option').nth(1)).toHaveAttribute('aria-selected', 'true');
+  await search.press('ArrowUp');
+  await search.press('Enter');
+  await expect(page).toHaveURL(/\/pdf-to-word\/$/);
+
+  await page.goto('/hi/');
+  await page.locator('#tool-search').fill('ऑडियो');
+  await expect(results.getByRole('option')).toHaveCount(2);
+  await page.locator('#tool-search').fill('zzqx');
+  await expect(results).toBeHidden();
+  await expect(page.locator('#tool-search-status')).toBeVisible();
+  await page.locator('#tool-search').press('Escape');
+  await expect(page.locator('#tool-search')).toHaveValue('');
+
+  // The format chips jump to their group.
+  await page.goto('/');
+  await page.locator('.formats-row a[href="#audio"]').click();
+  await expect(page).toHaveURL(/#audio$/);
+  await expect(page.locator('#audio')).toBeInViewport();
+  expect(seen.violations).toEqual([]);
+  expect(seen.requests.filter((r) => !r.url.startsWith(baseURL!) && !r.url.startsWith('data:'))).toEqual([]);
+});
+
 test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   const licenses = await (await request.get('/third-party-licenses.txt')).text();
   for (const part of ['Apache License', 'pdf-lib (MIT)', 'fflate (MIT)', 'Independent JPEG Group', 'Open Font License']) expect(licenses).toContain(part);

@@ -29,6 +29,10 @@
     "home.browse": "Alle {n} Tools durchsuchen",
     "home.formats": "Unterstützte Formate",
     "home.google": "+ Google Docs, Sheets & Slides",
+    "search.label": "Tools durchsuchen",
+    "search.placeholder": "{n} Tools durchsuchen, z. B. pdf komprimieren",
+    "search.count": "{n} passende Tools",
+    "search.none": "Kein passendes Tool gefunden. Versuchen Sie „pdf“, „Bilder“ oder „Audio“.",
     "home.chip": "Verarbeitung auf diesem Gerät",
     "home.toolsTitle": "Jedes Tool, standardmäßig privat",
     "home.toolsLede": "Wählen Sie ein Tool. Ihre Datei wird auf diesem Gerät verarbeitet und berührt niemals einen Server.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — Private PDF-, Word-, Excel- & Bild-Tools. Kein Upload.",
     "description": "PDFs bearbeiten, komprimieren, konvertieren, per OCR erfassen und zusammenführen; Word, Excel & Bilder konvertieren — im Browser. Kostenlos, kein Upload.",
     "h1": "Dokumenten-Tools, die Ihre Dokumente nie zu sehen bekommen",
-    "lede": "PDFs bearbeiten, komprimieren, konvertieren und per OCR erfassen. Word, Excel, PowerPoint und Bilder konvertieren. Alles läuft im Browser — Ihre Dateien verlassen nie Ihr Gerät.",
+    "lede": "PDFs bearbeiten, komprimieren, konvertieren und per OCR erfassen. Word, Excel, PowerPoint und Bilder konvertieren sowie Audio schneiden oder zusammenfügen. Alles läuft im Browser — Ihre Dateien verlassen nie Ihr Gerät.",
     "what": "Fizzdoc ist eine kostenlose Open-Source-Sammlung von Dokumenten-Tools, die vollständig in Ihrem Webbrowser läuft. PDFs werden mit den Engines qpdf, pdf.js und pdf-lib verarbeitet, die Texterkennung nutzt Tesseract, und auch Office-Dateien und Bilder werden lokal verarbeitet — es wird also nie etwas auf einen Server hochgeladen.",
     "faq": [
       [

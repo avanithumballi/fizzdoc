@@ -29,6 +29,10 @@
     "home.browse": "Bekijk alle {n} tools",
     "home.formats": "Ondersteunde formaten",
     "home.google": "+ Google Docs, Sheets & Slides",
+    "search.label": "Tools zoeken",
+    "search.placeholder": "Doorzoek {n} tools, bijv. pdf comprimeren",
+    "search.count": "{n} passende tools",
+    "search.none": "Geen tool komt overeen. Probeer “pdf”, “afbeelding” of “audio”.",
     "home.chip": "Verwerkt op dit apparaat",
     "home.toolsTitle": "Elke tool, standaard privé",
     "home.toolsLede": "Kies een tool. Je bestand wordt op dit apparaat verwerkt en komt nooit bij een server terecht.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — privétools: PDF, Word, Excel en afbeeldingen. Geen upload.",
     "description": "Bewerk, comprimeer, converteer en OCR PDF's; converteer Word, Excel en afbeeldingen — direct in je browser. Geen upload, geen account, gratis en open source.",
     "h1": "Documenttools die je documenten nooit te zien krijgen",
-    "lede": "Bewerk, comprimeer, converteer en OCR PDF's. Converteer Word, Excel, PowerPoint en afbeeldingen. Alles draait in je browser — je bestanden verlaten je apparaat nooit.",
+    "lede": "Bewerk, comprimeer, converteer en OCR PDF's. Converteer Word, Excel, PowerPoint en afbeeldingen, en knip of voeg audio samen. Alles draait in je browser — je bestanden verlaten je apparaat nooit.",
     "what": "Fizzdoc is een gratis, open-source verzameling documenttools die volledig in je webbrowser draait. PDF's worden verwerkt met de engines qpdf, pdf.js en pdf-lib, tekstherkenning gebruikt Tesseract, en ook Office-bestanden en afbeeldingen worden lokaal verwerkt — zodat er nooit iets naar een server wordt geüpload.",
     "faq": [
       [

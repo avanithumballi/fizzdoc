@@ -29,6 +29,10 @@
     "home.browse": "Tüm {n} aracına göz atın",
     "home.formats": "Desteklenen formatlar",
     "home.google": "+ Google Dokümanlar, E-Tablolar ve Slaytlar",
+    "search.label": "Araç ara",
+    "search.placeholder": "{n} araç içinde ara, örn. pdf sıkıştır",
+    "search.count": "{n} eşleşen araç",
+    "search.none": "Eşleşen araç yok. “pdf”, “görsel” veya “ses” deneyin.",
     "home.chip": "Bu cihazda işlenir",
     "home.toolsTitle": "Her araç, varsayılan olarak gizli",
     "home.toolsLede": "Bir araç seçin. Dosyanız bu cihazda işlenir ve hiçbir sunucuya dokunmaz.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — Gizli PDF, Word, Excel ve Görsel Araçları. Yükleme Yok.",
     "description": "PDF düzenleyin, sıkıştırın, dönüştürün, OCR uygulayın; Word, Excel ve görselleri dönüştürün — tarayıcınızda. Sıfır yükleme, kayıt yok, ücretsiz ve açık kaynak.",
     "h1": "Belgelerinizi hiç görmeyen belge araçları",
-    "lede": "PDF düzenleyin, sıkıştırın, dönüştürün ve OCR uygulayın. Word, Excel, PowerPoint ve görselleri dönüştürün. Her şey tarayıcınızda çalışır — dosyalarınız cihazınızdan asla çıkmaz.",
+    "lede": "PDF düzenleyin, sıkıştırın, dönüştürün ve OCR uygulayın. Word, Excel, PowerPoint ve görselleri dönüştürün, sesi kesin veya birleştirin. Her şey tarayıcınızda çalışır — dosyalarınız cihazınızdan asla çıkmaz.",
     "what": "Fizzdoc, tamamen web tarayıcınızın içinde çalışan ücretsiz, açık kaynaklı bir belge araçları setidir. PDF'ler qpdf, pdf.js ve pdf-lib motorlarıyla işlenir, metin tanıma Tesseract kullanır ve Office dosyaları ile görseller de yerel olarak işlenir — böylece hiçbir şey bir sunucuya yüklenmez.",
     "faq": [
       [

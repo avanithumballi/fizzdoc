@@ -29,6 +29,10 @@
     "home.browse": "Jelajahi semua {n} alat",
     "home.formats": "Format yang didukung",
     "home.google": "+ Google Docs, Sheets & Slides",
+    "search.label": "Cari alat",
+    "search.placeholder": "Cari {n} alat, mis. kompres pdf",
+    "search.count": "{n} alat yang cocok",
+    "search.none": "Tidak ada alat yang cocok. Coba “pdf”, “gambar”, atau “audio”.",
     "home.chip": "Diproses di perangkat ini",
     "home.toolsTitle": "Semua alat, privat secara default",
     "home.toolsLede": "Pilih alat. File Anda diproses di perangkat ini dan tidak pernah menyentuh server.",
@@ -243,7 +247,7 @@
     "title": "Fizzdoc — Alat PDF, Word, Excel & Gambar Privat, Tanpa Upload",
     "description": "Edit, kompres, konversi, OCR, dan gabungkan PDF; konversi Word, Excel, dan gambar — di browser Anda. Tanpa upload, tanpa daftar, gratis, open source.",
     "h1": "Alat dokumen yang tidak pernah melihat dokumen Anda",
-    "lede": "Edit, kompres, konversi, dan OCR PDF. Konversi Word, Excel, PowerPoint, dan gambar. Semuanya berjalan di browser Anda — file Anda tidak pernah meninggalkan perangkat Anda.",
+    "lede": "Edit, kompres, konversi, dan OCR PDF. Konversi Word, Excel, PowerPoint, dan gambar, serta potong atau gabungkan audio. Semuanya berjalan di browser Anda — file Anda tidak pernah meninggalkan perangkat Anda.",
     "what": "Fizzdoc adalah kumpulan alat dokumen gratis dan open source yang berjalan sepenuhnya di browser web Anda. PDF diproses dengan mesin qpdf, pdf.js, dan pdf-lib, pengenalan teks memakai Tesseract, dan file Office serta gambar juga ditangani secara lokal — jadi tidak ada yang pernah diunggah ke server.",
     "faq": [
       [
