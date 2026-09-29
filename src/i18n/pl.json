@@ -93,6 +93,16 @@
     "ws.height": "Wysokość (px)",
     "ws.scale": "Lub skala (%)",
     "ws.auto": "Automatycznie",
+    "ws.mermaidCode": "Kod Mermaid",
+    "ws.fmtSvg": "SVG — ostry w każdym rozmiarze",
+    "ws.pngSize": "Rozmiar PNG",
+    "ws.theme": "Motyw",
+    "ws.themeDefault": "Domyślny",
+    "ws.themeNeutral": "Neutralny",
+    "ws.themeDark": "Ciemny",
+    "ws.themeForest": "Leśny",
+    "ws.transparent": "Przezroczyste tło",
+    "mermaid.svgOnly": "Ten typ diagramu zapisano jako SVG: jego etykiet nie da się w przeglądarce zamienić na PNG. SVG otwiera się w każdej przeglądarce i w większości programów graficznych i biurowych.",
     "ws.keepAspect": "Zachowaj proporcje",
     "ws.header": "Pierwszy wiersz zawiera nazwy kolumn",
     "ws.position": "Pozycja",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "Ten plik nie jest poprawnym JSON-em. Sprawdź, czy nie brakuje przecinka, cudzysłowu lub nawiasu.",
     "error.BAD_JSON_AT": "Ten plik nie jest poprawnym JSON-em: problem występuje w pobliżu wiersza {line}, kolumny {column}. Sprawdź, czy nie brakuje przecinka, cudzysłowu lub nawiasu.",
     "error.SHEET_TOO_BIG": "To więcej, niż mieści jeden arkusz Excela (1 048 576 wierszy i 16 384 kolumn). Podziel dane na mniejsze pliki.",
+    "error.NO_DIAGRAM": "Wklej kod Mermaid lub wybierz plik .mmd albo .md.",
+    "error.BAD_DIAGRAM": "Kod diagramu zawiera błąd: {detail}",
     "error.ENGINE_FAILED": "Silnik PDF nieoczekiwanie się zatrzymał — plik może być zbyt duży dla tego urządzenia.",
     "warning.BOOKMARKS_DROPPED": "Zakładki z drugiego i kolejnych plików nie zostały przeniesione. Zakładki z pierwszego pliku zostały zachowane.",
     "warning.BOOKMARKS_BROKEN": "Niektóre zakładki wskazywały strony, które zostały usunięte, więc teraz nigdzie nie prowadzą.",
@@ -1231,6 +1243,45 @@
         "otwórz plik json w excelu",
         "odpowiedź api na arkusz",
         "zagnieżdżony json na excel"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid na obraz",
+      "summary": "Zamień kod diagramu Mermaid na PNG lub SVG.",
+      "action": "Utwórz obraz",
+      "title": "Mermaid na PNG i SVG za Darmo — Diagram na obraz | Fizzdoc",
+      "description": "Zamień kod Mermaid na ostry PNG lub SVG za darmo, w przeglądarce: schematy blokowe, diagramy sekwencji, klas i Gantta. Bez przesyłania plików.",
+      "h1": "Konwertuj Mermaid na PNG lub SVG",
+      "lede": "Wklej kod Mermaid i uzyskaj obraz do prezentacji, dokumentów, plików README lub czatu. Schematy blokowe, diagramy sekwencji, klas, stanów, ER i Gantta są rysowane na Twoim urządzeniu, a podgląd zobaczysz przed pobraniem.",
+      "steps": [
+        "Wklej kod Mermaid lub wybierz plik .mmd albo .md.",
+        "Wybierz PNG lub SVG, rozmiar i motyw.",
+        "Kliknij „Utwórz obraz”, sprawdź podgląd i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie diagramy działają?",
+          "Wszystko, co potrafi narysować Mermaid: schematy blokowe, diagramy sekwencji, klas, stanów, związków encji, Gantta, kołowe, mapy myśli, osie czasu i grafy Git. Jeśli w kodzie jest błąd, komunikat samego Mermaid podpowie, co poprawić."
+        ],
+        [
+          "PNG czy SVG?",
+          "SVG jest ostry w każdym rozmiarze i najlepszy do stron internetowych i programów graficznych. PNG działa wszędzie, także w Wordzie, PowerPoincie i komunikatorach; wybierz 2× lub 4× dla ostrych slajdów i wydruku."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "Mermaid na PNG",
+        "Mermaid na SVG online za darmo",
+        "eksport diagramu Mermaid do obrazu",
+        "schemat blokowy Mermaid na obrazek",
+        "alternatywa dla Mermaid live editor"
       ]
     },
     "compress-image": {

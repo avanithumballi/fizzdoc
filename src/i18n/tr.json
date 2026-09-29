@@ -93,6 +93,16 @@
     "ws.height": "Yükseklik (px)",
     "ws.scale": "Veya ölçek (%)",
     "ws.auto": "Otomatik",
+    "ws.mermaidCode": "Mermaid kodu",
+    "ws.fmtSvg": "SVG — her boyutta net",
+    "ws.pngSize": "PNG boyutu",
+    "ws.theme": "Tema",
+    "ws.themeDefault": "Varsayılan",
+    "ws.themeNeutral": "Nötr",
+    "ws.themeDark": "Koyu",
+    "ws.themeForest": "Orman",
+    "ws.transparent": "Şeffaf arka plan",
+    "mermaid.svgOnly": "Bu diyagram türü SVG olarak kaydedildi: etiketleri tarayıcıda PNG’ye dönüştürülemez. SVG her tarayıcıda ve çoğu tasarım ile ofis uygulamasında açılır.",
     "ws.keepAspect": "En boy oranını koru",
     "ws.header": "İlk satır sütun adlarını içerir",
     "ws.position": "Konum",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "Bu dosya geçerli bir JSON değil. Eksik virgül, tırnak veya parantez olup olmadığını kontrol edin.",
     "error.BAD_JSON_AT": "Bu dosya geçerli bir JSON değil: {line}. satır, {column}. sütun civarında bir sorun var. Eksik virgül, tırnak veya parantez olup olmadığını kontrol edin.",
     "error.SHEET_TOO_BIG": "Bu, tek bir Excel sayfasının alabileceğinden fazla (1.048.576 satır ve 16.384 sütun). Verileri daha küçük dosyalara bölün.",
+    "error.NO_DIAGRAM": "Mermaid kodunuzu yapıştırın veya bir .mmd ya da .md dosyası seçin.",
+    "error.BAD_DIAGRAM": "Diyagram kodunda bir hata var: {detail}",
     "error.ENGINE_FAILED": "PDF motoru beklenmedik şekilde durdu — dosya bu cihaz için çok büyük olabilir.",
     "warning.BOOKMARKS_DROPPED": "İkinci ve sonraki dosyalardaki yer imleri aktarılmadı. İlk dosyanın yer imleri korundu.",
     "warning.BOOKMARKS_BROKEN": "Bazı yer imleri kaldırılan sayfalara işaret ediyordu, bu yüzden artık hiçbir yere gitmiyorlar.",
@@ -1231,6 +1243,45 @@
         "json dosyasını excel'de açma",
         "api yanıtından tabloya",
         "iç içe json'dan excel'e"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid’den Görsele",
+      "summary": "Mermaid diyagram kodunu PNG veya SVG’ye dönüştürün.",
+      "action": "Görsel oluştur",
+      "title": "Mermaid’den PNG ve SVG’ye Ücretsiz — Diyagramdan Görsele | Fizzdoc",
+      "description": "Mermaid kodunu tarayıcınızda ücretsiz olarak net bir PNG veya SVG’ye dönüştürün: akış şeması, sıra, sınıf ve Gantt diyagramları. Yükleme yok.",
+      "h1": "Mermaid’i PNG veya SVG’ye dönüştürün",
+      "lede": "Mermaid kodunu yapıştırın; sunumlar, belgeler, README dosyaları veya sohbet için bir görsel alın. Akış şemaları, sıra, sınıf, durum, ER ve Gantt diyagramları doğrudan cihazınızda çizilir ve görseli indirmeden önce görürsünüz.",
+      "steps": [
+        "Mermaid kodunuzu yapıştırın veya bir .mmd ya da .md dosyası seçin.",
+        "PNG veya SVG’yi, bir boyutu ve bir temayı seçin.",
+        "“Görsel oluştur”a tıklayın, önizlemeyi kontrol edin ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi diyagramlar çalışır?",
+          "Mermaid’in çizebildiği her şey: akış şeması, sıra, sınıf, durum, varlık-ilişki, Gantt, pasta, zihin haritası, zaman çizelgesi ve Git graph diyagramları. Kodda hata varsa Mermaid’in kendi mesajı neyi düzeltmeniz gerektiğini söyler."
+        ],
+        [
+          "PNG mi SVG mi?",
+          "SVG her boyutta net kalır ve web siteleri ile tasarım araçları için en iyisidir. PNG Word, PowerPoint ve mesajlaşma uygulamaları dahil her yerde çalışır; net slaytlar ve baskı için 2× veya 4× seçin."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "Mermaid’den PNG’ye",
+        "Mermaid’den SVG’ye online ücretsiz",
+        "Mermaid diyagramını görsel olarak dışa aktarma",
+        "Mermaid akış şemasını resme çevirme",
+        "Mermaid live editor alternatifi"
       ]
     },
     "compress-image": {

@@ -93,6 +93,16 @@
     "ws.height": "Höhe (px)",
     "ws.scale": "Oder Skalierung (%)",
     "ws.auto": "Automatisch",
+    "ws.mermaidCode": "Mermaid-Code",
+    "ws.fmtSvg": "SVG — scharf in jeder Größe",
+    "ws.pngSize": "PNG-Größe",
+    "ws.theme": "Design",
+    "ws.themeDefault": "Standard",
+    "ws.themeNeutral": "Neutral",
+    "ws.themeDark": "Dunkel",
+    "ws.themeForest": "Wald",
+    "ws.transparent": "Transparenter Hintergrund",
+    "mermaid.svgOnly": "Dieser Diagrammtyp wurde als SVG gespeichert: Seine Beschriftungen lassen sich im Browser nicht in ein PNG umwandeln. SVG öffnet sich in jedem Browser und in den meisten Design- und Office-Apps.",
     "ws.keepAspect": "Seitenverhältnis beibehalten",
     "ws.header": "Die erste Zeile enthält die Spaltennamen",
     "ws.position": "Position",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "Diese Datei ist kein gültiges JSON. Prüfe, ob ein Komma, Anführungszeichen oder eine Klammer fehlt.",
     "error.BAD_JSON_AT": "Diese Datei ist kein gültiges JSON: In der Nähe von Zeile {line}, Spalte {column} gibt es ein Problem. Prüfe, ob ein Komma, Anführungszeichen oder eine Klammer fehlt.",
     "error.SHEET_TOO_BIG": "Das ist mehr, als in ein Excel-Tabellenblatt passt (1.048.576 Zeilen und 16.384 Spalten). Teile die Daten auf kleinere Dateien auf.",
+    "error.NO_DIAGRAM": "Fügen Sie Ihren Mermaid-Code ein oder wählen Sie eine .mmd- oder .md-Datei.",
+    "error.BAD_DIAGRAM": "Der Diagrammcode enthält einen Fehler: {detail}",
     "error.ENGINE_FAILED": "Die PDF-Engine wurde unerwartet beendet — die Datei ist für dieses Gerät möglicherweise zu groß.",
     "warning.BOOKMARKS_DROPPED": "Lesezeichen aus der zweiten und den weiteren Dateien wurden nicht übernommen. Die Lesezeichen der ersten Datei wurden beibehalten.",
     "warning.BOOKMARKS_BROKEN": "Einige Lesezeichen verwiesen auf entfernte Seiten und führen daher nirgendwohin mehr.",
@@ -1231,6 +1243,45 @@
         "json-datei in excel öffnen",
         "api-antwort in tabelle umwandeln",
         "verschachteltes json zu excel"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid als Bild",
+      "summary": "Mermaid-Diagrammcode in PNG oder SVG umwandeln.",
+      "action": "Bild erstellen",
+      "title": "Mermaid zu PNG & SVG Kostenlos — Diagramm als Bild | Fizzdoc",
+      "description": "Mermaid-Code kostenlos im Browser in ein scharfes PNG oder SVG umwandeln: Flussdiagramme, Sequenz-, Klassen- und Gantt-Diagramme. Kein Upload.",
+      "h1": "Mermaid in PNG oder SVG umwandeln",
+      "lede": "Fügen Sie Mermaid-Code ein und erhalten Sie ein Bild für Folien, Dokumente, README-Dateien oder Chats. Flussdiagramme sowie Sequenz-, Klassen-, Zustands-, ER- und Gantt-Diagramme werden direkt auf Ihrem Gerät gezeichnet, und Sie sehen das Bild vor dem Download.",
+      "steps": [
+        "Fügen Sie Ihren Mermaid-Code ein oder wählen Sie eine .mmd- oder .md-Datei.",
+        "Wählen Sie PNG oder SVG, eine Größe und ein Design.",
+        "Klicken Sie auf „Bild erstellen“, prüfen Sie die Vorschau und laden Sie es herunter."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Welche Diagramme funktionieren?",
+          "Alles, was Mermaid zeichnen kann: Flussdiagramme, Sequenz-, Klassen-, Zustands-, Entity-Relationship- und Gantt-Diagramme, Kreisdiagramme, Mindmaps, Zeitleisten und Git-Graphen. Enthält der Code einen Fehler, sagt Ihnen die Meldung von Mermaid selbst, was zu korrigieren ist."
+        ],
+        [
+          "PNG oder SVG?",
+          "SVG bleibt in jeder Größe scharf und eignet sich am besten für Websites und Design-Tools. PNG funktioniert überall, auch in Word, PowerPoint und Chat-Apps; wählen Sie 2× oder 4× für scharfe Folien und Drucke."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "Mermaid zu PNG",
+        "Mermaid zu SVG online kostenlos",
+        "Mermaid-Diagramm als Bild exportieren",
+        "Mermaid-Flussdiagramm in Bild umwandeln",
+        "Alternative zum Mermaid Live Editor"
       ]
     },
     "compress-image": {
