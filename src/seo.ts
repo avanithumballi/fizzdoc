@@ -120,6 +120,11 @@ const ICON_PATHS: Record<ToolOp, string> = {
 const icon = (op: ToolOp) =>
   `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICON_PATHS[op]}</svg>`;
 
+// Straight links for developers: file-format names, so they read the same in every language.
+const DEV_CHIPS: [slug: string, format: Format, mark: string, label: string][] = [
+  ['excel-to-json', 'excel', '{ }', 'JSON'],
+  ['mermaid-to-image', 'image', 'MMD', 'Mermaid'],
+];
 const badge = (format: Format) => `<span class="badge fmt-${format}" aria-hidden="true">${FORMATS[format].badge}</span>`;
 
 // Cards can be tossed around with the mouse; effects.ts springs them back into place.
@@ -346,7 +351,9 @@ function mainHtml(c: Copy, page: Page) {
       <ul id="tool-results" class="tool-results" role="listbox" aria-label="${esc(c.t('search.label'))}" hidden></ul>
       <p id="tool-search-status" class="search-status" aria-live="polite" data-count="${esc(c.t('search.count'))}" data-none="${esc(c.t('search.none'))}"></p>
     </div>
-    <ul class="formats-row" aria-label="${esc(c.t('home.formats'))}">${FORMAT_ORDER.map((f) => `<li><a href="#${f}">${badge(f)}${esc(c.t(`format.${f}`))}</a></li>`).join('')}<li class="google">${esc(c.t('home.google'))}</li></ul>
+    <ul class="formats-row" aria-label="${esc(c.t('home.formats'))}">${FORMAT_ORDER.map((f) => `<li><a href="#${f}">${badge(f)}${esc(c.t(`format.${f}`))}</a></li>`).join('')}${DEV_CHIPS.map(
+      ([slug, format, mark, label]) => `<li><a href="${c.link(TOOLS.find((t) => t.slug === slug))}"><span class="badge fmt-${format}" aria-hidden="true">${mark}</span>${label}</a></li>`,
+    ).join('')}<li class="google">${esc(c.t('home.google'))}</li></ul>
   </div>
   ${heroArt(c)}
 </section>
