@@ -103,6 +103,9 @@
     "ws.themeForest": "Hutan",
     "ws.transparent": "Latar belakang transparan",
     "mermaid.svgOnly": "Jenis diagram ini disimpan sebagai SVG: labelnya tidak bisa diubah menjadi PNG di browser. SVG bisa dibuka di semua browser dan di sebagian besar aplikasi desain dan perkantoran.",
+    "examples.mermaid": "Contoh Mermaid untuk memulai",
+    "examples.try": "Coba contoh ini",
+    "examples.json": "Seperti inilah hasil konversinya",
     "ws.keepAspect": "Pertahankan rasio aspek",
     "ws.header": "Baris pertama berisi nama kolom",
     "ws.position": "Posisi",
@@ -1282,6 +1285,84 @@
         "ekspor diagram Mermaid jadi gambar",
         "flowchart Mermaid ke gambar",
         "alternatif Mermaid live editor"
+      ]
+    },
+    "mermaid-to-png": {
+      "name": "Mermaid ke PNG",
+      "summary": "Simpan diagram Mermaid sebagai gambar PNG yang tajam.",
+      "action": "Buat PNG",
+      "title": "Mermaid ke PNG Gratis — Ekspor Diagram jadi Gambar | Fizzdoc",
+      "description": "Ubah kode Mermaid menjadi PNG yang tajam secara gratis di browser, hingga 4× untuk slide dan cetak, dengan latar transparan opsional. Tanpa upload.",
+      "h1": "Konversi Mermaid ke PNG",
+      "lede": "Tempel kode Mermaid dan unduh PNG tajam yang langsung bisa dipasang di Word, PowerPoint, Google Docs, Notion, atau chat. Pilih 2× atau 4× untuk slide dan cetak beresolusi tinggi; semuanya digambar di perangkat Anda.",
+      "steps": [
+        "Tempel kode Mermaid Anda, atau pilih file .mmd atau .md.",
+        "Pilih ukuran (2× tajam di kebanyakan layar) dan tema.",
+        "Klik “Buat PNG”, periksa pratinjau, lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana cara mendapatkan PNG beresolusi tinggi?",
+          "Pilih 4× di bawah Ukuran PNG. Diagram digambar empat kali ukuran normalnya, sehingga tetap tajam di layar besar, di slide, dan saat dicetak."
+        ],
+        [
+          "Bisakah PNG memiliki latar belakang transparan?",
+          "Bisa. Centang “Latar belakang transparan” untuk menempatkan diagram pada slide berwarna atau halaman gelap."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "Mermaid ke PNG",
+        "simpan diagram Mermaid jadi PNG",
+        "Mermaid PNG resolusi tinggi",
+        "diagram Mermaid latar transparan",
+        "flowchart Mermaid ke PNG"
+      ]
+    },
+    "mermaid-to-svg": {
+      "name": "Mermaid ke SVG",
+      "summary": "Simpan diagram Mermaid sebagai SVG yang skalabel.",
+      "action": "Buat SVG",
+      "title": "Mermaid ke SVG Gratis — Ekspor Diagram Skalabel | Fizzdoc",
+      "description": "Ubah kode Mermaid menjadi SVG yang bersih secara gratis di browser. Tajam di ukuran berapa pun dan siap untuk situs web, Figma, dan dokumen. Tanpa upload.",
+      "h1": "Konversi Mermaid ke SVG",
+      "lede": "Ubah kode Mermaid menjadi SVG mandiri dengan lebar dan tinggi yang sebenarnya. Tetap tajam di zoom berapa pun, terbuka di Figma, Illustrator, dan Inkscape, serta mudah disematkan di situs web dan file README.",
+      "steps": [
+        "Tempel kode Mermaid Anda, atau pilih file .mmd atau .md.",
+        "Pilih tema, dan latar transparan jika Anda mau.",
+        "Klik “Buat SVG”, periksa pratinjau, lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bisakah saya mengedit SVG setelahnya?",
+          "Bisa. Teks tetap berupa teks asli dan bentuk berupa path vektor, sehingga Figma, Illustrator, Inkscape, dan kebanyakan alat desain bisa membuka dan mengeditnya."
+        ],
+        [
+          "Apakah SVG aman dipasang di situs web?",
+          "Mermaid berjalan dalam mode ketat yang menghapus skrip dan handler klik dari label, sehingga SVG hanya berisi gambar dan gayanya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "Mermaid ke SVG",
+        "simpan diagram Mermaid jadi SVG",
+        "unduh Mermaid SVG",
+        "diagram Mermaid untuk Figma",
+        "grafik Mermaid ke gambar vektor"
       ]
     },
     "compress-image": {

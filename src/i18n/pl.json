@@ -103,6 +103,9 @@
     "ws.themeForest": "Leśny",
     "ws.transparent": "Przezroczyste tło",
     "mermaid.svgOnly": "Ten typ diagramu zapisano jako SVG: jego etykiet nie da się w przeglądarce zamienić na PNG. SVG otwiera się w każdej przeglądarce i w większości programów graficznych i biurowych.",
+    "examples.mermaid": "Przykłady Mermaid na początek",
+    "examples.try": "Wypróbuj ten przykład",
+    "examples.json": "Tak wygląda konwersja",
     "ws.keepAspect": "Zachowaj proporcje",
     "ws.header": "Pierwszy wiersz zawiera nazwy kolumn",
     "ws.position": "Pozycja",
@@ -1282,6 +1285,84 @@
         "eksport diagramu Mermaid do obrazu",
         "schemat blokowy Mermaid na obrazek",
         "alternatywa dla Mermaid live editor"
+      ]
+    },
+    "mermaid-to-png": {
+      "name": "Mermaid na PNG",
+      "summary": "Zapisz diagram Mermaid jako ostry obraz PNG.",
+      "action": "Utwórz PNG",
+      "title": "Mermaid na PNG za Darmo — Diagram jako obraz | Fizzdoc",
+      "description": "Zamień kod Mermaid na ostry PNG za darmo, w przeglądarce, do 4× na slajdy i wydruk, z opcjonalnym przezroczystym tłem. Bez przesyłania plików.",
+      "h1": "Konwertuj Mermaid na PNG",
+      "lede": "Wklej kod Mermaid i pobierz ostry PNG, który od razu wstawisz do Worda, PowerPointa, Dokumentów Google, Notion lub czatu. Wybierz 2× lub 4× dla slajdów i wydruku w wysokiej rozdzielczości; wszystko jest rysowane na Twoim urządzeniu.",
+      "steps": [
+        "Wklej kod Mermaid lub wybierz plik .mmd albo .md.",
+        "Wybierz rozmiar (2× jest ostry na większości ekranów) i motyw.",
+        "Kliknij „Utwórz PNG”, sprawdź podgląd i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak uzyskać PNG w wysokiej rozdzielczości?",
+          "Wybierz 4× w polu Rozmiar PNG. Diagram jest rysowany w czterokrotnym rozmiarze, więc pozostaje ostry na dużych ekranach, w slajdach i na wydruku."
+        ],
+        [
+          "Czy PNG może mieć przezroczyste tło?",
+          "Tak. Zaznacz „Przezroczyste tło”, aby umieścić diagram na kolorowych slajdach lub ciemnych stronach."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "Mermaid na PNG",
+        "zapisz diagram Mermaid jako PNG",
+        "Mermaid PNG wysoka rozdzielczość",
+        "diagram Mermaid z przezroczystym tłem",
+        "schemat blokowy Mermaid na PNG"
+      ]
+    },
+    "mermaid-to-svg": {
+      "name": "Mermaid na SVG",
+      "summary": "Zapisz diagram Mermaid jako skalowalny SVG.",
+      "action": "Utwórz SVG",
+      "title": "Mermaid na SVG za Darmo — Skalowalny diagram | Fizzdoc",
+      "description": "Zamień kod Mermaid na czysty SVG za darmo, w przeglądarce. Ostry w każdym rozmiarze, gotowy na strony, Figmę i dokumenty. Nic nie jest przesyłane.",
+      "h1": "Konwertuj Mermaid na SVG",
+      "lede": "Zamień kod Mermaid w samodzielny SVG z prawdziwą szerokością i wysokością. Pozostaje ostry przy każdym powiększeniu, otwiera się w Figmie, Illustratorze i Inkscape oraz dobrze wpasowuje się w strony i pliki README.",
+      "steps": [
+        "Wklej kod Mermaid lub wybierz plik .mmd albo .md.",
+        "Wybierz motyw i, jeśli chcesz, przezroczyste tło.",
+        "Kliknij „Utwórz SVG”, sprawdź podgląd i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy mogę edytować SVG po pobraniu?",
+          "Tak. Tekst pozostaje prawdziwym tekstem, a kształty ścieżkami wektorowymi, więc Figma, Illustrator, Inkscape i większość programów graficznych otworzy i edytuje plik."
+        ],
+        [
+          "Czy SVG jest bezpieczny na stronie internetowej?",
+          "Mermaid działa w trybie ścisłym, który usuwa z etykiet skrypty i obsługę kliknięć, więc SVG zawiera wyłącznie rysunek i jego style."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "Mermaid na SVG",
+        "zapisz diagram Mermaid jako SVG",
+        "pobierz Mermaid SVG",
+        "diagram Mermaid do Figmy",
+        "wykres Mermaid na obraz wektorowy"
       ]
     },
     "compress-image": {

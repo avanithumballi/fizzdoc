@@ -103,6 +103,9 @@
     "ws.themeForest": "Bos",
     "ws.transparent": "Transparante achtergrond",
     "mermaid.svgOnly": "Dit diagramtype is als SVG opgeslagen: de labels kunnen in de browser niet naar PNG worden omgezet. SVG opent in elke browser en in de meeste ontwerp- en kantoorprogramma’s.",
+    "examples.mermaid": "Mermaid-voorbeelden om mee te beginnen",
+    "examples.try": "Probeer dit voorbeeld",
+    "examples.json": "Zo ziet de conversie eruit",
     "ws.keepAspect": "Beeldverhouding behouden",
     "ws.header": "De eerste rij bevat de kolomnamen",
     "ws.position": "Positie",
@@ -1282,6 +1285,84 @@
         "Mermaid-diagram exporteren als afbeelding",
         "Mermaid flowchart naar plaatje",
         "Mermaid live editor alternatief"
+      ]
+    },
+    "mermaid-to-png": {
+      "name": "Mermaid naar PNG",
+      "summary": "Sla een Mermaid-diagram op als scherpe PNG-afbeelding.",
+      "action": "PNG maken",
+      "title": "Mermaid naar PNG Gratis — Diagram als afbeelding | Fizzdoc",
+      "description": "Zet Mermaid-code gratis om in een scherpe PNG in je browser, tot 4× voor dia’s en drukwerk, met optioneel transparante achtergrond. Zonder upload.",
+      "h1": "Mermaid naar PNG converteren",
+      "lede": "Plak Mermaid-code en download een scherpe PNG die je zo in Word, PowerPoint, Google Docs, Notion of een chat plaatst. Kies 2× of 4× voor dia’s en drukwerk in hoge resolutie; alles wordt op je eigen apparaat getekend.",
+      "steps": [
+        "Plak je Mermaid-code of kies een .mmd- of .md-bestand.",
+        "Kies een formaat (2× is scherp op de meeste schermen) en een thema.",
+        "Klik op “PNG maken”, controleer het voorbeeld en download het."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe krijg ik een PNG met hoge resolutie?",
+          "Kies 4× bij PNG-grootte. Het diagram wordt op vier keer de normale grootte getekend en blijft scherp op grote schermen, in dia’s en op papier."
+        ],
+        [
+          "Kan de PNG een transparante achtergrond hebben?",
+          "Ja. Vink “Transparante achtergrond” aan om het diagram op gekleurde dia’s of donkere pagina’s te plaatsen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "Mermaid naar PNG",
+        "Mermaid diagram opslaan als PNG",
+        "Mermaid PNG hoge resolutie",
+        "Mermaid diagram transparante achtergrond",
+        "Mermaid flowchart naar PNG"
+      ]
+    },
+    "mermaid-to-svg": {
+      "name": "Mermaid naar SVG",
+      "summary": "Sla een Mermaid-diagram op als schaalbare SVG.",
+      "action": "SVG maken",
+      "title": "Mermaid naar SVG Gratis — Schaalbaar diagram | Fizzdoc",
+      "description": "Zet Mermaid-code gratis om in een nette SVG in je browser. Scherp op elk formaat en klaar voor websites, Figma en documenten. Niets wordt geüpload.",
+      "h1": "Mermaid naar SVG converteren",
+      "lede": "Maak van Mermaid-code een losse SVG met echte breedte en hoogte. Hij blijft scherp bij elke zoom, opent in Figma, Illustrator en Inkscape en past netjes in websites en README-bestanden.",
+      "steps": [
+        "Plak je Mermaid-code of kies een .mmd- of .md-bestand.",
+        "Kies een thema en, als je wilt, een transparante achtergrond.",
+        "Klik op “SVG maken”, controleer het voorbeeld en download het."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Kan ik de SVG achteraf bewerken?",
+          "Ja. Tekst blijft echte tekst en vormen blijven vectorpaden, dus Figma, Illustrator, Inkscape en de meeste ontwerptools kunnen hem openen en bewerken."
+        ],
+        [
+          "Is de SVG veilig op een website te zetten?",
+          "Mermaid draait in strikte modus, waardoor scripts en klikhandlers uit labels verdwijnen. De SVG bevat dus alleen de tekening en de stijlen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "Mermaid naar SVG",
+        "Mermaid diagram opslaan als SVG",
+        "Mermaid SVG downloaden",
+        "Mermaid diagram voor Figma",
+        "Mermaid grafiek naar vectorafbeelding"
       ]
     },
     "compress-image": {

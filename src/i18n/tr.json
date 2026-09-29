@@ -103,6 +103,9 @@
     "ws.themeForest": "Orman",
     "ws.transparent": "Şeffaf arka plan",
     "mermaid.svgOnly": "Bu diyagram türü SVG olarak kaydedildi: etiketleri tarayıcıda PNG’ye dönüştürülemez. SVG her tarayıcıda ve çoğu tasarım ile ofis uygulamasında açılır.",
+    "examples.mermaid": "Başlamak için Mermaid örnekleri",
+    "examples.try": "Bu örneği dene",
+    "examples.json": "Dönüşümün nasıl göründüğü",
     "ws.keepAspect": "En boy oranını koru",
     "ws.header": "İlk satır sütun adlarını içerir",
     "ws.position": "Konum",
@@ -1282,6 +1285,84 @@
         "Mermaid diyagramını görsel olarak dışa aktarma",
         "Mermaid akış şemasını resme çevirme",
         "Mermaid live editor alternatifi"
+      ]
+    },
+    "mermaid-to-png": {
+      "name": "Mermaid’den PNG’ye",
+      "summary": "Mermaid diyagramını net bir PNG görsel olarak kaydedin.",
+      "action": "PNG oluştur",
+      "title": "Mermaid’den PNG’ye Ücretsiz — Diyagramı Görsel Yap | Fizzdoc",
+      "description": "Mermaid kodunu tarayıcınızda ücretsiz olarak net bir PNG’ye dönüştürün: slayt ve baskı için 4×’e kadar, isteğe bağlı şeffaf arka plan. Yükleme yok.",
+      "h1": "Mermaid’i PNG’ye dönüştürün",
+      "lede": "Mermaid kodunu yapıştırın ve Word, PowerPoint, Google Docs, Notion veya sohbete doğrudan eklenebilen net bir PNG indirin. Yüksek çözünürlüklü slayt ve baskı için 2× veya 4× seçin; her şey cihazınızda çizilir.",
+      "steps": [
+        "Mermaid kodunuzu yapıştırın veya bir .mmd ya da .md dosyası seçin.",
+        "Bir boyut (2× çoğu ekranda nettir) ve bir tema seçin.",
+        "“PNG oluştur”a tıklayın, önizlemeyi kontrol edin ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Yüksek çözünürlüklü PNG nasıl elde ederim?",
+          "PNG boyutu altında 4× seçin. Diyagram normal boyutunun dört katında çizilir; büyük ekranlarda, slaytlarda ve baskıda net kalır."
+        ],
+        [
+          "PNG’nin arka planı şeffaf olabilir mi?",
+          "Evet. Diyagramı renkli slaytlara veya koyu sayfalara yerleştirmek için “Şeffaf arka plan” seçeneğini işaretleyin."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "Mermaid’den PNG’ye",
+        "Mermaid diyagramını PNG olarak kaydet",
+        "Mermaid PNG yüksek çözünürlük",
+        "şeffaf arka planlı Mermaid diyagramı",
+        "Mermaid akış şemasını PNG yapma"
+      ]
+    },
+    "mermaid-to-svg": {
+      "name": "Mermaid’den SVG’ye",
+      "summary": "Mermaid diyagramını ölçeklenebilir bir SVG olarak kaydedin.",
+      "action": "SVG oluştur",
+      "title": "Mermaid’den SVG’ye Ücretsiz — Ölçeklenebilir Diyagram | Fizzdoc",
+      "description": "Mermaid kodunu tarayıcınızda ücretsiz olarak temiz bir SVG’ye dönüştürün. Her boyutta net, web siteleri, Figma ve belgeler için hazır. Hiçbir şey yüklenmez.",
+      "h1": "Mermaid’i SVG’ye dönüştürün",
+      "lede": "Mermaid kodunu gerçek genişlik ve yüksekliğe sahip bağımsız bir SVG’ye çevirin. Her yakınlaştırmada net kalır, Figma, Illustrator ve Inkscape’te açılır, web sitelerine ve README dosyalarına sorunsuz gömülür.",
+      "steps": [
+        "Mermaid kodunuzu yapıştırın veya bir .mmd ya da .md dosyası seçin.",
+        "Bir tema seçin, isterseniz şeffaf arka plan da ekleyin.",
+        "“SVG oluştur”a tıklayın, önizlemeyi kontrol edin ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "SVG’yi sonradan düzenleyebilir miyim?",
+          "Evet. Metin gerçek metin, şekiller vektör yolu olarak kalır; Figma, Illustrator, Inkscape ve çoğu tasarım aracı dosyayı açıp düzenleyebilir."
+        ],
+        [
+          "SVG’yi web sitesine koymak güvenli mi?",
+          "Mermaid, etiketlerden betikleri ve tıklama işleyicilerini kaldıran katı modda çalışır; bu yüzden SVG yalnızca çizimi ve stillerini içerir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "Mermaid’den SVG’ye",
+        "Mermaid diyagramını SVG olarak kaydet",
+        "Mermaid SVG indir",
+        "Figma için Mermaid diyagramı",
+        "Mermaid grafiğini vektör görsele çevirme"
       ]
     },
     "compress-image": {
