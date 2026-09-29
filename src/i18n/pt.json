@@ -93,6 +93,16 @@
     "ws.height": "Altura (px)",
     "ws.scale": "Ou escala (%)",
     "ws.auto": "Automático",
+    "ws.mermaidCode": "Código Mermaid",
+    "ws.fmtSvg": "SVG — nítido em qualquer tamanho",
+    "ws.pngSize": "Tamanho do PNG",
+    "ws.theme": "Tema",
+    "ws.themeDefault": "Padrão",
+    "ws.themeNeutral": "Neutro",
+    "ws.themeDark": "Escuro",
+    "ws.themeForest": "Floresta",
+    "ws.transparent": "Fundo transparente",
+    "mermaid.svgOnly": "Este tipo de diagrama foi salvo como SVG: os textos dele não podem ser convertidos em PNG no navegador. O SVG abre em qualquer navegador e na maioria dos apps de design e de escritório.",
     "ws.keepAspect": "Manter proporção",
     "ws.header": "A primeira linha tem os nomes das colunas",
     "ws.position": "Posição",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "Este arquivo não é um JSON válido. Verifique se falta uma vírgula, aspas ou um colchete.",
     "error.BAD_JSON_AT": "Este arquivo não é um JSON válido: há um problema perto da linha {line}, coluna {column}. Verifique se falta uma vírgula, aspas ou um colchete.",
     "error.SHEET_TOO_BIG": "Isso é mais do que cabe em uma planilha do Excel (1.048.576 linhas e 16.384 colunas). Divida os dados em arquivos menores.",
+    "error.NO_DIAGRAM": "Cole seu código Mermaid ou escolha um arquivo .mmd ou .md.",
+    "error.BAD_DIAGRAM": "O código do diagrama tem um erro: {detail}",
     "error.ENGINE_FAILED": "O mecanismo de PDF parou inesperadamente — o arquivo pode ser grande demais para este dispositivo.",
     "warning.BOOKMARKS_DROPPED": "Os marcadores do segundo arquivo em diante não foram mantidos. Os marcadores do primeiro arquivo foram preservados.",
     "warning.BOOKMARKS_BROKEN": "Alguns marcadores apontavam para páginas que foram removidas, então eles não levam mais a lugar nenhum.",
@@ -1231,6 +1243,45 @@
         "abrir arquivo json no excel",
         "resposta de API para planilha",
         "json aninhado para excel"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid para imagem",
+      "summary": "Transforme código de diagramas Mermaid em PNG ou SVG.",
+      "action": "Criar imagem",
+      "title": "Mermaid para PNG e SVG Grátis — Diagrama em Imagem | Fizzdoc",
+      "description": "Transforme código Mermaid em PNG ou SVG nítido, grátis e no seu navegador: fluxogramas, diagramas de sequência, de classes e Gantt. Nada é enviado.",
+      "h1": "Converta Mermaid em PNG ou SVG",
+      "lede": "Cole o código Mermaid e obtenha uma imagem para slides, documentos, arquivos README ou chats. Fluxogramas e diagramas de sequência, de classes, de estados, entidade-relacionamento e Gantt são desenhados no seu próprio dispositivo, e você vê a imagem antes de baixar.",
+      "steps": [
+        "Cole seu código Mermaid ou escolha um arquivo .mmd ou .md.",
+        "Escolha PNG ou SVG, um tamanho e um tema.",
+        "Clique em “Criar imagem”, confira a prévia e baixe."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Quais diagramas funcionam?",
+          "Tudo o que o Mermaid consegue desenhar: fluxogramas, diagramas de sequência, de classes, de estados, entidade-relacionamento, Gantt, gráficos de pizza, mapas mentais, linhas do tempo e gráficos Git. Se o código tiver um erro, a própria mensagem do Mermaid mostra o que corrigir."
+        ],
+        [
+          "PNG ou SVG?",
+          "O SVG fica nítido em qualquer tamanho e é o melhor para sites e ferramentas de design. O PNG funciona em todo lugar, inclusive Word, PowerPoint e apps de chat; escolha 2× ou 4× para slides e impressão nítidos."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "Mermaid para PNG",
+        "Mermaid para SVG online grátis",
+        "exportar diagrama Mermaid como imagem",
+        "fluxograma Mermaid para imagem",
+        "alternativa ao Mermaid Live Editor"
       ]
     },
     "compress-image": {

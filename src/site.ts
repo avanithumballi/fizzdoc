@@ -24,6 +24,7 @@ export type ToolOp =
   | 'csv-to-excel'
   | 'excel-to-json'
   | 'json-to-excel'
+  | 'mermaid-image'
   | 'image-convert'
   | 'image-ocr'
   | 'page-numbers'
@@ -771,6 +772,37 @@ TOOLS.push(
     input: { accept: '.json,application/json' },
   },
   {
+    op: 'mermaid-image',
+    format: 'image',
+    slug: 'mermaid-to-image',
+    name: 'Mermaid to Image',
+    summary: 'Turn Mermaid diagram code into a PNG or SVG.',
+    action: 'Create image',
+    title: 'Mermaid to PNG & SVG Free — Diagram to Image, No Upload | Fizzdoc',
+    description:
+      'Turn Mermaid code into a sharp PNG or SVG for free, right in your browser: flowcharts, sequence, class and Gantt diagrams. Nothing is uploaded.',
+    h1: 'Convert Mermaid to PNG or SVG',
+    lede: 'Paste Mermaid code and get an image for slides, docs, README files or chat. Flowcharts, sequence, class, state, ER and Gantt diagrams are drawn right on your device, and you see the picture before you download it.',
+    steps: [
+      'Paste your Mermaid code, or choose a .mmd or .md file.',
+      'Pick PNG or SVG, a size and a theme.',
+      'Click “Create image”, check the preview and download it.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Which diagrams work?',
+        'Everything Mermaid can draw, including flowcharts, sequence, class, state, entity-relationship, Gantt, pie, mind map, timeline and Git graphs. If the code has a mistake, Mermaid’s own message tells you what to fix.',
+      ],
+      [
+        'PNG or SVG?',
+        'SVG stays sharp at any size and is best for websites and design tools. PNG works everywhere, including Word, PowerPoint and chat apps; choose 2× or 4× for sharp slides and print.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: '.mmd,.mermaid,.md,.txt,text/plain' },
+  },
+  {
     op: 'image-convert',
     format: 'image',
     slug: 'compress-image',
@@ -1309,6 +1341,7 @@ const KEYWORDS: Record<string, string[]> = {
   ],
   'excel-to-json': ['convert Excel to JSON', 'XLSX to JSON array of objects', 'Google Sheets to JSON', 'spreadsheet to JSON for an API', 'Excel to JSON with headers'],
   'json-to-excel': ['convert JSON to Excel', 'JSON to XLSX online free', 'open a JSON file in Excel', 'API response to spreadsheet', 'nested JSON to Excel'],
+  'mermaid-to-image': ['Mermaid to PNG', 'Mermaid to SVG online free', 'export Mermaid diagram as image', 'Mermaid flowchart to picture', 'Mermaid live editor alternative'],
   'compress-image': [
     'compress image without losing quality',
     'reduce photo size',

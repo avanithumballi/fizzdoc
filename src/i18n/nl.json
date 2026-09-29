@@ -93,6 +93,16 @@
     "ws.height": "Hoogte (px)",
     "ws.scale": "Of schaal (%)",
     "ws.auto": "Automatisch",
+    "ws.mermaidCode": "Mermaid-code",
+    "ws.fmtSvg": "SVG — scherp op elk formaat",
+    "ws.pngSize": "PNG-grootte",
+    "ws.theme": "Thema",
+    "ws.themeDefault": "Standaard",
+    "ws.themeNeutral": "Neutraal",
+    "ws.themeDark": "Donker",
+    "ws.themeForest": "Bos",
+    "ws.transparent": "Transparante achtergrond",
+    "mermaid.svgOnly": "Dit diagramtype is als SVG opgeslagen: de labels kunnen in de browser niet naar PNG worden omgezet. SVG opent in elke browser en in de meeste ontwerp- en kantoorprogramma’s.",
     "ws.keepAspect": "Beeldverhouding behouden",
     "ws.header": "De eerste rij bevat de kolomnamen",
     "ws.position": "Positie",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "Dit bestand is geen geldige JSON. Controleer op een ontbrekende komma, aanhalingsteken of haakje.",
     "error.BAD_JSON_AT": "Dit bestand is geen geldige JSON: er zit een fout bij regel {line}, kolom {column}. Controleer op een ontbrekende komma, aanhalingsteken of haakje.",
     "error.SHEET_TOO_BIG": "Dat is meer dan één Excel-blad aankan (1.048.576 rijen en 16.384 kolommen). Splits de gegevens op in kleinere bestanden.",
+    "error.NO_DIAGRAM": "Plak je Mermaid-code of kies een .mmd- of .md-bestand.",
+    "error.BAD_DIAGRAM": "De diagramcode bevat een fout: {detail}",
     "error.ENGINE_FAILED": "De PDF-engine stopte onverwacht — het bestand is mogelijk te groot voor dit apparaat.",
     "warning.BOOKMARKS_DROPPED": "Bladwijzers uit het tweede bestand en volgende bestanden zijn niet overgenomen. De bladwijzers van het eerste bestand zijn behouden.",
     "warning.BOOKMARKS_BROKEN": "Sommige bladwijzers verwezen naar pagina's die zijn verwijderd, waardoor ze nergens meer naartoe leiden.",
@@ -1231,6 +1243,45 @@
         "json-bestand openen in excel",
         "api-antwoord naar spreadsheet",
         "geneste json naar excel"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid naar afbeelding",
+      "summary": "Zet Mermaid-diagramcode om in een PNG of SVG.",
+      "action": "Afbeelding maken",
+      "title": "Mermaid naar PNG en SVG Gratis — Diagram naar afbeelding | Fizzdoc",
+      "description": "Zet Mermaid-code gratis om in een scherpe PNG of SVG in je browser: flowcharts, sequence-, klasse- en Gantt-diagrammen. Zonder upload.",
+      "h1": "Mermaid naar PNG of SVG converteren",
+      "lede": "Plak Mermaid-code en krijg een afbeelding voor presentaties, documenten, README-bestanden of chat. Flowcharts, sequence-, klasse-, state-, ER- en Gantt-diagrammen worden op je eigen apparaat getekend en je ziet het plaatje voordat je het downloadt.",
+      "steps": [
+        "Plak je Mermaid-code of kies een .mmd- of .md-bestand.",
+        "Kies PNG of SVG, een formaat en een thema.",
+        "Klik op “Afbeelding maken”, controleer het voorbeeld en download het."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welke diagrammen werken?",
+          "Alles wat Mermaid kan tekenen, zoals flowcharts, sequence-, klasse-, state-, entiteit-relatie-, Gantt-, cirkel-, mindmap-, tijdlijn- en Git-graph-diagrammen. Bevat de code een fout, dan vertelt de melding van Mermaid zelf wat je moet aanpassen."
+        ],
+        [
+          "PNG of SVG?",
+          "SVG blijft scherp op elk formaat en is het best voor websites en ontwerptools. PNG werkt overal, ook in Word, PowerPoint en chat-apps; kies 2× of 4× voor scherpe dia’s en drukwerk."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "Mermaid naar PNG",
+        "Mermaid naar SVG online gratis",
+        "Mermaid-diagram exporteren als afbeelding",
+        "Mermaid flowchart naar plaatje",
+        "Mermaid live editor alternatief"
       ]
     },
     "compress-image": {

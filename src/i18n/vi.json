@@ -93,6 +93,16 @@
     "ws.height": "Chiều cao (px)",
     "ws.scale": "Hoặc tỷ lệ (%)",
     "ws.auto": "Tự động",
+    "ws.mermaidCode": "Mã Mermaid",
+    "ws.fmtSvg": "SVG — sắc nét ở mọi kích thước",
+    "ws.pngSize": "Kích thước PNG",
+    "ws.theme": "Giao diện",
+    "ws.themeDefault": "Mặc định",
+    "ws.themeNeutral": "Trung tính",
+    "ws.themeDark": "Tối",
+    "ws.themeForest": "Rừng",
+    "ws.transparent": "Nền trong suốt",
+    "mermaid.svgOnly": "Loại sơ đồ này đã được lưu dưới dạng SVG: nhãn của nó không thể chuyển thành PNG trong trình duyệt. SVG mở được trong mọi trình duyệt và hầu hết ứng dụng thiết kế và văn phòng.",
     "ws.keepAspect": "Giữ tỷ lệ khung hình",
     "ws.header": "Hàng đầu tiên chứa tên cột",
     "ws.position": "Vị trí",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "Tệp này không phải JSON hợp lệ. Hãy kiểm tra xem có thiếu dấu phẩy, dấu ngoặc kép hoặc dấu ngoặc nào không.",
     "error.BAD_JSON_AT": "Tệp này không phải JSON hợp lệ: có lỗi gần dòng {line}, cột {column}. Hãy kiểm tra xem có thiếu dấu phẩy, dấu ngoặc kép hoặc dấu ngoặc nào không.",
     "error.SHEET_TOO_BIG": "Dữ liệu này vượt quá sức chứa của một trang tính Excel (1.048.576 hàng và 16.384 cột). Hãy chia dữ liệu thành các tệp nhỏ hơn.",
+    "error.NO_DIAGRAM": "Dán mã Mermaid của bạn, hoặc chọn một tệp .mmd hoặc .md.",
+    "error.BAD_DIAGRAM": "Mã sơ đồ có lỗi: {detail}",
     "error.ENGINE_FAILED": "Công cụ xử lý PDF đã dừng đột ngột — tệp có thể quá lớn đối với thiết bị này.",
     "warning.BOOKMARKS_DROPPED": "Bookmark từ tệp thứ hai trở đi không được giữ lại. Bookmark của tệp đầu tiên vẫn được giữ nguyên.",
     "warning.BOOKMARKS_BROKEN": "Một số bookmark trỏ đến các trang đã bị xóa, nên chúng không còn dẫn đến đâu nữa.",
@@ -1231,6 +1243,45 @@
         "mở tệp json trong excel",
         "phản hồi api sang bảng tính",
         "json lồng nhau sang excel"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid sang ảnh",
+      "summary": "Biến mã sơ đồ Mermaid thành PNG hoặc SVG.",
+      "action": "Tạo ảnh",
+      "title": "Mermaid sang PNG & SVG Miễn Phí — Sơ đồ thành ảnh | Fizzdoc",
+      "description": "Biến mã Mermaid thành PNG hoặc SVG sắc nét miễn phí ngay trong trình duyệt: lưu đồ, sơ đồ tuần tự, lớp và Gantt. Không cần tải lên.",
+      "h1": "Chuyển Mermaid sang PNG hoặc SVG",
+      "lede": "Dán mã Mermaid và nhận một hình ảnh cho slide, tài liệu, tệp README hoặc trò chuyện. Lưu đồ, sơ đồ tuần tự, lớp, trạng thái, ER và Gantt được vẽ ngay trên thiết bị của bạn, và bạn xem được hình trước khi tải xuống.",
+      "steps": [
+        "Dán mã Mermaid của bạn, hoặc chọn một tệp .mmd hoặc .md.",
+        "Chọn PNG hoặc SVG, kích thước và giao diện.",
+        "Bấm “Tạo ảnh”, kiểm tra bản xem trước rồi tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Những sơ đồ nào dùng được?",
+          "Mọi thứ Mermaid có thể vẽ, gồm lưu đồ, sơ đồ tuần tự, lớp, trạng thái, thực thể - quan hệ, Gantt, hình tròn, sơ đồ tư duy, dòng thời gian và Git graph. Nếu mã có lỗi, thông báo của chính Mermaid sẽ cho bạn biết cần sửa gì."
+        ],
+        [
+          "PNG hay SVG?",
+          "SVG luôn sắc nét ở mọi kích thước và tốt nhất cho website và công cụ thiết kế. PNG dùng được ở mọi nơi, kể cả Word, PowerPoint và ứng dụng trò chuyện; hãy chọn 2× hoặc 4× để slide và bản in sắc nét."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "Mermaid sang PNG",
+        "Mermaid sang SVG online miễn phí",
+        "xuất sơ đồ Mermaid thành ảnh",
+        "lưu đồ Mermaid thành hình ảnh",
+        "thay thế Mermaid live editor"
       ]
     },
     "compress-image": {

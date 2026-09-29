@@ -4,6 +4,7 @@ import { setUpEffects } from './effects';
 import { setUpSearch } from './search';
 import type { ErrorCode, Job, Op } from './engine/pdf';
 import type { LocalError, Output } from './engine/local';
+import type { Theme } from './engine/mermaid';
 import type { FromWorker, ToWorker } from './engine/worker';
 import type { ToolOp } from './site';
 import { UI, localizeSummary, t, type UiKey } from './i18n';
@@ -69,6 +70,7 @@ function setUp(op: ToolOp) {
   const workspace = $('workspace')!;
   const viewer = $('viewer');
   const optionsPanel = workspace.querySelector('.options')!;
+  const codeField = optionsPanel.querySelector<HTMLTextAreaElement>('textarea[name="code"]');
 
   const multiple = workspace.dataset.multiple === 'true';
   // Mirrors the input's accept list (".pdf", "image/*", …) for dropped files.
@@ -137,6 +139,12 @@ function setUp(op: ToolOp) {
     'csv-to-excel': async (f) => (await import('./engine/convert')).csvToXlsx(f[0]),
     'excel-to-json': async (f, o) => (await import('./engine/convert')).xlsxToJson(f[0], { header: o.header !== 'false' }),
     'json-to-excel': async (f) => (await import('./engine/convert')).jsonToXlsx(f[0]),
+    'mermaid-image': async (f, o) =>
+      (await import('./engine/mermaid')).mermaidToImage(
+        f[0] ? await f[0].text() : o.code,
+        { format: o.format === 'svg' ? 'svg' : 'png', scale: Number(o.scale) || 2, theme: o.theme as Theme, transparent: o.transparent === 'true' },
+        f[0]?.name,
+      ),
     'word-to-pdf': async (f) => (await import('./engine/office')).docxToHtml(f[0]),
     'pdf-to-word': async (f) => (await import('./engine/office')).pdfToDocx(f[0]),
     'pdf-to-powerpoint': async (f) => (await import('./engine/office')).pdfToPptx(f[0]),
@@ -208,7 +216,7 @@ function setUp(op: ToolOp) {
     status.dataset.tone = tone;
   };
 
-  let preview: HTMLAudioElement | undefined;
+  let preview: HTMLAudioElement | HTMLImageElement | undefined;
   function clearResult() {
     if (outputUrl) URL.revokeObjectURL(outputUrl);
     outputUrl = undefined;
@@ -257,7 +265,9 @@ function setUp(op: ToolOp) {
         return item;
       }),
     );
-    runButton.disabled = busy() || files.length < (op === 'merge' ? 2 : 1);
+    // Mermaid code can be pasted instead of choosing a file.
+    const pasted = !!codeField?.value.trim();
+    runButton.disabled = busy() || files.length < (op === 'merge' ? 2 : pasted ? 0 : 1);
     cancelButton.hidden = !busy();
     progress.hidden = !busy();
     if (reorderHint) reorderHint.hidden = files.length < 2 || busy();
@@ -401,6 +411,10 @@ function setUp(op: ToolOp) {
       // Listen before downloading.
       preview = Object.assign(new Audio(outputUrl), { controls: true, className: 'audio-preview' });
       result.prepend(preview);
+    } else if (op === 'mermaid-image') {
+      // See the diagram before downloading it.
+      preview = Object.assign(new Image(), { src: outputUrl, alt: '', className: 'image-preview' });
+      result.prepend(preview);
     }
     result.hidden = false;
     download.focus();
@@ -502,10 +516,11 @@ function setUp(op: ToolOp) {
   angle?.addEventListener('change', clearResult);
   newPassword?.addEventListener('input', clearResult);
   optionsPanel.addEventListener('input', (event) => {
-    const field = event.target as HTMLInputElement;
+    const field = event.target as HTMLInputElement | HTMLTextAreaElement;
     // Range sliders show their value next to the label.
     if (field.type === 'range') field.previousElementSibling!.textContent = `${field.value}%`;
     clearResult();
+    if (field === codeField) render();
   });
   runButton.onclick = run;
   cancelButton.onclick = () => {

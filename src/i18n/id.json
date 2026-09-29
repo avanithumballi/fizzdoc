@@ -93,6 +93,16 @@
     "ws.height": "Tinggi (px)",
     "ws.scale": "Atau skala (%)",
     "ws.auto": "Otomatis",
+    "ws.mermaidCode": "Kode Mermaid",
+    "ws.fmtSvg": "SVG — tajam di ukuran berapa pun",
+    "ws.pngSize": "Ukuran PNG",
+    "ws.theme": "Tema",
+    "ws.themeDefault": "Default",
+    "ws.themeNeutral": "Netral",
+    "ws.themeDark": "Gelap",
+    "ws.themeForest": "Hutan",
+    "ws.transparent": "Latar belakang transparan",
+    "mermaid.svgOnly": "Jenis diagram ini disimpan sebagai SVG: labelnya tidak bisa diubah menjadi PNG di browser. SVG bisa dibuka di semua browser dan di sebagian besar aplikasi desain dan perkantoran.",
     "ws.keepAspect": "Pertahankan rasio aspek",
     "ws.header": "Baris pertama berisi nama kolom",
     "ws.position": "Posisi",
@@ -158,6 +168,8 @@
     "error.BAD_JSON": "File ini bukan JSON yang valid. Periksa apakah ada koma, tanda kutip, atau tanda kurung yang hilang.",
     "error.BAD_JSON_AT": "File ini bukan JSON yang valid: ada masalah di sekitar baris {line}, kolom {column}. Periksa apakah ada koma, tanda kutip, atau tanda kurung yang hilang.",
     "error.SHEET_TOO_BIG": "Itu melebihi kapasitas satu sheet Excel (1.048.576 baris dan 16.384 kolom). Pecah data menjadi file yang lebih kecil.",
+    "error.NO_DIAGRAM": "Tempel kode Mermaid Anda, atau pilih file .mmd atau .md.",
+    "error.BAD_DIAGRAM": "Kode diagram ada kesalahan: {detail}",
     "error.ENGINE_FAILED": "Mesin PDF berhenti secara tak terduga — file mungkin terlalu besar untuk perangkat ini.",
     "warning.BOOKMARKS_DROPPED": "Bookmark dari file kedua dan seterusnya tidak dibawa. Bookmark file pertama tetap disimpan.",
     "warning.BOOKMARKS_BROKEN": "Beberapa bookmark mengarah ke halaman yang sudah dihapus, sehingga tidak lagi mengarah ke mana pun.",
@@ -1231,6 +1243,45 @@
         "buka file json di excel",
         "respons api ke spreadsheet",
         "json bersarang ke excel"
+      ]
+    },
+    "mermaid-to-image": {
+      "name": "Mermaid ke Gambar",
+      "summary": "Ubah kode diagram Mermaid menjadi PNG atau SVG.",
+      "action": "Buat gambar",
+      "title": "Mermaid ke PNG & SVG Gratis — Diagram ke Gambar | Fizzdoc",
+      "description": "Ubah kode Mermaid menjadi PNG atau SVG yang tajam secara gratis di browser: flowchart, sequence, class, dan diagram Gantt. Tanpa upload.",
+      "h1": "Konversi Mermaid ke PNG atau SVG",
+      "lede": "Tempel kode Mermaid dan dapatkan gambar untuk slide, dokumen, file README, atau chat. Flowchart, sequence, class, state, ER, dan diagram Gantt digambar langsung di perangkat Anda, dan Anda bisa melihat hasilnya sebelum mengunduh.",
+      "steps": [
+        "Tempel kode Mermaid Anda, atau pilih file .mmd atau .md.",
+        "Pilih PNG atau SVG, ukuran, dan tema.",
+        "Klik “Buat gambar”, periksa pratinjau, lalu unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Diagram apa yang didukung?",
+          "Semua yang bisa digambar Mermaid, termasuk flowchart, sequence, class, state, entity-relationship, Gantt, pie, mind map, timeline, dan Git graph. Jika kode ada kesalahan, pesan dari Mermaid sendiri akan memberi tahu apa yang perlu diperbaiki."
+        ],
+        [
+          "PNG atau SVG?",
+          "SVG tetap tajam di ukuran berapa pun dan terbaik untuk situs web serta alat desain. PNG berfungsi di mana saja, termasuk Word, PowerPoint, dan aplikasi chat; pilih 2× atau 4× untuk slide dan cetakan yang tajam."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "Mermaid ke PNG",
+        "Mermaid ke SVG online gratis",
+        "ekspor diagram Mermaid jadi gambar",
+        "flowchart Mermaid ke gambar",
+        "alternatif Mermaid live editor"
       ]
     },
     "compress-image": {

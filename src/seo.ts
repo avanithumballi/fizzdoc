@@ -100,6 +100,7 @@ const ICON_PATHS: Record<ToolOp, string> = {
   'csv-to-excel': CONVERT,
   'excel-to-json': CONVERT,
   'json-to-excel': CONVERT,
+  'mermaid-image': '<rect x="3" y="3" width="7" height="6" rx="1"/><rect x="14" y="15" width="7" height="6" rx="1"/><path d="M6.5 9v3.5a2 2 0 0 0 2 2H14"/><path d="M17.5 15v-2.5a2 2 0 0 0-2-2H10"/>',
   'text-to-pdf': CONVERT,
   'pdf-to-text': '<path d="M4 6h16M4 12h16M4 18h10"/>',
   'image-convert': '<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/>',
@@ -190,6 +191,11 @@ function input(c: Copy, tool: Tool) {
   return { accept, choose, multiple };
 }
 
+// Shown in the Mermaid box so the page works straight away; replaced by the user's own code.
+const MERMAID_SAMPLE = `flowchart LR
+    A[Your file] --> B{Fizzdoc}
+    B -->|PDF, images, audio| C[Processed in your browser]
+    C --> D[Saved on your device]`;
 const option = (value: string, label: string, selected = false) => `<option value="${value}"${selected ? ' selected' : ''}>${esc(label)}</option>`;
 const FORMAT_SELECT = (c: Copy, selected: string) =>
   `<label>${esc(c.t('ws.saveAs'))}<select name="format">${(
@@ -212,6 +218,12 @@ function optionsHtml(c: Copy, tool: Tool) {
   if (tool.op === 'redact-pdf' || tool.op === 'scan-pdf')
     return `<label>${esc(c.t('ws.quality'))}<select name="dpi">${option('150', c.t('ws.dpiStandard'))}${option('300', c.t('ws.dpiHigh'))}</select></label>
     <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>`;
+  if (tool.op === 'mermaid-image')
+    return `<label class="code">${esc(c.t('ws.mermaidCode'))}<textarea name="code" rows="9" spellcheck="false" autocapitalize="off" autocomplete="off">${esc(MERMAID_SAMPLE)}</textarea></label>
+    <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('png', c.t('ws.fmtPng'))}${option('svg', c.t('ws.fmtSvg'))}</select></label>
+    <label>${esc(c.t('ws.pngSize'))}<select name="scale">${option('1', '1×')}${option('2', '2×', true)}${option('4', '4×')}</select></label>
+    <label>${esc(c.t('ws.theme'))}<select name="theme">${(['default', 'neutral', 'dark', 'forest'] as const).map((th) => option(th, c.t(`ws.theme${th[0].toUpperCase()}${th.slice(1)}` as UiKey))).join('')}</select></label>
+    <label class="check"><input name="transparent" type="checkbox"> ${esc(c.t('ws.transparent'))}</label>`;
   if (tool.op === 'excel-to-json') return `<label class="check"><input name="header" type="checkbox" checked> ${esc(c.t('ws.header'))}</label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
     return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
@@ -630,6 +642,7 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 - Someone needs a photo or signature under a size limit such as 20 KB, 50 KB or 100 KB for an exam, job or government form, or wants to compress, resize or convert images (JPG, PNG, WebP) without uploading them.
 - Someone wants to cut, trim or join MP3 or M4A audio without re-encoding it and without installing an app.
 - Someone needs to convert Word, Excel, PowerPoint, CSV, Markdown or text files, clean their hidden metadata or pull out their images, including files downloaded from Google Docs, Sheets and Slides.
+- Someone needs to turn a spreadsheet into JSON for code or an API, open a JSON file in Excel, or export a Mermaid diagram as a PNG or SVG, without pasting company data into an online converter.
 - Someone is on a work or school device where uploading files to third-party sites is not allowed, or on a phone with no app installed.
 - Someone wants a free tool with no account, no watermark, no daily limit and no ads, in their own language.
 
