@@ -94,6 +94,7 @@
     "ws.scale": "Veya ölçek (%)",
     "ws.auto": "Otomatik",
     "ws.keepAspect": "En boy oranını koru",
+    "ws.header": "İlk satır sütun adlarını içerir",
     "ws.position": "Konum",
     "ws.bottomCenter": "Alt orta",
     "ws.bottomRight": "Sağ alt",
@@ -154,6 +155,9 @@
     "error.TOO_LARGE": "Bu boyut tarayıcıda oluşturmak için çok büyük (100 megapikselden fazla). Daha küçük bir boyut seçin.",
     "error.NO_TEXT": "Bu PDF’de çıkarılacak metin yok — muhtemelen taranmış bir görüntü. Önce OCR PDF çalıştırın, ardından tekrar deneyin.",
     "error.NO_WATERMARK": "Filigran metnini yazın (harfler, rakamlar ve yaygın simgeler).",
+    "error.BAD_JSON": "Bu dosya geçerli bir JSON değil. Eksik virgül, tırnak veya parantez olup olmadığını kontrol edin.",
+    "error.BAD_JSON_AT": "Bu dosya geçerli bir JSON değil: {line}. satır, {column}. sütun civarında bir sorun var. Eksik virgül, tırnak veya parantez olup olmadığını kontrol edin.",
+    "error.SHEET_TOO_BIG": "Bu, tek bir Excel sayfasının alabileceğinden fazla (1.048.576 satır ve 16.384 sütun). Verileri daha küçük dosyalara bölün.",
     "error.ENGINE_FAILED": "PDF motoru beklenmedik şekilde durdu — dosya bu cihaz için çok büyük olabilir.",
     "warning.BOOKMARKS_DROPPED": "İkinci ve sonraki dosyalardaki yer imleri aktarılmadı. İlk dosyanın yer imleri korundu.",
     "warning.BOOKMARKS_BROKEN": "Bazı yer imleri kaldırılan sayfalara işaret ediyordu, bu yüzden artık hiçbir yere gitmiyorlar.",
@@ -1149,6 +1153,84 @@
         "csv'de baştaki sıfırları koruma",
         "csv'yi tabloya çevirme",
         "telefonda csv'den excel'e"
+      ]
+    },
+    "excel-to-json": {
+      "name": "Excel'den JSON'a",
+      "summary": "Tablo satırlarını temiz JSON nesnelerine dönüştürün.",
+      "action": "JSON'a Dönüştür",
+      "title": "Excel'den JSON'a Ücretsiz — XLSX'ten JSON'a | Fizzdoc",
+      "description": "Excel veya Google E-Tablolar dosyasını tarayıcınızda ücretsiz JSON'a dönüştürün. Her satır, başlıkları anahtar olan bir nesne olur. Hiçbir şey yüklenmez.",
+      "h1": "Excel'i JSON'a dönüştürün",
+      "lede": "Bir tabloyu API, veritabanı başlangıç verisi veya kodunuz için yapılandırılmış JSON'a çevirin. Her satır sütun adlarını anahtar alan bir nesne olur, sayılar ile doğru/yanlış değerleri türünü korur ve her sayfa dahil edilir.",
+      "steps": [
+        "Bir .xlsx dosyası ekleyin (Excel veya Google E-Tablolar'dan).",
+        "Nesne elde etmek için “İlk satır sütun adlarını içerir” işaretli kalsın, düz satırlar için işareti kaldırın.",
+        "“JSON'a Dönüştür”e tıklayın ve .json dosyasını indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "JSON nasıl görünür?",
+          "Her satır, {\"Name\": \"Asha\", \"Age\": 31} gibi bir nesne olur. Birden çok sayfalı bir çalışma kitabı, her sayfa için bir anahtar içeren tek bir nesne olur. Boş hücreler null olur, tarihler 2024-05-01 gibi metne dönüşür ve TRUE/FALSE değerleri true/false olur."
+        ],
+        [
+          "Formüllere ne olur?",
+          "Her hücrenin en son hesaplanan değeri, yani Excel'in gösterdiği değer dışa aktarılır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "excel'den json'a",
+        "xlsx'i json'a çevirme",
+        "google e-tablolar'ı json'a çevirme",
+        "api için tablodan json'a",
+        "başlıklı excel'den json'a"
+      ]
+    },
+    "json-to-excel": {
+      "name": "JSON'dan Excel'e",
+      "summary": "JSON'ı başlık satırlı bir tabloya dönüştürün.",
+      "action": "Excel'e Dönüştür",
+      "title": "JSON'dan Excel'e Ücretsiz — JSON'dan XLSX'e | Fizzdoc",
+      "description": "JSON'u tarayıcınızda ücretsiz bir Excel .xlsx dosyasına dönüştürün. Nesneler satır, anahtarlar sütun başlığı olur, iç içe alanlar düzleşir. Yükleme yok.",
+      "h1": "JSON'u Excel'e dönüştürün",
+      "lede": "API yanıtlarını, dışa aktarımları ve veri dosyalarını gerçek bir tablo olarak açın. Her nesne bir satır, her anahtar kalın bir sütun başlığı olur; iç içe alanlar address.city gibi sütunlara dönüşür, listelerden oluşan bir nesne ise liste başına bir sayfa olur.",
+      "steps": [
+        "Bir .json dosyası ekleyin.",
+        "“Excel'e Dönüştür”e tıklayın.",
+        ".xlsx dosyasını indirin ve Excel, Google E-Tablolar veya Numbers'ta açın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi JSON yapıları çalışır?",
+          "Nesne listesi (en yaygını), liste listesi, tek bir nesne ya da değerleri liste olan bir nesne; bu, {\"Customers\": [...], \"Orders\": [...]} gibi liste başına bir sayfa olur."
+        ],
+        [
+          "İç içe verilere ne olur?",
+          "İç içe nesneler, address.city gibi noktayla birleştirilmiş sütunlar olur. Bir kayıt içindeki listeler tek bir hücrede JSON metni olarak korunur, böylece hiçbir şey kaybolmaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "json'dan excel'e",
+        "json'dan xlsx'e ücretsiz",
+        "json dosyasını excel'de açma",
+        "api yanıtından tabloya",
+        "iç içe json'dan excel'e"
       ]
     },
     "compress-image": {

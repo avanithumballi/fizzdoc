@@ -94,6 +94,7 @@
     "ws.scale": "Atau skala (%)",
     "ws.auto": "Otomatis",
     "ws.keepAspect": "Pertahankan rasio aspek",
+    "ws.header": "Baris pertama berisi nama kolom",
     "ws.position": "Posisi",
     "ws.bottomCenter": "Tengah bawah",
     "ws.bottomRight": "Kanan bawah",
@@ -154,6 +155,9 @@
     "error.TOO_LARGE": "Ukuran itu terlalu besar untuk dibuat di browser (lebih dari 100 megapiksel). Pilih ukuran yang lebih kecil.",
     "error.NO_TEXT": "PDF ini tidak memiliki teks untuk diekstrak — kemungkinan ini hasil pindaian gambar. Jalankan OCR PDF dulu, lalu coba lagi.",
     "error.NO_WATERMARK": "Masukkan teks watermark (huruf, angka, dan simbol umum).",
+    "error.BAD_JSON": "File ini bukan JSON yang valid. Periksa apakah ada koma, tanda kutip, atau tanda kurung yang hilang.",
+    "error.BAD_JSON_AT": "File ini bukan JSON yang valid: ada masalah di sekitar baris {line}, kolom {column}. Periksa apakah ada koma, tanda kutip, atau tanda kurung yang hilang.",
+    "error.SHEET_TOO_BIG": "Itu melebihi kapasitas satu sheet Excel (1.048.576 baris dan 16.384 kolom). Pecah data menjadi file yang lebih kecil.",
     "error.ENGINE_FAILED": "Mesin PDF berhenti secara tak terduga — file mungkin terlalu besar untuk perangkat ini.",
     "warning.BOOKMARKS_DROPPED": "Bookmark dari file kedua dan seterusnya tidak dibawa. Bookmark file pertama tetap disimpan.",
     "warning.BOOKMARKS_BROKEN": "Beberapa bookmark mengarah ke halaman yang sudah dihapus, sehingga tidak lagi mengarah ke mana pun.",
@@ -1149,6 +1153,84 @@
         "pertahankan angka nol di depan csv",
         "ubah csv jadi spreadsheet",
         "csv ke excel di hp"
+      ]
+    },
+    "excel-to-json": {
+      "name": "Excel ke JSON",
+      "summary": "Ubah baris spreadsheet menjadi objek JSON yang rapi.",
+      "action": "Konversi ke JSON",
+      "title": "Excel ke JSON Gratis — XLSX ke JSON | Fizzdoc",
+      "description": "Konversi Excel atau Google Sheets ke JSON gratis di browser Anda. Setiap baris menjadi objek dengan judul kolom sebagai kunci. Tanpa upload.",
+      "h1": "Konversi Excel ke JSON",
+      "lede": "Ubah spreadsheet menjadi JSON terstruktur untuk API, seed database, atau kode Anda. Setiap baris menjadi objek dengan nama kolom sebagai kunci, angka dan benar/salah tetap mempertahankan tipenya, dan semua sheet ikut disertakan.",
+      "steps": [
+        "Tambahkan satu file .xlsx (dari Excel atau Google Sheets).",
+        "Biarkan “Baris pertama berisi nama kolom” tercentang untuk mendapatkan objek, atau hapus centangnya untuk baris biasa.",
+        "Klik “Konversi ke JSON” lalu unduh file .json-nya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seperti apa bentuk JSON-nya?",
+          "Setiap baris menjadi objek seperti {\"Name\": \"Asha\", \"Age\": 31}. Workbook dengan beberapa sheet menjadi satu objek dengan satu kunci per sheet. Sel kosong menjadi null, tanggal menjadi teks seperti 2024-05-01, dan TRUE/FALSE menjadi true/false."
+        ],
+        [
+          "Bagaimana dengan rumus?",
+          "Nilai terakhir yang dihitung dari setiap sel akan diekspor, yaitu nilai yang ditampilkan Excel."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "excel ke json",
+        "ubah xlsx jadi json",
+        "google sheets ke json",
+        "spreadsheet ke json untuk api",
+        "excel ke json dengan header"
+      ]
+    },
+    "json-to-excel": {
+      "name": "JSON ke Excel",
+      "summary": "Ubah JSON menjadi spreadsheet dengan baris judul.",
+      "action": "Konversi ke Excel",
+      "title": "JSON ke Excel Gratis — JSON ke XLSX | Fizzdoc",
+      "description": "Konversi JSON ke file Excel .xlsx gratis di browser Anda. Objek menjadi baris, kunci menjadi judul kolom, field bersarang diratakan. Tanpa upload.",
+      "h1": "Konversi JSON ke Excel",
+      "lede": "Buka respons API, hasil ekspor, dan file data sebagai spreadsheet sungguhan. Setiap objek menjadi baris dan setiap kunci menjadi judul kolom tebal; field bersarang menjadi kolom seperti address.city, dan objek berisi daftar menjadi satu sheet per daftar.",
+      "steps": [
+        "Tambahkan satu file .json.",
+        "Klik “Konversi ke Excel”.",
+        "Unduh file .xlsx dan buka di Excel, Google Sheets, atau Numbers."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bentuk JSON apa yang didukung?",
+          "Daftar objek (paling umum), daftar berisi daftar, satu objek tunggal, atau objek yang nilainya berupa daftar, yang menjadi satu sheet per daftar, seperti {\"Customers\": [...], \"Orders\": [...]}."
+        ],
+        [
+          "Bagaimana dengan data bersarang?",
+          "Objek bersarang menjadi kolom yang digabung dengan titik, seperti address.city. Daftar di dalam satu record disimpan sebagai teks JSON dalam satu sel, sehingga tidak ada yang hilang."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "json ke excel",
+        "json ke xlsx gratis",
+        "buka file json di excel",
+        "respons api ke spreadsheet",
+        "json bersarang ke excel"
       ]
     },
     "compress-image": {

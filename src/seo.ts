@@ -98,6 +98,8 @@ const ICON_PATHS: Record<ToolOp, string> = {
   'word-to-pdf': CONVERT,
   'excel-to-csv': CONVERT,
   'csv-to-excel': CONVERT,
+  'excel-to-json': CONVERT,
+  'json-to-excel': CONVERT,
   'text-to-pdf': CONVERT,
   'pdf-to-text': '<path d="M4 6h16M4 12h16M4 18h10"/>',
   'image-convert': '<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/>',
@@ -210,6 +212,7 @@ function optionsHtml(c: Copy, tool: Tool) {
   if (tool.op === 'redact-pdf' || tool.op === 'scan-pdf')
     return `<label>${esc(c.t('ws.quality'))}<select name="dpi">${option('150', c.t('ws.dpiStandard'))}${option('300', c.t('ws.dpiHigh'))}</select></label>
     <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>`;
+  if (tool.op === 'excel-to-json') return `<label class="check"><input name="header" type="checkbox" checked> ${esc(c.t('ws.header'))}</label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
     return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
   if (mode === 'compress') {

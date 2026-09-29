@@ -588,7 +588,17 @@ const toCsv = (grid: string[][]) => grid.map((row) => row.map(csvField).join(','
 
 const sanitizeSheetName = (name: string) => name.replace(/[\\/:*?"<>|[\]]/g, '_').trim() || 'Sheet';
 
-export async function xlsxToCsv(file: File): Promise<Output> {
+/** A cell's value as JSON sees it: numbers stay numbers, dates become ISO text, empty is null. */
+export type CellValue = string | number | boolean | null;
+
+interface Workbook {
+  sheets: { name: string; rows: (RawCell | undefined)[][] }[];
+  /** The cell as CSV writes it: Excel's stored text, TRUE/FALSE, ISO dates. */
+  text(cell: RawCell | undefined): string;
+  value(cell: RawCell | undefined): CellValue;
+}
+
+async function readWorkbook(file: File): Promise<Workbook> {
   const entries = openZip(await bytes(file));
   const workbookXml = entries['xl/workbook.xml'] ? strFromU8(entries['xl/workbook.xml']) : undefined;
   if (!workbookXml) throw new LocalError('NOT_OFFICE');
@@ -607,20 +617,29 @@ export async function xlsxToCsv(file: File): Promise<Output> {
   const sharedStrings = parseSharedStrings(entries['xl/sharedStrings.xml'] ? strFromU8(entries['xl/sharedStrings.xml']) : undefined);
   const isDate = parseStyles(entries['xl/styles.xml'] ? strFromU8(entries['xl/styles.xml']) : undefined);
 
-  const cellText = (cell: RawCell | undefined): string => {
+  const dateText = (cell: RawCell) => {
+    const fmt = isDate(cell.style);
+    const num = Number(cell.value);
+    return fmt.isDate && cell.value !== '' && !Number.isNaN(num) ? excelSerialToIso(num, date1904, fmt.withTime) : undefined;
+  };
+  const text = (cell: RawCell | undefined): string => {
     if (!cell) return '';
     if (cell.type === 's') return sharedStrings[Number(cell.value)] ?? '';
     if (cell.type === 'b') return cell.value === '1' ? 'TRUE' : 'FALSE';
     if (cell.type === 'e' || cell.type === 'str' || cell.type === 'inlineStr') return cell.value;
-    const fmt = isDate(cell.style);
-    if (fmt.isDate && cell.value !== '') {
-      const num = Number(cell.value);
-      if (!Number.isNaN(num)) return excelSerialToIso(num, date1904, fmt.withTime);
-    }
-    return cell.value;
+    return dateText(cell) ?? cell.value;
+  };
+  const value = (cell: RawCell | undefined): CellValue => {
+    if (!cell || (cell.value === '' && cell.type !== 's')) return null;
+    if (cell.type === 'b') return cell.value === '1';
+    if (cell.type === 's' || cell.type === 'e' || cell.type === 'str' || cell.type === 'inlineStr') return text(cell);
+    const date = dateText(cell);
+    if (date !== undefined) return date;
+    const num = Number(cell.value);
+    return Number.isFinite(num) ? num : cell.value;
   };
 
-  const sheets: { name: string; csv: string; rows: number }[] = [];
+  const sheets: Workbook['sheets'] = [];
   for (const meta of sheetMeta) {
     const path = 'xl/' + (relTargets.get(meta.rid) ?? '');
     const sheetXml = entries[path] ? strFromU8(entries[path]) : undefined;
@@ -650,17 +669,24 @@ export async function xlsxToCsv(file: File): Promise<Output> {
       }
       rows.set(rNum, cellMap);
     }
-    const grid: string[][] = [];
+    const grid: (RawCell | undefined)[][] = [];
     for (let r = 1; r <= maxRow; r++) {
       const cellMap = rows.get(r);
-      const row: string[] = [];
-      for (let c = 0; c <= maxCol; c++) row.push(cellText(cellMap?.get(c)));
-      grid.push(row);
+      grid.push(Array.from({ length: maxCol + 1 }, (_, c) => cellMap?.get(c)));
     }
-    sheets.push({ name: meta.name, csv: toCsv(grid), rows: grid.length });
+    sheets.push({ name: meta.name, rows: grid });
   }
   if (!sheets.length) throw new LocalError('NOT_OFFICE');
+  return { sheets, text, value };
+}
 
+export async function xlsxToCsv(file: File): Promise<Output> {
+  const book = await readWorkbook(file);
+  const sheets = book.sheets.map((sheet) => ({
+    name: sheet.name,
+    csv: toCsv(sheet.rows.map((row) => row.map(book.text))),
+    rows: sheet.rows.length,
+  }));
   const totalRows = sheets.reduce((sum, s) => sum + s.rows, 0);
   const summary = `${plural(sheets.length, 'sheet')} · ${plural(totalRows, 'row')}`;
   if (sheets.length === 1) {
@@ -680,6 +706,123 @@ export async function xlsxToCsv(file: File): Promise<Output> {
     zipped[`${candidate}.csv`] = [strToU8('﻿' + sheet.csv), { level: 6 }];
   }
   return { blob: new Blob([zipSync(zipped) as Uint8Array<ArrayBuffer>], { type: 'application/zip' }), name: `${baseName(file)}-sheets.zip`, summary };
+}
+
+// ---------------------------------------------------------------------------------------------
+// xlsx <-> json
+// ---------------------------------------------------------------------------------------------
+
+type Row = Record<string, CellValue>;
+const isEmptyRow = (row: CellValue[]) => row.every((v) => v === null || v === '');
+
+/** Rows as objects keyed by the first non-empty row. Blank or repeated names get "Column C" / "Name 2". */
+function records(grid: CellValue[][]): Row[] {
+  const rows = grid.filter((row) => !isEmptyRow(row));
+  if (!rows.length) return [];
+  const width = Math.max(...rows.map((row) => row.length));
+  const seen = new Map<string, number>();
+  const keys = Array.from({ length: width }, (_, i) => {
+    const raw = rows[0][i];
+    const name = raw === null || String(raw).trim() === '' ? `Column ${colLetters(i)}` : String(raw).trim();
+    const n = (seen.get(name) ?? 0) + 1;
+    seen.set(name, n);
+    return n === 1 ? name : `${name} ${n}`;
+  });
+  return rows.slice(1).map((row) => Object.fromEntries(keys.map((key, i) => [key, row[i] ?? null])));
+}
+
+/** Every sheet as JSON: an array of row objects (or of arrays), or an object of those when there are several sheets. */
+export async function xlsxToJson(file: File, options: { header?: boolean } = {}): Promise<Output> {
+  const book = await readWorkbook(file);
+  const header = options.header !== false;
+  const used = new Set<string>();
+  let rowCount = 0;
+  const sheets = book.sheets.map((sheet) => {
+    const grid = sheet.rows.map((row) => row.map(book.value));
+    while (grid.length && isEmptyRow(grid[grid.length - 1])) grid.pop();
+    const data = header ? records(grid) : grid;
+    rowCount += data.length;
+    let name = sheet.name;
+    for (let n = 2; used.has(name); n++) name = `${sheet.name} (${n})`;
+    used.add(name);
+    return [name, data] as const;
+  });
+  const json = sheets.length === 1 ? sheets[0][1] : Object.fromEntries(sheets);
+  return {
+    blob: new Blob([JSON.stringify(json, null, 2) + '\n'], { type: 'application/json' }),
+    name: `${baseName(file)}.json`,
+    summary: `${plural(sheets.length, 'sheet')} · ${plural(rowCount, 'row')}`,
+  };
+}
+
+const isPlainObject = (value: unknown): value is Record<string, unknown> =>
+  typeof value === 'object' && value !== null && !Array.isArray(value);
+
+/** A JSON value as one cell: nested arrays and objects are kept as JSON text. */
+const toCell = (value: unknown): CellValue =>
+  value === null || value === undefined
+    ? null
+    : typeof value === 'number'
+      ? Number.isFinite(value) ? value : null
+      : typeof value === 'boolean' || typeof value === 'string'
+        ? value
+        : JSON.stringify(value);
+
+/** {"a": {"b": 1}} becomes {"a.b": 1}, so nested records still fit one row. */
+function flatten(value: unknown, prefix: string, out: Row) {
+  if (isPlainObject(value) && Object.keys(value).length) {
+    for (const [key, inner] of Object.entries(value)) flatten(inner, prefix ? `${prefix}.${key}` : key, out);
+  } else out[prefix || 'value'] = toCell(value);
+  return out;
+}
+
+/** Any JSON value as a sheet: records get a header row, arrays of arrays are kept as rows. */
+function toSheet(data: unknown): { rows: CellValue[][]; header: boolean } {
+  const items = Array.isArray(data) ? data : [data];
+  if (items.length && items.every(Array.isArray)) return { rows: items.map((row: unknown[]) => row.map(toCell)), header: false };
+  const flat = items.map((item) => flatten(isPlainObject(item) ? item : { value: item }, '', {}));
+  const keys: string[] = [];
+  const known = new Set<string>();
+  for (const record of flat) {
+    for (const key of Object.keys(record)) {
+      if (known.has(key)) continue;
+      known.add(key);
+      keys.push(key);
+    }
+  }
+  return { rows: [keys, ...flat.map((record) => keys.map((key) => (key in record ? record[key] : null)))], header: true };
+}
+
+function jsonError(error: unknown, text: string): LocalError {
+  const message = error instanceof Error ? error.message : '';
+  const lineCol = /line (\d+) column (\d+)/i.exec(message);
+  const position = /position (\d+)/i.exec(message);
+  if (lineCol) return new LocalError('BAD_JSON_AT', { line: Number(lineCol[1]), column: Number(lineCol[2]) });
+  if (position) {
+    const before = text.slice(0, Number(position[1])).split('\n');
+    return new LocalError('BAD_JSON_AT', { line: before.length, column: before[before.length - 1].length + 1 });
+  }
+  return new LocalError('BAD_JSON');
+}
+
+/** JSON (an array of records, an array of rows, or an object of those for several sheets) to .xlsx. */
+export async function jsonToXlsx(file: File): Promise<Output> {
+  const text = (await file.text()).replace(/^\uFEFF/, '');
+  let data: unknown;
+  try {
+    data = JSON.parse(text);
+  } catch (error) {
+    throw jsonError(error, text);
+  }
+  // {"Customers": [...], "Orders": [...]} is a workbook; any other object is a single record.
+  const entries = isPlainObject(data) && Object.keys(data).length && Object.values(data).every(Array.isArray) ? Object.entries(data) : [[baseName(file), data] as const];
+  const sheets = entries.map(([name, value]) => ({ name, ...toSheet(value) }));
+  const rows = sheets.reduce((sum, sheet) => sum + sheet.rows.length - (sheet.header ? 1 : 0), 0);
+  return {
+    blob: new Blob([buildXlsx(sheets) as Uint8Array<ArrayBuffer>], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }),
+    name: `${baseName(file)}.xlsx`,
+    summary: `${plural(sheets.length, 'sheet')} · ${plural(rows, 'row')}`,
+  };
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -772,59 +915,77 @@ const isRoundTripNumber = (value: string) => value !== '' && Number.isFinite(Num
 const stripInvalidXmlChars = (value: string) => value.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
 const escapeXml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-export async function csvToXlsx(file: File): Promise<Output> {
-  const raw = (await file.text()).replace(/^﻿/, '');
-  const delimiter = detectDelimiter(raw);
-  const grid = parseCsv(raw, delimiter);
+const MAX_ROWS = 1_048_576;
+const MAX_COLS = 16_384;
+const STYLES = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts><fills count="2"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs></styleSheet>`;
 
-  let maxCols = 0;
-  let rowsXml = '';
-  grid.forEach((row, ri) => {
-    maxCols = Math.max(maxCols, row.length);
-    let cellsXml = '';
-    row.forEach((value, ci) => {
-      if (value === '') return;
-      const ref = `${colLetters(ci)}${ri + 1}`;
-      if (isRoundTripNumber(value)) {
-        cellsXml += `<c r="${ref}"><v>${value}</v></c>`;
-      } else {
-        const clean = stripInvalidXmlChars(value);
-        const preserve = /^\s|\s$|\n/.test(clean) ? ' xml:space="preserve"' : '';
-        cellsXml += `<c r="${ref}" t="inlineStr"><is><t${preserve}>${escapeXml(clean)}</t></is></c>`;
-      }
-    });
-    rowsXml += `<row r="${ri + 1}">${cellsXml}</row>`;
+/** Writes sheets of values to an .xlsx; a header row is bold and stays in view when scrolling. */
+function buildXlsx(sheets: { name: string; rows: CellValue[][]; header?: boolean }[]): Uint8Array {
+  const used = new Set<string>();
+  const parts = sheets.map((sheet, index) => {
+    if (sheet.rows.length > MAX_ROWS || sheet.rows.some((row) => row.length > MAX_COLS)) throw new LocalError('SHEET_TOO_BIG');
+    const base = sanitizeSheetName(sheet.name).slice(0, 31) || `Sheet${index + 1}`;
+    let name = base;
+    for (let n = 2; used.has(name.toLowerCase()); n++) name = `${base.slice(0, 31 - ` (${n})`.length)} (${n})`;
+    used.add(name.toLowerCase());
+    let maxCols = 0;
+    const rowsXml = sheet.rows
+      .map((row, ri) => {
+        maxCols = Math.max(maxCols, row.length);
+        const style = sheet.header && ri === 0 ? ' s="1"' : '';
+        const cells = row
+          .map((value, ci) => {
+            if (value === null || value === '') return '';
+            const ref = `${colLetters(ci)}${ri + 1}`;
+            if (typeof value === 'number') return `<c r="${ref}"${style}><v>${value}</v></c>`;
+            if (typeof value === 'boolean') return `<c r="${ref}"${style} t="b"><v>${value ? 1 : 0}</v></c>`;
+            const clean = stripInvalidXmlChars(value);
+            const preserve = /^\s|\s$|\n/.test(clean) ? ' xml:space="preserve"' : '';
+            return `<c r="${ref}"${style} t="inlineStr"><is><t${preserve}>${escapeXml(clean)}</t></is></c>`;
+          })
+          .join('');
+        return `<row r="${ri + 1}">${cells}</row>`;
+      })
+      .join('');
+    const dimension = sheet.rows.length ? `A1:${colLetters(Math.max(maxCols - 1, 0))}${sheet.rows.length}` : 'A1';
+    const freeze = sheet.header ? '<sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>' : '';
+    const xml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><dimension ref="${dimension}"/>${freeze}<sheetData>${rowsXml}</sheetData></worksheet>`;
+    return { name, xml };
   });
-  const dimension = grid.length ? `A1:${colLetters(Math.max(maxCols - 1, 0))}${grid.length}` : 'A1';
-  const sheetName = sanitizeSheetName(baseName(file)).slice(0, 31) || 'Sheet1';
 
-  const sheetXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><dimension ref="${dimension}"/><sheetData>${rowsXml}</sheetData></worksheet>`;
-
+  const n = (i: number) => i + 1;
   const contentTypes = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`;
-
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${parts.map((_, i) => `<Override PartName="/xl/worksheets/sheet${n(i)}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')}</Types>`;
   const rootRels = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`;
-
   const workbookXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="${escapeXml(sheetName)}" sheetId="1" r:id="rId1"/></sheets></workbook>`;
-
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>${parts.map((p, i) => `<sheet name="${escapeXml(p.name).replace(/"/g, '&quot;')}" sheetId="${n(i)}" r:id="rId${n(i)}"/>`).join('')}</sheets></workbook>`;
   const workbookRels = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>`;
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${parts.map((_, i) => `<Relationship Id="rId${n(i)}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${n(i)}.xml"/>`).join('')}<Relationship Id="rId${n(parts.length)}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`;
 
   const entries: Zippable = {
     '[Content_Types].xml': strToU8(contentTypes),
     '_rels/.rels': strToU8(rootRels),
     'xl/workbook.xml': strToU8(workbookXml),
     'xl/_rels/workbook.xml.rels': strToU8(workbookRels),
-    'xl/worksheets/sheet1.xml': strToU8(sheetXml),
+    'xl/styles.xml': strToU8(STYLES),
   };
-  const zipped = zipSync(entries, { level: 6 });
-  const rows = grid.length;
+  parts.forEach((p, i) => (entries[`xl/worksheets/sheet${n(i)}.xml`] = strToU8(p.xml)));
+  return zipSync(entries, { level: 6 });
+}
+
+export async function csvToXlsx(file: File): Promise<Output> {
+  const raw = (await file.text()).replace(/^\uFEFF/, '');
+  const grid = parseCsv(raw, detectDelimiter(raw));
+  // Numbers become numbers only when they read back identically, so codes like 007 keep their zeros.
+  const rows = grid.map((row) => row.map((value): CellValue => (isRoundTripNumber(value) ? Number(value) : value)));
   return {
-    blob: new Blob([zipped as Uint8Array<ArrayBuffer>], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }),
+    blob: new Blob([buildXlsx([{ name: baseName(file), rows }]) as Uint8Array<ArrayBuffer>], {
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    }),
     name: `${baseName(file)}.xlsx`,
-    summary: plural(rows, 'row'),
+    summary: plural(grid.length, 'row'),
   };
 }

@@ -94,6 +94,7 @@
     "ws.scale": "Lub skala (%)",
     "ws.auto": "Automatycznie",
     "ws.keepAspect": "Zachowaj proporcje",
+    "ws.header": "Pierwszy wiersz zawiera nazwy kolumn",
     "ws.position": "Pozycja",
     "ws.bottomCenter": "Na dole na środku",
     "ws.bottomRight": "Na dole po prawej",
@@ -154,6 +155,9 @@
     "error.TOO_LARGE": "Ten rozmiar jest za duży, by utworzyć go w przeglądarce (ponad 100 megapikseli). Wybierz mniejszy rozmiar.",
     "error.NO_TEXT": "Ten plik PDF nie zawiera tekstu do wyodrębnienia — to prawdopodobnie zeskanowany obraz. Najpierw uruchom OCR PDF, a potem spróbuj ponownie.",
     "error.NO_WATERMARK": "Wpisz tekst znaku wodnego (litery, cyfry i popularne symbole).",
+    "error.BAD_JSON": "Ten plik nie jest poprawnym JSON-em. Sprawdź, czy nie brakuje przecinka, cudzysłowu lub nawiasu.",
+    "error.BAD_JSON_AT": "Ten plik nie jest poprawnym JSON-em: problem występuje w pobliżu wiersza {line}, kolumny {column}. Sprawdź, czy nie brakuje przecinka, cudzysłowu lub nawiasu.",
+    "error.SHEET_TOO_BIG": "To więcej, niż mieści jeden arkusz Excela (1 048 576 wierszy i 16 384 kolumn). Podziel dane na mniejsze pliki.",
     "error.ENGINE_FAILED": "Silnik PDF nieoczekiwanie się zatrzymał — plik może być zbyt duży dla tego urządzenia.",
     "warning.BOOKMARKS_DROPPED": "Zakładki z drugiego i kolejnych plików nie zostały przeniesione. Zakładki z pierwszego pliku zostały zachowane.",
     "warning.BOOKMARKS_BROKEN": "Niektóre zakładki wskazywały strony, które zostały usunięte, więc teraz nigdzie nie prowadzą.",
@@ -1149,6 +1153,84 @@
         "zachowaj zera wiodące w csv",
         "zamień csv na arkusz kalkulacyjny",
         "csv na excel na telefonie"
+      ]
+    },
+    "excel-to-json": {
+      "name": "Excel na JSON",
+      "summary": "Zamień wiersze arkusza w czyste obiekty JSON.",
+      "action": "Konwertuj na JSON",
+      "title": "Excel na JSON za Darmo — XLSX na JSON | Fizzdoc",
+      "description": "Konwertuj Excel lub Google Sheets na JSON za darmo w przeglądarce. Każdy wiersz staje się obiektem z nagłówkami jako kluczami. Nic nie jest przesyłane.",
+      "h1": "Konwertuj Excel na JSON",
+      "lede": "Zamień arkusz kalkulacyjny w uporządkowany JSON do API, danych startowych bazy lub własnego kodu. Każdy wiersz staje się obiektem z nazwami kolumn jako kluczami, liczby i wartości prawda/fałsz zachowują swój typ, a każdy arkusz jest uwzględniony.",
+      "steps": [
+        "Dodaj jeden plik .xlsx (z Excel albo Google Sheets).",
+        "Zostaw zaznaczone „Pierwszy wiersz zawiera nazwy kolumn”, aby otrzymać obiekty, albo odznacz, aby dostać zwykłe wiersze.",
+        "Kliknij „Konwertuj na JSON” i pobierz plik .json."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak wygląda ten JSON?",
+          "Każdy wiersz staje się obiektem, na przykład {\"Name\": \"Asha\", \"Age\": 31}. Skoroszyt z kilkoma arkuszami staje się jednym obiektem z kluczem dla każdego arkusza. Puste komórki mają wartość null, daty stają się tekstem, np. 2024-05-01, a TRUE/FALSE zamieniają się w true/false."
+        ],
+        [
+          "Co dzieje się z formułami?",
+          "Eksportowana jest ostatnia obliczona wartość każdej komórki, czyli ta, którą pokazuje Excel."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "excel na json",
+        "konwersja xlsx na json",
+        "google sheets na json",
+        "arkusz na json dla api",
+        "excel na json z nagłówkami"
+      ]
+    },
+    "json-to-excel": {
+      "name": "JSON na Excel",
+      "summary": "Zamień JSON w arkusz z wierszem nagłówkowym.",
+      "action": "Konwertuj na Excel",
+      "title": "JSON na Excel za Darmo — JSON na XLSX | Fizzdoc",
+      "description": "Konwertuj JSON na plik Excel .xlsx za darmo w przeglądarce. Obiekty to wiersze, klucze to nagłówki kolumn, zagnieżdżone pola są spłaszczane. Bez przesyłania.",
+      "h1": "Konwertuj JSON na Excel",
+      "lede": "Otwieraj odpowiedzi API, eksporty i pliki z danymi jako prawdziwy arkusz kalkulacyjny. Każdy obiekt staje się wierszem, a każdy klucz pogrubionym nagłówkiem kolumny; zagnieżdżone pola zamieniają się w kolumny takie jak address.city, a obiekt z listami w jeden arkusz na listę.",
+      "steps": [
+        "Dodaj jeden plik .json.",
+        "Kliknij „Konwertuj na Excel”.",
+        "Pobierz plik .xlsx i otwórz go w Excelu, Google Sheets lub Numbers."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie kształty JSON działają?",
+          "Lista obiektów (najczęstszy przypadek), lista list, pojedynczy obiekt albo obiekt, którego wartościami są listy, co daje jeden arkusz na listę, na przykład {\"Customers\": [...], \"Orders\": [...]}."
+        ],
+        [
+          "Co z zagnieżdżonymi danymi?",
+          "Zagnieżdżone obiekty stają się kolumnami połączonymi kropkami, np. address.city. Listy wewnątrz rekordu są zachowane jako tekst JSON w jednej komórce, więc nic nie ginie."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "json na excel",
+        "json na xlsx za darmo",
+        "otwórz plik json w excelu",
+        "odpowiedź api na arkusz",
+        "zagnieżdżony json na excel"
       ]
     },
     "compress-image": {

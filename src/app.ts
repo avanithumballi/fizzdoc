@@ -18,7 +18,7 @@ type LocalJob = (files: File[], options: Options) => Promise<Output | Printable>
 
 type Failure = ErrorCode | LocalError['code'] | 'ENGINE_FAILED' | 'PASSWORDS_DIFFER';
 
-const errorText = (code: Failure) => t(`error.${code}` as UiKey);
+const errorText = (code: Failure, vars?: Record<string, string | number>) => t(`error.${code}` as UiKey, vars);
 
 const SUFFIX: Record<Op, string> = {
   merge: 'merged',
@@ -135,6 +135,8 @@ function setUp(op: ToolOp) {
     'text-to-pdf': async (f) => (await import('./engine/convert')).textToHtml(f[0]),
     'excel-to-csv': async (f) => (await import('./engine/convert')).xlsxToCsv(f[0]),
     'csv-to-excel': async (f) => (await import('./engine/convert')).csvToXlsx(f[0]),
+    'excel-to-json': async (f, o) => (await import('./engine/convert')).xlsxToJson(f[0], { header: o.header !== 'false' }),
+    'json-to-excel': async (f) => (await import('./engine/convert')).jsonToXlsx(f[0]),
     'word-to-pdf': async (f) => (await import('./engine/office')).docxToHtml(f[0]),
     'pdf-to-word': async (f) => (await import('./engine/office')).pdfToDocx(f[0]),
     'pdf-to-powerpoint': async (f) => (await import('./engine/office')).pdfToPptx(f[0]),
@@ -188,7 +190,7 @@ function setUp(op: ToolOp) {
   function fail(error: unknown) {
     const code = (error as LocalError).code as Failure | undefined;
     if (!code) console.error(error); // unexpected: keep the details for bug reports
-    say(errorText(code && `error.${code}` in UI ? code : 'PROCESSING_FAILED'), 'error');
+    say(errorText(code && `error.${code}` in UI ? code : 'PROCESSING_FAILED', (error as LocalError).vars), 'error');
   }
 
   const options = (): Options =>

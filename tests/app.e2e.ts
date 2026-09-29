@@ -356,6 +356,36 @@ test('converts between Excel and CSV', async ({ page }) => {
   expect(csv.bytes.toString('utf8')).toContain('007,"Smith, Jane",12.5');
 });
 
+test('converts JSON to Excel and back, and points at broken JSON', async ({ page, baseURL }) => {
+  const seen = watch(page);
+  const records = [{ id: 1, name: 'Asha', address: { city: 'Pune' } }, { id: 2, name: 'Ben', active: true }];
+  await page.goto('/json-to-excel/');
+  await page.locator('#file-input').setInputFiles({ name: 'people.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(records)) });
+  await page.getByRole('button', { name: 'Convert to Excel' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  const xlsx = await downloadBytes(page);
+  expect(xlsx.name).toBe('people.xlsx');
+
+  await page.goto('/excel-to-json/');
+  await expect(page.getByLabel('The first row has the column names')).toBeChecked();
+  await page.locator('#file-input').setInputFiles({ name: 'people.xlsx', mimeType: '', buffer: xlsx.bytes });
+  await page.getByRole('button', { name: 'Convert to JSON' }).click();
+  await expect(page.locator('#status')).toContainText('Done');
+  const json = await downloadBytes(page);
+  expect(json.name).toBe('people.json');
+  expect(JSON.parse(json.bytes.toString('utf8'))).toEqual([
+    { id: 1, name: 'Asha', 'address.city': 'Pune', active: null },
+    { id: 2, name: 'Ben', 'address.city': null, active: true },
+  ]);
+
+  await page.goto('/json-to-excel/');
+  await page.locator('#file-input').setInputFiles({ name: 'bad.json', mimeType: 'application/json', buffer: Buffer.from('[\n  {"a": 1},\n  {"b": 2,}\n]') });
+  await page.getByRole('button', { name: 'Convert to Excel' }).click();
+  await expect(page.locator('#status')).toContainText('line 3');
+  expect(seen.violations).toEqual([]);
+  expect(seen.requests.filter((r) => !r.url.startsWith(baseURL!) && !r.url.startsWith('blob:') && !r.url.startsWith('data:'))).toEqual([]);
+});
+
 test('edits PDF text in place and saves on the device', async ({ page, baseURL }) => {
   const seen = watch(page);
   await page.goto('/edit-pdf/');
