@@ -22,6 +22,8 @@ export type ToolOp =
   | 'word-to-pdf'
   | 'excel-to-csv'
   | 'csv-to-excel'
+  | 'excel-to-json'
+  | 'json-to-excel'
   | 'image-convert'
   | 'image-ocr'
   | 'page-numbers'
@@ -715,6 +717,60 @@ TOOLS.push(
     input: { accept: '.csv,.tsv,text/csv' },
   },
   {
+    op: 'excel-to-json',
+    format: 'excel',
+    slug: 'excel-to-json',
+    name: 'Excel to JSON',
+    summary: 'Turn spreadsheet rows into clean JSON objects.',
+    action: 'Convert to JSON',
+    title: 'Excel to JSON Free — XLSX to JSON Converter, No Upload | Fizzdoc',
+    description:
+      'Convert Excel or Google Sheets to structured JSON for free in your browser. Each row becomes an object keyed by the header row. Nothing is uploaded.',
+    h1: 'Convert Excel to JSON',
+    lede: 'Turn a spreadsheet into structured JSON for an API, a database seed or your code. Each row becomes an object keyed by the column names, numbers and true/false keep their types, and every sheet is included.',
+    steps: [
+      'Add one .xlsx file (from Excel or Google Sheets).',
+      'Keep “The first row has the column names” ticked to get objects, or untick it for plain rows.',
+      'Click “Convert to JSON” and download the .json file.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'What does the JSON look like?',
+        'Each row becomes an object such as {"Name": "Asha", "Age": 31}. A workbook with several sheets becomes one object with a key per sheet. Empty cells are null, dates become text like 2024-05-01, and TRUE/FALSE become true/false.',
+      ],
+      ['What happens to formulas?', 'Each cell’s last calculated value is exported, which is the value Excel shows.'],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'json-to-excel',
+    format: 'excel',
+    slug: 'json-to-excel',
+    name: 'JSON to Excel',
+    summary: 'Turn JSON into a spreadsheet with a header row.',
+    action: 'Convert to Excel',
+    title: 'JSON to Excel Free — JSON to XLSX Converter, No Upload | Fizzdoc',
+    description:
+      'Convert JSON to an Excel .xlsx file for free in your browser. Objects become rows, keys become column headers and nested fields are flattened. No upload.',
+    h1: 'Convert JSON to Excel',
+    lede: 'Open API responses, exports and data files as a real spreadsheet. Each object becomes a row and each key a bold column header; nested fields become columns like address.city, and an object of lists becomes one sheet per list.',
+    steps: ['Add one .json file.', 'Click “Convert to Excel”.', 'Download the .xlsx and open it in Excel, Google Sheets or Numbers.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Which JSON shapes work?',
+        'A list of objects (the most common), a list of lists, a single object, or an object whose values are lists, which becomes one sheet per list, such as {"Customers": [...], "Orders": [...]}.',
+      ],
+      [
+        'What happens to nested data?',
+        'Nested objects become columns joined with dots, such as address.city. Lists inside a record are kept as JSON text in one cell, so nothing is lost.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: '.json,application/json' },
+  },
+  {
     op: 'image-convert',
     format: 'image',
     slug: 'compress-image',
@@ -1251,6 +1307,8 @@ const KEYWORDS: Record<string, string[]> = {
     'convert CSV to spreadsheet',
     'CSV to Excel on phone'
   ],
+  'excel-to-json': ['convert Excel to JSON', 'XLSX to JSON array of objects', 'Google Sheets to JSON', 'spreadsheet to JSON for an API', 'Excel to JSON with headers'],
+  'json-to-excel': ['convert JSON to Excel', 'JSON to XLSX online free', 'open a JSON file in Excel', 'API response to spreadsheet', 'nested JSON to Excel'],
   'compress-image': [
     'compress image without losing quality',
     'reduce photo size',
