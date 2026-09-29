@@ -28,6 +28,9 @@
     "type": "git",
     "url": "https://github.com/kingrishabdugar/fizzdoc.git"
   },
+  "workspaces": [
+    "mcp"
+  ],
   "bugs": {
     "url": "https://github.com/kingrishabdugar/fizzdoc/issues"
   },
@@ -40,7 +43,8 @@
     "preview": "vite preview --port 4173 --strictPort",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "check": "tsc --noEmit && vitest run"
+    "check": "tsc --noEmit && vitest run",
+    "build:mcp": "npm run build -w mcp"
   },
   "engines": {
     "node": ">=22"
