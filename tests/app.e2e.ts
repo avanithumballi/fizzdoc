@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import { PDFDocument, PDFName } from 'pdf-lib';
 import { PAGES, SITE_LANGS } from '../src/seo';
-import { SITE } from '../src/site';
+import { SITE, TOOLS } from '../src/site';
 
 const file = (name: string) => new URL(`./fixtures/${name}`, import.meta.url).pathname;
 const fixture = (name: string) => file(`${name}.pdf`);
@@ -811,7 +811,12 @@ test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   const sitemap = await (await request.get('/sitemap.xml')).text();
   for (const { path } of PAGES) expect(sitemap).toContain(`<loc>${SITE.url}${path}</loc>`);
   expect(await (await request.get('/robots.txt')).text()).toContain(`Sitemap: ${SITE.url}/sitemap.xml`);
-  expect(await (await request.get('/llms.txt')).text()).toContain('## Tools');
+  const llms = await (await request.get('/llms.txt')).text();
+  expect(llms).toContain('## Tools');
+  // The "why" section sits right after the summary, and states the real tool and language counts.
+  expect(llms.indexOf('## Why Fizzdoc')).toBeLessThan(llms.indexOf('## Tools'));
+  expect(llms).toContain(`${TOOLS.length} tools for PDF, Word, Excel, PowerPoint, images, audio, JSON and Mermaid`);
+  expect(llms).toContain(`In ${SITE_LANGS.length} languages`);
   expect(await (await request.get('/llms-full.txt')).text()).toContain('## Watermark PDF');
   expect(await (await request.get('/robots.txt')).text()).toContain('User-agent: *\nAllow: /');
   expect((await request.get('/og.png')).headers()['content-type']).toBe('image/png');
