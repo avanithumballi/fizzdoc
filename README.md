@@ -126,6 +126,16 @@ Most free online file tools ask you to upload your contract, payslip, bank state
 
 **Languages:** English · हिन्दी · বাংলা · मराठी · தமிழ் · తెలుగు · Español · Português · Français · Deutsch · Italiano · Nederlands · Polski · Türkçe · Bahasa Indonesia · Tiếng Việt — [add yours](CONTRIBUTING.md#-translate-fizzdoc-no-coding-needed).
 
+## 🤖 Use it from AI agents (MCP)
+
+Fizzdoc also runs as a local [MCP](https://modelcontextprotocol.io) server, so Claude Code, Codex, Claude Desktop, Cursor and other AI agents can merge, split, rotate, protect or unlock PDFs and trim, split or join MP3/M4A **on your machine**, with nothing uploaded.
+
+```sh
+claude mcp add fizzdoc -- npx -y fizzdoc-mcp
+```
+
+Setup for Codex and other clients, and the full tool list: [mcp/README.md](mcp/README.md).
+
 ## 🔒 Private by design — verify it yourself
 
 Safe for bank statements, ID cards, payslips, medical records and client files, because:
@@ -241,6 +251,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. First-time contributors 
 - [ ] Layout-faithful PDF → Word (tables, columns, images)
 - [ ] Fill PDF forms
 - [ ] More audio formats (WAV, OPUS, WebM) and conversion to MP3 or M4A
+- [ ] More tools in the MCP server: compress, convert, OCR, redact ([#61](https://github.com/kingrishabdugar/fizzdoc/issues/61))
 - [ ] Remove image background
 
 Vote with a 👍 on the [issues](https://github.com/kingrishabdugar/fizzdoc/issues) you want most.
