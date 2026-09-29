@@ -8,7 +8,7 @@
 <h3 align="center">Free, private tools for PDF, images, audio, Word, Excel and PowerPoint that never see your files.</h3>
 
 <p align="center">
-  54 tools — compress, convert, edit, redact, merge, split, cut, OCR — running <strong>100% in your browser</strong>.<br>
+  56 tools — compress, convert, edit, redact, merge, split, cut, OCR — running <strong>100% in your browser</strong>.<br>
   <strong>No uploads. No sign-up. No watermark. No limits. Free forever. 16 languages.</strong>
 </p>
 
@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="https://fizzdoc.com"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
-  <a href="#-all-54-tools"><strong>All tools</strong></a> &nbsp;·&nbsp;
+  <a href="#-all-56-tools"><strong>All tools</strong></a> &nbsp;·&nbsp;
   <a href="#-how-it-works"><strong>How it works</strong></a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
 </p>
@@ -27,7 +27,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-22c55e?style=flat-square" alt="Apache-2.0 license"></a>
   <img src="https://img.shields.io/badge/bytes%20uploaded-0-16a34a?style=flat-square" alt="0 bytes uploaded">
   <img src="https://img.shields.io/badge/price-free%20forever-16a34a?style=flat-square" alt="Free forever">
-  <img src="https://img.shields.io/badge/tools-54-e5322d?style=flat-square" alt="54 tools">
+  <img src="https://img.shields.io/badge/tools-56-e5322d?style=flat-square" alt="56 tools">
   <img src="https://img.shields.io/badge/languages-16-2f6fdb?style=flat-square" alt="16 languages">
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-8b5cf6?style=flat-square" alt="PRs welcome"></a>
 </p>
@@ -109,10 +109,10 @@ Most free online file tools ask you to upload your contract, payslip, bank state
 | Combine **photos or screenshots into one PDF** | [JPG to PDF](https://fizzdoc.com/jpg-to-pdf/) · [PNG to PDF](https://fizzdoc.com/png-to-pdf/) |
 | Convert **everyday formats**: PNG ↔ JPG, WebP → JPG, Excel ↔ CSV | [Convert Image](https://fizzdoc.com/convert-image/) · [Excel to CSV](https://fizzdoc.com/excel-to-csv/) · [CSV to Excel](https://fizzdoc.com/csv-to-excel/) |
 | Turn a spreadsheet into **JSON for an API**, or open JSON in Excel | [Excel to JSON](https://fizzdoc.com/excel-to-json/) · [JSON to Excel](https://fizzdoc.com/json-to-excel/) |
-| Export a **Mermaid diagram as PNG or SVG** for slides, docs or a README | [Mermaid to Image](https://fizzdoc.com/mermaid-to-image/) |
+| Export a **Mermaid diagram as PNG or SVG** for slides, docs or a README | [Mermaid to PNG](https://fizzdoc.com/mermaid-to-png/) · [Mermaid to SVG](https://fizzdoc.com/mermaid-to-svg/) |
 | **Remove hidden author and company names** before sharing an Office file or PDF | [Word](https://fizzdoc.com/remove-word-metadata/) · [Excel](https://fizzdoc.com/remove-excel-metadata/) · [PowerPoint](https://fizzdoc.com/remove-powerpoint-metadata/) · [PDF](https://fizzdoc.com/remove-pdf-metadata/) |
 
-## 🧰 All 54 tools
+## 🧰 All 56 tools
 
 | Format | Tools |
 |---|---|
@@ -121,7 +121,7 @@ Most free online file tools ask you to upload your contract, payslip, bank state
 | **Word** | [Word → PDF](https://fizzdoc.com/word-to-pdf/) · [Compress](https://fizzdoc.com/compress-word/) · [Remove metadata](https://fizzdoc.com/remove-word-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-word/) |
 | **Excel** | [Excel → CSV](https://fizzdoc.com/excel-to-csv/) · [CSV → Excel](https://fizzdoc.com/csv-to-excel/) · [Excel → JSON](https://fizzdoc.com/excel-to-json/) · [JSON → Excel](https://fizzdoc.com/json-to-excel/) · [Compress](https://fizzdoc.com/compress-excel/) · [Remove metadata](https://fizzdoc.com/remove-excel-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-excel/) |
 | **PowerPoint** | [Compress](https://fizzdoc.com/compress-powerpoint/) · [Remove metadata](https://fizzdoc.com/remove-powerpoint-metadata/) · [Extract images](https://fizzdoc.com/extract-images-from-powerpoint/) |
-| **Images** | [Compress](https://fizzdoc.com/compress-image/) (to [20 KB](https://fizzdoc.com/compress-image-to-20kb/), [50 KB](https://fizzdoc.com/compress-image-to-50kb/), [100 KB](https://fizzdoc.com/compress-image-to-100kb/) for forms) · [Resize](https://fizzdoc.com/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.com/convert-image/) · [PNG → JPG](https://fizzdoc.com/png-to-jpg/) · [JPG → PNG](https://fizzdoc.com/jpg-to-png/) · [WebP → JPG](https://fizzdoc.com/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.com/jpg-to-webp/) · [Image → Text](https://fizzdoc.com/image-to-text/) (select text right on the photo, like Live Text) · [Mermaid → PNG / SVG](https://fizzdoc.com/mermaid-to-image/) (diagrams from code, with a preview) |
+| **Images** | [Compress](https://fizzdoc.com/compress-image/) (to [20 KB](https://fizzdoc.com/compress-image-to-20kb/), [50 KB](https://fizzdoc.com/compress-image-to-50kb/), [100 KB](https://fizzdoc.com/compress-image-to-100kb/) for forms) · [Resize](https://fizzdoc.com/resize-image/) (larger or smaller) · [Convert](https://fizzdoc.com/convert-image/) · [PNG → JPG](https://fizzdoc.com/png-to-jpg/) · [JPG → PNG](https://fizzdoc.com/jpg-to-png/) · [WebP → JPG](https://fizzdoc.com/webp-to-jpg/) · [JPG → WebP](https://fizzdoc.com/jpg-to-webp/) · [Image → Text](https://fizzdoc.com/image-to-text/) (select text right on the photo, like Live Text) · [Mermaid → PNG](https://fizzdoc.com/mermaid-to-png/) · [Mermaid → SVG](https://fizzdoc.com/mermaid-to-svg/) (diagrams from code, with a preview and ready-to-use examples) |
 | **Audio** | [Cut & Split Audio](https://fizzdoc.com/split-audio/) (trim or split an MP3/M4A on a waveform, preview every part) · [Merge Audio](https://fizzdoc.com/merge-audio/) (listen before you download) — no re-encoding, so no quality loss |
 
 **Google Docs, Sheets and Slides** work too: download as .docx / .xlsx / .pptx and use the matching tool. Nothing is sent to Google.
@@ -324,4 +324,4 @@ Familiar interface patterns, such as a grid of tools per format, drag-and-drop u
 
 [Apache-2.0](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). You're free to use, modify and share Fizzdoc, including commercially, as long as you keep the copyright and the [NOTICE](NOTICE) file crediting the original project in every copy or derivative. Fizzdoc stands on the shoulders of the projects listed in [Credits](#-credits) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Product names mentioned in this README are trademarks of their owners and are used only for comparison.
 
-<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF free, PDF to Word, redact PDF, OCR, compress image without losing quality, reduce photo size to 50 KB, image resizer, JPG to PNG, WebP to JPG, cut MP3 online free, merge MP3, audio trimmer, Word to PDF, Excel to CSV, Excel to JSON, JSON to Excel, Mermaid to PNG, remove metadata, iLovePDF alternative, Smallpdf alternative, TinyPNG alternative, private file converter, no upload, free forever, open-source, WebAssembly, client-side.</sub></p>
+<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF free, PDF to Word, redact PDF, OCR, compress image without losing quality, reduce photo size to 50 KB, image resizer, JPG to PNG, WebP to JPG, cut MP3 online free, merge MP3, audio trimmer, Word to PDF, Excel to CSV, Excel to JSON, JSON to Excel, Mermaid to PNG, Mermaid to SVG, Mermaid diagram examples, remove metadata, iLovePDF alternative, Smallpdf alternative, TinyPNG alternative, private file converter, no upload, free forever, open-source, WebAssembly, client-side.</sub></p>
