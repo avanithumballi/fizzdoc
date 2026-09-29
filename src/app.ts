@@ -56,6 +56,9 @@ function setUp(op: ToolOp) {
   const cancelButton = $<HTMLButtonElement>('cancel')!;
   const status = $('status')!;
   const progress = $('progress')!;
+  const report = $('report')!;
+  const reportSpeed = $('report-speed')!;
+  const reportLink = $<HTMLAnchorElement>('report-link')!;
   const reorderHint = $('reorder-hint');
   const result = $('result')!;
   const download = $<HTMLAnchorElement>('download')!;
@@ -99,7 +102,13 @@ function setUp(op: ToolOp) {
   };
   let editor: { file: File; ready: Promise<Editor> } | undefined;
 
-  const progressLabel = (fraction: number) => say(t('app.workingPct', { pct: Math.round(fraction * 100) }));
+  // Real progress, when the job reports it: fills the bar and shows the percentage.
+  const progressLabel = (fraction: number) => {
+    const pct = Math.min(100, Math.round(fraction * 100));
+    progress.dataset.pct = String(pct);
+    progress.style.setProperty('--pct', `${pct}%`);
+    say(t('app.workingPct', { pct }));
+  };
   const baseName = (file: File) => file.name.replace(/\.[^.]+$/, '');
   const number = (value: string | undefined) => (value ? Number(value) : undefined);
   const rasterOptions = (o: Options) => ({
@@ -214,7 +223,36 @@ function setUp(op: ToolOp) {
   const say = (text: string, tone: 'info' | 'error' = 'info') => {
     status.textContent = text;
     status.dataset.tone = tone;
+    if (tone === 'error') report.dataset.tone = 'strong';
   };
+
+  // The report link stands out when a job fails or runs long, and opens a bug report already filled
+  // in with the page, browser and job details. Never the file itself or its name.
+  let started = 0;
+  let slowTimer: ReturnType<typeof setTimeout> | undefined;
+  function startJob() {
+    started = Date.now();
+    delete report.dataset.tone;
+    clearTimeout(slowTimer);
+    slowTimer = setTimeout(() => (report.dataset.tone = 'strong'), 20_000);
+  }
+  reportLink.addEventListener('click', () => {
+    const size = files.reduce((sum, f) => sum + f.size, 0);
+    const details = [
+      files.length ? `Files: ${files.length}, ${formatSize(size)}${files.length === 1 && notes.get(files[0]) ? `, ${notes.get(files[0])}` : ''}` : '',
+      started ? `Time: ${Math.round((Date.now() - started) / 1000)} s${busy() ? ' (still running)' : ''}` : '',
+      status.textContent ? `Message: ${status.textContent}` : '',
+      `Device memory: ${(navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? '?'} GB · CPU cores: ${navigator.hardwareConcurrency ?? '?'}`,
+    ].filter(Boolean);
+    const params = new URLSearchParams({
+      template: 'bug_report.yml',
+      title: `${document.querySelector('h1')?.textContent?.trim() ?? op}: `,
+      tool: location.origin + location.pathname,
+      browser: navigator.userAgent,
+      extra: details.join('\n'),
+    });
+    reportLink.href = `${reportLink.href.split('?')[0]}?${params}`;
+  });
 
   let preview: HTMLAudioElement | HTMLImageElement | undefined;
   function clearResult() {
@@ -270,6 +308,11 @@ function setUp(op: ToolOp) {
     runButton.disabled = busy() || files.length < (op === 'merge' ? 2 : pasted ? 0 : 1);
     cancelButton.hidden = !busy();
     progress.hidden = !busy();
+    if (!busy()) {
+      delete progress.dataset.pct;
+      clearTimeout(slowTimer);
+    }
+    reportSpeed.hidden = !busy();
     if (reorderHint) reorderHint.hidden = files.length < 2 || busy();
     input.disabled = busy();
     drop.classList.toggle('compact', files.length > 0);
@@ -445,6 +488,7 @@ function setUp(op: ToolOp) {
   let localJob = 0;
   async function runLocal(job: LocalJob) {
     say(t('app.working'));
+    startJob();
     localBusy = true;
     const id = ++localJob;
     render();
@@ -485,6 +529,7 @@ function setUp(op: ToolOp) {
     };
     worker = new Worker(new URL('./engine/worker.ts', import.meta.url), { type: 'module' });
     worker.onmessage = async ({ data }: MessageEvent<FromWorker>) => {
+      if (data.type === 'progress') return progressLabel(data.fraction);
       if (data.type !== 'password') return finish(data);
       const answer = await askPassword(data.file, data.attempt);
       worker?.postMessage({ type: 'password', password: answer } satisfies ToWorker);
@@ -495,6 +540,7 @@ function setUp(op: ToolOp) {
     };
     worker.postMessage({ type: 'run', job, files } satisfies ToWorker);
     say(t('app.working'));
+    startJob();
     render();
   }
 

@@ -133,6 +133,8 @@
     "pw.unlock": "Buka Kunci",
     "app.working": "Memproses… file Anda tetap di perangkat ini.",
     "app.workingPct": "Memproses… {pct}% — file Anda tetap di perangkat ini.",
+    "app.deviceSpeed": "Kecepatan tergantung perangkat Anda; file besar di ponsel butuh waktu lebih lama.",
+    "app.report": "Lambat atau tidak berfungsi? Laporkan di GitHub",
     "app.done": "Selesai — {summary}, {size}. Dibuat di perangkat ini.",
     "app.ready": "Siap — pilih “Simpan sebagai PDF” di jendela cetak, lalu klik Simpan. Dibuat di perangkat ini.",
     "app.saveAsPdf": "Simpan sebagai PDF",

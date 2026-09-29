@@ -1,43 +1,52 @@
-name: 🐛 Bug report
-description: A tool gave a wrong result, an error, or behaved unexpectedly.
+name: 🐛 Report a problem
+description: A tool was slow, showed an error, or gave a wrong result.
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting! **Never attach a private document.** If a specific file triggers the bug, a small sample with nothing sensitive in it helps enormously.
+        Thanks for taking the time to report this. It really helps.
+
+        If you came from the **"Report it on GitHub"** link on a tool, the page, browser and job details below are already filled in. Just tell us what happened.
+
+        🔒 **Never attach a private document.** Fizzdoc never sees your files, and neither should this issue. If one file causes the problem, a sample with nothing personal in it is very welcome.
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What went wrong?
+      options:
+        - It was very slow or never finished
+        - It showed an error
+        - The result was wrong or broken
+        - A button or page didn't work
+        - Something else
+    validations:
+      required: true
   - type: input
     id: tool
     attributes:
       label: Tool
       description: Page address or tool name.
-      placeholder: https://fizzdoc.com/compress-pdf/
+      placeholder: https://fizzdoc.com/split-pdf/
     validations:
       required: true
   - type: textarea
     id: what
     attributes:
       label: What happened, and what did you expect?
-      placeholder: I added a 3-page PDF and clicked Compress PDF. It said… I expected…
+      placeholder: I added a 28-page PDF from WhatsApp and tapped Extract pages. It kept working for 5 minutes. I expected it to finish in a few seconds.
     validations:
       required: true
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to reproduce
-      placeholder: |
-        1. Open …
-        2. Add …
-        3. Click …
   - type: input
     id: browser
     attributes:
       label: Browser and device
-      placeholder: Chrome 140 on Windows 11 / Safari on iPhone 15
+      description: Filled in automatically from the tool page. Add the phone or computer model if you know it.
+      placeholder: Chrome 140 on Android, Redmi Note 12 / Safari on iPhone 15
     validations:
       required: true
   - type: textarea
     id: extra
     attributes:
-      label: Anything else?
-      description: Error text from the page, console errors, or a sample file with nothing private in it.
+      label: Job details
+      description: Filled in automatically (file count and size, time taken, message shown). Add anything else that helps, like an error from the page or a screenshot.

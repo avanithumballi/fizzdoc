@@ -133,6 +133,8 @@
     "pw.unlock": "Desbloquear",
     "app.working": "Procesando… tus archivos se quedan en este dispositivo.",
     "app.workingPct": "Procesando… {pct}% — tus archivos se quedan en este dispositivo.",
+    "app.deviceSpeed": "La velocidad depende de tu dispositivo; los archivos grandes tardan más en el móvil.",
+    "app.report": "¿Va lento o no funciona? Avísanos en GitHub",
     "app.done": "Listo — {summary}, {size}. Creado en este dispositivo.",
     "app.ready": "Listo — elige «Guardar como PDF» en la ventana de impresión y pulsa Guardar. Creado en este dispositivo.",
     "app.saveAsPdf": "Guardar como PDF",

@@ -133,6 +133,8 @@
     "pw.unlock": "Déverrouiller",
     "app.working": "Traitement en cours… vos fichiers restent sur cet appareil.",
     "app.workingPct": "Traitement en cours… {pct} % — vos fichiers restent sur cet appareil.",
+    "app.deviceSpeed": "La vitesse dépend de votre appareil ; les gros fichiers prennent plus de temps sur téléphone.",
+    "app.report": "Lent ou ne fonctionne pas ? Signalez-le sur GitHub",
     "app.done": "Terminé — {summary}, {size}. Créé sur cet appareil.",
     "app.ready": "Prêt — choisissez « Enregistrer au format PDF » dans la fenêtre d'impression, puis Enregistrer. Créé sur cet appareil.",
     "app.saveAsPdf": "Enregistrer au format PDF",

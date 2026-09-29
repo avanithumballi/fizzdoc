@@ -317,6 +317,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
     <ul id="warnings" class="warnings"></ul>
     <p class="star-nudge">${esc(c.t('star.nudge')).replace('{link}', `<a href="${SITE.repo}" target="_blank" rel="noopener">${esc(c.t('star.nudgeLink'))}</a>`)}</p>
   </div>
+  <p id="report" class="report"><span id="report-speed" hidden>${esc(c.t('app.deviceSpeed'))} </span><a id="report-link" href="${SITE.repo}/issues/new?template=bug_report.yml" target="_blank" rel="noopener">${esc(c.t('app.report'))}</a></p>
 </section>
 ${tool.format === 'pdf' ? passwordDialog(c) : ''}`;
 }

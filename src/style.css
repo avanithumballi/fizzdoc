@@ -1120,6 +1120,12 @@ dialog input:focus {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   animation: slide 1.1s ease-in-out infinite;
 }
+/* A job that reports its progress fills the bar instead of sliding. */
+.progress[data-pct] span {
+  width: var(--pct);
+  animation: none;
+  transition: width 0.3s ease;
+}
 @keyframes slide {
   from {
     translate: -100% 0;
@@ -1140,6 +1146,19 @@ dialog input:focus {
 }
 .status[data-tone='error'] {
   color: var(--danger);
+}
+.report {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.report a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+.report[data-tone='strong'] {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .result {

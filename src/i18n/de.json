@@ -133,6 +133,8 @@
     "pw.unlock": "Entsperren",
     "app.working": "Wird verarbeitet … Ihre Dateien bleiben auf diesem Gerät.",
     "app.workingPct": "Wird verarbeitet … {pct}% — Ihre Dateien bleiben auf diesem Gerät.",
+    "app.deviceSpeed": "Die Geschwindigkeit hängt von Ihrem Gerät ab; große Dateien dauern auf dem Handy länger.",
+    "app.report": "Langsam oder funktioniert nicht? Auf GitHub melden",
     "app.done": "Fertig — {summary}, {size}. Auf diesem Gerät erstellt.",
     "app.ready": "Bereit — wählen Sie im Druckfenster „Als PDF speichern“ und dann Speichern. Auf diesem Gerät erstellt.",
     "app.saveAsPdf": "Als PDF speichern",
