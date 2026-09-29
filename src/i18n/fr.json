@@ -94,6 +94,7 @@
     "ws.scale": "Ou mise à l'échelle (%)",
     "ws.auto": "Auto",
     "ws.keepAspect": "Conserver les proportions",
+    "ws.header": "La première ligne contient les noms des colonnes",
     "ws.position": "Position",
     "ws.bottomCenter": "Bas au centre",
     "ws.bottomRight": "Bas à droite",
@@ -154,6 +155,9 @@
     "error.TOO_LARGE": "Cette taille est trop grande pour être créée dans un navigateur (plus de 100 mégapixels). Choisissez une taille plus petite.",
     "error.NO_TEXT": "Ce PDF ne contient pas de texte à extraire — c'est probablement une image numérisée. Lancez d'abord OCR PDF, puis réessayez.",
     "error.NO_WATERMARK": "Saisissez le texte du filigrane (lettres, chiffres et symboles courants).",
+    "error.BAD_JSON": "Ce fichier n’est pas un JSON valide. Vérifiez s’il manque une virgule, un guillemet ou un crochet.",
+    "error.BAD_JSON_AT": "Ce fichier n’est pas un JSON valide : il y a un problème près de la ligne {line}, colonne {column}. Vérifiez s’il manque une virgule, un guillemet ou un crochet.",
+    "error.SHEET_TOO_BIG": "C’est plus que ce qu’une feuille Excel peut contenir (1 048 576 lignes et 16 384 colonnes). Répartissez les données dans des fichiers plus petits.",
     "error.ENGINE_FAILED": "Le moteur PDF s'est arrêté de façon inattendue — le fichier est peut-être trop volumineux pour cet appareil.",
     "warning.BOOKMARKS_DROPPED": "Les signets des fichiers suivants n'ont pas été repris. Les signets du premier fichier ont été conservés.",
     "warning.BOOKMARKS_BROKEN": "Certains signets pointaient vers des pages qui ont été supprimées ; ils ne mènent donc plus nulle part.",
@@ -1149,6 +1153,84 @@
         "garder les zéros en début de csv",
         "convertir un csv en tableur",
         "csv en excel depuis le téléphone"
+      ]
+    },
+    "excel-to-json": {
+      "name": "Excel en JSON",
+      "summary": "Transformez les lignes d’un tableur en objets JSON propres.",
+      "action": "Convertir en JSON",
+      "title": "Convertir Excel en JSON Gratuit — XLSX vers JSON | Fizzdoc",
+      "description": "Convertissez Excel ou Google Sheets en JSON gratuitement, dans votre navigateur. Chaque ligne devient un objet avec les en-têtes pour clés. Rien n’est envoyé.",
+      "h1": "Convertir Excel en JSON",
+      "lede": "Transformez un tableur en JSON structuré pour une API, un jeu de données de test ou votre code. Chaque ligne devient un objet dont les clés sont les noms de colonnes, les nombres et les valeurs vrai/faux gardent leur type, et toutes les feuilles sont incluses.",
+      "steps": [
+        "Ajoutez un fichier .xlsx (depuis Excel ou Google Sheets).",
+        "Laissez « La première ligne contient les noms des colonnes » cochée pour obtenir des objets, ou décochez-la pour des lignes simples.",
+        "Cliquez sur « Convertir en JSON » et téléchargez le fichier .json."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "À quoi ressemble le JSON ?",
+          "Chaque ligne devient un objet comme {\"Name\": \"Asha\", \"Age\": 31}. Un classeur de plusieurs feuilles devient un seul objet avec une clé par feuille. Les cellules vides valent null, les dates deviennent du texte comme 2024-05-01 et TRUE/FALSE deviennent true/false."
+        ],
+        [
+          "Que deviennent les formules ?",
+          "La dernière valeur calculée de chaque cellule est exportée, c’est-à-dire celle qu’affiche Excel."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "convertir excel en json",
+        "xlsx vers json tableau d’objets",
+        "google sheets vers json",
+        "tableur vers json pour une API",
+        "excel vers json avec en-têtes"
+      ]
+    },
+    "json-to-excel": {
+      "name": "JSON en Excel",
+      "summary": "Transformez un JSON en tableur avec une ligne d’en-têtes.",
+      "action": "Convertir en Excel",
+      "title": "Convertir JSON en Excel Gratuit — JSON vers XLSX | Fizzdoc",
+      "description": "Convertissez du JSON en fichier Excel .xlsx gratuitement, dans votre navigateur. Objets en lignes, clés en en-têtes, champs imbriqués aplatis. Sans envoi.",
+      "h1": "Convertir JSON en Excel",
+      "lede": "Ouvrez des réponses d’API, des exports et des fichiers de données comme un vrai tableur. Chaque objet devient une ligne et chaque clé un en-tête en gras ; les champs imbriqués deviennent des colonnes comme address.city, et un objet de listes devient une feuille par liste.",
+      "steps": [
+        "Ajoutez un fichier .json.",
+        "Cliquez sur « Convertir en Excel ».",
+        "Téléchargez le .xlsx et ouvrez-le dans Excel, Google Sheets ou Numbers."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quelles structures JSON sont acceptées ?",
+          "Une liste d’objets (le cas le plus courant), une liste de listes, un objet seul, ou un objet dont les valeurs sont des listes, qui devient une feuille par liste, comme {\"Customers\": [...], \"Orders\": [...]}."
+        ],
+        [
+          "Que deviennent les données imbriquées ?",
+          "Les objets imbriqués deviennent des colonnes reliées par des points, comme address.city. Les listes à l’intérieur d’un enregistrement sont conservées en texte JSON dans une seule cellule, rien n’est donc perdu."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "convertir json en excel",
+        "json vers xlsx gratuit",
+        "ouvrir un fichier json dans excel",
+        "réponse d’API vers tableur",
+        "json imbriqué vers excel"
       ]
     },
     "compress-image": {

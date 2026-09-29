@@ -94,6 +94,7 @@
     "ws.scale": "Oppure scala (%)",
     "ws.auto": "Auto",
     "ws.keepAspect": "Mantieni le proporzioni",
+    "ws.header": "La prima riga contiene i nomi delle colonne",
     "ws.position": "Posizione",
     "ws.bottomCenter": "In basso al centro",
     "ws.bottomRight": "In basso a destra",
@@ -154,6 +155,9 @@
     "error.TOO_LARGE": "Questa dimensione è troppo grande da creare nel browser (oltre 100 megapixel). Scegli una dimensione più piccola.",
     "error.NO_TEXT": "Questo PDF non ha testo da estrarre — probabilmente è un'immagine scansionata. Esegui prima OCR PDF, poi riprova.",
     "error.NO_WATERMARK": "Digita il testo della filigrana (lettere, numeri e simboli comuni).",
+    "error.BAD_JSON": "Questo file non è un JSON valido. Controlla se manca una virgola, una virgoletta o una parentesi.",
+    "error.BAD_JSON_AT": "Questo file non è un JSON valido: c’è un problema vicino alla riga {line}, colonna {column}. Controlla se manca una virgola, una virgoletta o una parentesi.",
+    "error.SHEET_TOO_BIG": "È più di quanto possa contenere un foglio Excel (1.048.576 righe e 16.384 colonne). Dividi i dati in file più piccoli.",
     "error.ENGINE_FAILED": "Il motore PDF si è interrotto inaspettatamente — il file potrebbe essere troppo grande per questo dispositivo.",
     "warning.BOOKMARKS_DROPPED": "I segnalibri del secondo file e di quelli successivi non sono stati mantenuti. I segnalibri del primo file sono stati conservati.",
     "warning.BOOKMARKS_BROKEN": "Alcuni segnalibri puntavano a pagine che sono state rimosse, quindi non portano più da nessuna parte.",
@@ -1149,6 +1153,84 @@
         "mantenere gli zeri iniziali nel csv",
         "convertire un csv in foglio di calcolo",
         "csv a excel dal telefono"
+      ]
+    },
+    "excel-to-json": {
+      "name": "Excel in JSON",
+      "summary": "Trasforma le righe di un foglio di calcolo in oggetti JSON puliti.",
+      "action": "Converti in JSON",
+      "title": "Convertire Excel in JSON Gratis — XLSX a JSON | Fizzdoc",
+      "description": "Converti Excel o Google Sheets in JSON strutturato gratis nel browser. Ogni riga diventa un oggetto con le intestazioni come chiavi. Nessun file viene caricato.",
+      "h1": "Convertire Excel in JSON",
+      "lede": "Trasforma un foglio di calcolo in JSON strutturato per un’API, dati di prova per un database o il tuo codice. Ogni riga diventa un oggetto con i nomi delle colonne come chiavi, numeri e vero/falso mantengono il tipo, e tutti i fogli sono inclusi.",
+      "steps": [
+        "Aggiungi un file .xlsx (da Excel o Google Sheets).",
+        "Lascia selezionata “La prima riga contiene i nomi delle colonne” per ottenere oggetti, oppure deselezionala per righe semplici.",
+        "Clicca su “Converti in JSON” e scarica il file .json."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Che aspetto ha il JSON?",
+          "Ogni riga diventa un oggetto come {\"Name\": \"Asha\", \"Age\": 31}. Una cartella di lavoro con più fogli diventa un unico oggetto con una chiave per foglio. Le celle vuote diventano null, le date diventano testo come 2024-05-01 e TRUE/FALSE diventano true/false."
+        ],
+        [
+          "Che cosa succede alle formule?",
+          "Viene esportato l’ultimo valore calcolato di ogni cella, cioè quello che mostra Excel."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "convertire excel in json",
+        "xlsx a json array di oggetti",
+        "google sheets a json",
+        "foglio di calcolo a json per API",
+        "excel a json con intestazioni"
+      ]
+    },
+    "json-to-excel": {
+      "name": "JSON in Excel",
+      "summary": "Trasforma un JSON in un foglio di calcolo con riga di intestazione.",
+      "action": "Converti in Excel",
+      "title": "Convertire JSON in Excel Gratis — JSON a XLSX | Fizzdoc",
+      "description": "Converti JSON in un file Excel .xlsx gratis nel browser. Oggetti in righe, chiavi in intestazioni, campi annidati appiattiti. Nessun upload.",
+      "h1": "Convertire JSON in Excel",
+      "lede": "Apri risposte API, esportazioni e file di dati come un vero foglio di calcolo. Ogni oggetto diventa una riga e ogni chiave un’intestazione in grassetto; i campi annidati diventano colonne come address.city, e un oggetto di liste diventa un foglio per lista.",
+      "steps": [
+        "Aggiungi un file .json.",
+        "Clicca su “Converti in Excel”.",
+        "Scarica il .xlsx e aprilo in Excel, Google Sheets o Numbers."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quali strutture JSON funzionano?",
+          "Una lista di oggetti (la più comune), una lista di liste, un singolo oggetto, o un oggetto i cui valori sono liste, che diventa un foglio per lista, come {\"Customers\": [...], \"Orders\": [...]}."
+        ],
+        [
+          "Che cosa succede ai dati annidati?",
+          "Gli oggetti annidati diventano colonne unite da punti, come address.city. Le liste dentro un record restano come testo JSON in una sola cella, così non si perde nulla."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "convertire json in excel",
+        "json a xlsx gratis",
+        "aprire un file json in excel",
+        "risposta API a foglio di calcolo",
+        "json annidato a excel"
       ]
     },
     "compress-image": {

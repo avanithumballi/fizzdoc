@@ -94,6 +94,7 @@
     "ws.scale": "Oder Skalierung (%)",
     "ws.auto": "Automatisch",
     "ws.keepAspect": "Seitenverhältnis beibehalten",
+    "ws.header": "Die erste Zeile enthält die Spaltennamen",
     "ws.position": "Position",
     "ws.bottomCenter": "Unten mittig",
     "ws.bottomRight": "Unten rechts",
@@ -154,6 +155,9 @@
     "error.TOO_LARGE": "Diese Größe ist zu groß für den Browser (über 100 Megapixel). Wählen Sie eine kleinere Größe.",
     "error.NO_TEXT": "Dieses PDF enthält keinen extrahierbaren Text — es handelt sich wahrscheinlich um ein gescanntes Bild. Führen Sie zuerst PDF OCR aus und versuchen Sie es dann erneut.",
     "error.NO_WATERMARK": "Geben Sie den Wasserzeichentext ein (Buchstaben, Zahlen und gängige Symbole).",
+    "error.BAD_JSON": "Diese Datei ist kein gültiges JSON. Prüfe, ob ein Komma, Anführungszeichen oder eine Klammer fehlt.",
+    "error.BAD_JSON_AT": "Diese Datei ist kein gültiges JSON: In der Nähe von Zeile {line}, Spalte {column} gibt es ein Problem. Prüfe, ob ein Komma, Anführungszeichen oder eine Klammer fehlt.",
+    "error.SHEET_TOO_BIG": "Das ist mehr, als in ein Excel-Tabellenblatt passt (1.048.576 Zeilen und 16.384 Spalten). Teile die Daten auf kleinere Dateien auf.",
     "error.ENGINE_FAILED": "Die PDF-Engine wurde unerwartet beendet — die Datei ist für dieses Gerät möglicherweise zu groß.",
     "warning.BOOKMARKS_DROPPED": "Lesezeichen aus der zweiten und den weiteren Dateien wurden nicht übernommen. Die Lesezeichen der ersten Datei wurden beibehalten.",
     "warning.BOOKMARKS_BROKEN": "Einige Lesezeichen verwiesen auf entfernte Seiten und führen daher nirgendwohin mehr.",
@@ -1149,6 +1153,84 @@
         "führende nullen in csv behalten",
         "csv in eine tabelle umwandeln",
         "csv zu excel am handy"
+      ]
+    },
+    "excel-to-json": {
+      "name": "Excel in JSON",
+      "summary": "Tabellenzeilen in saubere JSON-Objekte umwandeln.",
+      "action": "In JSON umwandeln",
+      "title": "Excel in JSON Umwandeln Kostenlos — XLSX zu JSON | Fizzdoc",
+      "description": "Excel oder Google Sheets kostenlos im Browser in strukturiertes JSON umwandeln. Jede Zeile wird zu einem Objekt mit der Kopfzeile als Schlüssel. Kein Upload.",
+      "h1": "Excel in JSON umwandeln",
+      "lede": "Eine Tabelle in strukturiertes JSON für eine API, Testdaten einer Datenbank oder deinen Code umwandeln. Jede Zeile wird zu einem Objekt mit den Spaltennamen als Schlüssel, Zahlen und wahr/falsch behalten ihren Typ, und alle Tabellenblätter sind enthalten.",
+      "steps": [
+        "Eine .xlsx-Datei hinzufügen (aus Excel oder Google Sheets).",
+        "„Die erste Zeile enthält die Spaltennamen“ angehakt lassen, um Objekte zu erhalten, oder abwählen für einfache Zeilen.",
+        "Auf „In JSON umwandeln“ klicken und die .json-Datei herunterladen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie sieht das JSON aus?",
+          "Jede Zeile wird zu einem Objekt wie {\"Name\": \"Asha\", \"Age\": 31}. Eine Arbeitsmappe mit mehreren Tabellenblättern wird zu einem Objekt mit einem Schlüssel pro Blatt. Leere Zellen werden zu null, Datumswerte zu Text wie 2024-05-01, und TRUE/FALSE werden zu true/false."
+        ],
+        [
+          "Was passiert mit Formeln?",
+          "Exportiert wird der zuletzt berechnete Wert jeder Zelle, also der Wert, den Excel anzeigt."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "excel in json umwandeln",
+        "xlsx zu json array von objekten",
+        "google sheets zu json",
+        "tabelle zu json für eine API",
+        "excel zu json mit kopfzeile"
+      ]
+    },
+    "json-to-excel": {
+      "name": "JSON in Excel",
+      "summary": "JSON in eine Tabelle mit Kopfzeile umwandeln.",
+      "action": "In Excel umwandeln",
+      "title": "JSON in Excel Umwandeln Kostenlos — JSON zu XLSX | Fizzdoc",
+      "description": "JSON kostenlos im Browser in eine Excel-.xlsx-Datei umwandeln. Objekte werden zu Zeilen, Schlüssel zu Spaltenköpfen, verschachtelte Felder flach. Kein Upload.",
+      "h1": "JSON in Excel umwandeln",
+      "lede": "API-Antworten, Exporte und Datendateien als richtige Tabelle öffnen. Jedes Objekt wird zu einer Zeile und jeder Schlüssel zu einem fetten Spaltenkopf; verschachtelte Felder werden zu Spalten wie address.city, und ein Objekt mit Listen wird zu einem Tabellenblatt pro Liste.",
+      "steps": [
+        "Eine .json-Datei hinzufügen.",
+        "Auf „In Excel umwandeln“ klicken.",
+        "Die .xlsx herunterladen und in Excel, Google Sheets oder Numbers öffnen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Welche JSON-Strukturen funktionieren?",
+          "Eine Liste von Objekten (am häufigsten), eine Liste von Listen, ein einzelnes Objekt oder ein Objekt, dessen Werte Listen sind und das zu einem Tabellenblatt pro Liste wird, etwa {\"Customers\": [...], \"Orders\": [...]}."
+        ],
+        [
+          "Was passiert mit verschachtelten Daten?",
+          "Verschachtelte Objekte werden zu Spalten, die mit Punkten verbunden sind, etwa address.city. Listen innerhalb eines Datensatzes bleiben als JSON-Text in einer Zelle erhalten, sodass nichts verloren geht."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "json in excel umwandeln",
+        "json zu xlsx kostenlos",
+        "json-datei in excel öffnen",
+        "api-antwort in tabelle umwandeln",
+        "verschachteltes json zu excel"
       ]
     },
     "compress-image": {
