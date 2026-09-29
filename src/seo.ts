@@ -220,7 +220,7 @@ function optionsHtml(c: Copy, tool: Tool) {
     <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>`;
   if (tool.op === 'mermaid-image')
     return `<label class="code">${esc(c.t('ws.mermaidCode'))}<textarea name="code" rows="9" spellcheck="false" autocapitalize="off" autocomplete="off">${esc(MERMAID_SAMPLE)}</textarea></label>
-    <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('png', c.t('ws.fmtPng'))}${option('svg', c.t('ws.fmtSvg'))}</select></label>
+    <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('png', c.t('ws.fmtPng'))}${option('svg', c.t('ws.fmtSvg'), tool.preset?.format === 'svg')}</select></label>
     <label>${esc(c.t('ws.pngSize'))}<select name="scale">${option('1', '1×')}${option('2', '2×', true)}${option('4', '4×')}</select></label>
     <label>${esc(c.t('ws.theme'))}<select name="theme">${(['default', 'neutral', 'dark', 'forest'] as const).map((th) => option(th, c.t(`ws.theme${th[0].toUpperCase()}${th.slice(1)}` as UiKey))).join('')}</select></label>
     <label class="check"><input name="transparent" type="checkbox"> ${esc(c.t('ws.transparent'))}</label>`;
@@ -287,7 +287,8 @@ function workspaceHtml(c: Copy, tool: Tool) {
     }
     ${optionsHtml(c, tool)}
     ${Object.entries(tool.preset ?? {})
-      .filter(([name]) => name !== 'targetKb') // shown as an editable field instead
+      // Shown as editable fields instead: the size limit, and the Mermaid pages' preselected format.
+      .filter(([name]) => name !== 'targetKb' && !(tool.op === 'mermaid-image' && name === 'format'))
       .map(([name, value]) => `<input type="hidden" name="${name}" value="${esc(value)}">`)
       .join('')}
     ${pagesField ? `<label>${esc(pagesField.label)}<input id="pages" placeholder="${esc(pagesField.placeholder)}" autocomplete="off" spellcheck="false"></label>` : ''}
@@ -376,11 +377,51 @@ ${workspaceHtml(c, tool)}
   <ol class="steps">${tool.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
   ${tool.keywords?.length ? `<div class="uses"><h3>${esc(c.t('tool.uses'))}</h3><ul>${tool.keywords.map((k) => `<li>${esc(k)}</li>`).join('')}</ul></div>` : ''}
 </section>
+${examplesHtml(c, tool)}
 ${proofHtml(c)}
 ${faqHtml(c, tool.faq)}
 <section class="section" aria-labelledby="more">
   <div class="section-head"><h2 id="more">${esc(c.t('tool.more'))}</h2></div>
   ${toolCards(c, related)}
+</section>`;
+}
+
+// Ready-to-use examples: they answer searches like "Mermaid flowchart example" and show exactly what a
+// conversion produces. The Mermaid ones load into the editor with one click.
+const MERMAID_EXAMPLES: [string, string][] = [
+  ['flowchart', 'flowchart TD\n    Start([Order placed]) --> Pay{Paid?}\n    Pay -->|Yes| Ship[Pack and ship]\n    Pay -->|No| Remind[Send a reminder]\n    Remind --> Pay\n    Ship --> Done([Delivered])'],
+  ['sequenceDiagram', 'sequenceDiagram\n    participant U as User\n    participant A as App\n    participant S as Server\n    U->>A: Log in\n    A->>S: Check password\n    S-->>A: OK\n    A-->>U: Welcome back'],
+  ['classDiagram', 'classDiagram\n    class Customer {\n      +String name\n      +String email\n    }\n    class Order {\n      +String id\n      +Date placedAt\n      +total() Number\n    }\n    Customer "1" --> "*" Order : places'],
+  ['erDiagram', 'erDiagram\n    CUSTOMER ||--o{ ORDER : places\n    ORDER ||--|{ LINE_ITEM : contains\n    PRODUCT ||--o{ LINE_ITEM : "appears in"'],
+  ['gantt', 'gantt\n    title Website launch\n    dateFormat YYYY-MM-DD\n    section Build\n    Design      :a1, 2025-01-06, 5d\n    Development :a2, after a1, 10d\n    section Launch\n    Testing     :after a2, 4d'],
+  ['pie', 'pie title Where the week goes\n    "Coding" : 45\n    "Meetings" : 30\n    "Reviews" : 15\n    "Email" : 10'],
+];
+const JSON_EXAMPLE_ROWS = [
+  { Name: 'Asha', Age: 31, City: 'Pune', Member: true },
+  { Name: 'Ben', Age: 27, City: 'Leeds', Member: false },
+];
+
+function examplesHtml(c: Copy, tool: Tool) {
+  if (tool.op === 'mermaid-image')
+    return `
+<section class="section" aria-labelledby="examples">
+  <div class="section-head"><h2 id="examples">${esc(c.t('examples.mermaid'))}</h2></div>
+  <div class="examples">${MERMAID_EXAMPLES.map(
+    ([name, code]) =>
+      `<figure class="example"><figcaption><code>${name}</code><button type="button" class="button small">${esc(c.t('examples.try'))}</button></figcaption><pre><code>${esc(code)}</code></pre></figure>`,
+  ).join('')}</div>
+</section>`;
+  if (tool.op !== 'excel-to-json' && tool.op !== 'json-to-excel') return '';
+  const keys = Object.keys(JSON_EXAMPLE_ROWS[0]) as (keyof (typeof JSON_EXAMPLE_ROWS)[0])[];
+  const cell = (v: string | number | boolean) => (typeof v === 'boolean' ? (v ? 'TRUE' : 'FALSE') : String(v));
+  const table = `<table class="example-table"><thead><tr>${keys.map((k) => `<th>${k}</th>`).join('')}</tr></thead><tbody>${JSON_EXAMPLE_ROWS.map(
+    (row) => `<tr>${keys.map((k) => `<td>${esc(cell(row[k]))}</td>`).join('')}</tr>`,
+  ).join('')}</tbody></table>`;
+  const json = `<pre><code>${esc(JSON.stringify(JSON_EXAMPLE_ROWS, null, 2))}</code></pre>`;
+  return `
+<section class="section" aria-labelledby="examples">
+  <div class="section-head"><h2 id="examples">${esc(c.t('examples.json'))}</h2></div>
+  <div class="example-pair">${tool.op === 'excel-to-json' ? `${table}<span class="example-arrow" aria-hidden="true">→</span>${json}` : `${json}<span class="example-arrow" aria-hidden="true">→</span>${table}`}</div>
 </section>`;
 }
 
@@ -645,6 +686,13 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 - Someone needs to turn a spreadsheet into JSON for code or an API, open a JSON file in Excel, or export a Mermaid diagram as a PNG or SVG, without pasting company data into an online converter.
 - Someone is on a work or school device where uploading files to third-party sites is not allowed, or on a phone with no app installed.
 - Someone wants a free tool with no account, no watermark, no daily limit and no ads, in their own language.
+
+## For developers
+
+- [Excel to JSON](${SITE.url}/excel-to-json/): each row becomes an object keyed by the header row; numbers, true/false, ISO dates and null keep their types; a workbook becomes one key per sheet.
+- [JSON to Excel](${SITE.url}/json-to-excel/): a list of objects, a list of rows or an object of lists (one sheet each); nested fields become columns such as address.city; bold, frozen header row.
+- [Mermaid to PNG](${SITE.url}/mermaid-to-png/) and [Mermaid to SVG](${SITE.url}/mermaid-to-svg/): flowchart, sequence, class, state, ER, Gantt, pie, mind map, timeline and Git graph diagrams; PNG up to 4×, optional transparent background, Mermaid's strict security mode, with ready-to-use examples.
+- A local MCP server lets AI coding agents (Claude Code, Codex, Cursor and others) merge, split, rotate, protect or unlock PDFs and trim, split or join MP3/M4A on the user's own machine: ${SITE.repo}/tree/main/mcp
 
 ## Privacy and security (verifiable)
 

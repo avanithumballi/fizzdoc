@@ -39,6 +39,8 @@ export async function renderSvg(code: string, theme: Theme, transparent: boolean
     // Plain SVG text instead of HTML labels, so the image can be drawn onto a canvas for PNG.
     htmlLabels: false,
     flowchart: { htmlLabels: false },
+    // Gantt charts otherwise take the width of the screen, so a phone would export a cramped chart.
+    gantt: { useWidth: 1200 },
   });
   let svg: string;
   try {
