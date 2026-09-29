@@ -13,6 +13,7 @@ The deployed site ships these third-party components in `assets/`:
 | fflate (Office files, ZIP output) | MIT | https://github.com/101arrowz/fflate |
 | Tesseract OCR engine (tesseract.js, tesseract.js-core) | Apache-2.0 | https://github.com/naptha/tesseract.js |
 | English language data (@tesseract.js-data/eng, tessdata 4.0.0 best_int) | Apache-2.0 data, MIT package | https://github.com/tesseract-ocr/tessdata |
+| Mermaid 12.0.0 (Mermaid to Image page only), bundling d3, dagre-d3-es, cytoscape, chevrotain, DOMPurify, KaTeX, marked, roughjs, dayjs, lodash-es, stylis, khroma, elkjs and others | MIT, ISC, BSD-3-Clause, Apache-2.0, Unlicense; DOMPurify used under Apache-2.0 (dual MPL-2.0 OR Apache-2.0); elkjs EPL-2.0, source at https://github.com/kieler/elkjs | https://github.com/mermaid-js/mermaid |
 | Inter typeface (@fontsource-variable/inter) | SIL Open Font License 1.1 | https://rsms.me/inter |
 | Archify (generator and runtime of `public/architecture.html`) | MIT | https://github.com/tt-a1i/archify |
 | JetBrains Mono typeface (embedded in `public/architecture.html`) | SIL Open Font License 1.1 | https://github.com/JetBrains/JetBrainsMono |
