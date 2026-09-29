@@ -309,6 +309,39 @@ test('redacts marked areas for good and turns PDFs into scanned PDFs', async ({ 
   expect(seen.requests.filter((r) => !r.url.startsWith(page.url().split('/').slice(0, 3).join('/')))).toEqual([]);
 });
 
+test('finds and marks personal details in one click, and leaves amounts and dates alone', async ({ page }) => {
+  const { StandardFonts } = await import('pdf-lib');
+  const doc = await PDFDocument.create();
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const lines = ['Contact asha@example.com or +91 98765 43210', 'Total 1,250.00 paid on 12-03-2024', 'PAN ABCDE1234F'];
+  const pdfPage = doc.addPage([595, 842]);
+  lines.forEach((text, i) => pdfPage.drawText(text, { x: 50, y: 780 - i * 40, size: 16, font }));
+  await page.goto('/redact-pdf/');
+  await page.locator('#file-input').setInputFiles({ name: 'details.pdf', mimeType: 'application/pdf', buffer: Buffer.from(await doc.save()) });
+  await page.getByRole('button', { name: 'Find personal info' }).click();
+  await expect(page.locator('.redact-count')).toHaveText('Personal details marked: 3. Check each one before saving.');
+  const marks = page.locator('.redact-page').first().locator('.redact-box');
+  await expect(marks).toHaveCount(3);
+
+  // The marks sit on the first and third lines, not on the amount and date line in between.
+  const overlay = (await page.locator('.redact-overlay').first().boundingBox())!;
+  const scale = overlay.width / 595;
+  const lineTop = (i: number) => overlay.y + (842 - 780 + i * 40 - 16) * scale;
+  for (const mark of await marks.all()) {
+    const { y, height } = (await mark.boundingBox())!;
+    const middle = y + height / 2;
+    const onLine = [0, 2].some((i) => middle > lineTop(i) && middle < lineTop(i) + 24 * scale);
+    expect(onLine, `mark at ${middle}`).toBe(true);
+  }
+
+  // A second click marks nothing twice.
+  await page.getByRole('button', { name: 'Find personal info' }).click();
+  await expect(page.locator('.redact-count')).toHaveText('Personal details marked: 3. Check each one before saving.');
+  await expect(marks).toHaveCount(3);
+  await page.getByRole('button', { name: 'Undo' }).click();
+  await expect(marks).toHaveCount(0);
+});
+
 test('trims, splits and merges audio without re-encoding, with a preview first', async ({ page }) => {
   const { parseAudio } = await import('../src/engine/audio');
   const seconds = (bytes: Buffer) => parseAudio(new Uint8Array(bytes)).duration;
