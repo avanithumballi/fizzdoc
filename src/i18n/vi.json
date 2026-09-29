@@ -103,6 +103,9 @@
     "ws.themeForest": "Rừng",
     "ws.transparent": "Nền trong suốt",
     "mermaid.svgOnly": "Loại sơ đồ này đã được lưu dưới dạng SVG: nhãn của nó không thể chuyển thành PNG trong trình duyệt. SVG mở được trong mọi trình duyệt và hầu hết ứng dụng thiết kế và văn phòng.",
+    "examples.mermaid": "Ví dụ Mermaid để bắt đầu",
+    "examples.try": "Thử ví dụ này",
+    "examples.json": "Kết quả chuyển đổi trông như thế này",
     "ws.keepAspect": "Giữ tỷ lệ khung hình",
     "ws.header": "Hàng đầu tiên chứa tên cột",
     "ws.position": "Vị trí",
@@ -1282,6 +1285,84 @@
         "xuất sơ đồ Mermaid thành ảnh",
         "lưu đồ Mermaid thành hình ảnh",
         "thay thế Mermaid live editor"
+      ]
+    },
+    "mermaid-to-png": {
+      "name": "Mermaid sang PNG",
+      "summary": "Lưu sơ đồ Mermaid thành ảnh PNG sắc nét.",
+      "action": "Tạo PNG",
+      "title": "Mermaid sang PNG Miễn Phí — Xuất sơ đồ thành ảnh | Fizzdoc",
+      "description": "Biến mã Mermaid thành PNG sắc nét miễn phí ngay trong trình duyệt, tới 4× cho slide và bản in, có thể chọn nền trong suốt. Không cần tải lên.",
+      "h1": "Chuyển Mermaid sang PNG",
+      "lede": "Dán mã Mermaid và tải về một ảnh PNG sắc nét, chèn thẳng được vào Word, PowerPoint, Google Docs, Notion hoặc trò chuyện. Chọn 2× hoặc 4× cho slide và bản in độ phân giải cao; mọi thứ được vẽ ngay trên thiết bị của bạn.",
+      "steps": [
+        "Dán mã Mermaid của bạn, hoặc chọn một tệp .mmd hoặc .md.",
+        "Chọn kích thước (2× sắc nét trên hầu hết màn hình) và giao diện.",
+        "Bấm “Tạo PNG”, kiểm tra bản xem trước rồi tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Làm sao để có PNG độ phân giải cao?",
+          "Chọn 4× trong mục Kích thước PNG. Sơ đồ được vẽ ở kích thước gấp bốn lần bình thường, nên vẫn sắc nét trên màn hình lớn, trong slide và khi in."
+        ],
+        [
+          "PNG có thể có nền trong suốt không?",
+          "Có. Hãy đánh dấu “Nền trong suốt” để đặt sơ đồ lên slide có màu hoặc trang nền tối."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "Mermaid sang PNG",
+        "lưu sơ đồ Mermaid thành PNG",
+        "Mermaid PNG độ phân giải cao",
+        "sơ đồ Mermaid nền trong suốt",
+        "lưu đồ Mermaid sang PNG"
+      ]
+    },
+    "mermaid-to-svg": {
+      "name": "Mermaid sang SVG",
+      "summary": "Lưu sơ đồ Mermaid thành SVG co giãn được.",
+      "action": "Tạo SVG",
+      "title": "Mermaid sang SVG Miễn Phí — Xuất sơ đồ vector | Fizzdoc",
+      "description": "Biến mã Mermaid thành SVG gọn gàng miễn phí ngay trong trình duyệt. Sắc nét ở mọi kích thước, sẵn sàng cho website, Figma và tài liệu. Không tải lên.",
+      "h1": "Chuyển Mermaid sang SVG",
+      "lede": "Biến mã Mermaid thành một SVG độc lập với chiều rộng và chiều cao thực. Nó luôn sắc nét ở mọi mức phóng, mở được trong Figma, Illustrator và Inkscape, và nhúng gọn vào website hay tệp README.",
+      "steps": [
+        "Dán mã Mermaid của bạn, hoặc chọn một tệp .mmd hoặc .md.",
+        "Chọn giao diện, và nền trong suốt nếu bạn muốn.",
+        "Bấm “Tạo SVG”, kiểm tra bản xem trước rồi tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Tôi có thể chỉnh sửa SVG sau đó không?",
+          "Có. Chữ vẫn là chữ thật và hình khối là đường vector, nên Figma, Illustrator, Inkscape và hầu hết công cụ thiết kế đều mở và chỉnh sửa được."
+        ],
+        [
+          "SVG có an toàn để đưa lên website không?",
+          "Mermaid chạy ở chế độ nghiêm ngặt, loại bỏ script và trình xử lý nhấp chuột khỏi nhãn, nên SVG chỉ chứa hình vẽ và kiểu dáng của nó."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "Mermaid sang SVG",
+        "lưu sơ đồ Mermaid thành SVG",
+        "tải Mermaid SVG",
+        "sơ đồ Mermaid cho Figma",
+        "biểu đồ Mermaid sang ảnh vector"
       ]
     },
     "compress-image": {

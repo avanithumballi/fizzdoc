@@ -522,6 +522,18 @@ function setUp(op: ToolOp) {
     clearResult();
     if (field === codeField) render();
   });
+  // "Try this example" on the Mermaid pages: load the code into the editor, replacing any chosen file.
+  document.querySelectorAll<HTMLButtonElement>('.example button').forEach((button) =>
+    button.addEventListener('click', () => {
+      if (!codeField) return;
+      codeField.value = button.closest('.example')!.querySelector('pre')!.textContent!;
+      files.splice(0);
+      clearResult();
+      render();
+      codeField.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      codeField.focus({ preventScroll: true });
+    }),
+  );
   runButton.onclick = run;
   cancelButton.onclick = () => {
     localJob++;

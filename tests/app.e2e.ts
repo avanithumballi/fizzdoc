@@ -428,6 +428,23 @@ test('draws Mermaid code as a PNG or SVG on the device, with a preview and plain
   expect(seen.requests.filter((r) => !r.url.startsWith(baseURL!) && !r.url.startsWith('blob:') && !r.url.startsWith('data:'))).toEqual([]);
 });
 
+test('Mermaid pages preselect their format and load examples with one click', async ({ page }) => {
+  await page.goto('/mermaid-to-svg/');
+  await expect(page.locator('select[name="format"]')).toHaveValue('svg');
+  await expect(page.locator('.example')).toHaveCount(6);
+  await page.locator('.example', { hasText: 'sequenceDiagram' }).getByRole('button', { name: 'Try this example' }).click();
+  await expect(page.locator('textarea[name="code"]')).toHaveValue(/^sequenceDiagram/);
+  await page.getByRole('button', { name: 'Create SVG' }).click();
+  await expect(page.locator('#status')).toContainText('Done — SVG');
+  expect((await downloadBytes(page)).name).toBe('diagram.svg');
+
+  await page.goto('/mermaid-to-png/');
+  await expect(page.locator('select[name="format"]')).toHaveValue('png');
+  await page.goto('/excel-to-json/');
+  await expect(page.locator('.example-table')).toContainText('Asha');
+  await expect(page.locator('.example-pair pre')).toContainText('"Member": true');
+});
+
 test('edits PDF text in place and saves on the device', async ({ page, baseURL }) => {
   const seen = watch(page);
   await page.goto('/edit-pdf/');
