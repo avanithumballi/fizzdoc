@@ -10,8 +10,9 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["src", "tests", "vite-plugins", "vite.config.ts", "playwright.config.ts"]
+  "include": ["src", "tests", "vite-plugins", "vite.config.ts", "playwright.config.ts", "mcp/src", "mcp/vite.config.ts"]
 }

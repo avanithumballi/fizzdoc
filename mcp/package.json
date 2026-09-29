@@ -1,0 +1,46 @@
+{
+  "name": "fizzdoc-mcp",
+  "version": "0.1.0",
+  "description": "Fizzdoc's PDF and audio tools for AI agents, as a local MCP server. Files never leave your machine.",
+  "type": "module",
+  "bin": {
+    "fizzdoc-mcp": "dist/server.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pdf",
+    "merge-pdf",
+    "split-pdf",
+    "mp3",
+    "audio",
+    "privacy",
+    "claude",
+    "codex"
+  ],
+  "homepage": "https://github.com/kingrishabdugar/fizzdoc/tree/main/mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingrishabdugar/fizzdoc.git",
+    "directory": "mcp"
+  },
+  "author": "Rishab Dugar",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "vite build -c vite.config.ts",
+    "prepack": "npm run build && cp ../LICENSE ../NOTICE ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "@neslinesli93/qpdf-wasm": "0.3.0",
+    "zod": "^4.6.5"
+  }
+}
