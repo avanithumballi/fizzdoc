@@ -133,6 +133,8 @@
     "pw.unlock": "Mở khóa",
     "app.working": "Đang xử lý… tệp của bạn vẫn ở trên thiết bị này.",
     "app.workingPct": "Đang xử lý… {pct}% — tệp của bạn vẫn ở trên thiết bị này.",
+    "app.deviceSpeed": "Tốc độ phụ thuộc vào thiết bị của bạn; tệp lớn trên điện thoại sẽ lâu hơn.",
+    "app.report": "Chậm hoặc không hoạt động? Báo trên GitHub",
     "app.done": "Hoàn tất — {summary}, {size}. Được tạo ngay trên thiết bị này.",
     "app.ready": "Sẵn sàng — chọn “Lưu dưới dạng PDF” trong cửa sổ in, rồi nhấn Lưu. Được tạo ngay trên thiết bị này.",
     "app.saveAsPdf": "Lưu dưới dạng PDF",

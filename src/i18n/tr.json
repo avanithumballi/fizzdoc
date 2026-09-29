@@ -133,6 +133,8 @@
     "pw.unlock": "Kilidi Aç",
     "app.working": "İşleniyor… dosyalarınız bu cihazda kalır.",
     "app.workingPct": "İşleniyor… %{pct} — dosyalarınız bu cihazda kalır.",
+    "app.deviceSpeed": "Hız cihazınıza bağlıdır; büyük dosyalar telefonda daha uzun sürer.",
+    "app.report": "Yavaş mı ya da çalışmıyor mu? GitHub’da bildirin",
     "app.done": "Tamamlandı — {summary}, {size}. Bu cihazda oluşturuldu.",
     "app.ready": "Hazır — yazdırma penceresinde “PDF olarak kaydet”i seçin, ardından Kaydet’e tıklayın. Bu cihazda oluşturuldu.",
     "app.saveAsPdf": "PDF olarak kaydet",

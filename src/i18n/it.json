@@ -133,6 +133,8 @@
     "pw.unlock": "Sblocca",
     "app.working": "In corso… i tuoi file restano su questo dispositivo.",
     "app.workingPct": "In corso… {pct}% — i tuoi file restano su questo dispositivo.",
+    "app.deviceSpeed": "La velocità dipende dal tuo dispositivo; i file grandi richiedono più tempo sul telefono.",
+    "app.report": "Lento o non funziona? Segnalalo su GitHub",
     "app.done": "Fatto — {summary}, {size}. Creato su questo dispositivo.",
     "app.ready": "Pronto — scegli “Salva come PDF” nella finestra di stampa, poi Salva. Creato su questo dispositivo.",
     "app.saveAsPdf": "Salva come PDF",

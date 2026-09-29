@@ -44,6 +44,41 @@ test('merges two PDFs locally without sending any file data', async ({ page, bas
   expect(seen.violations).toEqual([]);
 });
 
+test('shows real progress and a prefilled problem report without the file name', async ({ page }) => {
+  // Remember the highest percentage the bar reached; small jobs finish too fast to catch otherwise.
+  await page.addInitScript(() => {
+    addEventListener('DOMContentLoaded', () => {
+      const bar = document.getElementById('progress');
+      if (!bar) return;
+      new MutationObserver(() => {
+        const pct = Number(bar.dataset.pct ?? 0);
+        (window as unknown as { maxPct: number }).maxPct = Math.max((window as unknown as { maxPct: number }).maxPct ?? 0, pct);
+      }).observe(bar, { attributes: true });
+    });
+  });
+  await page.goto('/split-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('mixed'));
+  await expect(page.locator('#file-list')).toContainText('3 pages');
+  await page.locator('#pages').fill('2-3');
+  await page.getByRole('button', { name: 'Extract pages' }).click();
+  await expect(page.locator('#status')).toContainText('Done — 2 pages');
+  expect(await page.evaluate(() => (window as unknown as { maxPct?: number }).maxPct)).toBe(100);
+  await expect(page.locator('#progress')).toBeHidden();
+
+  const link = page.locator('#report-link');
+  await expect(link).toHaveText('Slow or not working? Report it on GitHub');
+  await link.evaluate((a) => a.addEventListener('click', (event) => event.preventDefault()));
+  await link.click();
+  const url = new URL((await link.getAttribute('href'))!);
+  expect(url.origin + url.pathname).toBe(`${SITE.repo}/issues/new`);
+  expect(url.searchParams.get('template')).toBe('bug_report.yml');
+  expect(url.searchParams.get('tool')).toMatch(/\/split-pdf\/$/);
+  expect(url.searchParams.get('browser')).toContain('Mozilla');
+  expect(url.searchParams.get('extra')).toMatch(/Files: 1, .*3 pages/);
+  expect(url.searchParams.get('extra')).toContain('Time:');
+  expect(url.toString()).not.toContain('mixed');
+});
+
 test('unlocks a protected PDF after a wrong then a right password', async ({ page }) => {
   await page.goto('/unlock-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('user-password'));

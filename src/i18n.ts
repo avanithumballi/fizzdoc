@@ -169,6 +169,8 @@ export const UI = {
   // Status messages (app.ts)
   'app.working': 'Working… your files stay on this device.',
   'app.workingPct': 'Working… {pct}% — your files stay on this device.',
+  'app.deviceSpeed': 'Speed depends on your device; big files on phones take longer.',
+  'app.report': 'Slow or not working? Report it on GitHub',
   'app.done': 'Done — {summary}, {size}. Created on this device.',
   'app.ready': 'Ready — choose “Save as PDF” in the print window, then Save. Created on this device.',
   'app.saveAsPdf': 'Save as PDF',

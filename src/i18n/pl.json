@@ -133,6 +133,8 @@
     "pw.unlock": "Odblokuj",
     "app.working": "Trwa przetwarzanie… Twoje pliki zostają na tym urządzeniu.",
     "app.workingPct": "Trwa przetwarzanie… {pct}% — Twoje pliki zostają na tym urządzeniu.",
+    "app.deviceSpeed": "Szybkość zależy od urządzenia; duże pliki na telefonie trwają dłużej.",
+    "app.report": "Działa wolno lub wcale? Zgłoś to na GitHubie",
     "app.done": "Gotowe — {summary}, {size}. Utworzono na tym urządzeniu.",
     "app.ready": "Gotowe — wybierz „Zapisz jako PDF” w oknie drukowania, a potem Zapisz. Utworzono na tym urządzeniu.",
     "app.saveAsPdf": "Zapisz jako PDF",

@@ -133,6 +133,8 @@
     "pw.unlock": "Ontgrendelen",
     "app.working": "Bezig… je bestanden blijven op dit apparaat.",
     "app.workingPct": "Bezig… {pct}% — je bestanden blijven op dit apparaat.",
+    "app.deviceSpeed": "De snelheid hangt af van je apparaat; grote bestanden duren langer op een telefoon.",
+    "app.report": "Traag of werkt het niet? Meld het op GitHub",
     "app.done": "Klaar — {summary}, {size}. Gemaakt op dit apparaat.",
     "app.ready": "Klaar — kies “Opslaan als PDF” in het afdrukvenster en klik op Opslaan. Gemaakt op dit apparaat.",
     "app.saveAsPdf": "Opslaan als PDF",
