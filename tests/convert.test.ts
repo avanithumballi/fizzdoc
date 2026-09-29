@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { strFromU8, unzipSync } from 'fflate';
 import { describe, expect, it } from 'vitest';
-import { csvToXlsx, pdfToText, textToHtml, xlsxToCsv } from '../src/engine/convert';
+import { csvToXlsx, jsonToXlsx, pdfToText, textToHtml, xlsxToCsv, xlsxToJson } from '../src/engine/convert';
+import type { LocalError } from '../src/engine/local';
 
 const file = (name: string, type = '') =>
   new File([readFileSync(new URL(`./fixtures/${name}`, import.meta.url))], name, { type });
@@ -194,5 +195,79 @@ describe('csvToXlsx', () => {
     const xlsx = await csvToXlsx(new File([csvText], 'sheet.csv'));
     const back = await xlsxToCsv(new File([await xlsx.blob.arrayBuffer()], 'sheet.xlsx'));
     expect((await back.blob.text()).replace(/^﻿/, '').trim()).toBe(csvText.replace(/^﻿/, '').trim());
+  });
+});
+
+describe('xlsxToJson', () => {
+  const json = async (result: { blob: Blob }) => JSON.parse(await result.blob.text());
+
+  it('turns rows into typed objects keyed by the header row, one key per sheet', async () => {
+    const result = await xlsxToJson(file('rich.xlsx'));
+    expect(result.name).toBe('rich.json');
+    expect(result.blob.type).toBe('application/json');
+    expect(await json(result)).toEqual({
+      Data: [
+        { Name: 'Alice', Amount: 100, Date: '2021-01-01', 'Column D': null }, // blank header gets a column name
+        { Name: 'Bob', Amount: null, Date: null, 'Column D': true }, // the blank row between is skipped
+      ],
+      Notes: [],
+    });
+    expect(result.summary).toBe('2 sheets · 2 rows');
+  });
+
+  it('keeps plain rows when the first row is not a header', async () => {
+    const result = await xlsxToJson(file('sheet.xlsx'), { header: false });
+    const rows = await json(result);
+    expect(rows).toEqual([['Revenue', 1234]]);
+  });
+
+  it('names repeated headers apart', async () => {
+    const xlsx = await jsonToXlsx(new File(['[["Name","Name",""],["a","b","c"]]'], 'dup.json'));
+    const back = await json(await xlsxToJson(new File([await xlsx.blob.arrayBuffer()], 'dup.xlsx')));
+    expect(back).toEqual([{ Name: 'a', 'Name 2': 'b', 'Column C': 'c' }]);
+  });
+});
+
+describe('jsonToXlsx', () => {
+  const back = async (result: { blob: Blob }, header = true) =>
+    JSON.parse(await (await xlsxToJson(new File([await result.blob.arrayBuffer()], 'x.xlsx'), { header })).blob.text());
+
+  it('writes records as rows, flattening nested objects and keeping types', async () => {
+    const records = [
+      { id: 1, name: 'Asha', zip: '007', active: true, address: { city: 'Pune', pin: 411001 }, tags: ['a', 'b'], note: null },
+      { id: 2, name: 'Ben <&> "Co"', extra: 'x' },
+    ];
+    const result = await jsonToXlsx(new File([JSON.stringify(records)], 'people.json'));
+    expect(result.name).toBe('people.xlsx');
+    expect(result.summary).toBe('1 sheet · 2 rows');
+    expect(await back(result)).toEqual([
+      { id: 1, name: 'Asha', zip: '007', active: true, 'address.city': 'Pune', 'address.pin': 411001, tags: '["a","b"]', note: null, extra: null },
+      { id: 2, name: 'Ben <&> "Co"', zip: null, active: null, 'address.city': null, 'address.pin': null, tags: null, note: null, extra: 'x' },
+    ]);
+    // The header row is bold and frozen so it stays in view.
+    const sheet = strFromU8((await unzip(result.blob))['xl/worksheets/sheet1.xml']);
+    expect(sheet).toContain('state="frozen"');
+    expect(sheet).toMatch(/<c r="A1" s="1"/);
+  });
+
+  it('makes one sheet per list in an object of lists, with safe unique names', async () => {
+    const data = { Customers: [{ name: 'Asha' }], 'a/b': [[1, 2], [3, 4]], 'A/B': [{ v: 1 }] };
+    const result = await jsonToXlsx(new File([JSON.stringify(data)], 'shop.json'));
+    const workbook = strFromU8((await unzip(result.blob))['xl/workbook.xml']);
+    expect([...workbook.matchAll(/name="([^"]*)"/g)].map((m) => m[1])).toEqual(['Customers', 'a_b', 'A_B (2)']);
+    const sheets = await back(result, false);
+    expect(sheets.a_b).toEqual([[1, 2], [3, 4]]);
+    expect(sheets.Customers).toEqual([['name'], ['Asha']]);
+  });
+
+  it('treats a single object as one record and plain values as a value column', async () => {
+    expect(await back(await jsonToXlsx(new File(['{"a": 1, "b": {"c": false}}'], 'one.json')))).toEqual([{ a: 1, 'b.c': false }]);
+    expect(await back(await jsonToXlsx(new File(['["x", 2]'], 'list.json')))).toEqual([{ value: 'x' }, { value: 2 }]);
+  });
+
+  it('says where invalid JSON goes wrong', async () => {
+    const error = (await jsonToXlsx(new File(['{\n  "a": 1\n  "b": 2\n}'], 'bad.json')).catch((e) => e)) as LocalError;
+    expect(error.code).toBe('BAD_JSON_AT');
+    expect(error.vars).toEqual({ line: 3, column: 3 });
   });
 });

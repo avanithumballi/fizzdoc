@@ -12,7 +12,13 @@ export interface Output {
 }
 
 export class LocalError extends Error {
-  constructor(readonly code: 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'BAD_SCALE' | 'TOO_LARGE' | 'BAD_TARGET' | 'TARGET_TOO_SMALL' | 'NO_TEXT' | 'NO_WATERMARK') {
+  constructor(
+    readonly code:
+      | 'NOT_OFFICE' | 'NO_IMAGES' | 'BAD_IMAGE' | 'PDF_PASSWORD' | 'INVALID_PDF' | 'BAD_SIZE' | 'BAD_SCALE' | 'TOO_LARGE'
+      | 'BAD_TARGET' | 'TARGET_TOO_SMALL' | 'NO_TEXT' | 'NO_WATERMARK' | 'BAD_JSON' | 'BAD_JSON_AT' | 'SHEET_TOO_BIG',
+    /** Values for the message, e.g. { line: 3, column: 5 }. */
+    readonly vars?: Record<string, number | string>,
+  ) {
     super(code);
   }
 }
