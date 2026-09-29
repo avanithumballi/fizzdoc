@@ -18,16 +18,67 @@ function measurer(): (text: string, fontName: string) => number {
   };
 }
 
+/** [start, end) character ranges to cover within one line of text. */
+type Finder = (text: string) => [number, number][];
+
+/** Every case-insensitive occurrence of `query`. */
+const occurrences =
+  (query: string): Finder =>
+  (text) => {
+    const needle = query.trim().toLowerCase();
+    const ranges: [number, number][] = [];
+    if (!needle) return ranges;
+    const haystack = text.toLowerCase();
+    for (let found = haystack.indexOf(needle); found >= 0; found = haystack.indexOf(needle, found + needle.length)) {
+      ranges.push([found, found + needle.length]);
+    }
+    return ranges;
+  };
+
+// Personal data that follows a fixed shape. Names and addresses don't, so they still need a search
+// or a drag; the page asks people to check every mark before saving.
+const PERSONAL: RegExp[] = [
+  /[\w.+-]+@[\w-]+(?:\.[\w-]+)*/g, // emails, and UPI IDs such as name@okbank
+  /\b[A-Z]{5}\d{4}[A-Z]\b/g, // Indian PAN
+  /\b[A-Z]{4}0[A-Z0-9]{6}\b/g, // IFSC bank branch code
+  /\b[A-Z]{2}\d{2}(?: ?[A-Z0-9]{4}){2,7}(?: ?[A-Z0-9]{1,4})?\b/g, // IBAN
+  // Long numbers, spaced or not: phones, Aadhaar, card, account and social security numbers.
+  /(?<![\w.,])\+?\(?\d[\d ().-]{6,}\d(?!\w|[.,]\d)/g,
+];
+const digits = (text: string) => text.replace(/\D/g, '').length;
+
+/** Emails, phone numbers and ID, card or account numbers in one line of text. */
+export const personalData: Finder = (text) => {
+  const ranges: [number, number][] = [];
+  for (const pattern of PERSONAL) {
+    for (const match of text.matchAll(pattern)) {
+      const numeric = pattern === PERSONAL[PERSONAL.length - 1];
+      // 9 to 19 digits: skips dates, years, amounts and page numbers, keeps IDs and phone numbers.
+      // Decimals (12345678.90) are amounts, not IDs.
+      if (numeric && (digits(match[0]) < 9 || digits(match[0]) > 19 || /\.\d{1,2}$/.test(match[0]))) continue;
+      ranges.push([match.index, match.index + match[0].length]);
+    }
+  }
+  // Overlaps (a UPI ID inside an email, say) become one range.
+  ranges.sort((x, y) => x[0] - y[0]);
+  return ranges.reduce<[number, number][]>((merged, range) => {
+    const last = merged.at(-1);
+    if (last && range[0] <= last[1]) last[1] = Math.max(last[1], range[1]);
+    else merged.push([...range]);
+    return merged;
+  }, []);
+};
+
+/** Boxes covering every case-insensitive match of `query`. */
+export const findMatches = (items: TextItemLike[], query: string, measure = measurer()) => findBoxes(items, occurrences(query), measure);
+
 /**
- * Boxes covering every case-insensitive match of `query`. A match inside a line is placed by its
+ * Boxes covering what `find` picks out of each line. A match inside a line is placed by its
  * measured share of the line, then padded generously, so a mark errs on the side of covering more.
  */
-export function findMatches(items: TextItemLike[], query: string, measure = measurer()): Box[] {
-  const needle = query.trim().toLowerCase();
-  if (!needle) return [];
+export function findBoxes(items: TextItemLike[], find: Finder, measure = measurer()): Box[] {
   const boxes: Box[] = [];
   for (const run of groupTextRuns(items)) {
-    const text = run.text.toLowerCase();
     const [a, b, c, d, e, f] = run.transform;
     const size = Math.hypot(a, b) || 1;
     const [ux, uy] = [a / size, b / size]; // along the baseline
@@ -36,9 +87,9 @@ export function findMatches(items: TextItemLike[], query: string, measure = meas
     const height = Math.max(run.height, size);
     const full = measure(run.text, run.fontName) || 1;
     const at = (index: number) => (run.width * measure(run.text.slice(0, index), run.fontName)) / full;
-    for (let found = text.indexOf(needle); found >= 0; found = text.indexOf(needle, found + needle.length)) {
-      const start = at(found) - size * 0.35;
-      const end = at(found + needle.length) + size * 0.35;
+    for (const [from, to] of find(run.text)) {
+      const start = at(from) - size * 0.35;
+      const end = at(to) + size * 0.35;
       const corners = [
         [start, -height * 0.3],
         [end, -height * 0.3],
@@ -89,6 +140,8 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
   const find = document.createElement('form');
   find.className = 'redact-find';
   find.append(search, markAll);
+  const personal = button(t('rd.personal'));
+  personal.title = t('rd.personalHint');
   const undo = button(t('ed.undo'));
   const clear = button(t('rd.clear'));
   const count = document.createElement('span');
@@ -96,7 +149,7 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
   count.setAttribute('aria-live', 'polite');
   const toolbar = document.createElement('div');
   toolbar.className = 'redact-toolbar';
-  toolbar.append(find, undo, clear, count);
+  toolbar.append(find, personal, undo, clear, count);
   const hint = document.createElement('p');
   hint.className = 'redact-hint';
   hint.textContent = t('rd.hint');
@@ -227,23 +280,38 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
     observer.observe(wrapper);
   }
 
+  /** Marks what `find` picks out of every page's text; returns how many marks were added. */
+  async function markEverywhere(find: Finder, busy: HTMLButtonElement) {
+    busy.disabled = true;
+    const found: Box[][] = [];
+    try {
+      for (let index = 0; index < doc.numPages; index++) {
+        const view = views[index];
+        view.items ??= ((await (await doc.getPage(index + 1)).getTextContent()).items as unknown as TextItemLike[]).filter(
+          (item) => typeof item.str === 'string',
+        );
+        found.push(findBoxes(view.items, find));
+      }
+    } finally {
+      busy.disabled = false;
+    }
+    // Running the same search twice marks nothing twice.
+    const same = (a: Box, b: Box) => a.x0 === b.x0 && a.y0 === b.y0 && a.x1 === b.x1 && a.y1 === b.y1;
+    const fresh = found.map((page, i) => page.filter((box) => !marks[i].some((mark) => same(mark, box))));
+    if (fresh.some((page) => page.length)) change(marks.map((page, i) => [...page, ...fresh[i]]));
+    return found.reduce((sum, page) => sum + page.length, 0);
+  }
+
   find.onsubmit = async (event) => {
     event.preventDefault();
     const query = search.value.trim();
     if (!query) return;
-    markAll.disabled = true;
-    const found: Box[][] = [];
-    for (let index = 0; index < doc.numPages; index++) {
-      const view = views[index];
-      view.items ??= ((await (await doc.getPage(index + 1)).getTextContent()).items as unknown as TextItemLike[]).filter(
-        (item) => typeof item.str === 'string',
-      );
-      found.push(findMatches(view.items, query));
-    }
-    markAll.disabled = false;
-    const total = found.reduce((sum, page) => sum + page.length, 0);
-    if (total) change(marks.map((page, i) => [...page, ...found[i]]));
+    const total = await markEverywhere(occurrences(query), markAll);
     count.textContent = total ? t('rd.found', { n: total }) : t('rd.none', { text: query });
+  };
+  personal.onclick = async () => {
+    const total = await markEverywhere(personalData, personal);
+    count.textContent = total ? t('rd.personalFound', { n: total }) : t('rd.personalNone');
   };
   undo.onclick = () => {
     marks = history.pop() ?? marks;
