@@ -203,7 +203,14 @@ export async function countPages(q: Qpdf, path: string): Promise<number | null> 
   }
 }
 
-export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: AskPassword): Promise<Result> {
+/** `progress` makes qpdf print "write progress: N%" lines to stdout; only the browser worker listens. */
+export async function runJob(
+  q: Qpdf,
+  inputs: string[],
+  job: Job,
+  askPassword: AskPassword,
+  { progress = false } = {},
+): Promise<Result> {
   if (!EXPECTED_FILES[job.op](inputs.length)) throw new PdfError('WRONG_FILE_COUNT');
 
   const passwords: string[] = [];
@@ -228,7 +235,7 @@ export async function runJob(q: Qpdf, inputs: string[], job: Job, askPassword: A
 
   // The first input is the primary document: its catalog (bookmarks, form, tags) is kept.
   // qpdf rejects --decrypt together with --encrypt; protect replaces any old encryption anyway.
-  const args = [inputs[0], `--password=${passwords[0]}`, job.op === 'protect' ? '' : '--decrypt'].filter(Boolean);
+  const args = [inputs[0], `--password=${passwords[0]}`, job.op === 'protect' ? '' : '--decrypt', progress ? '--progress' : ''].filter(Boolean);
   let pageCount = first.pages;
   if (job.op === 'merge') {
     args.push('--pages', '.', '1-z');
