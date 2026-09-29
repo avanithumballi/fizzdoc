@@ -1008,6 +1008,38 @@ dialog input {
   font-size: 0.95rem;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
+.options label.code {
+  flex-basis: 100%;
+}
+.options textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--text);
+  font: 0.88rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  tab-size: 4;
+  white-space: pre; /* Mermaid is line-based: scroll sideways rather than wrap */
+  overflow-x: auto;
+  resize: vertical;
+}
+.options textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+/* The diagram before download; the checks show where a transparent background is see-through. */
+.image-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 480px;
+  margin: 0 auto 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: repeating-conic-gradient(#e4e4e7 0 25%, #ffffff 0 50%) 50% / 16px 16px;
+}
 .options input:focus,
 .options select:focus,
 .viewer input:not([type='checkbox']):focus,

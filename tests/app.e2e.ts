@@ -386,6 +386,48 @@ test('converts JSON to Excel and back, and points at broken JSON', async ({ page
   expect(seen.requests.filter((r) => !r.url.startsWith(baseURL!) && !r.url.startsWith('blob:') && !r.url.startsWith('data:'))).toEqual([]);
 });
 
+test('draws Mermaid code as a PNG or SVG on the device, with a preview and plain errors', async ({ page, baseURL }) => {
+  const seen = watch(page);
+  await page.goto('/mermaid-to-image/');
+  // The sample diagram means the page works before anything is chosen.
+  await expect(page.getByRole('button', { name: 'Create image' })).toBeEnabled();
+  await page.locator('textarea[name="code"]').fill('sequenceDiagram\n  Alice->>Bob: Hello\n  Bob-->>Alice: Hi');
+  await page.getByRole('button', { name: 'Create image' }).click();
+  await expect(page.locator('#status')).toContainText('Done — PNG');
+  await expect(page.locator('.image-preview')).toBeVisible();
+  const png = await downloadBytes(page);
+  expect(png.name).toBe('diagram.png');
+  expect(png.bytes.subarray(1, 4).toString()).toBe('PNG');
+  const width = png.bytes.readUInt32BE(16);
+  expect(width).toBeGreaterThan(400); // 2× by default
+
+  await page.locator('select[name="format"]').selectOption('svg');
+  await page.locator('input[name="transparent"]').check();
+  await page.getByRole('button', { name: 'Create image' }).click();
+  await expect(page.locator('#status')).toContainText('Done — SVG');
+  const svg = (await downloadBytes(page)).bytes.toString('utf8');
+  const root = /^<svg[^>]*>/.exec(svg)![0];
+  expect(root).toMatch(/ width="\d+"/);
+  expect(root).toMatch(/ height="\d+"/);
+  expect(svg).toContain('Alice');
+  expect(svg).not.toContain('<script');
+
+  await page.locator('textarea[name="code"]').fill('flowchart TD\n  A -->');
+  await page.getByRole('button', { name: 'Create image' }).click();
+  await expect(page.locator('#status')).toContainText('The diagram code has a mistake: Parse error on line');
+  await page.locator('textarea[name="code"]').fill('');
+  await expect(page.getByRole('button', { name: 'Create image' })).toBeDisabled();
+
+  // A .mmd file works too.
+  await page.locator('#file-input').setInputFiles({ name: 'plan.mmd', mimeType: 'text/plain', buffer: Buffer.from('pie title Pets\n "Dogs" : 3\n "Cats" : 2') });
+  await page.locator('select[name="format"]').selectOption('png');
+  await page.getByRole('button', { name: 'Create image' }).click();
+  await expect(page.locator('#status')).toContainText('Done — PNG');
+  expect((await downloadBytes(page)).name).toBe('plan.png');
+  expect(seen.violations).toEqual([]);
+  expect(seen.requests.filter((r) => !r.url.startsWith(baseURL!) && !r.url.startsWith('blob:') && !r.url.startsWith('data:'))).toEqual([]);
+});
+
 test('edits PDF text in place and saves on the device', async ({ page, baseURL }) => {
   const seen = watch(page);
   await page.goto('/edit-pdf/');
