@@ -2,6 +2,7 @@
 // robots.txt and llms.txt. Runs in Node (inside the Vite build and dev server), never in the browser.
 import { existsSync, readFileSync } from 'node:fs';
 import { LANGS, UI, fill, type Lang, type Strings, type UiKey } from './i18n.ts';
+import { ALTERNATIVES, ALTERNATIVES_HUB, type Alternative } from './alternatives.ts';
 import { FORMATS, HOME, SITE, TOOLS, type Format, type Tool, type ToolOp } from './site.ts';
 
 type ToolCopy = Pick<Tool, 'name' | 'summary' | 'action' | 'title' | 'description' | 'h1' | 'lede' | 'steps' | 'faq'>;
@@ -27,15 +28,19 @@ export interface Page {
   path: string;
   lang: Lang;
   tool?: Tool;
+  /** A comparison page ("iLovePDF alternative"), or 'hub' for the list of them. English only. */
+  alt?: Alternative | 'hub';
 }
 
 const prefix = (lang: Lang) => (lang === 'en' ? '' : `/${lang}`);
 const pathOf = (lang: Lang, tool?: Tool) => `${prefix(lang)}/${tool ? `${tool.slug}/` : ''}`;
 
-export const PAGES: Page[] = SITE_LANGS.flatMap((lang) => [
-  { path: pathOf(lang), lang },
-  ...TOOLS.map((tool) => ({ path: pathOf(lang, tool), lang, tool })),
-]);
+export const PAGES: Page[] = [
+  ...SITE_LANGS.flatMap((lang) => [{ path: pathOf(lang), lang }, ...TOOLS.map((tool) => ({ path: pathOf(lang, tool), lang, tool }))]),
+  { path: `/${ALTERNATIVES_HUB.slug}/`, lang: 'en' as Lang, alt: 'hub' as const },
+  ...ALTERNATIVES.map((alt) => ({ path: `/${alt.slug}/`, lang: 'en' as Lang, alt })),
+];
+const altCopy = (alt: Alternative | 'hub') => (alt === 'hub' ? ALTERNATIVES_HUB : alt);
 
 /** Everything a page needs in one language. */
 function copy(lang: Lang) {
@@ -353,6 +358,7 @@ const passwordDialog = (c: Copy) => `<dialog id="password-dialog" aria-labelledb
 </dialog>`;
 
 function mainHtml(c: Copy, page: Page) {
+  if (page.alt) return altHtml(c, page.alt);
   if (!page.tool) {
     const home = c.home;
     const merge = TOOLS.find((t) => t.slug === 'merge-pdf');
@@ -472,6 +478,7 @@ const OG_LOCALE: Record<Lang, string> = {
 
 function jsonLd(c: Copy, page: Page) {
   const url = SITE.url + page.path;
+  if (page.alt) return altJsonLd(page.alt, url);
   const tool = page.tool && c.tool(page.tool);
   const faq = tool ? tool.faq : c.home.faq;
   const author = { '@id': `${SITE.url}/#author` };
@@ -554,13 +561,99 @@ function jsonLd(c: Copy, page: Page) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 }
 
+// "<Brand> alternative" pages (English). They reuse the site's cards and FAQ, and keep the
+// comparison factual: how each service handles files, and where the other one is the better pick.
+const altTools = (alt: Alternative) => alt.tools.map((slug) => TOOLS.find((t) => t.slug === slug)!);
+
+function altHtml(c: Copy, alt: Alternative | 'hub') {
+  const hub = `/${ALTERNATIVES_HUB.slug}/`;
+  if (alt === 'hub') {
+    const h = ALTERNATIVES_HUB;
+    return `
+<nav class="crumbs" aria-label="${esc(c.t('crumbs.label'))}"><a href="${c.link()}">${SITE.name}</a><span aria-hidden="true">/</span><span aria-current="page">Compare</span></nav>
+<section class="hero hero-tool">
+  <h1>${esc(h.h1)}</h1>
+  <p class="lede">${esc(h.lede)}</p>
+  <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>${esc(c.t('tool.eyebrow'))}</p>
+</section>
+<section class="section" aria-labelledby="compare">
+  <div class="section-head"><h2 id="compare">Choose a comparison</h2></div>
+  <ul class="proof-grid">
+    ${ALTERNATIVES.map((a) => `<li>${CHECK}<strong><a href="/${a.slug}/">${esc(`${SITE.name} vs ${a.brand}`)}</a></strong><span>${esc(a.theirFiles)}</span></li>`).join('\n    ')}
+  </ul>
+</section>
+${proofHtml(c)}
+${faqHtml(c, h.faq)}`;
+  }
+  return `
+<nav class="crumbs" aria-label="${esc(c.t('crumbs.label'))}"><a href="${c.link()}">${SITE.name}</a><span aria-hidden="true">/</span><a href="${hub}">Compare</a><span aria-hidden="true">/</span><span aria-current="page">${esc(alt.brand)} alternative</span></nav>
+<section class="hero hero-tool">
+  <h1>${esc(alt.h1)}</h1>
+  <p class="lede">${esc(alt.lede)}</p>
+  <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>${esc(c.t('tool.eyebrow'))}</p>
+</section>
+<section class="section" aria-labelledby="compare">
+  <div class="section-head"><h2 id="compare">${esc(`${SITE.name} vs ${alt.brand}`)}</h2></div>
+  <ul class="proof-grid">
+    <li>${CHECK}<strong>How ${SITE.name} handles your file</strong><span>It never leaves your device: every tool runs inside your browser tab, and the page is blocked from sending files anywhere. Free, with no account, no daily limit and no watermark.</span></li>
+    <li>${CHECK}<strong>How ${esc(alt.brand)} handles it</strong><span>${esc(alt.theirFiles)}</span></li>
+    <li>${CHECK}<strong>When ${esc(alt.brand)} is the better choice</strong><span>${esc(alt.theyDoBetter)}</span></li>
+  </ul>
+  <p class="note">Based on ${esc(alt.brand)}’s public website, October 2026. Plans and limits change, so check their site for the latest. ${esc(alt.brand)} is a trademark of its owner; ${SITE.name} is independent and not affiliated.</p>
+</section>
+<section class="section" aria-labelledby="tools">
+  <div class="section-head"><h2 id="tools">${esc(`${SITE.name} tools for the jobs people use ${alt.brand} for`)}</h2><p>Each one works in your browser, free, without uploading anything.</p></div>
+  ${toolCards(c, altTools(alt))}
+</section>
+${proofHtml(c)}
+${faqHtml(c, alt.faq)}
+<section class="section" aria-labelledby="more">
+  <div class="section-head"><h2 id="more">More comparisons</h2></div>
+  <p class="prose">${ALTERNATIVES.filter((a) => a !== alt)
+    .map((a) => `<a href="/${a.slug}/">${esc(a.brand)} alternative</a>`)
+    .join(' · ')} · <a href="${hub}">All comparisons</a></p>
+</section>`;
+}
+
+function altJsonLd(alt: Alternative | 'hub', url: string) {
+  const page = altCopy(alt);
+  const graph: object[] = [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: SITE.name, item: `${SITE.url}/` },
+        { '@type': 'ListItem', position: 2, name: 'Compare', item: `${SITE.url}/${ALTERNATIVES_HUB.slug}/` },
+        ...(alt === 'hub' ? [] : [{ '@type': 'ListItem', position: 3, name: `${alt.brand} alternative`, item: url }]),
+      ],
+    },
+    { '@type': 'WebPage', name: page.title, description: page.description, url, inLanguage: 'en', isPartOf: { '@id': `${SITE.url}/#org` } },
+    {
+      '@type': 'WebApplication',
+      name: SITE.name,
+      url: `${SITE.url}/`,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Any',
+      isAccessibleForFree: true,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      ...(alt === 'hub' ? {} : { featureList: altTools(alt).map((t) => t.name) }),
+    },
+    { '@type': 'Organization', '@id': `${SITE.url}/#org`, name: SITE.name, url: `${SITE.url}/`, logo: `${SITE.url}/icon-512.png`, sameAs: [SITE.repo] },
+    {
+      '@type': 'FAQPage',
+      inLanguage: 'en',
+      mainEntity: page.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+    },
+  ];
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+}
+
 /** Social preview card in the page's language (public/og/<lang>.png), English as the fallback. */
 const ogImage = (lang: Lang) => (lang !== 'en' && existsSync(new URL(`../public/og/${lang}.png`, import.meta.url)) ? `/og/${lang}.png` : '/og.png');
 
 const formatStars = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '')}k` : String(n));
 
 /** The same page in every language: for hreflang links and the language menu. */
-const alternates = (page: Page) => SITE_LANGS.map((lang) => ({ lang, path: pathOf(lang, page.tool) }));
+const alternates = (page: Page) => (page.alt ? [{ lang: 'en' as Lang, path: page.path }] : SITE_LANGS.map((lang) => ({ lang, path: pathOf(lang, page.tool) })));
 
 // Each language's "choose your language" tip, so a Hindi-speaking visitor on an English page reads it in Hindi.
 const LANG_TIPS = JSON.stringify(Object.fromEntries(SITE_LANGS.map((lang) => [lang, copy(lang).t('lang.tip')])));
@@ -591,8 +684,8 @@ export function notFoundPage(template: string, stars?: number) {
 export function renderPage(template: string, page: Page, withCsp: boolean, stars?: number) {
   const c = copy(page.lang);
   const tool = page.tool && c.tool(page.tool);
-  const title = tool?.title ?? c.home.title;
-  const description = tool?.description ?? c.home.description;
+  const title = page.alt ? altCopy(page.alt).title : tool?.title ?? c.home.title;
+  const description = page.alt ? altCopy(page.alt).description : tool?.description ?? c.home.description;
   const url = SITE.url + page.path;
   const head = [
     withCsp ? `<meta http-equiv="Content-Security-Policy" content="${CSP}">` : '',
@@ -600,7 +693,7 @@ export function renderPage(template: string, page: Page, withCsp: boolean, stars
     `<meta name="description" content="${esc(description)}">`,
     `<link rel="canonical" href="${url}">`,
     ...alternates(page).map(({ lang, path }) => `<link rel="alternate" hreflang="${lang}" href="${SITE.url}${path}">`),
-    `<link rel="alternate" hreflang="x-default" href="${SITE.url}${pathOf('en', page.tool)}">`,
+    `<link rel="alternate" hreflang="x-default" href="${SITE.url}${page.alt ? page.path : pathOf('en', page.tool)}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:site_name" content="${SITE.name}">`,
     `<meta property="og:title" content="${esc(title)}">`,
@@ -737,6 +830,10 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 - [JSON to Excel](${SITE.url}/json-to-excel/): a list of objects, a list of rows or an object of lists (one sheet each); nested fields become columns such as address.city; bold, frozen header row.
 - [Mermaid to PNG](${SITE.url}/mermaid-to-png/) and [Mermaid to SVG](${SITE.url}/mermaid-to-svg/): flowchart, sequence, class, state, ER, Gantt, pie, mind map, timeline and Git graph diagrams; PNG up to 4×, optional transparent background, Mermaid's strict security mode, with ready-to-use examples.
 - A local MCP server lets AI coding agents (Claude Code, Codex, Cursor and others) merge, split, rotate, protect or unlock PDFs and trim, split or join MP3/M4A on the user's own machine: ${SITE.repo}/tree/main/mcp
+
+## Compared with other online tools
+
+Fair, factual comparisons, including where the other service is the better choice: ${ALTERNATIVES.map((a) => `[${a.brand} alternative](${SITE.url}/${a.slug}/)`).join(', ')}. Overview: ${SITE.url}/${ALTERNATIVES_HUB.slug}/
 
 ## Privacy and security (verifiable)
 

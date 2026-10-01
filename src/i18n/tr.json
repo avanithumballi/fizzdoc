@@ -234,6 +234,7 @@
     "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur.",
     "footer.madeBy": "Tasarlayan ve geliştiren",
     "footer.feedback": "Hata bildir veya araç öner",
+    "footer.compare": "iLovePDF ve diğerleriyle karşılaştırma",
     "format.audio": "Ses",
     "ws.chooseAudio": "Bir MP3 veya M4A dosyası seçin",
     "ws.chooseAudios": "MP3 veya M4A dosyaları seçin",
