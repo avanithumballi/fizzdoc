@@ -267,7 +267,19 @@
     "au.hint": "Haz clic en la forma de onda para saltar ahí y pulsa Reproducir. Arrastra los tiradores, o escribe tiempos exactos como 1:30.5. «Empezar aquí», «Terminar aquí» y «Dividir aquí» usan la posición de reproducción.",
     "au.badTime": "Escribe un tiempo como 1:30 o 1:30.5.",
     "au.results": "Tus archivos",
-    "au.download": "Descargar"
+    "au.download": "Descargar",
+    "ws.spokenLanguage": "Idioma hablado",
+    "ws.langAuto": "Detectar automáticamente",
+    "ws.fmtTxt": "Texto (.txt)",
+    "ws.fmtSrt": "Subtítulos (.srt)",
+    "ws.fmtVtt": "Subtítulos web (.vtt)",
+    "ws.speechModel": "La primera vez, tu navegador descarga el modelo de voz ({mb} MB) una sola vez y lo conserva. Después arranca en segundos, incluso sin conexión.",
+    "ws.chooseMedia": "Elige un archivo de audio o vídeo",
+    "app.setup": "Preparando… configuración única: {done} de {total} MB. La próxima vez empieza al instante.",
+    "error.NO_AUDIO_TRACK": "Este navegador no puede leer el sonido de este archivo. Prueba con un archivo MP3, M4A, WAV o MP4.",
+    "error.NO_SPEECH": "No se encontró voz en este archivo.",
+    "error.SETUP_FAILED": "No se pudo cargar el modelo de voz. Revisa tu conexión a internet para la descarga única e inténtalo de nuevo.",
+    "error.TRANSCRIBE_FAILED": "La transcripción se detuvo de forma inesperada. Prueba con un archivo más corto, o con un portátil para grabaciones largas."
   },
   "home": {
     "title": "Fizzdoc — Herramientas Gratis de PDF, Imagen, Audio y Office",
@@ -2437,6 +2449,162 @@
         "juntar canciones sin perder calidad",
         "unir notas de voz",
         "unir archivos m4a gratis"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Audio a texto",
+      "summary": "Convierte la voz de un archivo de audio o vídeo en texto o subtítulos.",
+      "action": "Transcribir",
+      "title": "Audio a Texto Gratis — Transcribe en Tu Equipo, Sin Subir | Fizzdoc",
+      "description": "Convierte la voz de archivos MP3, M4A, WAV o vídeo en texto o subtítulos SRT gratis. Whisper se ejecuta en tu navegador, así que nada se sube.",
+      "h1": "Convierte audio a texto",
+      "lede": "Transcribe entrevistas, clases, notas de voz y reuniones. El modelo de voz Whisper se ejecuta en tu dispositivo, así que la grabación nunca sale de él, y tras una configuración única funciona incluso sin conexión.",
+      "steps": [
+        "Elige un archivo de audio o vídeo (MP3, M4A, WAV, OGG, MP4 o WebM).",
+        "Elige el idioma hablado, o déjalo en detección automática, y escoge texto o subtítulos.",
+        "Empieza. La primera vez el modelo de voz se descarga una vez; luego lee el texto y descárgalo."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿Qué tan preciso es?",
+          "Fizzdoc usa Whisper tiny, una versión pequeña del modelo de voz abierto de OpenAI que se ejecuta por completo en tu navegador. El español e inglés claros salen bien; las grabaciones con ruido, los acentos marcados y otros idiomas salen peor, así que lee el texto antes de fiarte de él."
+        ],
+        [
+          "¿Por qué la primera vez es más lenta?",
+          "La primera vez, tu navegador descarga el modelo de voz (unos 58 MB) y lo conserva, así que las siguientes veces arranca en segundos, incluso sin conexión. Transcribir grabaciones largas lleva tiempo: depende de tu dispositivo, y un portátil es mucho más rápido que un móvil."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí, y seguirá siendo gratis: sin registro, sin marca de agua, sin límite diario y sin plan premium. Fizzdoc es de código abierto bajo la licencia Apache-2.0, así que cualquiera puede ejecutar su propia copia."
+        ]
+      ],
+      "keywords": [
+        "transcribir audio a texto gratis",
+        "audio a texto online",
+        "convertir nota de voz a texto",
+        "transcribir entrevista o clase",
+        "transcripción privada sin subir archivos"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 a texto",
+      "summary": "Transcribe una grabación MP3 a texto.",
+      "action": "Transcribir MP3",
+      "title": "MP3 a Texto Gratis — Transcribe Audio, Sin Subir | Fizzdoc",
+      "description": "Convierte un MP3 en texto gratis: notas de voz, podcasts, clases o llamadas grabadas. Whisper transcribe en tu navegador, sin subir el archivo.",
+      "h1": "Convierte MP3 a texto",
+      "lede": "Saca las palabras de un MP3: una nota de voz, un episodio de podcast, una clase o una llamada grabada. Whisper lo transcribe en tu navegador, así que nadie más escucha la grabación.",
+      "steps": [
+        "Elige un archivo de audio o vídeo (MP3, M4A, WAV, OGG, MP4 o WebM).",
+        "Elige el idioma hablado, o déjalo en detección automática, y escoge texto o subtítulos.",
+        "Empieza. La primera vez el modelo de voz se descarga una vez; luego lee el texto y descárgalo."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿Funciona con notas de voz de WhatsApp?",
+          "Sí. Las notas de voz de WhatsApp son archivos OPUS o M4A, que Chrome, Edge y Firefox pueden leer, igual que MP3, WAV y la mayoría de las grabaciones del móvil."
+        ],
+        [
+          "¿Por qué la primera vez es más lenta?",
+          "La primera vez, tu navegador descarga el modelo de voz (unos 58 MB) y lo conserva, así que las siguientes veces arranca en segundos, incluso sin conexión. Transcribir grabaciones largas lleva tiempo: depende de tu dispositivo, y un portátil es mucho más rápido que un móvil."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí, y seguirá siendo gratis: sin registro, sin marca de agua, sin límite diario y sin plan premium. Fizzdoc es de código abierto bajo la licencia Apache-2.0, así que cualquiera puede ejecutar su propia copia."
+        ]
+      ],
+      "keywords": [
+        "convertir mp3 a texto",
+        "transcribir podcast",
+        "nota de voz de WhatsApp a texto",
+        "pasar audio de voz a texto",
+        "archivo de audio a texto gratis"
+      ]
+    },
+    "video-to-text": {
+      "name": "Vídeo a texto",
+      "summary": "Transcribe la voz de un vídeo MP4 o WebM a texto.",
+      "action": "Transcribir vídeo",
+      "title": "Vídeo a Texto Gratis — Transcribe en Tu Equipo, Sin Subir | Fizzdoc",
+      "description": "Transcribe la voz de vídeos MP4 o WebM a texto gratis. Fizzdoc lee solo el sonido y lo transcribe en tu dispositivo, sin subir el vídeo.",
+      "h1": "Convierte vídeo a texto",
+      "lede": "Obtén la transcripción de una clase, una reunión grabada, un reel o un vídeo que descargaste. Fizzdoc lee la pista de sonido del vídeo y la transcribe en tu dispositivo.",
+      "steps": [
+        "Elige un archivo de audio o vídeo (MP3, M4A, WAV, OGG, MP4 o WebM).",
+        "Elige el idioma hablado, o déjalo en detección automática, y escoge texto o subtítulos.",
+        "Empieza. La primera vez el modelo de voz se descarga una vez; luego lee el texto y descárgalo."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿Qué vídeos funcionan?",
+          "MP4, M4V y WebM funcionan en todos los navegadores modernos, y MOV en la mayoría. Solo se usa la pista de sonido; la imagen se ignora."
+        ],
+        [
+          "¿Qué tan preciso es?",
+          "Fizzdoc usa Whisper tiny, una versión pequeña del modelo de voz abierto de OpenAI que se ejecuta por completo en tu navegador. El español e inglés claros salen bien; las grabaciones con ruido, los acentos marcados y otros idiomas salen peor, así que lee el texto antes de fiarte de él."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí, y seguirá siendo gratis: sin registro, sin marca de agua, sin límite diario y sin plan premium. Fizzdoc es de código abierto bajo la licencia Apache-2.0, así que cualquiera puede ejecutar su propia copia."
+        ]
+      ],
+      "keywords": [
+        "convertir mp4 a texto",
+        "transcribir vídeo a texto",
+        "transcripción de un vídeo de clase",
+        "grabación de reunión a texto",
+        "sacar el texto de un vídeo"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Generador de subtítulos",
+      "summary": "Crea subtítulos SRT o VTT a partir de un vídeo o audio.",
+      "action": "Crear subtítulos",
+      "title": "Generador de Subtítulos Gratis — SRT y VTT, Sin Subir | Fizzdoc",
+      "description": "Crea subtítulos SRT o VTT para tus vídeos gratis. Whisper escucha el audio en tu navegador, así que el vídeo nunca se sube a ningún servidor.",
+      "h1": "Genera subtítulos para un vídeo",
+      "lede": "Crea subtítulos con tiempos para un vídeo de una vez: Fizzdoc escucha la pista de sonido y escribe un archivo SRT o VTT para YouTube, VLC, Premiere, CapCut o cualquier reproductor.",
+      "steps": [
+        "Elige un archivo de vídeo o audio (MP4, MOV, WebM, MP3, M4A o WAV).",
+        "Elige el idioma hablado, o déjalo en detección automática, y escoge SRT o VTT.",
+        "Haz clic en «Crear subtítulos», revisa los subtítulos y descarga el archivo."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿Cómo añado los subtítulos a mi vídeo?",
+          "Sube el archivo .srt junto a tu vídeo en YouTube, Facebook o LinkedIn, o arrástralo a VLC, Premiere Pro, DaVinci Resolve o CapCut. VTT es el formato que usan los reproductores de vídeo web."
+        ],
+        [
+          "¿Qué tan preciso es?",
+          "Fizzdoc usa Whisper tiny, una versión pequeña del modelo de voz abierto de OpenAI que se ejecuta por completo en tu navegador. El español e inglés claros salen bien; las grabaciones con ruido, los acentos marcados y otros idiomas salen peor, así que lee el texto antes de fiarte de él."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí, y seguirá siendo gratis: sin registro, sin marca de agua, sin límite diario y sin plan premium. Fizzdoc es de código abierto bajo la licencia Apache-2.0, así que cualquiera puede ejecutar su propia copia."
+        ]
+      ],
+      "keywords": [
+        "generador de subtítulos srt",
+        "subtítulos automáticos para vídeo",
+        "generar subtítulos de un vídeo gratis",
+        "vídeo a srt",
+        "crear subtítulos vtt"
       ]
     }
   }

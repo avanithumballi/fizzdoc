@@ -267,7 +267,19 @@
     "au.hint": "Bấm vào dạng sóng để chuyển tới đó rồi bấm Phát. Kéo các tay cầm, hoặc gõ đúng thời điểm như 1:30.5. “Bắt đầu tại đây”, “Kết thúc tại đây” và “Chia tại đây” sử dụng vị trí đang phát.",
     "au.badTime": "Nhập thời điểm như 1:30 hoặc 1:30.5.",
     "au.results": "Tệp của bạn",
-    "au.download": "Tải xuống"
+    "au.download": "Tải xuống",
+    "ws.spokenLanguage": "Ngôn ngữ nói",
+    "ws.langAuto": "Tự động nhận diện",
+    "ws.fmtTxt": "Văn bản (.txt)",
+    "ws.fmtSrt": "Phụ đề (.srt)",
+    "ws.fmtVtt": "Phụ đề web (.vtt)",
+    "ws.speechModel": "Lần đầu, trình duyệt sẽ tải mô hình giọng nói ({mb} MB) một lần rồi lưu lại. Sau đó nó khởi động trong vài giây, kể cả khi ngoại tuyến.",
+    "ws.chooseMedia": "Chọn một tệp âm thanh hoặc video",
+    "app.setup": "Đang chuẩn bị… thiết lập một lần: {done} trên {total} MB. Lần sau sẽ chạy ngay.",
+    "error.NO_AUDIO_TRACK": "Trình duyệt này không đọc được âm thanh trong tệp này. Hãy thử tệp MP3, M4A, WAV hoặc MP4.",
+    "error.NO_SPEECH": "Không tìm thấy giọng nói trong tệp này.",
+    "error.SETUP_FAILED": "Không tải được mô hình giọng nói. Hãy kiểm tra kết nối internet cho lần tải một lần, rồi thử lại.",
+    "error.TRANSCRIBE_FAILED": "Quá trình chuyển thành văn bản dừng đột ngột. Hãy thử tệp ngắn hơn, hoặc dùng laptop cho bản ghi dài."
   },
   "home": {
     "title": "Fizzdoc — Công Cụ PDF, Ảnh, Âm Thanh & Office Miễn Phí",
@@ -2437,6 +2449,162 @@
         "ghép nhạc không giảm chất lượng",
         "ghép các đoạn ghi âm",
         "ghép file m4a miễn phí"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Âm thanh sang văn bản",
+      "summary": "Chuyển giọng nói trong tệp âm thanh hoặc video thành văn bản hay phụ đề.",
+      "action": "Chuyển thành văn bản",
+      "title": "Chuyển Âm Thanh Thành Văn Bản Miễn Phí — Không Tải Lên | Fizzdoc",
+      "description": "Chuyển giọng nói trong tệp MP3, M4A, WAV hoặc video thành văn bản hay phụ đề SRT miễn phí. Whisper chạy trong trình duyệt, bản ghi không bao giờ bị tải lên.",
+      "h1": "Chuyển âm thanh thành văn bản",
+      "lede": "Gỡ băng phỏng vấn, bài giảng, tin nhắn thoại và cuộc họp. Mô hình giọng nói Whisper chạy ngay trên thiết bị của bạn nên bản ghi không rời khỏi máy, và sau lần thiết lập một lần nó còn chạy được khi ngoại tuyến.",
+      "steps": [
+        "Chọn một tệp âm thanh hoặc video (MP3, M4A, WAV, OGG, MP4 hoặc WebM).",
+        "Chọn ngôn ngữ nói, hoặc để tự động nhận diện, rồi chọn văn bản hoặc phụ đề.",
+        "Bắt đầu. Lần đầu, mô hình giọng nói được tải một lần; sau đó đọc văn bản và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Độ chính xác thế nào?",
+          "Fizzdoc dùng Whisper tiny, bản nhỏ của mô hình giọng nói mở từ OpenAI, chạy hoàn toàn trong trình duyệt của bạn. Tiếng Anh rõ ràng cho kết quả tốt; bản ghi nhiều tạp âm, giọng nặng và các ngôn ngữ khác sẽ kém hơn, nên hãy đọc lại văn bản trước khi dựa vào nó."
+        ],
+        [
+          "Vì sao lần chạy đầu chậm hơn?",
+          "Lần đầu, trình duyệt tải mô hình giọng nói (khoảng 58 MB) và lưu lại, nên các lần sau khởi động trong vài giây, kể cả khi ngoại tuyến. Bản ghi dài cần một lúc để xử lý: tốc độ phụ thuộc vào thiết bị, và laptop nhanh hơn điện thoại nhiều."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "chuyển âm thanh thành văn bản miễn phí",
+        "chuyển giọng nói thành văn bản online",
+        "chuyển file ghi âm thành văn bản",
+        "gỡ băng phỏng vấn bài giảng",
+        "gỡ băng riêng tư không cần tải lên"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 sang văn bản",
+      "summary": "Chuyển bản ghi MP3 thành văn bản.",
+      "action": "Chuyển MP3 thành văn bản",
+      "title": "MP3 Sang Văn Bản Miễn Phí — Gỡ Băng MP3, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển âm thanh MP3 thành văn bản miễn phí: tin nhắn thoại, podcast, bài giảng, cuộc gọi. Whisper xử lý ngay trong trình duyệt, không tải lên. TXT hoặc SRT.",
+      "h1": "Chuyển MP3 thành văn bản",
+      "lede": "Lấy lời nói ra khỏi một tệp MP3: tin nhắn thoại, tập podcast, bài giảng hay cuộc gọi đã ghi. Whisper gỡ băng ngay trong trình duyệt, nên không ai khác nghe được bản ghi của bạn.",
+      "steps": [
+        "Chọn một tệp âm thanh hoặc video (MP3, M4A, WAV, OGG, MP4 hoặc WebM).",
+        "Chọn ngôn ngữ nói, hoặc để tự động nhận diện, rồi chọn văn bản hoặc phụ đề.",
+        "Bắt đầu. Lần đầu, mô hình giọng nói được tải một lần; sau đó đọc văn bản và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Có dùng được với tin nhắn thoại WhatsApp không?",
+          "Có. Tin nhắn thoại WhatsApp là tệp OPUS hoặc M4A, Chrome, Edge và Firefox đều đọc được, cũng như MP3, WAV và hầu hết bản ghi âm trên điện thoại."
+        ],
+        [
+          "Vì sao lần chạy đầu chậm hơn?",
+          "Lần đầu, trình duyệt tải mô hình giọng nói (khoảng 58 MB) và lưu lại, nên các lần sau khởi động trong vài giây, kể cả khi ngoại tuyến. Bản ghi dài cần một lúc để xử lý: tốc độ phụ thuộc vào thiết bị, và laptop nhanh hơn điện thoại nhiều."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "chuyển mp3 thành văn bản",
+        "gỡ băng podcast",
+        "tin nhắn thoại WhatsApp thành văn bản",
+        "ghi âm thành văn bản",
+        "file âm thanh sang văn bản miễn phí"
+      ]
+    },
+    "video-to-text": {
+      "name": "Video sang văn bản",
+      "summary": "Chuyển giọng nói trong video MP4 hoặc WebM thành văn bản.",
+      "action": "Chuyển video thành văn bản",
+      "title": "Video Sang Văn Bản Miễn Phí — Gỡ Băng MP4, Không Tải Lên | Fizzdoc",
+      "description": "Chuyển giọng nói trong video MP4, MOV hoặc WebM thành văn bản hay phụ đề miễn phí. Whisper đọc âm thanh trong trình duyệt; video không bao giờ bị tải lên.",
+      "h1": "Chuyển video thành văn bản",
+      "lede": "Lấy bản ghi chép của bài giảng, cuộc họp, reel hay video bạn đã tải về. Fizzdoc đọc luồng âm thanh của video và gỡ băng ngay trên thiết bị của bạn.",
+      "steps": [
+        "Chọn một tệp âm thanh hoặc video (MP3, M4A, WAV, OGG, MP4 hoặc WebM).",
+        "Chọn ngôn ngữ nói, hoặc để tự động nhận diện, rồi chọn văn bản hoặc phụ đề.",
+        "Bắt đầu. Lần đầu, mô hình giọng nói được tải một lần; sau đó đọc văn bản và tải xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Những video nào dùng được?",
+          "MP4, M4V và WebM chạy trên mọi trình duyệt hiện đại, còn MOV chạy trên hầu hết. Chỉ phần âm thanh được dùng; hình ảnh bị bỏ qua."
+        ],
+        [
+          "Độ chính xác thế nào?",
+          "Fizzdoc dùng Whisper tiny, bản nhỏ của mô hình giọng nói mở từ OpenAI, chạy hoàn toàn trong trình duyệt của bạn. Tiếng Anh rõ ràng cho kết quả tốt; bản ghi nhiều tạp âm, giọng nặng và các ngôn ngữ khác sẽ kém hơn, nên hãy đọc lại văn bản trước khi dựa vào nó."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "chuyển mp4 thành văn bản",
+        "chuyển video thành văn bản",
+        "gỡ băng video bài giảng",
+        "ghi chép cuộc họp từ video",
+        "lấy văn bản từ video"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Tạo phụ đề",
+      "summary": "Tạo phụ đề SRT hoặc VTT từ tệp video hoặc âm thanh.",
+      "action": "Tạo phụ đề",
+      "title": "Tạo Phụ Đề Miễn Phí — Video Sang SRT, Không Tải Lên | Fizzdoc",
+      "description": "Tạo phụ đề SRT hoặc VTT từ mọi video hay âm thanh miễn phí. Phụ đề có mốc thời gian do Whisper tạo trong trình duyệt, video không bao giờ bị tải lên.",
+      "h1": "Tạo phụ đề từ video",
+      "lede": "Tạo phụ đề có mốc thời gian cho video chỉ trong một lần: Fizzdoc nghe luồng âm thanh và ghi ra tệp SRT hoặc VTT cho YouTube, VLC, Premiere, CapCut hay bất kỳ trình phát nào.",
+      "steps": [
+        "Chọn một tệp video hoặc âm thanh (MP4, MOV, WebM, MP3, M4A hoặc WAV).",
+        "Chọn ngôn ngữ nói, hoặc để tự động nhận diện, rồi chọn SRT hoặc VTT.",
+        "Bấm “Tạo phụ đề”, kiểm tra phụ đề và tải tệp xuống."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Làm sao thêm phụ đề vào video của tôi?",
+          "Tải tệp .srt lên cạnh video của bạn trên YouTube, Facebook hoặc LinkedIn, hoặc kéo vào VLC, Premiere Pro, DaVinci Resolve hay CapCut. VTT là định dạng mà các trình phát video web dùng."
+        ],
+        [
+          "Độ chính xác thế nào?",
+          "Fizzdoc dùng Whisper tiny, bản nhỏ của mô hình giọng nói mở từ OpenAI, chạy hoàn toàn trong trình duyệt của bạn. Tiếng Anh rõ ràng cho kết quả tốt; bản ghi nhiều tạp âm, giọng nặng và các ngôn ngữ khác sẽ kém hơn, nên hãy đọc lại văn bản trước khi dựa vào nó."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "tạo phụ đề srt",
+        "tự động tạo phụ đề video",
+        "tạo phụ đề từ video miễn phí",
+        "video sang srt",
+        "tạo phụ đề vtt"
       ]
     }
   }

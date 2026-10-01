@@ -267,7 +267,19 @@
     "au.hint": "Cliquez sur la forme d’onde pour y aller et appuyez sur Lecture. Faites glisser les poignées, ou saisissez des instants précis comme 1:30.5. « Commencer ici », « Finir ici » et « Découper ici » utilisent la tête de lecture.",
     "au.badTime": "Saisissez un instant comme 1:30 ou 1:30.5.",
     "au.results": "Vos fichiers",
-    "au.download": "Télécharger"
+    "au.download": "Télécharger",
+    "ws.spokenLanguage": "Langue parlée",
+    "ws.langAuto": "Détecter automatiquement",
+    "ws.fmtTxt": "Texte (.txt)",
+    "ws.fmtSrt": "Sous-titres (.srt)",
+    "ws.fmtVtt": "Sous-titres web (.vtt)",
+    "ws.speechModel": "La première fois, votre navigateur télécharge une seule fois le modèle vocal ({mb} Mo) et le conserve. Ensuite, il démarre en quelques secondes, même hors ligne.",
+    "ws.chooseMedia": "Choisissez un fichier audio ou vidéo",
+    "app.setup": "Préparation… configuration unique : {done} sur {total} Mo. La prochaine fois, c’est immédiat.",
+    "error.NO_AUDIO_TRACK": "Ce navigateur ne peut pas lire le son de ce fichier. Essayez un fichier MP3, M4A, WAV ou MP4.",
+    "error.NO_SPEECH": "Aucune parole n’a été trouvée dans ce fichier.",
+    "error.SETUP_FAILED": "Le modèle vocal n’a pas pu être chargé. Vérifiez votre connexion internet pour le téléchargement unique, puis réessayez.",
+    "error.TRANSCRIBE_FAILED": "La transcription s’est arrêtée de façon inattendue. Essayez un fichier plus court, ou un ordinateur portable pour les longs enregistrements."
   },
   "home": {
     "title": "Fizzdoc — Outils Gratuits PDF, Image, Audio et Office",
@@ -2437,6 +2449,162 @@
         "fusionner des chansons sans perdre en qualité",
         "réunir des messages vocaux",
         "fusionner des fichiers m4a gratuit"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Audio en texte",
+      "summary": "Transformez la parole d’un fichier audio ou vidéo en texte ou en sous-titres.",
+      "action": "Transcrire",
+      "title": "Audio en Texte Gratuit — Transcription Locale, Sans Envoi | Fizzdoc",
+      "description": "Transformez la parole de fichiers MP3, M4A, WAV ou vidéo en texte ou en sous-titres SRT, gratuitement. Whisper tourne dans votre navigateur, rien n’est envoyé.",
+      "h1": "Convertissez l’audio en texte",
+      "lede": "Transcrivez entretiens, cours, messages vocaux et réunions. Le modèle vocal Whisper tourne sur votre appareil, donc l’enregistrement ne le quitte jamais, et après une configuration unique il fonctionne même hors ligne.",
+      "steps": [
+        "Choisissez un fichier audio ou vidéo (MP3, M4A, WAV, OGG, MP4 ou WebM).",
+        "Choisissez la langue parlée, ou laissez la détection automatique, puis texte ou sous-titres.",
+        "Lancez. La première fois, le modèle vocal se télécharge une fois ; lisez ensuite le texte et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quelle est la précision ?",
+          "Fizzdoc utilise Whisper tiny, une petite version du modèle vocal ouvert d’OpenAI qui tourne entièrement dans votre navigateur. Une parole claire en français ou en anglais donne de bons résultats ; les enregistrements bruités, les accents marqués et d’autres langues sont plus approximatifs, alors relisez le texte avant de vous y fier."
+        ],
+        [
+          "Pourquoi la première fois est-elle plus lente ?",
+          "La première fois, votre navigateur télécharge le modèle vocal (environ 58 Mo) et le conserve, donc les fois suivantes démarrent en quelques secondes, même hors ligne. La transcription prend du temps pour les longs enregistrements : cela dépend de votre appareil, et un ordinateur portable est bien plus rapide qu’un téléphone."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "transcrire audio en texte gratuit",
+        "audio en texte en ligne",
+        "convertir un message vocal en texte",
+        "transcrire un entretien ou un cours",
+        "transcription privée sans envoi"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 en texte",
+      "summary": "Transcrivez un enregistrement MP3 en texte.",
+      "action": "Transcrire le MP3",
+      "title": "MP3 en Texte Gratuit — Transcrire l’Audio, Sans Envoi | Fizzdoc",
+      "description": "Convertissez un MP3 en texte gratuitement : message vocal, podcast, cours ou appel enregistré. Whisper transcrit dans votre navigateur, sans envoi du fichier.",
+      "h1": "Convertissez un MP3 en texte",
+      "lede": "Récupérez les paroles d’un MP3 : un message vocal, un épisode de podcast, un cours ou un appel enregistré. Whisper le transcrit dans votre navigateur, donc personne d’autre n’écoute l’enregistrement.",
+      "steps": [
+        "Choisissez un fichier audio ou vidéo (MP3, M4A, WAV, OGG, MP4 ou WebM).",
+        "Choisissez la langue parlée, ou laissez la détection automatique, puis texte ou sous-titres.",
+        "Lancez. La première fois, le modèle vocal se télécharge une fois ; lisez ensuite le texte et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Est-ce que ça marche avec les messages vocaux WhatsApp ?",
+          "Oui. Les messages vocaux WhatsApp sont des fichiers OPUS ou M4A, que Chrome, Edge et Firefox savent lire, tout comme les MP3, WAV et la plupart des enregistrements de téléphone."
+        ],
+        [
+          "Pourquoi la première fois est-elle plus lente ?",
+          "La première fois, votre navigateur télécharge le modèle vocal (environ 58 Mo) et le conserve, donc les fois suivantes démarrent en quelques secondes, même hors ligne. La transcription prend du temps pour les longs enregistrements : cela dépend de votre appareil, et un ordinateur portable est bien plus rapide qu’un téléphone."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "convertir mp3 en texte",
+        "transcrire un podcast",
+        "message vocal WhatsApp en texte",
+        "mémo vocal en texte",
+        "fichier audio en texte gratuit"
+      ]
+    },
+    "video-to-text": {
+      "name": "Vidéo en texte",
+      "summary": "Transcrivez la parole d’une vidéo MP4 ou WebM en texte.",
+      "action": "Transcrire la vidéo",
+      "title": "Vidéo en Texte Gratuit — Transcription Locale, Sans Envoi | Fizzdoc",
+      "description": "Transcrivez la parole de vidéos MP4 ou WebM en texte, gratuitement. Fizzdoc ne lit que le son et le transcrit sur votre appareil, sans envoyer la vidéo.",
+      "h1": "Convertissez une vidéo en texte",
+      "lede": "Obtenez la transcription d’un cours, d’une réunion enregistrée, d’un reel ou d’une vidéo téléchargée. Fizzdoc lit la piste son de la vidéo et la transcrit sur votre appareil.",
+      "steps": [
+        "Choisissez un fichier audio ou vidéo (MP3, M4A, WAV, OGG, MP4 ou WebM).",
+        "Choisissez la langue parlée, ou laissez la détection automatique, puis texte ou sous-titres.",
+        "Lancez. La première fois, le modèle vocal se télécharge une fois ; lisez ensuite le texte et téléchargez-le."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quelles vidéos fonctionnent ?",
+          "MP4, M4V et WebM fonctionnent dans tous les navigateurs modernes, et MOV dans la plupart. Seule la piste son est utilisée ; l’image est ignorée."
+        ],
+        [
+          "Quelle est la précision ?",
+          "Fizzdoc utilise Whisper tiny, une petite version du modèle vocal ouvert d’OpenAI qui tourne entièrement dans votre navigateur. Une parole claire en français ou en anglais donne de bons résultats ; les enregistrements bruités, les accents marqués et d’autres langues sont plus approximatifs, alors relisez le texte avant de vous y fier."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "convertir mp4 en texte",
+        "transcrire une vidéo en texte",
+        "transcription d’une vidéo de cours",
+        "enregistrement de réunion en texte",
+        "extraire le texte d’une vidéo"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Générateur de sous-titres",
+      "summary": "Créez des sous-titres SRT ou VTT à partir d’une vidéo ou d’un audio.",
+      "action": "Créer les sous-titres",
+      "title": "Générateur de Sous-Titres Gratuit — SRT et VTT, Sans Envoi | Fizzdoc",
+      "description": "Créez des sous-titres SRT ou VTT pour vos vidéos, gratuitement. Whisper écoute l’audio dans votre navigateur, la vidéo n’est jamais envoyée à un serveur.",
+      "h1": "Générez des sous-titres pour une vidéo",
+      "lede": "Créez des sous-titres minutés pour une vidéo d’un seul coup : Fizzdoc écoute la piste son et écrit un fichier SRT ou VTT pour YouTube, VLC, Premiere, CapCut ou n’importe quel lecteur.",
+      "steps": [
+        "Choisissez un fichier vidéo ou audio (MP4, MOV, WebM, MP3, M4A ou WAV).",
+        "Choisissez la langue parlée, ou laissez la détection automatique, puis SRT ou VTT.",
+        "Cliquez sur « Créer les sous-titres », vérifiez-les et téléchargez le fichier."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Comment ajouter les sous-titres à ma vidéo ?",
+          "Importez le fichier .srt à côté de votre vidéo sur YouTube, Facebook ou LinkedIn, ou glissez-le dans VLC, Premiere Pro, DaVinci Resolve ou CapCut. Le VTT est le format des lecteurs vidéo web."
+        ],
+        [
+          "Quelle est la précision ?",
+          "Fizzdoc utilise Whisper tiny, une petite version du modèle vocal ouvert d’OpenAI qui tourne entièrement dans votre navigateur. Une parole claire en français ou en anglais donne de bons résultats ; les enregistrements bruités, les accents marqués et d’autres langues sont plus approximatifs, alors relisez le texte avant de vous y fier."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "générateur de sous-titres srt",
+        "sous-titres automatiques pour vidéo",
+        "générer des sous-titres gratuitement",
+        "vidéo en srt",
+        "créer des sous-titres vtt"
       ]
     }
   }

@@ -267,7 +267,19 @@
     "au.hint": "Klik op de golfvorm om ernaartoe te springen en druk op Afspelen. Sleep de handvatten, of typ exacte tijden zoals 1:30.5. “Start hier”, “Eindig hier” en “Splits hier” gebruiken de afspeelpositie.",
     "au.badTime": "Typ een tijd zoals 1:30 of 1:30.5.",
     "au.results": "Je bestanden",
-    "au.download": "Downloaden"
+    "au.download": "Downloaden",
+    "ws.spokenLanguage": "Gesproken taal",
+    "ws.langAuto": "Automatisch detecteren",
+    "ws.fmtTxt": "Tekst (.txt)",
+    "ws.fmtSrt": "Ondertitels (.srt)",
+    "ws.fmtVtt": "Webondertitels (.vtt)",
+    "ws.speechModel": "De eerste keer downloadt je browser eenmalig het spraakmodel ({mb} MB) en bewaart dat. Daarna start het binnen een paar seconden, ook offline.",
+    "ws.chooseMedia": "Kies een audio- of videobestand",
+    "app.setup": "Voorbereiden… eenmalige installatie: {done} van {total} MB. De volgende keer start het meteen.",
+    "error.NO_AUDIO_TRACK": "Deze browser kan het geluid in dit bestand niet lezen. Probeer een MP3-, M4A-, WAV- of MP4-bestand.",
+    "error.NO_SPEECH": "Er is geen spraak gevonden in dit bestand.",
+    "error.SETUP_FAILED": "Het spraakmodel kon niet worden geladen. Controleer je internetverbinding voor de eenmalige download en probeer het opnieuw.",
+    "error.TRANSCRIBE_FAILED": "De transcriptie is onverwacht gestopt. Probeer een korter bestand, of een laptop voor lange opnames."
   },
   "home": {
     "title": "Fizzdoc — Gratis PDF-, Afbeeldings- & Audiotools. Geen Upload.",
@@ -2437,6 +2449,162 @@
         "nummers samenvoegen zonder kwaliteitsverlies",
         "voice memos samenvoegen",
         "m4a bestanden samenvoegen gratis"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Audio naar tekst",
+      "summary": "Zet spraak in een audio- of videobestand om in tekst of ondertitels.",
+      "action": "Transcriberen",
+      "title": "Audio naar Tekst Gratis — Op je Apparaat, Geen Upload | Fizzdoc",
+      "description": "Zet spraak in MP3-, M4A-, WAV- of videobestanden gratis om in tekst of SRT-ondertitels. Whisper draait in je browser, dus je opname wordt nooit geüpload.",
+      "h1": "Audio omzetten naar tekst",
+      "lede": "Transcribeer interviews, colleges, spraakberichten en vergaderingen. Het Whisper-spraakmodel draait op je eigen apparaat, dus de opname verlaat het nooit, en na een eenmalige installatie werkt het zelfs offline.",
+      "steps": [
+        "Kies een audio- of videobestand (MP3, M4A, WAV, OGG, MP4 of WebM).",
+        "Kies de gesproken taal, of laat die op automatisch detecteren staan, en kies tekst of ondertitels.",
+        "Start het. De eerste keer wordt het spraakmodel eenmalig gedownload; daarna lees je de tekst en download je die."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe nauwkeurig is het?",
+          "Fizzdoc gebruikt Whisper tiny, een kleine versie van het open spraakmodel van OpenAI dat volledig in je browser draait. Duidelijk Engels klinkt goed uit de bus; opnames met veel ruis, sterke accenten en andere talen gaan minder goed, dus lees de tekst door voordat je erop vertrouwt."
+        ],
+        [
+          "Waarom is de eerste keer trager?",
+          "De eerste keer downloadt je browser het spraakmodel (ongeveer 58 MB) en bewaart dat, zodat latere keren binnen een paar seconden starten, ook offline. Transcriberen duurt bij lange opnames even: de snelheid hangt af van je apparaat, en een laptop is veel sneller dan een telefoon."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "audio naar tekst gratis",
+        "spraak naar tekst online",
+        "opname omzetten naar tekst",
+        "interview of college uittypen",
+        "privé transcriberen zonder upload"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 naar tekst",
+      "summary": "Zet een MP3-opname om in tekst.",
+      "action": "MP3 transcriberen",
+      "title": "MP3 naar Tekst Gratis — MP3 Uittypen, Geen Upload | Fizzdoc",
+      "description": "Zet MP3-audio gratis om in tekst: spraakberichten, podcasts, colleges en gesprekken. Whisper transcribeert in je browser, zonder upload. TXT of SRT.",
+      "h1": "MP3 omzetten naar tekst",
+      "lede": "Haal de woorden uit een MP3: een spraakbericht, een podcastaflevering, een college of een opgenomen gesprek. Whisper transcribeert het direct in je browser, dus niemand anders hoort de opname ooit.",
+      "steps": [
+        "Kies een audio- of videobestand (MP3, M4A, WAV, OGG, MP4 of WebM).",
+        "Kies de gesproken taal, of laat die op automatisch detecteren staan, en kies tekst of ondertitels.",
+        "Start het. De eerste keer wordt het spraakmodel eenmalig gedownload; daarna lees je de tekst en download je die."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Werkt het met WhatsApp-spraakberichten?",
+          "Ja. WhatsApp-spraakberichten zijn OPUS- of M4A-bestanden, die Chrome, Edge en Firefox kunnen lezen, net als MP3, WAV en de meeste opnames van je telefoon."
+        ],
+        [
+          "Waarom is de eerste keer trager?",
+          "De eerste keer downloadt je browser het spraakmodel (ongeveer 58 MB) en bewaart dat, zodat latere keren binnen een paar seconden starten, ook offline. Transcriberen duurt bij lange opnames even: de snelheid hangt af van je apparaat, en een laptop is veel sneller dan een telefoon."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "mp3 naar tekst omzetten",
+        "podcast uittypen",
+        "WhatsApp spraakbericht naar tekst",
+        "voice memo naar tekst",
+        "audiobestand naar tekst gratis"
+      ]
+    },
+    "video-to-text": {
+      "name": "Video naar tekst",
+      "summary": "Transcribeer de spraak in een MP4- of WebM-video naar tekst.",
+      "action": "Video transcriberen",
+      "title": "Video naar Tekst Gratis — MP4 Uittypen, Geen Upload | Fizzdoc",
+      "description": "Zet spraak in een MP4-, MOV- of WebM-video gratis om in tekst of ondertitels. Whisper leest het geluid in je browser; de video wordt nooit geüpload.",
+      "h1": "Video omzetten naar tekst",
+      "lede": "Krijg een transcript van een college, een vergaderopname, een reel of een gedownloade video. Fizzdoc leest het geluidsspoor van de video en transcribeert het op je eigen apparaat.",
+      "steps": [
+        "Kies een audio- of videobestand (MP3, M4A, WAV, OGG, MP4 of WebM).",
+        "Kies de gesproken taal, of laat die op automatisch detecteren staan, en kies tekst of ondertitels.",
+        "Start het. De eerste keer wordt het spraakmodel eenmalig gedownload; daarna lees je de tekst en download je die."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Welke video's werken?",
+          "MP4, M4V en WebM werken in elke moderne browser, en MOV in de meeste. Alleen het geluidsspoor wordt gebruikt; het beeld wordt genegeerd."
+        ],
+        [
+          "Hoe nauwkeurig is het?",
+          "Fizzdoc gebruikt Whisper tiny, een kleine versie van het open spraakmodel van OpenAI dat volledig in je browser draait. Duidelijk Engels klinkt goed uit de bus; opnames met veel ruis, sterke accenten en andere talen gaan minder goed, dus lees de tekst door voordat je erop vertrouwt."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "mp4 naar tekst omzetten",
+        "video naar tekst transcriberen",
+        "college video transcript",
+        "vergaderopname naar tekst",
+        "tekst uit een video halen"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Ondertitelgenerator",
+      "summary": "Maak SRT- of VTT-ondertitels van een video- of audiobestand.",
+      "action": "Ondertitels maken",
+      "title": "Ondertitels Maken Gratis — Video naar SRT, Geen Upload | Fizzdoc",
+      "description": "Maak gratis SRT- of VTT-ondertitels van elke video of audio. Whisper maakt de getimede ondertitels in je browser, en de video wordt nooit geüpload.",
+      "h1": "Ondertitels maken van een video",
+      "lede": "Maak in één keer getimede ondertitels voor een video: Fizzdoc luistert naar het geluidsspoor en schrijft een SRT- of VTT-bestand voor YouTube, VLC, Premiere, CapCut of elke videospeler.",
+      "steps": [
+        "Kies een video- of audiobestand (MP4, MOV, WebM, MP3, M4A of WAV).",
+        "Kies de gesproken taal, of laat die op automatisch detecteren staan, en kies SRT of VTT.",
+        "Klik op “Ondertitels maken”, controleer de ondertitels en download het bestand."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe voeg ik de ondertitels toe aan mijn video?",
+          "Upload het .srt-bestand naast je video op YouTube, Facebook of LinkedIn, of sleep het in VLC, Premiere Pro, DaVinci Resolve of CapCut. VTT is het formaat dat webvideospelers gebruiken."
+        ],
+        [
+          "Hoe nauwkeurig is het?",
+          "Fizzdoc gebruikt Whisper tiny, een kleine versie van het open spraakmodel van OpenAI dat volledig in je browser draait. Duidelijk Engels klinkt goed uit de bus; opnames met veel ruis, sterke accenten en andere talen gaan minder goed, dus lees de tekst door voordat je erop vertrouwt."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "SRT ondertitels maken",
+        "automatische ondertiteling video",
+        "ondertitels genereren van video gratis",
+        "video naar SRT",
+        "VTT ondertitels maken"
       ]
     }
   }

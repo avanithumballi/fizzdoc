@@ -342,6 +342,53 @@ test('finds and marks personal details in one click, and leaves amounts and date
   await expect(marks).toHaveCount(0);
 });
 
+test('transcribes speech on the device, with a one-time setup, and writes text and subtitles', async ({ page, baseURL }) => {
+  test.setTimeout(180_000);
+  const seen = watch(page);
+  await page.goto('/audio-to-text/');
+  await expect(page.locator('.drop strong')).toHaveText('Choose an audio or video file');
+  await expect(page.locator('.options')).toContainText('downloads the speech model (58 MB) once');
+  await page.locator('#file-input').setInputFiles(file('speech.wav'));
+  await page.locator('select[name="language"]').selectOption('english');
+  await page.getByRole('button', { name: 'Transcribe' }).click();
+  // The first run downloads the model once, and says so.
+  await expect(page.locator('#status')).toContainText('one-time setup', { timeout: 30_000 });
+  await expect(page.locator('#status')).toContainText('Done — TXT', { timeout: 150_000 });
+  await expect(page.locator('.transcript-preview')).toContainText('ask not what your country can do for you');
+  const text = await downloadBytes(page);
+  expect(text.name).toBe('speech.txt');
+  expect(text.bytes.toString()).toMatch(/fellow Americans/i);
+
+  // The subtitle page starts on SRT, and the model now loads from the browser's cache: no setup.
+  await page.goto('/subtitle-generator/');
+  await expect(page.locator('select[name="format"]')).toHaveValue('srt');
+  await page.locator('#file-input').setInputFiles(file('speech.wav'));
+  const statuses: string[] = [];
+  const timer = setInterval(async () => statuses.push(await page.locator('#status').innerText().catch(() => '')), 200);
+  await page.getByRole('button', { name: 'Create subtitles' }).click();
+  await expect(page.locator('#status')).toContainText('Done — SRT', { timeout: 120_000 });
+  clearInterval(timer);
+  expect(statuses.some((s) => s.includes('one-time setup'))).toBe(false);
+  const srt = await downloadBytes(page);
+  expect(srt.name).toBe('speech.srt');
+  expect(srt.bytes.toString()).toMatch(/^1\n00:00:0\d,\d{3} --> 00:00:\d\d,\d{3}\n.*country/s);
+
+  const origin = new URL(baseURL!).origin;
+  for (const request of seen.requests) {
+    if (request.url.startsWith('blob:') || request.url.startsWith('data:')) continue;
+    expect(new URL(request.url).origin, request.url).toBe(origin);
+    expect(request.body, request.url).toBeNull();
+  }
+  expect(seen.violations).toEqual([]);
+});
+
+test('says plainly when a file has no sound it can read', async ({ page }) => {
+  await page.goto('/video-to-text/');
+  await page.locator('#file-input').setInputFiles({ name: 'clip.mp4', mimeType: 'video/mp4', buffer: Buffer.from('not really a video') });
+  await page.getByRole('button', { name: 'Transcribe video' }).click();
+  await expect(page.locator('#status')).toContainText('can’t read the sound in this file');
+});
+
 test('trims, splits and merges audio without re-encoding, with a preview first', async ({ page }) => {
   const { parseAudio } = await import('../src/engine/audio');
   const seconds = (bytes: Buffer) => parseAudio(new Uint8Array(bytes)).duration;
@@ -774,7 +821,13 @@ test('finds a tool from the home page search without anything leaving the page',
 
   await page.goto('/hi/');
   await page.locator('#tool-search').fill('ऑडियो');
-  await expect(results.getByRole('option')).toHaveCount(2);
+  // Only audio tools come up, under their Hindi names.
+  const hindi = JSON.parse(readFileSync(new URL('../src/i18n/hi.json', import.meta.url), 'utf8')) as { tools: Record<string, { name: string }> };
+  const audioNames = TOOLS.filter((tool) => tool.format === 'audio').map((tool) => hindi.tools[tool.slug].name);
+  await expect(results.getByRole('option').first()).toBeVisible();
+  const found = await results.getByRole('option').allInnerTexts();
+  expect(found.length).toBeGreaterThanOrEqual(2);
+  for (const name of found) expect(audioNames, name).toContain(name.trim());
   await page.locator('#tool-search').fill('zzqx');
   await expect(results).toBeHidden();
   await expect(page.locator('#tool-search-status')).toBeVisible();

@@ -267,7 +267,19 @@
     "au.hint": "Kliknij przebieg fali, aby przeskoczyć do tego miejsca, i naciśnij Odtwórz. Przeciągaj uchwyty albo wpisuj dokładne czasy, np. 1:30.5. „Zacznij tutaj”, „Zakończ tutaj” i „Podziel tutaj” korzystają z pozycji odtwarzania.",
     "au.badTime": "Wpisz czas, np. 1:30 lub 1:30.5.",
     "au.results": "Twoje pliki",
-    "au.download": "Pobierz"
+    "au.download": "Pobierz",
+    "ws.spokenLanguage": "Język mówiony",
+    "ws.langAuto": "Wykryj automatycznie",
+    "ws.fmtTxt": "Tekst (.txt)",
+    "ws.fmtSrt": "Napisy (.srt)",
+    "ws.fmtVtt": "Napisy internetowe (.vtt)",
+    "ws.speechModel": "Za pierwszym razem przeglądarka jednorazowo pobierze model mowy ({mb} MB) i go zachowa. Potem uruchamia się w kilka sekund, nawet offline.",
+    "ws.chooseMedia": "Wybierz plik audio lub wideo",
+    "app.setup": "Przygotowywanie… jednorazowa konfiguracja: {done} z {total} MB. Następnym razem ruszy od razu.",
+    "error.NO_AUDIO_TRACK": "Ta przeglądarka nie może odczytać dźwięku z tego pliku. Spróbuj pliku MP3, M4A, WAV lub MP4.",
+    "error.NO_SPEECH": "W tym pliku nie znaleziono mowy.",
+    "error.SETUP_FAILED": "Nie udało się wczytać modelu mowy. Sprawdź połączenie z internetem na czas jednorazowego pobierania i spróbuj ponownie.",
+    "error.TRANSCRIBE_FAILED": "Transkrypcja nieoczekiwanie się zatrzymała. Spróbuj krótszego pliku albo laptopa przy długich nagraniach."
   },
   "home": {
     "title": "Fizzdoc — Darmowe PDF, obrazy, audio i Office. Bez wysyłania.",
@@ -2437,6 +2449,162 @@
         "połącz piosenki bez utraty jakości",
         "połącz notatki głosowe",
         "połącz pliki m4a za darmo"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Audio na tekst",
+      "summary": "Zamień mowę z pliku audio lub wideo na tekst albo napisy.",
+      "action": "Transkrybuj",
+      "title": "Audio na Tekst za Darmo — Na Twoim Urządzeniu | Fizzdoc",
+      "description": "Zamień mowę z plików MP3, M4A, WAV lub wideo na tekst albo napisy SRT za darmo. Whisper działa w przeglądarce, więc nagranie nie jest nigdzie wysyłane.",
+      "h1": "Zamień audio na tekst",
+      "lede": "Transkrybuj wywiady, wykłady, notatki głosowe i spotkania. Model mowy Whisper działa na Twoim urządzeniu, więc nagranie nigdy go nie opuszcza, a po jednorazowej konfiguracji działa nawet offline.",
+      "steps": [
+        "Wybierz plik audio lub wideo (MP3, M4A, WAV, OGG, MP4 lub WebM).",
+        "Wybierz język mówiony albo zostaw automatyczne wykrywanie, a potem wybierz tekst lub napisy.",
+        "Uruchom. Za pierwszym razem model mowy pobiera się jednorazowo; potem przeczytaj tekst i go pobierz."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak dokładna jest transkrypcja?",
+          "Fizzdoc używa modelu Whisper tiny, małej wersji otwartego modelu mowy OpenAI, który działa w całości w przeglądarce. Wyraźna angielska mowa wychodzi dobrze; nagrania z szumem, mocnym akcentem i inne języki wypadają gorzej, więc przeczytaj tekst, zanim na nim polegasz."
+        ],
+        [
+          "Dlaczego pierwsze uruchomienie jest wolniejsze?",
+          "Za pierwszym razem przeglądarka pobiera model mowy (około 58 MB) i go zachowuje, dzięki czemu kolejne uruchomienia startują w kilka sekund, nawet offline. Transkrypcja długich nagrań chwilę trwa: tempo zależy od urządzenia, a laptop jest znacznie szybszy niż telefon."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "zamiana audio na tekst za darmo",
+        "mowa na tekst online",
+        "nagranie głosowe na tekst",
+        "transkrypcja wywiadu lub wykładu",
+        "transkrypcja bez przesyłania plików"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 na tekst",
+      "summary": "Zamień nagranie MP3 na tekst.",
+      "action": "Transkrybuj MP3",
+      "title": "MP3 na Tekst za Darmo — Transkrypcja MP3 Bez Wysyłania | Fizzdoc",
+      "description": "Zamień audio MP3 na tekst za darmo: notatki głosowe, podcasty, wykłady i rozmowy. Whisper transkrybuje w przeglądarce, bez wysyłania. TXT lub SRT.",
+      "h1": "Zamień MP3 na tekst",
+      "lede": "Wydobądź słowa z pliku MP3: notatki głosowej, odcinka podcastu, wykładu czy nagranej rozmowy. Whisper transkrybuje go w Twojej przeglądarce, więc nikt inny nigdy nie usłyszy nagrania.",
+      "steps": [
+        "Wybierz plik audio lub wideo (MP3, M4A, WAV, OGG, MP4 lub WebM).",
+        "Wybierz język mówiony albo zostaw automatyczne wykrywanie, a potem wybierz tekst lub napisy.",
+        "Uruchom. Za pierwszym razem model mowy pobiera się jednorazowo; potem przeczytaj tekst i go pobierz."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy działa z notatkami głosowymi z WhatsApp?",
+          "Tak. Notatki głosowe z WhatsApp to pliki OPUS lub M4A, które Chrome, Edge i Firefox potrafią odczytać, podobnie jak MP3, WAV i większość nagrań z telefonu."
+        ],
+        [
+          "Dlaczego pierwsze uruchomienie jest wolniejsze?",
+          "Za pierwszym razem przeglądarka pobiera model mowy (około 58 MB) i go zachowuje, dzięki czemu kolejne uruchomienia startują w kilka sekund, nawet offline. Transkrypcja długich nagrań chwilę trwa: tempo zależy od urządzenia, a laptop jest znacznie szybszy niż telefon."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "mp3 na tekst",
+        "transkrypcja podcastu",
+        "wiadomość głosowa WhatsApp na tekst",
+        "notatka głosowa na tekst",
+        "plik audio na tekst za darmo"
+      ]
+    },
+    "video-to-text": {
+      "name": "Wideo na tekst",
+      "summary": "Transkrybuj mowę z filmu MP4 lub WebM na tekst.",
+      "action": "Transkrybuj wideo",
+      "title": "Wideo na Tekst za Darmo — Transkrypcja MP4 Bez Wysyłania | Fizzdoc",
+      "description": "Zamień mowę z filmu MP4, MOV lub WebM na tekst albo napisy za darmo. Whisper czyta dźwięk w przeglądarce; film nie jest nigdzie wysyłany.",
+      "h1": "Zamień wideo na tekst",
+      "lede": "Uzyskaj transkrypcję wykładu, nagrania spotkania, rolki albo pobranego filmu. Fizzdoc odczytuje ścieżkę dźwiękową filmu i transkrybuje ją na Twoim urządzeniu.",
+      "steps": [
+        "Wybierz plik audio lub wideo (MP3, M4A, WAV, OGG, MP4 lub WebM).",
+        "Wybierz język mówiony albo zostaw automatyczne wykrywanie, a potem wybierz tekst lub napisy.",
+        "Uruchom. Za pierwszym razem model mowy pobiera się jednorazowo; potem przeczytaj tekst i go pobierz."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie filmy działają?",
+          "MP4, M4V i WebM działają w każdej nowoczesnej przeglądarce, a MOV w większości. Wykorzystywana jest tylko ścieżka dźwiękowa; obraz jest pomijany."
+        ],
+        [
+          "Jak dokładna jest transkrypcja?",
+          "Fizzdoc używa modelu Whisper tiny, małej wersji otwartego modelu mowy OpenAI, który działa w całości w przeglądarce. Wyraźna angielska mowa wychodzi dobrze; nagrania z szumem, mocnym akcentem i inne języki wypadają gorzej, więc przeczytaj tekst, zanim na nim polegasz."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "mp4 na tekst",
+        "transkrypcja filmu na tekst",
+        "transkrypcja wykładu z wideo",
+        "nagranie spotkania na tekst",
+        "wyciągnięcie tekstu z filmu"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Generator napisów",
+      "summary": "Utwórz napisy SRT lub VTT z pliku wideo lub audio.",
+      "action": "Utwórz napisy",
+      "title": "Generator Napisów za Darmo — Wideo na SRT Bez Wysyłania | Fizzdoc",
+      "description": "Twórz napisy SRT lub VTT z dowolnego wideo lub audio za darmo. Napisy z czasem generuje Whisper w przeglądarce, a film nie jest nigdzie wysyłany.",
+      "h1": "Generuj napisy do filmu",
+      "lede": "Zrób napisy z czasem do filmu za jednym razem: Fizzdoc słucha ścieżki dźwiękowej i zapisuje plik SRT lub VTT dla YouTube, VLC, Premiere, CapCut lub dowolnego odtwarzacza.",
+      "steps": [
+        "Wybierz plik wideo lub audio (MP4, MOV, WebM, MP3, M4A lub WAV).",
+        "Wybierz język mówiony albo zostaw automatyczne wykrywanie, a potem wybierz SRT lub VTT.",
+        "Kliknij „Utwórz napisy”, sprawdź napisy i pobierz plik."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jak dodać napisy do filmu?",
+          "Wgraj plik .srt obok filmu na YouTube, Facebooku lub LinkedIn albo przeciągnij go do VLC, Premiere Pro, DaVinci Resolve lub CapCut. VTT to format używany przez internetowe odtwarzacze wideo."
+        ],
+        [
+          "Jak dokładna jest transkrypcja?",
+          "Fizzdoc używa modelu Whisper tiny, małej wersji otwartego modelu mowy OpenAI, który działa w całości w przeglądarce. Wyraźna angielska mowa wychodzi dobrze; nagrania z szumem, mocnym akcentem i inne języki wypadają gorzej, więc przeczytaj tekst, zanim na nim polegasz."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "generator napisów SRT",
+        "automatyczne napisy do filmu",
+        "generuj napisy z wideo za darmo",
+        "wideo na SRT",
+        "napisy VTT online"
       ]
     }
   }

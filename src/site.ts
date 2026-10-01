@@ -30,7 +30,8 @@ export type ToolOp =
   | 'page-numbers'
   | 'watermark-pdf'
   | 'audio-split'
-  | 'audio-merge';
+  | 'audio-merge'
+  | 'transcribe';
 export type Format = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image' | 'audio';
 
 export const SITE = {
@@ -72,6 +73,22 @@ const PRIVACY_FAQ: [string, string][] = [
     'Is Fizzdoc free?',
     'Yes, and it stays free: no sign-up, no watermark, no daily limit and no premium tier. Fizzdoc is open source under the Apache-2.0 license, so anyone can run their own copy.',
   ],
+];
+
+// Audio to Text and its siblings share how they work and what to expect.
+const TRANSCRIBE_IN = { accept: 'audio/*,video/*,.mp3,.m4a,.wav,.ogg,.oga,.opus,.flac,.aac,.webm,.mp4,.m4v,.mov' };
+const TRANSCRIBE_STEPS = [
+  'Choose an audio or video file (MP3, M4A, WAV, OGG, MP4 or WebM).',
+  'Pick the spoken language, or leave it on auto-detect, and choose text or subtitles.',
+  'Start it. The first time, the speech model downloads once; then read the text and download it.',
+];
+const TRANSCRIBE_ACCURACY: [string, string] = [
+  'How accurate is it?',
+  'Fizzdoc uses Whisper tiny, a small version of OpenAI’s open speech model that runs fully in your browser. Clear English speech comes out well; noisy recordings, strong accents and other languages are rougher, so read the text through before you rely on it.',
+];
+const TRANSCRIBE_FIRST_RUN: [string, string] = [
+  'Why is the first run slower?',
+  'The first time, your browser downloads the speech model (about 58 MB) and keeps it, so later runs start in seconds, even offline. Transcribing takes a while for long recordings: speed depends on your device, and a laptop is much faster than a phone.',
 ];
 
 export const TOOLS: Tool[] = [
@@ -384,6 +401,90 @@ export const TOOLS: Tool[] = [
       PRIVACY_FAQ[1],
     ],
     input: { accept: '.mp3,.m4a,audio/mpeg,audio/mp4,audio/x-m4a,audio/aac', multiple: true },
+  },
+  {
+    op: 'transcribe',
+    format: 'audio',
+    slug: 'audio-to-text',
+    name: 'Audio to Text',
+    summary: 'Turn speech in an audio or video file into text or subtitles.',
+    action: 'Transcribe',
+    title: 'Audio to Text Free — Transcribe on Your Device, No Upload | Fizzdoc',
+    description:
+      'Turn speech in MP3, M4A, WAV or video files into text or SRT subtitles for free. Whisper runs in your browser, so the recording is never uploaded.',
+    h1: 'Convert audio to text',
+    lede: 'Transcribe interviews, lectures, voice notes and meetings. The Whisper speech model runs on your device, so the recording never leaves it, and after a one-time setup it works even offline.',
+    steps: TRANSCRIBE_STEPS,
+    faq: [PRIVACY_FAQ[0], TRANSCRIBE_ACCURACY, TRANSCRIBE_FIRST_RUN, PRIVACY_FAQ[1]],
+    input: TRANSCRIBE_IN,
+  },
+  {
+    op: 'transcribe',
+    format: 'audio',
+    slug: 'mp3-to-text',
+    name: 'MP3 to Text',
+    summary: 'Transcribe an MP3 recording into text.',
+    action: 'Transcribe MP3',
+    title: 'MP3 to Text Free — Transcribe MP3 Audio, No Upload | Fizzdoc',
+    description:
+      'Convert MP3 audio to text for free: voice notes, podcasts, lectures and calls. Transcribed by Whisper in your browser, never uploaded. TXT or SRT.',
+    h1: 'Convert MP3 to text',
+    lede: 'Get the words out of an MP3: a voice note, a podcast episode, a lecture or a recorded call. Whisper transcribes it right in your browser, so nobody else ever hears the recording.',
+    steps: TRANSCRIBE_STEPS,
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Does it work with WhatsApp voice notes?', 'Yes. WhatsApp voice notes are OPUS or M4A files, which Chrome, Edge and Firefox can read, and so are MP3, WAV and most phone recordings.'],
+      TRANSCRIBE_FIRST_RUN,
+      PRIVACY_FAQ[1],
+    ],
+    input: TRANSCRIBE_IN,
+  },
+  {
+    op: 'transcribe',
+    format: 'audio',
+    slug: 'video-to-text',
+    name: 'Video to Text',
+    summary: 'Transcribe the speech in an MP4 or WebM video into text.',
+    action: 'Transcribe video',
+    title: 'Video to Text Free — Transcribe MP4 Speech, No Upload | Fizzdoc',
+    description:
+      'Turn speech in an MP4, MOV or WebM video into text or subtitles for free. Whisper reads the sound track in your browser; the video is never uploaded.',
+    h1: 'Convert video to text',
+    lede: 'Get a transcript of a lecture, a meeting recording, a reel or a video you downloaded. Fizzdoc reads the video’s sound track and transcribes it on your device.',
+    steps: TRANSCRIBE_STEPS,
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Which videos work?', 'MP4, M4V and WebM work in every modern browser, and MOV in most. Only the sound track is used; the picture is ignored.'],
+      TRANSCRIBE_ACCURACY,
+      PRIVACY_FAQ[1],
+    ],
+    input: TRANSCRIBE_IN,
+  },
+  {
+    op: 'transcribe',
+    format: 'audio',
+    slug: 'subtitle-generator',
+    name: 'Subtitle Generator',
+    summary: 'Create SRT or VTT subtitles from a video or audio file.',
+    action: 'Create subtitles',
+    title: 'Subtitle Generator Free — Video to SRT Captions, No Upload | Fizzdoc',
+    description:
+      'Create SRT or VTT subtitles from any video or audio for free. Timed captions are made by Whisper in your browser, and the video is never uploaded.',
+    h1: 'Generate subtitles from a video',
+    lede: 'Make timed captions for a video in one go: Fizzdoc listens to the sound track and writes an SRT or VTT file for YouTube, VLC, Premiere, CapCut or any video player.',
+    steps: [
+      'Choose a video or audio file (MP4, MOV, WebM, MP3, M4A or WAV).',
+      'Pick the spoken language, or leave it on auto-detect, and choose SRT or VTT.',
+      'Click “Create subtitles”, check the captions and download the file.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['How do I add the subtitles to my video?', 'Upload the .srt file next to your video on YouTube, Facebook or LinkedIn, or drag it into VLC, Premiere Pro, DaVinci Resolve or CapCut. VTT is the format web video players use.'],
+      TRANSCRIBE_ACCURACY,
+      PRIVACY_FAQ[1],
+    ],
+    input: TRANSCRIBE_IN,
+    preset: { format: 'srt' },
   },
 ];
 
@@ -1396,6 +1497,10 @@ const KEYWORDS: Record<string, string[]> = {
   'mermaid-to-image': ['Mermaid to PNG', 'Mermaid to SVG online free', 'export Mermaid diagram as image', 'Mermaid flowchart to picture', 'Mermaid live editor alternative'],
   'mermaid-to-png': ['Mermaid to PNG converter', 'export Mermaid diagram as PNG', 'Mermaid PNG high resolution', 'Mermaid diagram with transparent background', 'Mermaid flowchart to PNG'],
   'mermaid-to-svg': ['Mermaid to SVG converter', 'export Mermaid diagram as SVG', 'Mermaid SVG download', 'Mermaid diagram for Figma', 'Mermaid chart to vector image'],
+  'audio-to-text': ['transcribe audio to text free', 'speech to text online', 'voice recording to text', 'transcribe interview or lecture', 'private transcription without upload'],
+  'mp3-to-text': ['convert MP3 to text', 'transcribe podcast', 'WhatsApp voice note to text', 'voice memo to text', 'audio file to text free'],
+  'video-to-text': ['convert MP4 to text', 'transcribe video to text', 'lecture video transcript', 'meeting recording to text', 'get text from a video'],
+  'subtitle-generator': ['SRT subtitle generator', 'auto captions for video', 'generate subtitles from video free', 'video to SRT', 'subtitles for YouTube'],
   'compress-image': [
     'compress image without losing quality',
     'reduce photo size',

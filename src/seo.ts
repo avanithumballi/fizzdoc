@@ -88,6 +88,7 @@ const ICON_PATHS: Record<ToolOp, string> = {
   'office-compress': SHRINK,
   'audio-split': '<path d="M3 12h2M7 8v8M11 5v14M15 9v6"/><path d="m18 8 3 8M21 8l-3 8"/>',
   'audio-merge': '<path d="M3 12h2M7 9v6M11 6v12"/><path d="M14 12h7M18 9l3 3-3 3"/>',
+  transcribe: '<path d="M3 11v2M6.5 8v8M10 10v4"/><path d="M14 7h7M14 12h7M14 17h4"/>',
   'edit-pdf': '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
   'redact-pdf': '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><rect x="7" y="12" width="10" height="3" fill="currentColor"/><path d="M7 18h6"/>',
   'scan-pdf': '<path d="M5 3h14v8H5z"/><path d="M3 11h18v4H3z"/><path d="M7 15v6h10v-6"/><path d="M9 18h6"/>',
@@ -186,7 +187,9 @@ function input(c: Copy, tool: Tool) {
         ? { accept: 'application/pdf,.pdf', multiple: tool.op === 'merge' }
         : { accept: `.${FORMATS[tool.format].ext}` });
   const ext = /\.\w+/.exec(accept)?.[0] ?? '';
-  const choose = accept.startsWith('.mp3')
+  const choose = accept.startsWith('audio/*,video/*')
+    ? c.t('ws.chooseMedia')
+    : accept.startsWith('.mp3')
     ? c.t(multiple ? 'ws.chooseAudios' : 'ws.chooseAudio')
     : accept.startsWith('application/pdf')
     ? c.t(multiple ? 'ws.choosePdfs' : 'ws.choosePdf')
@@ -216,6 +219,17 @@ const FORMAT_SELECT = (c: Copy, selected: string) =>
 const range = (label: string, name: string, value: number, min: number, max: number) =>
   `<label>${esc(label)} <output>${value}%</output><input name="${name}" type="range" min="${min}" max="${max}" step="5" value="${value}"></label>`;
 
+// Languages Whisper hears, named in their own script so they read the same on every page.
+const SPEECH_LANGUAGES: [whisper: string, label: string][] = [
+  ['english', 'English'], ['hindi', 'हिन्दी'], ['bengali', 'বাংলা'], ['marathi', 'मराठी'], ['tamil', 'தமிழ்'], ['telugu', 'తెలుగు'],
+  ['gujarati', 'ગુજરાતી'], ['kannada', 'ಕನ್ನಡ'], ['malayalam', 'മലയാളം'], ['punjabi', 'ਪੰਜਾਬੀ'], ['urdu', 'اردو'],
+  ['spanish', 'Español'], ['portuguese', 'Português'], ['french', 'Français'], ['german', 'Deutsch'], ['italian', 'Italiano'],
+  ['dutch', 'Nederlands'], ['polish', 'Polski'], ['turkish', 'Türkçe'], ['indonesian', 'Bahasa Indonesia'], ['vietnamese', 'Tiếng Việt'],
+  ['arabic', 'العربية'], ['russian', 'Русский'], ['japanese', '日本語'], ['korean', '한국어'], ['chinese', '中文'],
+];
+// Speech model plus ONNX Runtime, downloaded once (public/whisper/, vite-plugins/whisper-assets.ts).
+export const SPEECH_MODEL_MB = 58;
+
 /** Extra controls a tool needs beyond the file picker. Each control's name is an engine option. */
 function optionsHtml(c: Copy, tool: Tool) {
   const mode = tool.preset?.mode;
@@ -229,6 +243,10 @@ function optionsHtml(c: Copy, tool: Tool) {
     <label>${esc(c.t('ws.pngSize'))}<select name="scale">${option('1', '1×')}${option('2', '2×', true)}${option('4', '4×')}</select></label>
     <label>${esc(c.t('ws.theme'))}<select name="theme">${(['default', 'neutral', 'dark', 'forest'] as const).map((th) => option(th, c.t(`ws.theme${th[0].toUpperCase()}${th.slice(1)}` as UiKey))).join('')}</select></label>
     <label class="check"><input name="transparent" type="checkbox"> ${esc(c.t('ws.transparent'))}</label>`;
+  if (tool.op === 'transcribe')
+    return `<label>${esc(c.t('ws.spokenLanguage'))}<select name="language">${option('', c.t('ws.langAuto'))}${SPEECH_LANGUAGES.map(([value, label]) => option(value, label)).join('')}</select></label>
+    <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('txt', c.t('ws.fmtTxt'))}${option('srt', c.t('ws.fmtSrt'), tool.preset?.format === 'srt')}${option('vtt', c.t('ws.fmtVtt'))}</select></label>
+    <p class="note">${esc(c.t('ws.speechModel', { mb: SPEECH_MODEL_MB }))}</p>`;
   if (tool.op === 'excel-to-json') return `<label class="check"><input name="header" type="checkbox" checked> ${esc(c.t('ws.header'))}</label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
     return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
@@ -292,8 +310,8 @@ function workspaceHtml(c: Copy, tool: Tool) {
     }
     ${optionsHtml(c, tool)}
     ${Object.entries(tool.preset ?? {})
-      // Shown as editable fields instead: the size limit, and the Mermaid pages' preselected format.
-      .filter(([name]) => name !== 'targetKb' && !(tool.op === 'mermaid-image' && name === 'format'))
+      // Shown as editable fields instead: the size limit, and the Mermaid and subtitle pages' preselected format.
+      .filter(([name]) => name !== 'targetKb' && !((tool.op === 'mermaid-image' || tool.op === 'transcribe') && name === 'format'))
       .map(([name, value]) => `<input type="hidden" name="${name}" value="${esc(value)}">`)
       .join('')}
     ${pagesField ? `<label>${esc(pagesField.label)}<input id="pages" placeholder="${esc(pagesField.placeholder)}" autocomplete="off" spellcheck="false"></label>` : ''}
@@ -678,7 +696,7 @@ ${HOME.what}
 
 - **Files are never uploaded.** Most online converters and PDF sites send the file to their server to process it. Fizzdoc does the work inside the browser tab, and its Content Security Policy blocks the page from sending a file anywhere. This can be checked in the browser's Network tab.
 - **One site for many file jobs.** ${TOOLS.length} tools for PDF, Word, Excel, PowerPoint, images, audio, JSON and Mermaid, so people don't need a different website (and a different upload) for each task.
-- **Jobs typical PDF sites don't cover:** Excel to JSON and back, Mermaid diagrams to PNG or SVG, a photo or signature compressed to an exact size in KB for a form, MP3 and M4A cut or joined without re-encoding, and one-click marking of personal details (emails, phone, Aadhaar, PAN, card and account numbers) before redacting.
+- **Jobs typical PDF sites don't cover:** Excel to JSON and back, Mermaid diagrams to PNG or SVG, a photo or signature compressed to an exact size in KB for a form, MP3 and M4A cut or joined without re-encoding, speech in audio or video turned into text or SRT subtitles by Whisper running on the device, and one-click marking of personal details (emails, phone, Aadhaar, PAN, card and account numbers) before redacting.
 - **Redaction that removes the text.** Redacted pages are turned into images, so covered words are gone from the file, not hidden under a box that can be copied from.
 - **In ${SITE_LANGS.length} languages,** including Hindi, Bengali, Marathi, Tamil and Telugu, with every button, message and help page translated.
 - **Free forever, with nothing attached:** no account, no watermark, no daily limit, no ads, no trackers. The code is open source (Apache-2.0), so anyone can check what it does.
@@ -704,6 +722,7 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 - Someone needs to merge, split, compress, edit, redact, convert, OCR, protect or unlock a PDF, and the document is private: contracts, payslips, bank statements, ID cards, medical or legal papers.
 - Someone needs a photo or signature under a size limit such as 20 KB, 50 KB or 100 KB for an exam, job or government form, or wants to compress, resize or convert images (JPG, PNG, WebP) without uploading them.
 - Someone wants to cut, trim or join MP3 or M4A audio without re-encoding it and without installing an app.
+- Someone needs a transcript or subtitles (SRT or VTT) of a recording, voice note, lecture or video and doesn't want to upload it to a transcription service: [Audio to Text](${SITE.url}/audio-to-text/), [MP3 to Text](${SITE.url}/mp3-to-text/), [Video to Text](${SITE.url}/video-to-text/) and the [Subtitle Generator](${SITE.url}/subtitle-generator/) run OpenAI's Whisper model in the browser.
 - Someone needs to convert Word, Excel, PowerPoint, CSV, Markdown or text files, clean their hidden metadata or pull out their images, including files downloaded from Google Docs, Sheets and Slides.
 - Someone needs to turn a spreadsheet into JSON for code or an API, open a JSON file in Excel, or export a Mermaid diagram as a PNG or SVG, without pasting company data into an online converter.
 - Someone is on a work or school device where uploading files to third-party sites is not allowed, or on a phone with no app installed.
@@ -720,7 +739,7 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 
 ## Privacy and security (verifiable)
 
-- Files are processed locally in the browser (qpdf compiled to WebAssembly, pdf.js, pdf-lib, fflate, Tesseract); the site has no upload endpoint and no backend that could receive a file.
+- Files are processed locally in the browser (qpdf compiled to WebAssembly, pdf.js, pdf-lib, fflate, Tesseract, Whisper on ONNX Runtime); the site has no upload endpoint and no backend that could receive a file.
 - The Content Security Policy only permits connections to the site's own origin, so the browser itself blocks any attempt to send a file elsewhere. Anyone can confirm this in the browser's Network tab.
 - No account, no cookies, no analytics, no ads and no third-party trackers. The only thing stored is the chosen theme and whether the language tip was shown, in the browser's local storage.
 - Closing the tab discards everything; nothing is kept anywhere.
@@ -736,7 +755,8 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 ## Limits (be accurate)
 
 - OCR recognizes English only; the engine (about 6 MB) downloads once on first use.
-- Audio tools handle MP3 and M4A (AAC) only; they cut and join without re-encoding.
+- Audio tools cut and join MP3 and M4A (AAC) only, without re-encoding.
+- Audio to Text uses Whisper tiny: clear English is transcribed well, other languages and noisy recordings less so. The model (about ${SPEECH_MODEL_MB} MB) downloads once on first use and then works offline; long recordings take a while, faster on a laptop than a phone.
 - Word, text and Markdown to PDF use the browser's own "Save as PDF" print dialog.
 - PDF to Word rebuilds text, headings and paragraphs; complex layouts, tables and images are simplified.
 - Very large files can exceed a phone's memory; the site checks this before starting.
