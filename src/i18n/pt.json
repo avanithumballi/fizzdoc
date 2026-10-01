@@ -2606,6 +2606,162 @@
         "vídeo para srt",
         "criar legendas vtt"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Desbloquear PDF do Aadhaar",
+      "summary": "Remova a senha do seu PDF do e-Aadhaar, no seu dispositivo.",
+      "action": "Remover senha",
+      "title": "Desbloquear PDF do Aadhaar Grátis — Sem Upload | Fizzdoc",
+      "description": "Remova a senha do seu PDF do e-Aadhaar de graça. Digite a senha uma vez e receba uma cópia que abre em qualquer lugar. Seu Aadhaar nunca é enviado.",
+      "h1": "Remova a senha de um PDF do e-Aadhaar",
+      "lede": "O e-Aadhaar que você baixa da UIDAI pede uma senha toda vez que abre. Salve uma cópia sem ela, direto no seu dispositivo: seu cartão Aadhaar não é enviado a nenhum site.",
+      "steps": [
+        "Adicione seu PDF do e-Aadhaar.",
+        "Clique em “Remover senha” e digite a senha do Aadhaar quando for pedida.",
+        "Baixe a cópia que abre sem senha."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Qual é a senha do PDF do e-Aadhaar?",
+          "A UIDAI define como as 4 primeiras letras do seu nome, como impresso no Aadhaar, em MAIÚSCULAS, seguidas do seu ano de nascimento. Para SURESH KUMAR nascido em 1990 é SURE1990. Se o nome tiver menos de 4 letras, use o nome inteiro: RIA nascida em 1990 é RIA1990."
+        ],
+        [
+          "Por que não usar qualquer desbloqueador online?",
+          "Um cartão Aadhaar contém seu nome, foto, endereço, data de nascimento e número do Aadhaar. A maioria dos sites de PDF envia o arquivo para os servidores deles para desbloquear. O Fizzdoc faz isso dentro do seu navegador, então o cartão nunca sai do seu celular ou computador."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "remover senha PDF Aadhaar",
+        "remover senha e-Aadhaar",
+        "abrir PDF do cartão Aadhaar sem senha",
+        "desbloquear PDF Aadhaar online grátis",
+        "senha PDF Aadhaar mascarado"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "Desbloquear PDF do e-PAN",
+      "summary": "Remova a senha do PDF do seu cartão e-PAN.",
+      "action": "Remover senha",
+      "title": "Desbloquear e-PAN PDF Grátis — Sem Upload | Fizzdoc",
+      "description": "Remova a senha do PDF do seu cartão e-PAN de graça, para abrir sem digitar sua data de nascimento. Feito no navegador; seu PAN nunca é enviado.",
+      "h1": "Remova a senha de um PDF do cartão e-PAN",
+      "lede": "O PDF do e-PAN da NSDL (Protean) ou da UTIITSL é protegido com a sua data de nascimento. Salve uma cópia que abre sem ela, no seu próprio dispositivo, para que seu cartão PAN não passe por um site de upload.",
+      "steps": [
+        "Adicione seu PDF do e-PAN.",
+        "Clique em “Remover senha” e digite a senha quando for pedida.",
+        "Baixe a cópia que abre sem senha."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Qual é a senha do PDF do e-PAN?",
+          "Para pessoas físicas é a data de nascimento no formato DDMMYYYY, sem barras: 5 de março de 1990 é 05031990. Para uma empresa ou firma é a data de constituição ou formação no mesmo formato."
+        ],
+        [
+          "Isso é permitido?",
+          "Sim, para o seu próprio PAN. O Fizzdoc só remove a senha quando você a digita; ele não consegue abrir um PDF cuja senha você não conhece."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "senha PDF e-PAN",
+        "remover senha PDF cartão PAN",
+        "senha e-PAN NSDL",
+        "abrir PDF do cartão PAN",
+        "senha e-PAN UTIITSL"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Desbloquear PDF de extrato bancário",
+      "summary": "Remova a senha de um PDF de extrato bancário ou de cartão de crédito.",
+      "action": "Remover senha",
+      "title": "Desbloquear Extrato Bancário PDF Grátis — Sem Upload | Fizzdoc",
+      "description": "Remova a senha de um PDF de extrato bancário ou de cartão para enviar em um empréstimo, visto ou declaração de imposto. No navegador; nada é enviado.",
+      "h1": "Remova a senha de um PDF de extrato bancário",
+      "lede": "Os bancos protegem os extratos eletrônicos com senha, mas portais de empréstimo, visto e imposto costumam recusar arquivos bloqueados. Salve uma cópia desbloqueada no seu dispositivo: os dados da sua conta não vão para nenhum site de upload.",
+      "steps": [
+        "Adicione o PDF do extrato do seu banco ou emissor do cartão.",
+        "Clique em “Remover senha” e digite a senha definida pelo seu banco.",
+        "Baixe a cópia desbloqueada e compartilhe ou envie onde precisar."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Qual é a senha do meu extrato bancário?",
+          "Cada banco define a sua e informa o formato no e-mail que acompanha o extrato. Geralmente ela é formada por dados como seu nome, data de nascimento, ID de cliente ou os últimos dígitos da conta ou do número de celular. Confira esse e-mail ou a página de ajuda do seu banco."
+        ],
+        [
+          "Por que desbloquear no meu dispositivo?",
+          "Um extrato mostra o número da sua conta, o saldo e cada transação. A maioria dos sites de PDF envia o arquivo para desbloquear; o Fizzdoc faz o trabalho no seu navegador, então ele nunca sai do seu dispositivo."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "remover senha PDF extrato bancário",
+        "desbloquear extrato de cartão de crédito",
+        "desbloquear extrato bancário para empréstimo",
+        "remover senha de extrato eletrônico",
+        "PDF de extrato sem senha"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "Desbloquear PDF de ITR",
+      "summary": "Remova a senha de um comprovante ITR-V ou de um PDF do Form 16.",
+      "action": "Remover senha",
+      "title": "Desbloquear PDF de ITR Grátis — Remover Senha | Fizzdoc",
+      "description": "Remova a senha do comprovante ITR-V em PDF de graça, para abrir sem seu PAN e data de nascimento. Funciona no navegador; nada é enviado.",
+      "h1": "Remova a senha de um PDF de ITR-V",
+      "lede": "O comprovante ITR-V do portal do imposto de renda é protegido com seu PAN e sua data de nascimento. Salve uma cópia que abre direto, feita no seu dispositivo para que seus dados fiscais continuem privados.",
+      "steps": [
+        "Adicione o ITR-V ou outro PDF do imposto de renda.",
+        "Clique em “Remover senha” e digite a senha quando for pedida.",
+        "Baixe a cópia que abre sem senha."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Qual é a senha do PDF do ITR-V?",
+          "Seu PAN em letras minúsculas seguido da sua data de nascimento no formato DDMMYYYY, sem espaços: o PAN ABCDE1234F com nascimento em 5 de março de 1990 resulta em abcde1234f05031990."
+        ],
+        [
+          "Funciona para o Form 16 ou outros PDFs fiscais?",
+          "Sim, para qualquer PDF cuja senha você conhece. O Fizzdoc não consegue adivinhar uma senha; ele só remove a que você digita."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "senha ITR-V",
+        "senha PDF comprovante ITR",
+        "remover senha PDF Form 16",
+        "abrir PDF de ITR",
+        "desbloquear PDF imposto de renda"
+      ]
     }
   }
 }

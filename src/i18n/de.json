@@ -2606,6 +2606,162 @@
         "video zu srt",
         "vtt untertitel erstellen"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Aadhaar-PDF entsperren",
+      "summary": "Entfernen Sie das Passwort Ihres e-Aadhaar-PDFs, auf Ihrem Gerät.",
+      "action": "Passwort entfernen",
+      "title": "Aadhaar-PDF Entsperren Kostenlos — Ohne Upload | Fizzdoc",
+      "description": "Entfernen Sie das Passwort Ihres e-Aadhaar-PDFs kostenlos. Einmal eingeben und eine Kopie erhalten, die überall öffnet. Ihr Aadhaar wird nie hochgeladen.",
+      "h1": "Passwort eines e-Aadhaar-PDFs entfernen",
+      "lede": "Das e-Aadhaar, das Sie von UIDAI herunterladen, verlangt bei jedem Öffnen ein Passwort. Speichern Sie direkt auf Ihrem Gerät eine Kopie ohne: Ihre Aadhaar-Karte wird an keine Website gesendet.",
+      "steps": [
+        "Fügen Sie Ihr e-Aadhaar-PDF hinzu.",
+        "Klicken Sie auf „Passwort entfernen“ und geben Sie das Aadhaar-Passwort ein, wenn danach gefragt wird.",
+        "Laden Sie die Kopie herunter, die ohne Passwort öffnet."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie lautet das Passwort des e-Aadhaar-PDFs?",
+          "UIDAI legt es fest als die ersten 4 Buchstaben Ihres Namens, wie auf dem Aadhaar gedruckt, in GROSSBUCHSTABEN, gefolgt von Ihrem Geburtsjahr. Für SURESH KUMAR, geboren 1990, lautet es SURE1990. Ist der Name kürzer als 4 Buchstaben, verwenden Sie den ganzen Namen: RIA, geboren 1990, ergibt RIA1990."
+        ],
+        [
+          "Warum nicht einfach einen beliebigen Online-Entsperrer nutzen?",
+          "Eine Aadhaar-Karte enthält Ihren Namen, Ihr Foto, Ihre Adresse, Ihr Geburtsdatum und Ihre Aadhaar-Nummer. Die meisten PDF-Seiten laden die Datei zum Entsperren auf ihre Server hoch. Fizzdoc erledigt das in Ihrem Browser, sodass die Karte Ihr Handy oder Ihren Computer nie verlässt."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "Aadhaar PDF Passwort entfernen",
+        "e-Aadhaar Passwort entfernen",
+        "Aadhaar-Karte PDF ohne Passwort öffnen",
+        "Aadhaar PDF online kostenlos entsperren",
+        "maskiertes Aadhaar PDF Passwort"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "e-PAN-PDF entsperren",
+      "summary": "Entfernen Sie das Passwort des PDFs Ihrer e-PAN-Karte.",
+      "action": "Passwort entfernen",
+      "title": "e-PAN-PDF Entsperren Kostenlos — Ohne Upload | Fizzdoc",
+      "description": "Entfernen Sie das Passwort des PDFs Ihrer e-PAN-Karte kostenlos, damit es ohne Eingabe Ihres Geburtsdatums öffnet. Im Browser; Ihr PAN wird nie hochgeladen.",
+      "h1": "Passwort eines e-PAN-Karten-PDFs entfernen",
+      "lede": "Das e-PAN-PDF von NSDL (Protean) oder UTIITSL ist mit Ihrem Geburtsdatum gesperrt. Speichern Sie auf Ihrem eigenen Gerät eine Kopie, die ohne öffnet, damit Ihre PAN-Karte nicht auf einer Upload-Seite landet.",
+      "steps": [
+        "Fügen Sie Ihr e-PAN-PDF hinzu.",
+        "Klicken Sie auf „Passwort entfernen“ und geben Sie das Passwort ein, wenn danach gefragt wird.",
+        "Laden Sie die Kopie herunter, die ohne Passwort öffnet."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie lautet das Passwort des e-PAN-PDFs?",
+          "Bei Privatpersonen ist es das Geburtsdatum im Format DDMMYYYY, ohne Schrägstriche: der 5. März 1990 ergibt 05031990. Bei einem Unternehmen oder einer Firma ist es das Gründungs- oder Bildungsdatum im selben Format."
+        ],
+        [
+          "Ist das erlaubt?",
+          "Ja, für Ihre eigene PAN. Fizzdoc entfernt das Passwort nur, wenn Sie es eingeben; ein PDF, dessen Passwort Sie nicht kennen, kann es nicht öffnen."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "e-PAN PDF Passwort",
+        "PAN-Karte PDF Passwort entfernen",
+        "NSDL e-PAN Passwort",
+        "PAN-Karte PDF öffnen",
+        "UTIITSL e-PAN Passwort"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Kontoauszug-PDF entsperren",
+      "summary": "Entfernen Sie das Passwort eines Kontoauszug- oder Kreditkartenabrechnungs-PDFs.",
+      "action": "Passwort entfernen",
+      "title": "Kontoauszug-PDF Entsperren Kostenlos — Ohne Upload | Fizzdoc",
+      "description": "Entfernen Sie das Passwort eines Kontoauszug- oder Kreditkarten-PDFs, um es für Kredit, Visum oder Steuererklärung weiterzugeben. Im Browser, ohne Upload.",
+      "h1": "Passwort eines Kontoauszug-PDFs entfernen",
+      "lede": "Banken sperren elektronische Kontoauszüge mit einem Passwort, doch Portale für Kredit, Visum und Steuern lehnen gesperrte Dateien oft ab. Speichern Sie eine entsperrte Kopie auf Ihrem Gerät: Ihre Kontodaten gehen an keine Upload-Seite.",
+      "steps": [
+        "Fügen Sie das Auszugs-PDF Ihrer Bank oder Ihres Kartenanbieters hinzu.",
+        "Klicken Sie auf „Passwort entfernen“ und geben Sie das von Ihrer Bank festgelegte Passwort ein.",
+        "Laden Sie die entsperrte Kopie herunter und geben Sie sie dort weiter oder hoch, wo Sie sie brauchen."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie lautet das Passwort meines Kontoauszugs?",
+          "Jede Bank legt ein eigenes fest und nennt das Format in der E-Mail, die den Auszug mitliefert. Es setzt sich meist aus Angaben wie Ihrem Namen, Geburtsdatum, Ihrer Kundennummer oder den letzten Ziffern Ihres Kontos oder Ihrer Handynummer zusammen. Sehen Sie in dieser E-Mail oder auf der Hilfeseite Ihrer Bank nach."
+        ],
+        [
+          "Warum auf meinem Gerät entsperren?",
+          "Ein Auszug zeigt Ihre Kontonummer, Ihren Kontostand und jede Transaktion. Die meisten PDF-Seiten laden die Datei zum Entsperren hoch; Fizzdoc arbeitet in Ihrem Browser, sodass sie Ihr Gerät nie verlässt."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "Kontoauszug PDF Passwort entfernen",
+        "Kreditkartenabrechnung entsperren",
+        "Kontoauszug für Kredit entsperren",
+        "Passwort von elektronischem Auszug entfernen",
+        "Auszug PDF ohne Passwort"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "ITR-PDF entsperren",
+      "summary": "Entfernen Sie das Passwort einer ITR-V-Bestätigung oder eines Form-16-PDFs.",
+      "action": "Passwort entfernen",
+      "title": "ITR-PDF Entsperren Kostenlos — ITR-V Passwort Entfernen | Fizzdoc",
+      "description": "Entfernen Sie das Passwort Ihrer ITR-V-Bestätigung kostenlos, damit sie ohne PAN und Geburtsdatum öffnet. Funktioniert im Browser; nichts wird hochgeladen.",
+      "h1": "Passwort eines ITR-V-PDFs entfernen",
+      "lede": "Die ITR-V-Bestätigung aus dem Einkommensteuerportal ist mit Ihrer PAN und Ihrem Geburtsdatum gesperrt. Speichern Sie eine Kopie, die direkt öffnet, auf Ihrem Gerät erstellt, damit Ihre Steuerdaten privat bleiben.",
+      "steps": [
+        "Fügen Sie das ITR-V oder ein anderes Einkommensteuer-PDF hinzu.",
+        "Klicken Sie auf „Passwort entfernen“ und geben Sie das Passwort ein, wenn danach gefragt wird.",
+        "Laden Sie die Kopie herunter, die ohne Passwort öffnet."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie lautet das Passwort des ITR-V-PDFs?",
+          "Ihre PAN in Kleinbuchstaben, gefolgt von Ihrem Geburtsdatum im Format DDMMYYYY, ohne Leerzeichen: PAN ABCDE1234F, geboren am 5. März 1990, ergibt abcde1234f05031990."
+        ],
+        [
+          "Funktioniert es auch für Form 16 oder andere Steuer-PDFs?",
+          "Ja, für jedes PDF, dessen Passwort Sie kennen. Fizzdoc kann kein Passwort erraten; es entfernt nur eines, das Sie eingeben."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "ITR-V Passwort",
+        "ITR Bestätigung PDF Passwort",
+        "Form 16 PDF Passwort entfernen",
+        "ITR PDF öffnen",
+        "Einkommensteuer PDF entsperren"
+      ]
     }
   }
 }

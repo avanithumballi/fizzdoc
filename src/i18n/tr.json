@@ -2606,6 +2606,162 @@
         "videodan SRT",
         "VTT altyazı oluşturma"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Aadhaar PDF Kilidini Aç",
+      "summary": "e-Aadhaar PDF'inizin parolasını cihazınızda kaldırın.",
+      "action": "Parolayı Kaldır",
+      "title": "Aadhaar PDF Kilidini Aç Ücretsiz — Yükleme Yok | Fizzdoc",
+      "description": "e-Aadhaar PDF'inizin parolasını ücretsiz kaldırın. Parolayı bir kez yazın, her yerde açılan bir kopya alın. Aadhaar'ınız asla yüklenmez.",
+      "h1": "e-Aadhaar PDF'inin parolasını kaldırın",
+      "lede": "UIDAI'dan indirdiğiniz e-Aadhaar her açılışta parola ister. Parolasız bir kopyayı doğrudan cihazınıza kaydedin: Aadhaar kartınız hiçbir web sitesine gönderilmez.",
+      "steps": [
+        "e-Aadhaar PDF'inizi ekleyin.",
+        "“Parolayı Kaldır”a tıklayın ve sorulduğunda Aadhaar parolasını yazın.",
+        "Parolasız açılan kopyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "e-Aadhaar PDF parolası nedir?",
+          "UIDAI parolayı, Aadhaar üzerinde basılı adınızın ilk 4 harfi BÜYÜK harflerle ve ardından doğum yılınız olarak belirler. 1990 doğumlu SURESH KUMAR için SURE1990 olur. Ad 4 harften kısaysa adın tamamını kullanın: 1990 doğumlu RIA için RIA1990."
+        ],
+        [
+          "Neden herhangi bir çevrimiçi kilit açıcıyı kullanmayayım?",
+          "Aadhaar kartı adınızı, fotoğrafınızı, adresinizi, doğum tarihinizi ve Aadhaar numaranızı içerir. Çoğu PDF sitesi kilidi açmak için dosyayı sunucularına yükler. Fizzdoc bunu tarayıcınızda yapar, böylece kart telefonunuzdan veya bilgisayarınızdan asla çıkmaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "Aadhaar PDF parolası",
+        "e-Aadhaar parolasını kaldırma",
+        "Aadhaar kartı PDF'ini parolasız açma",
+        "Aadhaar PDF kilit açma ücretsiz online",
+        "maskeli Aadhaar PDF parolası"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "e-PAN PDF Kilidini Aç",
+      "summary": "e-PAN kartı PDF'inizin parolasını kaldırın.",
+      "action": "Parolayı Kaldır",
+      "title": "e-PAN PDF Kilidini Aç Ücretsiz — Yükleme Yok | Fizzdoc",
+      "description": "e-PAN kartı PDF'inizin parolasını ücretsiz kaldırın, doğum tarihi yazmadan açılsın. Tarayıcınızda yapılır; PAN'ınız asla yüklenmez.",
+      "h1": "e-PAN kartı PDF'inin parolasını kaldırın",
+      "lede": "NSDL (Protean) veya UTIITSL'den gelen e-PAN PDF'i doğum tarihinizle kilitlidir. Onsuz açılan bir kopyayı kendi cihazınıza kaydedin; PAN kartınız hiçbir yükleme sitesine gitmesin.",
+      "steps": [
+        "e-PAN PDF'inizi ekleyin.",
+        "“Parolayı Kaldır”a tıklayın ve sorulduğunda parolayı yazın.",
+        "Parolasız açılan kopyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "e-PAN PDF parolası nedir?",
+          "Bireyler için parola, eğik çizgi olmadan DDMMYYYY biçiminde doğum tarihidir: 5 Mart 1990 için 05031990. Şirket veya firma için aynı biçimde kuruluş ya da oluşum tarihidir."
+        ],
+        [
+          "Buna izin var mı?",
+          "Evet, kendi PAN'ınız için. Fizzdoc parolayı yalnızca siz yazdığınızda kaldırır; parolasını bilmediğiniz bir PDF'i açamaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "e-PAN PDF parolası",
+        "PAN kartı PDF parolası kaldırma",
+        "NSDL e-PAN parolası",
+        "PAN kartı PDF açma",
+        "UTIITSL e-PAN parolası"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Banka Ekstresi PDF Kilidini Aç",
+      "summary": "Banka veya kredi kartı ekstresi PDF'inin parolasını kaldırın.",
+      "action": "Parolayı Kaldır",
+      "title": "Banka Ekstresi PDF Kilidini Aç Ücretsiz — Yükleme Yok | Fizzdoc",
+      "description": "Kredi, vize veya vergi beyanı için paylaşmak üzere banka ya da kredi kartı ekstresi PDF'inin parolasını kaldırın. Tarayıcınızda yapılır; yüklenmez.",
+      "h1": "Banka ekstresi PDF'inin parolasını kaldırın",
+      "lede": "Bankalar e-ekstreleri parolayla kilitler, ancak kredi, vize ve vergi portalları kilitli dosyaları çoğu zaman reddeder. Kilidi açılmış bir kopyayı cihazınıza kaydedin: hesap bilgileriniz hiçbir yükleme sitesine gitmez.",
+      "steps": [
+        "Bankanızın veya kart sağlayıcınızın ekstre PDF'ini ekleyin.",
+        "“Parolayı Kaldır”a tıklayın ve bankanızın belirlediği parolayı yazın.",
+        "Kilidi açılmış kopyayı indirin ve gerektiği yerde paylaşın veya yükleyin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Banka ekstremin parolası nedir?",
+          "Her banka kendi parolasını belirler ve biçimini ekstreyi getiren e-postada belirtir. Genellikle adınız, doğum tarihiniz, müşteri numaranız veya hesap ya da cep telefonu numaranızın son haneleri gibi bilgilerden oluşur. O e-postaya veya bankanızın yardım sayfasına bakın."
+        ],
+        [
+          "Neden cihazımda açmalıyım?",
+          "Ekstre hesap numaranızı, bakiyenizi ve tüm işlemlerinizi gösterir. Çoğu PDF sitesi kilidi açmak için dosyayı yükler; Fizzdoc işi tarayıcınızda yapar, dosya cihazınızdan asla çıkmaz."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "banka ekstresi PDF parola kaldırma",
+        "kredi kartı ekstresi kilit açma",
+        "kredi için banka ekstresi kilidini açma",
+        "e-ekstreden parola kaldırma",
+        "parolasız ekstre PDF"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "ITR PDF Kilidini Aç",
+      "summary": "ITR-V onay belgesi veya Form 16 PDF'inin parolasını kaldırın.",
+      "action": "Parolayı Kaldır",
+      "title": "ITR PDF Kilidini Aç Ücretsiz — ITR-V Parolası | Fizzdoc",
+      "description": "ITR-V onay PDF'inizin parolasını ücretsiz kaldırın, PAN ve doğum tarihi olmadan açılsın. Tarayıcınızda çalışır; hiçbir şey yüklenmez.",
+      "h1": "ITR-V PDF'inin parolasını kaldırın",
+      "lede": "Gelir vergisi portalındaki ITR-V onay belgesi PAN'ınız ve doğum tarihinizle kilitlidir. Doğrudan açılan bir kopyayı cihazınızda kaydedin, vergi bilgileriniz gizli kalsın.",
+      "steps": [
+        "ITR-V veya başka bir gelir vergisi PDF'ini ekleyin.",
+        "“Parolayı Kaldır”a tıklayın ve sorulduğunda parolayı yazın.",
+        "Parolasız açılan kopyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "ITR-V PDF parolası nedir?",
+          "PAN'ınız küçük harflerle, ardından DDMMYYYY biçiminde doğum tarihiniz, boşluksuz: 5 Mart 1990 doğumlu ABCDE1234F PAN'ı için abcde1234f05031990 olur."
+        ],
+        [
+          "Form 16 veya diğer vergi PDF'leri için de çalışır mı?",
+          "Evet, parolasını bildiğiniz her PDF için. Fizzdoc parola tahmin edemez; yalnızca sizin yazdığınız parolayı kaldırır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "ITR-V parolası",
+        "ITR onay PDF parolası",
+        "Form 16 PDF parola kaldırma",
+        "ITR PDF açma",
+        "gelir vergisi PDF kilit açma"
+      ]
     }
   }
 }

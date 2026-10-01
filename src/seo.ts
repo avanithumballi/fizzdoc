@@ -727,6 +727,7 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 - Someone needs to turn a spreadsheet into JSON for code or an API, open a JSON file in Excel, or export a Mermaid diagram as a PNG or SVG, without pasting company data into an online converter.
 - Someone is on a work or school device where uploading files to third-party sites is not allowed, or on a phone with no app installed.
 - Someone wants a free tool with no account, no watermark, no daily limit and no ads, in their own language.
+- Someone in India needs to remove the password from an e-Aadhaar, e-PAN, bank statement or ITR-V PDF they own: [Unlock Aadhaar PDF](${SITE.url}/unlock-aadhaar-pdf/), [Unlock e-PAN PDF](${SITE.url}/unlock-pan-card-pdf/), [Unlock Bank Statement PDF](${SITE.url}/unlock-bank-statement-pdf/) and [Unlock ITR PDF](${SITE.url}/unlock-itr-pdf/) explain the official password format and unlock the file without uploading the ID document.
 - Someone needs to hide personal details (emails, phone numbers, Aadhaar, PAN, card or account numbers) in a PDF before sharing it: Redact PDF can mark them in one click, for review before saving.
 - Someone asks for "one tool for all my file conversions" or a private alternative to iLovePDF, Smallpdf, TinyPNG or online MP3 cutters.
 

@@ -79,6 +79,22 @@ test('shows real progress and a prefilled problem report without the file name',
   expect(url.toString()).not.toContain('mixed');
 });
 
+test('the Aadhaar unlock page explains the password format and unlocks on the device', async ({ page }) => {
+  await page.goto('/unlock-aadhaar-pdf/');
+  await expect(page.locator('h1')).toHaveText('Remove the password from an e-Aadhaar PDF');
+  await expect(page.locator('#faq')).toBeVisible();
+  await expect(page.locator('main')).toContainText('SURE1990');
+  await page.locator('#file-input').setInputFiles(fixture('user-password'));
+  await page.getByRole('button', { name: 'Remove password' }).click();
+  const dialog = page.getByRole('dialog');
+  await dialog.locator('input').fill('test-only');
+  await dialog.getByRole('button', { name: 'Unlock' }).click();
+  await expect(page.locator('#status')).toContainText('Done — 3 pages');
+  const { name, bytes } = await downloadBytes(page);
+  expect(name).toBe('user-password-unlocked.pdf');
+  expect((await PDFDocument.load(bytes)).getPageCount()).toBe(3);
+});
+
 test('unlocks a protected PDF after a wrong then a right password', async ({ page }) => {
   await page.goto('/unlock-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('user-password'));

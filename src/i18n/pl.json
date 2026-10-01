@@ -2606,6 +2606,162 @@
         "wideo na SRT",
         "napisy VTT online"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Odblokuj PDF z Aadhaar",
+      "summary": "Usuń hasło z pliku e-Aadhaar PDF na swoim urządzeniu.",
+      "action": "Usuń hasło",
+      "title": "Odblokuj Aadhaar PDF za Darmo — Bez Przesyłania | Fizzdoc",
+      "description": "Usuń za darmo hasło z pliku e-Aadhaar PDF. Wpisz hasło raz i zapisz kopię, która otworzy się wszędzie. Twój Aadhaar nigdy nie jest przesyłany.",
+      "h1": "Usuń hasło z pliku e-Aadhaar PDF",
+      "lede": "E-Aadhaar pobrany z UIDAI przy każdym otwarciu prosi o hasło. Zapisz kopię bez hasła, prosto na swoim urządzeniu: karta Aadhaar nie trafia na żadną stronę.",
+      "steps": [
+        "Dodaj swój plik e-Aadhaar PDF.",
+        "Kliknij „Usuń hasło” i wpisz hasło do Aadhaar, gdy zostaniesz o nie poproszony.",
+        "Pobierz kopię, która otwiera się bez hasła."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie jest hasło do pliku e-Aadhaar PDF?",
+          "UIDAI ustawia je jako pierwsze 4 litery Twojego imienia i nazwiska, tak jak są wydrukowane na Aadhaar, WIELKIMI literami, a po nich rok urodzenia. Dla SURESH KUMAR urodzonego w 1990 roku jest to SURE1990. Jeśli nazwa ma mniej niż 4 litery, użyj całej: RIA urodzona w 1990 roku to RIA1990."
+        ],
+        [
+          "Dlaczego nie użyć dowolnego odblokowywacza online?",
+          "Karta Aadhaar zawiera imię i nazwisko, zdjęcie, adres, datę urodzenia i numer Aadhaar. Większość serwisów PDF przesyła plik na swoje serwery, żeby go odblokować. Fizzdoc robi to w przeglądarce, więc karta nigdy nie opuszcza Twojego telefonu ani komputera."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "hasło do pdf aadhaar",
+        "usuń hasło e-aadhaar",
+        "otwórz pdf aadhaar bez hasła",
+        "odblokuj pdf aadhaar online za darmo",
+        "hasło do zamaskowanego pdf aadhaar"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "Odblokuj e-PAN PDF",
+      "summary": "Usuń hasło z pliku PDF z kartą e-PAN.",
+      "action": "Usuń hasło",
+      "title": "Odblokuj e-PAN PDF za Darmo — Bez Przesyłania | Fizzdoc",
+      "description": "Usuń za darmo hasło z pliku PDF z kartą e-PAN, aby otwierał się bez wpisywania daty urodzenia. W przeglądarce; Twój PAN nigdy nie jest przesyłany.",
+      "h1": "Usuń hasło z pliku PDF z kartą e-PAN",
+      "lede": "Plik e-PAN PDF z NSDL (Protean) lub UTIITSL jest zablokowany Twoją datą urodzenia. Zapisz kopię otwieraną bez niej, na własnym urządzeniu, by karta PAN nie trafiała na stronę z przesyłaniem plików.",
+      "steps": [
+        "Dodaj swój plik e-PAN PDF.",
+        "Kliknij „Usuń hasło” i wpisz hasło, gdy zostaniesz o nie poproszony.",
+        "Pobierz kopię, która otwiera się bez hasła."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie jest hasło do pliku e-PAN PDF?",
+          "Dla osób fizycznych jest to data urodzenia w formacie DDMMYYYY, bez ukośników: 5 marca 1990 to 05031990. Dla firmy lub spółki jest to data założenia lub utworzenia w tym samym formacie."
+        ],
+        [
+          "Czy to jest dozwolone?",
+          "Tak, w przypadku własnego PAN. Fizzdoc usuwa hasło tylko wtedy, gdy je wpiszesz; nie otworzy pliku PDF, którego hasła nie znasz."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "hasło do pdf e-PAN",
+        "usuń hasło z karty PAN pdf",
+        "hasło NSDL e-PAN",
+        "otwórz pdf karty PAN",
+        "hasło UTIITSL e-PAN"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Odblokuj PDF z wyciągiem bankowym",
+      "summary": "Usuń hasło z pliku PDF z wyciągiem z banku lub karty kredytowej.",
+      "action": "Usuń hasło",
+      "title": "Odblokuj Wyciąg Bankowy PDF za Darmo — Bez Przesyłania | Fizzdoc",
+      "description": "Usuń hasło z pliku PDF z wyciągiem bankowym lub z karty kredytowej, by przesłać go w sprawie kredytu, wizy lub podatków. W przeglądarce, bez przesyłania.",
+      "h1": "Usuń hasło z pliku PDF z wyciągiem bankowym",
+      "lede": "Banki chronią e-wyciągi hasłem, ale portale kredytowe, wizowe i podatkowe często odrzucają zablokowane pliki. Zapisz odblokowaną kopię na urządzeniu: dane konta nie trafiają na stronę z przesyłaniem plików.",
+      "steps": [
+        "Dodaj plik PDF z wyciągiem z banku lub od wydawcy karty.",
+        "Kliknij „Usuń hasło” i wpisz hasło ustawione przez bank.",
+        "Pobierz odblokowaną kopię i udostępnij ją lub prześlij tam, gdzie trzeba."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie jest hasło do mojego wyciągu bankowego?",
+          "Każdy bank ustala własne i podaje jego format w e-mailu z wyciągiem. Zwykle składa się z danych takich jak imię i nazwisko, data urodzenia, identyfikator klienta albo ostatnie cyfry numeru konta lub telefonu. Sprawdź ten e-mail lub stronę pomocy banku."
+        ],
+        [
+          "Dlaczego odblokować to na własnym urządzeniu?",
+          "Wyciąg pokazuje numer konta, saldo i każdą transakcję. Większość serwisów PDF przesyła plik, żeby go odblokować; Fizzdoc działa w przeglądarce, więc plik nigdy nie opuszcza Twojego urządzenia."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "usuń hasło z wyciągu bankowego pdf",
+        "odblokuj wyciąg z karty kredytowej",
+        "odblokuj wyciąg bankowy do kredytu",
+        "usuń hasło z e-wyciągu",
+        "wyciąg pdf bez hasła"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "Odblokuj ITR PDF",
+      "summary": "Usuń hasło z potwierdzenia ITR-V lub pliku Form 16 PDF.",
+      "action": "Usuń hasło",
+      "title": "Odblokuj ITR PDF za Darmo — Hasło ITR-V | Fizzdoc",
+      "description": "Usuń za darmo hasło z potwierdzenia ITR-V PDF, aby otwierało się bez Twojego PAN i daty urodzenia. Działa w przeglądarce; nic nie jest przesyłane.",
+      "h1": "Usuń hasło z pliku ITR-V PDF",
+      "lede": "Potwierdzenie ITR-V z portalu podatkowego jest zablokowane Twoim PAN i datą urodzenia. Zapisz kopię otwieraną od razu, utworzoną na Twoim urządzeniu, by dane podatkowe pozostały prywatne.",
+      "steps": [
+        "Dodaj plik ITR-V lub inny plik PDF dotyczący podatku dochodowego.",
+        "Kliknij „Usuń hasło” i wpisz hasło, gdy zostaniesz o nie poproszony.",
+        "Pobierz kopię, która otwiera się bez hasła."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Jakie jest hasło do pliku ITR-V PDF?",
+          "Twój PAN małymi literami, a po nim data urodzenia w formacie DDMMYYYY, bez spacji: PAN ABCDE1234F, urodzony 5 marca 1990, daje abcde1234f05031990."
+        ],
+        [
+          "Czy działa to dla Form 16 i innych plików podatkowych PDF?",
+          "Tak, dla każdego pliku PDF, którego hasło znasz. Fizzdoc nie potrafi zgadnąć hasła; usuwa tylko to, które wpiszesz."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "hasło ITR-V",
+        "hasło do potwierdzenia ITR pdf",
+        "usuń hasło z Form 16 pdf",
+        "otwórz pdf ITR",
+        "odblokuj pdf podatkowy"
+      ]
     }
   }
 }

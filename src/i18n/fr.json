@@ -2606,6 +2606,162 @@
         "vidéo en srt",
         "créer des sous-titres vtt"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Déverrouiller PDF Aadhaar",
+      "summary": "Retirez le mot de passe de votre PDF e-Aadhaar, sur votre appareil.",
+      "action": "Retirer le mot de passe",
+      "title": "Déverrouiller PDF Aadhaar Gratuit — Sans Envoi | Fizzdoc",
+      "description": "Retirez le mot de passe de votre PDF e-Aadhaar gratuitement. Saisissez-le une fois et obtenez une copie qui s'ouvre partout. Votre Aadhaar n'est jamais envoyé.",
+      "h1": "Retirer le mot de passe d'un PDF e-Aadhaar",
+      "lede": "L'e-Aadhaar que vous téléchargez depuis UIDAI demande un mot de passe à chaque ouverture. Enregistrez une copie sans, directement sur votre appareil : votre carte Aadhaar n'est envoyée à aucun site web.",
+      "steps": [
+        "Ajoutez votre PDF e-Aadhaar.",
+        "Cliquez sur « Retirer le mot de passe » et saisissez le mot de passe Aadhaar quand on vous le demande.",
+        "Téléchargez la copie qui s'ouvre sans mot de passe."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quel est le mot de passe du PDF e-Aadhaar ?",
+          "UIDAI le définit comme les 4 premières lettres de votre nom, tel qu'imprimé sur l'Aadhaar, en MAJUSCULES, suivies de votre année de naissance. Pour SURESH KUMAR né en 1990, c'est SURE1990. Si le nom compte moins de 4 lettres, utilisez le nom entier : RIA née en 1990 donne RIA1990."
+        ],
+        [
+          "Pourquoi ne pas utiliser n'importe quel outil en ligne ?",
+          "Une carte Aadhaar contient votre nom, votre photo, votre adresse, votre date de naissance et votre numéro Aadhaar. La plupart des sites PDF envoient le fichier sur leurs serveurs pour le déverrouiller. Fizzdoc le fait dans votre navigateur : la carte ne quitte jamais votre téléphone ou votre ordinateur."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "mot de passe PDF Aadhaar",
+        "retirer mot de passe e-Aadhaar",
+        "ouvrir PDF carte Aadhaar sans mot de passe",
+        "déverrouiller PDF Aadhaar en ligne gratuit",
+        "mot de passe PDF Aadhaar masqué"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "Déverrouiller PDF e-PAN",
+      "summary": "Retirez le mot de passe du PDF de votre carte e-PAN.",
+      "action": "Retirer le mot de passe",
+      "title": "Déverrouiller e-PAN PDF Gratuit — Sans Envoi | Fizzdoc",
+      "description": "Retirez gratuitement le mot de passe du PDF de votre carte e-PAN pour l'ouvrir sans saisir votre date de naissance. Dans votre navigateur ; PAN jamais envoyé.",
+      "h1": "Retirer le mot de passe d'un PDF de carte e-PAN",
+      "lede": "Le PDF e-PAN de NSDL (Protean) ou d'UTIITSL est verrouillé avec votre date de naissance. Enregistrez une copie qui s'ouvre sans, sur votre propre appareil, pour que votre carte PAN ne passe pas par un site d'envoi.",
+      "steps": [
+        "Ajoutez votre PDF e-PAN.",
+        "Cliquez sur « Retirer le mot de passe » et saisissez le mot de passe quand on vous le demande.",
+        "Téléchargez la copie qui s'ouvre sans mot de passe."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quel est le mot de passe du PDF e-PAN ?",
+          "Pour un particulier, c'est la date de naissance au format DDMMYYYY, sans barres obliques : le 5 mars 1990 donne 05031990. Pour une société ou une entreprise, c'est la date de constitution ou de création, dans le même format."
+        ],
+        [
+          "Est-ce autorisé ?",
+          "Oui, pour votre propre PAN. Fizzdoc ne retire le mot de passe que si vous le saisissez ; il ne peut pas ouvrir un PDF dont vous ne connaissez pas le mot de passe."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "mot de passe PDF e-PAN",
+        "retirer mot de passe PDF carte PAN",
+        "mot de passe e-PAN NSDL",
+        "ouvrir PDF carte PAN",
+        "mot de passe e-PAN UTIITSL"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Déverrouiller PDF de relevé bancaire",
+      "summary": "Retirez le mot de passe d'un PDF de relevé bancaire ou de carte de crédit.",
+      "action": "Retirer le mot de passe",
+      "title": "Déverrouiller Relevé Bancaire PDF Gratuit — Sans Envoi | Fizzdoc",
+      "description": "Retirez le mot de passe d'un relevé bancaire ou de carte en PDF pour le fournir pour un prêt, un visa ou une déclaration d'impôts. Dans votre navigateur.",
+      "h1": "Retirer le mot de passe d'un PDF de relevé bancaire",
+      "lede": "Les banques verrouillent les relevés électroniques par mot de passe, mais les portails de prêt, de visa et d'impôts refusent souvent les fichiers verrouillés. Enregistrez une copie déverrouillée sur votre appareil : les données de votre compte ne vont sur aucun site d'envoi.",
+      "steps": [
+        "Ajoutez le PDF du relevé de votre banque ou de votre émetteur de carte.",
+        "Cliquez sur « Retirer le mot de passe » et saisissez celui que votre banque a défini.",
+        "Téléchargez la copie déverrouillée et partagez-la ou envoyez-la là où vous en avez besoin."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quel est le mot de passe de mon relevé bancaire ?",
+          "Chaque banque fixe le sien et indique le format dans l'e-mail qui accompagne le relevé. Il est généralement construit à partir d'informations comme votre nom, votre date de naissance, votre identifiant client ou les derniers chiffres de votre compte ou de votre numéro de mobile. Consultez cet e-mail ou la page d'aide de votre banque."
+        ],
+        [
+          "Pourquoi le déverrouiller sur mon appareil ?",
+          "Un relevé montre votre numéro de compte, votre solde et chaque transaction. La plupart des sites PDF envoient le fichier pour le déverrouiller ; Fizzdoc travaille dans votre navigateur, donc il ne quitte jamais votre appareil."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "retirer mot de passe PDF relevé bancaire",
+        "déverrouiller relevé de carte de crédit",
+        "déverrouiller relevé bancaire pour un prêt",
+        "retirer mot de passe relevé électronique",
+        "PDF de relevé sans mot de passe"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "Déverrouiller PDF ITR",
+      "summary": "Retirez le mot de passe d'un accusé ITR-V ou d'un PDF Form 16.",
+      "action": "Retirer le mot de passe",
+      "title": "Déverrouiller PDF ITR Gratuit — Retirer le Mot de Passe | Fizzdoc",
+      "description": "Retirez gratuitement le mot de passe de votre accusé ITR-V en PDF, pour l'ouvrir sans PAN ni date de naissance. Dans le navigateur ; rien n'est envoyé.",
+      "h1": "Retirer le mot de passe d'un PDF ITR-V",
+      "lede": "L'accusé de réception ITR-V du portail de l'impôt sur le revenu est verrouillé avec votre PAN et votre date de naissance. Enregistrez une copie qui s'ouvre directement, créée sur votre appareil pour que vos données fiscales restent privées.",
+      "steps": [
+        "Ajoutez l'ITR-V ou un autre PDF de l'impôt sur le revenu.",
+        "Cliquez sur « Retirer le mot de passe » et saisissez le mot de passe quand on vous le demande.",
+        "Téléchargez la copie qui s'ouvre sans mot de passe."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Quel est le mot de passe du PDF ITR-V ?",
+          "Votre PAN en lettres minuscules suivi de votre date de naissance au format DDMMYYYY, sans espaces : le PAN ABCDE1234F né le 5 mars 1990 donne abcde1234f05031990."
+        ],
+        [
+          "Cela fonctionne-t-il pour le Form 16 ou d'autres PDF fiscaux ?",
+          "Oui, pour tout PDF dont vous connaissez le mot de passe. Fizzdoc ne peut pas deviner un mot de passe ; il retire seulement celui que vous saisissez."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "mot de passe ITR-V",
+        "mot de passe PDF accusé ITR",
+        "retirer mot de passe PDF Form 16",
+        "ouvrir PDF ITR",
+        "déverrouiller PDF impôt sur le revenu"
+      ]
     }
   }
 }

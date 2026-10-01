@@ -2606,6 +2606,162 @@
         "video ke srt",
         "pembuat subtitle vtt"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Buka Kunci PDF Aadhaar",
+      "summary": "Hapus kata sandi dari PDF e-Aadhaar Anda, di perangkat Anda.",
+      "action": "Hapus kata sandi",
+      "title": "Buka Kunci PDF Aadhaar Gratis — Tanpa Unggah | Fizzdoc",
+      "description": "Hapus kata sandi dari PDF e-Aadhaar Anda secara gratis. Ketik kata sandi sekali, dapatkan salinan yang terbuka di mana saja. Aadhaar Anda tidak diunggah.",
+      "h1": "Hapus kata sandi dari PDF e-Aadhaar",
+      "lede": "e-Aadhaar yang Anda unduh dari UIDAI meminta kata sandi setiap kali dibuka. Simpan salinan tanpa kata sandi langsung di perangkat Anda: kartu Aadhaar Anda tidak pernah dikirim ke situs web mana pun.",
+      "steps": [
+        "Tambahkan PDF e-Aadhaar Anda.",
+        "Klik “Hapus kata sandi” dan ketik kata sandi Aadhaar saat diminta.",
+        "Unduh salinan yang terbuka tanpa kata sandi."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa kata sandi PDF e-Aadhaar?",
+          "UIDAI menetapkannya sebagai 4 huruf pertama nama Anda, seperti tercetak di Aadhaar, dengan HURUF KAPITAL, diikuti tahun lahir Anda. Untuk SURESH KUMAR yang lahir tahun 1990 menjadi SURE1990. Jika nama kurang dari 4 huruf, gunakan seluruh nama: RIA yang lahir tahun 1990 menjadi RIA1990."
+        ],
+        [
+          "Mengapa tidak pakai pembuka kunci online mana saja?",
+          "Kartu Aadhaar memuat nama, foto, alamat, tanggal lahir, dan nomor Aadhaar Anda. Kebanyakan situs PDF mengunggah file ke server mereka untuk membukanya. Fizzdoc melakukannya di dalam browser Anda, jadi kartu tidak pernah keluar dari ponsel atau komputer Anda."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "kata sandi pdf aadhaar",
+        "hapus kata sandi e-aadhaar",
+        "buka pdf kartu aadhaar tanpa kata sandi",
+        "buka kunci pdf aadhaar online gratis",
+        "kata sandi pdf aadhaar tersamarkan"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "Buka Kunci PDF e-PAN",
+      "summary": "Hapus kata sandi dari PDF kartu e-PAN Anda.",
+      "action": "Hapus kata sandi",
+      "title": "Buka Kunci PDF e-PAN Gratis — Tanpa Unggah | Fizzdoc",
+      "description": "Hapus kata sandi dari PDF kartu e-PAN Anda secara gratis, agar terbuka tanpa mengetik tanggal lahir. Di browser Anda; PAN Anda tidak pernah diunggah.",
+      "h1": "Hapus kata sandi dari PDF kartu e-PAN",
+      "lede": "PDF e-PAN dari NSDL (Protean) atau UTIITSL dikunci dengan tanggal lahir Anda. Simpan salinan yang terbuka tanpanya, di perangkat Anda sendiri, agar kartu PAN Anda tidak pernah masuk ke situs unggah.",
+      "steps": [
+        "Tambahkan PDF e-PAN Anda.",
+        "Klik “Hapus kata sandi” dan ketik kata sandinya saat diminta.",
+        "Unduh salinan yang terbuka tanpa kata sandi."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa kata sandi PDF e-PAN?",
+          "Untuk perorangan, kata sandinya adalah tanggal lahir dengan format DDMMYYYY, tanpa garis miring: 5 Maret 1990 menjadi 05031990. Untuk perusahaan atau firma, kata sandinya adalah tanggal pendirian atau pembentukan dengan format yang sama."
+        ],
+        [
+          "Apakah ini diperbolehkan?",
+          "Ya, untuk PAN milik Anda sendiri. Fizzdoc hanya menghapus kata sandi saat Anda mengetikkannya; ia tidak bisa membuka PDF yang kata sandinya tidak Anda ketahui."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "kata sandi pdf e-PAN",
+        "hapus kata sandi pdf kartu PAN",
+        "kata sandi NSDL e-PAN",
+        "buka pdf kartu PAN",
+        "kata sandi UTIITSL e-PAN"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Buka Kunci PDF Rekening Koran",
+      "summary": "Hapus kata sandi dari PDF rekening koran bank atau kartu kredit.",
+      "action": "Hapus kata sandi",
+      "title": "Buka Kunci PDF Rekening Koran Gratis — Tanpa Unggah | Fizzdoc",
+      "description": "Hapus kata sandi dari PDF rekening koran bank atau kartu kredit untuk dibagikan saat mengajukan pinjaman, visa, atau pajak. Di browser; tidak diunggah.",
+      "h1": "Hapus kata sandi dari PDF rekening koran",
+      "lede": "Bank mengunci e-statement dengan kata sandi, padahal portal pinjaman, visa, dan pajak sering menolak file terkunci. Simpan salinan yang sudah terbuka di perangkat Anda: data rekening Anda tidak pernah masuk ke situs unggah.",
+      "steps": [
+        "Tambahkan PDF rekening koran dari bank atau penerbit kartu Anda.",
+        "Klik “Hapus kata sandi” dan ketik kata sandi yang ditetapkan bank Anda.",
+        "Unduh salinan yang sudah terbuka, lalu bagikan atau unggah di tempat yang Anda perlukan."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa kata sandi rekening koran saya?",
+          "Setiap bank menetapkan sendiri dan menyebutkan formatnya di email yang membawa rekening koran tersebut. Biasanya disusun dari data seperti nama, tanggal lahir, ID nasabah, atau beberapa digit terakhir nomor rekening atau ponsel Anda. Periksa email itu, atau halaman bantuan bank Anda."
+        ],
+        [
+          "Mengapa dibuka di perangkat saya?",
+          "Rekening koran memperlihatkan nomor rekening, saldo, dan setiap transaksi Anda. Kebanyakan situs PDF mengunggah file untuk membukanya; Fizzdoc bekerja di browser Anda, jadi file tidak pernah keluar dari perangkat."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "hapus kata sandi pdf rekening koran",
+        "buka kunci tagihan kartu kredit",
+        "buka kunci rekening koran untuk pinjaman",
+        "hapus kata sandi e-statement",
+        "pdf rekening koran tanpa kata sandi"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "Buka Kunci PDF ITR",
+      "summary": "Hapus kata sandi dari tanda terima ITR-V atau PDF Form 16.",
+      "action": "Hapus kata sandi",
+      "title": "Buka Kunci PDF ITR Gratis — Kata Sandi ITR-V | Fizzdoc",
+      "description": "Hapus kata sandi dari PDF tanda terima ITR-V Anda secara gratis, agar terbuka tanpa PAN dan tanggal lahir. Berjalan di browser; tidak ada yang diunggah.",
+      "h1": "Hapus kata sandi dari PDF ITR-V",
+      "lede": "Tanda terima ITR-V dari portal pajak penghasilan dikunci dengan PAN dan tanggal lahir Anda. Simpan salinan yang langsung terbuka, dibuat di perangkat Anda agar data pajak Anda tetap privat.",
+      "steps": [
+        "Tambahkan ITR-V atau PDF pajak penghasilan lainnya.",
+        "Klik “Hapus kata sandi” dan ketik kata sandinya saat diminta.",
+        "Unduh salinan yang terbuka tanpa kata sandi."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apa kata sandi PDF ITR-V?",
+          "PAN Anda dalam huruf kecil diikuti tanggal lahir dengan format DDMMYYYY, tanpa spasi: PAN ABCDE1234F yang lahir pada 5 Maret 1990 menjadi abcde1234f05031990."
+        ],
+        [
+          "Apakah berfungsi untuk Form 16 atau PDF pajak lainnya?",
+          "Ya, untuk PDF apa pun yang kata sandinya Anda ketahui. Fizzdoc tidak bisa menebak kata sandi; ia hanya menghapus kata sandi yang Anda ketik."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "kata sandi ITR-V",
+        "kata sandi pdf tanda terima ITR",
+        "hapus kata sandi pdf Form 16",
+        "buka pdf ITR",
+        "buka kunci pdf pajak penghasilan"
+      ]
     }
   }
 }
