@@ -234,6 +234,7 @@
     "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon.",
     "footer.madeBy": "Conçu et développé par",
     "footer.feedback": "Signaler un bug ou proposer un outil",
+    "footer.compare": "Comparer avec iLovePDF et autres",
     "format.audio": "Audio",
     "ws.chooseAudio": "Choisir un fichier MP3 ou M4A",
     "ws.chooseAudios": "Choisir des fichiers MP3 ou M4A",

@@ -79,6 +79,22 @@ test('shows real progress and a prefilled problem report without the file name',
   expect(url.toString()).not.toContain('mixed');
 });
 
+test('comparison pages are factual, link to the matching tools and say they are not affiliated', async ({ page }) => {
+  await page.goto('/ilovepdf-alternative/');
+  await expect(page.locator('h1')).toHaveText('A private, free alternative to iLovePDF');
+  await expect(page.locator('#compare')).toHaveText('Fizzdoc vs iLovePDF');
+  await expect(page.locator('main')).toContainText('deleted within 2 hours');
+  await expect(page.locator('main')).toContainText('When iLovePDF is the better choice');
+  await expect(page.locator('main')).toContainText('not affiliated');
+  await page.locator('.tool-grid a', { hasText: 'Merge PDF' }).click();
+  await expect(page).toHaveURL(/\/merge-pdf\/$/);
+
+  await page.goto('/alternatives/');
+  await expect(page.locator('section:has(#compare) .proof-grid a')).toHaveCount(7);
+  await page.goto('/hi/');
+  await expect(page.locator('footer a[href="/alternatives/"]')).toHaveText('iLovePDF और अन्य से तुलना');
+});
+
 test('the Aadhaar unlock page explains the password format and unlocks on the device', async ({ page }) => {
   await page.goto('/unlock-aadhaar-pdf/');
   await expect(page.locator('h1')).toHaveText('Remove the password from an e-Aadhaar PDF');

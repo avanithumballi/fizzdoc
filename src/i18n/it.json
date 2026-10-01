@@ -234,6 +234,7 @@
     "rd.hint": "Trascina su una pagina per coprire qualsiasi cosa: testo, una firma, una foto. Al salvataggio, ogni pagina diventa un'immagine, quindi ciò che hai coperto sparisce per sempre.",
     "footer.madeBy": "Progettato e sviluppato da",
     "footer.feedback": "Segnala un bug o suggerisci uno strumento",
+    "footer.compare": "Confronto con iLovePDF e altri",
     "format.audio": "Audio",
     "ws.chooseAudio": "Scegli un file MP3 o M4A",
     "ws.chooseAudios": "Scegli i file MP3 o M4A",
