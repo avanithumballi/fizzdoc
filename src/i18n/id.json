@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Subtitle (.srt)",
     "ws.fmtVtt": "Subtitle web (.vtt)",
     "ws.speechModel": "Pertama kali, browser Anda mengunduh model suara ({mb} MB) sekali saja dan menyimpannya. Setelah itu langsung jalan dalam hitungan detik, bahkan saat offline.",
+    "ws.speechEnglish": "Paling baik untuk ucapan bahasa Inggris yang jelas. Bahasa lain dan ucapan campuran, seperti Hindi dengan Inggris, sering salah, jadi periksa teksnya sebelum dipakai.",
     "ws.chooseMedia": "Pilih file audio atau video",
     "app.setup": "Menyiapkan… pengaturan satu kali: {done} dari {total} MB. Lain kali langsung jalan.",
     "error.NO_AUDIO_TRACK": "Browser ini tidak bisa membaca suara di file ini. Coba file MP3, M4A, WAV, atau MP4.",

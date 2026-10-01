@@ -251,6 +251,7 @@ function optionsHtml(c: Copy, tool: Tool) {
   if (tool.op === 'transcribe')
     return `<label>${esc(c.t('ws.spokenLanguage'))}<select name="language">${option('', c.t('ws.langAuto'))}${SPEECH_LANGUAGES.map(([value, label]) => option(value, label)).join('')}</select></label>
     <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('txt', c.t('ws.fmtTxt'))}${option('srt', c.t('ws.fmtSrt'), tool.preset?.format === 'srt')}${option('vtt', c.t('ws.fmtVtt'))}</select></label>
+    <p class="note">${esc(c.t('ws.speechEnglish'))}</p>
     <p class="note">${esc(c.t('ws.speechModel', { mb: SPEECH_MODEL_MB }))}</p>`;
   if (tool.op === 'excel-to-json') return `<label class="check"><input name="header" type="checkbox" checked> ${esc(c.t('ws.header'))}</label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')

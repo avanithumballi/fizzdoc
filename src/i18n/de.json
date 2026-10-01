@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Untertitel (.srt)",
     "ws.fmtVtt": "Web-Untertitel (.vtt)",
     "ws.speechModel": "Beim ersten Mal lädt Ihr Browser das Sprachmodell ({mb} MB) einmalig herunter und behält es. Danach startet es in Sekunden, auch offline.",
+    "ws.speechEnglish": "Funktioniert am besten mit klar gesprochenem Englisch. Andere Sprachen und gemischte Sprache, etwa Hindi mit Englisch, werden oft falsch erkannt. Prüfen Sie den Text, bevor Sie ihn verwenden.",
     "ws.chooseMedia": "Audio- oder Videodatei auswählen",
     "app.setup": "Wird vorbereitet … einmalige Einrichtung: {done} von {total} MB. Beim nächsten Mal startet es sofort.",
     "error.NO_AUDIO_TRACK": "Dieser Browser kann den Ton dieser Datei nicht lesen. Versuchen Sie eine MP3-, M4A-, WAV- oder MP4-Datei.",

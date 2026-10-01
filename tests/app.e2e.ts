@@ -380,6 +380,7 @@ test('transcribes speech on the device, with a one-time setup, and writes text a
   await page.goto('/audio-to-text/');
   await expect(page.locator('.drop strong')).toHaveText('Choose an audio or video file');
   await expect(page.locator('.options')).toContainText('downloads the speech model (58 MB) once');
+  await expect(page.locator('.options')).toContainText('Works best on clear English speech');
   await page.locator('#file-input').setInputFiles(file('speech.wav'));
   await page.locator('select[name="language"]').selectOption('english');
   await page.getByRole('button', { name: 'Transcribe' }).click();

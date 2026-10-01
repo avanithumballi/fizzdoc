@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Legendas (.srt)",
     "ws.fmtVtt": "Legendas para web (.vtt)",
     "ws.speechModel": "Na primeira vez, seu navegador baixa o modelo de voz ({mb} MB) uma única vez e o guarda. Depois disso, ele inicia em segundos, até offline.",
+    "ws.speechEnglish": "Funciona melhor com inglês falado com clareza. Outros idiomas e fala misturada, como hindi com inglês, muitas vezes saem errados, então revise o texto antes de usar.",
     "ws.chooseMedia": "Escolha um arquivo de áudio ou vídeo",
     "app.setup": "Preparando… configuração única: {done} de {total} MB. Da próxima vez começa na hora.",
     "error.NO_AUDIO_TRACK": "Este navegador não consegue ler o som deste arquivo. Tente um arquivo MP3, M4A, WAV ou MP4.",

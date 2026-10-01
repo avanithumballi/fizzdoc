@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Altyazı (.srt)",
     "ws.fmtVtt": "Web altyazısı (.vtt)",
     "ws.speechModel": "İlk seferde tarayıcınız konuşma modelini ({mb} MB) bir kez indirir ve saklar. Sonrasında saniyeler içinde başlar, çevrimdışıyken bile.",
+    "ws.speechEnglish": "En iyi sonucu net konuşulan İngilizcede verir. Diğer diller ve Hintçe ile İngilizce gibi karışık konuşma çoğu zaman hatalı çıkar, bu yüzden metni kullanmadan önce kontrol edin.",
     "ws.chooseMedia": "Bir ses veya video dosyası seçin",
     "app.setup": "Hazırlanıyor… tek seferlik kurulum: {done} / {total} MB. Bir dahaki sefere hemen başlar.",
     "error.NO_AUDIO_TRACK": "Bu tarayıcı bu dosyadaki sesi okuyamıyor. MP3, M4A, WAV veya MP4 dosyası deneyin.",

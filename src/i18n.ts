@@ -135,6 +135,7 @@ export const UI = {
   'ws.fmtSrt': 'Subtitles (.srt)',
   'ws.fmtVtt': 'Web subtitles (.vtt)',
   'ws.speechModel': 'The first time, your browser downloads the speech model ({mb} MB) once and keeps it. After that it starts in seconds, even offline.',
+  'ws.speechEnglish': 'Works best on clear English speech. Other languages and mixed speech, such as Hindi with English, often come out wrong, so check the text before you use it.',
   'ws.pngSize': 'PNG size',
   'ws.theme': 'Theme',
   'ws.themeDefault': 'Default',

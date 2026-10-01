@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Subtítulos (.srt)",
     "ws.fmtVtt": "Subtítulos web (.vtt)",
     "ws.speechModel": "La primera vez, tu navegador descarga el modelo de voz ({mb} MB) una sola vez y lo conserva. Después arranca en segundos, incluso sin conexión.",
+    "ws.speechEnglish": "Funciona mejor con inglés hablado con claridad. Otros idiomas y el habla mezclada, como hindi con inglés, suelen salir mal, así que revisa el texto antes de usarlo.",
     "ws.chooseMedia": "Elige un archivo de audio o vídeo",
     "app.setup": "Preparando… configuración única: {done} de {total} MB. La próxima vez empieza al instante.",
     "error.NO_AUDIO_TRACK": "Este navegador no puede leer el sonido de este archivo. Prueba con un archivo MP3, M4A, WAV o MP4.",
