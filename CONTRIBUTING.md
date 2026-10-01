@@ -82,14 +82,13 @@ Open a [bug report](https://github.com/kingrishabdugar/fizzdoc/issues/new?templa
 
 Security issue? Please follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
 
-## 🎃 Hacktoberfest
+## 🎃 Hacktoberfest and good first issues
 
-Fizzdoc takes part in [Hacktoberfest](https://hacktoberfest.com). Every issue labelled [`hacktoberfest`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest) is scoped and ready to pick up, including new tools, translations and improvements.
+Hacktoberfest 2026 no longer counts pull requests (it's now about Fests and online challenges around open-source AI), but contributions here are welcome all year. Issues labelled [`good first issue`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) or [`help wanted`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) are scoped and ready to pick up, including new tools, translations and improvements.
 
 - **Claim first.** Comment on the issue so two people don't build the same thing. If a claimed issue sees no progress for 7 days, it's open again.
 - **One focused change per pull request**, with a test, following the pull request template.
-- Pull requests count once they're merged or labelled `hacktoberfest-accepted`.
-- Low-effort pull requests (whitespace or typo churn in unrelated files, generated content, README edits that don't help users) are labelled `invalid` and closed.
+- Low-effort pull requests (whitespace or typo churn in unrelated files, generated content, README edits that don't help users) are closed.
 
 Stuck? Ask on the issue; questions are welcome.
 

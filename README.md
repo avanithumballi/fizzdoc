@@ -240,7 +240,7 @@ Fizzdoc is built to be easy to contribute to — **you don't need to know anythi
 
 - 🌍 **Translate** — add or improve a language by editing one JSON file. [How →](CONTRIBUTING.md#-translate-fizzdoc-no-coding-needed)
 - 🧰 **Add a tool** — a new tool is one registry entry, one engine function and a test. [How →](CONTRIBUTING.md#-add-a-new-tool)
-- 🎃 **Hacktoberfest** — issues labelled [`hacktoberfest`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest) are ready to pick up. [Guidelines →](CONTRIBUTING.md#-hacktoberfest)
+- 🎃 **Good first issues** — issues labelled [`good first issue`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) are scoped and ready to pick up, all year round. [Guidelines →](CONTRIBUTING.md#-hacktoberfest-and-good-first-issues)
 - 🐛 **Fix a bug** — every issue labelled [`good first issue`](https://github.com/kingrishabdugar/fizzdoc/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) is scoped for a first PR.
 - 💡 **Ideas** — open a [feature request](https://github.com/kingrishabdugar/fizzdoc/issues/new/choose) for the tool you wish existed.
 
