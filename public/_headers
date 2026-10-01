@@ -9,3 +9,11 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# The fizzdoc.pages.dev address and its preview builds are copies of fizzdoc.com; keep them out
+# of search results so fizzdoc.com gets all the credit.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
