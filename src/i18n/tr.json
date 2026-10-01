@@ -267,7 +267,19 @@
     "au.hint": "Oraya atlamak için dalga formuna tıklayın ve Oynat'a basın. Tutamaçları sürükleyin ya da 1:30.5 gibi tam zamanlar yazın. “Buradan başla”, “Burada bitir” ve “Burada böl” çalma konumunu kullanır.",
     "au.badTime": "1:30 veya 1:30.5 gibi bir zaman yazın.",
     "au.results": "Dosyalarınız",
-    "au.download": "İndir"
+    "au.download": "İndir",
+    "ws.spokenLanguage": "Konuşulan dil",
+    "ws.langAuto": "Otomatik algıla",
+    "ws.fmtTxt": "Metin (.txt)",
+    "ws.fmtSrt": "Altyazı (.srt)",
+    "ws.fmtVtt": "Web altyazısı (.vtt)",
+    "ws.speechModel": "İlk seferde tarayıcınız konuşma modelini ({mb} MB) bir kez indirir ve saklar. Sonrasında saniyeler içinde başlar, çevrimdışıyken bile.",
+    "ws.chooseMedia": "Bir ses veya video dosyası seçin",
+    "app.setup": "Hazırlanıyor… tek seferlik kurulum: {done} / {total} MB. Bir dahaki sefere hemen başlar.",
+    "error.NO_AUDIO_TRACK": "Bu tarayıcı bu dosyadaki sesi okuyamıyor. MP3, M4A, WAV veya MP4 dosyası deneyin.",
+    "error.NO_SPEECH": "Bu dosyada konuşma bulunamadı.",
+    "error.SETUP_FAILED": "Konuşma modeli yüklenemedi. Tek seferlik indirme için internet bağlantınızı kontrol edin, sonra tekrar deneyin.",
+    "error.TRANSCRIBE_FAILED": "Yazıya dökme beklenmedik şekilde durdu. Daha kısa bir dosya deneyin; uzun kayıtlar için bilgisayar kullanın."
   },
   "home": {
     "title": "Fizzdoc — Ücretsiz PDF, Görsel, Ses ve Office. Yüklemesiz.",
@@ -2437,6 +2449,162 @@
         "kaliteden ödün vermeden şarkı birleştirme",
         "sesli notları birleştirme",
         "m4a dosyalarını birleştirme ücretsiz"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Sesten metne",
+      "summary": "Ses veya video dosyasındaki konuşmayı metne ya da altyazıya çevirin.",
+      "action": "Yazıya dök",
+      "title": "Sesten Yazıya Ücretsiz — Cihazınızda, Yükleme Yok | Fizzdoc",
+      "description": "MP3, M4A, WAV veya video dosyalarındaki konuşmayı ücretsiz metne ya da SRT altyazıya çevirin. Whisper tarayıcınızda çalışır, kayıt asla yüklenmez.",
+      "h1": "Sesi metne çevirin",
+      "lede": "Röportajları, dersleri, sesli notları ve toplantıları yazıya dökün. Whisper konuşma modeli cihazınızda çalışır, kayıt cihazdan hiç çıkmaz ve tek seferlik kurulumdan sonra çevrimdışı bile çalışır.",
+      "steps": [
+        "Bir ses veya video dosyası seçin (MP3, M4A, WAV, OGG, MP4 veya WebM).",
+        "Konuşulan dili seçin ya da otomatik algılamada bırakın, ardından metin veya altyazı seçin.",
+        "Başlatın. İlk seferde konuşma modeli bir kez indirilir; sonra metni okuyun ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kadar doğru?",
+          "Fizzdoc, OpenAI'ın açık konuşma modelinin küçük bir sürümü olan Whisper tiny'yi kullanır ve tamamen tarayıcınızda çalışır. Net İngilizce konuşma iyi çıkar; gürültülü kayıtlar, güçlü aksanlar ve diğer diller daha zayıftır, bu yüzden güvenmeden önce metni baştan sona okuyun."
+        ],
+        [
+          "İlk çalıştırma neden daha yavaş?",
+          "İlk seferde tarayıcınız konuşma modelini (yaklaşık 58 MB) indirir ve saklar, böylece sonraki çalıştırmalar çevrimdışıyken bile saniyeler içinde başlar. Uzun kayıtların yazıya dökülmesi biraz sürer: hız cihazınıza bağlıdır ve bir bilgisayar telefondan çok daha hızlıdır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "sesi yazıya çevirme ücretsiz",
+        "online konuşmayı yazıya çevirme",
+        "ses kaydını yazıya dökme",
+        "röportaj veya ders yazıya dökme",
+        "yükleme yapmadan gizli yazıya dökme"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3'ten metne",
+      "summary": "MP3 kaydını metne çevirin.",
+      "action": "MP3'ü yazıya dök",
+      "title": "MP3'ten Yazıya Ücretsiz — MP3 Çevirme, Yükleme Yok | Fizzdoc",
+      "description": "MP3 sesini ücretsiz metne çevirin: sesli notlar, podcast'ler, dersler ve görüşmeler. Whisper tarayıcınızda yazıya döker, yükleme yok. TXT veya SRT.",
+      "h1": "MP3'ü metne çevirin",
+      "lede": "Bir MP3'teki sözleri çıkarın: sesli not, podcast bölümü, ders ya da kayıtlı bir görüşme. Whisper bunu doğrudan tarayıcınızda yazıya döker, kaydı başka kimse duymaz.",
+      "steps": [
+        "Bir ses veya video dosyası seçin (MP3, M4A, WAV, OGG, MP4 veya WebM).",
+        "Konuşulan dili seçin ya da otomatik algılamada bırakın, ardından metin veya altyazı seçin.",
+        "Başlatın. İlk seferde konuşma modeli bir kez indirilir; sonra metni okuyun ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "WhatsApp sesli mesajlarıyla çalışır mı?",
+          "Evet. WhatsApp sesli mesajları OPUS veya M4A dosyalarıdır; Chrome, Edge ve Firefox bunları okuyabilir, MP3, WAV ve çoğu telefon kaydı da öyle."
+        ],
+        [
+          "İlk çalıştırma neden daha yavaş?",
+          "İlk seferde tarayıcınız konuşma modelini (yaklaşık 58 MB) indirir ve saklar, böylece sonraki çalıştırmalar çevrimdışıyken bile saniyeler içinde başlar. Uzun kayıtların yazıya dökülmesi biraz sürer: hız cihazınıza bağlıdır ve bir bilgisayar telefondan çok daha hızlıdır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "mp3 yazıya çevirme",
+        "podcast yazıya dökme",
+        "WhatsApp sesli mesajı yazıya çevirme",
+        "ses notunu yazıya çevirme",
+        "ses dosyasını yazıya çevirme ücretsiz"
+      ]
+    },
+    "video-to-text": {
+      "name": "Videodan metne",
+      "summary": "MP4 veya WebM videodaki konuşmayı metne çevirin.",
+      "action": "Videoyu yazıya dök",
+      "title": "Videodan Yazıya Ücretsiz — MP4 Çevirme, Yükleme Yok | Fizzdoc",
+      "description": "MP4, MOV veya WebM videodaki konuşmayı ücretsiz metne ya da altyazıya çevirin. Whisper sesi tarayıcınızda okur; video asla yüklenmez.",
+      "h1": "Videoyu metne çevirin",
+      "lede": "Bir dersin, toplantı kaydının, bir reel'in ya da indirdiğiniz bir videonun dökümünü alın. Fizzdoc videonun ses kanalını okur ve cihazınızda yazıya döker.",
+      "steps": [
+        "Bir ses veya video dosyası seçin (MP3, M4A, WAV, OGG, MP4 veya WebM).",
+        "Konuşulan dili seçin ya da otomatik algılamada bırakın, ardından metin veya altyazı seçin.",
+        "Başlatın. İlk seferde konuşma modeli bir kez indirilir; sonra metni okuyun ve indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Hangi videolar çalışır?",
+          "MP4, M4V ve WebM her modern tarayıcıda, MOV ise çoğunda çalışır. Yalnızca ses kanalı kullanılır; görüntü yok sayılır."
+        ],
+        [
+          "Ne kadar doğru?",
+          "Fizzdoc, OpenAI'ın açık konuşma modelinin küçük bir sürümü olan Whisper tiny'yi kullanır ve tamamen tarayıcınızda çalışır. Net İngilizce konuşma iyi çıkar; gürültülü kayıtlar, güçlü aksanlar ve diğer diller daha zayıftır, bu yüzden güvenmeden önce metni baştan sona okuyun."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "mp4 yazıya çevirme",
+        "videoyu yazıya dökme",
+        "ders videosu metni",
+        "toplantı kaydını yazıya çevirme",
+        "videodan yazı çıkarma"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Altyazı oluşturucu",
+      "summary": "Video veya ses dosyasından SRT ya da VTT altyazı oluşturun.",
+      "action": "Altyazı oluştur",
+      "title": "Altyazı Oluşturucu Ücretsiz — Videodan SRT, Yükleme Yok | Fizzdoc",
+      "description": "Herhangi bir video veya sesten ücretsiz SRT ya da VTT altyazı oluşturun. Zamanlı altyazıları Whisper tarayıcınızda üretir, video asla yüklenmez.",
+      "h1": "Videodan altyazı oluşturun",
+      "lede": "Videonuz için zamanlı altyazıları tek seferde hazırlayın: Fizzdoc ses kanalını dinler ve YouTube, VLC, Premiere, CapCut veya herhangi bir oynatıcı için SRT ya da VTT dosyası yazar.",
+      "steps": [
+        "Bir video veya ses dosyası seçin (MP4, MOV, WebM, MP3, M4A veya WAV).",
+        "Konuşulan dili seçin ya da otomatik algılamada bırakın, ardından SRT veya VTT seçin.",
+        "“Altyazı oluştur”a tıklayın, altyazıları kontrol edin ve dosyayı indirin."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Altyazıyı videoma nasıl eklerim?",
+          "YouTube, Facebook veya LinkedIn'de .srt dosyasını videonuzun yanına yükleyin ya da VLC, Premiere Pro, DaVinci Resolve veya CapCut'a sürükleyin. VTT, web video oynatıcılarının kullandığı biçimdir."
+        ],
+        [
+          "Ne kadar doğru?",
+          "Fizzdoc, OpenAI'ın açık konuşma modelinin küçük bir sürümü olan Whisper tiny'yi kullanır ve tamamen tarayıcınızda çalışır. Net İngilizce konuşma iyi çıkar; gürültülü kayıtlar, güçlü aksanlar ve diğer diller daha zayıftır, bu yüzden güvenmeden önce metni baştan sona okuyun."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "SRT altyazı oluşturucu",
+        "videoya otomatik altyazı",
+        "videodan ücretsiz altyazı oluşturma",
+        "videodan SRT",
+        "VTT altyazı oluşturma"
       ]
     }
   }

@@ -267,7 +267,19 @@
     "au.hint": "Clique na forma de onda para pular até lá e aperte Tocar. Arraste as alças, ou digite tempos exatos como 1:30.5. “Começar aqui”, “Terminar aqui” e “Dividir aqui” usam a posição de reprodução.",
     "au.badTime": "Digite um tempo como 1:30 ou 1:30.5.",
     "au.results": "Seus arquivos",
-    "au.download": "Baixar"
+    "au.download": "Baixar",
+    "ws.spokenLanguage": "Idioma falado",
+    "ws.langAuto": "Detectar automaticamente",
+    "ws.fmtTxt": "Texto (.txt)",
+    "ws.fmtSrt": "Legendas (.srt)",
+    "ws.fmtVtt": "Legendas para web (.vtt)",
+    "ws.speechModel": "Na primeira vez, seu navegador baixa o modelo de voz ({mb} MB) uma única vez e o guarda. Depois disso, ele inicia em segundos, até offline.",
+    "ws.chooseMedia": "Escolha um arquivo de áudio ou vídeo",
+    "app.setup": "Preparando… configuração única: {done} de {total} MB. Da próxima vez começa na hora.",
+    "error.NO_AUDIO_TRACK": "Este navegador não consegue ler o som deste arquivo. Tente um arquivo MP3, M4A, WAV ou MP4.",
+    "error.NO_SPEECH": "Nenhuma fala foi encontrada neste arquivo.",
+    "error.SETUP_FAILED": "Não foi possível carregar o modelo de voz. Verifique sua conexão com a internet para o download único e tente de novo.",
+    "error.TRANSCRIBE_FAILED": "A transcrição parou inesperadamente. Tente um arquivo mais curto, ou um notebook para gravações longas."
   },
   "home": {
     "title": "Fizzdoc — Ferramentas Grátis de PDF, Imagem, Áudio e Office",
@@ -2437,6 +2449,162 @@
         "juntar músicas sem perder qualidade",
         "juntar áudios do whatsapp",
         "juntar arquivos m4a grátis"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Áudio para texto",
+      "summary": "Transforme a fala de um arquivo de áudio ou vídeo em texto ou legendas.",
+      "action": "Transcrever",
+      "title": "Áudio para Texto Grátis — Transcreva, Sem Upload | Fizzdoc",
+      "description": "Transforme a fala de arquivos MP3, M4A, WAV ou vídeo em texto ou legendas SRT de graça. O Whisper roda no navegador, então nada é enviado.",
+      "h1": "Converta áudio em texto",
+      "lede": "Transcreva entrevistas, aulas, áudios e reuniões. O modelo de voz Whisper roda no seu dispositivo, então a gravação nunca sai dele, e após uma configuração única funciona até offline.",
+      "steps": [
+        "Escolha um arquivo de áudio ou vídeo (MP3, M4A, WAV, OGG, MP4 ou WebM).",
+        "Escolha o idioma falado, ou deixe em detecção automática, e selecione texto ou legendas.",
+        "Comece. Na primeira vez o modelo de voz é baixado uma vez; depois leia o texto e baixe."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Qual é a precisão?",
+          "O Fizzdoc usa o Whisper tiny, uma versão pequena do modelo de voz aberto da OpenAI que roda inteiramente no seu navegador. Fala clara em português e inglês sai bem; gravações com ruído, sotaques fortes e outros idiomas saem piores, então leia o texto antes de confiar nele."
+        ],
+        [
+          "Por que a primeira vez é mais lenta?",
+          "Na primeira vez, seu navegador baixa o modelo de voz (cerca de 58 MB) e o guarda, então as próximas execuções começam em segundos, até offline. Transcrever gravações longas leva tempo: depende do seu dispositivo, e um notebook é bem mais rápido que um celular."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "transcrever áudio para texto grátis",
+        "áudio para texto online",
+        "converter gravação de voz em texto",
+        "transcrever entrevista ou aula",
+        "transcrição privada sem upload"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 para texto",
+      "summary": "Transcreva uma gravação MP3 em texto.",
+      "action": "Transcrever MP3",
+      "title": "MP3 para Texto Grátis — Transcreva Áudio, Sem Upload | Fizzdoc",
+      "description": "Converta um MP3 em texto de graça: áudios, podcasts, aulas ou ligações gravadas. O Whisper transcreve no navegador, sem enviar o arquivo.",
+      "h1": "Converta MP3 em texto",
+      "lede": "Tire as palavras de um MP3: um áudio, um episódio de podcast, uma aula ou uma ligação gravada. O Whisper transcreve direto no navegador, então ninguém mais ouve a gravação.",
+      "steps": [
+        "Escolha um arquivo de áudio ou vídeo (MP3, M4A, WAV, OGG, MP4 ou WebM).",
+        "Escolha o idioma falado, ou deixe em detecção automática, e selecione texto ou legendas.",
+        "Comece. Na primeira vez o modelo de voz é baixado uma vez; depois leia o texto e baixe."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Funciona com áudios do WhatsApp?",
+          "Sim. Os áudios do WhatsApp são arquivos OPUS ou M4A, que Chrome, Edge e Firefox conseguem ler, assim como MP3, WAV e a maioria das gravações de celular."
+        ],
+        [
+          "Por que a primeira vez é mais lenta?",
+          "Na primeira vez, seu navegador baixa o modelo de voz (cerca de 58 MB) e o guarda, então as próximas execuções começam em segundos, até offline. Transcrever gravações longas leva tempo: depende do seu dispositivo, e um notebook é bem mais rápido que um celular."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "converter mp3 em texto",
+        "transcrever podcast",
+        "áudio do WhatsApp para texto",
+        "transformar áudio em texto",
+        "arquivo de áudio para texto grátis"
+      ]
+    },
+    "video-to-text": {
+      "name": "Vídeo para texto",
+      "summary": "Transcreva a fala de um vídeo MP4 ou WebM em texto.",
+      "action": "Transcrever vídeo",
+      "title": "Vídeo para Texto Grátis — Transcreva, Sem Upload | Fizzdoc",
+      "description": "Transcreva a fala de vídeos MP4 ou WebM em texto de graça. O Fizzdoc lê só o som e transcreve no seu dispositivo, sem enviar o vídeo.",
+      "h1": "Converta vídeo em texto",
+      "lede": "Obtenha a transcrição de uma aula, de uma reunião gravada, de um reel ou de um vídeo que você baixou. O Fizzdoc lê a trilha de som do vídeo e transcreve no seu dispositivo.",
+      "steps": [
+        "Escolha um arquivo de áudio ou vídeo (MP3, M4A, WAV, OGG, MP4 ou WebM).",
+        "Escolha o idioma falado, ou deixe em detecção automática, e selecione texto ou legendas.",
+        "Comece. Na primeira vez o modelo de voz é baixado uma vez; depois leia o texto e baixe."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Quais vídeos funcionam?",
+          "MP4, M4V e WebM funcionam em todos os navegadores modernos, e MOV na maioria. Só a trilha de som é usada; a imagem é ignorada."
+        ],
+        [
+          "Qual é a precisão?",
+          "O Fizzdoc usa o Whisper tiny, uma versão pequena do modelo de voz aberto da OpenAI que roda inteiramente no seu navegador. Fala clara em português e inglês sai bem; gravações com ruído, sotaques fortes e outros idiomas saem piores, então leia o texto antes de confiar nele."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "converter mp4 em texto",
+        "transcrever vídeo para texto",
+        "transcrição de videoaula",
+        "gravação de reunião para texto",
+        "tirar o texto de um vídeo"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Gerador de legendas",
+      "summary": "Crie legendas SRT ou VTT a partir de um vídeo ou áudio.",
+      "action": "Criar legendas",
+      "title": "Gerador de Legendas Grátis — SRT e VTT, Sem Upload | Fizzdoc",
+      "description": "Crie legendas SRT ou VTT para seus vídeos de graça. O Whisper ouve o áudio no navegador, então o vídeo nunca é enviado a nenhum servidor.",
+      "h1": "Gere legendas para um vídeo",
+      "lede": "Faça legendas com tempo para um vídeo de uma vez: o Fizzdoc ouve a trilha de som e escreve um arquivo SRT ou VTT para YouTube, VLC, Premiere, CapCut ou qualquer player.",
+      "steps": [
+        "Escolha um arquivo de vídeo ou áudio (MP4, MOV, WebM, MP3, M4A ou WAV).",
+        "Escolha o idioma falado, ou deixe em detecção automática, e selecione SRT ou VTT.",
+        "Clique em “Criar legendas”, confira as legendas e baixe o arquivo."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Como adiciono as legendas ao meu vídeo?",
+          "Envie o arquivo .srt junto com seu vídeo no YouTube, Facebook ou LinkedIn, ou arraste-o para o VLC, Premiere Pro, DaVinci Resolve ou CapCut. VTT é o formato usado por players de vídeo na web."
+        ],
+        [
+          "Qual é a precisão?",
+          "O Fizzdoc usa o Whisper tiny, uma versão pequena do modelo de voz aberto da OpenAI que roda inteiramente no seu navegador. Fala clara em português e inglês sai bem; gravações com ruído, sotaques fortes e outros idiomas saem piores, então leia o texto antes de confiar nele."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "gerador de legendas srt",
+        "legendas automáticas para vídeo",
+        "gerar legendas de vídeo grátis",
+        "vídeo para srt",
+        "criar legendas vtt"
       ]
     }
   }

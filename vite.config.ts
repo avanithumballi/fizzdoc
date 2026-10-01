@@ -3,6 +3,7 @@ import { defineConfig, type Plugin } from 'vite';
 import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, notFoundPage, renderPage, robots, sitemap } from './src/seo.ts';
 import { SITE } from './src/site.ts';
 import { ocrAssets } from './vite-plugins/ocr-assets.ts';
+import { whisperAssets } from './vite-plugins/whisper-assets.ts';
 
 /**
  * The repo's star count, baked into the pages at build time so visitors' browsers never call GitHub.
@@ -66,7 +67,9 @@ function pages(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [pages(), ocrAssets()],
+  plugins: [pages(), ocrAssets(), whisperAssets()],
+  // Audio to Text runs Whisper on ONNX Runtime's CPU build; its WebGPU build is too big to host.
+  resolve: { alias: { 'onnxruntime-web/webgpu': 'onnxruntime-web/wasm' } },
   worker: { format: 'es' },
   build: { target: 'es2022' },
   test: { include: ['tests/**/*.test.ts'] },

@@ -158,6 +158,17 @@ function setUp(op: ToolOp) {
     'pdf-to-word': async (f) => (await import('./engine/office')).pdfToDocx(f[0]),
     'pdf-to-powerpoint': async (f) => (await import('./engine/office')).pdfToPptx(f[0]),
     'ocr-pdf': async (f) => (await import('./engine/ocr')).ocrPdf(f[0], progressLabel),
+    transcribe: async (f, o) =>
+      (await import('./engine/transcribe')).transcribe(f[0], {
+        format: o.format === 'srt' || o.format === 'vtt' ? o.format : 'txt',
+        language: o.language || null,
+        onSetup: (loaded, total) => {
+          // The one-time model download fills the bar first; transcribing then refills it.
+          progressLabel(loaded / total);
+          say(t('app.setup', { done: Math.round(loaded / 1e6), total: Math.round(total / 1e6) }));
+        },
+        onProgress: progressLabel,
+      }),
     'image-ocr': async (f) => {
       const [{ ocrImage }, { showTextOverlay }] = await Promise.all([import('./engine/ocr'), import('./tools/ocr-viewer')]);
       const [recognized, { unsure }] = await Promise.all([ocrImage(f[0], progressLabel), import('./engine/ocr')]);
@@ -254,7 +265,7 @@ function setUp(op: ToolOp) {
     reportLink.href = `${reportLink.href.split('?')[0]}?${params}`;
   });
 
-  let preview: HTMLAudioElement | HTMLImageElement | undefined;
+  let preview: HTMLAudioElement | HTMLImageElement | HTMLPreElement | undefined;
   function clearResult() {
     if (outputUrl) URL.revokeObjectURL(outputUrl);
     outputUrl = undefined;
@@ -453,6 +464,13 @@ function setUp(op: ToolOp) {
     if (blob.type.startsWith('audio/')) {
       // Listen before downloading.
       preview = Object.assign(new Audio(outputUrl), { controls: true, className: 'audio-preview' });
+      result.prepend(preview);
+    } else if (op === 'transcribe') {
+      // Read the transcript before downloading it.
+      const text = document.createElement('pre');
+      text.className = 'transcript-preview';
+      void blob.text().then((value) => (text.textContent = value));
+      preview = text;
       result.prepend(preview);
     } else if (op === 'mermaid-image') {
       // See the diagram before downloading it.

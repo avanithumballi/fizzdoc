@@ -267,7 +267,19 @@
     "au.hint": "Klik gelombang suara untuk melompat ke sana lalu tekan Putar. Seret gagang, atau ketik waktu yang tepat seperti 1:30.5. “Mulai di sini”, “Selesai di sini”, dan “Bagi di sini” menggunakan posisi putar saat ini.",
     "au.badTime": "Ketik waktu seperti 1:30 atau 1:30.5.",
     "au.results": "File Anda",
-    "au.download": "Unduh"
+    "au.download": "Unduh",
+    "ws.spokenLanguage": "Bahasa yang diucapkan",
+    "ws.langAuto": "Deteksi otomatis",
+    "ws.fmtTxt": "Teks (.txt)",
+    "ws.fmtSrt": "Subtitle (.srt)",
+    "ws.fmtVtt": "Subtitle web (.vtt)",
+    "ws.speechModel": "Pertama kali, browser Anda mengunduh model suara ({mb} MB) sekali saja dan menyimpannya. Setelah itu langsung jalan dalam hitungan detik, bahkan saat offline.",
+    "ws.chooseMedia": "Pilih file audio atau video",
+    "app.setup": "Menyiapkan… pengaturan satu kali: {done} dari {total} MB. Lain kali langsung jalan.",
+    "error.NO_AUDIO_TRACK": "Browser ini tidak bisa membaca suara di file ini. Coba file MP3, M4A, WAV, atau MP4.",
+    "error.NO_SPEECH": "Tidak ada ucapan yang ditemukan di file ini.",
+    "error.SETUP_FAILED": "Model suara tidak bisa dimuat. Periksa koneksi internet Anda untuk unduhan satu kali, lalu coba lagi.",
+    "error.TRANSCRIBE_FAILED": "Transkripsi berhenti tiba-tiba. Coba file yang lebih pendek, atau gunakan laptop untuk rekaman panjang."
   },
   "home": {
     "title": "Fizzdoc — Alat PDF, Gambar, Audio & Office Gratis. Tanpa Upload.",
@@ -2437,6 +2449,162 @@
         "gabung lagu tanpa turun kualitas",
         "gabung rekaman suara",
         "gabung file m4a gratis"
+      ]
+    },
+    "audio-to-text": {
+      "name": "Audio ke teks",
+      "summary": "Ubah ucapan di file audio atau video menjadi teks atau subtitle.",
+      "action": "Transkripsikan",
+      "title": "Audio ke Teks Gratis — Di Perangkat Anda, Tanpa Unggah | Fizzdoc",
+      "description": "Ubah ucapan di file MP3, M4A, WAV, atau video menjadi teks atau subtitle SRT secara gratis. Whisper berjalan di browser, rekaman tidak pernah diunggah.",
+      "h1": "Ubah audio menjadi teks",
+      "lede": "Transkripsikan wawancara, kuliah, voice note, dan rapat. Model suara Whisper berjalan di perangkat Anda, jadi rekaman tidak pernah keluar darinya, dan setelah pengaturan satu kali ia bisa bekerja bahkan saat offline.",
+      "steps": [
+        "Pilih file audio atau video (MP3, M4A, WAV, OGG, MP4, atau WebM).",
+        "Pilih bahasa yang diucapkan, atau biarkan deteksi otomatis, lalu pilih teks atau subtitle.",
+        "Mulai. Pertama kali, model suara diunduh sekali; setelah itu baca teksnya dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Seberapa akurat hasilnya?",
+          "Fizzdoc memakai Whisper tiny, versi kecil dari model suara terbuka milik OpenAI yang berjalan sepenuhnya di browser Anda. Ucapan bahasa Inggris yang jelas hasilnya bagus; rekaman berisik, aksen kental, dan bahasa lain hasilnya lebih kasar, jadi baca dulu teksnya sebelum Anda mengandalkannya."
+        ],
+        [
+          "Mengapa proses pertama lebih lambat?",
+          "Pertama kali, browser Anda mengunduh model suara (sekitar 58 MB) dan menyimpannya, sehingga proses berikutnya mulai dalam hitungan detik, bahkan saat offline. Transkripsi rekaman panjang butuh waktu: kecepatannya tergantung perangkat Anda, dan laptop jauh lebih cepat daripada ponsel."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "ubah audio ke teks gratis",
+        "suara ke teks online",
+        "rekaman suara jadi teks",
+        "transkrip wawancara atau kuliah",
+        "transkripsi tanpa unggah file"
+      ]
+    },
+    "mp3-to-text": {
+      "name": "MP3 ke teks",
+      "summary": "Transkripsikan rekaman MP3 menjadi teks.",
+      "action": "Transkripsikan MP3",
+      "title": "MP3 ke Teks Gratis — Transkrip MP3, Tanpa Unggah | Fizzdoc",
+      "description": "Ubah audio MP3 menjadi teks gratis: voice note, podcast, kuliah, dan panggilan. Ditranskripsikan Whisper di browser Anda, tanpa diunggah. TXT atau SRT.",
+      "h1": "Ubah MP3 menjadi teks",
+      "lede": "Ambil kata-kata dari sebuah MP3: voice note, episode podcast, kuliah, atau panggilan yang direkam. Whisper mentranskripsikannya langsung di browser Anda, jadi tidak ada orang lain yang mendengar rekamannya.",
+      "steps": [
+        "Pilih file audio atau video (MP3, M4A, WAV, OGG, MP4, atau WebM).",
+        "Pilih bahasa yang diucapkan, atau biarkan deteksi otomatis, lalu pilih teks atau subtitle.",
+        "Mulai. Pertama kali, model suara diunduh sekali; setelah itu baca teksnya dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah bisa untuk voice note WhatsApp?",
+          "Bisa. Voice note WhatsApp berupa file OPUS atau M4A, yang bisa dibaca Chrome, Edge, dan Firefox, begitu juga MP3, WAV, dan kebanyakan rekaman ponsel."
+        ],
+        [
+          "Mengapa proses pertama lebih lambat?",
+          "Pertama kali, browser Anda mengunduh model suara (sekitar 58 MB) dan menyimpannya, sehingga proses berikutnya mulai dalam hitungan detik, bahkan saat offline. Transkripsi rekaman panjang butuh waktu: kecepatannya tergantung perangkat Anda, dan laptop jauh lebih cepat daripada ponsel."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "ubah mp3 ke teks",
+        "transkrip podcast",
+        "voice note WhatsApp jadi teks",
+        "rekaman suara ke teks",
+        "file audio ke teks gratis"
+      ]
+    },
+    "video-to-text": {
+      "name": "Video ke teks",
+      "summary": "Transkripsikan ucapan di video MP4 atau WebM menjadi teks.",
+      "action": "Transkripsikan video",
+      "title": "Video ke Teks Gratis — Transkrip MP4, Tanpa Unggah | Fizzdoc",
+      "description": "Ubah ucapan di video MP4, MOV, atau WebM menjadi teks atau subtitle secara gratis. Whisper membaca suaranya di browser; video tidak pernah diunggah.",
+      "h1": "Ubah video menjadi teks",
+      "lede": "Dapatkan transkrip kuliah, rekaman rapat, reel, atau video yang Anda unduh. Fizzdoc membaca trek suara video dan mentranskripsikannya di perangkat Anda.",
+      "steps": [
+        "Pilih file audio atau video (MP3, M4A, WAV, OGG, MP4, atau WebM).",
+        "Pilih bahasa yang diucapkan, atau biarkan deteksi otomatis, lalu pilih teks atau subtitle.",
+        "Mulai. Pertama kali, model suara diunduh sekali; setelah itu baca teksnya dan unduh."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Video apa saja yang bisa dipakai?",
+          "MP4, M4V, dan WebM bisa dipakai di semua browser modern, dan MOV di sebagian besar. Hanya trek suaranya yang dipakai; gambarnya diabaikan."
+        ],
+        [
+          "Seberapa akurat hasilnya?",
+          "Fizzdoc memakai Whisper tiny, versi kecil dari model suara terbuka milik OpenAI yang berjalan sepenuhnya di browser Anda. Ucapan bahasa Inggris yang jelas hasilnya bagus; rekaman berisik, aksen kental, dan bahasa lain hasilnya lebih kasar, jadi baca dulu teksnya sebelum Anda mengandalkannya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "ubah mp4 ke teks",
+        "transkrip video ke teks",
+        "transkrip video kuliah",
+        "rekaman rapat jadi teks",
+        "ambil teks dari video"
+      ]
+    },
+    "subtitle-generator": {
+      "name": "Pembuat subtitle",
+      "summary": "Buat subtitle SRT atau VTT dari file video atau audio.",
+      "action": "Buat subtitle",
+      "title": "Pembuat Subtitle Gratis — Video ke SRT, Tanpa Unggah | Fizzdoc",
+      "description": "Buat subtitle SRT atau VTT dari video atau audio apa pun secara gratis. Subtitle berwaktu dibuat Whisper di browser Anda, video tidak pernah diunggah.",
+      "h1": "Buat subtitle dari video",
+      "lede": "Buat subtitle berwaktu untuk video sekaligus: Fizzdoc mendengarkan trek suara dan menulis file SRT atau VTT untuk YouTube, VLC, Premiere, CapCut, atau pemutar video apa pun.",
+      "steps": [
+        "Pilih file video atau audio (MP4, MOV, WebM, MP3, M4A, atau WAV).",
+        "Pilih bahasa yang diucapkan, atau biarkan deteksi otomatis, lalu pilih SRT atau VTT.",
+        "Klik “Buat subtitle”, periksa subtitlenya, lalu unduh filenya."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Bagaimana cara menambahkan subtitle ke video saya?",
+          "Unggah file .srt di samping video Anda di YouTube, Facebook, atau LinkedIn, atau seret ke VLC, Premiere Pro, DaVinci Resolve, atau CapCut. VTT adalah format yang dipakai pemutar video web."
+        ],
+        [
+          "Seberapa akurat hasilnya?",
+          "Fizzdoc memakai Whisper tiny, versi kecil dari model suara terbuka milik OpenAI yang berjalan sepenuhnya di browser Anda. Ucapan bahasa Inggris yang jelas hasilnya bagus; rekaman berisik, aksen kental, dan bahasa lain hasilnya lebih kasar, jadi baca dulu teksnya sebelum Anda mengandalkannya."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "pembuat subtitle srt",
+        "subtitle otomatis untuk video",
+        "buat subtitle dari video gratis",
+        "video ke srt",
+        "pembuat subtitle vtt"
       ]
     }
   }
