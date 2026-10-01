@@ -2606,6 +2606,162 @@
         "video in srt",
         "creare sottotitoli vtt"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Sblocca PDF Aadhaar",
+      "summary": "Rimuovi la password dal tuo PDF e-Aadhaar, sul tuo dispositivo.",
+      "action": "Rimuovi password",
+      "title": "Sbloccare PDF Aadhaar Gratis — Senza Upload | Fizzdoc",
+      "description": "Rimuovi gratis la password dal tuo PDF e-Aadhaar. Digitala una volta e ottieni una copia che si apre ovunque. Il tuo Aadhaar non viene mai caricato.",
+      "h1": "Rimuovi la password da un PDF e-Aadhaar",
+      "lede": "L'e-Aadhaar che scarichi da UIDAI chiede una password a ogni apertura. Salva una copia senza, direttamente sul tuo dispositivo: la tua carta Aadhaar non viene inviata a nessun sito web.",
+      "steps": [
+        "Aggiungi il tuo PDF e-Aadhaar.",
+        "Clicca su “Rimuovi password” e digita la password dell'Aadhaar quando richiesto.",
+        "Scarica la copia che si apre senza password."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Qual è la password del PDF e-Aadhaar?",
+          "UIDAI la imposta come le prime 4 lettere del tuo nome, come stampato sull'Aadhaar, in MAIUSCOLO, seguite dal tuo anno di nascita. Per SURESH KUMAR nato nel 1990 è SURE1990. Se il nome ha meno di 4 lettere, usa il nome intero: RIA nata nel 1990 è RIA1990."
+        ],
+        [
+          "Perché non usare un qualsiasi sbloccatore online?",
+          "Una carta Aadhaar contiene nome, foto, indirizzo, data di nascita e numero Aadhaar. La maggior parte dei siti di PDF carica il file sui propri server per sbloccarlo. Fizzdoc lo fa nel tuo browser, quindi la carta non lascia mai il tuo telefono o computer."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "password PDF Aadhaar",
+        "rimuovere password e-Aadhaar",
+        "aprire PDF carta Aadhaar senza password",
+        "sbloccare PDF Aadhaar online gratis",
+        "password PDF Aadhaar mascherato"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "Sblocca PDF e-PAN",
+      "summary": "Rimuovi la password dal PDF della tua carta e-PAN.",
+      "action": "Rimuovi password",
+      "title": "Sbloccare e-PAN PDF Gratis — Senza Upload | Fizzdoc",
+      "description": "Rimuovi gratis la password dal PDF della tua carta e-PAN, per aprirlo senza digitare la data di nascita. Nel browser; il tuo PAN non viene mai caricato.",
+      "h1": "Rimuovi la password da un PDF della carta e-PAN",
+      "lede": "Il PDF e-PAN di NSDL (Protean) o UTIITSL è protetto con la tua data di nascita. Salva una copia che si apre senza, sul tuo dispositivo, così la tua carta PAN non passa da un sito di upload.",
+      "steps": [
+        "Aggiungi il tuo PDF e-PAN.",
+        "Clicca su “Rimuovi password” e digita la password quando richiesto.",
+        "Scarica la copia che si apre senza password."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Qual è la password del PDF e-PAN?",
+          "Per le persone fisiche è la data di nascita nel formato DDMMYYYY, senza barre: il 5 marzo 1990 è 05031990. Per una società o un'azienda è la data di costituzione o formazione nello stesso formato."
+        ],
+        [
+          "È consentito?",
+          "Sì, per il tuo PAN. Fizzdoc rimuove la password solo quando la digiti tu; non può aprire un PDF di cui non conosci la password."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "password PDF e-PAN",
+        "rimuovere password PDF carta PAN",
+        "password e-PAN NSDL",
+        "aprire PDF carta PAN",
+        "password e-PAN UTIITSL"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Sblocca PDF dell'estratto conto",
+      "summary": "Rimuovi la password da un PDF di estratto conto bancario o di carta di credito.",
+      "action": "Rimuovi password",
+      "title": "Sbloccare Estratto Conto PDF Gratis — Senza Upload | Fizzdoc",
+      "description": "Rimuovi la password da un PDF di estratto conto o di carta per condividerlo per un prestito, un visto o la dichiarazione dei redditi. Nel browser, senza upload.",
+      "h1": "Rimuovi la password da un PDF di estratto conto",
+      "lede": "Le banche proteggono gli estratti conto elettronici con una password, ma i portali per prestiti, visti e tasse spesso rifiutano i file protetti. Salva una copia sbloccata sul tuo dispositivo: i dati del tuo conto non vanno a nessun sito di upload.",
+      "steps": [
+        "Aggiungi il PDF dell'estratto conto della tua banca o del gestore della carta.",
+        "Clicca su “Rimuovi password” e digita la password impostata dalla tua banca.",
+        "Scarica la copia sbloccata e condividila o caricala dove ti serve."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Qual è la password del mio estratto conto?",
+          "Ogni banca ne imposta una propria e indica il formato nell'e-mail che accompagna l'estratto conto. Di solito è composta da dati come nome, data di nascita, ID cliente o ultime cifre del conto o del numero di cellulare. Controlla quell'e-mail o la pagina di aiuto della tua banca."
+        ],
+        [
+          "Perché sbloccarlo sul mio dispositivo?",
+          "Un estratto conto mostra il numero di conto, il saldo e ogni transazione. La maggior parte dei siti di PDF carica il file per sbloccarlo; Fizzdoc lavora nel tuo browser, quindi non lascia mai il tuo dispositivo."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "rimuovere password PDF estratto conto",
+        "sbloccare estratto conto carta di credito",
+        "sbloccare estratto conto per un prestito",
+        "rimuovere password da estratto conto elettronico",
+        "PDF estratto conto senza password"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "Sblocca PDF ITR",
+      "summary": "Rimuovi la password da una ricevuta ITR-V o da un PDF Form 16.",
+      "action": "Rimuovi password",
+      "title": "Sbloccare PDF ITR Gratis — Rimuovere Password ITR-V | Fizzdoc",
+      "description": "Rimuovi gratis la password dalla ricevuta ITR-V in PDF, per aprirla senza PAN e data di nascita. Funziona nel browser; non viene caricato nulla.",
+      "h1": "Rimuovi la password da un PDF ITR-V",
+      "lede": "La ricevuta ITR-V del portale delle imposte sul reddito è protetta con il tuo PAN e la tua data di nascita. Salva una copia che si apre direttamente, creata sul tuo dispositivo così i tuoi dati fiscali restano privati.",
+      "steps": [
+        "Aggiungi l'ITR-V o un altro PDF delle imposte sul reddito.",
+        "Clicca su “Rimuovi password” e digita la password quando richiesto.",
+        "Scarica la copia che si apre senza password."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Qual è la password del PDF ITR-V?",
+          "Il tuo PAN in lettere minuscole seguito dalla data di nascita nel formato DDMMYYYY, senza spazi: il PAN ABCDE1234F nato il 5 marzo 1990 diventa abcde1234f05031990."
+        ],
+        [
+          "Funziona per il Form 16 o altri PDF fiscali?",
+          "Sì, per qualsiasi PDF di cui conosci la password. Fizzdoc non può indovinare una password; rimuove solo quella che digiti."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "password ITR-V",
+        "password PDF ricevuta ITR",
+        "rimuovere password PDF Form 16",
+        "aprire PDF ITR",
+        "sbloccare PDF imposte sul reddito"
+      ]
     }
   }
 }

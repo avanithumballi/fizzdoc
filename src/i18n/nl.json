@@ -2606,6 +2606,162 @@
         "video naar SRT",
         "VTT ondertitels maken"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Aadhaar-PDF ontgrendelen",
+      "summary": "Verwijder het wachtwoord van je e-Aadhaar PDF, op je eigen apparaat.",
+      "action": "Wachtwoord verwijderen",
+      "title": "Aadhaar PDF Ontgrendelen Gratis — Geen Upload | Fizzdoc",
+      "description": "Verwijder gratis het wachtwoord van je e-Aadhaar PDF. Typ het wachtwoord één keer en krijg een kopie die overal opent. Je Aadhaar wordt nooit geüpload.",
+      "h1": "Het wachtwoord van een e-Aadhaar PDF verwijderen",
+      "lede": "De e-Aadhaar die je van UIDAI downloadt, vraagt bij elke keer openen om een wachtwoord. Sla een kopie zonder op, direct op je apparaat: je Aadhaar-kaart wordt nooit naar een website gestuurd.",
+      "steps": [
+        "Voeg je e-Aadhaar PDF toe.",
+        "Klik op “Wachtwoord verwijderen” en typ het Aadhaar-wachtwoord wanneer daarom gevraagd wordt.",
+        "Download de kopie die zonder wachtwoord opent."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat is het wachtwoord van de e-Aadhaar PDF?",
+          "UIDAI stelt het in als de eerste 4 letters van je naam, zoals afgedrukt op de Aadhaar, in HOOFDLETTERS, gevolgd door je geboortejaar. Voor SURESH KUMAR geboren in 1990 is dat SURE1990. Is de naam korter dan 4 letters, gebruik dan de hele naam: RIA geboren in 1990 is RIA1990."
+        ],
+        [
+          "Waarom niet gewoon een online ontgrendelaar gebruiken?",
+          "Een Aadhaar-kaart bevat je naam, foto, adres, geboortedatum en Aadhaar-nummer. De meeste PDF-sites uploaden het bestand naar hun servers om het te ontgrendelen. Fizzdoc doet dit in je browser, zodat de kaart je telefoon of computer nooit verlaat."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "aadhaar pdf wachtwoord",
+        "e-aadhaar wachtwoord verwijderen",
+        "aadhaar pdf openen zonder wachtwoord",
+        "aadhaar pdf ontgrendelen gratis online",
+        "gemaskeerde aadhaar pdf wachtwoord"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "e-PAN PDF ontgrendelen",
+      "summary": "Verwijder het wachtwoord van je e-PAN-kaart PDF.",
+      "action": "Wachtwoord verwijderen",
+      "title": "e-PAN PDF Ontgrendelen Gratis — Geen Upload | Fizzdoc",
+      "description": "Verwijder gratis het wachtwoord van je e-PAN-kaart PDF, zodat hij opent zonder je geboortedatum te typen. In je browser; je PAN wordt nooit geüpload.",
+      "h1": "Het wachtwoord van een e-PAN-kaart PDF verwijderen",
+      "lede": "De e-PAN PDF van NSDL (Protean) of UTIITSL is vergrendeld met je geboortedatum. Sla een kopie op die zonder opent, op je eigen apparaat, zodat je PAN-kaart nooit naar een uploadsite gaat.",
+      "steps": [
+        "Voeg je e-PAN PDF toe.",
+        "Klik op “Wachtwoord verwijderen” en typ het wachtwoord wanneer daarom gevraagd wordt.",
+        "Download de kopie die zonder wachtwoord opent."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat is het wachtwoord van de e-PAN PDF?",
+          "Voor particulieren is het de geboortedatum in de notatie DDMMYYYY, zonder schuine strepen: 5 maart 1990 is 05031990. Voor een bedrijf of firma is het de oprichtingsdatum in dezelfde notatie."
+        ],
+        [
+          "Is dit toegestaan?",
+          "Ja, voor je eigen PAN. Fizzdoc verwijdert het wachtwoord alleen als je het typt; een PDF waarvan je het wachtwoord niet kent, kan het niet openen."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "e-PAN pdf wachtwoord",
+        "PAN-kaart pdf wachtwoord verwijderen",
+        "NSDL e-PAN wachtwoord",
+        "PAN-kaart pdf openen",
+        "UTIITSL e-PAN wachtwoord"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Bankafschrift-PDF ontgrendelen",
+      "summary": "Verwijder het wachtwoord van een PDF van een bank- of creditcardafschrift.",
+      "action": "Wachtwoord verwijderen",
+      "title": "Bankafschrift PDF Ontgrendelen Gratis — Geen Upload | Fizzdoc",
+      "description": "Verwijder het wachtwoord van een bank- of creditcardafschrift-PDF om het te delen voor een lening, visum of belastingaangifte. In je browser, nooit geüpload.",
+      "h1": "Het wachtwoord van een bankafschrift-PDF verwijderen",
+      "lede": "Banken beveiligen e-afschriften met een wachtwoord, maar portalen voor leningen, visa en belastingen weigeren vaak vergrendelde bestanden. Sla een ontgrendelde kopie op je apparaat op: je rekeninggegevens gaan nooit naar een uploadsite.",
+      "steps": [
+        "Voeg de afschrift-PDF van je bank of kaartaanbieder toe.",
+        "Klik op “Wachtwoord verwijderen” en typ het wachtwoord dat je bank heeft ingesteld.",
+        "Download de ontgrendelde kopie en deel of upload hem waar nodig."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat is het wachtwoord van mijn bankafschrift?",
+          "Elke bank stelt een eigen wachtwoord in en vermeldt de opbouw in de e-mail waarmee het afschrift wordt verstuurd. Meestal is het opgebouwd uit gegevens zoals je naam, geboortedatum, klant-ID of de laatste cijfers van je rekening- of mobiele nummer. Kijk in die e-mail of op de helppagina van je bank."
+        ],
+        [
+          "Waarom op mijn apparaat ontgrendelen?",
+          "Een afschrift toont je rekeningnummer, saldo en elke transactie. De meeste PDF-sites uploaden het bestand om het te ontgrendelen; Fizzdoc doet het werk in je browser, zodat het je apparaat nooit verlaat."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "bankafschrift pdf wachtwoord verwijderen",
+        "creditcardafschrift ontgrendelen",
+        "bankafschrift ontgrendelen voor lening",
+        "wachtwoord verwijderen uit e-afschrift",
+        "afschrift pdf zonder wachtwoord"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "ITR-PDF ontgrendelen",
+      "summary": "Verwijder het wachtwoord van een ITR-V-bevestiging of Form 16 PDF.",
+      "action": "Wachtwoord verwijderen",
+      "title": "ITR PDF Ontgrendelen Gratis — ITR-V Wachtwoord | Fizzdoc",
+      "description": "Verwijder gratis het wachtwoord van je ITR-V-bevestiging, zodat hij opent zonder je PAN en geboortedatum. Werkt in je browser; er wordt niets geüpload.",
+      "h1": "Het wachtwoord van een ITR-V PDF verwijderen",
+      "lede": "De ITR-V-bevestiging van het belastingportaal is vergrendeld met je PAN en geboortedatum. Sla een kopie op die direct opent, gemaakt op je apparaat zodat je belastinggegevens privé blijven.",
+      "steps": [
+        "Voeg de ITR-V of een andere PDF van de inkomstenbelasting toe.",
+        "Klik op “Wachtwoord verwijderen” en typ het wachtwoord wanneer daarom gevraagd wordt.",
+        "Download de kopie die zonder wachtwoord opent."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Wat is het wachtwoord van de ITR-V PDF?",
+          "Je PAN in kleine letters gevolgd door je geboortedatum in de notatie DDMMYYYY, zonder spaties: PAN ABCDE1234F geboren op 5 maart 1990 geeft abcde1234f05031990."
+        ],
+        [
+          "Werkt het ook voor Form 16 of andere belasting-PDF's?",
+          "Ja, voor elke PDF waarvan je het wachtwoord kent. Fizzdoc kan geen wachtwoord raden; het verwijdert alleen een wachtwoord dat jij typt."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "ITR-V wachtwoord",
+        "ITR bevestiging pdf wachtwoord",
+        "Form 16 pdf wachtwoord verwijderen",
+        "ITR pdf openen",
+        "belasting pdf ontgrendelen"
+      ]
     }
   }
 }

@@ -2606,6 +2606,162 @@
         "video sang srt",
         "tạo phụ đề vtt"
       ]
+    },
+    "unlock-aadhaar-pdf": {
+      "name": "Mở khóa PDF Aadhaar",
+      "summary": "Xóa mật khẩu khỏi tệp PDF e-Aadhaar ngay trên thiết bị của bạn.",
+      "action": "Xóa mật khẩu",
+      "title": "Mở Khóa PDF Aadhaar Miễn Phí — Không Tải Lên | Fizzdoc",
+      "description": "Xóa mật khẩu khỏi PDF e-Aadhaar miễn phí. Nhập mật khẩu một lần và nhận bản sao mở được ở mọi nơi. Aadhaar của bạn không bao giờ bị tải lên.",
+      "h1": "Xóa mật khẩu khỏi PDF e-Aadhaar",
+      "lede": "e-Aadhaar tải từ UIDAI hỏi mật khẩu mỗi lần mở. Hãy lưu một bản không có mật khẩu ngay trên thiết bị: thẻ Aadhaar của bạn không bao giờ được gửi tới bất kỳ trang web nào.",
+      "steps": [
+        "Thêm tệp PDF e-Aadhaar của bạn.",
+        "Bấm “Xóa mật khẩu” và nhập mật khẩu Aadhaar khi được hỏi.",
+        "Tải xuống bản mở được mà không cần mật khẩu."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Mật khẩu của PDF e-Aadhaar là gì?",
+          "UIDAI đặt mật khẩu là 4 chữ cái đầu trong tên của bạn, như in trên Aadhaar, viết HOA, theo sau là năm sinh. Với SURESH KUMAR sinh năm 1990 là SURE1990. Nếu tên ngắn hơn 4 chữ cái, hãy dùng toàn bộ tên: RIA sinh năm 1990 là RIA1990."
+        ],
+        [
+          "Sao không dùng bất kỳ công cụ mở khóa online nào?",
+          "Thẻ Aadhaar chứa tên, ảnh, địa chỉ, ngày sinh và số Aadhaar của bạn. Hầu hết các trang PDF tải tệp lên máy chủ của họ để mở khóa. Fizzdoc làm việc đó ngay trong trình duyệt, nên thẻ không bao giờ rời khỏi điện thoại hay máy tính của bạn."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "mật khẩu pdf aadhaar",
+        "xóa mật khẩu e-aadhaar",
+        "mở pdf thẻ aadhaar không cần mật khẩu",
+        "mở khóa pdf aadhaar online miễn phí",
+        "mật khẩu pdf aadhaar đã che"
+      ]
+    },
+    "unlock-pan-card-pdf": {
+      "name": "Mở khóa PDF e-PAN",
+      "summary": "Xóa mật khẩu khỏi tệp PDF thẻ e-PAN của bạn.",
+      "action": "Xóa mật khẩu",
+      "title": "Mở Khóa PDF e-PAN Miễn Phí — Không Tải Lên | Fizzdoc",
+      "description": "Xóa mật khẩu khỏi PDF thẻ e-PAN miễn phí, để mở mà không cần nhập ngày sinh. Thực hiện trong trình duyệt; PAN của bạn không bao giờ bị tải lên.",
+      "h1": "Xóa mật khẩu khỏi PDF thẻ e-PAN",
+      "lede": "PDF e-PAN từ NSDL (Protean) hoặc UTIITSL được khóa bằng ngày sinh của bạn. Hãy lưu một bản mở được mà không cần nó, ngay trên thiết bị của bạn, để thẻ PAN không bao giờ tới trang tải lên.",
+      "steps": [
+        "Thêm tệp PDF e-PAN của bạn.",
+        "Bấm “Xóa mật khẩu” và nhập mật khẩu khi được hỏi.",
+        "Tải xuống bản mở được mà không cần mật khẩu."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Mật khẩu của PDF e-PAN là gì?",
+          "Với cá nhân, đó là ngày sinh theo định dạng DDMMYYYY, không có dấu gạch chéo: ngày 5 tháng 3 năm 1990 là 05031990. Với công ty hoặc doanh nghiệp, đó là ngày thành lập theo cùng định dạng."
+        ],
+        [
+          "Việc này có được phép không?",
+          "Có, với PAN của chính bạn. Fizzdoc chỉ xóa mật khẩu khi bạn nhập nó; công cụ không thể mở PDF mà bạn không biết mật khẩu."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "mật khẩu pdf e-PAN",
+        "xóa mật khẩu pdf thẻ PAN",
+        "mật khẩu NSDL e-PAN",
+        "mở pdf thẻ PAN",
+        "mật khẩu UTIITSL e-PAN"
+      ]
+    },
+    "unlock-bank-statement-pdf": {
+      "name": "Mở khóa PDF sao kê ngân hàng",
+      "summary": "Xóa mật khẩu khỏi PDF sao kê ngân hàng hoặc thẻ tín dụng.",
+      "action": "Xóa mật khẩu",
+      "title": "Mở Khóa PDF Sao Kê Ngân Hàng Miễn Phí — Không Tải Lên | Fizzdoc",
+      "description": "Xóa mật khẩu khỏi PDF sao kê ngân hàng hoặc thẻ tín dụng để nộp cho hồ sơ vay, visa hay khai thuế. Thực hiện trong trình duyệt, không tải lên.",
+      "h1": "Xóa mật khẩu khỏi PDF sao kê ngân hàng",
+      "lede": "Ngân hàng khóa sao kê điện tử bằng mật khẩu, nhưng cổng vay vốn, visa và thuế thường từ chối tệp bị khóa. Hãy lưu bản đã mở khóa trên thiết bị: thông tin tài khoản của bạn không bao giờ tới trang tải lên.",
+      "steps": [
+        "Thêm tệp PDF sao kê từ ngân hàng hoặc đơn vị phát hành thẻ của bạn.",
+        "Bấm “Xóa mật khẩu” và nhập mật khẩu do ngân hàng đặt.",
+        "Tải xuống bản đã mở khóa rồi chia sẻ hoặc tải lên nơi bạn cần."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Mật khẩu sao kê ngân hàng của tôi là gì?",
+          "Mỗi ngân hàng tự đặt mật khẩu và nêu định dạng trong email gửi kèm sao kê. Thường nó được ghép từ các thông tin như tên, ngày sinh, mã khách hàng hoặc vài chữ số cuối của số tài khoản hay số điện thoại. Hãy xem email đó, hoặc trang trợ giúp của ngân hàng."
+        ],
+        [
+          "Vì sao nên mở khóa trên thiết bị của tôi?",
+          "Sao kê cho thấy số tài khoản, số dư và mọi giao dịch của bạn. Hầu hết các trang PDF tải tệp lên để mở khóa; Fizzdoc làm việc trong trình duyệt, nên tệp không bao giờ rời khỏi thiết bị."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "xóa mật khẩu pdf sao kê ngân hàng",
+        "mở khóa sao kê thẻ tín dụng",
+        "mở khóa sao kê ngân hàng để vay vốn",
+        "xóa mật khẩu sao kê điện tử",
+        "pdf sao kê không cần mật khẩu"
+      ]
+    },
+    "unlock-itr-pdf": {
+      "name": "Mở khóa PDF ITR",
+      "summary": "Xóa mật khẩu khỏi giấy xác nhận ITR-V hoặc PDF Form 16.",
+      "action": "Xóa mật khẩu",
+      "title": "Mở Khóa PDF ITR Miễn Phí — Mật Khẩu ITR-V | Fizzdoc",
+      "description": "Xóa mật khẩu khỏi PDF xác nhận ITR-V miễn phí, để mở mà không cần PAN và ngày sinh. Hoạt động trong trình duyệt; không có gì được tải lên.",
+      "h1": "Xóa mật khẩu khỏi PDF ITR-V",
+      "lede": "Giấy xác nhận ITR-V từ cổng thuế thu nhập được khóa bằng PAN và ngày sinh của bạn. Hãy lưu một bản mở thẳng được, tạo ngay trên thiết bị để thông tin thuế của bạn luôn riêng tư.",
+      "steps": [
+        "Thêm ITR-V hoặc tệp PDF thuế thu nhập khác.",
+        "Bấm “Xóa mật khẩu” và nhập mật khẩu khi được hỏi.",
+        "Tải xuống bản mở được mà không cần mật khẩu."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Mật khẩu của PDF ITR-V là gì?",
+          "PAN của bạn viết thường, theo sau là ngày sinh theo định dạng DDMMYYYY, không có khoảng trắng: PAN ABCDE1234F sinh ngày 5 tháng 3 năm 1990 cho ra abcde1234f05031990."
+        ],
+        [
+          "Có dùng được cho Form 16 hoặc các PDF thuế khác không?",
+          "Có, với bất kỳ PDF nào bạn biết mật khẩu. Fizzdoc không thể đoán mật khẩu; công cụ chỉ xóa mật khẩu do bạn nhập."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "mật khẩu ITR-V",
+        "mật khẩu pdf xác nhận ITR",
+        "xóa mật khẩu pdf Form 16",
+        "mở pdf ITR",
+        "mở khóa pdf thuế thu nhập"
+      ]
     }
   }
 }

@@ -240,6 +240,126 @@ export const TOOLS: Tool[] = [
     ],
   },
   {
+    op: 'unlock',
+    format: 'pdf',
+    slug: 'unlock-aadhaar-pdf',
+    name: 'Unlock Aadhaar PDF',
+    summary: 'Remove the password from your e-Aadhaar PDF, on your device.',
+    action: 'Remove password',
+    title: 'Unlock Aadhaar PDF Free — Remove Password, No Upload | Fizzdoc',
+    description:
+      'Remove the password from your e-Aadhaar PDF for free. Type the password once and get a copy that opens anywhere. Your Aadhaar is never uploaded.',
+    h1: 'Remove the password from an e-Aadhaar PDF',
+    lede: 'The e-Aadhaar you download from UIDAI asks for a password every time it opens. Save a copy without it, right on your device: your Aadhaar card is never sent to any website.',
+    steps: [
+      'Add your e-Aadhaar PDF.',
+      'Click “Remove password” and type the Aadhaar password when asked.',
+      'Download the copy that opens without a password.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'What is the e-Aadhaar PDF password?',
+        'UIDAI sets it as the first 4 letters of your name, as printed on the Aadhaar, in CAPITAL letters, followed by your year of birth. For SURESH KUMAR born in 1990 it is SURE1990. If the name is shorter than 4 letters, use the whole name: RIA born in 1990 is RIA1990.',
+      ],
+      [
+        'Why not just use any online unlocker?',
+        'An Aadhaar card holds your name, photo, address, date of birth and Aadhaar number. Most PDF sites upload the file to their servers to unlock it. Fizzdoc does it inside your browser, so the card never leaves your phone or computer.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'unlock',
+    format: 'pdf',
+    slug: 'unlock-pan-card-pdf',
+    name: 'Unlock e-PAN PDF',
+    summary: 'Remove the password from your e-PAN card PDF.',
+    action: 'Remove password',
+    title: 'Unlock e-PAN PDF Free — Remove PAN Card Password, No Upload | Fizzdoc',
+    description:
+      'Remove the password from your e-PAN card PDF for free, so it opens without typing your date of birth. Done in your browser; your PAN is never uploaded.',
+    h1: 'Remove the password from an e-PAN card PDF',
+    lede: 'The e-PAN PDF from NSDL (Protean) or UTIITSL is locked with your date of birth. Save a copy that opens without it, on your own device, so your PAN card never goes to an upload site.',
+    steps: [
+      'Add your e-PAN PDF.',
+      'Click “Remove password” and type the password when asked.',
+      'Download the copy that opens without a password.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'What is the e-PAN PDF password?',
+        'For individuals it is the date of birth in DDMMYYYY format, without slashes: 5 March 1990 is 05031990. For a company or firm it is the date of incorporation or formation in the same format.',
+      ],
+      [
+        'Is this allowed?',
+        'Yes, for your own PAN. Fizzdoc only removes the password when you type it; it cannot open a PDF whose password you do not know.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'unlock',
+    format: 'pdf',
+    slug: 'unlock-bank-statement-pdf',
+    name: 'Unlock Bank Statement PDF',
+    summary: 'Remove the password from a bank or credit card statement PDF.',
+    action: 'Remove password',
+    title: 'Unlock Bank Statement PDF Free — Remove Password, No Upload | Fizzdoc',
+    description:
+      'Remove the password from a bank or credit card statement PDF for free, to share it for a loan, visa or tax filing. Done in your browser; never uploaded.',
+    h1: 'Remove the password from a bank statement PDF',
+    lede: 'Banks lock e-statements with a password, but loan, visa and tax portals often refuse locked files. Save an unlocked copy on your device: your account details never go to an upload site.',
+    steps: [
+      'Add the statement PDF from your bank or card provider.',
+      'Click “Remove password” and type the password your bank set.',
+      'Download the unlocked copy and share or upload it where you need to.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'What is my bank statement password?',
+        'Each bank sets its own, and states the format in the email that carries the statement. It is usually built from details such as your name, date of birth, customer ID or the last digits of your account or mobile number. Check that email, or your bank’s help page.',
+      ],
+      [
+        'Why unlock it on my device?',
+        'A statement shows your account number, balance and every transaction. Most PDF sites upload the file to unlock it; Fizzdoc does the work in your browser, so it never leaves your device.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
+    op: 'unlock',
+    format: 'pdf',
+    slug: 'unlock-itr-pdf',
+    name: 'Unlock ITR PDF',
+    summary: 'Remove the password from an ITR-V acknowledgement or Form 16 PDF.',
+    action: 'Remove password',
+    title: 'Unlock ITR PDF Free — Remove ITR-V Password, No Upload | Fizzdoc',
+    description:
+      'Remove the password from your ITR-V acknowledgement PDF for free, so it opens without your PAN and birth date. Works in your browser; nothing is uploaded.',
+    h1: 'Remove the password from an ITR-V PDF',
+    lede: 'The ITR-V acknowledgement from the income tax portal is locked with your PAN and date of birth. Save a copy that opens directly, made on your device so your tax details stay private.',
+    steps: [
+      'Add the ITR-V or other income tax PDF.',
+      'Click “Remove password” and type the password when asked.',
+      'Download the copy that opens without a password.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'What is the ITR-V PDF password?',
+        'Your PAN in lowercase letters followed by your date of birth in DDMMYYYY format, with no spaces: PAN ABCDE1234F born on 5 March 1990 gives abcde1234f05031990.',
+      ],
+      [
+        'Does it work for Form 16 or other tax PDFs?',
+        'Yes, for any PDF whose password you know. Fizzdoc cannot guess a password; it only removes one you type.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+  },
+  {
     op: 'protect',
     format: 'pdf',
     slug: 'protect-pdf',
@@ -1352,6 +1472,10 @@ const KEYWORDS: Record<string, string[]> = {
     'remove PDF restrictions',
     'unlock PDF free online'
   ],
+  'unlock-aadhaar-pdf': ['Aadhaar PDF password', 'e-Aadhaar password remove', 'open Aadhaar card PDF without password', 'Aadhaar PDF unlock online free', 'masked Aadhaar PDF password'],
+  'unlock-pan-card-pdf': ['e-PAN PDF password', 'PAN card PDF password remove', 'NSDL e-PAN password', 'open PAN card PDF', 'UTIITSL e-PAN password'],
+  'unlock-bank-statement-pdf': ['bank statement PDF password remove', 'credit card statement unlock', 'unlock bank statement for loan', 'remove password from e-statement', 'statement PDF without password'],
+  'unlock-itr-pdf': ['ITR-V password', 'ITR acknowledgement PDF password', 'Form 16 PDF password remove', 'open ITR PDF', 'income tax PDF unlock'],
   'protect-pdf': [
     'add a password to a PDF',
     'encrypt PDF with AES-256',
