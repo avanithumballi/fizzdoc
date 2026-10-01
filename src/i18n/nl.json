@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Ondertitels (.srt)",
     "ws.fmtVtt": "Webondertitels (.vtt)",
     "ws.speechModel": "De eerste keer downloadt je browser eenmalig het spraakmodel ({mb} MB) en bewaart dat. Daarna start het binnen een paar seconden, ook offline.",
+    "ws.speechEnglish": "Werkt het best met duidelijk gesproken Engels. Andere talen en gemengde spraak, zoals Hindi met Engels, gaan vaak mis, dus controleer de tekst voordat je hem gebruikt.",
     "ws.chooseMedia": "Kies een audio- of videobestand",
     "app.setup": "Voorbereiden… eenmalige installatie: {done} van {total} MB. De volgende keer start het meteen.",
     "error.NO_AUDIO_TRACK": "Deze browser kan het geluid in dit bestand niet lezen. Probeer een MP3-, M4A-, WAV- of MP4-bestand.",

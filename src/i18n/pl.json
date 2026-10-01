@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Napisy (.srt)",
     "ws.fmtVtt": "Napisy internetowe (.vtt)",
     "ws.speechModel": "Za pierwszym razem przeglądarka jednorazowo pobierze model mowy ({mb} MB) i go zachowa. Potem uruchamia się w kilka sekund, nawet offline.",
+    "ws.speechEnglish": "Działa najlepiej z wyraźnie mówionym angielskim. Inne języki i mowa mieszana, np. hindi z angielskim, często wychodzą błędnie, więc sprawdź tekst przed użyciem.",
     "ws.chooseMedia": "Wybierz plik audio lub wideo",
     "app.setup": "Przygotowywanie… jednorazowa konfiguracja: {done} z {total} MB. Następnym razem ruszy od razu.",
     "error.NO_AUDIO_TRACK": "Ta przeglądarka nie może odczytać dźwięku z tego pliku. Spróbuj pliku MP3, M4A, WAV lub MP4.",

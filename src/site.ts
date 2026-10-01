@@ -84,7 +84,7 @@ const TRANSCRIBE_STEPS = [
 ];
 const TRANSCRIBE_ACCURACY: [string, string] = [
   'How accurate is it?',
-  'Fizzdoc uses Whisper tiny, a small version of OpenAI’s open speech model that runs fully in your browser. Clear English speech comes out well; noisy recordings, strong accents and other languages are rougher, so read the text through before you rely on it.',
+  'Fizzdoc uses Whisper tiny, a small version of OpenAI’s open speech model that runs fully in your browser. Clear English speech comes out well; noisy recordings, strong accents, other languages and mixed speech such as Hindi with English are much rougher, so read the text through before you rely on it.',
 ];
 const TRANSCRIBE_FIRST_RUN: [string, string] = [
   'Why is the first run slower?',

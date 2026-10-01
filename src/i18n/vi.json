@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Phụ đề (.srt)",
     "ws.fmtVtt": "Phụ đề web (.vtt)",
     "ws.speechModel": "Lần đầu, trình duyệt sẽ tải mô hình giọng nói ({mb} MB) một lần rồi lưu lại. Sau đó nó khởi động trong vài giây, kể cả khi ngoại tuyến.",
+    "ws.speechEnglish": "Hoạt động tốt nhất với tiếng Anh nói rõ ràng. Các ngôn ngữ khác và lời nói pha trộn, như tiếng Hindi lẫn tiếng Anh, thường bị sai, nên hãy kiểm tra văn bản trước khi dùng.",
     "ws.chooseMedia": "Chọn một tệp âm thanh hoặc video",
     "app.setup": "Đang chuẩn bị… thiết lập một lần: {done} trên {total} MB. Lần sau sẽ chạy ngay.",
     "error.NO_AUDIO_TRACK": "Trình duyệt này không đọc được âm thanh trong tệp này. Hãy thử tệp MP3, M4A, WAV hoặc MP4.",

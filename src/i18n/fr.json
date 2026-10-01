@@ -275,6 +275,7 @@
     "ws.fmtSrt": "Sous-titres (.srt)",
     "ws.fmtVtt": "Sous-titres web (.vtt)",
     "ws.speechModel": "La première fois, votre navigateur télécharge une seule fois le modèle vocal ({mb} Mo) et le conserve. Ensuite, il démarre en quelques secondes, même hors ligne.",
+    "ws.speechEnglish": "Fonctionne mieux avec de l’anglais parlé clairement. Les autres langues et la parole mélangée, comme l’hindi avec l’anglais, sont souvent mal transcrites : relisez le texte avant de l’utiliser.",
     "ws.chooseMedia": "Choisissez un fichier audio ou vidéo",
     "app.setup": "Préparation… configuration unique : {done} sur {total} Mo. La prochaine fois, c’est immédiat.",
     "error.NO_AUDIO_TRACK": "Ce navigateur ne peut pas lire le son de ce fichier. Essayez un fichier MP3, M4A, WAV ou MP4.",
