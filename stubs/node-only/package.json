@@ -1,0 +1,6 @@
+{
+  "name": "node-only-stub",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Stands in for packages that @huggingface/transformers needs only in Node (onnxruntime-node, sharp). The site uses its browser build, so nothing is downloaded or built for them."
+}
