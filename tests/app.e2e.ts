@@ -79,13 +79,13 @@ test('shows real progress and a prefilled problem report without the file name',
   expect(url.toString()).not.toContain('mixed');
 });
 
-test('comparison pages are factual, link to the matching tools and say they are not affiliated', async ({ page }) => {
+test('alternative pages describe only Fizzdoc, link to the matching tools and say they are not affiliated', async ({ page }) => {
   await page.goto('/ilovepdf-alternative/');
   await expect(page.locator('h1')).toHaveText('A private, free alternative to iLovePDF');
-  await expect(page.locator('#compare')).toHaveText('Fizzdoc vs iLovePDF');
-  await expect(page.locator('main')).toContainText('deleted within 2 hours');
-  await expect(page.locator('main')).toContainText('When iLovePDF is the better choice');
+  await expect(page.locator('#compare')).toHaveText('How Fizzdoc works');
   await expect(page.locator('main')).toContainText('not affiliated');
+  // Only Fizzdoc is described: no claims about the other service.
+  await expect(page.locator('main')).not.toContainText('hours');
   await page.locator('.tool-grid a', { hasText: 'Merge PDF' }).click();
   await expect(page).toHaveURL(/\/merge-pdf\/$/);
 

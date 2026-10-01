@@ -579,7 +579,7 @@ function altHtml(c: Copy, alt: Alternative | 'hub') {
 <section class="section" aria-labelledby="compare">
   <div class="section-head"><h2 id="compare">Choose a comparison</h2></div>
   <ul class="proof-grid">
-    ${ALTERNATIVES.map((a) => `<li>${CHECK}<strong><a href="/${a.slug}/">${esc(`${SITE.name} vs ${a.brand}`)}</a></strong><span>${esc(a.theirFiles)}</span></li>`).join('\n    ')}
+    ${ALTERNATIVES.map((a) => `<li>${CHECK}<strong><a href="/${a.slug}/">${esc(`${a.brand} alternative`)}</a></strong><span>${esc(a.description)}</span></li>`).join('\n    ')}
   </ul>
 </section>
 ${proofHtml(c)}
@@ -593,13 +593,13 @@ ${faqHtml(c, h.faq)}`;
   <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>${esc(c.t('tool.eyebrow'))}</p>
 </section>
 <section class="section" aria-labelledby="compare">
-  <div class="section-head"><h2 id="compare">${esc(`${SITE.name} vs ${alt.brand}`)}</h2></div>
+  <div class="section-head"><h2 id="compare">How Fizzdoc works</h2></div>
   <ul class="proof-grid">
-    <li>${CHECK}<strong>How ${SITE.name} handles your file</strong><span>It never leaves your device: every tool runs inside your browser tab, and the page is blocked from sending files anywhere. Free, with no account, no daily limit and no watermark.</span></li>
-    <li>${CHECK}<strong>How ${esc(alt.brand)} handles it</strong><span>${esc(alt.theirFiles)}</span></li>
-    <li>${CHECK}<strong>When ${esc(alt.brand)} is the better choice</strong><span>${esc(alt.theyDoBetter)}</span></li>
+    <li>${CHECK}<strong>Your file stays on your device</strong><span>Every tool runs inside your browser tab, and the page is blocked from sending files anywhere. You can check it in your browser’s Network tab.</span></li>
+    <li>${CHECK}<strong>Free, with nothing attached</strong><span>No account, no daily limit, no watermark and no paid plan. Open source under Apache-2.0.</span></li>
+    <li>${CHECK}<strong>Works anywhere</strong><span>Any modern browser on Windows, Mac, Linux, Android or iPhone, with nothing to install, in ${SITE_LANGS.length} languages.</span></li>
   </ul>
-  <p class="note">Based on ${esc(alt.brand)}’s public website, October 2026. Plans and limits change, so check their site for the latest. ${esc(alt.brand)} is a trademark of its owner; ${SITE.name} is independent and not affiliated.</p>
+  <p class="note">${esc(alt.brand)} is a trademark of its owner and is named only to say what this page is about. ${SITE.name} is an independent project, not affiliated with or endorsed by ${esc(alt.brand)}.</p>
 </section>
 <section class="section" aria-labelledby="tools">
   <div class="section-head"><h2 id="tools">${esc(`${SITE.name} tools for the jobs people use ${alt.brand} for`)}</h2><p>Each one works in your browser, free, without uploading anything.</p></div>
@@ -831,9 +831,9 @@ The site is available in ${SITE_LANGS.length} languages: ${SITE_LANGS.map((lang)
 - [Mermaid to PNG](${SITE.url}/mermaid-to-png/) and [Mermaid to SVG](${SITE.url}/mermaid-to-svg/): flowchart, sequence, class, state, ER, Gantt, pie, mind map, timeline and Git graph diagrams; PNG up to 4×, optional transparent background, Mermaid's strict security mode, with ready-to-use examples.
 - A local MCP server lets AI coding agents (Claude Code, Codex, Cursor and others) merge, split, rotate, protect or unlock PDFs and trim, split or join MP3/M4A on the user's own machine: ${SITE.repo}/tree/main/mcp
 
-## Compared with other online tools
+## Alternatives to familiar tools
 
-Fair, factual comparisons, including where the other service is the better choice: ${ALTERNATIVES.map((a) => `[${a.brand} alternative](${SITE.url}/${a.slug}/)`).join(', ')}. Overview: ${SITE.url}/${ALTERNATIVES_HUB.slug}/
+Pages for people looking for a private, free replacement for a familiar tool (Fizzdoc is independent and not affiliated with these services): ${ALTERNATIVES.map((a) => `[${a.brand} alternative](${SITE.url}/${a.slug}/)`).join(', ')}. Overview: ${SITE.url}/${ALTERNATIVES_HUB.slug}/
 
 ## Privacy and security (verifiable)
 

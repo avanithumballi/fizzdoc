@@ -1,7 +1,7 @@
 // "<Brand> alternative" pages: what people type when they look for a private or free replacement.
-// Facts about other services come from their own public pages (checked October 2026) and stay
-// general where their plans change often. Each page also says plainly where the other service is
-// the better choice. Brand names belong to their owners; Fizzdoc is not affiliated with them.
+// They describe only what Fizzdoc does and make no claims about the other services, whose names
+// are used only to say what the page is about. Brand names belong to their owners; Fizzdoc is not
+// affiliated with them.
 
 export interface Alternative {
   slug: string;
@@ -10,10 +10,6 @@ export interface Alternative {
   description: string;
   h1: string;
   lede: string;
-  /** How the other service handles files, in their own terms. */
-  theirFiles: string;
-  /** Where the other service is the better pick: honest, so readers trust the rest. */
-  theyDoBetter: string;
   /** Their best-known jobs mapped to the Fizzdoc tool that does the same. */
   tools: string[];
   faq: [question: string, answer: string][];
@@ -21,7 +17,7 @@ export interface Alternative {
 
 const NOT_AFFILIATED = (brand: string): [string, string] => [
   `Is Fizzdoc made by ${brand}?`,
-  `No. Fizzdoc is an independent, open-source project and is not affiliated with or endorsed by ${brand}. ${brand} is a trademark of its owner and is named here only to compare.`,
+  `No. Fizzdoc is an independent, open-source project and is not affiliated with or endorsed by ${brand}. ${brand} is a trademark of its owner and is named only to say what this page is about.`,
 ];
 const HOW_PRIVATE: [string, string] = [
   'How can Fizzdoc work without uploading my file?',
@@ -37,8 +33,6 @@ export const ALTERNATIVES: Alternative[] = [
       'Looking for an iLovePDF alternative? Fizzdoc merges, compresses, converts, edits and unlocks PDFs free, in your browser. Your files are never uploaded.',
     h1: 'A private, free alternative to iLovePDF',
     lede: 'Fizzdoc does the everyday iLovePDF jobs (merge, split, compress, convert, unlock, OCR) without sending your file anywhere. The work happens in your browser, it is free with no daily limit, and it is open source.',
-    theirFiles: 'iLovePDF’s web tools upload your document to its servers to process it; iLovePDF says uploaded files are deleted within 2 hours.',
-    theyDoBetter: 'iLovePDF has tools Fizzdoc doesn’t have yet, such as PDF to Excel, e-signatures and repairing damaged PDFs, plus desktop and mobile apps.',
     tools: ['merge-pdf', 'split-pdf', 'compress-pdf', 'pdf-to-word', 'word-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'unlock-pdf', 'protect-pdf', 'ocr-pdf', 'add-page-numbers-to-pdf', 'watermark-pdf'],
     faq: [
       HOW_PRIVATE,
@@ -54,8 +48,6 @@ export const ALTERNATIVES: Alternative[] = [
       'A free Smallpdf alternative that keeps your files on your device: compress, merge, convert, edit and unlock PDFs in your browser. No account, no limits.',
     h1: 'A private, free alternative to Smallpdf',
     lede: 'Fizzdoc covers the Smallpdf jobs people use most (compress, merge, convert to and from Word, JPG and PowerPoint, edit and unlock) with no account, no daily cap and no upload.',
-    theirFiles: 'Smallpdf’s web tools upload your document to its servers to process it, and free use is limited, with a paid plan for more.',
-    theyDoBetter: 'Smallpdf offers e-signatures, document sharing and team features, and apps for desktop and phone.',
     tools: ['compress-pdf', 'merge-pdf', 'pdf-to-word', 'word-to-pdf', 'pdf-to-powerpoint', 'pdf-to-jpg', 'edit-pdf', 'unlock-pdf', 'split-pdf', 'rotate-pdf', 'delete-pdf-pages', 'protect-pdf'],
     faq: [
       HOW_PRIVATE,
@@ -66,17 +58,15 @@ export const ALTERNATIVES: Alternative[] = [
   {
     slug: 'sejda-alternative',
     brand: 'Sejda',
-    title: 'Free Sejda Alternative — Edit PDF, No Upload, No Limits | Fizzdoc',
+    title: 'Free Sejda Alternative — Edit PDF Text, No Upload | Fizzdoc',
     description:
-      'A free Sejda alternative with no hourly limit: edit PDF text, redact, merge, split and compress PDFs in your browser. Nothing is uploaded.',
+      'A free Sejda alternative: edit PDF text, redact, merge, split and compress PDFs in your browser, with no task limit. Nothing is uploaded.',
     h1: 'A private, free alternative to Sejda',
-    lede: 'Edit PDF text in place, redact for good, merge, split, compress and reorder pages, all in your browser. No hourly task limit and no page cap: only your device’s memory sets the size.',
-    theirFiles: 'Sejda’s online tools upload your document to its servers and delete it after 2 hours; the free service is limited to 200 pages or 50 MB and 3 tasks per hour.',
-    theyDoBetter: 'Sejda has a desktop app that works offline, and tools Fizzdoc doesn’t have yet, such as filling in PDF forms, signing and PDF to Excel.',
+    lede: 'Edit PDF text in place, redact for good, merge, split, compress and reorder pages, all in your browser. There is no task limit or page cap: only your device’s memory sets the size.',
     tools: ['edit-pdf', 'redact-pdf', 'merge-pdf', 'split-pdf', 'compress-pdf', 'reorder-pdf-pages', 'delete-pdf-pages', 'rotate-pdf', 'extract-pdf-pages', 'watermark-pdf', 'add-page-numbers-to-pdf', 'pdf-to-word'],
     faq: [
       HOW_PRIVATE,
-      ['Is there a limit on tasks or pages?', 'No hourly or daily limit. Very large files are limited only by your device’s memory, and Fizzdoc checks before it starts.'],
+      ['Is there a limit on tasks or pages?', 'No. Very large files are limited only by your device’s memory, and Fizzdoc checks before it starts.'],
       NOT_AFFILIATED('Sejda'),
     ],
   },
@@ -87,9 +77,7 @@ export const ALTERNATIVES: Alternative[] = [
     description:
       'A free CloudConvert alternative for everyday conversions: PDF, Word, Excel, CSV, JSON, images and audio, converted in your browser. Nothing is uploaded.',
     h1: 'A private, free alternative to CloudConvert',
-    lede: 'Convert PDF to Word, Excel to CSV or JSON, images between JPG, PNG and WebP, Mermaid to PNG and speech to text, on your own device. No conversion minutes, no account and no upload.',
-    theirFiles: 'CloudConvert converts files on its servers; its privacy policy says uploaded files are deleted after 24 hours at the latest. Free use has a daily limit.',
-    theyDoBetter: 'CloudConvert supports far more formats (video, e-books, CAD and many more) and offers an API for developers.',
+    lede: 'Convert PDF to Word, Excel to CSV or JSON, images between JPG, PNG and WebP, Mermaid to PNG and speech to text, on your own device. No account and no upload.',
     tools: ['pdf-to-word', 'word-to-pdf', 'excel-to-csv', 'csv-to-excel', 'excel-to-json', 'json-to-excel', 'convert-image', 'pdf-to-jpg', 'jpg-to-pdf', 'mermaid-to-png', 'audio-to-text', 'pdf-to-text'],
     faq: [
       HOW_PRIVATE,
@@ -105,8 +93,6 @@ export const ALTERNATIVES: Alternative[] = [
       'A free TinyPNG alternative that compresses JPG, PNG and WebP in your browser, in bulk, or to an exact size in KB. Your photos are never uploaded.',
     h1: 'A private, free alternative to TinyPNG',
     lede: 'Make photos and screenshots smaller without sending them anywhere. Compress in bulk, pick the quality, or hit an exact size such as 50 KB for a form, all on your device.',
-    theirFiles: 'TinyPNG compresses images on its servers, so each image is uploaded first.',
-    theyDoBetter: 'TinyPNG offers a developer API and plugins (such as for WordPress) that compress images automatically.',
     tools: ['compress-image', 'compress-image-to-50kb', 'compress-image-to-100kb', 'resize-image', 'convert-image', 'png-to-pdf'],
     faq: [
       HOW_PRIVATE,
@@ -122,12 +108,10 @@ export const ALTERNATIVES: Alternative[] = [
       'A PDF24 alternative that runs in your browser without uploading: merge, compress, convert, edit, redact and OCR PDFs free, with no install.',
     h1: 'A private, no-install alternative to PDF24 online',
     lede: 'Get PDF24-style tools that never upload your file and need nothing installed: merge, compress, convert, edit, redact, OCR and more, right in the browser on any computer or phone.',
-    theirFiles: 'PDF24’s online tools upload your document to its servers, which it says keeps files only for a short time.',
-    theyDoBetter: 'PDF24 is free and unlimited too, and its PDF24 Creator desktop app for Windows works fully offline, a good choice if you can install software.',
     tools: ['merge-pdf', 'compress-pdf', 'split-pdf', 'pdf-to-word', 'word-to-pdf', 'jpg-to-pdf', 'edit-pdf', 'redact-pdf', 'ocr-pdf', 'protect-pdf', 'unlock-pdf', 'pdf-to-scanned-pdf'],
     faq: [
       HOW_PRIVATE,
-      ['Why not just install PDF24 Creator?', 'If you can install software on Windows, it is a good offline option. Fizzdoc is for the times you can’t: office or school computers, Macs, Linux and phones, with nothing to install.'],
+      ['Do I need to install anything?', 'No. Fizzdoc runs in the browser on Windows, Mac, Linux, Android and iPhone, including office or school computers where you can’t install software.'],
       NOT_AFFILIATED('PDF24'),
     ],
   },
@@ -138,9 +122,7 @@ export const ALTERNATIVES: Alternative[] = [
     description:
       'A free alternative to Adobe Acrobat’s online tools: merge, compress, convert, edit, protect and OCR PDFs in your browser, with no account and no upload.',
     h1: 'A private, free alternative to Adobe Acrobat online',
-    lede: 'Do the quick PDF jobs (merge, compress, convert, edit text, protect, unlock, OCR) without an Adobe account or a subscription, and without uploading your document.',
-    theirFiles: 'Adobe’s online tools process documents in Adobe’s cloud, and many of them ask you to sign in.',
-    theyDoBetter: 'Adobe Acrobat is a full professional editor, with forms, e-signatures, accessibility checks and print production tools that go far beyond quick online jobs.',
+    lede: 'Do the quick PDF jobs (merge, compress, convert, edit text, protect, unlock, OCR) with no account, no payment and no upload of your document.',
     tools: ['merge-pdf', 'compress-pdf', 'pdf-to-word', 'word-to-pdf', 'edit-pdf', 'protect-pdf', 'unlock-pdf', 'ocr-pdf', 'pdf-to-jpg', 'rotate-pdf', 'delete-pdf-pages', 'redact-pdf'],
     faq: [
       HOW_PRIVATE,
@@ -155,11 +137,11 @@ export const ALTERNATIVES_HUB = {
   title: 'Free Private Alternatives to iLovePDF, Smallpdf & More | Fizzdoc',
   description:
     'Compare Fizzdoc with iLovePDF, Smallpdf, Sejda, CloudConvert, TinyPNG, PDF24 and Adobe online: same everyday tools, free, and your files are never uploaded.',
-  h1: 'Fizzdoc compared with other online file tools',
-  lede: 'Most online PDF and file tools upload your document to a server. Fizzdoc does the same everyday jobs inside your browser, free and without limits. Here is how it compares, including where the others do more.',
+  h1: 'Private, free alternatives for everyday file jobs',
+  lede: 'Fizzdoc does everyday PDF, image, Office and audio jobs inside your browser, free and without uploading your files. If you usually use one of these services for a job, here is the Fizzdoc tool for it.',
   faq: [
     HOW_PRIVATE,
-    ['Why would I choose another service?', 'For jobs Fizzdoc doesn’t do yet (such as e-signatures, PDF to Excel or video conversion), for desktop apps, or for developer APIs. Each comparison page lists these honestly.'],
-    ['Are these services affiliated with Fizzdoc?', 'No. Fizzdoc is independent and open source. The names on these pages are trademarks of their owners and are used only to compare.'],
+    ['What can’t Fizzdoc do yet?', 'Some jobs aren’t built yet, such as e-signatures, PDF to Excel and video conversion. The list of planned tools is open on GitHub, and contributions are welcome.'],
+    ['Are these services affiliated with Fizzdoc?', 'No. Fizzdoc is independent and open source. The names on these pages are trademarks of their owners and are used only to say what each page is about.'],
   ] as [string, string][],
 };
