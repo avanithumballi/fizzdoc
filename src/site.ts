@@ -659,8 +659,8 @@ TOOLS.push(
     faq: [
       PRIVACY_FAQ[0],
       [
-        'Will the edited text match the original font?',
-        'In most PDFs, yes. Fizzdoc rewrites the line inside the PDF with its own font, size and colour, as long as that font already has every letter you type. If one is missing, that line uses the closest standard font (sans-serif, serif or monospace) at the same size and position.',
+        'How do I edit text in a PDF without changing the font?',
+        'Click the line and type. In most PDFs, Fizzdoc rewrites the line inside the PDF with its own font, size and colour, as long as that font already has every letter you type. If one is missing, that line uses the closest standard font (sans-serif, serif or monospace) at the same size and position.',
       ],
       [
         'Is the original text removed?',

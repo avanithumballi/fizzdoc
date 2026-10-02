@@ -58,14 +58,15 @@ export const ALTERNATIVES: Alternative[] = [
   {
     slug: 'sejda-alternative',
     brand: 'Sejda',
-    title: 'Free Sejda Alternative — Edit PDF Text, No Upload | Fizzdoc',
+    title: 'Free Sejda Alternative — Edit PDF Text in the Same Font | Fizzdoc',
     description:
-      'A free Sejda alternative: edit PDF text, redact, merge, split and compress PDFs in your browser, with no task limit. Nothing is uploaded.',
+      'A free Sejda alternative: edit PDF text in the PDF’s own font, then redact, merge, split or compress, all in your browser. Nothing is uploaded.',
     h1: 'A private, free alternative to Sejda',
-    lede: 'Edit PDF text in place, redact for good, merge, split, compress and reorder pages, all in your browser. There is no task limit or page cap: only your device’s memory sets the size.',
+    lede: 'Change text right inside the PDF, in its own font, size and colour, then redact, merge, split, compress or reorder pages, all in your browser. There is no task limit or page cap: only your device’s memory sets the size.',
     tools: ['edit-pdf', 'redact-pdf', 'merge-pdf', 'split-pdf', 'compress-pdf', 'reorder-pdf-pages', 'delete-pdf-pages', 'rotate-pdf', 'extract-pdf-pages', 'watermark-pdf', 'add-page-numbers-to-pdf', 'pdf-to-word'],
     faq: [
       HOW_PRIVATE,
+      ['Does edited text keep the original font?', 'Yes, when the PDF’s font already has every letter you type: the line is rewritten inside the file with the same font, size and colour. If a letter is missing, that line uses the closest standard font instead.'],
       ['Is there a limit on tasks or pages?', 'No. Very large files are limited only by your device’s memory, and Fizzdoc checks before it starts.'],
       NOT_AFFILIATED('Sejda'),
     ],
