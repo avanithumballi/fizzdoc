@@ -276,7 +276,7 @@ export const UI = {
   'ed.move': 'Drag to move',
   'ed.removeBox': 'Remove text box',
   'ed.replaced': 'Some characters aren’t supported by the standard PDF fonts and were replaced.',
-  'ed.hint': 'Covered text is hidden, not deleted from the file — for sensitive data, delete the page instead.',
+  'ed.hint': 'Changed lines keep the PDF’s own font when it has every letter you type; otherwise they’re covered and redrawn. White-out only hides text — for sensitive data, use Redact PDF.',
   'rd.find': 'Find a word or number to hide',
   'rd.markAll': 'Mark all',
   'rd.clear': 'Clear all',

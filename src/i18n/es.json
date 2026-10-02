@@ -215,7 +215,7 @@
     "ed.move": "Arrastra para mover",
     "ed.removeBox": "Eliminar cuadro de texto",
     "ed.replaced": "Algunos caracteres no son compatibles con las fuentes estándar de PDF y se han sustituido.",
-    "ed.hint": "El texto tapado se oculta, no se elimina del archivo — para datos sensibles, elimina la página en su lugar.",
+    "ed.hint": "Las líneas cambiadas conservan la fuente del PDF si tiene todas las letras que escribes; si no, se cubren y se vuelven a escribir. Tapar solo oculta: para datos sensibles, usa Censurar PDF.",
     "ocr.unsure": "Parte de este texto puede estar mal. El reconocimiento lee texto en inglés y derecho: gira primero las fotos de lado y ten en cuenta que otros alfabetos saldrán desordenados.",
     "ocr.copyAll": "Copiar todo el texto",
     "ocr.copied": "Copiado",
@@ -723,11 +723,11 @@
         ],
         [
           "¿El texto editado tendrá la misma fuente que el original?",
-          "Fizzdoc elige la fuente estándar más parecida (de palo seco, con serifa o monoespaciada, con negrita y cursiva) en el mismo tamaño y posición. Las fuentes de marca personalizadas no se pueden reproducir exactamente."
+          "En la mayoría de los PDF, sí. Fizzdoc reescribe la línea dentro del PDF con su propia fuente, tamaño y color, siempre que esa fuente ya tenga todas las letras que escribes. Si falta alguna, esa línea usa la fuente estándar más parecida (sans-serif, serif o monoespaciada) en el mismo tamaño y posición."
         ],
         [
           "¿Se elimina el texto original?",
-          "El texto original se tapa en la página y tu texto nuevo se dibuja encima. Para información sensible que deba desaparecer del archivo, elimina la página o vuelve a crear el documento en su lugar."
+          "Cuando la línea se reescribe con la fuente del propio PDF, sí: el texto antiguo se sustituye en el archivo. Con una fuente estándar, y con Tapar, el original solo queda cubierto. Para información sensible, usa Censurar PDF."
         ],
         [
           "¿Es gratis Fizzdoc?",

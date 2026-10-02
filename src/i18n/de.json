@@ -215,7 +215,7 @@
     "ed.move": "Zum Verschieben ziehen",
     "ed.removeBox": "Textfeld entfernen",
     "ed.replaced": "Einige Zeichen werden von den Standard-PDF-Schriften nicht unterstützt und wurden ersetzt.",
-    "ed.hint": "Überdeckter Text wird verborgen, nicht aus der Datei gelöscht — löschen Sie für sensible Daten stattdessen die Seite.",
+    "ed.hint": "Geänderte Zeilen behalten die Schrift des PDFs, wenn sie alle getippten Buchstaben enthält; sonst werden sie überdeckt und neu geschrieben. Weiß überdecken verbirgt nur – für vertrauliche Daten nutzen Sie PDF schwärzen.",
     "ocr.unsure": "Ein Teil dieses Textes kann falsch sein. Die Texterkennung liest aufrechten englischen Text: Drehen Sie seitliche Fotos zuerst, andere Schriften kommen verfälscht heraus.",
     "ocr.copyAll": "Gesamten Text kopieren",
     "ocr.copied": "Kopiert",
@@ -723,11 +723,11 @@
         ],
         [
           "Entspricht der bearbeitete Text der Originalschrift?",
-          "Fizzdoc wählt die nächstliegende Standardschrift (serifenlos, Serifen oder Monospace, mit fett und kursiv) in gleicher Größe und Position. Individuelle Markenschriften können nicht exakt nachgebildet werden."
+          "Bei den meisten PDFs ja. Fizzdoc schreibt die Zeile direkt im PDF mit dessen eigener Schrift, Größe und Farbe neu, solange diese Schrift alle Buchstaben enthält, die Sie tippen. Fehlt einer, nutzt diese Zeile die ähnlichste Standardschrift (serifenlos, mit Serifen oder Monospace) in gleicher Größe und Position."
         ],
         [
           "Wird der Originaltext entfernt?",
-          "Der Originaltext wird auf der Seite überdeckt, und Ihr neuer Text wird darübergelegt. Löschen Sie für sensible Informationen, die wirklich aus der Datei verschwinden müssen, stattdessen die Seite oder erstellen Sie das Dokument neu."
+          "Wenn die Zeile in der PDF-eigenen Schrift neu geschrieben wird, ja: Der alte Wortlaut wird in der Datei ersetzt. Bei einer Standardschrift und bei Weiß überdecken wird das Original nur überdeckt. Für vertrauliche Angaben nutzen Sie PDF schwärzen."
         ],
         [
           "Ist Fizzdoc kostenlos?",

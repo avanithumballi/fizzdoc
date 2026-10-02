@@ -215,7 +215,7 @@
     "ed.move": "Przeciągnij, aby przesunąć",
     "ed.removeBox": "Usuń pole tekstowe",
     "ed.replaced": "Niektóre znaki nie są obsługiwane przez standardowe czcionki PDF i zostały zastąpione.",
-    "ed.hint": "Zamalowany tekst jest ukryty, a nie usunięty z pliku — w przypadku danych wrażliwych usuń zamiast tego całą stronę.",
+    "ed.hint": "Zmienione wiersze zachowują czcionkę PDF, jeśli ma wszystkie wpisane litery; w przeciwnym razie są zakrywane i pisane na nowo. Zamalowanie tylko ukrywa — do poufnych danych użyj Cenzuruj PDF.",
     "ocr.unsure": "Część tego tekstu może być błędna. Rozpoznawanie czyta prosty tekst angielski: najpierw obróć zdjęcia bokiem, a inne alfabety mogą wyjść zniekształcone.",
     "ocr.copyAll": "Kopiuj cały tekst",
     "ocr.copied": "Skopiowano",
@@ -723,11 +723,11 @@
         ],
         [
           "Czy zmieniony tekst będzie pasował do oryginalnej czcionki?",
-          "Fizzdoc dobiera najbliższą standardową czcionkę (bezszeryfową, szeryfową lub o stałej szerokości, z pogrubieniem i kursywą) w tym samym rozmiarze i miejscu. Niestandardowych czcionek firmowych nie da się odtworzyć dokładnie."
+          "W większości plików PDF tak. Fizzdoc zapisuje wiersz na nowo wewnątrz PDF jego własną czcionką, rozmiarem i kolorem, o ile ta czcionka zawiera wszystkie wpisane litery. Jeśli jakiejś brakuje, ten wiersz używa najbardziej podobnej czcionki standardowej (bezszeryfowej, szeryfowej lub o stałej szerokości) w tym samym rozmiarze i miejscu."
         ],
         [
           "Czy oryginalny tekst jest usuwany?",
-          "Oryginalny tekst zostaje zamalowany na stronie, a nowy tekst jest rysowany na wierzchu. Dla informacji wrażliwych, które muszą całkiem zniknąć z pliku, usuń zamiast tego stronę albo odtwórz dokument od nowa."
+          "Gdy wiersz jest zapisany na nowo czcionką samego PDF, tak: stary tekst zostaje zastąpiony w pliku. Przy czcionce standardowej i przy Zamalowaniu oryginał jest tylko zakryty. Do poufnych informacji użyj narzędzia Cenzuruj PDF."
         ],
         [
           "Czy Fizzdoc jest darmowy?",

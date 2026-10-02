@@ -215,7 +215,7 @@
     "ed.move": "Trascina per spostare",
     "ed.removeBox": "Rimuovi casella di testo",
     "ed.replaced": "Alcuni caratteri non sono supportati dai font PDF standard e sono stati sostituiti.",
-    "ed.hint": "Il testo coperto viene nascosto, non eliminato dal file — per i dati sensibili, elimina invece la pagina.",
+    "ed.hint": "Le righe modificate mantengono il font del PDF se contiene tutte le lettere che scrivi; altrimenti vengono coperte e riscritte. Copri (bianchetto) nasconde soltanto: per dati sensibili, usa Oscura PDF.",
     "ocr.unsure": "Parte di questo testo potrebbe essere sbagliata. Il riconoscimento legge testo inglese dritto: ruota prima le foto storte e aspettati che altri alfabeti escano confusi.",
     "ocr.copyAll": "Copia tutto il testo",
     "ocr.copied": "Copiato",
@@ -723,11 +723,11 @@
         ],
         [
           "Il testo modificato corrisponderà al font originale?",
-          "Fizzdoc sceglie il font standard più vicino (senza grazie, con grazie o monospazio, con grassetto e corsivo) alla stessa dimensione e posizione. I font personalizzati di un marchio non possono essere riprodotti esattamente."
+          "Nella maggior parte dei PDF, sì. Fizzdoc riscrive la riga dentro il PDF con il suo font, la sua dimensione e il suo colore, purché quel font contenga già tutte le lettere che scrivi. Se ne manca una, quella riga usa il font standard più simile (sans-serif, serif o monospazio) con la stessa dimensione e posizione."
         ],
         [
           "Il testo originale viene rimosso?",
-          "Il testo originale viene coperto sulla pagina e il nuovo testo viene disegnato sopra. Per informazioni sensibili che devono sparire dal file, elimina la pagina o ricrea il documento."
+          "Quando la riga viene riscritta con il font del PDF, sì: il vecchio testo viene sostituito nel file. Con un font standard, e con Copri (bianchetto), l'originale viene solo coperto. Per informazioni sensibili, usa Oscura PDF."
         ],
         [
           "Fizzdoc è gratuito?",

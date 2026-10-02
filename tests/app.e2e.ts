@@ -614,8 +614,28 @@ test('edits PDF text in place and saves on the device', async ({ page, baseURL }
   const { name, bytes } = await downloadBytes(page);
   expect(name).toBe('text-only-edited.pdf');
   expect(bytes.subarray(0, 5).toString()).toBe('%PDF-');
+  // The line itself was rewritten in the file, not covered up.
+  expect((await pdfText(bytes))[0]).toContain('Replaced text');
   const origin = new URL(baseURL!).origin;
   for (const request of seen.requests) if (!request.url.startsWith('blob:')) expect(new URL(request.url).origin).toBe(origin);
+  expect(seen.violations).toEqual([]);
+});
+
+test('keeps the PDF’s own font when the edited line can be rewritten in place', async ({ page }) => {
+  const seen = watch(page);
+  await page.goto('/edit-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('chrome-text'));
+  await page.getByRole('button', { name: 'Edit text: Billed to: Asha Verma, Pune' }).click();
+  await page.keyboard.press('ControlOrMeta+A');
+  await page.keyboard.type('Billed to: Pune Verma, Asha');
+  await page.keyboard.press('Enter');
+  await page.getByRole('button', { name: 'Save PDF' }).click();
+  await expect(page.locator('#status')).toContainText('1 edit');
+  const { bytes } = await downloadBytes(page);
+  const [text] = await pdfText(bytes);
+  expect(text).toContain('Billed to: Pune Verma, Asha');
+  expect(text).not.toContain('Asha Verma, Pune');
+  expect(text).toContain('Thank you for your business.');
   expect(seen.violations).toEqual([]);
 });
 

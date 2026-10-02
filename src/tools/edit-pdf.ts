@@ -1,5 +1,7 @@
 // Sejda-style "Edit PDF": change text in place, add new text, white-out areas. Everything runs
-// against the original file in memory; save() re-renders the whole document with pdf-lib.
+// against the original file in memory. On save, changed lines are rewritten inside the page with
+// the PDF's own font when it has every character (engine/pdf-text.ts); otherwise the old line is
+// covered and the new one drawn in the closest standard font.
 import './edit-pdf.css';
 import { LocalError, type Output } from '../engine/local';
 import { t } from '../i18n';
@@ -709,7 +711,7 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
 
   // ---- save ----
   async function save(): Promise<Output> {
-    const { PDFDocument, StandardFonts, rgb, degrees } = await import('pdf-lib');
+    const [{ PDFDocument, StandardFonts, rgb, degrees }, { editTextInPlace }] = await Promise.all([import('pdf-lib'), import('../engine/pdf-text')]);
     const pdfDoc = await PDFDocument.load(originalBytes);
     const pages = pdfDoc.getPages();
     const fontCache = new Map<StdFont, Awaited<ReturnType<typeof pdfDoc.embedFont>>>();
@@ -727,7 +729,24 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     for (const state of pageStates) {
       const page = pages[state.index];
       if (!page) continue;
-      for (const [idx, text] of state.textEdits) {
+      const changes = [...state.textEdits];
+      const inPlace = changes.length
+        ? editTextInPlace(
+            pdfDoc,
+            state.index,
+            changes.map(([idx, text]) => {
+              const run = state.runs[idx];
+              const [a, b, c, d, e, f] = run.transform;
+              const scale = Math.hypot(a, b) || 1;
+              return { x: e, y: f, dir: [a / scale, b / scale] as [number, number], size: Math.hypot(c, d), width: run.width, text: run.text, newText: text };
+            }),
+          )
+        : [];
+      for (const [n, [idx, text]] of changes.entries()) {
+        if (inPlace[n]) {
+          edits++;
+          continue;
+        }
         const run = state.runs[idx];
         const geo = runGeometry(run);
         const pad = geo.fontSize * 0.12;

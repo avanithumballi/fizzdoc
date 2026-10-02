@@ -660,11 +660,11 @@ TOOLS.push(
       PRIVACY_FAQ[0],
       [
         'Will the edited text match the original font?',
-        'Fizzdoc picks the closest standard font (sans-serif, serif or monospace, with bold and italic) at the same size and position. Custom brand fonts cannot be reproduced exactly.',
+        'In most PDFs, yes. Fizzdoc rewrites the line inside the PDF with its own font, size and colour, as long as that font already has every letter you type. If one is missing, that line uses the closest standard font (sans-serif, serif or monospace) at the same size and position.',
       ],
       [
         'Is the original text removed?',
-        'The original text is covered on the page and your new text is drawn on top. For sensitive information that must be gone from the file, delete the page or re-create the document instead.',
+        'When the line is rewritten in the PDF’s own font, yes: the old wording is replaced in the file. With a standard font, and with White-out, the original is only covered. For sensitive information, use Redact PDF.',
       ],
       PRIVACY_FAQ[1],
     ],

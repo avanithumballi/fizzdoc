@@ -215,7 +215,7 @@
     "ed.move": "Glisser pour déplacer",
     "ed.removeBox": "Retirer la zone de texte",
     "ed.replaced": "Certains caractères ne sont pas pris en charge par les polices PDF standard et ont été remplacés.",
-    "ed.hint": "Le texte masqué est caché, pas supprimé du fichier — pour des données sensibles, supprimez plutôt la page.",
+    "ed.hint": "Les lignes modifiées gardent la police du PDF si elle contient toutes les lettres tapées ; sinon, elles sont recouvertes et réécrites. Masquer ne fait que cacher : pour des données sensibles, utilisez Caviarder un PDF.",
     "ocr.unsure": "Une partie de ce texte peut être fausse. La reconnaissance lit du texte anglais bien droit : faites d’abord pivoter les photos de travers ; les autres écritures sortiront brouillées.",
     "ocr.copyAll": "Copier tout le texte",
     "ocr.copied": "Copié",
@@ -723,11 +723,11 @@
         ],
         [
           "Le texte modifié correspondra-t-il à la police d'origine ?",
-          "Fizzdoc choisit la police standard la plus proche (sans-serif, serif ou monospace, avec gras et italique) à la même taille et à la même position. Les polices de marque personnalisées ne peuvent pas être reproduites exactement."
+          "Dans la plupart des PDF, oui. Fizzdoc réécrit la ligne dans le PDF avec sa propre police, sa taille et sa couleur, tant que cette police contient déjà toutes les lettres que vous tapez. S'il en manque une, cette ligne utilise la police standard la plus proche (sans-serif, serif ou à chasse fixe) à la même taille et au même endroit."
         ],
         [
           "Le texte d'origine est-il supprimé ?",
-          "Le texte d'origine est recouvert sur la page et votre nouveau texte est dessiné par-dessus. Pour des informations sensibles qui doivent disparaître du fichier, supprimez plutôt la page ou recréez le document."
+          "Quand la ligne est réécrite avec la police du PDF, oui : l'ancien texte est remplacé dans le fichier. Avec une police standard, et avec Masquer, l'original est seulement recouvert. Pour des informations sensibles, utilisez Caviarder un PDF."
         ],
         [
           "Est-ce que Fizzdoc est gratuit ?",
