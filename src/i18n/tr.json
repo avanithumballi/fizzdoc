@@ -215,7 +215,7 @@
     "ed.move": "Taşımak için sürükleyin",
     "ed.removeBox": "Metin kutusunu kaldır",
     "ed.replaced": "Bazı karakterler standart PDF yazı tipleri tarafından desteklenmiyor ve değiştirildi.",
-    "ed.hint": "Üzeri kapatılan metin gizlenir, dosyadan silinmez — hassas veriler için bunun yerine sayfayı silin.",
+    "ed.hint": "Değiştirilen satırlar, yazdığınız tüm harfler varsa PDF'in kendi yazı tipini korur; yoksa örtülüp yeniden yazılır. Beyazlatma yalnızca gizler — hassas veriler için PDF Karart'ı kullanın.",
     "ocr.unsure": "Bu metnin bir kısmı hatalı olabilir. Metin tanıma düz duran İngilizce metni okur: yan duran fotoğrafları önce döndürün; diğer alfabeler bozuk çıkabilir.",
     "ocr.copyAll": "Tüm metni kopyala",
     "ocr.copied": "Kopyalandı",
@@ -723,11 +723,11 @@
         ],
         [
           "Düzenlenen metin orijinal yazı tipiyle eşleşir mi?",
-          "Fizzdoc, aynı boyut ve konumda en yakın standart yazı tipini (sans-serif, serif veya sabit genişlikli, kalın ve italik dahil) seçer. Özel marka yazı tipleri birebir yeniden üretilemez."
+          "Çoğu PDF'de evet. Fizzdoc, yazdığınız tüm harfler o yazı tipinde varsa, satırı PDF'in içinde kendi yazı tipi, boyutu ve rengiyle yeniden yazar. Bir harf eksikse o satır aynı boyut ve konumda en yakın standart yazı tipini (sans-serif, serif veya eş aralıklı) kullanır."
         ],
         [
           "Orijinal metin kaldırılıyor mu?",
-          "Orijinal metin sayfada kapatılır ve yeni metniniz üzerine çizilir. Dosyadan tamamen gitmesi gereken hassas bilgiler için bunun yerine sayfayı silin veya belgeyi yeniden oluşturun."
+          "Satır PDF'in kendi yazı tipiyle yeniden yazıldığında evet: eski metin dosyada değiştirilir. Standart yazı tipi kullanılan satırlarda ve Beyazlatma'da orijinal yalnızca örtülür. Hassas bilgiler için PDF Karart aracını kullanın."
         ],
         [
           "Fizzdoc ücretsiz mi?",

@@ -215,7 +215,7 @@
     "ed.move": "Seret untuk memindahkan",
     "ed.removeBox": "Hapus kotak teks",
     "ed.replaced": "Beberapa karakter tidak didukung oleh font standar PDF dan telah diganti.",
-    "ed.hint": "Teks yang ditutup hanya disembunyikan, bukan dihapus dari file — untuk data sensitif, hapus saja halamannya.",
+    "ed.hint": "Baris yang diubah tetap memakai font PDF jika font itu punya semua huruf yang Anda ketik; jika tidak, baris ditutupi lalu ditulis ulang. Blok putih hanya menyembunyikan — untuk data sensitif, gunakan Sensor PDF.",
     "ocr.unsure": "Sebagian teks ini mungkin salah. Pengenalan teks membaca teks bahasa Inggris yang tegak: putar dulu foto yang miring, dan aksara lain akan keluar berantakan.",
     "ocr.copyAll": "Salin semua teks",
     "ocr.copied": "Disalin",
@@ -723,11 +723,11 @@
         ],
         [
           "Apakah teks hasil edit akan sesuai font aslinya?",
-          "Fizzdoc memilih font standar yang paling mirip (sans-serif, serif, atau monospace, dengan varian tebal dan miring) dengan ukuran dan posisi yang sama. Font khusus milik brand tidak bisa ditiru secara persis."
+          "Di kebanyakan PDF, ya. Fizzdoc menulis ulang baris di dalam PDF dengan font, ukuran, dan warnanya sendiri, selama font itu sudah punya semua huruf yang Anda ketik. Jika ada yang tidak tersedia, baris itu memakai font standar yang paling mirip (sans-serif, serif, atau monospace) dengan ukuran dan posisi yang sama."
         ],
         [
           "Apakah teks aslinya benar-benar terhapus?",
-          "Teks asli hanya ditutup di halaman, dan teks baru Anda digambar di atasnya. Untuk informasi sensitif yang harus benar-benar hilang dari file, hapus halamannya atau buat ulang dokumennya."
+          "Jika baris ditulis ulang dengan font PDF itu sendiri, ya: teks lama diganti di dalam file. Dengan font standar, dan pada Blok putih, teks asli hanya ditutupi. Untuk informasi sensitif, gunakan Sensor PDF."
         ],
         [
           "Apakah Fizzdoc gratis?",

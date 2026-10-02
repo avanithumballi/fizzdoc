@@ -215,7 +215,7 @@
     "ed.move": "Sleep om te verplaatsen",
     "ed.removeBox": "Tekstvak verwijderen",
     "ed.replaced": "Sommige tekens worden niet ondersteund door de standaard PDF-lettertypen en zijn vervangen.",
-    "ed.hint": "Bedekte tekst is verborgen, niet verwijderd uit het bestand — verwijder voor gevoelige gegevens in plaats daarvan de pagina.",
+    "ed.hint": "Gewijzigde regels houden het lettertype van de pdf als dat alle getypte letters bevat; anders worden ze bedekt en opnieuw geschreven. Overschilderen verbergt alleen — gebruik voor gevoelige gegevens PDF zwart lakken.",
     "ocr.unsure": "Een deel van deze tekst kan onjuist zijn. Tekstherkenning leest rechtop staande Engelse tekst: draai scheve foto's eerst, en andere schriften komen er rommelig uit.",
     "ocr.copyAll": "Alle tekst kopiëren",
     "ocr.copied": "Gekopieerd",
@@ -723,11 +723,11 @@
         ],
         [
           "Komt de bewerkte tekst overeen met het originele lettertype?",
-          "Fizzdoc kiest het dichtstbijzijnde standaardlettertype (schreefloos, schreef of monospace, met vet en cursief) op dezelfde grootte en positie. Aangepaste merklettertypen kunnen niet exact worden nagebootst."
+          "In de meeste pdf's wel. Fizzdoc herschrijft de regel in de pdf zelf met het eigen lettertype, de eigen grootte en kleur, zolang dat lettertype alle letters bevat die je typt. Ontbreekt er een, dan gebruikt die regel het meest gelijkende standaardlettertype (schreefloos, met schreef of monospace) op dezelfde grootte en plek."
         ],
         [
           "Wordt de originele tekst verwijderd?",
-          "De originele tekst wordt op de pagina bedekt en je nieuwe tekst wordt eroverheen getekend. Voor gevoelige informatie die echt uit het bestand moet verdwijnen, verwijder je in plaats daarvan de pagina of maak je het document opnieuw."
+          "Als de regel in het eigen lettertype van de pdf wordt herschreven, ja: de oude tekst wordt in het bestand vervangen. Met een standaardlettertype, en bij Overschilderen, wordt het origineel alleen bedekt. Gebruik voor gevoelige informatie PDF zwart lakken."
         ],
         [
           "Is Fizzdoc gratis?",

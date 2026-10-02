@@ -215,7 +215,7 @@
     "ed.move": "Kéo để di chuyển",
     "ed.removeBox": "Xóa hộp văn bản",
     "ed.replaced": "Một số ký tự không được các phông chữ PDF chuẩn hỗ trợ nên đã được thay thế.",
-    "ed.hint": "Văn bản bị che chỉ ẩn đi, không bị xóa khỏi tệp — với dữ liệu nhạy cảm, hãy xóa cả trang thay vì che.",
+    "ed.hint": "Dòng đã sửa giữ phông của PDF nếu phông đó có mọi chữ bạn gõ; nếu không, dòng được che rồi viết lại. Che trắng chỉ che đi — với dữ liệu nhạy cảm, hãy dùng Che Đen PDF.",
     "ocr.unsure": "Một phần văn bản này có thể sai. Nhận dạng chữ đọc văn bản tiếng Anh đặt thẳng: hãy xoay ảnh bị nghiêng trước, và các hệ chữ khác có thể ra lộn xộn.",
     "ocr.copyAll": "Sao chép toàn bộ văn bản",
     "ocr.copied": "Đã sao chép",
@@ -723,11 +723,11 @@
         ],
         [
           "Văn bản đã sửa có khớp với phông chữ gốc không?",
-          "Fizzdoc chọn phông chữ chuẩn gần giống nhất (sans-serif, serif hoặc monospace, có in đậm và in nghiêng) ở cùng cỡ chữ và vị trí. Các phông chữ thương hiệu tùy chỉnh không thể tái tạo chính xác."
+          "Với hầu hết PDF thì có. Fizzdoc viết lại dòng ngay trong PDF bằng chính phông chữ, cỡ chữ và màu của nó, miễn là phông đó đã có mọi chữ cái bạn gõ. Nếu thiếu chữ nào, dòng đó dùng phông chuẩn gần nhất (sans-serif, serif hoặc monospace) ở cùng cỡ và vị trí."
         ],
         [
           "Văn bản gốc có bị xóa không?",
-          "Văn bản gốc chỉ bị che trên trang và văn bản mới được vẽ đè lên trên. Với thông tin nhạy cảm cần biến mất hoàn toàn khỏi tệp, hãy xóa cả trang hoặc tạo lại tài liệu."
+          "Khi dòng được viết lại bằng phông của chính PDF thì có: chữ cũ được thay trong tệp. Với phông chuẩn, và khi dùng Che trắng, bản gốc chỉ bị che đi. Với thông tin nhạy cảm, hãy dùng Che Đen PDF."
         ],
         [
           "Fizzdoc có miễn phí không?",

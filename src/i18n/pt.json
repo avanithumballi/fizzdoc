@@ -215,7 +215,7 @@
     "ed.move": "Arraste para mover",
     "ed.removeBox": "Remover caixa de texto",
     "ed.replaced": "Alguns caracteres não são suportados pelas fontes padrão de PDF e foram substituídos.",
-    "ed.hint": "O texto coberto fica oculto, e não excluído do arquivo — para dados sensíveis, exclua a página em vez disso.",
+    "ed.hint": "As linhas alteradas mantêm a fonte do PDF se ela tiver todas as letras que você digitar; se não, são cobertas e escritas de novo. Cobrir (branco) só esconde — para dados sensíveis, use Censurar PDF.",
     "ocr.unsure": "Parte deste texto pode estar errada. O reconhecimento lê texto em inglês na posição certa: gire antes as fotos de lado e espere que outros alfabetos saiam embaralhados.",
     "ocr.copyAll": "Copiar todo o texto",
     "ocr.copied": "Copiado",
@@ -723,11 +723,11 @@
         ],
         [
           "O texto editado vai combinar com a fonte original?",
-          "O Fizzdoc escolhe a fonte padrão mais próxima (sem serifa, serifada ou monoespaçada, com negrito e itálico) no mesmo tamanho e posição. Fontes de marca personalizadas não podem ser reproduzidas com exatidão."
+          "Na maioria dos PDFs, sim. O Fizzdoc reescreve a linha dentro do PDF com a própria fonte, tamanho e cor, desde que essa fonte já tenha todas as letras que você digitar. Se faltar alguma, essa linha usa a fonte padrão mais parecida (sans-serif, serif ou monoespaçada) no mesmo tamanho e posição."
         ],
         [
           "O texto original é removido?",
-          "O texto original é coberto na página e o novo texto é desenhado por cima. Para informações sensíveis que precisam sumir de fato do arquivo, exclua a página ou recrie o documento."
+          "Quando a linha é reescrita com a fonte do próprio PDF, sim: o texto antigo é substituído no arquivo. Com uma fonte padrão, e no Cobrir (branco), o original só fica coberto. Para informações sensíveis, use Censurar PDF."
         ],
         [
           "O Fizzdoc é gratuito?",
