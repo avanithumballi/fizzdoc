@@ -44,7 +44,8 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "check": "tsc --noEmit && vitest run",
-    "build:mcp": "npm run build -w mcp"
+    "build:mcp": "npm run build -w mcp",
+    "og": "node scripts/og-images.mjs"
   },
   "engines": {
     "node": ">=22"

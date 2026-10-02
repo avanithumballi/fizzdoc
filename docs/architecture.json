@@ -27,7 +27,8 @@
           "local",
           "ocr",
           "editor",
-          "device"
+          "device",
+          "speech"
         ],
         "note": "Files go from the visitor's device into the tab's engines and straight back. Nothing crosses the network."
       }
@@ -38,7 +39,7 @@
       "id": "registry",
       "type": "frontend",
       "label": "Tool registry",
-      "sublabel": "site.ts \u00b7 51 tools",
+      "sublabel": "site.ts \u00b7 64 tools",
       "pos": [
         40,
         90
@@ -150,7 +151,7 @@
       "id": "editor",
       "type": "frontend",
       "label": "PDF editor",
-      "sublabel": "edit-pdf.ts",
+      "sublabel": "edit-pdf.ts \u00b7 own font",
       "pos": [
         580,
         570
@@ -173,6 +174,20 @@
         160,
         60
       ]
+    },
+    {
+      "id": "speech",
+      "type": "backend",
+      "label": "Speech worker",
+      "sublabel": "Whisper \u00b7 ONNX WASM",
+      "pos": [
+        860,
+        810
+      ],
+      "size": [
+        150,
+        60
+      ]
     }
   ],
   "boundaries": [
@@ -193,7 +208,8 @@
         "qpdf",
         "local",
         "ocr",
-        "editor"
+        "editor",
+        "speech"
       ]
     }
   ],
@@ -255,7 +271,11 @@
       "id": "app-ocr",
       "from": "app",
       "to": "ocr",
-      "label": "import()"
+      "label": "import()",
+      "labelAt": [
+        825,
+        586
+      ]
     },
     {
       "id": "app-editor",
@@ -273,6 +293,16 @@
       "to": "device",
       "label": "Blob",
       "variant": "security"
+    },
+    {
+      "id": "app-speech",
+      "from": "app",
+      "to": "speech",
+      "label": "Worker",
+      "labelAt": [
+        825,
+        826
+      ]
     }
   ],
   "cards": [
@@ -291,7 +321,7 @@
       "items": [
         "~15 KB app on first load",
         "Engines load only when a tool runs",
-        "OCR assets self-hosted, fetched once"
+        "OCR and speech models self-hosted, fetched once"
       ]
     },
     {
@@ -300,7 +330,8 @@
       "items": [
         "qpdf rewrites structure, no re-render",
         "Losses are reported as warnings",
-        "Browser print writer for Word/Markdown \u2192 PDF"
+        "Browser print writer for Word/Markdown \u2192 PDF",
+        "Edited text keeps the PDF\u2019s own font"
       ]
     }
   ]

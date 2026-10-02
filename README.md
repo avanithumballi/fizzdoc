@@ -12,7 +12,7 @@
   <strong>No uploads. No sign-up. No watermark. No limits. Free forever. 16 languages.</strong>
 </p>
 
-<p align="center"><sub>The open-source alternative to iLovePDF, Smallpdf, TinyPNG and online MP3 cutters — without handing your files to anyone.</sub></p>
+<p align="center"><sub>Open source. Edits PDF text in the file’s own font, transcribes audio with Whisper on your device, and never hands your files to anyone.</sub></p>
 
 <p align="center">
   <a href="https://fizzdoc.com"><strong>Open Fizzdoc →</strong></a> &nbsp;·&nbsp;
@@ -50,15 +50,16 @@
 
 Most free online file tools ask you to upload your contract, payslip, bank statement, passport photo or voice recording to someone else's server. **Fizzdoc doesn't have a server to upload to.** Everything runs inside your browser tab with WebAssembly and JavaScript, and the page's Content Security Policy blocks it from connecting to any other site — you can check it yourself in the Network tab.
 
-| | **Fizzdoc** | iLovePDF | Smallpdf | Adobe online | Stirling-PDF |
-|---|:---:|:---:|:---:|:---:|:---:|
-| Your file stays on your device (web version) | ✅ | ❌ uploaded | ❌ uploaded | ❌ uploaded | ⚠️ goes to the server you host |
-| Open source | ✅ Apache-2.0 | ❌ | ❌ | ❌ | ✅ |
-| No account, no daily limits, no watermark | ✅ | ⚠️ free tier limits | ⚠️ free tier limits | ⚠️ sign-in for many tools | ✅ |
-| Nothing to install or host | ✅ | ✅ | ✅ | ✅ | ⚠️ self-host or install the desktop app |
-| Works on phones | ✅ | ✅ | ✅ | ✅ | ✅ |
-| PDF, image, audio and Office tools in one place | ✅ | ⚠️ mostly PDF | ⚠️ mostly PDF | ⚠️ mostly PDF | ⚠️ mostly PDF |
-| Free forever, no premium tier | ✅ | ❌ paid plans | ❌ paid plans | ❌ paid plans | ⚠️ free core, paid enterprise features |
+| What you get | |
+|---|---|
+| 🔒 **Your file stays on your device** | No upload endpoint exists, and the CSP blocks connections to any other site |
+| 🧰 **64 tools in one place** | PDF, Word, Excel, PowerPoint, images, audio, JSON and Mermaid |
+| ✏️ **Edit PDF text in its own font** | Changed lines are rewritten inside the PDF with its embedded font, size and colour |
+| 🎙️ **Speech to text on the device** | Whisper runs in the browser: TXT, SRT or VTT, offline after a one-time download |
+| 🆓 **Free forever** | No account, no daily limits, no watermark, no premium tier |
+| 🌍 **16 languages** | Including Hindi, Bengali, Marathi, Tamil and Telugu |
+| 📱 **Nothing to install** | Any modern browser, on phones too |
+| 📖 **Open source** | Apache-2.0, every line on GitHub |
 
 <p align="center">
   <img src="docs/assets/demo.gif" width="860" alt="Fizzdoc demo: compress, edit PDF text, select text in a photo with OCR, Hindi interface, dark mode">
@@ -70,7 +71,7 @@ Most free online file tools ask you to upload your contract, payslip, bank state
   <tr>
     <td width="50%" valign="top">
       <strong>✏️ Edit PDF text in place</strong><br>
-      <sub>Click any text and type. The closest standard font is used, and nothing is uploaded.</sub><br><br>
+      <sub>Click any text and type. The line is rewritten in the PDF’s own font when it has those letters, and nothing is uploaded.</sub><br><br>
       <a href="https://fizzdoc.com/edit-pdf/"><img src="docs/assets/edit.gif" alt="Editing PDF text directly on the page" width="100%"></a>
     </td>
     <td width="50%" valign="top">
@@ -176,13 +177,13 @@ When something genuinely can't be carried over (a digital signature, accessibili
   <a href="https://fizzdoc.com/architecture.html">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/assets/architecture-dark.png">
-      <img src="docs/assets/architecture-light.png" width="900" alt="Fizzdoc architecture: a build step prerenders static pages to Cloudflare Pages; in the browser tab, the page controller hands files to the qpdf worker, pdf.js / pdf-lib / fflate and the OCR engine, and the result is saved straight back to the visitor's device">
+      <img src="docs/assets/architecture-light.png" width="900" alt="Fizzdoc architecture: a build step prerenders static pages to Cloudflare Pages; in the browser tab, the page controller hands files to the qpdf worker, pdf.js / pdf-lib / fflate, the OCR engine and the Whisper speech worker, and the result is saved straight back to the visitor's device">
     </picture>
   </a>
 </p>
 
 - **Static site, zero backend.** Nothing to scale, nothing to breach, nothing to pay for.
-- **Lazy engines.** First load is about 9 KB of gzipped app code; each engine downloads only when a tool needs it.
+- **Lazy engines.** First load is about 15 KB of gzipped app code; each engine, including the Whisper speech model, downloads only when a tool needs it.
 - **One registry drives everything.** Add a tool in `src/site.ts` and its page, SEO tags, sitemap entry and footer link appear in all 16 languages.
 
 Explore the interactive [architecture map](https://fizzdoc.com/architecture.html) or read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -210,7 +211,7 @@ It works in any modern browser on phones, tablets and desktops. An installable o
 <details>
 <summary><strong>What doesn't it do (yet)?</strong></summary>
 
-OCR is English-only for now, audio tools handle MP3 and M4A only, and PowerPoint → PDF and legacy .doc/.xls/.ppt aren't supported. To hide text for good, use [Redact PDF](https://fizzdoc.com/redact-pdf/) rather than the text editor, which covers text instead of removing it. See the roadmap below.
+OCR is English-only for now, speech to text works best on clear English, audio tools handle MP3 and M4A only, and PowerPoint → PDF and legacy .doc/.xls/.ppt aren't supported. Edit PDF can only use letters the PDF's font already contains; other lines are covered and redrawn in a standard font, so to hide text for good use [Redact PDF](https://fizzdoc.com/redact-pdf/). See the roadmap below.
 </details>
 
 ## 🚀 Run it locally
@@ -326,4 +327,4 @@ Familiar interface patterns, such as a grid of tools per format, drag-and-drop u
 
 [Apache-2.0](LICENSE) © [Rishab Dugar](https://rishabdugarjain.in). You're free to use, modify and share Fizzdoc, including commercially, as long as you keep the copyright and the [NOTICE](NOTICE) file crediting the original project in every copy or derivative. Fizzdoc stands on the shoulders of the projects listed in [Credits](#-credits) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Product names mentioned in this README are trademarks of their owners and are used only for comparison.
 
-<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF free, PDF to Word, redact PDF, OCR, compress image without losing quality, reduce photo size to 50 KB, image resizer, JPG to PNG, WebP to JPG, cut MP3 online free, merge MP3, audio trimmer, Word to PDF, Excel to CSV, Excel to JSON, JSON to Excel, Mermaid to PNG, Mermaid to SVG, Mermaid diagram examples, remove metadata, iLovePDF alternative, Smallpdf alternative, TinyPNG alternative, private file converter, no upload, free forever, open-source, WebAssembly, client-side.</sub></p>
+<p align="center"><sub>Keywords: free PDF editor online, merge PDF without uploading, compress PDF free, PDF to Word, redact PDF, OCR, compress image without losing quality, reduce photo size to 50 KB, image resizer, JPG to PNG, WebP to JPG, cut MP3 online free, merge MP3, audio trimmer, Word to PDF, Excel to CSV, Excel to JSON, JSON to Excel, Mermaid to PNG, Mermaid to SVG, Mermaid diagram examples, remove metadata, speech to text, edit PDF same font, private file converter, no upload, free forever, open-source, WebAssembly, client-side.</sub></p>
