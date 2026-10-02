@@ -76,7 +76,9 @@ sequenceDiagram
 | `src/engine/convert.ts` | PDF → text/Markdown, text/Markdown → print HTML, Excel ↔ CSV | pdf.js, fflate |
 | `src/engine/office.ts` | Word → print HTML, PDF → Word, PDF → PowerPoint | pdf.js, fflate |
 | `src/engine/ocr.ts` | English OCR for images and searchable PDFs | tesseract.js (self-hosted via `vite-plugins/ocr-assets.ts`), pdf-lib |
-| `src/tools/edit-pdf.ts` | In-page PDF editor: change text, add text, white-out | pdf.js, pdf-lib |
+| `src/engine/pdf-text.ts` | Rewrites changed lines inside the page content stream with the PDF's own font | pdf-lib |
+| `src/engine/transcribe.ts` | Speech to text, SRT and VTT with Whisper in a worker; model cached once in Cache Storage | transformers.js, ONNX Runtime |
+| `src/tools/edit-pdf.ts` | In-page PDF editor: change text, add text, white-out | pdf.js, pdf-lib, `pdf-text.ts` |
 | `src/tools/ocr-viewer.ts` | Image with selectable recognized text (Live Text style) | – |
 
 ## Design decisions
@@ -85,7 +87,7 @@ sequenceDiagram
   hosting costs nothing at any traffic level. It also scales with the visitor's device.
 - **Disposable worker per qpdf job.** Terminating the worker is the cancel button and the cleanup:
   files, passwords and the WASM heap go away together. No shared state between jobs.
-- **Lazy engines.** The first page load is about 9 KB of gzipped app code plus CSS and font. qpdf (1.3 MB),
+- **Lazy engines.** The first page load is about 15 KB of gzipped app code plus CSS and font. qpdf (1.3 MB),
   pdf.js, pdf-lib and the OCR engine (about 6 MB, self-hosted) load only when a tool that needs them runs.
 - **Native PDF writer for documents.** Word, text and Markdown → PDF prepare a print-ready page and use
   the browser's own “Save as PDF”, which gets every language, script and font right with zero extra code.
