@@ -646,11 +646,11 @@ TOOLS.push(
     name: 'Edit PDF',
     summary: 'Change existing text, add text and white-out, right on the page.',
     action: 'Save PDF',
-    title: 'Edit PDF Free — Change PDF Text Online, No Upload | Fizzdoc',
+    title: 'Edit PDF Free — Change Text in the Same Font, No Upload | Fizzdoc',
     description:
-      'Click any text in a PDF to change it, add new text, or white-out areas — directly on the page, in your browser. Nothing is uploaded. Free, no sign-up.',
+      'Edit PDF text in its own font: click any line to change it, add text or white-out, right in your browser. Nothing is uploaded. Free, no sign-up.',
     h1: 'Edit PDF text directly on the page',
-    lede: 'Fix a typo, update a date or fill in a blank without the original file. Click the text you want to change and type — it all happens on your device.',
+    lede: 'Fix a typo, update a date or change an amount without the original file. Click the text and type: the line keeps the PDF’s own font when it has those letters, and it all happens on your device.',
     steps: [
       'Add one PDF file.',
       'Click any text to change it, or use Add text and White-out from the toolbar.',
@@ -1529,7 +1529,7 @@ const KEYWORDS: Record<string, string[]> = {
     'edit text in a PDF',
     'change words in a PDF free',
     'add text to a PDF',
-    'white out text in a PDF',
+    'edit PDF text in the same font',
     'PDF editor without sign-up'
   ],
   'redact-pdf': [
