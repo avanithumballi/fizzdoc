@@ -352,6 +352,13 @@ export async function openEditor(file: File, viewer: HTMLElement): Promise<Edito
     pageStates.push({ index: n - 1, wrapper, canvas, overlay, dpr: 1, runs: [], textEdits: new Map(), added: [], whiteouts: [], rendered: false });
   }
 
+  // Start at the largest zoom where the first page fits the width, so a phone shows the whole page.
+  if (pageStates.length) {
+    const width = (await ensurePage(pageStates[0])).getViewport({ scale: 1 }).width;
+    const room = scroller.clientWidth - 40;
+    while (room > 0 && zoomIndex > 0 && width * ZOOM_STEPS[zoomIndex] > room) zoomIndex--;
+  }
+
   function updatePageLabel() {
     const mid = scroller.scrollTop + scroller.clientHeight / 2;
     let current = 0;

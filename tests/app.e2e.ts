@@ -621,6 +621,24 @@ test('edits PDF text in place and saves on the device', async ({ page, baseURL }
   expect(seen.violations).toEqual([]);
 });
 
+test('fits the PDF editor page to a phone screen', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/edit-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('chrome-text'));
+  const scroll = page.locator('.edit-scroll');
+  const sheet = page.locator('.edit-page').first();
+  await expect(sheet.locator('canvas')).toBeVisible();
+  const [box, area] = [await sheet.boundingBox(), await scroll.boundingBox()];
+  // The whole page width is on screen, from its left edge.
+  expect(box!.x).toBeGreaterThanOrEqual(area!.x);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(area!.x + area!.width);
+  // Zoomed in, the left edge can still be scrolled to.
+  for (let i = 0; i < 4; i++) await page.getByRole('button', { name: 'Zoom in' }).click();
+  await scroll.evaluate((el) => (el.scrollLeft = 0));
+  const zoomed = await sheet.boundingBox();
+  expect(zoomed!.x).toBeGreaterThanOrEqual((await scroll.boundingBox())!.x);
+});
+
 test('keeps the PDF’s own font when the edited line can be rewritten in place', async ({ page }) => {
   const seen = watch(page);
   await page.goto('/edit-pdf/');
