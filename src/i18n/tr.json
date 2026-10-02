@@ -234,7 +234,7 @@
     "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur.",
     "footer.madeBy": "Tasarlayan ve geliştiren",
     "footer.feedback": "Hata bildir veya araç öner",
-    "footer.compare": "iLovePDF ve diğerleriyle karşılaştırma",
+    "footer.compare": "Bilinen araçlara alternatifler",
     "format.audio": "Ses",
     "ws.chooseAudio": "Bir MP3 veya M4A dosyası seçin",
     "ws.chooseAudios": "MP3 veya M4A dosyaları seçin",
@@ -299,8 +299,8 @@
         "Evet. Dosya tarayıcı sekmenizde açılır ve işlenir, hiçbir yere gönderilmez; bu yüzden sızabilecek, satılabilecek veya hacklenebilecek bir sunucu kopyası yoktur. Bunu tarayıcınız zorunlu kılar, Ağ sekmesinde kendiniz doğrulayabilirsiniz ve sekmeyi kapatmak her şeyi temizler."
       ],
       [
-        "Fizzdoc, iLovePDF, Smallpdf veya Adobe'nin çevrimiçi araçlarından farkı nedir?",
-        "Bu servisler belgenizi işlemek için sunucularına yükler. Fizzdoc ise işi tarayıcı sekmenizde yapar, böylece yüklenecek, saklanacak veya sonradan silinecek hiçbir şey kalmaz. Ayrıca açık kaynaktır ve bir yer iminin aktarılamaması gibi durumlarda sessizce atlamak yerine sizi uyarır."
+        "Fizzdoc diğer çevrimiçi PDF araçlarından nasıl farklı?",
+        "Pek çok çevrimiçi PDF aracı belgenizi kendi sunucularında işler. Fizzdoc bu işi tarayıcı sekmenizde yapar; bu yüzden sonrasında yüklenecek, saklanacak veya silinecek bir şey kalmaz. Ayrıca açık kaynaklıdır ve yer imi gibi bir şey aktarılamadığında onu sessizce atmak yerine sizi uyarır."
       ],
       [
         "Google Dokümanlar, E-Tablolar ve Slaytlar ile çalışır mı?",

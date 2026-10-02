@@ -234,7 +234,7 @@
     "rd.hint": "Sleep over een pagina om iets te bedekken: tekst, een handtekening, een foto. Bij het opslaan wordt elke pagina een afbeelding, dus wat je bedekte is voorgoed weg.",
     "footer.madeBy": "Ontworpen en gebouwd door",
     "footer.feedback": "Meld een bug of stel een tool voor",
-    "footer.compare": "Vergelijk met iLovePDF en anderen",
+    "footer.compare": "Alternatieven voor bekende tools",
     "format.audio": "Audio",
     "ws.chooseAudio": "Kies een MP3- of M4A-bestand",
     "ws.chooseAudios": "Kies MP3- of M4A-bestanden",
@@ -299,8 +299,8 @@
         "Ja. Het bestand wordt geopend en verwerkt in je browsertab en nooit ergens naartoe verstuurd, dus er is geen kopie op een server die kan lekken, verkocht of gehackt worden. Je browser dwingt dit af, je kunt het zelf controleren in het tabblad Netwerk, en het sluiten van het tabblad wist alles."
       ],
       [
-        "Hoe verschilt Fizzdoc van iLovePDF, Smallpdf of de online tools van Adobe?",
-        "Die diensten uploaden je document naar hun servers om het te verwerken. Fizzdoc doet het werk juist in je browsertab, dus er is niets om achteraf te uploaden, op te slaan of te verwijderen. Het is bovendien open source en waarschuwt je altijd wanneer iets, zoals een bladwijzer, niet kan worden overgenomen in plaats van het stilzwijgend te laten vallen."
+        "Waarin verschilt Fizzdoc van andere online pdf-tools?",
+        "Veel online pdf-tools verwerken je document op hun eigen servers. Fizzdoc doet het werk in je browsertabblad, dus er is achteraf niets te uploaden, op te slaan of te verwijderen. Het is ook open source en waarschuwt je als iets, zoals een bladwijzer, niet kan worden meegenomen, in plaats van het stilletjes weg te laten."
       ],
       [
         "Werkt het met Google Docs, Sheets en Slides?",

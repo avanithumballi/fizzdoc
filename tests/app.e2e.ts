@@ -92,7 +92,7 @@ test('alternative pages describe only Fizzdoc, link to the matching tools and sa
   await page.goto('/alternatives/');
   await expect(page.locator('section:has(#compare) .proof-grid a')).toHaveCount(7);
   await page.goto('/hi/');
-  await expect(page.locator('footer a[href="/alternatives/"]')).toHaveText('iLovePDF और अन्य से तुलना');
+  await expect(page.locator('footer a[href="/alternatives/"]')).toHaveText('जाने-पहचाने टूल्स के विकल्प');
 });
 
 test('the Aadhaar unlock page explains the password format and unlocks on the device', async ({ page }) => {

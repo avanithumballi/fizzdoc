@@ -234,7 +234,7 @@
     "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon.",
     "footer.madeBy": "Conçu et développé par",
     "footer.feedback": "Signaler un bug ou proposer un outil",
-    "footer.compare": "Comparer avec iLovePDF et autres",
+    "footer.compare": "Alternatives aux outils connus",
     "format.audio": "Audio",
     "ws.chooseAudio": "Choisir un fichier MP3 ou M4A",
     "ws.chooseAudios": "Choisir des fichiers MP3 ou M4A",
@@ -299,8 +299,8 @@
         "Oui. Le fichier est ouvert et traité dans l'onglet de votre navigateur et n'est jamais envoyé nulle part, donc aucune copie ne se trouve sur un serveur où elle pourrait fuiter, être vendue ou piratée. Votre navigateur garantit cela, vous pouvez le vérifier dans l'onglet Réseau, et fermer l'onglet efface tout."
       ],
       [
-        "En quoi Fizzdoc est-il différent d'iLovePDF, Smallpdf ou des outils en ligne d'Adobe ?",
-        "Ces services envoient votre document sur leurs serveurs pour le traiter. Fizzdoc effectue le travail dans votre onglet de navigateur, donc il n'y a rien à envoyer, à stocker ni à supprimer ensuite. Il est aussi open source, et il vous prévient chaque fois qu'un élément comme un signet ne peut pas être conservé, au lieu de le perdre silencieusement."
+        "En quoi Fizzdoc diffère-t-il des autres outils PDF en ligne ?",
+        "Beaucoup d'outils PDF en ligne traitent votre document sur leurs propres serveurs. Fizzdoc fait le travail dans l'onglet de votre navigateur : il n'y a donc rien à envoyer, stocker ou supprimer ensuite. Il est aussi open source et vous prévient quand un élément, comme un signet, ne peut pas être conservé, au lieu de le supprimer en silence."
       ],
       [
         "Est-ce que ça fonctionne avec Google Docs, Sheets et Slides ?",

@@ -234,7 +234,7 @@
     "rd.hint": "Kéo trên một trang để che bất cứ thứ gì: văn bản, chữ ký, ảnh. Khi lưu, mỗi trang trở thành một hình ảnh, nên phần bạn che sẽ biến mất vĩnh viễn.",
     "footer.madeBy": "Thiết kế và phát triển bởi",
     "footer.feedback": "Báo lỗi hoặc đề xuất công cụ",
-    "footer.compare": "So sánh với iLovePDF và các công cụ khác",
+    "footer.compare": "Lựa chọn thay thế cho công cụ quen thuộc",
     "format.audio": "Âm thanh",
     "ws.chooseAudio": "Chọn một tệp MP3 hoặc M4A",
     "ws.chooseAudios": "Chọn các tệp MP3 hoặc M4A",
@@ -299,8 +299,8 @@
         "Có. Tệp được mở và xử lý ngay trong tab trình duyệt của bạn và không bao giờ được gửi đi đâu cả, nên không có bản sao nào trên máy chủ có thể bị rò rỉ, bị bán hay bị hack. Trình duyệt của bạn đảm bảo điều này, bạn có thể tự kiểm tra trong tab Network, và đóng tab sẽ xóa sạch mọi thứ."
       ],
       [
-        "Fizzdoc khác gì so với iLovePDF, Smallpdf hay các công cụ trực tuyến của Adobe?",
-        "Những dịch vụ đó tải tài liệu của bạn lên máy chủ để xử lý. Fizzdoc thì xử lý ngay trong tab trình duyệt, nên không có gì để tải lên, lưu trữ hay xóa sau đó. Fizzdoc cũng là mã nguồn mở, và luôn cảnh báo bạn khi có thứ gì đó — chẳng hạn một bookmark — không thể giữ lại được, thay vì âm thầm bỏ qua."
+        "Fizzdoc khác các công cụ PDF trực tuyến khác thế nào?",
+        "Nhiều công cụ PDF trực tuyến xử lý tài liệu của bạn trên máy chủ của họ. Fizzdoc làm việc đó ngay trong tab trình duyệt của bạn, nên sau đó không có gì để tải lên, lưu trữ hay xóa. Fizzdoc cũng là mã nguồn mở và báo cho bạn khi có thứ gì đó, như dấu trang, không thể giữ lại, thay vì lặng lẽ bỏ đi."
       ],
       [
         "Có dùng được với Google Docs, Sheets và Slides không?",

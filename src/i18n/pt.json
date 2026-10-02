@@ -234,7 +234,7 @@
     "rd.hint": "Arraste sobre uma página para cobrir qualquer coisa: texto, uma assinatura, uma foto. Ao salvar, cada página vira uma imagem, então o que você cobriu some de vez.",
     "footer.madeBy": "Projetado e criado por",
     "footer.feedback": "Relate um erro ou sugira uma ferramenta",
-    "footer.compare": "Comparar com iLovePDF e outros",
+    "footer.compare": "Alternativas a ferramentas conhecidas",
     "format.audio": "Áudio",
     "ws.chooseAudio": "Escolher um arquivo MP3 ou M4A",
     "ws.chooseAudios": "Escolher arquivos MP3 ou M4A",
@@ -299,8 +299,8 @@
         "Sim. O arquivo é aberto e processado dentro da aba do seu navegador e nunca é enviado a lugar nenhum, então não fica nenhuma cópia num servidor que possa vazar, ser vendida ou hackeada. Seu navegador garante isso, você pode confirmar na aba Rede, e fechar a aba apaga tudo."
       ],
       [
-        "Qual a diferença entre o Fizzdoc e o iLovePDF, Smallpdf ou as ferramentas online da Adobe?",
-        "Esses serviços enviam seu documento para os servidores deles para processá-lo. O Fizzdoc faz o trabalho na aba do seu navegador, então não há nada para enviar, armazenar ou excluir depois. Ele também é open source e avisa sempre que algo, como um marcador, não pode ser mantido, em vez de simplesmente descartá-lo."
+        "Como o Fizzdoc é diferente de outras ferramentas de PDF online?",
+        "Muitas ferramentas de PDF online processam seu documento nos próprios servidores. O Fizzdoc faz o trabalho na aba do seu navegador, então não há nada para enviar, guardar ou apagar depois. Ele também é de código aberto e avisa quando algo, como um marcador, não pode ser mantido, em vez de removê-lo em silêncio."
       ],
       [
         "Funciona com Google Docs, Sheets e Slides?",

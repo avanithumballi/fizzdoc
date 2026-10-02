@@ -234,7 +234,7 @@
     "rd.hint": "Ziehen Sie über eine Seite, um etwas zu bedecken: Text, eine Unterschrift, ein Foto. Beim Speichern wird jede Seite zu einem Bild, sodass das Bedeckte für immer verschwindet.",
     "footer.madeBy": "Entworfen und entwickelt von",
     "footer.feedback": "Fehler melden oder Tool vorschlagen",
-    "footer.compare": "Vergleich mit iLovePDF & Co.",
+    "footer.compare": "Alternativen zu bekannten Tools",
     "format.audio": "Audio",
     "ws.chooseAudio": "MP3- oder M4A-Datei auswählen",
     "ws.chooseAudios": "MP3- oder M4A-Dateien auswählen",
@@ -299,8 +299,8 @@
         "Ja. Die Datei wird direkt in Ihrem Browser-Tab geöffnet und verarbeitet und niemals irgendwohin gesendet, sodass keine Kopie auf einem Server liegt, die geleakt, verkauft oder gehackt werden könnte. Ihr Browser garantiert das, Sie können es im Netzwerk-Tab selbst prüfen, und das Schließen des Tabs löscht alles."
       ],
       [
-        "Wie unterscheidet sich Fizzdoc von iLovePDF, Smallpdf oder den Online-Tools von Adobe?",
-        "Diese Dienste laden Ihr Dokument auf ihre Server hoch, um es zu verarbeiten. Fizzdoc erledigt die Arbeit stattdessen in Ihrem Browser-Tab, sodass es hinterher nichts hochzuladen, zu speichern oder zu löschen gibt. Es ist außerdem Open Source und warnt Sie, wenn zum Beispiel ein Lesezeichen nicht übernommen werden kann, statt es stillschweigend zu verwerfen."
+        "Wie unterscheidet sich Fizzdoc von anderen Online-PDF-Tools?",
+        "Viele Online-PDF-Tools verarbeiten Ihr Dokument auf ihren eigenen Servern. Fizzdoc erledigt die Arbeit in Ihrem Browser-Tab, sodass hinterher nichts hochzuladen, zu speichern oder zu löschen ist. Es ist außerdem Open Source und warnt Sie, wenn etwas wie ein Lesezeichen nicht übernommen werden kann, statt es stillschweigend zu entfernen."
       ],
       [
         "Funktioniert es mit Google Docs, Sheets und Slides?",
