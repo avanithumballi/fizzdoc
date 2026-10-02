@@ -621,6 +621,24 @@ test('edits PDF text in place and saves on the device', async ({ page, baseURL }
   expect(seen.violations).toEqual([]);
 });
 
+test('fits the PDF editor page to a phone screen', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/edit-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('chrome-text'));
+  const scroll = page.locator('.edit-scroll');
+  const sheet = page.locator('.edit-page').first();
+  await expect(sheet.locator('canvas')).toBeVisible();
+  const [box, area] = [await sheet.boundingBox(), await scroll.boundingBox()];
+  // The whole page width is on screen, from its left edge.
+  expect(box!.x).toBeGreaterThanOrEqual(area!.x);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(area!.x + area!.width);
+  // Zoomed in, the left edge can still be scrolled to.
+  for (let i = 0; i < 4; i++) await page.getByRole('button', { name: 'Zoom in' }).click();
+  await scroll.evaluate((el) => (el.scrollLeft = 0));
+  const zoomed = await sheet.boundingBox();
+  expect(zoomed!.x).toBeGreaterThanOrEqual((await scroll.boundingBox())!.x);
+});
+
 test('keeps the PDF’s own font when the edited line can be rewritten in place', async ({ page }) => {
   const seen = watch(page);
   await page.goto('/edit-pdf/');
@@ -906,6 +924,8 @@ test('wraps long file names instead of widening the page on phones', async ({ pa
     { name: `${long} part 2.mp3`, mimeType: 'audio/mpeg', buffer: mp3 },
   ]);
   await expect(page.locator('#file-list .file-name')).toHaveText([`${long} part 1.mp3`, `${long} part 2.mp3`]);
+  // The list is drawn again once each track's length is read; measure after that.
+  await expect(page.locator('#file-list li').first()).toContainText(/\d+:\d\d/);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   const row = await page.locator('#file-list li').first().boundingBox();
   expect(row!.x + row!.width).toBeLessThanOrEqual(390);
