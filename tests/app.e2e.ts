@@ -924,6 +924,8 @@ test('wraps long file names instead of widening the page on phones', async ({ pa
     { name: `${long} part 2.mp3`, mimeType: 'audio/mpeg', buffer: mp3 },
   ]);
   await expect(page.locator('#file-list .file-name')).toHaveText([`${long} part 1.mp3`, `${long} part 2.mp3`]);
+  // The list is drawn again once each track's length is read; measure after that.
+  await expect(page.locator('#file-list li').first()).toContainText(/\d+:\d\d/);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   const row = await page.locator('#file-list li').first().boundingBox();
   expect(row!.x + row!.width).toBeLessThanOrEqual(390);
