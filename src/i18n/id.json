@@ -234,7 +234,7 @@
     "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya.",
     "footer.madeBy": "Dirancang dan dibuat oleh",
     "footer.feedback": "Laporkan bug atau usulkan alat",
-    "footer.compare": "Bandingkan dengan iLovePDF dan lainnya",
+    "footer.compare": "Alternatif untuk alat yang sudah dikenal",
     "format.audio": "Audio",
     "ws.chooseAudio": "Pilih file MP3 atau M4A",
     "ws.chooseAudios": "Pilih file MP3 atau M4A",
@@ -299,8 +299,8 @@
         "Ya. File dibuka dan diproses di tab browser Anda dan tidak pernah dikirim ke mana pun, jadi tidak ada salinan di server yang bisa bocor, dijual, atau diretas. Browser Anda yang memastikan ini, Anda bisa memeriksanya sendiri di tab Network, dan menutup tab akan menghapus semuanya."
       ],
       [
-        "Apa bedanya Fizzdoc dengan iLovePDF, Smallpdf, atau alat online Adobe?",
-        "Layanan-layanan itu mengunggah dokumen Anda ke server mereka untuk memprosesnya. Fizzdoc justru melakukan semua proses di tab browser Anda, jadi tidak ada yang perlu diunggah, disimpan, atau dihapus setelahnya. Fizzdoc juga open source, dan akan memberi tahu Anda setiap kali ada sesuatu seperti bookmark yang tidak bisa dibawa, alih-alih menghilangkannya diam-diam."
+        "Apa bedanya Fizzdoc dengan alat PDF online lainnya?",
+        "Banyak alat PDF online memproses dokumen Anda di server mereka sendiri. Fizzdoc mengerjakannya di tab browser Anda, jadi tidak ada yang perlu diunggah, disimpan, atau dihapus setelahnya. Fizzdoc juga open source dan memberi tahu Anda jika sesuatu, seperti bookmark, tidak bisa dibawa, alih-alih menghapusnya diam-diam."
       ],
       [
         "Apakah bisa digunakan dengan Google Docs, Sheets, dan Slides?",

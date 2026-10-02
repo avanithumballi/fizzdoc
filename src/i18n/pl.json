@@ -234,7 +234,7 @@
     "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre.",
     "footer.madeBy": "Zaprojektował i zbudował",
     "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie",
-    "footer.compare": "Porównanie z iLovePDF i innymi",
+    "footer.compare": "Alternatywy dla znanych narzędzi",
     "format.audio": "Audio",
     "ws.chooseAudio": "Wybierz plik MP3 lub M4A",
     "ws.chooseAudios": "Wybierz pliki MP3 lub M4A",
@@ -299,8 +299,8 @@
         "Tak. Plik jest otwierany i przetwarzany w karcie przeglądarki i nigdy nigdzie nie jest wysyłany, więc nie ma kopii na serwerze, która mogłaby wyciec, zostać sprzedana lub zhakowana. Wymusza to Twoja przeglądarka, możesz to sprawdzić sam w karcie Sieć, a zamknięcie karty czyści wszystko."
       ],
       [
-        "Czym Fizzdoc różni się od iLovePDF, Smallpdf czy narzędzi online Adobe?",
-        "Te serwisy przesyłają Twój dokument na swoje serwery, żeby go przetworzyć. Fizzdoc robi to samo w karcie przeglądarki, więc nie ma nic do przesłania, przechowywania ani usuwania później. Jest też open source i ostrzega Cię, gdy czegoś — na przykład zakładki — nie da się przenieść, zamiast po cichu ją pomijać."
+        "Czym Fizzdoc różni się od innych narzędzi PDF online?",
+        "Wiele narzędzi PDF online przetwarza dokument na własnych serwerach. Fizzdoc wykonuje pracę w karcie przeglądarki, więc potem nie ma czego wysyłać, przechowywać ani usuwać. Jest też open source i ostrzega, gdy czegoś, na przykład zakładki, nie da się zachować, zamiast po cichu to usuwać."
       ],
       [
         "Czy działa z Google Docs, Sheets i Slides?",

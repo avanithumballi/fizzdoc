@@ -1,4 +1,4 @@
-// Sejda-style "Edit PDF": change text in place, add new text, white-out areas. Everything runs
+// "Edit PDF": change text in place, add new text, white-out areas. Everything runs
 // against the original file in memory. On save, changed lines are rewritten inside the page with
 // the PDF's own font when it has every character (engine/pdf-text.ts); otherwise the old line is
 // covered and the new one drawn in the closest standard font.

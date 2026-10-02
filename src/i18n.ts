@@ -37,7 +37,7 @@ export const UI = {
   'footer.builtOn': 'Built on qpdf, pdf.js and pdf-lib',
   'footer.madeBy': 'Designed and built by',
   'footer.feedback': 'Report a bug or suggest a tool',
-  'footer.compare': 'Compare with iLovePDF & others',
+  'footer.compare': 'Alternatives to familiar tools',
   'star.title': 'Free and open source. Forever.',
   'star.text': 'No ads, no accounts, no servers looking at your files. If Fizzdoc saved you time, a star on GitHub helps more people find it.',
   'star.button': 'Star Fizzdoc on GitHub',

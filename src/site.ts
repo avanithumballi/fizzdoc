@@ -1449,7 +1449,7 @@ const KEYWORDS: Record<string, string[]> = {
     'separate one page from a PDF',
     'split a large PDF into parts',
     'cut PDF pages online free',
-    'split PDF without Adobe'
+    'split PDF without software'
   ],
   'rotate-pdf': [
     'rotate PDF and save',
@@ -1833,8 +1833,8 @@ export const HOME = {
       'Yes. The file is opened and processed inside your browser tab and is never sent anywhere, so there is no copy on a server that could leak, be sold or be hacked. Your browser enforces this, you can confirm it in the Network tab, and closing the tab clears everything.',
     ],
     [
-      'How is Fizzdoc different from iLovePDF, Smallpdf or Adobe’s online tools?',
-      'Those services upload your document to their servers to process it. Fizzdoc does the work in your browser tab instead, so there is nothing to upload, store or delete afterwards. It is also open source, and it warns you whenever something such as a bookmark cannot be carried over instead of silently dropping it.',
+      'How is Fizzdoc different from other online PDF tools?',
+      'Many online PDF tools process your document on their own servers. Fizzdoc does the work in your browser tab instead, so there is nothing to upload, store or delete afterwards. It is also open source, and it warns you whenever something such as a bookmark cannot be carried over instead of silently dropping it.',
     ],
     [
       'Does it work with Google Docs, Sheets and Slides?',

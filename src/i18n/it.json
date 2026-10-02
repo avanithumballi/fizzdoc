@@ -234,7 +234,7 @@
     "rd.hint": "Trascina su una pagina per coprire qualsiasi cosa: testo, una firma, una foto. Al salvataggio, ogni pagina diventa un'immagine, quindi ciò che hai coperto sparisce per sempre.",
     "footer.madeBy": "Progettato e sviluppato da",
     "footer.feedback": "Segnala un bug o suggerisci uno strumento",
-    "footer.compare": "Confronto con iLovePDF e altri",
+    "footer.compare": "Alternative a strumenti noti",
     "format.audio": "Audio",
     "ws.chooseAudio": "Scegli un file MP3 o M4A",
     "ws.chooseAudios": "Scegli i file MP3 o M4A",
@@ -299,8 +299,8 @@
         "Sì. Il file viene aperto ed elaborato dentro la scheda del tuo browser e non viene mai inviato da nessuna parte, quindi non resta nessuna copia su un server che potrebbe essere violato, venduto o trapelare. Il tuo browser lo garantisce, puoi verificarlo nella scheda Rete, e chiudere la scheda cancella tutto."
       ],
       [
-        "In cosa Fizzdoc è diverso da iLovePDF, Smallpdf o dagli strumenti online di Adobe?",
-        "Quei servizi caricano il tuo documento sui loro server per elaborarlo. Fizzdoc svolge il lavoro nella scheda del browser, quindi non c'è nulla da caricare, conservare o eliminare in seguito. È anche open source, e ti avvisa ogni volta che qualcosa, come un segnalibro, non può essere mantenuto, invece di eliminarlo silenziosamente."
+        "In cosa Fizzdoc è diverso dagli altri strumenti PDF online?",
+        "Molti strumenti PDF online elaborano il tuo documento sui propri server. Fizzdoc fa il lavoro nella scheda del tuo browser, quindi non c'è nulla da caricare, conservare o eliminare dopo. È anche open source e ti avvisa quando qualcosa, come un segnalibro, non può essere mantenuto, invece di eliminarlo in silenzio."
       ],
       [
         "Funziona con Google Docs, Sheets e Slides?",
