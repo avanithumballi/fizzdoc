@@ -231,6 +231,8 @@
     "rd.personalFound": "Đã đánh dấu thông tin cá nhân: {n}. Hãy kiểm tra từng mục trước khi lưu.",
     "rd.personalNone": "Không tìm thấy email, số điện thoại, số giấy tờ hay số thẻ. Hãy tìm tên và địa chỉ ở trên.",
     "rd.remove": "Xóa vết đánh dấu này",
+    "rd.draw": "Vẽ khung",
+    "rd.touchHint": "Trên màn hình cảm ứng, vuốt để cuộn. Chạm “Vẽ khung” để đánh dấu bằng ngón tay, chạm lại để cuộn.",
     "rd.hint": "Kéo trên một trang để che bất cứ thứ gì: văn bản, chữ ký, ảnh. Khi lưu, mỗi trang trở thành một hình ảnh, nên phần bạn che sẽ biến mất vĩnh viễn.",
     "footer.madeBy": "Thiết kế và phát triển bởi",
     "footer.feedback": "Báo lỗi hoặc đề xuất công cụ",

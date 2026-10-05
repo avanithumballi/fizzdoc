@@ -288,6 +288,8 @@ export const UI = {
   'rd.personalFound': 'Personal details marked: {n}. Check each one before saving.',
   'rd.personalNone': 'No emails, phone, ID or card numbers found. Search for names and addresses above.',
   'rd.remove': 'Remove this mark',
+  'rd.draw': 'Draw boxes',
+  'rd.touchHint': 'On a touch screen, swipe to scroll. Tap “Draw boxes” to mark with your finger, and tap it again to scroll.',
   'rd.hint': 'Drag on a page to cover anything: text, a signature, a photo. When you save, every page becomes an image, so what you covered is gone for good.',
   'ocr.unsure': 'Some of this text may be wrong. Text recognition reads English that is upright: rotate sideways photos first, and expect other scripts to come out garbled.',
   'ocr.copyAll': 'Copy all text',

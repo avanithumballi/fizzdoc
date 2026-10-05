@@ -231,6 +231,8 @@
     "rd.personalFound": "Datos personales marcados: {n}. Revisa cada uno antes de guardar.",
     "rd.personalNone": "No se encontraron correos, teléfonos ni números de ID o tarjeta. Busca nombres y direcciones arriba.",
     "rd.remove": "Quitar esta marca",
+    "rd.draw": "Dibujar cuadros",
+    "rd.touchHint": "En una pantalla táctil, desliza para desplazarte. Toca «Dibujar cuadros» para marcar con el dedo y vuelve a tocarlo para desplazarte.",
     "rd.hint": "Arrastra sobre una página para tapar cualquier cosa: texto, una firma, una foto. Al guardar, cada página se convierte en una imagen, así que lo que tapaste desaparece para siempre.",
     "footer.madeBy": "Diseñado y creado por",
     "footer.feedback": "Reporta un error o sugiere una herramienta",

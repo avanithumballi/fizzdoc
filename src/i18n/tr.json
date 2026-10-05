@@ -231,6 +231,8 @@
     "rd.personalFound": "İşaretlenen kişisel bilgi: {n}. Kaydetmeden önce her birini kontrol edin.",
     "rd.personalNone": "E-posta, telefon, kimlik veya kart numarası bulunamadı. Ad ve adresleri yukarıda arayın.",
     "rd.remove": "Bu işareti kaldır",
+    "rd.draw": "Kutu çiz",
+    "rd.touchHint": "Dokunmatik ekranda kaydırmak için parmağınızı sürükleyin. Parmakla işaretlemek için “Kutu çiz”e dokunun, kaydırmak için yeniden dokunun.",
     "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur.",
     "footer.madeBy": "Tasarlayan ve geliştiren",
     "footer.feedback": "Hata bildir veya araç öner",
