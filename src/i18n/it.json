@@ -231,6 +231,8 @@
     "rd.personalFound": "Dati personali segnati: {n}. Controllali uno per uno prima di salvare.",
     "rd.personalNone": "Nessuna email, telefono o numero di documento o carta trovato. Cerca nomi e indirizzi qui sopra.",
     "rd.remove": "Rimuovi questo segno",
+    "rd.draw": "Disegna riquadri",
+    "rd.touchHint": "Su uno schermo touch, scorri con il dito. Tocca «Disegna riquadri» per segnare con il dito e toccalo di nuovo per scorrere.",
     "rd.hint": "Trascina su una pagina per coprire qualsiasi cosa: testo, una firma, una foto. Al salvataggio, ogni pagina diventa un'immagine, quindi ciò che hai coperto sparisce per sempre.",
     "footer.madeBy": "Progettato e sviluppato da",
     "footer.feedback": "Segnala un bug o suggerisci uno strumento",

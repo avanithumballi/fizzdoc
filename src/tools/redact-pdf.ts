@@ -142,6 +142,14 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
   find.append(search, markAll);
   const personal = button(t('rd.personal'));
   personal.title = t('rd.personalHint');
+  // On touch screens a finger scrolls by default; this switch makes it draw instead.
+  const draw = button(t('rd.draw'), 'redact-btn redact-draw');
+  draw.setAttribute('aria-pressed', 'false');
+  draw.onclick = () => {
+    const on = draw.getAttribute('aria-pressed') !== 'true';
+    draw.setAttribute('aria-pressed', String(on));
+    viewer.classList.toggle('drawing', on);
+  };
   const undo = button(t('ed.undo'));
   const clear = button(t('rd.clear'));
   const count = document.createElement('span');
@@ -149,14 +157,17 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
   count.setAttribute('aria-live', 'polite');
   const toolbar = document.createElement('div');
   toolbar.className = 'redact-toolbar';
-  toolbar.append(find, personal, undo, clear, count);
+  toolbar.append(find, personal, draw, undo, clear, count);
   const hint = document.createElement('p');
   hint.className = 'redact-hint';
   hint.textContent = t('rd.hint');
+  const touchHint = document.createElement('p');
+  touchHint.className = 'redact-hint redact-touch-hint';
+  touchHint.textContent = t('rd.touchHint');
   const scroller = document.createElement('div');
   scroller.className = 'redact-scroll';
   viewer.classList.add('redact-pdf');
-  viewer.replaceChildren(toolbar, hint, scroller);
+  viewer.replaceChildren(toolbar, hint, touchHint, scroller);
 
   interface PageView {
     wrapper: HTMLDivElement;
@@ -220,11 +231,13 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
     drawMarks(view, index);
   }
 
-  // Drag on a page to draw a mark (mouse, pen or finger).
+  // Drag on a page to draw a mark. A mouse always draws; a finger or pen only after "Draw boxes"
+  // is on, so on a phone the pages still scroll.
   function enableDrawing(view: PageView, index: number) {
     view.overlay.addEventListener('pointerdown', (event) => {
       const viewport = view.viewport;
       if (!viewport || event.button !== 0) return;
+      if (event.pointerType !== 'mouse' && !viewer.classList.contains('drawing')) return;
       event.preventDefault();
       view.overlay.setPointerCapture(event.pointerId);
       const bounds = view.overlay.getBoundingClientRect();
@@ -326,7 +339,7 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
     destroy() {
       observer.disconnect();
       void doc.loadingTask.destroy();
-      viewer.classList.remove('redact-pdf');
+      viewer.classList.remove('redact-pdf', 'drawing');
       viewer.replaceChildren();
     },
   };

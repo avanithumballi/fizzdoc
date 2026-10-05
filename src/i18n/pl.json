@@ -231,6 +231,8 @@
     "rd.personalFound": "Zaznaczone dane osobowe: {n}. Sprawdź każde przed zapisaniem.",
     "rd.personalNone": "Nie znaleziono e-maili, telefonów ani numerów dokumentów lub kart. Wyszukaj imiona i adresy powyżej.",
     "rd.remove": "Usuń ten znacznik",
+    "rd.draw": "Rysuj ramki",
+    "rd.touchHint": "Na ekranie dotykowym przesuń palcem, aby przewijać. Stuknij „Rysuj ramki”, aby zaznaczać palcem, i stuknij ponownie, aby przewijać.",
     "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre.",
     "footer.madeBy": "Zaprojektował i zbudował",
     "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie",

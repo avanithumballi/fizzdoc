@@ -341,6 +341,42 @@ test('redacts marked areas for good and turns PDFs into scanned PDFs', async ({ 
   expect(seen.requests.filter((r) => !r.url.startsWith(page.url().split('/').slice(0, 3).join('/')))).toEqual([]);
 });
 
+test('scrolls the redact pages with a finger, and draws with one after “Draw boxes”', async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.goto('/redact-pdf/');
+  await page.locator('#file-input').setInputFiles(fixture('rich-text'));
+  const scroll = page.locator('.redact-scroll');
+  await expect(page.locator('.redact-page').first().locator('canvas')).toBeVisible();
+  const cdp = await context.newCDPSession(page);
+  const drag = async (from: { x: number; y: number }, to: { x: number; y: number }) => {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [from] });
+    for (let i = 1; i <= 8; i++)
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: from.x + ((to.x - from.x) * i) / 8, y: from.y + ((to.y - from.y) * i) / 8 }] });
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  };
+
+  // A swipe on the page scrolls (the pages or the whole site) and draws nothing.
+  const scrolled = () => scroll.evaluate((el) => el.scrollTop + scrollY);
+  const before = await scrolled();
+  const area = (await scroll.boundingBox())!;
+  const middle = { x: area.x + area.width / 2, y: area.y + area.height * 0.7 };
+  await drag(middle, { x: middle.x, y: middle.y - 300 });
+  await expect.poll(scrolled).toBeGreaterThan(before + 100);
+  await expect(page.locator('.redact-box')).toHaveCount(0);
+
+  // With "Draw boxes" on, the same finger drag marks an area.
+  const draw = page.getByRole('button', { name: 'Draw boxes' });
+  await draw.tap();
+  await expect(draw).toHaveAttribute('aria-pressed', 'true');
+  const sheet = (await page.locator('.redact-overlay').first().boundingBox())!;
+  const visible = (await scroll.boundingBox())!;
+  const start = { x: sheet.x + 40, y: Math.max(sheet.y, visible.y) + 20 };
+  await drag(start, { x: start.x + 150, y: start.y + 60 });
+  await expect(page.locator('.redact-count')).toHaveText('Marked areas: 1');
+  await context.close();
+});
+
 test('finds and marks personal details in one click, and leaves amounts and dates alone', async ({ page }) => {
   const { StandardFonts } = await import('pdf-lib');
   const doc = await PDFDocument.create();
