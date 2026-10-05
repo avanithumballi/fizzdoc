@@ -114,6 +114,7 @@ function setUp(op: ToolOp) {
   const rasterOptions = (o: Options) => ({
     dpi: o.dpi === '300' ? 300 : 150,
     look: (o.look === 'gray' || o.look === 'scanned' ? o.look : 'color') as 'color' | 'gray' | 'scanned',
+    keepText: o.keepText === 'true',
   });
 
   // Every tool that runs outside the qpdf worker. Engines load on first use.

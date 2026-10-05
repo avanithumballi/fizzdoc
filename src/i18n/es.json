@@ -123,6 +123,7 @@
     "ws.lookColor": "Color",
     "ws.lookGray": "Blanco y negro",
     "ws.lookScanned": "Escaneado (gris, ligeramente inclinado)",
+    "ws.keepText": "Mantener el resto del texto buscable",
     "ws.wmText": "Texto de la marca de agua",
     "ws.wmDefault": "CONFIDENCIAL",
     "ws.opacity": "Opacidad",
@@ -231,7 +232,7 @@
     "rd.personalFound": "Datos personales marcados: {n}. Revisa cada uno antes de guardar.",
     "rd.personalNone": "No se encontraron correos, teléfonos ni números de ID o tarjeta. Busca nombres y direcciones arriba.",
     "rd.remove": "Quitar esta marca",
-    "rd.hint": "Arrastra sobre una página para tapar cualquier cosa: texto, una firma, una foto. Al guardar, cada página se convierte en una imagen, así que lo que tapaste desaparece para siempre.",
+    "rd.hint": "Arrastra sobre una página para tapar cualquier cosa: texto, una firma, una foto. Al guardar, cada página se convierte en una imagen, así que lo que tapaste desaparece para siempre. El texto que no tapaste sigue siendo buscable.",
     "footer.madeBy": "Diseñado y creado por",
     "footer.feedback": "Reporta un error o sugiere una herramienta",
     "footer.compare": "Alternativas a herramientas conocidas",
@@ -749,7 +750,7 @@
       "title": "Censurar PDF Gratis — Tapar Texto para Siempre | Fizzdoc",
       "description": "Tapa de negro nombres, números, firmas o fotos en un PDF y guarda una copia donde de verdad desaparecen. Funciona en tu navegador; nada se sube. Gratis.",
       "h1": "Censura un PDF: tapa cualquier cosa para siempre",
-      "lede": "Arrastra sobre lo que quieras ocultar, o busca un nombre o número y marca cada coincidencia. Al guardar, cada página se convierte en una imagen, así que el texto oculto no se puede copiar ni recuperar.",
+      "lede": "Arrastra sobre lo que quieras ocultar, o busca un nombre o número y marca cada coincidencia. Al guardar, cada página se convierte en una imagen, así que el texto oculto no se puede copiar ni recuperar, mientras que el resto sigue siendo buscable.",
       "steps": [
         "Añade un archivo PDF.",
         "Arrastra sobre la página para tapar una zona, o escribe una palabra y haz clic en «Marcar todo».",
@@ -762,11 +763,11 @@
         ],
         [
           "¿El texto censurado desaparece de verdad?",
-          "Sí. Fizzdoc vuelve a dibujar cada página como una imagen con tus marcas negras integradas y crea un PDF nuevo a partir de esas imágenes. El texto, las fuentes y los metadatos originales no se copian, así que nada de lo que hay debajo de una marca se puede seleccionar, buscar ni recuperar."
+          "Sí. Fizzdoc vuelve a dibujar cada página como una imagen con tus marcas negras integradas y crea un PDF nuevo a partir de esas imágenes. Las fuentes y los metadatos originales no se copian, y el texto que hay debajo de una marca nunca se vuelve a añadir, así que no se puede seleccionar, buscar ni recuperar."
         ],
         [
           "¿Puedo seguir buscando o copiando el resto del texto?",
-          "No. Cada página se convierte en una imagen, así que el archivo guardado no tiene texto seleccionable. Si necesitas texto buscable de nuevo, pasa el archivo censurado por OCR PDF; las marcas negras seguirán siendo negras."
+          "Sí. El texto que no tapaste se vuelve a añadir como una capa invisible sobre la imagen de cada página, así que puedes buscarlo, seleccionarlo y copiarlo. El texto que hay debajo de una marca se deja fuera, igual que el texto que no se ve en la página, como las palabras ya ocultas bajo un recuadro negro. Para un archivo solo de imágenes, desmarca «Mantener el resto del texto buscable»."
         ],
         [
           "¿Es gratis Fizzdoc?",

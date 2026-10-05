@@ -123,6 +123,7 @@
     "ws.lookColor": "Renkli",
     "ws.lookGray": "Siyah beyaz",
     "ws.lookScanned": "Taranmış (gri, hafif eğik)",
+    "ws.keepText": "Metnin geri kalanını aranabilir tut",
     "ws.wmText": "Filigran metni",
     "ws.wmDefault": "CONFIDENTIAL",
     "ws.opacity": "Saydamlık",
@@ -231,7 +232,7 @@
     "rd.personalFound": "İşaretlenen kişisel bilgi: {n}. Kaydetmeden önce her birini kontrol edin.",
     "rd.personalNone": "E-posta, telefon, kimlik veya kart numarası bulunamadı. Ad ve adresleri yukarıda arayın.",
     "rd.remove": "Bu işareti kaldır",
-    "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur.",
+    "rd.hint": "Bir şeyi örtmek için sayfada sürükleyin: metin, imza, fotoğraf. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece örttüğünüz şey kalıcı olarak kaybolur. Örtmediğiniz metin aranabilir kalır.",
     "footer.madeBy": "Tasarlayan ve geliştiren",
     "footer.feedback": "Hata bildir veya araç öner",
     "footer.compare": "Bilinen araçlara alternatifler",
@@ -749,7 +750,7 @@
       "title": "PDF Karart Ücretsiz — Kalıcı Karartma | Fizzdoc",
       "description": "Bir PDF'deki adları, numaraları, imzaları veya fotoğrafları karartıp gerçekten kaybolduğu bir kopya kaydedin. Tarayıcıda çalışır; yükleme yok. Ücretsiz.",
       "h1": "PDF Karart: her şeyi kalıcı olarak karartın",
-      "lede": "Kaybolması gerekeni sürükleyerek örtün, ya da bir ad veya numara arayıp her eşleşmeyi işaretleyin. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece gizlenen metin kopyalanamaz veya geri getirilemez.",
+      "lede": "Kaybolması gerekeni sürükleyerek örtün, ya da bir ad veya numara arayıp her eşleşmeyi işaretleyin. Kaydettiğinizde her sayfa bir görsele dönüşür, böylece gizlenen metin kopyalanamaz veya geri getirilemez, geri kalanı ise aranabilir kalır.",
       "steps": [
         "Bir PDF dosyası ekleyin.",
         "Bir alanı örtmek için sayfada sürükleyin, ya da bir kelime yazıp “Tümünü işaretle”ye tıklayın.",
@@ -762,11 +763,11 @@
         ],
         [
           "Karartılan metin gerçekten kayboluyor mu?",
-          "Evet. Fizzdoc her sayfayı, siyah işaretleriniz işlenmiş şekilde bir görsel olarak yeniden çizer ve bu görsellerden yeni bir PDF oluşturur. Orijinal metin, yazı tipleri ve belge meta verileri kopyalanmaz, bu yüzden bir işaretin altındaki hiçbir şey seçilemez, aranamaz veya kurtarılamaz."
+          "Evet. Fizzdoc her sayfayı, siyah işaretleriniz işlenmiş şekilde bir görsel olarak yeniden çizer ve bu görsellerden yeni bir PDF oluşturur. Orijinal yazı tipleri ve belge meta verileri kopyalanmaz, bir işaretin altındaki metin de asla geri eklenmez, bu yüzden seçilemez, aranamaz veya kurtarılamaz."
         ],
         [
           "Geri kalan metni hâlâ arayabilir veya kopyalayabilir miyim?",
-          "Hayır. Her sayfa bir görsele dönüşür, bu yüzden kaydedilen dosyada seçilebilir metin kalmaz. Yeniden aranabilir metne ihtiyacınız olursa, karartılmış dosyayı OCR PDF'ten geçirin; siyah işaretler siyah kalır."
+          "Evet. Örtmediğiniz metin, her sayfa görselinin üzerine görünmez bir katman olarak geri eklenir; böylece arayabilir, seçebilir ve kopyalayabilirsiniz. İşaretin altındaki metin dışarıda bırakılır, sayfada görünmeyen metin de öyle, örneğin siyah bir kutunun altında zaten gizlenmiş sözcükler. Yalnızca görsel içeren bir dosya için “Metnin geri kalanını aranabilir tut” seçeneğinin işaretini kaldırın."
         ],
         [
           "Fizzdoc ücretsiz mi?",

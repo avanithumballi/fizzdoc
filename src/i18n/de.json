@@ -123,6 +123,7 @@
     "ws.lookColor": "Farbe",
     "ws.lookGray": "Schwarz-Weiß",
     "ws.lookScanned": "Gescannt (grau, leicht geneigt)",
+    "ws.keepText": "Restlichen Text durchsuchbar lassen",
     "ws.wmText": "Wasserzeichentext",
     "ws.wmDefault": "VERTRAULICH",
     "ws.opacity": "Deckkraft",
@@ -231,7 +232,7 @@
     "rd.personalFound": "Persönliche Daten markiert: {n}. Prüfen Sie jede Markierung vor dem Speichern.",
     "rd.personalNone": "Keine E-Mails, Telefon-, Ausweis- oder Kartennummern gefunden. Suchen Sie Namen und Adressen oben.",
     "rd.remove": "Diese Markierung entfernen",
-    "rd.hint": "Ziehen Sie über eine Seite, um etwas zu bedecken: Text, eine Unterschrift, ein Foto. Beim Speichern wird jede Seite zu einem Bild, sodass das Bedeckte für immer verschwindet.",
+    "rd.hint": "Ziehen Sie über eine Seite, um etwas zu bedecken: Text, eine Unterschrift, ein Foto. Beim Speichern wird jede Seite zu einem Bild, sodass das Bedeckte für immer verschwindet. Der Text, den Sie nicht bedeckt haben, bleibt durchsuchbar.",
     "footer.madeBy": "Entworfen und entwickelt von",
     "footer.feedback": "Fehler melden oder Tool vorschlagen",
     "footer.compare": "Alternativen zu bekannten Tools",
@@ -749,7 +750,7 @@
       "title": "PDF Schwärzen Kostenlos — Text Dauerhaft Entfernen | Fizzdoc",
       "description": "Schwärzen Sie Namen, Nummern, Unterschriften oder Fotos in einem PDF und speichern Sie eine Kopie, in der sie wirklich weg sind. Im Browser; kein Upload.",
       "h1": "PDF schwärzen: alles dauerhaft unkenntlich machen",
-      "lede": "Ziehen Sie über das, was verschwinden soll, oder suchen Sie nach einem Namen oder einer Nummer und markieren Sie jeden Treffer. Beim Speichern wird jede Seite zu einem Bild, sodass der verdeckte Text nicht kopiert oder wiederhergestellt werden kann.",
+      "lede": "Ziehen Sie über das, was verschwinden soll, oder suchen Sie nach einem Namen oder einer Nummer und markieren Sie jeden Treffer. Beim Speichern wird jede Seite zu einem Bild, sodass der verdeckte Text nicht kopiert oder wiederhergestellt werden kann, während der Rest durchsuchbar bleibt.",
       "steps": [
         "Eine PDF-Datei hinzufügen.",
         "Über die Seite ziehen, um einen Bereich zu bedecken, oder ein Wort eingeben und auf „Alle markieren“ klicken.",
@@ -762,11 +763,11 @@
         ],
         [
           "Ist der geschwärzte Text wirklich weg?",
-          "Ja. Fizzdoc zeichnet jede Seite mit Ihren eingebrannten schwarzen Markierungen als Bild neu und baut aus diesen Bildern ein neues PDF. Der ursprüngliche Text, die Schriften und die Dokument-Metadaten werden nicht übernommen, sodass nichts unter einer Markierung ausgewählt, gesucht oder wiederhergestellt werden kann."
+          "Ja. Fizzdoc zeichnet jede Seite mit Ihren eingebrannten schwarzen Markierungen als Bild neu und baut aus diesen Bildern ein neues PDF. Die ursprünglichen Schriften und die Dokument-Metadaten werden nicht übernommen, und Text unter einer Markierung wird nie wieder hinzugefügt, sodass er nicht ausgewählt, gesucht oder wiederhergestellt werden kann."
         ],
         [
           "Kann ich den restlichen Text noch durchsuchen oder kopieren?",
-          "Nein. Jede Seite wird zu einem Bild, sodass die gespeicherte Datei keinen auswählbaren Text mehr hat. Wenn Sie wieder durchsuchbaren Text brauchen, lassen Sie die geschwärzte Datei durch PDF OCR laufen; die schwarzen Markierungen bleiben schwarz."
+          "Ja. Der Text, den Sie nicht bedeckt haben, wird als unsichtbare Ebene über jedem Seitenbild wieder hinzugefügt, sodass Sie ihn durchsuchen, auswählen und kopieren können. Text unter einer Markierung bleibt außen vor, ebenso Text, der auf der Seite nicht zu sehen ist, etwa Wörter, die schon unter einem schwarzen Kasten versteckt sind. Bei einer reinen Bilddatei entfernen Sie das Häkchen bei „Restlichen Text durchsuchbar lassen“."
         ],
         [
           "Ist Fizzdoc kostenlos?",

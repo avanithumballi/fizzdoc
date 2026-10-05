@@ -123,6 +123,7 @@
     "ws.lookColor": "Kleur",
     "ws.lookGray": "Zwart-wit",
     "ws.lookScanned": "Gescand (grijs, licht gekanteld)",
+    "ws.keepText": "Houd de rest van de tekst doorzoekbaar",
     "ws.wmText": "Watermerktekst",
     "ws.wmDefault": "VERTROUWELIJK",
     "ws.opacity": "Dekking",
@@ -231,7 +232,7 @@
     "rd.personalFound": "Persoonsgegevens gemarkeerd: {n}. Controleer ze allemaal voor het opslaan.",
     "rd.personalNone": "Geen e-mails, telefoon-, ID- of kaartnummers gevonden. Zoek namen en adressen hierboven.",
     "rd.remove": "Deze markering verwijderen",
-    "rd.hint": "Sleep over een pagina om iets te bedekken: tekst, een handtekening, een foto. Bij het opslaan wordt elke pagina een afbeelding, dus wat je bedekte is voorgoed weg.",
+    "rd.hint": "Sleep over een pagina om iets te bedekken: tekst, een handtekening, een foto. Bij het opslaan wordt elke pagina een afbeelding, dus wat je bedekte is voorgoed weg. De tekst die je niet hebt bedekt blijft doorzoekbaar.",
     "footer.madeBy": "Ontworpen en gebouwd door",
     "footer.feedback": "Meld een bug of stel een tool voor",
     "footer.compare": "Alternatieven voor bekende tools",
@@ -749,7 +750,7 @@
       "title": "PDF Zwart Lakken Gratis — Definitief, Geen Upload | Fizzdoc",
       "description": "Maak namen, nummers, handtekeningen of foto's in een PDF zwart en sla een kopie op waarin ze echt weg zijn. Werkt in je browser; niets wordt geüpload. Gratis.",
       "h1": "PDF zwart lakken: maak alles voorgoed onleesbaar",
-      "lede": "Sleep over wat moet verdwijnen, of zoek een naam of nummer en markeer elke match. Bij het opslaan wordt elke pagina een afbeelding, dus de verborgen tekst kan niet worden gekopieerd of teruggehaald.",
+      "lede": "Sleep over wat moet verdwijnen, of zoek een naam of nummer en markeer elke match. Bij het opslaan wordt elke pagina een afbeelding, dus de verborgen tekst kan niet worden gekopieerd of teruggehaald, terwijl de rest doorzoekbaar blijft.",
       "steps": [
         "Voeg één PDF-bestand toe.",
         "Sleep over de pagina om een gebied te bedekken, of typ een woord en klik op “Alles markeren”.",
@@ -762,11 +763,11 @@
         ],
         [
           "Is de zwartgelakte tekst echt weg?",
-          "Ja. Fizzdoc tekent elke pagina opnieuw als afbeelding met je zwarte markeringen erin gebrand en bouwt daaruit een nieuw PDF-bestand. De originele tekst, lettertypen en documentmetadata worden niet meegenomen, dus niets onder een markering kan worden geselecteerd, doorzocht of teruggehaald."
+          "Ja. Fizzdoc tekent elke pagina opnieuw als afbeelding met je zwarte markeringen erin gebrand en bouwt daaruit een nieuw PDF-bestand. De originele lettertypen en documentmetadata worden niet meegenomen en tekst onder een markering wordt nooit teruggezet, dus die kan niet worden geselecteerd, doorzocht of teruggehaald."
         ],
         [
           "Kan ik de rest van de tekst nog doorzoeken of kopiëren?",
-          "Nee. Elke pagina wordt een afbeelding, dus het opgeslagen bestand heeft geen selecteerbare tekst meer. Heb je weer doorzoekbare tekst nodig, laat het zwartgelakte bestand dan door OCR PDF lopen; de zwarte markeringen blijven zwart."
+          "Ja. De tekst die je niet hebt bedekt wordt teruggezet als onzichtbare laag over elke paginaafbeelding, zodat je erin kunt zoeken en hem kunt selecteren en kopiëren. Tekst onder een markering blijft weg, net als tekst die niet op de pagina te zien is, zoals woorden die al onder een zwart vak verborgen zitten. Haal bij een bestand met alleen afbeeldingen het vinkje weg bij “Houd de rest van de tekst doorzoekbaar”."
         ],
         [
           "Is Fizzdoc gratis?",
