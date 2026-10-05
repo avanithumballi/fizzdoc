@@ -232,6 +232,8 @@
     "rd.personalFound": "Dados pessoais marcados: {n}. Confira cada um antes de salvar.",
     "rd.personalNone": "Nenhum e-mail, telefone ou número de documento ou cartão encontrado. Pesquise nomes e endereços acima.",
     "rd.remove": "Remover esta marca",
+    "rd.draw": "Desenhar caixas",
+    "rd.touchHint": "Em uma tela sensível ao toque, deslize para rolar. Toque em “Desenhar caixas” para marcar com o dedo e toque de novo para rolar.",
     "rd.hint": "Arraste sobre uma página para cobrir qualquer coisa: texto, uma assinatura, uma foto. Ao salvar, cada página vira uma imagem, então o que você cobriu some de vez. O texto que você não cobriu continua pesquisável.",
     "footer.madeBy": "Projetado e criado por",
     "footer.feedback": "Relate um erro ou sugira uma ferramenta",

@@ -232,6 +232,8 @@
     "rd.personalFound": "Data pribadi ditandai: {n}. Periksa satu per satu sebelum menyimpan.",
     "rd.personalNone": "Tidak ada email, telepon, nomor identitas, atau kartu. Cari nama dan alamat di atas.",
     "rd.remove": "Hapus tanda ini",
+    "rd.draw": "Gambar kotak",
+    "rd.touchHint": "Di layar sentuh, geser untuk menggulir. Ketuk “Gambar kotak” untuk menandai dengan jari, lalu ketuk lagi untuk menggulir.",
     "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya. Teks yang tidak Anda tutup tetap bisa dicari.",
     "footer.madeBy": "Dirancang dan dibuat oleh",
     "footer.feedback": "Laporkan bug atau usulkan alat",

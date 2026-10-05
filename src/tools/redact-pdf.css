@@ -99,7 +99,33 @@
   position: absolute;
   inset: 0;
   cursor: crosshair;
-  touch-action: none; /* a finger draws on the page; scroll in the grey space around it */
+  touch-action: pan-x pan-y pinch-zoom; /* a finger scrolls until "Draw boxes" is on */
+}
+
+.redact-pdf.drawing .redact-overlay {
+  touch-action: none;
+}
+
+.redact-btn[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* The draw switch and its hint only matter on touch screens. */
+.redact-draw,
+.redact-touch-hint {
+  display: none;
+}
+
+@media (any-pointer: coarse) {
+  .redact-draw {
+    display: inline-block;
+  }
+
+  .redact-touch-hint {
+    display: block;
+  }
 }
 
 .redact-box {

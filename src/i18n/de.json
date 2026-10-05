@@ -232,6 +232,8 @@
     "rd.personalFound": "Persönliche Daten markiert: {n}. Prüfen Sie jede Markierung vor dem Speichern.",
     "rd.personalNone": "Keine E-Mails, Telefon-, Ausweis- oder Kartennummern gefunden. Suchen Sie Namen und Adressen oben.",
     "rd.remove": "Diese Markierung entfernen",
+    "rd.draw": "Rahmen zeichnen",
+    "rd.touchHint": "Auf einem Touchscreen wischen Sie zum Scrollen. Tippen Sie auf „Rahmen zeichnen“, um mit dem Finger zu markieren, und erneut, um zu scrollen.",
     "rd.hint": "Ziehen Sie über eine Seite, um etwas zu bedecken: Text, eine Unterschrift, ein Foto. Beim Speichern wird jede Seite zu einem Bild, sodass das Bedeckte für immer verschwindet. Der Text, den Sie nicht bedeckt haben, bleibt durchsuchbar.",
     "footer.madeBy": "Entworfen und entwickelt von",
     "footer.feedback": "Fehler melden oder Tool vorschlagen",

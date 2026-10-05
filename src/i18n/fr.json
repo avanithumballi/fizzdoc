@@ -232,6 +232,8 @@
     "rd.personalFound": "Données personnelles marquées : {n}. Vérifiez chacune avant d’enregistrer.",
     "rd.personalNone": "Aucun e-mail, téléphone ni numéro d’identité ou de carte trouvé. Recherchez les noms et adresses ci-dessus.",
     "rd.remove": "Supprimer cette marque",
+    "rd.draw": "Dessiner des cadres",
+    "rd.touchHint": "Sur un écran tactile, balayez pour faire défiler. Touchez « Dessiner des cadres » pour marquer au doigt, puis touchez à nouveau pour faire défiler.",
     "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon. Le texte que vous n'avez pas couvert reste consultable.",
     "footer.madeBy": "Conçu et développé par",
     "footer.feedback": "Signaler un bug ou proposer un outil",
