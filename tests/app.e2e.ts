@@ -436,12 +436,21 @@ test('finds and marks personal details in one click, and leaves amounts and date
     expect(onLine, `mark at ${middle}`).toBe(true);
   }
 
-  // A second click marks nothing twice.
-  await page.getByRole('button', { name: 'Find personal info' }).click();
+  // The button stays on while its marks are there; a second click takes them off again.
+  const personal = page.getByRole('button', { name: 'Find personal info' });
+  await expect(personal).toHaveAttribute('aria-pressed', 'true');
+  await personal.click();
+  await expect(marks).toHaveCount(0);
+  await expect(personal).toHaveAttribute('aria-pressed', 'false');
+  await page.getByRole('button', { name: 'Undo' }).click();
+  await expect(marks).toHaveCount(3);
+  await expect(personal).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Clear all' }).click();
+  await expect(personal).toHaveAttribute('aria-pressed', 'false');
+  // Found again, nothing is marked twice.
+  await personal.click();
   await expect(page.locator('.redact-count')).toHaveText('Personal details marked: 3. Check each one before saving.');
   await expect(marks).toHaveCount(3);
-  await page.getByRole('button', { name: 'Undo' }).click();
-  await expect(marks).toHaveCount(0);
 });
 
 test('transcribes speech on the device, with a one-time setup, and writes text and subtitles', async ({ page, baseURL }) => {

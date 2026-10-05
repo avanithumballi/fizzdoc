@@ -142,6 +142,7 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
   find.append(search, markAll);
   const personal = button(t('rd.personal'));
   personal.title = t('rd.personalHint');
+  personal.setAttribute('aria-pressed', 'false');
   // On touch screens a finger scrolls by default; this switch makes it draw instead.
   const draw = button(t('rd.draw'), 'redact-btn redact-draw');
   draw.setAttribute('aria-pressed', 'false');
@@ -186,9 +187,16 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
     refresh();
   };
 
+  const same = (a: Box, b: Box) => a.x0 === b.x0 && a.y0 === b.y0 && a.x1 === b.x1 && a.y1 === b.y1;
+  // What "Find personal info" marked last, so the button shows as on while those marks are there
+  // and a second tap takes them off again.
+  let personalFound: Box[][] = [];
+  const isPersonal = (box: Box, index: number) => personalFound[index]?.some((found) => same(found, box));
+
   function refresh() {
     const total = marks.reduce((sum, page) => sum + page.length, 0);
     count.textContent = t('rd.count', { n: total });
+    personal.setAttribute('aria-pressed', String(marks.some((page, i) => page.some((box) => isPersonal(box, i)))));
     undo.disabled = !history.length;
     clear.disabled = !total;
     views.forEach(drawMarks);
@@ -293,7 +301,7 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
     observer.observe(wrapper);
   }
 
-  /** Marks what `find` picks out of every page's text; returns how many marks were added. */
+  /** Marks what `find` picks out of every page's text; returns every match, per page. */
   async function markEverywhere(find: Finder, busy: HTMLButtonElement) {
     busy.disabled = true;
     const found: Box[][] = [];
@@ -309,22 +317,28 @@ export async function openRedactor(file: File, viewer: HTMLElement): Promise<Red
       busy.disabled = false;
     }
     // Running the same search twice marks nothing twice.
-    const same = (a: Box, b: Box) => a.x0 === b.x0 && a.y0 === b.y0 && a.x1 === b.x1 && a.y1 === b.y1;
     const fresh = found.map((page, i) => page.filter((box) => !marks[i].some((mark) => same(mark, box))));
     if (fresh.some((page) => page.length)) change(marks.map((page, i) => [...page, ...fresh[i]]));
-    return found.reduce((sum, page) => sum + page.length, 0);
+    return found;
   }
+  const sum = (pages: Box[][]) => pages.reduce((total, page) => total + page.length, 0);
 
   find.onsubmit = async (event) => {
     event.preventDefault();
     const query = search.value.trim();
     if (!query) return;
-    const total = await markEverywhere(occurrences(query), markAll);
+    const total = sum(await markEverywhere(occurrences(query), markAll));
     count.textContent = total ? t('rd.found', { n: total }) : t('rd.none', { text: query });
   };
   personal.onclick = async () => {
-    const total = await markEverywhere(personalData, personal);
-    count.textContent = total ? t('rd.personalFound', { n: total }) : t('rd.personalNone');
+    if (personal.getAttribute('aria-pressed') === 'true') {
+      change(marks.map((page, i) => page.filter((box) => !isPersonal(box, i))));
+      return;
+    }
+    const found = await markEverywhere(personalData, personal);
+    personalFound = found;
+    refresh();
+    count.textContent = sum(found) ? t('rd.personalFound', { n: sum(found) }) : t('rd.personalNone');
   };
   undo.onclick = () => {
     marks = history.pop() ?? marks;
