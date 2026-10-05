@@ -327,7 +327,12 @@ test('redacts marked areas for good and turns PDFs into scanned PDFs', async ({ 
   await expect(page.locator('#status')).toContainText('2 pages');
   const redacted = await downloadBytes(page);
   expect(redacted.name).toBe('rich-text-redacted.pdf');
-  expect(await pdfText(redacted.bytes)).toEqual(['', '']);
+  // The text outside the marks stays searchable; the marked heading is gone.
+  const [first, second] = await pdfText(redacted.bytes);
+  expect(first).toContain('Annual Report');
+  expect(first).toContain('Second paragraph here after a gap.');
+  expect(first).not.toMatch(/section one/i);
+  expect(second).toBe('Page two content.');
 
   await page.goto('/pdf-to-scanned-pdf/');
   await page.locator('#file-input').setInputFiles(fixture('rich-text'));
@@ -339,6 +344,35 @@ test('redacts marked areas for good and turns PDFs into scanned PDFs', async ({ 
   expect(await pdfText(scanned.bytes)).toEqual(['', '']);
   expect(seen.violations).toEqual([]);
   expect(seen.requests.filter((r) => !r.url.startsWith(page.url().split('/').slice(0, 3).join('/')))).toEqual([]);
+});
+
+test('keeps only the text that shows outside the marks, or none when asked', async ({ page }) => {
+  const { StandardFonts, rgb } = await import('pdf-lib');
+  const doc = await PDFDocument.create();
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const sheet = doc.addPage([595, 842]);
+  sheet.drawText('Invoice for Asha Verma', { x: 50, y: 780, size: 18, font });
+  sheet.drawText('Card 4111 1111 1111 1111', { x: 50, y: 740, size: 18, font });
+  // An old "redaction" that only covers the words, and text in white on white: neither shows on the page.
+  sheet.drawText('Salary 98,000', { x: 50, y: 700, size: 18, font });
+  sheet.drawRectangle({ x: 45, y: 694, width: 200, height: 26, color: rgb(0, 0, 0) });
+  sheet.drawText('Invisible note', { x: 50, y: 660, size: 18, font, color: rgb(1, 1, 1) });
+  sheet.drawText('X', { x: 50, y: 620, size: 18, font, color: rgb(1, 1, 1) });
+  sheet.drawText('Paid by cheque 556677', { x: 50, y: 580, size: 18, font });
+  sheet.drawRectangle({ x: 115, y: 574, width: 200, height: 26, color: rgb(0, 0, 0) });
+  const file = { name: 'invoice.pdf', mimeType: 'application/pdf', buffer: Buffer.from(await doc.save()) };
+
+  await page.goto('/redact-pdf/');
+  await page.locator('#file-input').setInputFiles(file);
+  await page.getByRole('button', { name: 'Find personal info' }).click();
+  await expect(page.locator('.redact-count')).toHaveText('Personal details marked: 1. Check each one before saving.');
+  await page.getByRole('button', { name: 'Save redacted PDF' }).click();
+  const [text] = await pdfText((await downloadBytes(page)).bytes);
+  expect(text).toBe('Invoice for Asha Verma');
+
+  await page.getByLabel('Keep the rest of the text searchable').uncheck();
+  await page.getByRole('button', { name: 'Save redacted PDF' }).click();
+  expect(await pdfText((await downloadBytes(page)).bytes)).toEqual(['']);
 });
 
 test('scrolls the redact pages with a finger, and draws with one after “Draw boxes”', async ({ browser }) => {

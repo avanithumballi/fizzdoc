@@ -123,6 +123,7 @@
     "ws.lookColor": "Kolor",
     "ws.lookGray": "Czarno-biały",
     "ws.lookScanned": "Zeskanowany (szary, lekko przekrzywiony)",
+    "ws.keepText": "Zachowaj resztę tekstu przeszukiwalną",
     "ws.wmText": "Tekst znaku wodnego",
     "ws.wmDefault": "POUFNE",
     "ws.opacity": "Krycie",
@@ -233,7 +234,7 @@
     "rd.remove": "Usuń ten znacznik",
     "rd.draw": "Rysuj ramki",
     "rd.touchHint": "Na ekranie dotykowym przesuń palcem, aby przewijać. Stuknij „Rysuj ramki”, aby zaznaczać palcem, i stuknij ponownie, aby przewijać.",
-    "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre.",
+    "rd.hint": "Przeciągnij po stronie, aby zakryć cokolwiek: tekst, podpis, zdjęcie. Po zapisaniu każda strona staje się obrazem, więc to, co zakryjesz, znika na dobre. Tekst, którego nie zakryjesz, pozostaje przeszukiwalny.",
     "footer.madeBy": "Zaprojektował i zbudował",
     "footer.feedback": "Zgłoś błąd lub zaproponuj narzędzie",
     "footer.compare": "Alternatywy dla znanych narzędzi",
@@ -751,7 +752,7 @@
       "title": "Cenzuruj PDF za Darmo — Trwałe Zaczernienie | Fizzdoc",
       "description": "Zaczernij imiona, numery, podpisy albo zdjęcia w PDF i zapisz kopię, w której naprawdę znikają. Działa w przeglądarce; nic nie jest przesyłane. Za darmo.",
       "h1": "Cenzuruj PDF: zaczernij cokolwiek na zawsze",
-      "lede": "Przeciągnij po tym, co ma zniknąć, albo wyszukaj imię lub numer i zaznacz każde dopasowanie. Po zapisaniu każda strona staje się obrazem, więc ukrytego tekstu nie da się skopiować ani odzyskać.",
+      "lede": "Przeciągnij po tym, co ma zniknąć, albo wyszukaj imię lub numer i zaznacz każde dopasowanie. Po zapisaniu każda strona staje się obrazem, więc ukrytego tekstu nie da się skopiować ani odzyskać, a reszta pozostaje przeszukiwalna.",
       "steps": [
         "Dodaj jeden plik PDF.",
         "Przeciągnij po stronie, aby zakryć obszar, albo wpisz słowo i kliknij „Zaznacz wszystko”.",
@@ -764,11 +765,11 @@
         ],
         [
           "Czy ocenzurowany tekst naprawdę znika?",
-          "Tak. Fizzdoc rysuje każdą stronę od nowa jako obraz z wypalonymi czarnymi znacznikami i buduje z tych obrazów nowy PDF. Oryginalny tekst, czcionki i metadane dokumentu nie są kopiowane, więc nic pod znacznikiem nie da się zaznaczyć, wyszukać ani odzyskać."
+          "Tak. Fizzdoc rysuje każdą stronę od nowa jako obraz z wypalonymi czarnymi znacznikami i buduje z tych obrazów nowy PDF. Oryginalne czcionki i metadane dokumentu nie są kopiowane, a tekst pod znacznikiem nigdy nie jest dodawany z powrotem, więc nie da się go zaznaczyć, wyszukać ani odzyskać."
         ],
         [
           "Czy mogę nadal przeszukiwać lub kopiować resztę tekstu?",
-          "Nie. Każda strona staje się obrazem, więc zapisany plik nie ma tekstu do zaznaczenia. Jeśli znów potrzebujesz przeszukiwalnego tekstu, przepuść ocenzurowany plik przez OCR PDF; czarne znaczniki zostaną czarne."
+          "Tak. Tekst, którego nie zakryjesz, jest dodawany z powrotem jako niewidoczna warstwa nad obrazem każdej strony, więc możesz go przeszukiwać, zaznaczać i kopiować. Tekst pod znacznikiem jest pomijany, podobnie jak tekst niewidoczny na stronie, na przykład słowa już ukryte pod czarnym prostokątem. W pliku zawierającym tylko obrazy odznacz „Zachowaj resztę tekstu przeszukiwalną”."
         ],
         [
           "Czy Fizzdoc jest darmowy?",

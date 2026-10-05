@@ -123,6 +123,7 @@
     "ws.lookColor": "Colore",
     "ws.lookGray": "Bianco e nero",
     "ws.lookScanned": "Scansionato (grigio, leggermente inclinato)",
+    "ws.keepText": "Mantieni ricercabile il resto del testo",
     "ws.wmText": "Testo della filigrana",
     "ws.wmDefault": "RISERVATO",
     "ws.opacity": "Opacità",
@@ -233,7 +234,7 @@
     "rd.remove": "Rimuovi questo segno",
     "rd.draw": "Disegna riquadri",
     "rd.touchHint": "Su uno schermo touch, scorri con il dito. Tocca «Disegna riquadri» per segnare con il dito e toccalo di nuovo per scorrere.",
-    "rd.hint": "Trascina su una pagina per coprire qualsiasi cosa: testo, una firma, una foto. Al salvataggio, ogni pagina diventa un'immagine, quindi ciò che hai coperto sparisce per sempre.",
+    "rd.hint": "Trascina su una pagina per coprire qualsiasi cosa: testo, una firma, una foto. Al salvataggio, ogni pagina diventa un'immagine, quindi ciò che hai coperto sparisce per sempre. Il testo che non hai coperto resta ricercabile.",
     "footer.madeBy": "Progettato e sviluppato da",
     "footer.feedback": "Segnala un bug o suggerisci uno strumento",
     "footer.compare": "Alternative a strumenti noti",
@@ -751,7 +752,7 @@
       "title": "Censurare PDF Gratis — Coprire il Testo per Sempre | Fizzdoc",
       "description": "Annerisci nomi, numeri, firme o foto in un PDF e salva una copia in cui sono davvero spariti. Funziona nel browser; niente viene caricato. Gratis.",
       "h1": "Oscura un PDF: annerisci qualsiasi cosa per sempre",
-      "lede": "Trascina su ciò che deve sparire, oppure cerca un nome o un numero e segna ogni corrispondenza. Al salvataggio, ogni pagina diventa un'immagine, quindi il testo coperto non può essere copiato né recuperato.",
+      "lede": "Trascina su ciò che deve sparire, oppure cerca un nome o un numero e segna ogni corrispondenza. Al salvataggio, ogni pagina diventa un'immagine, quindi il testo coperto non può essere copiato né recuperato, mentre il resto resta ricercabile.",
       "steps": [
         "Aggiungi un file PDF.",
         "Trascina sulla pagina per coprire un’area, oppure digita una parola e clicca su “Segna tutto”.",
@@ -764,11 +765,11 @@
         ],
         [
           "Il testo oscurato sparisce davvero?",
-          "Sì. Fizzdoc ridisegna ogni pagina come immagine con i tuoi segni neri incorporati e crea un nuovo PDF da quelle immagini. Il testo, i font e i metadati originali non vengono copiati, quindi nulla sotto un segno può essere selezionato, cercato o recuperato."
+          "Sì. Fizzdoc ridisegna ogni pagina come immagine con i tuoi segni neri incorporati e crea un nuovo PDF da quelle immagini. I font e i metadati originali non vengono copiati, e il testo sotto un segno non viene mai riaggiunto, quindi non può essere selezionato, cercato o recuperato."
         ],
         [
           "Posso ancora cercare o copiare il resto del testo?",
-          "No. Ogni pagina diventa un'immagine, quindi il file salvato non ha testo selezionabile. Se ti serve di nuovo testo ricercabile, passa il file oscurato per OCR PDF; i segni neri resteranno neri."
+          "Sì. Il testo che non hai coperto viene riaggiunto come livello invisibile sopra l'immagine di ogni pagina, così puoi cercarlo, selezionarlo e copiarlo. Il testo sotto un segno viene escluso, così come il testo che non si vede nella pagina, ad esempio le parole già nascoste sotto un riquadro nero. Per un file di sole immagini, deseleziona «Mantieni ricercabile il resto del testo»."
         ],
         [
           "Fizzdoc è gratuito?",

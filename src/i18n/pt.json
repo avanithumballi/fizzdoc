@@ -123,6 +123,7 @@
     "ws.lookColor": "Colorido",
     "ws.lookGray": "Preto e branco",
     "ws.lookScanned": "Escaneado (cinza, levemente inclinado)",
+    "ws.keepText": "Manter o resto do texto pesquisável",
     "ws.wmText": "Texto da marca d'água",
     "ws.wmDefault": "CONFIDENCIAL",
     "ws.opacity": "Opacidade",
@@ -233,7 +234,7 @@
     "rd.remove": "Remover esta marca",
     "rd.draw": "Desenhar caixas",
     "rd.touchHint": "Em uma tela sensível ao toque, deslize para rolar. Toque em “Desenhar caixas” para marcar com o dedo e toque de novo para rolar.",
-    "rd.hint": "Arraste sobre uma página para cobrir qualquer coisa: texto, uma assinatura, uma foto. Ao salvar, cada página vira uma imagem, então o que você cobriu some de vez.",
+    "rd.hint": "Arraste sobre uma página para cobrir qualquer coisa: texto, uma assinatura, uma foto. Ao salvar, cada página vira uma imagem, então o que você cobriu some de vez. O texto que você não cobriu continua pesquisável.",
     "footer.madeBy": "Projetado e criado por",
     "footer.feedback": "Relate um erro ou sugira uma ferramenta",
     "footer.compare": "Alternativas a ferramentas conhecidas",
@@ -751,7 +752,7 @@
       "title": "Censurar PDF Grátis — Apagar Texto de Vez | Fizzdoc",
       "description": "Cubra nomes, números, assinaturas ou fotos em um PDF com preto e salve uma cópia onde eles realmente somem. Roda no seu navegador; nada é enviado. Grátis.",
       "h1": "Censure um PDF: cubra qualquer coisa de vez",
-      "lede": "Arraste sobre o que precisa sumir, ou busque um nome ou número e marque cada ocorrência. Ao salvar, cada página vira uma imagem, então o texto coberto não pode ser copiado nem recuperado.",
+      "lede": "Arraste sobre o que precisa sumir, ou busque um nome ou número e marque cada ocorrência. Ao salvar, cada página vira uma imagem, então o texto coberto não pode ser copiado nem recuperado, e o restante continua pesquisável.",
       "steps": [
         "Adicione um arquivo PDF.",
         "Arraste na página para cobrir uma área, ou digite uma palavra e clique em “Marcar tudo”.",
@@ -764,11 +765,11 @@
         ],
         [
           "O texto censurado realmente some?",
-          "Sim. O Fizzdoc redesenha cada página como uma imagem com suas marcas pretas já aplicadas e monta um novo PDF a partir dessas imagens. O texto, as fontes e os metadados originais não são copiados, então nada sob uma marca pode ser selecionado, buscado ou recuperado."
+          "Sim. O Fizzdoc redesenha cada página como uma imagem com suas marcas pretas já aplicadas e monta um novo PDF a partir dessas imagens. As fontes e os metadados originais não são copiados, e o texto sob uma marca nunca é adicionado de volta, então ele não pode ser selecionado, buscado ou recuperado."
         ],
         [
           "Ainda dá para buscar ou copiar o resto do texto?",
-          "Não. Cada página vira uma imagem, então o arquivo salvo não tem texto selecionável. Se precisar de texto pesquisável de novo, rode o arquivo censurado pelo OCR PDF; as marcas pretas continuam pretas."
+          "Sim. O texto que você não cobriu é adicionado de volta como uma camada invisível sobre a imagem de cada página, então você pode pesquisar, selecionar e copiar. O texto sob uma marca fica de fora, assim como o texto que não aparece na página, como palavras já escondidas sob uma caixa preta. Para um arquivo só de imagem, desmarque “Manter o resto do texto pesquisável”."
         ],
         [
           "O Fizzdoc é gratuito?",

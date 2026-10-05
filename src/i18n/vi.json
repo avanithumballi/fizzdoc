@@ -123,6 +123,7 @@
     "ws.lookColor": "Có màu",
     "ws.lookGray": "Đen trắng",
     "ws.lookScanned": "Dạng scan (xám, hơi nghiêng)",
+    "ws.keepText": "Giữ phần văn bản còn lại có thể tìm kiếm",
     "ws.wmText": "Nội dung watermark",
     "ws.wmDefault": "CONFIDENTIAL",
     "ws.opacity": "Độ mờ",
@@ -233,7 +234,7 @@
     "rd.remove": "Xóa vết đánh dấu này",
     "rd.draw": "Vẽ khung",
     "rd.touchHint": "Trên màn hình cảm ứng, vuốt để cuộn. Chạm “Vẽ khung” để đánh dấu bằng ngón tay, chạm lại để cuộn.",
-    "rd.hint": "Kéo trên một trang để che bất cứ thứ gì: văn bản, chữ ký, ảnh. Khi lưu, mỗi trang trở thành một hình ảnh, nên phần bạn che sẽ biến mất vĩnh viễn.",
+    "rd.hint": "Kéo trên một trang để che bất cứ thứ gì: văn bản, chữ ký, ảnh. Khi lưu, mỗi trang trở thành một hình ảnh, nên phần bạn che sẽ biến mất vĩnh viễn. Phần văn bản bạn không che vẫn có thể tìm kiếm.",
     "footer.madeBy": "Thiết kế và phát triển bởi",
     "footer.feedback": "Báo lỗi hoặc đề xuất công cụ",
     "footer.compare": "Lựa chọn thay thế cho công cụ quen thuộc",
@@ -751,7 +752,7 @@
       "title": "Che Đen PDF Miễn Phí — Xóa Vĩnh Viễn | Fizzdoc",
       "description": "Che đen tên, số, chữ ký hoặc ảnh trong PDF và lưu một bản mà chúng thực sự biến mất. Chạy trong trình duyệt của bạn; không tải lên. Miễn phí.",
       "h1": "Che đen PDF: xóa vĩnh viễn bất cứ thứ gì",
-      "lede": "Kéo lên phần cần biến mất, hoặc tìm một tên hay số rồi đánh dấu mọi kết quả khớp. Khi lưu, mỗi trang trở thành một hình ảnh, nên văn bản bị che không thể sao chép hay khôi phục.",
+      "lede": "Kéo lên phần cần biến mất, hoặc tìm một tên hay số rồi đánh dấu mọi kết quả khớp. Khi lưu, mỗi trang trở thành một hình ảnh, nên văn bản bị che không thể sao chép hay khôi phục, trong khi phần còn lại vẫn có thể tìm kiếm.",
       "steps": [
         "Thêm một tệp PDF.",
         "Kéo trên trang để che một vùng, hoặc gõ một từ rồi bấm “Đánh dấu tất cả”.",
@@ -764,11 +765,11 @@
         ],
         [
           "Văn bản bị che đen có thực sự biến mất không?",
-          "Có. Fizzdoc vẽ lại mỗi trang thành một hình ảnh với các vết đen đã được in cố định vào, rồi tạo một PDF mới từ những hình ảnh đó. Văn bản, phông chữ và metadata gốc không được sao chép, nên không thể chọn, tìm kiếm hay khôi phục bất cứ thứ gì bên dưới vết che."
+          "Có. Fizzdoc vẽ lại mỗi trang thành một hình ảnh với các vết đen đã được in cố định vào, rồi tạo một PDF mới từ những hình ảnh đó. Phông chữ và metadata gốc không được sao chép, và văn bản bên dưới vết che không bao giờ được thêm lại, nên không thể chọn, tìm kiếm hay khôi phục."
         ],
         [
           "Tôi có còn tìm kiếm hoặc sao chép được phần văn bản còn lại không?",
-          "Không. Mỗi trang trở thành một hình ảnh, nên tệp đã lưu không còn văn bản có thể chọn được. Nếu cần văn bản có thể tìm kiếm lại, hãy chạy tệp đã che đen qua OCR PDF; các vết đen sẽ vẫn giữ nguyên màu đen."
+          "Có. Phần văn bản bạn không che được thêm lại dưới dạng một lớp vô hình phủ lên hình ảnh của mỗi trang, nên bạn có thể tìm kiếm, chọn và sao chép. Văn bản bên dưới vết che bị loại ra, cả văn bản không hiển thị trên trang, như những chữ đã bị ẩn dưới một khung đen. Với tệp chỉ có hình ảnh, hãy bỏ chọn “Giữ phần văn bản còn lại có thể tìm kiếm”."
         ],
         [
           "Fizzdoc có miễn phí không?",

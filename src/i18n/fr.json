@@ -123,6 +123,7 @@
     "ws.lookColor": "Couleur",
     "ws.lookGray": "Noir et blanc",
     "ws.lookScanned": "Scanné (gris, légèrement incliné)",
+    "ws.keepText": "Garder le reste du texte consultable",
     "ws.wmText": "Texte du filigrane",
     "ws.wmDefault": "CONFIDENTIEL",
     "ws.opacity": "Opacité",
@@ -233,7 +234,7 @@
     "rd.remove": "Supprimer cette marque",
     "rd.draw": "Dessiner des cadres",
     "rd.touchHint": "Sur un écran tactile, balayez pour faire défiler. Touchez « Dessiner des cadres » pour marquer au doigt, puis touchez à nouveau pour faire défiler.",
-    "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon.",
+    "rd.hint": "Faites glisser sur une page pour couvrir n'importe quoi : du texte, une signature, une photo. À l'enregistrement, chaque page devient une image, donc ce que vous avez couvert disparaît pour de bon. Le texte que vous n'avez pas couvert reste consultable.",
     "footer.madeBy": "Conçu et développé par",
     "footer.feedback": "Signaler un bug ou proposer un outil",
     "footer.compare": "Alternatives aux outils connus",
@@ -751,7 +752,7 @@
       "title": "Caviarder un PDF Gratuit — Masquer le Texte Définitivement | Fizzdoc",
       "description": "Noircissez des noms, numéros, signatures ou photos dans un PDF et gardez une copie où ils ont vraiment disparu. Dans votre navigateur ; rien n'est envoyé.",
       "h1": "Caviarder un PDF : noircir n'importe quoi pour de bon",
-      "lede": "Faites glisser sur ce qui doit disparaître, ou recherchez un nom ou un numéro et marquez chaque occurrence. À l'enregistrement, chaque page devient une image, si bien que le texte masqué ne peut plus être copié ni récupéré.",
+      "lede": "Faites glisser sur ce qui doit disparaître, ou recherchez un nom ou un numéro et marquez chaque occurrence. À l'enregistrement, chaque page devient une image, si bien que le texte masqué ne peut plus être copié ni récupéré, tandis que le reste demeure consultable.",
       "steps": [
         "Ajoutez un fichier PDF.",
         "Faites glisser sur la page pour couvrir une zone, ou tapez un mot et cliquez sur « Tout marquer ».",
@@ -764,11 +765,11 @@
         ],
         [
           "Le texte caviardé a-t-il vraiment disparu ?",
-          "Oui. Fizzdoc redessine chaque page en image avec vos marques noires intégrées et construit un nouveau PDF à partir de ces images. Le texte, les polices et les métadonnées d'origine ne sont pas copiés, donc rien sous une marque ne peut être sélectionné, recherché ou récupéré."
+          "Oui. Fizzdoc redessine chaque page en image avec vos marques noires intégrées et construit un nouveau PDF à partir de ces images. Les polices et les métadonnées d'origine ne sont pas copiées, et le texte sous une marque n'est jamais rajouté, donc il ne peut pas être sélectionné, recherché ou récupéré."
         ],
         [
           "Puis-je encore rechercher ou copier le reste du texte ?",
-          "Non. Chaque page devient une image, donc le fichier enregistré n'a aucun texte sélectionnable. Si vous avez besoin de texte à nouveau consultable, passez le fichier caviardé dans OCR PDF ; les marques noires resteront noires."
+          "Oui. Le texte que vous n'avez pas couvert est rajouté sous forme de calque invisible sur l'image de chaque page, ce qui permet de le rechercher, de le sélectionner et de le copier. Le texte sous une marque est exclu, tout comme le texte qui ne s'affiche pas sur la page, par exemple des mots déjà cachés sous un rectangle noir. Pour un fichier composé uniquement d'images, décochez « Garder le reste du texte consultable »."
         ],
         [
           "Est-ce que Fizzdoc est gratuit ?",

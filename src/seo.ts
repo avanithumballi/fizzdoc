@@ -241,7 +241,9 @@ function optionsHtml(c: Copy, tool: Tool) {
   const quality = (value: number) => range(c.t('ws.quality'), 'quality', value, 10, 100);
   if (tool.op === 'redact-pdf' || tool.op === 'scan-pdf')
     return `<label>${esc(c.t('ws.quality'))}<select name="dpi">${option('150', c.t('ws.dpiStandard'))}${option('300', c.t('ws.dpiHigh'))}</select></label>
-    <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>`;
+    <label>${esc(c.t('ws.look'))}<select name="look">${option('color', c.t('ws.lookColor'))}${option('gray', c.t('ws.lookGray'))}${option('scanned', c.t('ws.lookScanned'), tool.op === 'scan-pdf')}</select></label>${
+      tool.op === 'redact-pdf' ? `\n    <label class="check"><input name="keepText" type="checkbox" checked> ${esc(c.t('ws.keepText'))}</label>` : ''
+    }`;
   if (tool.op === 'mermaid-image')
     return `<label class="code">${esc(c.t('ws.mermaidCode'))}<textarea name="code" rows="9" spellcheck="false" autocapitalize="off" autocomplete="off">${esc(MERMAID_SAMPLE)}</textarea></label>
     <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('png', c.t('ws.fmtPng'))}${option('svg', c.t('ws.fmtSvg'), tool.preset?.format === 'svg')}</select></label>

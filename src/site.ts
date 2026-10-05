@@ -680,7 +680,7 @@ TOOLS.push(
     description:
       'Black out names, numbers, signatures or photos in a PDF and save a copy where they are really gone. Runs in your browser; nothing is uploaded. Free.',
     h1: 'Redact a PDF: black out anything, for good',
-    lede: 'Drag over what should disappear, or search for a name or number and mark every match. When you save, each page becomes an image, so the hidden text can’t be copied or recovered.',
+    lede: 'Drag over what should disappear, or search for a name or number and mark every match. When you save, each page becomes an image, so the hidden text can’t be copied or recovered, while the rest stays searchable.',
     steps: [
       'Add one PDF file.',
       'Drag on a page to cover an area, or type a word and click “Mark all”.',
@@ -690,11 +690,11 @@ TOOLS.push(
       PRIVACY_FAQ[0],
       [
         'Is the redacted text really gone?',
-        'Yes. Fizzdoc redraws every page as an image with your black marks burned in and builds a new PDF from those images. The original text, fonts and document metadata are not copied, so nothing under a mark can be selected, searched or recovered.',
+        'Yes. Fizzdoc redraws every page as an image with your black marks burned in and builds a new PDF from those images. The original fonts and document metadata are not copied, and text under a mark is never added back, so it can’t be selected, searched or recovered.',
       ],
       [
         'Can I still search or copy the rest of the text?',
-        'No. Every page becomes an image, so the saved file has no selectable text. If you need searchable text again, run the redacted file through OCR PDF; the black marks stay black.',
+        'Yes. The text you didn’t cover is added back as an invisible layer over each page image, so you can search, select and copy it. Text under a mark is left out, and so is text that doesn’t show on the page, such as words already hidden under a black box. For an image-only file, untick “Keep the rest of the text searchable”.',
       ],
       PRIVACY_FAQ[1],
     ],

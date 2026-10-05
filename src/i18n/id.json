@@ -123,6 +123,7 @@
     "ws.lookColor": "Berwarna",
     "ws.lookGray": "Hitam putih",
     "ws.lookScanned": "Hasil scan (abu-abu, sedikit miring)",
+    "ws.keepText": "Pertahankan sisa teks agar bisa dicari",
     "ws.wmText": "Teks watermark",
     "ws.wmDefault": "RAHASIA",
     "ws.opacity": "Opasitas",
@@ -233,7 +234,7 @@
     "rd.remove": "Hapus tanda ini",
     "rd.draw": "Gambar kotak",
     "rd.touchHint": "Di layar sentuh, geser untuk menggulir. Ketuk “Gambar kotak” untuk menandai dengan jari, lalu ketuk lagi untuk menggulir.",
-    "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya.",
+    "rd.hint": "Seret pada halaman untuk menutup apa saja: teks, tanda tangan, foto. Saat disimpan, setiap halaman menjadi gambar, jadi yang Anda tutup akan hilang selamanya. Teks yang tidak Anda tutup tetap bisa dicari.",
     "footer.madeBy": "Dirancang dan dibuat oleh",
     "footer.feedback": "Laporkan bug atau usulkan alat",
     "footer.compare": "Alternatif untuk alat yang sudah dikenal",
@@ -751,7 +752,7 @@
       "title": "Sensor PDF Gratis — Hitamkan Permanen | Fizzdoc",
       "description": "Hitamkan nama, nomor, tanda tangan, atau foto di PDF dan simpan salinan yang benar-benar menghilangkannya. Berjalan di browser Anda; tanpa upload. Gratis.",
       "h1": "Sensor PDF: hitamkan apa saja selamanya",
-      "lede": "Seret area yang harus hilang, atau cari nama atau nomor lalu tandai setiap kecocokan. Saat disimpan, setiap halaman menjadi gambar, jadi teks yang disembunyikan tidak bisa disalin atau dipulihkan.",
+      "lede": "Seret area yang harus hilang, atau cari nama atau nomor lalu tandai setiap kecocokan. Saat disimpan, setiap halaman menjadi gambar, jadi teks yang disembunyikan tidak bisa disalin atau dipulihkan, sementara sisanya tetap bisa dicari.",
       "steps": [
         "Tambahkan satu file PDF.",
         "Seret pada halaman untuk menutup area, atau ketik kata lalu klik “Tandai semua”.",
@@ -764,11 +765,11 @@
         ],
         [
           "Apakah teks yang disensor benar-benar hilang?",
-          "Ya. Fizzdoc menggambar ulang setiap halaman sebagai gambar dengan tanda hitam Anda tertanam di dalamnya dan membuat PDF baru dari gambar-gambar itu. Teks asli, font, dan metadata dokumen tidak disalin, jadi apa pun di bawah tanda tidak bisa dipilih, dicari, atau dipulihkan."
+          "Ya. Fizzdoc menggambar ulang setiap halaman sebagai gambar dengan tanda hitam Anda tertanam di dalamnya dan membuat PDF baru dari gambar-gambar itu. Font dan metadata dokumen asli tidak disalin, dan teks di bawah tanda tidak pernah ditambahkan kembali, jadi tidak bisa dipilih, dicari, atau dipulihkan."
         ],
         [
           "Apakah saya masih bisa mencari atau menyalin teks yang lain?",
-          "Tidak. Setiap halaman menjadi gambar, jadi file yang disimpan tidak punya teks yang bisa dipilih. Jika butuh teks yang bisa dicari lagi, jalankan file yang disensor lewat OCR PDF; tanda hitamnya akan tetap hitam."
+          "Ya. Teks yang tidak Anda tutup ditambahkan kembali sebagai lapisan tak terlihat di atas gambar setiap halaman, jadi Anda bisa mencari, memilih, dan menyalinnya. Teks di bawah tanda tidak disertakan, begitu juga teks yang tidak tampak di halaman, seperti kata-kata yang sudah tersembunyi di bawah kotak hitam. Untuk file berisi gambar saja, hapus centang pada “Pertahankan sisa teks agar bisa dicari”."
         ],
         [
           "Apakah Fizzdoc gratis?",
