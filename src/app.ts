@@ -120,7 +120,7 @@ function setUp(op: ToolOp) {
   // Every tool that runs outside the qpdf worker. Engines load on first use.
   const LOCAL: Partial<Record<ToolOp, LocalJob>> = {
     'jpg-to-pdf': async (f) => (await import('./engine/local')).imagesToPdf(f),
-    'pdf-to-jpg': async (f, o) => (await import('./engine/local')).pdfToImages(f[0], o.format === 'png' ? 'png' : 'jpg'),
+        'pdf-to-jpg': async (f, o) => (await import('./engine/local')).pdfToImages(f[0], o.format === 'png' ? 'png' : 'jpg', Number(o.dpi) || 150),
     'page-numbers': async (f, o) =>
       (await import('./engine/stamp')).addPageNumbers(f[0], {
         position: o.position as 'bottom-center' | 'bottom-right' | 'top-right',
