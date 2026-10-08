@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — foto's, overal te openen",
     "ws.fmtWebp": "WebP — kleinste",
     "ws.fmtPng": "PNG — zonder kwaliteitsverlies",
+    "ws.fmtAuto": "Beste keuze: PNG als de achtergrond transparant is, anders JPG",
     "ws.quality": "Kwaliteit",
     "ws.width": "Breedte (px)",
     "ws.height": "Hoogte (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Dit bestand is geen geldige JSON. Controleer op een ontbrekende komma, aanhalingsteken of haakje.",
     "error.BAD_JSON_AT": "Dit bestand is geen geldige JSON: er zit een fout bij regel {line}, kolom {column}. Controleer op een ontbrekende komma, aanhalingsteken of haakje.",
     "error.SHEET_TOO_BIG": "Dat is meer dan één Excel-blad aankan (1.048.576 rijen en 16.384 kolommen). Splits de gegevens op in kleinere bestanden.",
+    "error.BG_SETUP_FAILED": "De achtergrondverwijderaar kon niet worden geladen. Controleer je internetverbinding voor de eenmalige download en probeer het opnieuw.",
+    "error.BACKGROUND_FAILED": "Het verwijderen van de achtergrond stopte onverwacht, meestal omdat dit apparaat te weinig geheugen had. Probeer een kleinere foto, of sluit andere tabbladen en probeer het opnieuw.",
+    "error.IMAGE_TOO_LARGE": "Deze foto is te groot om in dit formaat op te slaan met deze browser. Kies onder “Formaat” een kleiner formaat.",
     "error.NO_DIAGRAM": "Plak je Mermaid-code of kies een .mmd- of .md-bestand.",
     "error.BAD_DIAGRAM": "De diagramcode bevat een fout: {detail}",
     "error.ENGINE_FAILED": "De PDF-engine stopte onverwacht — het bestand is mogelijk te groot voor dit apparaat.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Tekstvak verwijderen",
     "ed.replaced": "Sommige tekens worden niet ondersteund door de standaard PDF-lettertypen en zijn vervangen.",
     "ed.hint": "Gewijzigde regels houden het lettertype van de pdf als dat alle getypte letters bevat; anders worden ze bedekt en opnieuw geschreven. Overschilderen verbergt alleen — gebruik voor gevoelige gegevens PDF zwart lakken.",
+    "bg.previewLabel": "Jouw foto met de nieuwe achtergrond",
+    "bg.preparing": "De achtergrondverwijderaar wordt klaargemaakt: {loaded} van {total} MB. Deze download gebeurt maar één keer.",
+    "bg.working": "Achtergrond wordt verwijderd… {pct}%",
+    "bg.lite": "Dit apparaat heeft weinig geheugen, dus er is een lichter model gebruikt. Op een laptop worden de randen netter.",
+    "bg.compare": "Houd ingedrukt om het origineel te zien",
+    "bg.background": "Achtergrond",
+    "bg.none": "Geen",
+    "bg.white": "Wit",
+    "bg.black": "Zwart",
+    "bg.blue": "Blauw",
+    "bg.red": "Rood",
+    "bg.green": "Groen",
+    "bg.gray": "Grijs",
+    "bg.custom": "Elke kleur",
+    "bg.photo": "Jouw foto",
+    "bg.blur": "Vervagen",
+    "bg.size": "Formaat",
+    "bg.original": "Oorspronkelijk formaat ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Eigen breedte…",
+    "bg.widthLabel": "Breedte in pixels",
+    "bg.touch": "Bijwerken (indien nodig)",
+    "bg.touchHint": "Is er een plekje gemist? Kies Wissen of Herstellen en ga dan met je vinger of muis over de foto.",
+    "bg.erase": "Wissen",
+    "bg.restore": "Herstellen",
+    "bg.brush": "Penseelgrootte",
     "ocr.unsure": "Een deel van deze tekst kan onjuist zijn. Tekstherkenning leest rechtop staande Engelse tekst: draai scheve foto's eerst, en andere schriften komen er rommelig uit.",
     "ocr.copyAll": "Alle tekst kopiëren",
     "ocr.copied": "Gekopieerd",
@@ -1659,6 +1689,45 @@
         "tekst uit afbeelding halen gratis",
         "ocr afbeelding naar tekst",
         "tekst uit telefoonfoto kopiëren"
+      ]
+    },
+    "remove-background": {
+      "name": "Achtergrond Verwijderen",
+      "summary": "Knip een persoon, product of huisdier uit en zet er alles achter wat je wilt.",
+      "action": "Afbeelding downloaden",
+      "title": "Achtergrond Verwijderen Gratis — Zonder Uploaden | Fizzdoc",
+      "description": "Verwijder de achtergrond van elke foto gratis en in volledige resolutie: transparante PNG, wit, elke kleur of je eigen foto. Er wordt niets geüpload.",
+      "h1": "Verwijder de achtergrond van elke foto",
+      "lede": "Kies een foto en de achtergrond verdwijnt vanzelf. Laat hem transparant, of zet er wit, een kleur, een zachte vervaging of een andere foto achter. De AI draait op je eigen apparaat, dus je foto verlaat het nooit.",
+      "steps": [
+        "Kies een foto. De achtergrond is meteen weg.",
+        "Kies wat erachter komt: niets, een kleur, vervaging of je eigen foto. Werk een plekje bij als dat nodig is.",
+        "Kies het formaat en klik op “Afbeelding downloaden”."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Gaat mijn foto in kwaliteit achteruit?",
+          "Nee. De uitsnede behoudt de volledige resolutie van je foto, zonder maximale grootte van Fizzdoc. Randen van haar en vacht worden op volle grootte opgeschoond, zodat ze er op elke nieuwe achtergrond natuurlijk uitzien. Je kunt ook een kleinere kopie opslaan."
+        ],
+        [
+          "Hoe werkt het zonder uploaden?",
+          "Een open-source AI-model (BiRefNet) draait in je browser, op je grafische chip als je apparaat die heeft. Het wordt één keer gedownload, ongeveer 110 MB, en werkt daarna zelfs offline. Telefoons met weinig geheugen gebruiken een kleiner model (U²-Net)."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "achtergrond verwijderen foto",
+        "achtergrond verwijderen gratis",
+        "foto achtergrond wit maken",
+        "achtergrond weghalen zonder uploaden",
+        "remove bg"
       ]
     },
     "png-to-jpg": {

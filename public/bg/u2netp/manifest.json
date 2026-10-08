@@ -1,0 +1,14 @@
+{
+  "source": "https://huggingface.co/BritishWerewolf/U-2-Netp/tree/7112208dbac3a3642496c8d54e2f0f9bb3dc1dc8",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "model.onnx",
+      "size": 4574861,
+      "sha256": "309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8",
+      "parts": [
+        "model.onnx"
+      ]
+    }
+  ]
+}

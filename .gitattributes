@@ -1,0 +1,4 @@
+# AI model files are binary: never touch their line endings.
+*.onnx binary
+*.onnx.part* binary
+*.wasm binary

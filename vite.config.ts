@@ -4,6 +4,7 @@ import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, notFoundPage, ren
 import { SITE } from './src/site.ts';
 import { ocrAssets } from './vite-plugins/ocr-assets.ts';
 import { whisperAssets } from './vite-plugins/whisper-assets.ts';
+import { ORT_WEBGPU, backgroundAssets } from './vite-plugins/background-assets.ts';
 
 /**
  * The repo's star count, baked into the pages at build time so visitors' browsers never call GitHub.
@@ -66,10 +67,26 @@ function pages(): Plugin {
   };
 }
 
+/** Static hosts refuse files over 25 MiB (Cloudflare Pages); fail the build here instead of at deploy. */
+function sizeGuard(): Plugin {
+  const LIMIT = 25 * 1024 * 1024;
+  return {
+    name: 'fizzdoc-size-guard',
+    enforce: 'post',
+    generateBundle(_, bundle) {
+      for (const [name, item] of Object.entries(bundle)) {
+        const size = item.type === 'asset' ? (typeof item.source === 'string' ? Buffer.byteLength(item.source) : item.source.length) : Buffer.byteLength(item.code);
+        if (size > LIMIT) this.error(`${name} is ${(size / 1048576).toFixed(1)} MiB; static hosts accept at most 25 MiB per file. Split it into parts.`);
+      }
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [pages(), ocrAssets(), whisperAssets()],
+  plugins: [pages(), ocrAssets(), whisperAssets(), backgroundAssets(), sizeGuard()],
   // Audio to Text runs Whisper on ONNX Runtime's CPU build; its WebGPU build is too big to host.
-  resolve: { alias: { 'onnxruntime-web/webgpu': 'onnxruntime-web/wasm' } },
+  // Remove Background imports the real WebGPU build by its own name, 'ort-webgpu'.
+  resolve: { alias: { 'onnxruntime-web/webgpu': 'onnxruntime-web/wasm', 'ort-webgpu': ORT_WEBGPU } },
   worker: { format: 'es' },
   build: { target: 'es2022' },
   test: { include: ['tests/**/*.test.ts'] },

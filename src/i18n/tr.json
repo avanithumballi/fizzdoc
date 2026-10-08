@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — fotoğraflar, her yerde açılır",
     "ws.fmtWebp": "WebP — en küçük",
     "ws.fmtPng": "PNG — kayıpsız",
+    "ws.fmtAuto": "En uygunu: arka plan şeffafsa PNG, değilse JPG",
     "ws.quality": "Kalite",
     "ws.width": "Genişlik (px)",
     "ws.height": "Yükseklik (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Bu dosya geçerli bir JSON değil. Eksik virgül, tırnak veya parantez olup olmadığını kontrol edin.",
     "error.BAD_JSON_AT": "Bu dosya geçerli bir JSON değil: {line}. satır, {column}. sütun civarında bir sorun var. Eksik virgül, tırnak veya parantez olup olmadığını kontrol edin.",
     "error.SHEET_TOO_BIG": "Bu, tek bir Excel sayfasının alabileceğinden fazla (1.048.576 satır ve 16.384 sütun). Verileri daha küçük dosyalara bölün.",
+    "error.BG_SETUP_FAILED": "Arka plan silici yüklenemedi. Bir kerelik indirme için internet bağlantınızı kontrol edin, sonra tekrar deneyin.",
+    "error.BACKGROUND_FAILED": "Arka planı silme işlemi beklenmedik şekilde durdu, genellikle bu cihazın belleği dolduğu için. Daha küçük bir fotoğraf deneyin ya da diğer sekmeleri kapatıp tekrar deneyin.",
+    "error.IMAGE_TOO_LARGE": "Bu fotoğraf, bu tarayıcının o boyutta kaydetmesi için çok büyük. “Boyut” altından daha küçük bir boyut seçin.",
     "error.NO_DIAGRAM": "Mermaid kodunuzu yapıştırın veya bir .mmd ya da .md dosyası seçin.",
     "error.BAD_DIAGRAM": "Diyagram kodunda bir hata var: {detail}",
     "error.ENGINE_FAILED": "PDF motoru beklenmedik şekilde durdu — dosya bu cihaz için çok büyük olabilir.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Metin kutusunu kaldır",
     "ed.replaced": "Bazı karakterler standart PDF yazı tipleri tarafından desteklenmiyor ve değiştirildi.",
     "ed.hint": "Değiştirilen satırlar, yazdığınız tüm harfler varsa PDF'in kendi yazı tipini korur; yoksa örtülüp yeniden yazılır. Beyazlatma yalnızca gizler — hassas veriler için PDF Karart'ı kullanın.",
+    "bg.previewLabel": "Fotoğrafınız yeni arka planıyla",
+    "bg.preparing": "Arka plan silici hazırlanıyor: {total} MB'ın {loaded} MB'ı. Bu indirme yalnızca bir kez yapılır.",
+    "bg.working": "Arka plan siliniyor… %{pct}",
+    "bg.lite": "Bu cihazın belleği az, bu yüzden daha hafif bir model kullanıldı. Dizüstü bilgisayarda kenarlar daha temiz çıkar.",
+    "bg.compare": "Orijinali görmek için basılı tutun",
+    "bg.background": "Arka plan",
+    "bg.none": "Yok",
+    "bg.white": "Beyaz",
+    "bg.black": "Siyah",
+    "bg.blue": "Mavi",
+    "bg.red": "Kırmızı",
+    "bg.green": "Yeşil",
+    "bg.gray": "Gri",
+    "bg.custom": "Herhangi bir renk",
+    "bg.photo": "Fotoğrafınız",
+    "bg.blur": "Bulanıklaştır",
+    "bg.size": "Boyut",
+    "bg.original": "Orijinal boyut ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Özel genişlik…",
+    "bg.widthLabel": "Piksel olarak genişlik",
+    "bg.touch": "Rötuş (gerekirse)",
+    "bg.touchHint": "Atlanan bir yer mi var? Sil veya Geri getir'i seçin, sonra fotoğrafın üzerinde parmağınızı ya da fareyi gezdirin.",
+    "bg.erase": "Sil",
+    "bg.restore": "Geri getir",
+    "bg.brush": "Fırça boyutu",
     "ocr.unsure": "Bu metnin bir kısmı hatalı olabilir. Metin tanıma düz duran İngilizce metni okur: yan duran fotoğrafları önce döndürün; diğer alfabeler bozuk çıkabilir.",
     "ocr.copyAll": "Tüm metni kopyala",
     "ocr.copied": "Kopyalandı",
@@ -1659,6 +1689,45 @@
         "görselden metin çıkarma ücretsiz",
         "ocr görselden metne",
         "telefon fotoğrafından metin kopyalama"
+      ]
+    },
+    "remove-background": {
+      "name": "Arka Planı Sil",
+      "summary": "Bir kişiyi, ürünü ya da evcil hayvanı kesip çıkarın ve arkasına istediğinizi koyun.",
+      "action": "Görseli indir",
+      "title": "Fotoğraf Arka Planı Silme Ücretsiz — Yükleme Yok | Fizzdoc",
+      "description": "Her fotoğrafın arka planını ücretsiz silin, tam çözünürlükle: şeffaf PNG, beyaz, istediğiniz renk veya kendi fotoğrafınız. Hiçbir şey yüklenmez.",
+      "h1": "Her fotoğrafın arka planını silin",
+      "lede": "Bir fotoğraf seçin, arka plan kendiliğinden kaybolsun. Şeffaf bırakın ya da arkasına beyaz, istediğiniz bir renk, yumuşak bir bulanıklık veya başka bir fotoğraf koyun. Yapay zeka kendi cihazınızda çalışır, bu yüzden fotoğrafınız cihazınızdan hiç çıkmaz.",
+      "steps": [
+        "Bir fotoğraf seçin. Arka plan hemen silinir.",
+        "Arkaya ne gireceğini seçin: hiçbir şey, bir renk, bulanıklık ya da kendi fotoğrafınız. Gerekirse bir yeri düzeltin.",
+        "Boyutu seçin, sonra “Görseli indir”e tıklayın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Fotoğrafımın kalitesi düşer mi?",
+          "Hayır. Kesilen görsel fotoğrafınızın tam çözünürlüğünü korur, Fizzdoc tarafında boyut sınırı yoktur. Saç ve tüy kenarları tam boyutta temizlenir, bu yüzden her yeni arka planda doğal görünür. İsterseniz daha küçük bir kopya da kaydedebilirsiniz."
+        ],
+        [
+          "Yüklemeden nasıl çalışıyor?",
+          "Açık kaynaklı bir yapay zeka modeli (BiRefNet) tarayıcınızın içinde çalışır, cihazda ekran kartı varsa onun üzerinde. Bir kez, yaklaşık 110 MB iner, sonra çevrimdışıyken bile çalışır. Belleği az telefonlar daha küçük bir model (U²-Net) kullanır."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "fotoğraf arka planı silme",
+        "arka plan silme ücretsiz",
+        "fotoğraf arka planını beyaz yapma",
+        "yüklemeden arka plan silme",
+        "remove bg"
       ]
     },
     "png-to-jpg": {

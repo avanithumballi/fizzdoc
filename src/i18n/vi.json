@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — dùng cho ảnh, mở được ở mọi nơi",
     "ws.fmtWebp": "WebP — nhỏ nhất",
     "ws.fmtPng": "PNG — không mất chất lượng",
+    "ws.fmtAuto": "Phù hợp nhất: PNG nếu nền trong suốt, nếu không thì JPG",
     "ws.quality": "Chất lượng",
     "ws.width": "Chiều rộng (px)",
     "ws.height": "Chiều cao (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Tệp này không phải JSON hợp lệ. Hãy kiểm tra xem có thiếu dấu phẩy, dấu ngoặc kép hoặc dấu ngoặc nào không.",
     "error.BAD_JSON_AT": "Tệp này không phải JSON hợp lệ: có lỗi gần dòng {line}, cột {column}. Hãy kiểm tra xem có thiếu dấu phẩy, dấu ngoặc kép hoặc dấu ngoặc nào không.",
     "error.SHEET_TOO_BIG": "Dữ liệu này vượt quá sức chứa của một trang tính Excel (1.048.576 hàng và 16.384 cột). Hãy chia dữ liệu thành các tệp nhỏ hơn.",
+    "error.BG_SETUP_FAILED": "Không tải được công cụ xóa nền. Hãy kiểm tra kết nối internet cho lần tải một lần này, rồi thử lại.",
+    "error.BACKGROUND_FAILED": "Việc xóa nền đột ngột dừng lại, thường vì thiết bị này hết bộ nhớ. Hãy thử ảnh nhỏ hơn, hoặc đóng các thẻ khác rồi thử lại.",
+    "error.IMAGE_TOO_LARGE": "Ảnh này quá lớn để trình duyệt lưu ở kích thước đó. Hãy chọn kích thước nhỏ hơn trong mục “Kích thước”.",
     "error.NO_DIAGRAM": "Dán mã Mermaid của bạn, hoặc chọn một tệp .mmd hoặc .md.",
     "error.BAD_DIAGRAM": "Mã sơ đồ có lỗi: {detail}",
     "error.ENGINE_FAILED": "Công cụ xử lý PDF đã dừng đột ngột — tệp có thể quá lớn đối với thiết bị này.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Xóa hộp văn bản",
     "ed.replaced": "Một số ký tự không được các phông chữ PDF chuẩn hỗ trợ nên đã được thay thế.",
     "ed.hint": "Dòng đã sửa giữ phông của PDF nếu phông đó có mọi chữ bạn gõ; nếu không, dòng được che rồi viết lại. Che trắng chỉ che đi — với dữ liệu nhạy cảm, hãy dùng Che Đen PDF.",
+    "bg.previewLabel": "Ảnh của bạn với nền mới",
+    "bg.preparing": "Đang chuẩn bị công cụ xóa nền: {loaded} trên {total} MB. Lần tải này chỉ diễn ra một lần.",
+    "bg.working": "Đang xóa nền… {pct}%",
+    "bg.lite": "Thiết bị này ít bộ nhớ, nên đã dùng mô hình nhẹ hơn. Máy tính xách tay cho viền sạch hơn.",
+    "bg.compare": "Nhấn giữ để xem ảnh gốc",
+    "bg.background": "Nền",
+    "bg.none": "Không",
+    "bg.white": "Trắng",
+    "bg.black": "Đen",
+    "bg.blue": "Xanh dương",
+    "bg.red": "Đỏ",
+    "bg.green": "Xanh lá",
+    "bg.gray": "Xám",
+    "bg.custom": "Màu bất kỳ",
+    "bg.photo": "Ảnh của bạn",
+    "bg.blur": "Làm mờ",
+    "bg.size": "Kích thước",
+    "bg.original": "Kích thước gốc ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Chiều rộng tùy chọn…",
+    "bg.widthLabel": "Chiều rộng tính bằng pixel",
+    "bg.touch": "Chỉnh sửa thêm (nếu cần)",
+    "bg.touchHint": "Sót chỗ nào à? Chọn Xóa hoặc Khôi phục, rồi lướt ngón tay hoặc chuột lên ảnh.",
+    "bg.erase": "Xóa",
+    "bg.restore": "Khôi phục",
+    "bg.brush": "Cỡ cọ",
     "ocr.unsure": "Một phần văn bản này có thể sai. Nhận dạng chữ đọc văn bản tiếng Anh đặt thẳng: hãy xoay ảnh bị nghiêng trước, và các hệ chữ khác có thể ra lộn xộn.",
     "ocr.copyAll": "Sao chép toàn bộ văn bản",
     "ocr.copied": "Đã sao chép",
@@ -1659,6 +1689,45 @@
         "trích xuất văn bản từ ảnh miễn phí",
         "ocr ảnh sang văn bản",
         "sao chép văn bản từ ảnh chụp điện thoại"
+      ]
+    },
+    "remove-background": {
+      "name": "Xóa Nền Ảnh",
+      "summary": "Tách một người, sản phẩm hay thú cưng ra khỏi ảnh và đặt bất cứ thứ gì phía sau.",
+      "action": "Tải ảnh xuống",
+      "title": "Xóa Nền Ảnh Miễn Phí — Không Cần Tải Lên | Fizzdoc",
+      "description": "Xóa nền của mọi bức ảnh miễn phí, giữ nguyên độ phân giải: PNG trong suốt, nền trắng, màu bất kỳ hoặc ảnh của bạn. Không có gì bị tải lên.",
+      "h1": "Xóa nền của mọi bức ảnh",
+      "lede": "Chọn một bức ảnh và nền tự biến mất. Giữ trong suốt, hoặc đặt phía sau màu trắng, một màu bất kỳ, hiệu ứng mờ nhẹ hay một ảnh khác. AI chạy ngay trên thiết bị của bạn, nên ảnh không bao giờ rời khỏi máy.",
+      "steps": [
+        "Chọn một bức ảnh. Nền được xóa ngay lập tức.",
+        "Chọn thứ đặt phía sau: không có gì, một màu, hiệu ứng mờ hoặc ảnh của bạn. Chỉnh sửa thêm chỗ nào cần.",
+        "Chọn kích thước, rồi nhấp “Tải ảnh xuống”."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Ảnh của tôi có bị giảm chất lượng không?",
+          "Không. Ảnh đã tách nền giữ nguyên độ phân giải đầy đủ, Fizzdoc không giới hạn kích thước. Viền tóc và lông được làm sạch ở kích thước đầy đủ, nên trông tự nhiên trên mọi nền mới. Bạn cũng có thể lưu một bản nhỏ hơn."
+        ],
+        [
+          "Không tải lên thì nó hoạt động thế nào?",
+          "Một mô hình AI mã nguồn mở (BiRefNet) chạy ngay trong trình duyệt của bạn, trên chip đồ họa nếu thiết bị có. Mô hình tải một lần, khoảng 110 MB, sau đó dùng được cả khi không có mạng. Điện thoại ít bộ nhớ dùng mô hình nhỏ hơn (U²-Net)."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "xóa nền ảnh",
+        "tách nền ảnh miễn phí",
+        "đổi nền ảnh sang màu trắng",
+        "xóa nền không cần tải ảnh lên",
+        "remove bg"
       ]
     },
     "png-to-jpg": {

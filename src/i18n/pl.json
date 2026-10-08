@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — zdjęcia, otwiera się wszędzie",
     "ws.fmtWebp": "WebP — najmniejszy rozmiar",
     "ws.fmtPng": "PNG — bezstratny",
+    "ws.fmtAuto": "Najlepszy wybór: PNG, gdy tło jest przezroczyste, w innym razie JPG",
     "ws.quality": "Jakość",
     "ws.width": "Szerokość (px)",
     "ws.height": "Wysokość (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Ten plik nie jest poprawnym JSON-em. Sprawdź, czy nie brakuje przecinka, cudzysłowu lub nawiasu.",
     "error.BAD_JSON_AT": "Ten plik nie jest poprawnym JSON-em: problem występuje w pobliżu wiersza {line}, kolumny {column}. Sprawdź, czy nie brakuje przecinka, cudzysłowu lub nawiasu.",
     "error.SHEET_TOO_BIG": "To więcej, niż mieści jeden arkusz Excela (1 048 576 wierszy i 16 384 kolumn). Podziel dane na mniejsze pliki.",
+    "error.BG_SETUP_FAILED": "Nie udało się załadować narzędzia do usuwania tła. Sprawdź połączenie z internetem na czas jednorazowego pobierania i spróbuj ponownie.",
+    "error.BACKGROUND_FAILED": "Usuwanie tła nagle się zatrzymało, zwykle dlatego, że w tym urządzeniu zabrakło pamięci. Wybierz mniejsze zdjęcie albo zamknij inne karty i spróbuj ponownie.",
+    "error.IMAGE_TOO_LARGE": "To zdjęcie jest za duże, by ta przeglądarka zapisała je w takim rozmiarze. Wybierz mniejszy rozmiar w polu „Rozmiar”.",
     "error.NO_DIAGRAM": "Wklej kod Mermaid lub wybierz plik .mmd albo .md.",
     "error.BAD_DIAGRAM": "Kod diagramu zawiera błąd: {detail}",
     "error.ENGINE_FAILED": "Silnik PDF nieoczekiwanie się zatrzymał — plik może być zbyt duży dla tego urządzenia.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Usuń pole tekstowe",
     "ed.replaced": "Niektóre znaki nie są obsługiwane przez standardowe czcionki PDF i zostały zastąpione.",
     "ed.hint": "Zmienione wiersze zachowują czcionkę PDF, jeśli ma wszystkie wpisane litery; w przeciwnym razie są zakrywane i pisane na nowo. Zamalowanie tylko ukrywa — do poufnych danych użyj Cenzuruj PDF.",
+    "bg.previewLabel": "Twoje zdjęcie z nowym tłem",
+    "bg.preparing": "Przygotowywanie narzędzia do usuwania tła: {loaded} z {total} MB. To pobieranie odbywa się tylko raz.",
+    "bg.working": "Usuwanie tła… {pct}%",
+    "bg.lite": "To urządzenie ma mało pamięci, więc użyto lżejszego modelu. Na laptopie krawędzie wychodzą czystsze.",
+    "bg.compare": "Przytrzymaj, aby zobaczyć oryginał",
+    "bg.background": "Tło",
+    "bg.none": "Brak",
+    "bg.white": "Białe",
+    "bg.black": "Czarne",
+    "bg.blue": "Niebieskie",
+    "bg.red": "Czerwone",
+    "bg.green": "Zielone",
+    "bg.gray": "Szare",
+    "bg.custom": "Dowolny kolor",
+    "bg.photo": "Twoje zdjęcie",
+    "bg.blur": "Rozmycie",
+    "bg.size": "Rozmiar",
+    "bg.original": "Oryginalny rozmiar ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Własna szerokość…",
+    "bg.widthLabel": "Szerokość w pikselach",
+    "bg.touch": "Popraw (w razie potrzeby)",
+    "bg.touchHint": "Coś zostało pominięte? Wybierz Wymaż lub Przywróć, a potem przesuń palcem lub myszką po zdjęciu.",
+    "bg.erase": "Wymaż",
+    "bg.restore": "Przywróć",
+    "bg.brush": "Rozmiar pędzla",
     "ocr.unsure": "Część tego tekstu może być błędna. Rozpoznawanie czyta prosty tekst angielski: najpierw obróć zdjęcia bokiem, a inne alfabety mogą wyjść zniekształcone.",
     "ocr.copyAll": "Kopiuj cały tekst",
     "ocr.copied": "Skopiowano",
@@ -1659,6 +1689,45 @@
         "wyciągnij tekst z obrazu za darmo",
         "ocr obraz na tekst",
         "skopiuj tekst ze zdjęcia z telefonu"
+      ]
+    },
+    "remove-background": {
+      "name": "Usuń Tło",
+      "summary": "Wytnij osobę, produkt lub zwierzaka i wstaw za nim cokolwiek zechcesz.",
+      "action": "Pobierz obraz",
+      "title": "Usuń Tło ze Zdjęcia za Darmo — Bez Wysyłania | Fizzdoc",
+      "description": "Usuń tło z dowolnego zdjęcia za darmo, w pełnej rozdzielczości: przezroczysty PNG, biel, dowolny kolor lub własne zdjęcie. Nic nie jest wysyłane.",
+      "h1": "Usuń tło z dowolnego zdjęcia",
+      "lede": "Wybierz zdjęcie, a tło zniknie samo. Zostaw je przezroczyste albo wstaw za nim biel, dowolny kolor, delikatne rozmycie lub inne zdjęcie. Sztuczna inteligencja działa na Twoim urządzeniu, więc zdjęcie nigdy go nie opuszcza.",
+      "steps": [
+        "Wybierz zdjęcie. Tło znika od razu.",
+        "Wybierz, co ma być z tyłu: nic, kolor, rozmycie lub własne zdjęcie. W razie potrzeby popraw jakieś miejsce.",
+        "Wybierz rozmiar i kliknij „Pobierz obraz”."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy zdjęcie straci na jakości?",
+          "Nie. Wycięty obraz zachowuje pełną rozdzielczość zdjęcia, bez limitu rozmiaru ze strony Fizzdoc. Krawędzie włosów i sierści są czyszczone w pełnym rozmiarze, więc wyglądają naturalnie na każdym nowym tle. Możesz też zapisać mniejszą kopię."
+        ],
+        [
+          "Jak to działa bez wysyłania?",
+          "Otwartoźródłowy model AI (BiRefNet) działa w Twojej przeglądarce, na układzie graficznym, jeśli urządzenie go ma. Pobiera się raz, około 110 MB, a potem działa nawet bez internetu. Telefony z małą ilością pamięci używają mniejszego modelu (U²-Net)."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "usuń tło ze zdjęcia",
+        "usuwanie tła online za darmo",
+        "białe tło do zdjęcia",
+        "usuń tło bez wysyłania zdjęcia",
+        "remove bg"
       ]
     },
     "png-to-jpg": {

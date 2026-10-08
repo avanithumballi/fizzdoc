@@ -1027,6 +1027,89 @@ test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   expect((await request.get('/og.png')).headers()['content-type']).toBe('image/png');
 });
 
+test('removes a picture’s background on the device, keeps its full size, and puts a new one behind', async ({ page }) => {
+  test.setTimeout(240_000);
+  const seen = watch(page);
+  await page.emulateMedia({ reducedMotion: 'reduce' }); // no smooth scrolling while the test measures
+  await page.goto('/remove-background/');
+  // A plain subject on a soft background, drawn here so the test needs no photo fixture.
+  const photo = await page.evaluate(async () => {
+    const canvas = new OffscreenCanvas(900, 600);
+    const c = canvas.getContext('2d')!;
+    const sky = c.createLinearGradient(0, 0, 0, 600);
+    sky.addColorStop(0, '#dfe9f3');
+    sky.addColorStop(1, '#f7f2e8');
+    c.fillStyle = sky;
+    c.fillRect(0, 0, 900, 600);
+    c.fillStyle = '#c0392b';
+    c.beginPath();
+    c.arc(450, 300, 170, 0, Math.PI * 2);
+    c.fill();
+    c.fillStyle = '#2c3e50';
+    c.fillRect(420, 120, 60, 80);
+    return [...new Uint8Array(await (await canvas.convertToBlob({ type: 'image/png' })).arrayBuffer())];
+  });
+  await page.locator('#file-input').setInputFiles({ name: 'ball.png', mimeType: 'image/png', buffer: Buffer.from(photo) });
+  await expect(page.getByRole('button', { name: 'Blur' })).toBeVisible({ timeout: 200_000 });
+  await expect(page.locator('.bg-busy')).toBeHidden();
+
+  /** Alpha (or red, for JPG) at a few points of a downloaded picture, read back by the browser. */
+  const sample = async (bytes: Buffer, type: string) =>
+    page.evaluate(
+      async ([data, mime]) => {
+        const bitmap = await createImageBitmap(new Blob([new Uint8Array(data as number[])], { type: mime as string }));
+        const c = new OffscreenCanvas(bitmap.width, bitmap.height).getContext('2d')!;
+        c.drawImage(bitmap, 0, 0);
+        const at = (fx: number, fy: number) => [...c.getImageData(Math.floor(bitmap.width * fx), Math.floor(bitmap.height * fy), 1, 1).data];
+        return { width: bitmap.width, height: bitmap.height, corner: at(0.02, 0.02), centre: at(0.5, 0.5) };
+      },
+      [[...bytes], type],
+    );
+
+  // No background: a transparent PNG at the original size.
+  await page.getByRole('button', { name: 'Download image' }).click();
+  await expect(page.locator('#status')).toContainText('900 × 600 px');
+  const clear = await downloadBytes(page);
+  expect(clear.name).toBe('ball-no-bg.png');
+  const png = await sample(clear.bytes, 'image/png');
+  expect([png.width, png.height]).toEqual([900, 600]);
+  expect(png.corner[3]).toBeLessThan(20);
+  expect(png.centre).toEqual([192, 57, 43, 255]);
+
+  // White behind, saved smaller: a JPG with white corners.
+  await page.getByRole('button', { name: 'White' }).click();
+  await page.getByRole('combobox', { name: 'Size' }).selectOption('600');
+  await page.getByRole('button', { name: 'Download image' }).click();
+  await expect(page.locator('#status')).toContainText('600 × 400 px');
+  const white = await downloadBytes(page);
+  expect(white.name).toBe('ball-new-bg.jpg');
+  const jpg = await sample(white.bytes, 'image/jpeg');
+  expect([jpg.width, jpg.height]).toEqual([600, 400]);
+  for (const v of jpg.corner.slice(0, 3)) expect(v).toBeGreaterThan(245);
+
+  // Touch up: erasing the middle makes it see-through, and Undo brings it back.
+  await page.getByRole('button', { name: 'None' }).click();
+  await page.getByRole('combobox', { name: 'Size' }).selectOption('900');
+  await page.getByRole('button', { name: 'Erase' }).click();
+  // The picture scrolls into view for the brush.
+  await expect(page.locator('.bg-canvas')).toBeInViewport();
+  const box = (await page.locator('.bg-canvas').boundingBox())!;
+  await page.mouse.move(box.x + box.width / 2 - 10, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width / 2 + 10, box.y + box.height / 2, { steps: 4 });
+  await page.mouse.up();
+  await page.getByRole('button', { name: 'Download image' }).click();
+  await expect(page.locator('#status')).toContainText('900 × 600 px');
+  expect((await sample((await downloadBytes(page)).bytes, 'image/png')).centre[3]).toBeLessThan(20);
+  await page.getByRole('button', { name: 'Undo' }).click();
+  await page.getByRole('button', { name: 'Download image' }).click();
+  await expect(page.locator('#status')).toContainText('900 × 600 px');
+  expect((await sample((await downloadBytes(page)).bytes, 'image/png')).centre[3]).toBe(255);
+
+  expect(seen.violations).toEqual([]);
+  expect(seen.requests.filter((r) => !r.url.startsWith(page.url().split('/').slice(0, 3).join('/')) && !r.url.startsWith('blob:') && !r.url.startsWith('data:'))).toEqual([]);
+});
+
 test('shares Fizzdoc: the phone’s share sheet, or links to the big networks and a copy button', async ({ browser }) => {
   const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await context.newPage();

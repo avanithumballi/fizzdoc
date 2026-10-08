@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — foto, bisa dibuka di mana saja",
     "ws.fmtWebp": "WebP — paling kecil",
     "ws.fmtPng": "PNG — lossless",
+    "ws.fmtAuto": "Paling pas: PNG jika latar belakangnya transparan, selain itu JPG",
     "ws.quality": "Kualitas",
     "ws.width": "Lebar (px)",
     "ws.height": "Tinggi (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "File ini bukan JSON yang valid. Periksa apakah ada koma, tanda kutip, atau tanda kurung yang hilang.",
     "error.BAD_JSON_AT": "File ini bukan JSON yang valid: ada masalah di sekitar baris {line}, kolom {column}. Periksa apakah ada koma, tanda kutip, atau tanda kurung yang hilang.",
     "error.SHEET_TOO_BIG": "Itu melebihi kapasitas satu sheet Excel (1.048.576 baris dan 16.384 kolom). Pecah data menjadi file yang lebih kecil.",
+    "error.BG_SETUP_FAILED": "Penghapus latar belakang tidak bisa dimuat. Periksa koneksi internet Anda untuk unduhan satu kali ini, lalu coba lagi.",
+    "error.BACKGROUND_FAILED": "Penghapusan latar belakang berhenti tiba-tiba, biasanya karena memori perangkat ini habis. Coba foto yang lebih kecil, atau tutup tab lain lalu coba lagi.",
+    "error.IMAGE_TOO_LARGE": "Foto ini terlalu besar untuk disimpan browser ini pada ukuran tersebut. Pilih ukuran yang lebih kecil di “Ukuran”.",
     "error.NO_DIAGRAM": "Tempel kode Mermaid Anda, atau pilih file .mmd atau .md.",
     "error.BAD_DIAGRAM": "Kode diagram ada kesalahan: {detail}",
     "error.ENGINE_FAILED": "Mesin PDF berhenti secara tak terduga — file mungkin terlalu besar untuk perangkat ini.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Hapus kotak teks",
     "ed.replaced": "Beberapa karakter tidak didukung oleh font standar PDF dan telah diganti.",
     "ed.hint": "Baris yang diubah tetap memakai font PDF jika font itu punya semua huruf yang Anda ketik; jika tidak, baris ditutupi lalu ditulis ulang. Blok putih hanya menyembunyikan — untuk data sensitif, gunakan Sensor PDF.",
+    "bg.previewLabel": "Foto Anda dengan latar belakang baru",
+    "bg.preparing": "Menyiapkan penghapus latar belakang: {loaded} dari {total} MB. Unduhan ini hanya sekali.",
+    "bg.working": "Menghapus latar belakang… {pct}%",
+    "bg.lite": "Perangkat ini memorinya sedikit, jadi dipakai model yang lebih ringan. Laptop memberi tepi yang lebih bersih.",
+    "bg.compare": "Tahan untuk melihat aslinya",
+    "bg.background": "Latar belakang",
+    "bg.none": "Tidak ada",
+    "bg.white": "Putih",
+    "bg.black": "Hitam",
+    "bg.blue": "Biru",
+    "bg.red": "Merah",
+    "bg.green": "Hijau",
+    "bg.gray": "Abu-abu",
+    "bg.custom": "Warna apa saja",
+    "bg.photo": "Foto Anda",
+    "bg.blur": "Buram",
+    "bg.size": "Ukuran",
+    "bg.original": "Ukuran asli ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Lebar khusus…",
+    "bg.widthLabel": "Lebar dalam piksel",
+    "bg.touch": "Rapikan (jika perlu)",
+    "bg.touchHint": "Ada bagian yang terlewat? Pilih Hapus atau Pulihkan, lalu usapkan jari atau mouse di atas foto.",
+    "bg.erase": "Hapus",
+    "bg.restore": "Pulihkan",
+    "bg.brush": "Ukuran kuas",
     "ocr.unsure": "Sebagian teks ini mungkin salah. Pengenalan teks membaca teks bahasa Inggris yang tegak: putar dulu foto yang miring, dan aksara lain akan keluar berantakan.",
     "ocr.copyAll": "Salin semua teks",
     "ocr.copied": "Disalin",
@@ -1659,6 +1689,45 @@
         "ambil teks dari gambar gratis",
         "ocr gambar ke teks",
         "salin teks dari foto hp"
+      ]
+    },
+    "remove-background": {
+      "name": "Hapus Latar Belakang",
+      "summary": "Potong orang, produk, atau hewan peliharaan lalu pasang apa saja di belakangnya.",
+      "action": "Unduh gambar",
+      "title": "Hapus Latar Belakang Foto Gratis — Tanpa Unggah | Fizzdoc",
+      "description": "Hapus latar belakang foto apa saja secara gratis dengan resolusi penuh: PNG transparan, putih, warna apa saja, atau foto Anda. Tidak ada yang diunggah.",
+      "h1": "Hapus latar belakang foto apa saja",
+      "lede": "Pilih foto dan latar belakangnya hilang sendiri. Biarkan transparan, atau pasang warna putih, warna apa saja, buram lembut, atau foto lain di belakangnya. AI berjalan di perangkat Anda sendiri, jadi foto Anda tidak pernah keluar dari sana.",
+      "steps": [
+        "Pilih foto. Latar belakang langsung dihapus.",
+        "Pilih yang ada di belakang: tidak ada, warna, buram, atau foto Anda sendiri. Rapikan bagian tertentu jika perlu.",
+        "Pilih ukuran, lalu klik “Unduh gambar”."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah kualitas foto saya akan turun?",
+          "Tidak. Hasil potongan tetap beresolusi penuh seperti foto Anda, tanpa batas ukuran dari Fizzdoc. Tepi rambut dan bulu dirapikan pada ukuran penuh, jadi tampak alami di latar belakang baru apa pun. Anda juga bisa menyimpan salinan yang lebih kecil."
+        ],
+        [
+          "Bagaimana cara kerjanya tanpa mengunggah?",
+          "Model AI open source (BiRefNet) berjalan di dalam browser Anda, memakai chip grafis jika perangkat punya. Modelnya diunduh sekali, sekitar 110 MB, lalu bisa dipakai bahkan saat offline. Ponsel dengan memori kecil memakai model yang lebih kecil (U²-Net)."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "hapus latar belakang foto",
+        "menghilangkan background foto gratis",
+        "ubah background foto jadi putih",
+        "hapus background tanpa upload",
+        "remove bg"
       ]
     },
     "png-to-jpg": {
