@@ -14,8 +14,12 @@ const NAME = 'ort-wasm-simd-threaded.asyncify.wasm';
 const GLUE = 'ort-wasm-simd-threaded.asyncify.mjs';
 const PART = 20 * 1024 * 1024;
 
-/** The WebGPU build's own module, for `import('ort-webgpu')` (the package alias points elsewhere). */
-export const ORT_WEBGPU = join(dirname(require.resolve('onnxruntime-web')), 'ort.webgpu.bundle.min.mjs');
+/**
+ * The WebGPU build's own module, for `import('ort-webgpu')` (the package alias points elsewhere). The
+ * "extern wasm" variant, so Vite doesn't copy the 27 MB binary into the build (static hosts cap files
+ * at 25 MiB); it loads its small loader from /bg/ort/ and is handed the binary joined from parts.
+ */
+export const ORT_WEBGPU = join(dirname(require.resolve('onnxruntime-web')), 'ort.webgpu.min.mjs');
 
 function files() {
   const bytes = readFileSync(join(dirname(require.resolve('onnxruntime-web')), NAME));
