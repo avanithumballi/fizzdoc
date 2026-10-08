@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Bu tarayıcı bu dosyadaki sesi okuyamıyor. MP3, M4A, WAV veya MP4 dosyası deneyin.",
     "error.NO_SPEECH": "Bu dosyada konuşma bulunamadı.",
     "error.SETUP_FAILED": "Konuşma modeli yüklenemedi. Tek seferlik indirme için internet bağlantınızı kontrol edin, sonra tekrar deneyin.",
-    "error.TRANSCRIBE_FAILED": "Yazıya dökme beklenmedik şekilde durdu. Daha kısa bir dosya deneyin; uzun kayıtlar için bilgisayar kullanın."
+    "error.TRANSCRIBE_FAILED": "Yazıya dökme beklenmedik şekilde durdu. Daha kısa bir dosya deneyin; uzun kayıtlar için bilgisayar kullanın.",
+    "ws.chooseVideo": "Video seçin",
+    "error.BAD_VIDEO": "Bu tarayıcı bu videoyu okuyamıyor. MP4 veya WebM dosyası ya da en yeni Chrome veya Edge deneyin.",
+    "error.NO_VIDEO_ENCODER": "Bu tarayıcı video kaydedemiyor. Lütfen en yeni Chrome, Edge veya Safari kullanın.",
+    "bg.frame": "Arka plan siliniyor: kare {n} / {total}…",
+    "bg.gifNote": "Hareketli GIF: her kare işlenir ve GIF olarak kaydedilir. GIF’lerde yumuşak kenar olmaz, bu yüzden “Yok” seçiliyken kenar biraz daha keskin görünür.",
+    "bg.videoNote": "Bu ilk kare. Bir arka plan seçip kaydedin: her kare bu cihazda işlenir, burada yaklaşık {min} dk sürer. Bu sekmeyi açık tutun.",
+    "bg.greenScreen": "Yeşil ekran",
+    "ws.dpiLow": "Düşük (en küçük dosya, web için)"
   },
   "home": {
     "title": "Fizzdoc — Ücretsiz PDF, Görsel, Ses ve Office. Yüklemesiz.",
@@ -2843,6 +2851,84 @@
         "Form 16 PDF parola kaldırma",
         "ITR PDF açma",
         "gelir vergisi PDF kilit açma"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Video Arka Planı Silme",
+      "summary": "Videodaki kişiyi ayırın ve arkasına renk, bulanıklık veya fotoğraf koyun. Ses korunur.",
+      "action": "Videoyu indir",
+      "title": "Video Arka Planı Silme Ücretsiz — Yeşil Ekransız | Fizzdoc",
+      "description": "Bir videonun arka planını yeşil ekran olmadan ücretsiz silin veya değiştirin: arkaya renk, bulanıklık ya da fotoğraf koyun. Ses korunur, hiçbir şey yüklenmez.",
+      "h1": "Videodan arka planı silin",
+      "lede": "Yeşil ekrana gerek yok. Her kare kendi cihazınızda bir yapay zekâ ile işlenir, ses korunur ve arkaya renk, bulanıklık veya fotoğraf koyabilirsiniz. Telefonlarda kısa klipler en iyisidir.",
+      "steps": [
+        "Bir video seçin (MP4, WebM veya MOV).",
+        "İlk kareyi önizleme olarak kullanıp arkaya ne geleceğini seçin.",
+        "“Videoyu indir”e tıklayın ve her kare bitene kadar sekmeyi açık tutun."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Ne kadar sürer?",
+          "Her kare cihazınızda işlenir, bu yüzden hızına bağlıdır. Fizzdoc başlamadan önce tahmini süreyi gösterir."
+        ],
+        [
+          "Sonucu bir video düzenleyicide kullanabilir miyim?",
+          "Evet. “Yeşil ekran”ı seçin; düzenleyici yeşili tek tıkla kaldırır (chroma key). Videolar mümkünse MP4, değilse WebM olarak kaydedilir."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "video arka planı silme ücretsiz",
+        "video arka planı değiştirme",
+        "yeşil ekransız arka plan silme",
+        "videodan arka plan kaldırma",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "GIF Arka Planı Silme",
+      "summary": "Hareketli bir GIF’in arka planını kare kare şeffaf yapın veya yeni renge boyayın.",
+      "action": "GIF’i indir",
+      "title": "GIF Arka Planı Silme Ücretsiz — Şeffaf Hareketli GIF | Fizzdoc",
+      "description": "Hareketli bir GIF’in arka planını ücretsiz silin: her kare cihazınızda kesilir ve şeffaf ya da yeni renkli bir GIF olarak kaydedilir. Hiçbir şey yüklenmez.",
+      "h1": "GIF’ten arka planı silin",
+      "lede": "Hareketli GIF’inizin her karesi kendi cihazınızda bir yapay zekâ ile kesilir. Şeffaf bırakın ya da arkaya renk, bulanıklık veya fotoğraf koyun ve yeniden GIF olarak kaydedin.",
+      "steps": [
+        "Hareketli bir GIF seçin.",
+        "Önizlemeye bakın ve arkaya ne geleceğini seçin.",
+        "Boyutu seçip “GIF’i indir”e tıklayın."
+      ],
+      "faq": [
+        [
+          "Dosyalarım herhangi bir yere yükleniyor mu?",
+          "Hayır. Fizzdoc, WebAssembly ve JavaScript'e derlenmiş açık kaynaklı motorları kullanarak işlemi tarayıcı sekmenizin içinde yapar. Dosyanız cihazınızdan okunur, yerel olarak işlenir ve sonuç doğrudan cihazınıza kaydedilir. Bunu kendiniz de kontrol edebilirsiniz: tarayıcınızın geliştirici araçlarını açın, Ağ (Network) sekmesine gidin ve bir işlem çalıştırın — hiçbir istek dosyanızı taşımaz."
+        ],
+        [
+          "Animasyonun zamanlaması korunur mu?",
+          "Evet. Her kare kendi süresini korur ve yeni GIF orijinali gibi döngüye girer."
+        ],
+        [
+          "Kenarlar neden PNG’den daha keskin?",
+          "Bir GIF pikseli ya tamamen şeffaf ya da tamamen dolu olabilir. Yumuşak kenar için “Yok” yerine arkaya renk veya fotoğraf seçin."
+        ],
+        [
+          "Fizzdoc ücretsiz mi?",
+          "Evet, ve ücretsiz kalacak: kayıt yok, filigran yok, günlük limit yok, ücretli katman yok. Fizzdoc, Apache-2.0 lisansıyla açık kaynaktır, bu yüzden herkes kendi kopyasını çalıştırabilir."
+        ]
+      ],
+      "keywords": [
+        "gif arka planı silme",
+        "şeffaf gif yapma",
+        "hareketli gif arka planı silme",
+        "gif arka planı değiştirme",
+        "remove gif background"
       ]
     }
   }

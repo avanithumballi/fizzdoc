@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Browser ini tidak bisa membaca suara di file ini. Coba file MP3, M4A, WAV, atau MP4.",
     "error.NO_SPEECH": "Tidak ada ucapan yang ditemukan di file ini.",
     "error.SETUP_FAILED": "Model suara tidak bisa dimuat. Periksa koneksi internet Anda untuk unduhan satu kali, lalu coba lagi.",
-    "error.TRANSCRIBE_FAILED": "Transkripsi berhenti tiba-tiba. Coba file yang lebih pendek, atau gunakan laptop untuk rekaman panjang."
+    "error.TRANSCRIBE_FAILED": "Transkripsi berhenti tiba-tiba. Coba file yang lebih pendek, atau gunakan laptop untuk rekaman panjang.",
+    "ws.chooseVideo": "Pilih video",
+    "error.BAD_VIDEO": "Browser ini tidak bisa membaca video ini. Coba file MP4 atau WebM, atau Chrome atau Edge terbaru.",
+    "error.NO_VIDEO_ENCODER": "Browser ini tidak bisa menyimpan video. Gunakan Chrome, Edge, atau Safari terbaru.",
+    "bg.frame": "Menghapus latar: bingkai {n} dari {total}…",
+    "bg.gifNote": "GIF animasi: setiap bingkai diproses dan disimpan sebagai GIF. GIF tidak punya tepi halus, jadi pada “Tidak ada” garis tepinya sedikit lebih tajam.",
+    "bg.videoNote": "Ini bingkai pertama. Pilih latar lalu simpan: setiap bingkai diproses di perangkat ini, sekitar {min} menit di sini. Biarkan tab ini terbuka.",
+    "bg.greenScreen": "Layar hijau",
+    "ws.dpiLow": "Rendah (file terkecil, untuk web)"
   },
   "home": {
     "title": "Fizzdoc — Alat PDF, Gambar, Audio & Office Gratis. Tanpa Upload.",
@@ -2843,6 +2851,84 @@
         "hapus kata sandi pdf Form 16",
         "buka pdf ITR",
         "buka kunci pdf pajak penghasilan"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Hapus Latar Belakang Video",
+      "summary": "Pisahkan orang dari video dan beri warna, blur, atau foto di belakangnya. Suara tetap ada.",
+      "action": "Unduh video",
+      "title": "Hapus Latar Belakang Video Gratis — Tanpa Layar Hijau | Fizzdoc",
+      "description": "Hapus atau ganti latar belakang video secara gratis, tanpa layar hijau: beri warna, blur, atau foto di belakang. Suara tetap ada dan tidak ada yang diunggah.",
+      "h1": "Hapus latar belakang dari video",
+      "lede": "Tidak perlu layar hijau. AI memproses setiap bingkai di perangkat Anda sendiri, suara tetap ada, dan Anda bisa memberi warna, blur, atau foto di belakang. Di ponsel, klip pendek paling cocok.",
+      "steps": [
+        "Pilih video (MP4, WebM, atau MOV).",
+        "Pilih latar belakangnya, dengan bingkai pertama sebagai pratinjau.",
+        "Klik “Unduh video” dan biarkan tab terbuka sampai semua bingkai selesai."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Berapa lama prosesnya?",
+          "Setiap bingkai diproses di perangkat Anda, jadi tergantung kecepatannya. Fizzdoc menampilkan perkiraan sebelum mulai."
+        ],
+        [
+          "Bisakah hasilnya dipakai di editor video?",
+          "Bisa. Pilih “Layar hijau”, lalu editor bisa menghapus hijaunya dengan satu klik (chroma key). Video disimpan sebagai MP4 jika bisa, jika tidak sebagai WebM."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "hapus background video gratis",
+        "ganti background video",
+        "hapus background video tanpa green screen",
+        "menghilangkan latar video online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "Hapus Latar Belakang GIF",
+      "summary": "Buat latar GIF animasi transparan atau berwarna baru, bingkai demi bingkai.",
+      "action": "Unduh GIF",
+      "title": "Hapus Latar Belakang GIF Gratis — GIF Animasi Transparan | Fizzdoc",
+      "description": "Hapus latar belakang GIF animasi secara gratis: setiap bingkai dipotong di perangkat Anda dan disimpan sebagai GIF transparan atau berwarna. Tanpa unggah.",
+      "h1": "Hapus latar belakang dari GIF",
+      "lede": "Setiap bingkai GIF animasi Anda dipotong oleh AI di perangkat Anda sendiri. Biarkan transparan atau beri warna, blur, atau foto di belakang, lalu simpan lagi sebagai GIF.",
+      "steps": [
+        "Pilih GIF animasi.",
+        "Lihat pratinjau dan pilih latar belakangnya.",
+        "Pilih ukuran lalu klik “Unduh GIF”."
+      ],
+      "faq": [
+        [
+          "Apakah file saya diunggah ke suatu tempat?",
+          "Tidak. Fizzdoc melakukan semua proses di dalam tab browser Anda, menggunakan mesin open source yang dikompilasi ke WebAssembly dan JavaScript. File Anda dibaca dari perangkat Anda, diproses secara lokal, dan hasilnya langsung disimpan kembali ke perangkat Anda. Anda bisa membuktikannya sendiri: buka developer tools browser Anda, lihat tab Network, lalu jalankan sebuah proses — tidak ada request yang membawa file Anda."
+        ],
+        [
+          "Apakah waktu animasinya tetap sama?",
+          "Ya. Setiap bingkai mempertahankan durasinya dan GIF baru berulang seperti aslinya."
+        ],
+        [
+          "Kenapa tepinya lebih tajam daripada PNG?",
+          "Piksel GIF hanya bisa transparan penuh atau padat penuh. Untuk tepi halus, pilih warna atau foto di belakang, bukan “Tidak ada”."
+        ],
+        [
+          "Apakah Fizzdoc gratis?",
+          "Ya, dan akan tetap gratis: tanpa daftar, tanpa watermark, tanpa batas harian, dan tanpa paket berbayar. Fizzdoc adalah open source di bawah lisensi Apache-2.0, jadi siapa pun bisa menjalankan salinannya sendiri."
+        ]
+      ],
+      "keywords": [
+        "hapus background gif",
+        "buat gif transparan",
+        "hapus latar gif animasi gratis",
+        "ganti background gif",
+        "remove gif background"
       ]
     }
   }

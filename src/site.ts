@@ -1228,6 +1228,61 @@ TOOLS.push(
     ],
     input: { accept: 'image/*' },
   },
+  {
+    op: 'remove-bg',
+    format: 'image',
+    slug: 'remove-video-background',
+    name: 'Remove Video Background',
+    summary: 'Cut a person out of a video and put a colour, blur or photo behind. Sound included.',
+    action: 'Download video',
+    title: 'Remove Video Background Free — No Green Screen, No Upload | Fizzdoc',
+    description:
+      'Remove or change a video’s background for free, without a green screen: put a colour, a blur or a photo behind. Sound is kept and nothing is uploaded.',
+    h1: 'Remove the background from a video',
+    lede: 'No green screen needed. Every frame is done by an AI on your own device, the sound is kept, and you can put a colour, a blur or a photo behind. Short clips work best on phones.',
+    steps: [
+      'Choose a video (MP4, WebM or MOV).',
+      'Pick what goes behind, using the first frame as a preview.',
+      'Click “Download video” and keep the tab open while every frame is done.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'How long does it take?',
+        'Every frame is processed on your own device, so it depends on its speed. A recent laptop or phone with a graphics chip is fastest; older phones can take about a minute for a few seconds of video. Fizzdoc shows an estimate before you start.',
+      ],
+      [
+        'Can I use the cut-out in a video editor?',
+        'Yes. Choose “Green screen” and the person is saved on a solid green background, which video editors can remove in one click (chroma key). Videos save as MP4 where the browser can, otherwise WebM.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: 'video/*' },
+  },
+  {
+    op: 'remove-bg',
+    format: 'image',
+    slug: 'remove-gif-background',
+    name: 'Remove GIF Background',
+    summary: 'Make an animated GIF’s background clear or a new colour, frame by frame.',
+    action: 'Download GIF',
+    title: 'Remove GIF Background Free — Transparent Animated GIF | Fizzdoc',
+    description:
+      'Remove the background from an animated GIF for free: every frame is cut out on your device and saved as a clear or recoloured GIF. Nothing is uploaded.',
+    h1: 'Remove the background from a GIF',
+    lede: 'Every frame of your animated GIF is cut out by an AI on your own device. Keep it clear, or put a colour, a blur or a photo behind, and save it as a GIF again.',
+    steps: ['Choose an animated GIF.', 'Watch the preview and pick what goes behind.', 'Choose the size and click “Download GIF”.'],
+    faq: [
+      PRIVACY_FAQ[0],
+      ['Will the animation keep its timing?', 'Yes. Every frame keeps its own delay, and the new GIF loops like the original.'],
+      [
+        'Why are the edges a little sharper than in a PNG?',
+        'A GIF pixel can only be fully see-through or fully solid, so soft edges can’t be kept on a clear background. For soft edges, pick a colour or a photo behind instead of “None”.',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: 'image/gif,.gif' },
+  },
 );
 
 // Popular searches that are the same job with a different file type get their own page and copy.
@@ -1698,6 +1753,20 @@ const KEYWORDS: Record<string, string[]> = {
     'convert GIF or BMP to PNG',
     'bulk image converter',
     'image to WebP'
+  ],
+  'remove-video-background': [
+    'remove background from video free',
+    'video background remover',
+    'change video background',
+    'remove video background without green screen',
+    'transparent background video',
+  ],
+  'remove-gif-background': [
+    'remove gif background',
+    'transparent gif maker',
+    'make gif background transparent',
+    'gif background remover free',
+    'change animated gif background',
   ],
   'remove-background': [
     'remove background from image free',

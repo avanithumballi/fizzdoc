@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Dieser Browser kann den Ton dieser Datei nicht lesen. Versuchen Sie eine MP3-, M4A-, WAV- oder MP4-Datei.",
     "error.NO_SPEECH": "In dieser Datei wurde keine Sprache gefunden.",
     "error.SETUP_FAILED": "Das Sprachmodell konnte nicht geladen werden. Prüfen Sie Ihre Internetverbindung für den einmaligen Download und versuchen Sie es erneut.",
-    "error.TRANSCRIBE_FAILED": "Die Transkription wurde unerwartet beendet. Versuchen Sie eine kürzere Datei oder bei langen Aufnahmen einen Laptop."
+    "error.TRANSCRIBE_FAILED": "Die Transkription wurde unerwartet beendet. Versuchen Sie eine kürzere Datei oder bei langen Aufnahmen einen Laptop.",
+    "ws.chooseVideo": "Video auswählen",
+    "error.BAD_VIDEO": "Dieser Browser kann dieses Video nicht lesen. Versuchen Sie eine MP4- oder WebM-Datei oder das neueste Chrome oder Edge.",
+    "error.NO_VIDEO_ENCODER": "Dieser Browser kann keine Videos speichern. Bitte nutzen Sie das neueste Chrome, Edge oder Safari.",
+    "bg.frame": "Hintergrund wird entfernt: Bild {n} von {total}…",
+    "bg.gifNote": "Animiertes GIF: Jedes Bild wird bearbeitet und als GIF gespeichert. GIFs haben keine weichen Kanten, daher wirkt der Umriss bei „Keiner“ etwas schärfer.",
+    "bg.videoNote": "Das ist das erste Bild. Wählen Sie einen Hintergrund und speichern Sie: Jedes Bild wird auf diesem Gerät bearbeitet, hier etwa {min} Min. Lassen Sie diesen Tab offen.",
+    "bg.greenScreen": "Greenscreen",
+    "ws.dpiLow": "Niedrig (kleinste Datei, fürs Web)"
   },
   "home": {
     "title": "Fizzdoc — Kostenlose PDF-, Bild-, Audio- & Office-Tools",
@@ -2843,6 +2851,84 @@
         "Form 16 PDF Passwort entfernen",
         "ITR PDF öffnen",
         "Einkommensteuer PDF entsperren"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Videohintergrund Entfernen",
+      "summary": "Eine Person aus einem Video freistellen und eine Farbe, Unschärfe oder ein Foto dahinter setzen. Mit Ton.",
+      "action": "Video herunterladen",
+      "title": "Videohintergrund Entfernen Kostenlos — Ohne Greenscreen | Fizzdoc",
+      "description": "Entfernen oder ändern Sie den Hintergrund eines Videos kostenlos, ohne Greenscreen: Farbe, Unschärfe oder Foto dahinter. Ton bleibt, kein Upload.",
+      "h1": "Hintergrund aus einem Video entfernen",
+      "lede": "Kein Greenscreen nötig. Eine KI bearbeitet jedes Bild auf Ihrem eigenen Gerät, der Ton bleibt, und Sie können eine Farbe, eine Unschärfe oder ein Foto dahinter setzen. Auf Handys klappen kurze Clips am besten.",
+      "steps": [
+        "Wählen Sie ein Video (MP4, WebM oder MOV).",
+        "Wählen Sie, was dahinter kommt – mit dem ersten Bild als Vorschau.",
+        "Klicken Sie auf „Video herunterladen“ und lassen Sie den Tab offen, bis jedes Bild fertig ist."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Wie lange dauert das?",
+          "Jedes Bild wird auf Ihrem Gerät bearbeitet, es hängt also von dessen Tempo ab. Fizzdoc zeigt vor dem Start eine Schätzung."
+        ],
+        [
+          "Kann ich das Ergebnis im Videoschnitt nutzen?",
+          "Ja. Wählen Sie „Greenscreen“, dann entfernt das Schnittprogramm das Grün mit einem Klick (Chroma Key). Videos werden als MP4 gespeichert, sonst als WebM."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "Videohintergrund entfernen kostenlos",
+        "Video Hintergrund ändern",
+        "Hintergrund entfernen ohne Greenscreen",
+        "Video freistellen online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "GIF-Hintergrund Entfernen",
+      "summary": "Den Hintergrund eines animierten GIFs Bild für Bild transparent oder neu einfärben.",
+      "action": "GIF herunterladen",
+      "title": "GIF-Hintergrund Entfernen Kostenlos — Transparentes GIF | Fizzdoc",
+      "description": "Entfernen Sie den Hintergrund eines animierten GIFs kostenlos: Jedes Bild wird auf Ihrem Gerät freigestellt und als transparentes GIF gespeichert. Ohne Upload.",
+      "h1": "Hintergrund aus einem GIF entfernen",
+      "lede": "Jedes Bild Ihres animierten GIFs wird von einer KI auf Ihrem eigenen Gerät freigestellt. Lassen Sie es transparent oder setzen Sie eine Farbe, Unschärfe oder ein Foto dahinter und speichern Sie es wieder als GIF.",
+      "steps": [
+        "Wählen Sie ein animiertes GIF.",
+        "Sehen Sie sich die Vorschau an und wählen Sie, was dahinter kommt.",
+        "Wählen Sie die Größe und klicken Sie auf „GIF herunterladen“."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Bleibt das Timing der Animation erhalten?",
+          "Ja. Jedes Bild behält seine Dauer, und das neue GIF läuft in Schleife wie das Original."
+        ],
+        [
+          "Warum sind die Kanten schärfer als bei PNG?",
+          "Ein GIF-Pixel ist entweder ganz durchsichtig oder ganz deckend. Für weiche Kanten wählen Sie statt „Keiner“ eine Farbe oder ein Foto."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "GIF Hintergrund entfernen",
+        "GIF transparent machen",
+        "animiertes GIF Hintergrund entfernen",
+        "GIF Hintergrund ändern",
+        "remove gif background"
       ]
     }
   }

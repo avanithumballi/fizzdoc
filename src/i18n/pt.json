@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Este navegador não consegue ler o som deste arquivo. Tente um arquivo MP3, M4A, WAV ou MP4.",
     "error.NO_SPEECH": "Nenhuma fala foi encontrada neste arquivo.",
     "error.SETUP_FAILED": "Não foi possível carregar o modelo de voz. Verifique sua conexão com a internet para o download único e tente de novo.",
-    "error.TRANSCRIBE_FAILED": "A transcrição parou inesperadamente. Tente um arquivo mais curto, ou um notebook para gravações longas."
+    "error.TRANSCRIBE_FAILED": "A transcrição parou inesperadamente. Tente um arquivo mais curto, ou um notebook para gravações longas.",
+    "ws.chooseVideo": "Escolher um vídeo",
+    "error.BAD_VIDEO": "Este navegador não consegue ler este vídeo. Tente um arquivo MP4 ou WebM, ou a versão mais recente do Chrome ou Edge.",
+    "error.NO_VIDEO_ENCODER": "Este navegador não consegue salvar vídeos. Use a versão mais recente do Chrome, Edge ou Safari.",
+    "bg.frame": "Removendo o fundo: quadro {n} de {total}…",
+    "bg.gifNote": "GIF animado: cada quadro é processado e salvo como GIF. GIFs não têm bordas suaves, então em “Nenhum” o contorno fica um pouco mais nítido.",
+    "bg.videoNote": "Este é o primeiro quadro. Escolha um fundo e salve: cada quadro é feito neste aparelho, cerca de {min} min aqui. Mantenha esta aba aberta.",
+    "bg.greenScreen": "Tela verde",
+    "ws.dpiLow": "Baixa (arquivo menor, para a web)"
   },
   "home": {
     "title": "Fizzdoc — Ferramentas Grátis de PDF, Imagem, Áudio e Office",
@@ -2843,6 +2851,84 @@
         "remover senha PDF Form 16",
         "abrir PDF de ITR",
         "desbloquear PDF imposto de renda"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Remover Fundo de Vídeo",
+      "summary": "Recorte uma pessoa de um vídeo e coloque uma cor, um desfoque ou uma foto atrás. Com som.",
+      "action": "Baixar vídeo",
+      "title": "Remover Fundo de Vídeo Grátis — Sem Tela Verde, Sem Enviar | Fizzdoc",
+      "description": "Remova ou troque o fundo de um vídeo grátis, sem tela verde: coloque uma cor, um desfoque ou uma foto atrás. O som é mantido e nada é enviado.",
+      "h1": "Remova o fundo de um vídeo",
+      "lede": "Não precisa de tela verde. Uma IA processa cada quadro no seu próprio aparelho, o som é mantido e você pode colocar uma cor, um desfoque ou uma foto atrás. Em celulares, clipes curtos funcionam melhor.",
+      "steps": [
+        "Escolha um vídeo (MP4, WebM ou MOV).",
+        "Escolha o que vai atrás, usando o primeiro quadro como prévia.",
+        "Clique em “Baixar vídeo” e mantenha a aba aberta enquanto cada quadro é feito."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "Quanto tempo leva?",
+          "Cada quadro é processado no seu aparelho, então depende da velocidade dele. O Fizzdoc mostra uma estimativa antes de começar."
+        ],
+        [
+          "Posso usar o recorte em um editor de vídeo?",
+          "Sim. Escolha “Tela verde” e o editor remove o verde com um clique (chroma key). Os vídeos são salvos em MP4 quando possível, senão em WebM."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "remover fundo de vídeo grátis",
+        "trocar fundo de vídeo",
+        "remover fundo de vídeo sem tela verde",
+        "apagar fundo de vídeo online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "Remover Fundo de GIF",
+      "summary": "Deixe o fundo de um GIF animado transparente ou de outra cor, quadro a quadro.",
+      "action": "Baixar GIF",
+      "title": "Remover Fundo de GIF Grátis — GIF Animado Transparente | Fizzdoc",
+      "description": "Remova o fundo de um GIF animado grátis: cada quadro é recortado no seu aparelho e salvo como GIF transparente ou com nova cor. Nada é enviado.",
+      "h1": "Remova o fundo de um GIF",
+      "lede": "Cada quadro do seu GIF animado é recortado por uma IA no seu próprio aparelho. Deixe transparente ou coloque uma cor, um desfoque ou uma foto atrás e salve como GIF de novo.",
+      "steps": [
+        "Escolha um GIF animado.",
+        "Veja a prévia e escolha o que vai atrás.",
+        "Escolha o tamanho e clique em “Baixar GIF”."
+      ],
+      "faq": [
+        [
+          "Meus arquivos são enviados para algum lugar?",
+          "Não. O Fizzdoc faz todo o trabalho dentro da aba do seu navegador, usando mecanismos de código aberto compilados para WebAssembly e JavaScript. Seu arquivo é lido do seu dispositivo, processado localmente, e o resultado é salvo direto de volta nele. Você pode conferir por conta própria: abra as ferramentas de desenvolvedor do navegador, vá até a aba Rede e rode uma tarefa — nenhuma requisição leva seu arquivo."
+        ],
+        [
+          "A animação mantém o ritmo?",
+          "Sim. Cada quadro mantém sua duração e o novo GIF repete como o original."
+        ],
+        [
+          "Por que as bordas ficam mais nítidas que num PNG?",
+          "Um pixel de GIF só pode ser totalmente transparente ou totalmente sólido. Para bordas suaves, coloque uma cor ou uma foto atrás em vez de “Nenhum”."
+        ],
+        [
+          "O Fizzdoc é gratuito?",
+          "Sim, e vai continuar sendo grátis: sem cadastro, sem marca d'água, sem limite diário e sem plano premium. O Fizzdoc é open source sob a licença Apache-2.0, então qualquer um pode rodar sua própria cópia."
+        ]
+      ],
+      "keywords": [
+        "remover fundo de gif",
+        "fazer gif transparente",
+        "remover fundo de gif animado grátis",
+        "trocar fundo de gif",
+        "remove gif background"
       ]
     }
   }

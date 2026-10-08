@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Ta przeglądarka nie może odczytać dźwięku z tego pliku. Spróbuj pliku MP3, M4A, WAV lub MP4.",
     "error.NO_SPEECH": "W tym pliku nie znaleziono mowy.",
     "error.SETUP_FAILED": "Nie udało się wczytać modelu mowy. Sprawdź połączenie z internetem na czas jednorazowego pobierania i spróbuj ponownie.",
-    "error.TRANSCRIBE_FAILED": "Transkrypcja nieoczekiwanie się zatrzymała. Spróbuj krótszego pliku albo laptopa przy długich nagraniach."
+    "error.TRANSCRIBE_FAILED": "Transkrypcja nieoczekiwanie się zatrzymała. Spróbuj krótszego pliku albo laptopa przy długich nagraniach.",
+    "ws.chooseVideo": "Wybierz film",
+    "error.BAD_VIDEO": "Ta przeglądarka nie może odczytać tego filmu. Spróbuj pliku MP4 lub WebM albo najnowszego Chrome lub Edge.",
+    "error.NO_VIDEO_ENCODER": "Ta przeglądarka nie może zapisywać filmów. Użyj najnowszego Chrome, Edge lub Safari.",
+    "bg.frame": "Usuwanie tła: klatka {n} z {total}…",
+    "bg.gifNote": "Animowany GIF: każda klatka jest przetwarzana i zapisywana jako GIF. GIF nie ma miękkich krawędzi, więc przy „Brak” kontur jest nieco ostrzejszy.",
+    "bg.videoNote": "To pierwsza klatka. Wybierz tło i zapisz: każda klatka jest robiona na tym urządzeniu, tutaj około {min} min. Nie zamykaj tej karty.",
+    "bg.greenScreen": "Zielony ekran",
+    "ws.dpiLow": "Niska (najmniejszy plik, do internetu)"
   },
   "home": {
     "title": "Fizzdoc — Darmowe PDF, obrazy, audio i Office. Bez wysyłania.",
@@ -2843,6 +2851,84 @@
         "usuń hasło z Form 16 pdf",
         "otwórz pdf ITR",
         "odblokuj pdf podatkowy"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Usuń Tło z Filmu",
+      "summary": "Wytnij osobę z filmu i umieść za nią kolor, rozmycie lub zdjęcie. Z dźwiękiem.",
+      "action": "Pobierz film",
+      "title": "Usuń Tło z Filmu za Darmo — Bez Zielonego Ekranu | Fizzdoc",
+      "description": "Usuń lub zmień tło filmu za darmo, bez zielonego ekranu: umieść za osobą kolor, rozmycie lub zdjęcie. Dźwięk zostaje, a nic nie jest wysyłane.",
+      "h1": "Usuń tło z filmu",
+      "lede": "Bez zielonego ekranu. AI przetwarza każdą klatkę na Twoim urządzeniu, dźwięk zostaje, a za osobą możesz dać kolor, rozmycie lub zdjęcie. Na telefonach najlepiej działają krótkie klipy.",
+      "steps": [
+        "Wybierz film (MP4, WebM lub MOV).",
+        "Wybierz, co ma być z tyłu, patrząc na pierwszą klatkę.",
+        "Kliknij „Pobierz film” i nie zamykaj karty, aż każda klatka będzie gotowa."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Ile to trwa?",
+          "Każda klatka jest przetwarzana na Twoim urządzeniu, więc zależy to od jego szybkości. Fizzdoc pokazuje szacowany czas przed startem."
+        ],
+        [
+          "Czy mogę użyć wyniku w edytorze wideo?",
+          "Tak. Wybierz „Zielony ekran”, a edytor usunie zieleń jednym kliknięciem (chroma key). Filmy zapisują się jako MP4, a jeśli się nie da, jako WebM."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "usuń tło z filmu za darmo",
+        "zmień tło filmu",
+        "usuwanie tła wideo bez zielonego ekranu",
+        "usuń tło z wideo online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "Usuń Tło z GIF-a",
+      "summary": "Zrób przezroczyste lub nowe tło animowanego GIF-a, klatka po klatce.",
+      "action": "Pobierz GIF",
+      "title": "Usuń Tło z GIF-a za Darmo — Przezroczysty Animowany GIF | Fizzdoc",
+      "description": "Usuń tło z animowanego GIF-a za darmo: każda klatka jest wycinana na Twoim urządzeniu i zapisywana jako przezroczysty lub nowy GIF. Nic nie jest wysyłane.",
+      "h1": "Usuń tło z GIF-a",
+      "lede": "Każda klatka Twojego animowanego GIF-a jest wycinana przez AI na Twoim urządzeniu. Zostaw ją przezroczystą lub daj z tyłu kolor, rozmycie albo zdjęcie i zapisz znów jako GIF.",
+      "steps": [
+        "Wybierz animowany GIF.",
+        "Obejrzyj podgląd i wybierz, co ma być z tyłu.",
+        "Wybierz rozmiar i kliknij „Pobierz GIF”."
+      ],
+      "faq": [
+        [
+          "Czy moje pliki są gdzieś przesyłane?",
+          "Nie. Fizzdoc wykonuje całą pracę w karcie przeglądarki, korzystając z otwartoźródłowych silników skompilowanych do WebAssembly i JavaScript. Twój plik jest odczytywany z urządzenia, przetwarzany lokalnie, a wynik trafia od razu z powrotem na Twoje urządzenie. Możesz to sam sprawdzić: otwórz narzędzia deweloperskie przeglądarki, przejdź do zakładki Sieć i uruchom zadanie — żadne żądanie nie przenosi Twojego pliku."
+        ],
+        [
+          "Czy animacja zachowa tempo?",
+          "Tak. Każda klatka zachowuje swój czas, a nowy GIF zapętla się jak oryginał."
+        ],
+        [
+          "Dlaczego krawędzie są ostrzejsze niż w PNG?",
+          "Piksel GIF-a jest albo całkiem przezroczysty, albo całkiem pełny. Dla miękkich krawędzi wybierz z tyłu kolor lub zdjęcie zamiast „Brak”."
+        ],
+        [
+          "Czy Fizzdoc jest darmowy?",
+          "Tak, i zawsze będzie za darmo: bez rejestracji, bez znaku wodnego, bez dziennego limitu i bez płatnej wersji. Fizzdoc jest open source na licencji Apache-2.0, więc każdy może uruchomić własną kopię."
+        ]
+      ],
+      "keywords": [
+        "usuń tło z gifa",
+        "przezroczysty gif",
+        "usuwanie tła animowanego gifa",
+        "zmień tło gifa",
+        "remove gif background"
       ]
     }
   }

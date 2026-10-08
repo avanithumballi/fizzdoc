@@ -4,6 +4,8 @@ import { LocalError } from './local';
 import type { BackgroundModel, FromBackground, ToBackground } from './background-worker';
 
 export interface Hooks {
+  /** Speed over the finest edges, for animations with many frames. */
+  fast?: boolean;
   /** First-run download of the model and runtime: bytes so far and in total. */
   onSetup?: (loaded: number, total: number) => void;
   onProgress?: (fraction: number) => void;
@@ -47,7 +49,7 @@ function ask(message: Omit<ToBackground, 'id'>, hooks: Hooks): Promise<FromBackg
   const id = nextId++;
   return new Promise((resolve, reject) => {
     pending.set(id, { resolve, reject, hooks });
-    connect().postMessage({ ...message, id }, [message.image]);
+    connect().postMessage({ ...message, id, fast: hooks.fast }, [message.image]);
   });
 }
 
