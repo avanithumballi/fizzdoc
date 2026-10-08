@@ -119,8 +119,8 @@ export async function imagesToPdf(files: File[]): Promise<Output> {
   };
 }
 
-/** Renders every page to a JPEG (or PNG) at 150 DPI with pdf.js; several pages come back as a ZIP. */
-export async function pdfToImages(file: File, format: 'jpg' | 'png' = 'jpg'): Promise<Output> {
+/** Renders every page to a JPEG (or PNG) at `dpi` (150 by default) with pdf.js; several pages come back as a ZIP. */
+export async function pdfToImages(file: File, format: 'jpg' | 'png' = 'jpg', dpi = 150): Promise<Output> {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs'); // legacy = polyfilled for browsers from 2023 on
   pdfjs.GlobalWorkerOptions.workerSrc = (await import('pdfjs-dist/legacy/build/pdf.worker.min.mjs?url')).default;
   let doc;
@@ -136,7 +136,7 @@ export async function pdfToImages(file: File, format: 'jpg' | 'png' = 'jpg'): Pr
   let last: Blob | undefined;
   for (let number = 1; number <= doc.numPages; number++) {
     const page = await doc.getPage(number);
-    const viewport = page.getViewport({ scale: 150 / 72 });
+    const viewport = page.getViewport({ scale: dpi / 72 }); // PDF units are 1/72 inch
     const canvas = new OffscreenCanvas(Math.ceil(viewport.width), Math.ceil(viewport.height));
     const context = canvas.getContext('2d')!;
     context.fillStyle = '#fff'; // JPEG has no transparency; PDFs assume white paper.

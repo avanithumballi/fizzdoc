@@ -166,6 +166,7 @@ export const UI = {
   'ws.startAt': 'Start at',
   'ws.targetKb': 'Max file size (KB)',
   'ws.targetAny': 'No limit',
+  'ws.dpiLow': 'Low (smallest file, for the web)',
   'ws.dpiStandard': 'Standard (smaller file)',
   'ws.dpiHigh': 'High (sharper small print)',
   'ws.look': 'Look',

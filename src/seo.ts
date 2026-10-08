@@ -259,6 +259,8 @@ function optionsHtml(c: Copy, tool: Tool) {
     <label>${esc(c.t('ws.saveAs'))}<select name="format">${option('txt', c.t('ws.fmtTxt'))}${option('srt', c.t('ws.fmtSrt'), tool.preset?.format === 'srt')}${option('vtt', c.t('ws.fmtVtt'))}</select></label>
     <p class="note">${esc(c.t('ws.speechEnglish'))}</p>
     <p class="note">${esc(c.t('ws.speechModel', { mb: SPEECH_MODEL_MB }))}</p>`;
+  if (tool.op === 'pdf-to-jpg')
+    return `<label>${esc(c.t('ws.quality'))}<select name="dpi">${option('72', c.t('ws.dpiLow'))}${option('150', c.t('ws.dpiStandard'), true)}${option('300', c.t('ws.dpiHigh'))}</select></label>`; 
   if (tool.op === 'excel-to-json') return `<label class="check"><input name="header" type="checkbox" checked> ${esc(c.t('ws.header'))}</label>`;
   if (tool.op === 'compress-pdf' || tool.op === 'office-compress')
     return `<label>${esc(c.t('ws.compression'))}<select name="level">${option('light', c.t('ws.balanced'))}${option('strong', c.t('ws.strong'))}</select></label>`;
