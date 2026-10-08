@@ -1,5 +1,6 @@
 // Renders every page of the static site from index.html, in every language, plus sitemap.xml,
 // robots.txt and llms.txt. Runs in Node (inside the Vite build and dev server), never in the browser.
+import { SHARE_ICON, shareLinks } from './share';
 import { existsSync, readFileSync } from 'node:fs';
 import { LANGS, UI, fill, type Lang, type Strings, type UiKey } from './i18n.ts';
 import { ALTERNATIVES, ALTERNATIVES_HUB, type Alternative } from './alternatives.ts';
@@ -51,7 +52,7 @@ function copy(lang: Lang) {
   const link = (target?: Tool) => pathOf(lang, target);
   return { lang, t, tool, home, link, ui: catalog.ui ?? {} };
 }
-type Copy = ReturnType<typeof copy>;
+export type Copy = ReturnType<typeof copy>;
 
 // The page may only talk to its own origin: the privacy promise, enforced by the browser.
 const CSP = [
@@ -342,6 +343,7 @@ function workspaceHtml(c: Copy, tool: Tool) {
     <a id="download" class="button primary" href="#">${esc(c.t('ws.download'))}</a>
     <ul id="warnings" class="warnings"></ul>
     <p class="star-nudge">${esc(c.t('star.nudge')).replace('{link}', `<a href="${SITE.repo}" target="_blank" rel="noopener">${esc(c.t('star.nudgeLink'))}</a>`)}</p>
+    <div class="share-nudge"><p>${esc(c.t('share.nudge'))}</p><!--share--></div>
   </div>
   <p id="report" class="report"><span id="report-speed" hidden>${esc(c.t('app.deviceSpeed'))} </span><a id="report-link" href="${SITE.repo}/issues/new?template=bug_report.yml" target="_blank" rel="noopener">${esc(c.t('app.report'))}</a></p>
 </section>
@@ -724,6 +726,8 @@ export function renderPage(template: string, page: Page, withCsp: boolean, stars
     .replace('<!--main-->', mainHtml(c, page))
     .replace('<!--footer-->', footerHtml(c))
     .replace('<!--lang-->', langSelect(c, page))
+    .replaceAll('<!--share-->', shareLinks(c, url, tool?.name ?? SITE.name))
+    .replace('<!--share-icon-->', `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${SHARE_ICON}"/></svg>`)
     .replaceAll('{{home}}', c.link())
     .replace(/\{\{t:([\w.]+)\}\}/g, (_, key: UiKey) => esc(c.t(key)))
     .replaceAll('<!--stars-->', stars ? `<span class="star-count">${formatStars(stars)}</span>` : '')
