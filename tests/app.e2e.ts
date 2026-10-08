@@ -1026,3 +1026,36 @@ test('publishes sitemap, robots.txt and llms.txt', async ({ request }) => {
   expect(await (await request.get('/robots.txt')).text()).toContain('User-agent: *\nAllow: /');
   expect((await request.get('/og.png')).headers()['content-type']).toBe('image/png');
 });
+
+test('shares Fizzdoc: the phone’s share sheet, or links to the big networks and a copy button', async ({ browser }) => {
+  const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await context.newPage();
+  await page.goto('/merge-pdf/');
+  await page.getByRole('button', { name: 'Share Fizzdoc' }).click();
+  const menu = page.locator('#share-pop');
+  await expect(menu).toBeVisible();
+  const whatsapp = menu.getByRole('link', { name: 'Share on WhatsApp' });
+  await expect(whatsapp).toHaveAttribute('href', /^https:\/\/wa\.me\/\?text=Merge%20PDF.*fizzdoc\.com%2Fmerge-pdf%2F$/);
+  await expect(menu.getByRole('link', { name: 'Share on LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ffizzdoc.com%2Fmerge-pdf%2F');
+  await menu.getByRole('button', { name: 'Copy link' }).click();
+  await expect(menu.getByRole('button', { name: 'Link copied' })).toBeVisible();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('https://fizzdoc.com/merge-pdf/');
+  await page.keyboard.press('Escape');
+  await expect(menu).toBeHidden();
+  // The same links sit under the star call-out on every page.
+  await expect(page.locator('.share-cta .share-link')).toHaveCount(8);
+  await context.close();
+
+  // On a phone the system share sheet opens instead of the menu.
+  const phone = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const mobile = await phone.newPage();
+  await mobile.addInitScript(() => {
+    Object.defineProperty(navigator, 'share', { value: async (data: ShareData) => ((window as unknown as { shared: ShareData }).shared = data) });
+  });
+  await mobile.goto('/hi/');
+  await mobile.locator('#share-btn').tap();
+  expect(await mobile.evaluate(() => (window as unknown as { shared: ShareData }).shared.url)).toBe('https://fizzdoc.com/hi/');
+  await expect(mobile.locator('#share-pop')).toBeHidden();
+  expect(await mobile.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  await phone.close();
+});

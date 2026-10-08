@@ -22,6 +22,7 @@ Components
 - Tesseract OCR engine (Apache-2.0), via tesseract.js and tesseract.js-core — https://github.com/naptha/tesseract.js
 - English OCR data, tessdata 4.0.0 best_int (Apache-2.0, Google) packaged as @tesseract.js-data/eng (MIT)
 - Inter typeface (SIL Open Font License 1.1) — Rasmus Andersson — https://rsms.me/inter
+- Simple Icons (CC0 1.0) — brand marks on the share buttons — https://github.com/simple-icons/simple-icons
 - Architecture map (/architecture.html) generated with Archify (MIT) — https://github.com/tt-a1i/archify —
   embedding JetBrains Mono (SIL Open Font License 1.1) — The JetBrains Mono Project Authors
 

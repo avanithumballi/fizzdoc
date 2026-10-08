@@ -105,8 +105,59 @@ function setUpLanguage() {
   setTimeout(close, 9000);
 }
 
+/** Header share button: the phone's share sheet when there is one, otherwise a small menu of links. */
+function setUpShare() {
+  const button = document.getElementById('share-btn');
+  const pop = document.getElementById('share-pop');
+  const close = () => {
+    if (!pop || pop.hidden) return;
+    pop.hidden = true;
+    button?.setAttribute('aria-expanded', 'false');
+  };
+  button?.addEventListener('click', async () => {
+    const links = pop?.querySelector<HTMLElement>('.share-links');
+    if (navigator.share && matchMedia('(pointer: coarse)').matches && links) {
+      try {
+        await navigator.share({ title: document.title, text: links.dataset.text, url: links.dataset.url });
+        return;
+      } catch (error) {
+        if ((error as Error).name === 'AbortError') return; // they closed the sheet
+      }
+    }
+    if (!pop) return;
+    pop.hidden = !pop.hidden;
+    button.setAttribute('aria-expanded', String(!pop.hidden));
+  });
+  document.addEventListener('click', (event) => {
+    if (!(event.target as Element).closest('.share')) close();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close();
+  });
+  // Copy link, wherever the share links appear.
+  document.addEventListener('click', async (event) => {
+    const copy = (event.target as Element).closest<HTMLButtonElement>('.share-copy');
+    if (!copy) return;
+    try {
+      await navigator.clipboard.writeText(copy.dataset.url!);
+    } catch {
+      return; // no clipboard access (old browser or insecure page): the other links still work
+    }
+    const label = copy.getAttribute('aria-label')!;
+    copy.classList.add('done');
+    copy.setAttribute('aria-label', copy.dataset.done!);
+    copy.title = copy.dataset.done!;
+    setTimeout(() => {
+      copy.classList.remove('done');
+      copy.setAttribute('aria-label', label);
+      copy.title = label;
+    }, 2000);
+  });
+}
+
 export function setUpEffects() {
   setUpThemeToggle();
+  setUpShare();
   setUpLanguage();
   setUpRipple();
   document.querySelectorAll<HTMLElement>('[data-spring]').forEach(springDrag);
