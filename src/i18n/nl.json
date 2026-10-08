@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Deze browser kan het geluid in dit bestand niet lezen. Probeer een MP3-, M4A-, WAV- of MP4-bestand.",
     "error.NO_SPEECH": "Er is geen spraak gevonden in dit bestand.",
     "error.SETUP_FAILED": "Het spraakmodel kon niet worden geladen. Controleer je internetverbinding voor de eenmalige download en probeer het opnieuw.",
-    "error.TRANSCRIBE_FAILED": "De transcriptie is onverwacht gestopt. Probeer een korter bestand, of een laptop voor lange opnames."
+    "error.TRANSCRIBE_FAILED": "De transcriptie is onverwacht gestopt. Probeer een korter bestand, of een laptop voor lange opnames.",
+    "ws.chooseVideo": "Kies een video",
+    "error.BAD_VIDEO": "Deze browser kan deze video niet lezen. Probeer een MP4- of WebM-bestand, of de nieuwste Chrome of Edge.",
+    "error.NO_VIDEO_ENCODER": "Deze browser kan geen video’s opslaan. Gebruik de nieuwste Chrome, Edge of Safari.",
+    "bg.frame": "Achtergrond verwijderen: beeld {n} van {total}…",
+    "bg.gifNote": "Geanimeerde GIF: elk beeld wordt bewerkt en als GIF opgeslagen. GIF’s hebben geen zachte randen, dus bij “Geen” is de omtrek iets scherper.",
+    "bg.videoNote": "Dit is het eerste beeld. Kies een achtergrond en sla op: elk beeld wordt op dit apparaat bewerkt, hier ongeveer {min} min. Houd dit tabblad open.",
+    "bg.greenScreen": "Green screen",
+    "ws.dpiLow": "Laag (kleinste bestand, voor het web)"
   },
   "home": {
     "title": "Fizzdoc — Gratis PDF-, Afbeeldings- & Audiotools. Geen Upload.",
@@ -2843,6 +2851,84 @@
         "Form 16 pdf wachtwoord verwijderen",
         "ITR pdf openen",
         "belasting pdf ontgrendelen"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Video Achtergrond Verwijderen",
+      "summary": "Knip een persoon uit een video en zet er een kleur, vervaging of foto achter. Met geluid.",
+      "action": "Video downloaden",
+      "title": "Video Achtergrond Verwijderen Gratis — Zonder Green Screen | Fizzdoc",
+      "description": "Verwijder of wijzig gratis de achtergrond van een video, zonder green screen: zet er een kleur, vervaging of foto achter. Geluid blijft en niets wordt geüpload.",
+      "h1": "Verwijder de achtergrond uit een video",
+      "lede": "Geen green screen nodig. Een AI bewerkt elk beeld op je eigen apparaat, het geluid blijft, en je kunt er een kleur, vervaging of foto achter zetten. Op telefoons werken korte clips het best.",
+      "steps": [
+        "Kies een video (MP4, WebM of MOV).",
+        "Kies wat erachter komt, met het eerste beeld als voorbeeld.",
+        "Klik op “Video downloaden” en houd het tabblad open tot elk beeld klaar is."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Hoe lang duurt het?",
+          "Elk beeld wordt op je apparaat bewerkt, dus het hangt af van de snelheid ervan. Fizzdoc toont vooraf een schatting."
+        ],
+        [
+          "Kan ik het resultaat in een video-editor gebruiken?",
+          "Ja. Kies “Green screen” en de editor haalt het groen met één klik weg (chroma key). Video’s worden als MP4 opgeslagen, anders als WebM."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "video achtergrond verwijderen gratis",
+        "video achtergrond veranderen",
+        "achtergrond verwijderen zonder green screen",
+        "video achtergrond weghalen online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "GIF Achtergrond Verwijderen",
+      "summary": "Maak de achtergrond van een geanimeerde GIF transparant of een nieuwe kleur, beeld voor beeld.",
+      "action": "GIF downloaden",
+      "title": "GIF Achtergrond Verwijderen Gratis — Transparante GIF | Fizzdoc",
+      "description": "Verwijder gratis de achtergrond van een geanimeerde GIF: elk beeld wordt op je apparaat uitgeknipt en als transparante of nieuw gekleurde GIF opgeslagen.",
+      "h1": "Verwijder de achtergrond uit een GIF",
+      "lede": "Elk beeld van je geanimeerde GIF wordt door een AI op je eigen apparaat uitgeknipt. Laat hem transparant of zet er een kleur, vervaging of foto achter en sla hem weer op als GIF.",
+      "steps": [
+        "Kies een geanimeerde GIF.",
+        "Bekijk het voorbeeld en kies wat erachter komt.",
+        "Kies de grootte en klik op “GIF downloaden”."
+      ],
+      "faq": [
+        [
+          "Worden mijn bestanden ergens geüpload?",
+          "Nee. Fizzdoc doet het werk in je browsertab, met opensource-engines die zijn gecompileerd naar WebAssembly en JavaScript. Je bestand wordt van je apparaat gelezen, lokaal verwerkt, en het resultaat wordt direct weer op je apparaat opgeslagen. Je kunt dit zelf controleren: open de ontwikkelaarstools van je browser, ga naar het tabblad Netwerk en voer een taak uit — er wordt geen enkel verzoek met je bestand verstuurd."
+        ],
+        [
+          "Blijft de timing van de animatie gelijk?",
+          "Ja. Elk beeld houdt zijn eigen duur en de nieuwe GIF herhaalt zich zoals het origineel."
+        ],
+        [
+          "Waarom zijn de randen scherper dan in een PNG?",
+          "Een GIF-pixel is alleen helemaal doorzichtig of helemaal dicht. Kies voor zachte randen een kleur of foto in plaats van “Geen”."
+        ],
+        [
+          "Is Fizzdoc gratis?",
+          "Ja, en het blijft gratis: geen account, geen watermerk, geen dagelijkse limiet en geen premium-abonnement. Fizzdoc is open source onder de Apache-2.0-licentie, dus iedereen kan zijn eigen versie draaien."
+        ]
+      ],
+      "keywords": [
+        "gif achtergrond verwijderen",
+        "gif transparant maken",
+        "geanimeerde gif achtergrond verwijderen",
+        "gif achtergrond veranderen",
+        "remove gif background"
       ]
     }
   }

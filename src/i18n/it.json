@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Questo browser non riesce a leggere l’audio di questo file. Prova con un file MP3, M4A, WAV o MP4.",
     "error.NO_SPEECH": "Nessun parlato trovato in questo file.",
     "error.SETUP_FAILED": "Non è stato possibile caricare il modello vocale. Controlla la connessione a internet per il download una tantum e riprova.",
-    "error.TRANSCRIBE_FAILED": "La trascrizione si è interrotta inaspettatamente. Prova con un file più breve, o con un portatile per le registrazioni lunghe."
+    "error.TRANSCRIBE_FAILED": "La trascrizione si è interrotta inaspettatamente. Prova con un file più breve, o con un portatile per le registrazioni lunghe.",
+    "ws.chooseVideo": "Scegli un video",
+    "error.BAD_VIDEO": "Questo browser non riesce a leggere questo video. Prova un file MP4 o WebM, o l’ultima versione di Chrome o Edge.",
+    "error.NO_VIDEO_ENCODER": "Questo browser non può salvare video. Usa l’ultima versione di Chrome, Edge o Safari.",
+    "bg.frame": "Rimozione dello sfondo: fotogramma {n} di {total}…",
+    "bg.gifNote": "GIF animata: ogni fotogramma viene elaborato e salvato come GIF. Le GIF non hanno bordi morbidi, quindi con “Nessuno” il contorno è un po’ più netto.",
+    "bg.videoNote": "Questo è il primo fotogramma. Scegli uno sfondo e salva: ogni fotogramma viene elaborato su questo dispositivo, circa {min} min qui. Tieni aperta questa scheda.",
+    "bg.greenScreen": "Green screen",
+    "ws.dpiLow": "Bassa (file più piccolo, per il web)"
   },
   "home": {
     "title": "Fizzdoc — Strumenti Gratis per PDF, Immagini e Audio",
@@ -2843,6 +2851,84 @@
         "rimuovere password PDF Form 16",
         "aprire PDF ITR",
         "sbloccare PDF imposte sul reddito"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Rimuovi Sfondo da Video",
+      "summary": "Scontorna una persona in un video e metti dietro un colore, una sfocatura o una foto. Audio incluso.",
+      "action": "Scarica video",
+      "title": "Rimuovi Sfondo da Video Gratis — Senza Green Screen | Fizzdoc",
+      "description": "Rimuovi o cambia lo sfondo di un video gratis, senza green screen: metti dietro un colore, una sfocatura o una foto. L’audio resta e nulla viene caricato.",
+      "h1": "Rimuovi lo sfondo da un video",
+      "lede": "Niente green screen. Un’IA elabora ogni fotogramma sul tuo dispositivo, l’audio resta e puoi mettere dietro un colore, una sfocatura o una foto. Sui telefoni funzionano meglio le clip brevi.",
+      "steps": [
+        "Scegli un video (MP4, WebM o MOV).",
+        "Scegli cosa mettere dietro, con il primo fotogramma come anteprima.",
+        "Fai clic su “Scarica video” e tieni aperta la scheda durante l’elaborazione."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "Quanto tempo ci vuole?",
+          "Ogni fotogramma è elaborato sul tuo dispositivo, quindi dipende dalla sua velocità. Fizzdoc mostra una stima prima di iniziare."
+        ],
+        [
+          "Posso usare lo scontorno in un editor video?",
+          "Sì. Scegli “Green screen” e l’editor toglie il verde con un clic (chroma key). I video si salvano in MP4 se possibile, altrimenti in WebM."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "rimuovere sfondo video gratis",
+        "cambiare sfondo video",
+        "togliere sfondo video senza green screen",
+        "scontornare video online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "Rimuovi Sfondo da GIF",
+      "summary": "Rendi trasparente o di un altro colore lo sfondo di una GIF animata, fotogramma per fotogramma.",
+      "action": "Scarica GIF",
+      "title": "Rimuovi Sfondo da GIF Gratis — GIF Animata Trasparente | Fizzdoc",
+      "description": "Rimuovi lo sfondo da una GIF animata gratis: ogni fotogramma è scontornato sul tuo dispositivo e salvato come GIF trasparente o ricolorata. Niente upload.",
+      "h1": "Rimuovi lo sfondo da una GIF",
+      "lede": "Ogni fotogramma della tua GIF animata viene scontornato da un’IA sul tuo dispositivo. Lasciala trasparente o metti dietro un colore, una sfocatura o una foto, e salvala di nuovo come GIF.",
+      "steps": [
+        "Scegli una GIF animata.",
+        "Guarda l’anteprima e scegli cosa mettere dietro.",
+        "Scegli la dimensione e fai clic su “Scarica GIF”."
+      ],
+      "faq": [
+        [
+          "I miei file vengono caricati da qualche parte?",
+          "No. Fizzdoc esegue il lavoro direttamente nella scheda del browser, usando motori open source compilati in WebAssembly e JavaScript. Il file viene letto dal tuo dispositivo, elaborato in locale, e il risultato viene salvato di nuovo sul tuo dispositivo. Puoi verificarlo tu stesso: apri gli strumenti per sviluppatori del browser, vai alla scheda Rete ed esegui un'operazione — nessuna richiesta trasporta il tuo file."
+        ],
+        [
+          "L’animazione mantiene i tempi?",
+          "Sì. Ogni fotogramma mantiene la sua durata e la nuova GIF si ripete come l’originale."
+        ],
+        [
+          "Perché i bordi sono più netti che in un PNG?",
+          "Un pixel GIF può essere solo del tutto trasparente o del tutto pieno. Per bordi morbidi metti dietro un colore o una foto invece di “Nessuno”."
+        ],
+        [
+          "Fizzdoc è gratuito?",
+          "Sì, e resterà gratuito: niente registrazione, niente filigrana, nessun limite giornaliero e nessun piano premium. Fizzdoc è open source con licenza Apache-2.0, quindi chiunque può eseguire la propria copia."
+        ]
+      ],
+      "keywords": [
+        "rimuovere sfondo gif",
+        "rendere gif trasparente",
+        "togliere sfondo gif animata gratis",
+        "cambiare sfondo gif",
+        "remove gif background"
       ]
     }
   }

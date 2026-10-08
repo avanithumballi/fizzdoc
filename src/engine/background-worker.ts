@@ -9,7 +9,8 @@ import type * as Ort from 'onnxruntime-web';
 import { planesFromRGBA, refine } from './matte';
 
 export type BackgroundModel = 'birefnet-lite' | 'u2netp';
-export type ToBackground = { type: 'run'; id: number; image: ImageBitmap } | { type: 'mask'; id: number; image: ImageBitmap };
+/** `fast` asks for speed over the finest edges: animations use it, with many frames to do. */
+export type ToBackground = { type: 'run'; id: number; image: ImageBitmap; fast?: boolean } | { type: 'mask'; id: number; image: ImageBitmap; fast?: boolean };
 export type FromBackground =
   | { type: 'setup'; loaded: number; total: number }
   | { type: 'progress'; id: number; fraction: number }
@@ -31,6 +32,8 @@ const MODELS: Record<BackgroundModel, { size: number; mean: number[]; std: numbe
 };
 /** Long side of the reduced copy the refinement works on; the result is applied at full size. */
 const REFINE_SIZE = 1280;
+/** Smaller for video and GIF frames: many of them, each shown only briefly. */
+const REFINE_SIZE_FAST = 640;
 
 interface Manifest {
   files: { path: string; size: number; parts: string[] }[];
@@ -92,10 +95,13 @@ interface Engine {
   ort: typeof Ort;
 }
 let engine: Promise<Engine> | undefined;
+const gpuReady = hasGpu();
+/** Whether the loaded small model was picked for speed (rather than for lack of memory). */
+let speedPick = false;
 
 async function start(model?: BackgroundModel, allowGpu = true): Promise<Engine> {
   const cache = await caches.open(CACHE);
-  const gpu = allowGpu && (await hasGpu());
+  const gpu = allowGpu && (await gpuReady);
   const chosen = model ?? pickModel(gpu);
   const runtime = gpu ? `${ORIGIN}/bg/ort/` : `${ORIGIN}/whisper/ort/`;
   const runtimeFiles: Wanted[] = gpu
@@ -151,8 +157,16 @@ async function predict(engine: Engine, image: ImageBitmap): Promise<Float32Array
  * Runs the model. If the graphics chip can't (an unusual GPU or driver), the same model runs on the
  * CPU; if that can't either (usually: not enough memory), the small model takes over.
  */
-async function maskOf(image: ImageBitmap): Promise<{ mask: Float32Array; model: BackgroundModel }> {
+async function maskOf(image: ImageBitmap, fast = false): Promise<{ mask: Float32Array; model: BackgroundModel }> {
   const fallbacks: [BackgroundModel, boolean][] = [];
+  // Without a GPU the big model takes seconds per picture: fine for a photo, too slow for 40 frames.
+  if (fast !== speedPick && !(await gpuReady)) {
+    // Switch to the small model for animations, and back to the default for the next photo.
+    const loaded = await engine?.catch(() => undefined);
+    await loaded?.session.release().catch(() => {});
+    engine = fast ? start('u2netp', false) : undefined;
+    speedPick = fast;
+  }
   engine ??= start().catch((error) => {
     // A GPU that can't even load the model: try the CPU before giving up.
     engine = undefined;
@@ -201,14 +215,14 @@ function resizeMask(mask: Float32Array, size: number, w: number, h: number) {
   return out;
 }
 
-async function cutOut(id: number, image: ImageBitmap) {
+async function cutOut(id: number, image: ImageBitmap, fast?: boolean) {
   const W = image.width;
   const H = image.height;
   post({ type: 'progress', id, fraction: 0.05 });
-  const { mask, model } = await maskOf(image);
+  const { mask, model } = await maskOf(image, fast);
   post({ type: 'progress', id, fraction: 0.7 });
   // A reduced copy for the refinement, and the full-size pixels it is applied to.
-  const scale = Math.min(1, REFINE_SIZE / Math.max(W, H));
+  const scale = Math.min(1, (fast ? REFINE_SIZE_FAST : REFINE_SIZE) / Math.max(W, H));
   const w = Math.max(1, Math.round(W * scale));
   const h = Math.max(1, Math.round(H * scale));
   const smallCanvas = new OffscreenCanvas(w, h);
@@ -226,9 +240,9 @@ async function cutOut(id: number, image: ImageBitmap) {
 
 self.onmessage = async ({ data }: MessageEvent<ToBackground>) => {
   try {
-    if (data.type === 'run') await cutOut(data.id, data.image);
+    if (data.type === 'run') await cutOut(data.id, data.image, data.fast);
     else {
-      const { mask, model } = await maskOf(data.image);
+      const { mask, model } = await maskOf(data.image, data.fast);
       data.image.close();
       post({ type: 'mask', id: data.id, size: MODELS[model].size, mask, model }, [mask.buffer]);
     }

@@ -3,6 +3,7 @@
 // spot the model missed. Built for big buttons and few decisions; everything stays on the device.
 import './remove-bg.css';
 import { compose, removeBackground, render, type Backdrop, type SaveFormat } from '../engine/background';
+import { decodeGif, encodeGif, type GifFrame } from '../engine/gif';
 import type { Output } from '../engine/local';
 import { t } from '../i18n';
 
@@ -31,13 +32,28 @@ const element = <K extends keyof HTMLElementTagNameMap>(tag: K, className = '', 
 };
 
 export async function openBackgroundEditor(file: File, viewer: HTMLElement, preset: Record<string, string> = {}): Promise<BackgroundEditor> {
+  // Videos: the first frame is the preview; the whole video is done when it's saved.
+  const video = file.type.startsWith('video/') || /\.(mp4|m4v|mov|webm|mkv)$/i.test(file.name) ? await import('../engine/video-background') : undefined;
+  const info = video && (await video.videoInfo(file));
   let photo: ImageBitmap;
-  try {
-    photo = await createImageBitmap(file);
-  } catch {
-    const { LocalError } = await import('../engine/local');
-    throw new LocalError('BAD_IMAGE');
+  if (info) photo = info.first;
+  else
+    try {
+      photo = await createImageBitmap(file);
+    } catch {
+      const { LocalError } = await import('../engine/local');
+      throw new LocalError('BAD_IMAGE');
+    }
+  // Animated GIFs: every frame gets its background removed, and the result is saved as a GIF.
+  let gifFrames: GifFrame[] = [];
+  if (file.type === 'image/gif' || /\.gif$/i.test(file.name)) {
+    try {
+      gifFrames = decodeGif(await file.arrayBuffer()).frames;
+    } catch {
+      gifFrames = []; // unreadable as an animation: treat it as a still picture
+    }
   }
+  const animated = gifFrames.length > 1;
   const W = photo.width;
   const H = photo.height;
 
@@ -85,18 +101,49 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
     bar.style.setProperty('--pct', `${pct}%`);
     return pct;
   };
-  const source = await createImageBitmap(photo);
-  const { cutout, model } = await removeBackground(source, {
-    onSetup: (loaded, total) => {
-      setBar(loaded / total);
-      busyText.textContent = t('bg.preparing', { loaded: Math.round(loaded / 1e6), total: Math.round(total / 1e6) });
-    },
-    onProgress: (fraction) => {
-      busyText.textContent = t('bg.working', { pct: setBar(fraction) });
-    },
-  });
+  const onSetup = (loaded: number, total: number) => {
+    setBar(loaded / total);
+    busyText.textContent = t('bg.preparing', { loaded: Math.round(loaded / 1e6), total: Math.round(total / 1e6) });
+  };
+  // Frames of an animation: their own photos and cut-outs, and how long each one shows.
+  const frames: { photo: ImageBitmap; cut: ImageBitmap; delay: number }[] = [];
+  let cutout!: ImageData;
+  let model = '';
+  if (animated) {
+    for (const [i, frame] of gifFrames.entries()) {
+      const framePhoto = await createImageBitmap(frame.image);
+      const result = await removeBackground(await createImageBitmap(framePhoto), {
+        fast: true,
+        onSetup,
+        onProgress: (fraction) => {
+          busyText.textContent = t('bg.frame', { n: i + 1, total: gifFrames.length });
+          setBar((i + fraction) / gifFrames.length);
+        },
+      });
+      frames.push({ photo: framePhoto, cut: await createImageBitmap(result.cutout), delay: frame.delay });
+      ({ cutout, model } = result);
+    }
+    note.textContent = t('bg.gifNote');
+  } else {
+    const started = performance.now();
+    let ready = started; // when the one-time download finished
+    ({ cutout, model } = await removeBackground(await createImageBitmap(photo), {
+      fast: !!info,
+      onSetup: (loaded, total) => {
+        onSetup(loaded, total);
+        ready = performance.now();
+      },
+      onProgress: (fraction) => {
+        busyText.textContent = t('bg.working', { pct: setBar(fraction) });
+      },
+    }));
+    if (info) {
+      // A rough idea of the wait: this frame's time, for every frame at 30 per second.
+      const minutes = Math.max(1, Math.round(((performance.now() - ready) / 1000) * info.duration * 30 / 60));
+      note.textContent = t('bg.videoNote', { min: minutes });
+    } else if (model === 'u2netp') note.textContent = t('bg.lite');
+  }
   busy.hidden = true;
-  if (model === 'u2netp') note.textContent = t('bg.lite');
 
   // The full-size cut-out lives on its own canvas; touch-ups change it in place.
   const cut = new OffscreenCanvas(W, H);
@@ -107,7 +154,17 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
 
   let backdrop: Backdrop = { kind: 'none' };
   let ownPhoto: ImageBitmap | undefined;
-  const draw = () => compose(canvas, cut, photo, backdrop);
+  // Animations play in the preview; `shown` is the frame on screen.
+  let shown = 0;
+  const draw = () => (animated ? compose(canvas, frames[shown].cut, frames[shown].photo, backdrop) : compose(canvas, cut, photo, backdrop));
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const play = () => {
+    draw();
+    timer = setTimeout(() => {
+      shown = (shown + 1) % frames.length;
+      play();
+    }, Math.max(20, frames[shown].delay));
+  };
 
   // ---- Backdrop choices ----
   const buttons: HTMLButtonElement[] = [];
@@ -128,10 +185,11 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
     choices.append(button);
     return button;
   };
-  const none = choice(t('bg.none'), () => {
-    backdrop = { kind: 'none' };
-  });
-  none.querySelector('.bg-chip')!.classList.add('bg-chip-clear');
+  // For videos, "no background" is a green screen (see engine/video-background.ts).
+  const none = choice(info ? t('bg.greenScreen') : t('bg.none'), () => {
+    backdrop = info && video ? { kind: 'color', color: video.GREEN_SCREEN } : { kind: 'none' };
+  }, info && video ? video.GREEN_SCREEN : undefined);
+  if (!info) none.querySelector('.bg-chip')!.classList.add('bg-chip-clear');
   const colors = new Map<string, HTMLButtonElement>();
   for (const [key, color] of SWATCHES)
     colors.set(
@@ -250,6 +308,7 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
   undo.disabled = true;
   tools.append(modeButton('erase'), modeButton('restore'), brushLabel, undo);
   touch.append(tools);
+  touch.hidden = animated || !!info; // touch-ups are for still pictures
 
   // Each stroke remembers the 64×64 tiles it changed, so Undo restores just those.
   type Snapshot = Map<number, ImageData>;
@@ -353,7 +412,7 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
   const showOriginal = (on: boolean) => {
     if (on) {
       preview.clearRect(0, 0, canvas.width, canvas.height);
-      preview.drawImage(photo, 0, 0, canvas.width, canvas.height);
+      preview.drawImage(animated ? frames[shown].photo : photo, 0, 0, canvas.width, canvas.height);
     } else draw();
     compare.classList.toggle('active', on);
   };
@@ -363,12 +422,36 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
     if (event.key === ' ' || event.key === 'Enter') showOriginal(true);
   });
   compare.addEventListener('keyup', () => showOriginal(false));
-  draw();
+  if (animated) play();
+  else draw();
 
   const base = file.name.replace(/\.[^.]+$/, '');
   return {
     async save(options, onProgress) {
+      if (video) {
+        const w = outputWidth();
+        const { blob, extension } = await video.replaceVideoBackground(file, { backdrop, width: w, height: Math.round((H * w) / W), onProgress });
+        return { blob, name: `${base}-new-bg.${extension}`, summary: `${w} × ${Math.round((H * w) / W)} px` };
+      }
       onProgress?.(0.2);
+      if (animated) {
+        const w = outputWidth();
+        const h = Math.max(1, Math.round((H * w) / W));
+        const canvas = new OffscreenCanvas(w, h);
+        const context = canvas.getContext('2d', { willReadFrequently: true })!;
+        const rendered = frames.map((frame, i) => {
+          compose(canvas, frame.cut, frame.photo, backdrop);
+          onProgress?.(0.2 + (0.5 * (i + 1)) / frames.length);
+          return { data: context.getImageData(0, 0, w, h).data, delay: frame.delay };
+        });
+        const bytes = encodeGif(rendered, w, h, backdrop.kind === 'none');
+        onProgress?.(1);
+        return {
+          blob: new Blob([bytes as Uint8Array<ArrayBuffer>], { type: 'image/gif' }),
+          name: `${base}-${backdrop.kind === 'none' ? 'no-bg' : 'new-bg'}.gif`,
+          summary: `${w} × ${h} px`,
+        };
+      }
       const chosen = (['png', 'jpg', 'webp'] as SaveFormat[]).find((f) => f === options.format) ?? (backdrop.kind === 'none' ? 'png' : 'jpg');
       const w = outputWidth();
       const h = Math.max(1, Math.round((H * w) / W));
@@ -381,6 +464,11 @@ export async function openBackgroundEditor(file: File, viewer: HTMLElement, pres
       };
     },
     destroy() {
+      clearTimeout(timer);
+      for (const frame of frames) {
+        frame.photo.close();
+        frame.cut.close();
+      }
       photo.close();
       ownPhoto?.close();
       viewer.classList.remove('bg-editor');

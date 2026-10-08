@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Trình duyệt này không đọc được âm thanh trong tệp này. Hãy thử tệp MP3, M4A, WAV hoặc MP4.",
     "error.NO_SPEECH": "Không tìm thấy giọng nói trong tệp này.",
     "error.SETUP_FAILED": "Không tải được mô hình giọng nói. Hãy kiểm tra kết nối internet cho lần tải một lần, rồi thử lại.",
-    "error.TRANSCRIBE_FAILED": "Quá trình chuyển thành văn bản dừng đột ngột. Hãy thử tệp ngắn hơn, hoặc dùng laptop cho bản ghi dài."
+    "error.TRANSCRIBE_FAILED": "Quá trình chuyển thành văn bản dừng đột ngột. Hãy thử tệp ngắn hơn, hoặc dùng laptop cho bản ghi dài.",
+    "ws.chooseVideo": "Chọn video",
+    "error.BAD_VIDEO": "Trình duyệt này không đọc được video này. Hãy thử tệp MP4 hoặc WebM, hoặc Chrome hay Edge mới nhất.",
+    "error.NO_VIDEO_ENCODER": "Trình duyệt này không lưu được video. Hãy dùng Chrome, Edge hoặc Safari mới nhất.",
+    "bg.frame": "Đang xóa nền: khung {n}/{total}…",
+    "bg.gifNote": "GIF động: mọi khung hình đều được xử lý và lưu thành GIF. GIF không có viền mềm, nên khi chọn “Không” viền sẽ sắc hơn một chút.",
+    "bg.videoNote": "Đây là khung hình đầu tiên. Chọn nền rồi lưu: mọi khung hình được xử lý trên thiết bị này, khoảng {min} phút. Hãy giữ tab này mở.",
+    "bg.greenScreen": "Phông xanh",
+    "ws.dpiLow": "Thấp (tệp nhỏ nhất, cho web)"
   },
   "home": {
     "title": "Fizzdoc — Công Cụ PDF, Ảnh, Âm Thanh & Office Miễn Phí",
@@ -2843,6 +2851,84 @@
         "xóa mật khẩu pdf Form 16",
         "mở pdf ITR",
         "mở khóa pdf thuế thu nhập"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Xóa Nền Video",
+      "summary": "Tách người khỏi video và đặt màu, làm mờ hoặc ảnh phía sau. Giữ nguyên âm thanh.",
+      "action": "Tải video",
+      "title": "Xóa Nền Video Miễn Phí — Không Cần Phông Xanh | Fizzdoc",
+      "description": "Xóa hoặc thay nền video miễn phí, không cần phông xanh: đặt màu, làm mờ hoặc ảnh phía sau. Âm thanh được giữ nguyên và không có gì được tải lên.",
+      "h1": "Xóa nền khỏi video",
+      "lede": "Không cần phông xanh. AI xử lý từng khung hình ngay trên thiết bị của bạn, giữ nguyên âm thanh, và bạn có thể đặt màu, làm mờ hoặc ảnh phía sau. Trên điện thoại, clip ngắn chạy tốt nhất.",
+      "steps": [
+        "Chọn video (MP4, WebM hoặc MOV).",
+        "Chọn nền phía sau, xem trước bằng khung hình đầu tiên.",
+        "Bấm “Tải video” và giữ tab mở đến khi xử lý xong."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Mất bao lâu?",
+          "Mỗi khung hình được xử lý trên thiết bị của bạn, nên tùy vào tốc độ máy. Fizzdoc hiển thị thời gian ước tính trước khi bắt đầu."
+        ],
+        [
+          "Có dùng kết quả trong trình dựng video được không?",
+          "Được. Chọn “Phông xanh” rồi trình dựng xóa màu xanh chỉ với một cú nhấp (chroma key). Video lưu dạng MP4 nếu được, nếu không thì WebM."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "xóa nền video miễn phí",
+        "đổi nền video",
+        "xóa phông video không cần phông xanh",
+        "tách nền video online",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "Xóa Nền GIF",
+      "summary": "Làm nền GIF động trong suốt hoặc đổi màu, từng khung hình.",
+      "action": "Tải GIF",
+      "title": "Xóa Nền GIF Miễn Phí — GIF Động Trong Suốt | Fizzdoc",
+      "description": "Xóa nền GIF động miễn phí: từng khung hình được tách ngay trên thiết bị của bạn và lưu thành GIF trong suốt hoặc đổi màu. Không tải lên gì cả.",
+      "h1": "Xóa nền khỏi GIF",
+      "lede": "Từng khung hình trong GIF động của bạn được AI tách nền ngay trên thiết bị. Giữ trong suốt hoặc đặt màu, làm mờ hay ảnh phía sau, rồi lưu lại thành GIF.",
+      "steps": [
+        "Chọn một GIF động.",
+        "Xem trước và chọn nền phía sau.",
+        "Chọn kích thước rồi bấm “Tải GIF”."
+      ],
+      "faq": [
+        [
+          "Tệp của tôi có được tải lên đâu không?",
+          "Không. Fizzdoc xử lý mọi thứ ngay trong tab trình duyệt của bạn, sử dụng các engine mã nguồn mở được biên dịch sang WebAssembly và JavaScript. Tệp của bạn được đọc từ thiết bị, xử lý cục bộ, rồi kết quả được lưu thẳng trở lại thiết bị. Bạn có thể tự kiểm chứng: mở công cụ dành cho nhà phát triển của trình duyệt, vào tab Network và thực hiện một thao tác — sẽ không có yêu cầu nào mang theo tệp của bạn."
+        ],
+        [
+          "Nhịp của ảnh động có giữ nguyên không?",
+          "Có. Mỗi khung hình giữ thời lượng riêng và GIF mới lặp lại như bản gốc."
+        ],
+        [
+          "Sao viền sắc hơn PNG?",
+          "Điểm ảnh GIF chỉ có thể trong suốt hoàn toàn hoặc đặc hoàn toàn. Muốn viền mềm, hãy chọn màu hoặc ảnh phía sau thay vì “Không”."
+        ],
+        [
+          "Fizzdoc có miễn phí không?",
+          "Có, và sẽ luôn miễn phí: không cần đăng ký, không watermark, không giới hạn hằng ngày và không có gói trả phí. Fizzdoc là mã nguồn mở theo giấy phép Apache-2.0, nên ai cũng có thể tự chạy một bản sao của riêng mình."
+        ]
+      ],
+      "keywords": [
+        "xóa nền gif",
+        "tạo gif trong suốt",
+        "xóa nền gif động miễn phí",
+        "đổi nền gif",
+        "remove gif background"
       ]
     }
   }

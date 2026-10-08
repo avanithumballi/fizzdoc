@@ -322,7 +322,15 @@
     "error.NO_AUDIO_TRACK": "Ce navigateur ne peut pas lire le son de ce fichier. Essayez un fichier MP3, M4A, WAV ou MP4.",
     "error.NO_SPEECH": "Aucune parole n’a été trouvée dans ce fichier.",
     "error.SETUP_FAILED": "Le modèle vocal n’a pas pu être chargé. Vérifiez votre connexion internet pour le téléchargement unique, puis réessayez.",
-    "error.TRANSCRIBE_FAILED": "La transcription s’est arrêtée de façon inattendue. Essayez un fichier plus court, ou un ordinateur portable pour les longs enregistrements."
+    "error.TRANSCRIBE_FAILED": "La transcription s’est arrêtée de façon inattendue. Essayez un fichier plus court, ou un ordinateur portable pour les longs enregistrements.",
+    "ws.chooseVideo": "Choisir une vidéo",
+    "error.BAD_VIDEO": "Ce navigateur ne peut pas lire cette vidéo. Essayez un fichier MP4 ou WebM, ou la dernière version de Chrome ou Edge.",
+    "error.NO_VIDEO_ENCODER": "Ce navigateur ne peut pas enregistrer de vidéos. Utilisez la dernière version de Chrome, Edge ou Safari.",
+    "bg.frame": "Suppression du fond : image {n} sur {total}…",
+    "bg.gifNote": "GIF animé : chaque image est traitée et le résultat est enregistré en GIF. Les GIF n’ont pas de bords doux, donc avec « Aucun » le contour est un peu plus net.",
+    "bg.videoNote": "Voici la première image. Choisissez un fond, puis enregistrez : chaque image est traitée sur cet appareil, environ {min} min ici. Gardez cet onglet ouvert.",
+    "bg.greenScreen": "Fond vert",
+    "ws.dpiLow": "Basse (fichier le plus léger, pour le web)"
   },
   "home": {
     "title": "Fizzdoc — Outils Gratuits PDF, Image, Audio et Office",
@@ -2843,6 +2851,84 @@
         "retirer mot de passe PDF Form 16",
         "ouvrir PDF ITR",
         "déverrouiller PDF impôt sur le revenu"
+      ]
+    },
+    "remove-video-background": {
+      "name": "Supprimer le Fond d’une Vidéo",
+      "summary": "Détourez une personne dans une vidéo et mettez une couleur, un flou ou une photo derrière. Son conservé.",
+      "action": "Télécharger la vidéo",
+      "title": "Supprimer le Fond d’une Vidéo Gratuit — Sans Fond Vert | Fizzdoc",
+      "description": "Supprimez ou changez le fond d’une vidéo gratuitement, sans fond vert : mettez une couleur, un flou ou une photo derrière. Le son est gardé, rien n’est envoyé.",
+      "h1": "Supprimer le fond d’une vidéo",
+      "lede": "Pas besoin de fond vert. Une IA traite chaque image sur votre propre appareil, le son est gardé, et vous pouvez mettre une couleur, un flou ou une photo derrière. Sur téléphone, préférez les clips courts.",
+      "steps": [
+        "Choisissez une vidéo (MP4, WebM ou MOV).",
+        "Choisissez ce qui va derrière, avec la première image en aperçu.",
+        "Cliquez sur « Télécharger la vidéo » et gardez l’onglet ouvert pendant le traitement."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Combien de temps cela prend-il ?",
+          "Chaque image est traitée sur votre appareil, donc cela dépend de sa vitesse. Fizzdoc affiche une estimation avant de commencer."
+        ],
+        [
+          "Puis-je utiliser le détourage dans un logiciel de montage ?",
+          "Oui. Choisissez « Fond vert » : le logiciel retire le vert en un clic (incrustation). Les vidéos sont enregistrées en MP4 si possible, sinon en WebM."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "supprimer le fond d’une vidéo gratuit",
+        "changer le fond d’une vidéo",
+        "enlever le fond vidéo sans fond vert",
+        "détourer une vidéo en ligne",
+        "remove video background"
+      ]
+    },
+    "remove-gif-background": {
+      "name": "Supprimer le Fond d’un GIF",
+      "summary": "Rendez transparent ou recolorez le fond d’un GIF animé, image par image.",
+      "action": "Télécharger le GIF",
+      "title": "Supprimer le Fond d’un GIF Gratuit — GIF Animé Transparent | Fizzdoc",
+      "description": "Supprimez le fond d’un GIF animé gratuitement : chaque image est détourée sur votre appareil et enregistrée en GIF transparent ou recoloré. Rien n’est envoyé.",
+      "h1": "Supprimer le fond d’un GIF",
+      "lede": "Chaque image de votre GIF animé est détourée par une IA sur votre propre appareil. Gardez-le transparent ou mettez une couleur, un flou ou une photo derrière, puis enregistrez-le en GIF.",
+      "steps": [
+        "Choisissez un GIF animé.",
+        "Regardez l’aperçu et choisissez ce qui va derrière.",
+        "Choisissez la taille et cliquez sur « Télécharger le GIF »."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "L’animation garde-t-elle son rythme ?",
+          "Oui. Chaque image garde sa durée et le nouveau GIF boucle comme l’original."
+        ],
+        [
+          "Pourquoi les bords sont-ils plus nets qu’en PNG ?",
+          "Un pixel de GIF est soit totalement transparent, soit totalement opaque. Pour des bords doux, mettez une couleur ou une photo derrière au lieu de « Aucun »."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "supprimer le fond d’un gif",
+        "rendre un gif transparent",
+        "enlever le fond gif animé gratuit",
+        "changer le fond d’un gif",
+        "remove gif background"
       ]
     }
   }
