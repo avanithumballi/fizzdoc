@@ -830,6 +830,19 @@ test('numbers and watermarks PDF pages, and converts between image formats', asy
   await page.getByRole('button', { name: 'Convert to PNG' }).click();
   await expect(page.locator('#status')).toContainText('Done');
   expect((await downloadBytes(page)).name).toMatch(/\.(png|zip)$/);
+  
+  // The resolution select sets the image size: a 400 pt wide page is 400 px at 72 DPI, 834 at 150 and 1667 at 300.
+  for (const [dpi, width] of [['72', 400], ['150', 834], ['300', 1667]] as const) {
+    await page.goto('/pdf-to-png/');
+    await expect(page.locator('select[name="dpi"]')).toHaveValue('150');
+    await page.locator('#file-input').setInputFiles(fixture('blank'));
+    await page.locator('select[name="dpi"]').selectOption(dpi);
+    await page.getByRole('button', { name: 'Convert to PNG' }).click();
+    await expect(page.locator('#status')).toContainText('Done — 1 image');
+    const png = await downloadBytes(page);
+    expect(png.name).toBe('blank.png');
+    expect(png.bytes.readUInt32BE(16)).toBe(width);
+  }
 
   await page.goto('/png-to-jpg/');
   await expect(page.locator('select[name="format"]')).toHaveCount(0);
