@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — fotos, se abre en cualquier sitio",
     "ws.fmtWebp": "WebP — el más ligero",
     "ws.fmtPng": "PNG — sin pérdida de calidad",
+    "ws.fmtAuto": "Lo mejor: PNG si el fondo es transparente, JPG si no",
     "ws.quality": "Calidad",
     "ws.width": "Ancho (px)",
     "ws.height": "Alto (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Este archivo no es un JSON válido. Revisa si falta una coma, unas comillas o un corchete.",
     "error.BAD_JSON_AT": "Este archivo no es un JSON válido: hay un problema cerca de la línea {line}, columna {column}. Revisa si falta una coma, unas comillas o un corchete.",
     "error.SHEET_TOO_BIG": "Eso es más de lo que cabe en una hoja de Excel (1.048.576 filas y 16.384 columnas). Divide los datos en archivos más pequeños.",
+    "error.BG_SETUP_FAILED": "No se pudo cargar el quitafondos. Revisa tu conexión a internet para la descarga única e inténtalo de nuevo.",
+    "error.BACKGROUND_FAILED": "Quitar el fondo se detuvo de repente, normalmente porque este dispositivo se quedó sin memoria. Prueba con una foto más pequeña, o cierra otras pestañas e inténtalo de nuevo.",
+    "error.IMAGE_TOO_LARGE": "Esta foto es demasiado grande para que este navegador la guarde con ese tamaño. Elige un tamaño menor en «Tamaño».",
     "error.NO_DIAGRAM": "Pega tu código Mermaid o elige un archivo .mmd o .md.",
     "error.BAD_DIAGRAM": "El código del diagrama tiene un error: {detail}",
     "error.ENGINE_FAILED": "El motor de PDF se ha detenido de forma inesperada — puede que el archivo sea demasiado grande para este dispositivo.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Eliminar cuadro de texto",
     "ed.replaced": "Algunos caracteres no son compatibles con las fuentes estándar de PDF y se han sustituido.",
     "ed.hint": "Las líneas cambiadas conservan la fuente del PDF si tiene todas las letras que escribes; si no, se cubren y se vuelven a escribir. Tapar solo oculta: para datos sensibles, usa Censurar PDF.",
+    "bg.previewLabel": "Tu foto con su nuevo fondo",
+    "bg.preparing": "Preparando el quitafondos: {loaded} de {total} MB. Esta descarga solo se hace una vez.",
+    "bg.working": "Quitando el fondo… {pct}%",
+    "bg.lite": "Este dispositivo tiene poca memoria, así que se usó un modelo más ligero. Un ordenador portátil da bordes más limpios.",
+    "bg.compare": "Mantén pulsado para ver el original",
+    "bg.background": "Fondo",
+    "bg.none": "Ninguno",
+    "bg.white": "Blanco",
+    "bg.black": "Negro",
+    "bg.blue": "Azul",
+    "bg.red": "Rojo",
+    "bg.green": "Verde",
+    "bg.gray": "Gris",
+    "bg.custom": "Cualquier color",
+    "bg.photo": "Tu foto",
+    "bg.blur": "Desenfoque",
+    "bg.size": "Tamaño",
+    "bg.original": "Tamaño original ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Ancho personalizado…",
+    "bg.widthLabel": "Ancho en píxeles",
+    "bg.touch": "Retocar (si hace falta)",
+    "bg.touchHint": "¿Se ha quedado algún trozo? Elige Borrar o Restaurar y pasa el dedo o el ratón por encima en la foto.",
+    "bg.erase": "Borrar",
+    "bg.restore": "Restaurar",
+    "bg.brush": "Tamaño del pincel",
     "ocr.unsure": "Parte de este texto puede estar mal. El reconocimiento lee texto en inglés y derecho: gira primero las fotos de lado y ten en cuenta que otros alfabetos saldrán desordenados.",
     "ocr.copyAll": "Copiar todo el texto",
     "ocr.copied": "Copiado",
@@ -1659,6 +1689,45 @@
         "extraer texto de una imagen gratis",
         "ocr de imagen a texto",
         "copiar texto de una foto del celular"
+      ]
+    },
+    "remove-background": {
+      "name": "Quitar Fondo",
+      "summary": "Recorta a una persona, un producto o una mascota y pon lo que quieras detrás.",
+      "action": "Descargar imagen",
+      "title": "Quitar Fondo de Imagen Gratis — Sin Subir Nada | Fizzdoc",
+      "description": "Quita el fondo de cualquier foto gratis y en resolución completa: PNG transparente, blanco, cualquier color o tu propia foto. No se sube nada.",
+      "h1": "Quita el fondo de cualquier foto",
+      "lede": "Elige una foto y el fondo desaparece solo. Déjalo transparente, o pon detrás blanco, cualquier color, un desenfoque suave u otra foto. La IA funciona en tu propio dispositivo, así que tu foto nunca sale de él.",
+      "steps": [
+        "Elige una foto. El fondo se quita al instante.",
+        "Elige qué va detrás: nada, un color, un desenfoque o tu propia foto. Retoca cualquier zona si hace falta.",
+        "Elige el tamaño y haz clic en «Descargar imagen»."
+      ],
+      "faq": [
+        [
+          "¿Se suben mis archivos a algún sitio?",
+          "No. Fizzdoc hace todo el trabajo dentro de la pestaña de tu navegador, con motores de código abierto compilados a WebAssembly y JavaScript. Tu archivo se lee desde tu dispositivo, se procesa localmente y el resultado se guarda directamente en tu dispositivo. Puedes comprobarlo tú mismo: abre las herramientas de desarrollador de tu navegador, ve a la pestaña Red y ejecuta una tarea — ninguna solicitud lleva tu archivo."
+        ],
+        [
+          "¿Perderá calidad mi foto?",
+          "No. El recorte conserva la resolución completa de tu foto, sin límite de tamaño por parte de Fizzdoc. Los bordes del pelo y del pelaje se limpian a tamaño completo, así que se ven naturales sobre cualquier fondo nuevo. También puedes guardar una copia más pequeña."
+        ],
+        [
+          "¿Cómo funciona sin subir nada?",
+          "Un modelo de IA de código abierto (BiRefNet) funciona dentro de tu navegador, en la tarjeta gráfica si el dispositivo la tiene. Se descarga una sola vez, unos 110 MB, y después funciona incluso sin conexión. Los móviles con poca memoria usan un modelo más pequeño (U²-Net)."
+        ],
+        [
+          "¿Es gratis Fizzdoc?",
+          "Sí, y seguirá siendo gratis: sin registro, sin marca de agua, sin límite diario y sin plan premium. Fizzdoc es de código abierto bajo la licencia Apache-2.0, así que cualquiera puede ejecutar su propia copia."
+        ]
+      ],
+      "keywords": [
+        "quitar fondo de una foto",
+        "quitar fondo de imagen gratis",
+        "poner fondo blanco a una foto",
+        "quitar fondo sin subir la foto",
+        "remove bg"
       ]
     },
     "png-to-jpg": {

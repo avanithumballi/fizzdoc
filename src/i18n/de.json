@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — Fotos, öffnet überall",
     "ws.fmtWebp": "WebP — kleinste Datei",
     "ws.fmtPng": "PNG — verlustfrei",
+    "ws.fmtAuto": "Beste Wahl: PNG bei transparentem Hintergrund, sonst JPG",
     "ws.quality": "Qualität",
     "ws.width": "Breite (px)",
     "ws.height": "Höhe (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Diese Datei ist kein gültiges JSON. Prüfe, ob ein Komma, Anführungszeichen oder eine Klammer fehlt.",
     "error.BAD_JSON_AT": "Diese Datei ist kein gültiges JSON: In der Nähe von Zeile {line}, Spalte {column} gibt es ein Problem. Prüfe, ob ein Komma, Anführungszeichen oder eine Klammer fehlt.",
     "error.SHEET_TOO_BIG": "Das ist mehr, als in ein Excel-Tabellenblatt passt (1.048.576 Zeilen und 16.384 Spalten). Teile die Daten auf kleinere Dateien auf.",
+    "error.BG_SETUP_FAILED": "Der Hintergrund-Entferner konnte nicht geladen werden. Prüfen Sie Ihre Internetverbindung für den einmaligen Download und versuchen Sie es dann erneut.",
+    "error.BACKGROUND_FAILED": "Das Entfernen des Hintergrunds wurde unerwartet abgebrochen, meist weil diesem Gerät der Speicher ausgegangen ist. Nehmen Sie ein kleineres Foto oder schließen Sie andere Tabs und versuchen Sie es erneut.",
+    "error.IMAGE_TOO_LARGE": "Dieses Foto ist zu groß, als dass dieser Browser es in dieser Größe speichern könnte. Wählen Sie unter „Größe“ eine kleinere Größe.",
     "error.NO_DIAGRAM": "Fügen Sie Ihren Mermaid-Code ein oder wählen Sie eine .mmd- oder .md-Datei.",
     "error.BAD_DIAGRAM": "Der Diagrammcode enthält einen Fehler: {detail}",
     "error.ENGINE_FAILED": "Die PDF-Engine wurde unerwartet beendet — die Datei ist für dieses Gerät möglicherweise zu groß.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Textfeld entfernen",
     "ed.replaced": "Einige Zeichen werden von den Standard-PDF-Schriften nicht unterstützt und wurden ersetzt.",
     "ed.hint": "Geänderte Zeilen behalten die Schrift des PDFs, wenn sie alle getippten Buchstaben enthält; sonst werden sie überdeckt und neu geschrieben. Weiß überdecken verbirgt nur – für vertrauliche Daten nutzen Sie PDF schwärzen.",
+    "bg.previewLabel": "Ihr Foto mit dem neuen Hintergrund",
+    "bg.preparing": "Der Hintergrund-Entferner wird vorbereitet: {loaded} von {total} MB. Dieser Download passiert nur einmal.",
+    "bg.working": "Hintergrund wird entfernt… {pct} %",
+    "bg.lite": "Dieses Gerät hat wenig Speicher, deshalb wurde ein leichteres Modell verwendet. Ein Laptop liefert saubere Kanten.",
+    "bg.compare": "Gedrückt halten, um das Original zu sehen",
+    "bg.background": "Hintergrund",
+    "bg.none": "Keiner",
+    "bg.white": "Weiß",
+    "bg.black": "Schwarz",
+    "bg.blue": "Blau",
+    "bg.red": "Rot",
+    "bg.green": "Grün",
+    "bg.gray": "Grau",
+    "bg.custom": "Beliebige Farbe",
+    "bg.photo": "Ihr Foto",
+    "bg.blur": "Weichzeichnen",
+    "bg.size": "Größe",
+    "bg.original": "Originalgröße ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Eigene Breite…",
+    "bg.widthLabel": "Breite in Pixeln",
+    "bg.touch": "Nachbessern (falls nötig)",
+    "bg.touchHint": "Eine Stelle übersehen? Wählen Sie Radieren oder Wiederherstellen und fahren Sie dann auf dem Foto mit dem Finger oder der Maus darüber.",
+    "bg.erase": "Radieren",
+    "bg.restore": "Wiederherstellen",
+    "bg.brush": "Pinselgröße",
     "ocr.unsure": "Ein Teil dieses Textes kann falsch sein. Die Texterkennung liest aufrechten englischen Text: Drehen Sie seitliche Fotos zuerst, andere Schriften kommen verfälscht heraus.",
     "ocr.copyAll": "Gesamten Text kopieren",
     "ocr.copied": "Kopiert",
@@ -1659,6 +1689,45 @@
         "text aus einem bild kostenlos extrahieren",
         "ocr bild zu text",
         "text aus einem handyfoto kopieren"
+      ]
+    },
+    "remove-background": {
+      "name": "Hintergrund Entfernen",
+      "summary": "Schneiden Sie eine Person, ein Produkt oder ein Haustier frei und setzen Sie beliebig etwas dahinter.",
+      "action": "Bild herunterladen",
+      "title": "Bildhintergrund Entfernen Kostenlos — Ohne Upload | Fizzdoc",
+      "description": "Entfernen Sie den Hintergrund jedes Fotos kostenlos in voller Auflösung: transparentes PNG, Weiß, jede Farbe oder Ihr eigenes Foto. Es wird nichts hochgeladen.",
+      "h1": "Hintergrund von jedem Foto entfernen",
+      "lede": "Wählen Sie ein Foto, und der Hintergrund verschwindet von selbst. Lassen Sie ihn transparent oder setzen Sie Weiß, eine beliebige Farbe, einen weichen Blur oder ein anderes Foto dahinter. Die KI läuft auf Ihrem eigenen Gerät, Ihr Foto verlässt es also nie.",
+      "steps": [
+        "Wählen Sie ein Foto. Der Hintergrund wird sofort entfernt.",
+        "Wählen Sie, was dahinter kommt: nichts, eine Farbe, Blur oder Ihr eigenes Foto. Bessern Sie bei Bedarf eine Stelle nach.",
+        "Wählen Sie die Größe und klicken Sie auf „Bild herunterladen“."
+      ],
+      "faq": [
+        [
+          "Werden meine Dateien irgendwohin hochgeladen?",
+          "Nein. Fizzdoc erledigt die Arbeit direkt in Ihrem Browser-Tab, mit Open-Source-Engines, die zu WebAssembly und JavaScript kompiliert sind. Ihre Datei wird von Ihrem Gerät gelesen, lokal verarbeitet, und das Ergebnis wird direkt wieder auf Ihrem Gerät gespeichert. Sie können das selbst überprüfen: Öffnen Sie die Entwicklertools Ihres Browsers, wechseln Sie zum Netzwerk-Tab und führen Sie einen Vorgang aus — keine Anfrage enthält Ihre Datei."
+        ],
+        [
+          "Verliert mein Foto an Qualität?",
+          "Nein. Der Ausschnitt behält die volle Auflösung Ihres Fotos, ohne Größenbegrenzung durch Fizzdoc. Haar- und Fellkanten werden in voller Größe bereinigt, damit sie auf jedem neuen Hintergrund natürlich wirken. Sie können auch eine kleinere Kopie speichern."
+        ],
+        [
+          "Wie funktioniert das ohne Upload?",
+          "Ein quelloffenes KI-Modell (BiRefNet) läuft direkt in Ihrem Browser, auf dem Grafikchip, wenn Ihr Gerät einen hat. Es wird einmalig geladen, etwa 110 MB, und funktioniert danach auch offline. Handys mit wenig Speicher nutzen ein kleineres Modell (U²-Net)."
+        ],
+        [
+          "Ist Fizzdoc kostenlos?",
+          "Ja, und das bleibt so: keine Anmeldung, kein Wasserzeichen, kein Tageslimit und keine Premium-Stufe. Fizzdoc ist Open Source unter der Apache-2.0-Lizenz, sodass jeder seine eigene Kopie betreiben kann."
+        ]
+      ],
+      "keywords": [
+        "Hintergrund entfernen Foto",
+        "Bildhintergrund entfernen kostenlos",
+        "Foto Hintergrund weiß machen",
+        "Hintergrund entfernen ohne Upload",
+        "remove bg"
       ]
     },
     "png-to-jpg": {

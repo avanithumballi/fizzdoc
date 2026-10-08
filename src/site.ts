@@ -13,6 +13,7 @@ export type ToolOp =
   | 'compress-pdf'
   | 'edit-pdf'
   | 'redact-pdf'
+  | 'remove-bg'
   | 'scan-pdf'
   | 'ocr-pdf'
   | 'pdf-to-word'
@@ -1196,6 +1197,37 @@ TOOLS.push(
     ],
     input: { accept: 'image/*' },
   },
+  {
+    op: 'remove-bg',
+    format: 'image',
+    slug: 'remove-background',
+    name: 'Remove Background',
+    summary: 'Cut out a person, product or pet and put anything behind it.',
+    action: 'Download image',
+    title: 'Remove Background from Image Free — Full HD, No Upload | Fizzdoc',
+    description:
+      'Remove the background from any photo for free, at full resolution: clear PNG, white, any colour, a blur or your own photo. Nothing is uploaded.',
+    h1: 'Remove the background from any photo',
+    lede: 'Choose a photo and the background disappears by itself. Keep it clear, or put white, any colour, a soft blur or another photo behind. The AI runs on your own device, so your picture never leaves it.',
+    steps: [
+      'Choose a photo. The background is removed straight away.',
+      'Pick what goes behind: nothing, a colour, a blur or your own photo. Touch up any spot if needed.',
+      'Choose the size, then click “Download image”.',
+    ],
+    faq: [
+      PRIVACY_FAQ[0],
+      [
+        'Will my picture lose quality?',
+        'No. The cut-out keeps your photo’s full resolution, with no size cap from Fizzdoc. Hair and fur edges are cleaned up at full size, so they look natural on any new background. You can also save a smaller copy.',
+      ],
+      [
+        'How does it work without uploading?',
+        'An open-source AI model (BiRefNet) runs inside your browser, on your graphics chip when the device has one. It downloads once, about 110 MB, and then works even offline. Phones with little memory use a smaller model (U²-Net).',
+      ],
+      PRIVACY_FAQ[1],
+    ],
+    input: { accept: 'image/*' },
+  },
 );
 
 // Popular searches that are the same job with a different file type get their own page and copy.
@@ -1666,6 +1698,13 @@ const KEYWORDS: Record<string, string[]> = {
     'convert GIF or BMP to PNG',
     'bulk image converter',
     'image to WebP'
+  ],
+  'remove-background': [
+    'remove background from image free',
+    'make background transparent',
+    'change photo background to white',
+    'remove bg online without uploading',
+    'background eraser for photos',
   ],
   'image-to-text': [
     'copy text from a photo',

@@ -4,6 +4,7 @@ import { PAGES, SITE_LANGS, fileName, llms, llmsFor, llmsFull, notFoundPage, ren
 import { SITE } from './src/site.ts';
 import { ocrAssets } from './vite-plugins/ocr-assets.ts';
 import { whisperAssets } from './vite-plugins/whisper-assets.ts';
+import { ORT_WEBGPU, backgroundAssets } from './vite-plugins/background-assets.ts';
 
 /**
  * The repo's star count, baked into the pages at build time so visitors' browsers never call GitHub.
@@ -67,9 +68,10 @@ function pages(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [pages(), ocrAssets(), whisperAssets()],
+  plugins: [pages(), ocrAssets(), whisperAssets(), backgroundAssets()],
   // Audio to Text runs Whisper on ONNX Runtime's CPU build; its WebGPU build is too big to host.
-  resolve: { alias: { 'onnxruntime-web/webgpu': 'onnxruntime-web/wasm' } },
+  // Remove Background imports the real WebGPU build by its own name, 'ort-webgpu'.
+  resolve: { alias: { 'onnxruntime-web/webgpu': 'onnxruntime-web/wasm', 'ort-webgpu': ORT_WEBGPU } },
   worker: { format: 'es' },
   build: { target: 'es2022' },
   test: { include: ['tests/**/*.test.ts'] },

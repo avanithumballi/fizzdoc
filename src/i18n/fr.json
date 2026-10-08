@@ -96,6 +96,7 @@
     "ws.fmtJpeg": "JPG — photos, s'ouvre partout",
     "ws.fmtWebp": "WebP — le plus léger",
     "ws.fmtPng": "PNG — sans perte",
+    "ws.fmtAuto": "Le plus adapté : PNG si le fond est transparent, sinon JPG",
     "ws.quality": "Qualité",
     "ws.width": "Largeur (px)",
     "ws.height": "Hauteur (px)",
@@ -182,6 +183,9 @@
     "error.BAD_JSON": "Ce fichier n’est pas un JSON valide. Vérifiez s’il manque une virgule, un guillemet ou un crochet.",
     "error.BAD_JSON_AT": "Ce fichier n’est pas un JSON valide : il y a un problème près de la ligne {line}, colonne {column}. Vérifiez s’il manque une virgule, un guillemet ou un crochet.",
     "error.SHEET_TOO_BIG": "C’est plus que ce qu’une feuille Excel peut contenir (1 048 576 lignes et 16 384 colonnes). Répartissez les données dans des fichiers plus petits.",
+    "error.BG_SETUP_FAILED": "L’outil de suppression du fond n’a pas pu être chargé. Vérifiez votre connexion internet pour le téléchargement unique, puis réessayez.",
+    "error.BACKGROUND_FAILED": "La suppression du fond s’est arrêtée brusquement, en général parce que cet appareil a manqué de mémoire. Essayez une photo plus petite, ou fermez les autres onglets et réessayez.",
+    "error.IMAGE_TOO_LARGE": "Cette photo est trop grande pour que ce navigateur l’enregistre à cette taille. Choisissez une taille plus petite sous « Taille ».",
     "error.NO_DIAGRAM": "Collez votre code Mermaid ou choisissez un fichier .mmd ou .md.",
     "error.BAD_DIAGRAM": "Le code du diagramme contient une erreur : {detail}",
     "error.ENGINE_FAILED": "Le moteur PDF s'est arrêté de façon inattendue — le fichier est peut-être trop volumineux pour cet appareil.",
@@ -225,6 +229,32 @@
     "ed.removeBox": "Retirer la zone de texte",
     "ed.replaced": "Certains caractères ne sont pas pris en charge par les polices PDF standard et ont été remplacés.",
     "ed.hint": "Les lignes modifiées gardent la police du PDF si elle contient toutes les lettres tapées ; sinon, elles sont recouvertes et réécrites. Masquer ne fait que cacher : pour des données sensibles, utilisez Caviarder un PDF.",
+    "bg.previewLabel": "Votre photo avec son nouveau fond",
+    "bg.preparing": "Préparation de l’outil de suppression du fond : {loaded} sur {total} Mo. Ce téléchargement n’a lieu qu’une seule fois.",
+    "bg.working": "Suppression du fond… {pct} %",
+    "bg.lite": "Cet appareil a peu de mémoire, un modèle plus léger a donc été utilisé. Un ordinateur portable donne des contours plus nets.",
+    "bg.compare": "Maintenez appuyé pour voir l’original",
+    "bg.background": "Fond",
+    "bg.none": "Aucun",
+    "bg.white": "Blanc",
+    "bg.black": "Noir",
+    "bg.blue": "Bleu",
+    "bg.red": "Rouge",
+    "bg.green": "Vert",
+    "bg.gray": "Gris",
+    "bg.custom": "Toute couleur",
+    "bg.photo": "Votre photo",
+    "bg.blur": "Flou",
+    "bg.size": "Taille",
+    "bg.original": "Taille d’origine ({w} × {h} px)",
+    "bg.widthOption": "{w} × {h} px",
+    "bg.customSize": "Largeur personnalisée…",
+    "bg.widthLabel": "Largeur en pixels",
+    "bg.touch": "Retoucher (si besoin)",
+    "bg.touchHint": "Un endroit a été oublié ? Choisissez Effacer ou Restaurer, puis passez le doigt ou la souris dessus sur la photo.",
+    "bg.erase": "Effacer",
+    "bg.restore": "Restaurer",
+    "bg.brush": "Taille du pinceau",
     "ocr.unsure": "Une partie de ce texte peut être fausse. La reconnaissance lit du texte anglais bien droit : faites d’abord pivoter les photos de travers ; les autres écritures sortiront brouillées.",
     "ocr.copyAll": "Copier tout le texte",
     "ocr.copied": "Copié",
@@ -1659,6 +1689,45 @@
         "extraire le texte d'une image gratuit",
         "ocr image vers texte",
         "copier le texte d'une photo prise au téléphone"
+      ]
+    },
+    "remove-background": {
+      "name": "Supprimer le Fond",
+      "summary": "Détourez une personne, un produit ou un animal et mettez ce que vous voulez derrière.",
+      "action": "Télécharger l’image",
+      "title": "Supprimer le Fond d’une Image Gratuit — Sans Envoi | Fizzdoc",
+      "description": "Supprimez le fond de n’importe quelle photo gratuitement, en pleine résolution : PNG transparent, blanc, toute couleur ou votre photo. Rien n’est envoyé.",
+      "h1": "Supprimez le fond de n’importe quelle photo",
+      "lede": "Choisissez une photo et le fond disparaît tout seul. Laissez-le transparent, ou mettez derrière du blanc, une couleur, un flou doux ou une autre photo. L’IA tourne sur votre propre appareil, votre photo ne le quitte donc jamais.",
+      "steps": [
+        "Choisissez une photo. Le fond est supprimé tout de suite.",
+        "Choisissez ce qui va derrière : rien, une couleur, un flou ou votre photo. Retouchez un endroit si besoin.",
+        "Choisissez la taille, puis cliquez sur « Télécharger l’image »."
+      ],
+      "faq": [
+        [
+          "Mes fichiers sont-ils envoyés quelque part ?",
+          "Non. Fizzdoc effectue tout le travail dans votre onglet de navigateur, grâce à des moteurs open source compilés en WebAssembly et en JavaScript. Votre fichier est lu depuis votre appareil, traité localement, puis le résultat est enregistré directement sur votre appareil. Vous pouvez le vérifier vous-même : ouvrez les outils de développement de votre navigateur, allez dans l'onglet Réseau et lancez une opération — aucune requête ne transporte votre fichier."
+        ],
+        [
+          "Ma photo va-t-elle perdre en qualité ?",
+          "Non. Le détourage garde la pleine résolution de votre photo, sans limite de taille de la part de Fizzdoc. Les contours des cheveux et des poils sont nettoyés en taille réelle, ils paraissent donc naturels sur n’importe quel nouveau fond. Vous pouvez aussi enregistrer une copie plus petite."
+        ],
+        [
+          "Comment ça marche sans rien envoyer ?",
+          "Un modèle d’IA open source (BiRefNet) tourne dans votre navigateur, sur la puce graphique quand l’appareil en a une. Il se télécharge une seule fois, environ 110 Mo, puis fonctionne même hors connexion. Les téléphones avec peu de mémoire utilisent un modèle plus petit (U²-Net)."
+        ],
+        [
+          "Est-ce que Fizzdoc est gratuit ?",
+          "Oui, et ça restera gratuit : pas d'inscription, pas de filigrane, pas de limite quotidienne et pas d'offre premium. Fizzdoc est open source sous licence Apache-2.0, donc n'importe qui peut faire tourner sa propre copie."
+        ]
+      ],
+      "keywords": [
+        "supprimer le fond d’une photo",
+        "enlever le fond d’une image gratuit",
+        "mettre un fond blanc sur une photo",
+        "détourer une photo sans l’envoyer",
+        "remove bg"
       ]
     },
     "png-to-jpg": {
